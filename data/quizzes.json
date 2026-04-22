@@ -1,0 +1,212 @@
+[
+  {
+    "id": "algebra-quiz",
+    "title": "Algebra Basics Quiz",
+    "subject": "Mathematics",
+    "description": "Test your knowledge of variables, equations, and basic algebra concepts.",
+    "questionCount": 5,
+    "difficulty": "Easy",
+    "questions": [
+      {
+        "id": "q1",
+        "question": "What is the value of x in 2x + 4 = 10?",
+        "options": [
+          "x = 2",
+          "x = 3",
+          "x = 4",
+          "x = 5"
+        ],
+        "correct": 1,
+        "explanation": "Subtract 4 from both sides: 2x = 6. Divide both sides by 2: x = 3."
+      },
+      {
+        "id": "q2",
+        "question": "Which of the following is the quadratic formula?",
+        "options": [
+          "x = -b/2a",
+          "x = (-b ± √(b²-4ac)) / 2a",
+          "x = (b ± √(b²+4ac)) / 2a",
+          "x = b²-4ac"
+        ],
+        "correct": 1,
+        "explanation": "The quadratic formula is x = (-b ± √(b²-4ac)) / 2a, used to solve ax² + bx + c = 0."
+      },
+      {
+        "id": "q3",
+        "question": "What is aᵐ × aⁿ equal to?",
+        "options": [
+          "a^(m-n)",
+          "a^(mn)",
+          "a^(m+n)",
+          "a^(m/n)"
+        ],
+        "correct": 2,
+        "explanation": "When multiplying powers with the same base, add the exponents: aᵐ × aⁿ = a^(m+n)."
+      },
+      {
+        "id": "q4",
+        "question": "What is the slope in y = 3x + 7?",
+        "options": [
+          "7",
+          "3",
+          "10",
+          "1/3"
+        ],
+        "correct": 1,
+        "explanation": "In y = mx + b, m is the slope. Here m = 3."
+      },
+      {
+        "id": "q5",
+        "question": "What is a² - b² factored?",
+        "options": [
+          "(a-b)²",
+          "(a+b)(a-b)",
+          "(a-b)(a-b)",
+          "a(a-b)"
+        ],
+        "correct": 1,
+        "explanation": "This is the difference of squares: a² - b² = (a+b)(a-b)."
+      }
+    ]
+  },
+  {
+    "id": "cell-biology-quiz",
+    "title": "Cell Biology Quiz",
+    "subject": "Science",
+    "description": "Test your understanding of cell structure, organelles, and cell division.",
+    "questionCount": 5,
+    "difficulty": "Medium",
+    "questions": [
+      {
+        "id": "q1",
+        "question": "Which organelle is known as the 'powerhouse of the cell'?",
+        "options": [
+          "Nucleus",
+          "Ribosome",
+          "Mitochondria",
+          "Golgi Apparatus"
+        ],
+        "correct": 2,
+        "explanation": "Mitochondria produce ATP (energy) through cellular respiration, earning the nickname 'powerhouse of the cell'."
+      },
+      {
+        "id": "q2",
+        "question": "What is the key difference between prokaryotic and eukaryotic cells?",
+        "options": [
+          "Eukaryotes have no cell wall",
+          "Prokaryotes have a nucleus",
+          "Eukaryotes have a membrane-bound nucleus",
+          "Prokaryotes are larger"
+        ],
+        "correct": 2,
+        "explanation": "Eukaryotic cells have a membrane-bound nucleus containing their DNA. Prokaryotes lack this."
+      },
+      {
+        "id": "q3",
+        "question": "Which process produces 4 genetically diverse gametes?",
+        "options": [
+          "Mitosis",
+          "Binary fission",
+          "Meiosis",
+          "Budding"
+        ],
+        "correct": 2,
+        "explanation": "Meiosis is cell division for sexual reproduction, producing 4 genetically unique gametes (sperm or eggs)."
+      },
+      {
+        "id": "q4",
+        "question": "What does the Golgi Apparatus do?",
+        "options": [
+          "Produces energy",
+          "Contains DNA",
+          "Packages and ships proteins",
+          "Synthesises lipids"
+        ],
+        "correct": 2,
+        "explanation": "The Golgi Apparatus processes, packages, and distributes proteins and lipids throughout and outside the cell."
+      },
+      {
+        "id": "q5",
+        "question": "Which organelle is responsible for protein synthesis?",
+        "options": [
+          "Nucleus",
+          "Ribosome",
+          "Lysosome",
+          "Vacuole"
+        ],
+        "correct": 1,
+        "explanation": "Ribosomes are the site of protein synthesis. They read mRNA and assemble amino acids into proteins."
+      }
+    ]
+  },
+  {
+    "id": "wwii-quiz",
+    "title": "World War II Quiz",
+    "subject": "History",
+    "description": "Test your knowledge of the causes, events, and consequences of World War II.",
+    "questionCount": 5,
+    "difficulty": "Medium",
+    "questions": [
+      {
+        "id": "q1",
+        "question": "What event triggered the start of World War II?",
+        "options": [
+          "The bombing of Pearl Harbor",
+          "Germany's invasion of Poland",
+          "The assassination of Archduke Franz Ferdinand",
+          "The fall of France"
+        ],
+        "correct": 1,
+        "explanation": "Germany's invasion of Poland on September 1, 1939 prompted Britain and France to declare war on Germany, starting WWII."
+      },
+      {
+        "id": "q2",
+        "question": "Which battle is considered a major turning point on the Eastern Front?",
+        "options": [
+          "Battle of Britain",
+          "Battle of the Bulge",
+          "Battle of Stalingrad",
+          "D-Day"
+        ],
+        "correct": 2,
+        "explanation": "The Battle of Stalingrad (1942-43) was a massive Soviet victory that halted the German advance and turned the tide on the Eastern Front."
+      },
+      {
+        "id": "q3",
+        "question": "What was D-Day?",
+        "options": [
+          "The day Germany surrendered",
+          "The Allied invasion of Normandy, France",
+          "Japan's attack on Pearl Harbor",
+          "The liberation of Paris"
+        ],
+        "correct": 1,
+        "explanation": "D-Day (June 6, 1944) was the Allied amphibious invasion of Normandy, France — one of the largest military operations in history."
+      },
+      {
+        "id": "q4",
+        "question": "Approximately how many people died in the Holocaust?",
+        "options": [
+          "1 million",
+          "3 million",
+          "6 million",
+          "10 million"
+        ],
+        "correct": 2,
+        "explanation": "Approximately 6 million Jews were systematically murdered in the Holocaust, along with millions of other victims."
+      },
+      {
+        "id": "q5",
+        "question": "Which international organisation was founded after WWII to maintain peace?",
+        "options": [
+          "League of Nations",
+          "NATO",
+          "United Nations",
+          "European Union"
+        ],
+        "correct": 2,
+        "explanation": "The United Nations was founded in 1945 to replace the failed League of Nations and maintain international peace and security."
+      }
+    ]
+  }
+]
