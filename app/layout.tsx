@@ -1,58 +1,29 @@
-import Link from 'next/link';
+import type { Metadata } from 'next';
+import { DM_Sans, Playfair_Display } from 'next/font/google';
+import './globals.css';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
-interface CardProps {
-  href: string;
-  emoji: string;
-  title: string;
-  subject: string;
-  description: string;
-  badge?: string;
-  badgeColor?: string;
-  meta?: string;
-}
+const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-body' });
+const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-display' });
 
-export default function Card({
-  href,
-  emoji,
-  title,
-  subject,
-  description,
-  badge,
-  badgeColor = 'bg-teal-100 text-teal-700',
-  meta,
-}: CardProps) {
+export const metadata: Metadata = {
+  title: 'EduForEveryone — Free Education for All',
+  description: 'Free, high-quality courses, notes, and quizzes for every student. No fees. No barriers.',
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <Link
-      href={href}
-      className="group block bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200 overflow-hidden"
-    >
-      <div className="p-6">
-        <div className="flex items-start justify-between mb-4">
-          <span className="text-4xl">{emoji}</span>
-          {badge && (
-            <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${badgeColor}`}>
-              {badge}
-            </span>
-          )}
-        </div>
-        <div className="mb-1">
-          <span className="text-xs font-semibold text-teal-600 uppercase tracking-wide">
-            {subject}
-          </span>
-        </div>
-        <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-teal-600 transition-colors">
-          {title}
-        </h3>
-        <p className="text-sm text-gray-500 leading-relaxed line-clamp-2">{description}</p>
-        {meta && (
-          <p className="text-xs text-gray-400 mt-3">{meta}</p>
-        )}
-      </div>
-      <div className="px-6 pb-4">
-        <span className="text-sm font-semibold text-teal-600 group-hover:gap-2 flex items-center gap-1 transition-all">
-          View <span>→</span>
-        </span>
-      </div>
-    </Link>
+    <html lang="en" className={`${dmSans.variable} ${playfair.variable}`}>
+      <body className="font-body bg-gray-50 min-h-screen flex flex-col text-gray-900 antialiased">
+        <Navbar />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
+    </html>
   );
 }
