@@ -1,0 +1,42 @@
+[
+  {
+    "id": "algebra-cheatsheet",
+    "title": "Algebra Cheat Sheet",
+    "subject": "Mathematics",
+    "summary": "Quick reference for key algebra rules and formulas.",
+    "readTime": "5 min",
+    "content": "# Algebra Cheat Sheet\n\n## Order of Operations (PEMDAS)\nParentheses → Exponents → Multiplication/Division → Addition/Subtraction\n\n## Linear Equations\n- Standard form: ax + b = c\n- Solve: isolate x by doing the same operation to both sides\n\n## Quadratic Formula\nFor ax² + bx + c = 0:\nx = (-b ± √(b²-4ac)) / 2a\n\n## Exponent Rules\n- aᵐ × aⁿ = aᵐ⁺ⁿ\n- aᵐ / aⁿ = aᵐ⁻ⁿ\n- (aᵐ)ⁿ = aᵐⁿ\n- a⁰ = 1\n\n## Factoring\n- Difference of squares: a² - b² = (a+b)(a-b)\n- Perfect square: a² + 2ab + b² = (a+b)²"
+  },
+  {
+    "id": "cell-biology-notes",
+    "title": "Cell Biology Key Concepts",
+    "subject": "Science",
+    "summary": "Essential notes on cell structure, organelles, and division.",
+    "readTime": "8 min",
+    "content": "# Cell Biology Key Concepts\n\n## Cell Theory\n1. All living things are made of cells\n2. The cell is the basic unit of life\n3. All cells come from pre-existing cells\n\n## Types of Cells\n- **Prokaryotic**: No nucleus (e.g. bacteria)\n- **Eukaryotic**: Has nucleus (e.g. plant, animal cells)\n\n## Key Organelles\n| Organelle | Function |\n|-----------|----------|\n| Nucleus | Controls cell activities, contains DNA |\n| Mitochondria | Produces energy (ATP) |\n| Ribosome | Protein synthesis |\n| Endoplasmic Reticulum | Transport network |\n| Golgi Apparatus | Packages and ships proteins |\n| Chloroplast | Photosynthesis (plant only) |\n\n## Cell Division\n- **Mitosis**: Cell division for growth (produces 2 identical cells)\n- **Meiosis**: Cell division for reproduction (produces 4 gametes)"
+  },
+  {
+    "id": "essay-writing-guide",
+    "title": "Essay Writing Guide",
+    "subject": "English",
+    "summary": "Structure, style, and strategy for writing strong essays.",
+    "readTime": "6 min",
+    "content": "# Essay Writing Guide\n\n## Basic Structure\n1. **Introduction** - Hook, background, thesis\n2. **Body Paragraphs** - Topic sentence, evidence, analysis, transition\n3. **Conclusion** - Restate thesis, summarize, closing thought\n\n## The PEEL Method\n- **P**oint: State your argument\n- **E**vidence: Provide support\n- **E**xplain: Analyse the evidence\n- **L**ink: Connect back to thesis\n\n## Writing a Strong Thesis\nA thesis should:\n- Make a specific, arguable claim\n- Give a reason or preview of your argument\n- Be one or two sentences long\n\n**Weak**: Social media is bad.\n**Strong**: Social media negatively affects teenagers' mental health by promoting unrealistic body image standards and reducing face-to-face social interaction.\n\n## Useful Transition Words\n- To add: Furthermore, Moreover, In addition\n- To contrast: However, Nevertheless, On the other hand\n- To conclude: Therefore, In conclusion, As a result"
+  },
+  {
+    "id": "wwii-key-events",
+    "title": "World War II: Key Events Timeline",
+    "subject": "History",
+    "summary": "A chronological overview of major events in WWII.",
+    "readTime": "7 min",
+    "content": "# World War II: Key Events\n\n## Causes (Pre-1939)\n- Treaty of Versailles humiliated Germany\n- Rise of fascism in Germany, Italy, Japan\n- Appeasement policy by Britain and France\n- Great Depression created economic desperation\n\n## Key Events Timeline\n| Year | Event |\n|------|-------|\n| 1939 | Germany invades Poland; WWII begins |\n| 1940 | Fall of France; Battle of Britain |\n| 1941 | Germany invades USSR; Japan attacks Pearl Harbor |\n| 1942 | Battle of Midway; Stalingrad turning point |\n| 1944 | D-Day: Allied invasion of Normandy |\n| 1945 | Germany surrenders (VE Day); Atomic bombs on Japan; Japan surrenders (VJ Day) |\n\n## The Holocaust\n- Systematic genocide of 6 million Jews\n- Also targeted Roma, disabled people, political opponents\n- Liberation of concentration camps in 1945\n\n## Aftermath\n- 70-85 million total deaths\n- United Nations founded in 1945\n- Cold War begins between USA and USSR\n- Decolonisation accelerates across Africa and Asia"
+  },
+  {
+    "id": "physics-mechanics-notes",
+    "title": "Classical Mechanics Summary",
+    "subject": "Science",
+    "summary": "Newton's laws, motion equations, and energy concepts.",
+    "readTime": "9 min",
+    "content": "# Classical Mechanics\n\n## Newton's Three Laws\n1. **Inertia**: An object at rest stays at rest; an object in motion stays in motion (unless acted on by a force)\n2. **F = ma**: Force equals mass times acceleration\n3. **Action-Reaction**: Every action has an equal and opposite reaction\n\n## Equations of Motion (SUVAT)\n- v = u + at\n- s = ut + ½at²\n- v² = u² + 2as\n\nWhere: s=displacement, u=initial velocity, v=final velocity, a=acceleration, t=time\n\n## Energy\n- **Kinetic Energy**: KE = ½mv²\n- **Potential Energy**: PE = mgh\n- **Conservation**: KE + PE = constant (no friction)\n\n## Work and Power\n- Work: W = F × d × cos(θ)\n- Power: P = W/t = F × v"
+  }
+]
