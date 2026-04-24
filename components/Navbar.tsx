@@ -8,12 +8,12 @@ const navLinks = [
   { href: '/courses', label: 'Courses' },
   { href: '/notes', label: 'Notes' },
   { href: '/quiz', label: 'Quiz' },
+  { href: '/tools', label: 'Tools' },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
@@ -21,7 +21,6 @@ export default function Navbar() {
           <span className="text-2xl">📚</span>
           <span>EduForEveryone</span>
         </Link>
-        {/* Desktop */}
         <ul className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
             <li key={link.href}>
@@ -38,7 +37,6 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-        {/* Mobile toggle */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-100"
@@ -47,7 +45,6 @@ export default function Navbar() {
           <span className="text-xl">{open ? '✕' : '☰'}</span>
         </button>
       </nav>
-      {/* Mobile menu */}
       {open && (
         <div className="md:hidden border-t border-gray-100 bg-white px-4 pb-4">
           <ul className="flex flex-col gap-1 mt-2">
