@@ -160,4 +160,9 @@ All data fetching is centralized in `/lib/data.ts`. To switch:
 
 ## License
 
-MIT — free to use, modify, and distribute.
+## License
+© 2025 EduForEveryone. All rights reserved.
+This website and its content are protected by copyright law.
+No part of this website may be copied, modified, distributed,
+or used for commercial purposes without written permission
+from the owner.
