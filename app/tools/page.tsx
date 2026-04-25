@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 const tools = [
   { href:"/tools/simple-calculator", emoji:"🔢", title:"Simple Calculator", description:"Basic arithmetic calculator with full calculation history. Perfect for everyday maths.", tags:["Addition","Subtraction","History"], badge:"" },
   { href:"/tools/scientific-calculator", emoji:"🔬", title:"Scientific Calculator", description:"Trig, logarithms, powers, roots, factorial, memory & more. DEG/RAD/GRAD modes + 2ND key.", tags:["Trig","Logarithms","Memory"], badge:"Intermediate" },
-  { href:"/tools/cfa-calculator", emoji:"📊", title:"CFA Financial Calculator", description:"Time Value of Money calculator — compute N, I/Y, PV, PMT, FV instantly. BA II Plus style.", tags:["TVM","Finance","CFA"], badge:"Advanced" },
+  { href:"/tools/cfa-calculator", emoji:"📊", title:"Financial Calculator", description:"Time Value of Money calculator — compute N, I/Y, PV, PMT, FV instantly. BA II Plus style.", tags:["TVM","Finance","CFA"], badge:"Advanced" },
   { href:"/tools/number-to-words", emoji:"🔡", title:"Number to Words", description:"Convert any number to words in 8 languages including Arabic, Hindi, Urdu. Supports 8 currencies.", tags:["Arabic","Hindi","Currency"], badge:"Popular" },
 ];
 export default function ToolsPage() {
