@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 
 type Category = "all" | "math" | "science" | "english";
 type CellState = "empty" | "filled" | "correct" | "present" | "absent";
@@ -58,7 +58,7 @@ const WORDS: Record<string, WordEntry[]> = {
     {w:"NOVEL",h:"A long work of fiction"},
     {w:"VERSE",h:"A line or stanza of poetry"},
     {w:"SIMILE",h:"A comparison using like or as — 6 letters"},
-    {w:"CLAUSE",h:"A group of words with subject and verb — 6 letters"},
+    {w:"CLAUSE",h:"Group of words with subject & verb — 6 letters"},
   ],
 };
 
@@ -75,8 +75,7 @@ function getAllWords(): WordEntry[] {
 
 function scoreGuess(guess: string, word: string): CellState[] {
   const result: CellState[] = Array(word.length).fill("absent");
-  const wArr = word.split("");
-  const gArr = guess.split("");
+  const wArr = word.split(""); const gArr = guess.split("");
   gArr.forEach((ch, i) => { if (ch === wArr[i]) { result[i] = "correct"; wArr[i] = ""; gArr[i] = ""; } });
   gArr.forEach((ch, i) => {
     if (!ch) return;
@@ -88,7 +87,7 @@ function scoreGuess(guess: string, word: string): CellState[] {
 
 const cellBg: Record<CellState, string> = {
   empty: "bg-white border-gray-200",
-  filled: "bg-white border-gray-500",
+  filled: "bg-white border-gray-600 scale-105",
   correct: "bg-teal-600 border-teal-700 text-white",
   present: "bg-amber-500 border-amber-600 text-white",
   absent: "bg-gray-600 border-gray-700 text-white",
@@ -101,6 +100,86 @@ const keyBg: Record<KeyState, string> = {
   absent: "bg-gray-500 text-white",
 };
 
+// ── How to Play Modal ─────────────────────────────────────────────────────────
+function HowToPlayModal({ onClose }: { onClose: () => void }) {
+  return (
+    <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onClick={onClose}>
+      <div className="bg-white rounded-2xl p-6 max-w-sm w-full shadow-2xl" onClick={e => e.stopPropagation()}>
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-xl font-black text-gray-900">How to Play</h2>
+          <button onClick={onClose} className="text-gray-400 hover:text-gray-600 text-2xl font-bold">×</button>
+        </div>
+
+        <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+          Guess the hidden <strong>education word</strong> in <strong>6 tries</strong>. Each guess must be a valid length word.
+        </p>
+
+        {/* Example */}
+        <div className="mb-4">
+          <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Example</p>
+          <div className="flex gap-1.5 mb-2">
+            {["S","C","I","E","N","C","E".split("").slice(0,5)].slice(0,5).map((l,i) => {
+              const states: CellState[] = ["correct","absent","present","absent","absent"];
+              return (
+                <div key={i} className={`w-10 h-10 border-2 rounded-lg flex items-center justify-center font-black text-sm uppercase ${cellBg[states[i]]}`}>
+                  {["W","O","R","D","S"][i]}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Color guide */}
+        <div className="space-y-3 mb-5">
+          {[
+            { color:"bg-teal-600", label:"Correct", desc:"Letter is in the right position" },
+            { color:"bg-amber-500", label:"Present", desc:"Letter is in the word but wrong position" },
+            { color:"bg-gray-600", label:"Absent", desc:"Letter is not in the word at all" },
+          ].map(item => (
+            <div key={item.label} className="flex items-center gap-3">
+              <div className={`${item.color} w-8 h-8 rounded-lg flex-shrink-0`} />
+              <div>
+                <p className="font-bold text-gray-900 text-sm">{item.label}</p>
+                <p className="text-gray-500 text-xs">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Tips */}
+        <div className="bg-gray-50 rounded-xl p-4 mb-4">
+          <p className="text-xs font-bold text-gray-700 mb-2">💡 Tips</p>
+          <ul className="text-xs text-gray-600 space-y-1.5">
+            <li>📱 <strong>Mobile:</strong> Tap the board to open your keyboard</li>
+            <li>⌨️ <strong>Desktop:</strong> Type directly with your keyboard</li>
+            <li>🔤 <strong>On-screen:</strong> Tap the letter buttons below</li>
+            <li>💡 <strong>Hint:</strong> Costs 5 points but reveals a clue</li>
+            <li>🔥 <strong>Streak:</strong> Win multiple games to build your streak</li>
+            <li>⚡ <strong>Bonus:</strong> Fewer guesses = more points!</li>
+          </ul>
+        </div>
+
+        {/* Categories */}
+        <div className="bg-teal-50 rounded-xl p-4 mb-5">
+          <p className="text-xs font-bold text-teal-700 mb-2">📚 Word Categories</p>
+          <div className="grid grid-cols-2 gap-1.5 text-xs text-teal-600">
+            <span>🧮 Math — algebra, geometry terms</span>
+            <span>🔬 Science — biology, physics terms</span>
+            <span>📝 English — grammar, literary terms</span>
+            <span>🌐 All — mix of all categories</span>
+          </div>
+        </div>
+
+        <button onClick={onClose} className="w-full bg-teal-600 text-white py-3 rounded-xl font-bold text-base"
+          style={{ boxShadow: "0 4px 0 #0F6E56" }}>
+          Let's Play! 🎮
+        </button>
+      </div>
+    </div>
+  );
+}
+
+// ── Main Game ─────────────────────────────────────────────────────────────────
 export default function WordWiseGame() {
   const [category, setCategory] = useState<Category>("all");
   const [word, setWord] = useState("");
@@ -117,6 +196,8 @@ export default function WordWiseGame() {
   const [wins, setWins] = useState(0);
   const [streak, setStreak] = useState(0);
   const [shake, setShake] = useState(false);
+  const [showHow, setShowHow] = useState(false);
+  const hiddenInputRef = useRef<HTMLInputElement>(null);
 
   const newGame = useCallback((cat: Category = category) => {
     const pool = cat === "all" ? getAllWords() : WORDS[cat] ?? getAllWords();
@@ -130,13 +211,16 @@ export default function WordWiseGame() {
 
   useEffect(() => { newGame("all"); }, []);
 
-  const showMsg = (msg: string) => { setMessage(msg); setTimeout(() => setMessage(""), 2000); };
+  const showMsg = (msg: string) => { setMessage(msg); setTimeout(() => setMessage(""), 2500); };
 
   const pressKey = useCallback((key: string) => {
     if (gameWon || gameLost) return;
     if (key === "⌫" || key === "BACKSPACE") { setCurrent(c => c.slice(0, -1)); return; }
     if (key === "ENTER") {
-      if (current.length < word.length) { setShake(true); setTimeout(() => setShake(false), 500); showMsg("Not enough letters!"); return; }
+      if (current.length < word.length) {
+        setShake(true); setTimeout(() => setShake(false), 500);
+        showMsg(`Word must be ${word.length} letters!`); return;
+      }
       const results = scoreGuess(current, word);
       const row: GuessRow = { letters: current.split(""), results };
       setGuesses(g => [...g, row]);
@@ -153,23 +237,36 @@ export default function WordWiseGame() {
         const bonus = Math.max(0, (MAX_GUESSES - guesses.length - 1) * 20);
         const earned = 100 + bonus - (hintUsed ? 5 : 0);
         setScore(s => s + earned); setWins(w => w + 1); setStreak(s => s + 1); setGameWon(true);
-        showMsg(`🎉 ${["Genius!","Amazing!","Excellent!","Great!","Good!","Phew!"][guesses.length]}  +${earned} pts`);
+        showMsg(`🎉 ${["Genius!","Amazing!","Excellent!","Great!","Good!","Phew!"][guesses.length]} +${earned} pts`);
       } else if (guesses.length + 1 >= MAX_GUESSES) {
         setStreak(0); setGameLost(true); showMsg(`The word was: ${word}`);
       }
       return;
     }
-    if (/^[A-Z]$/i.test(key) && current.length < word.length) setCurrent(c => c + key.toUpperCase());
+    if (/^[A-Za-z]$/.test(key) && current.length < word.length) {
+      setCurrent(c => c + key.toUpperCase());
+    }
   }, [gameWon, gameLost, current, word, guesses, keyStates, hintUsed]);
 
+  // Physical keyboard support
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      const k = e.key.toUpperCase();
-      if (k === "BACKSPACE" || k === "ENTER" || /^[A-Z]$/.test(k)) pressKey(k);
+      const k = e.key;
+      if (k === "Backspace") { pressKey("BACKSPACE"); return; }
+      if (k === "Enter") { pressKey("ENTER"); return; }
+      if (/^[A-Za-z]$/.test(k)) pressKey(k.toUpperCase());
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
   }, [pressKey]);
+
+  // Hidden input for mobile keyboard
+  const focusInput = () => { hiddenInputRef.current?.focus(); };
+
+  const handleHiddenInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // We handle typing via keydown, clear the input value to keep it ready
+    e.target.value = "";
+  };
 
   const wordLen = word.length || 5;
 
@@ -182,84 +279,127 @@ export default function WordWiseGame() {
         if (r < guesses.length) { letter = guesses[r].letters[c] || ""; state = guesses[r].results[c]; }
         else if (r === guesses.length && !gameWon && !gameLost) { letter = current[c] || ""; state = letter ? "filled" : "empty"; }
         cells.push(
-          <div key={c} className={`flex items-center justify-center border-2 rounded-lg text-xl font-black uppercase transition-all duration-100 ${cellBg[state]} ${state === "filled" ? "scale-105" : ""}`}
-            style={{ width: wordLen > 5 ? 44 : 52, height: wordLen > 5 ? 44 : 52 }}>
+          <div key={c}
+            className={`flex items-center justify-center border-2 rounded-xl text-xl font-black uppercase transition-all duration-150 select-none ${cellBg[state]}`}
+            style={{ width: wordLen > 5 ? 46 : 54, height: wordLen > 5 ? 46 : 54 }}>
             {letter}
           </div>
         );
       }
       rows.push(
-        <div key={r} className={`flex gap-1.5 ${r === guesses.length && shake ? "animate-bounce" : ""}`}>{cells}</div>
+        <div key={r} className={`flex gap-1.5 ${r === guesses.length && shake ? "animate-pulse" : ""}`}>{cells}</div>
       );
     }
     return rows;
   };
 
   return (
-    <div className="space-y-4">
-      {/* Stats */}
-      <div className="grid grid-cols-3 gap-3">
-        {[["Score", score], ["Wins", wins], ["Streak", streak]].map(([l, v]) => (
-          <div key={l} className="bg-gray-50 rounded-xl p-3 text-center border border-gray-100">
-            <p className="text-2xl font-bold text-gray-900">{v}</p>
-            <p className="text-xs text-gray-500 uppercase tracking-wider">{l}</p>
-          </div>
-        ))}
-      </div>
+    <>
+      {/* Hidden input for mobile keyboard */}
+      <input
+        ref={hiddenInputRef}
+        className="absolute opacity-0 w-0 h-0 pointer-events-none"
+        style={{ position: "absolute", left: -9999, top: -9999 }}
+        onChange={handleHiddenInput}
+        autoCapitalize="off"
+        autoCorrect="off"
+        autoComplete="off"
+        spellCheck={false}
+        aria-hidden="true"
+      />
 
-      {/* Category */}
-      <div className="flex gap-2 overflow-x-auto pb-1">
-        {(["all","math","science","english"] as Category[]).map(cat => (
-          <button key={cat} onClick={() => { setCategory(cat); newGame(cat); }}
-            className={`px-3 py-1.5 rounded-full text-xs font-bold border whitespace-nowrap transition-all capitalize
-              ${category === cat ? "bg-teal-600 text-white border-teal-700" : "border-gray-200 text-gray-500 hover:border-teal-300"}`}>
-            {cat === "all" ? "🌐 All" : cat === "math" ? "🧮 Math" : cat === "science" ? "🔬 Science" : "📝 English"}
-          </button>
-        ))}
-        <button onClick={() => newGame()} className="px-3 py-1.5 rounded-full text-xs font-bold border border-gray-200 text-gray-500 hover:border-gray-400 whitespace-nowrap">
-          New Word ↻
-        </button>
-      </div>
+      {/* How to Play Modal */}
+      {showHow && <HowToPlayModal onClose={() => setShowHow(false)} />}
 
-      {/* Board */}
-      <div className="flex flex-col gap-1.5 items-center">{renderBoard()}</div>
-
-      {/* Message */}
-      {message && (
-        <div className="text-center py-2 px-4 bg-gray-900 text-white rounded-full text-sm font-semibold">{message}</div>
-      )}
-
-      {/* Hint */}
-      <div className="text-center">
-        <button onClick={() => { setHintShown(true); setHintUsed(true); setScore(s => Math.max(0, s - 5)); }}
-          className="text-xs border border-gray-200 px-4 py-1.5 rounded-full text-gray-500 hover:border-gray-400 font-semibold">
-          💡 Hint (-5 pts)
-        </button>
-        {hintShown && <p className="text-xs text-gray-500 mt-2 italic">{hint}</p>}
-      </div>
-
-      {/* New game after result */}
-      {(gameWon || gameLost) && (
-        <button onClick={() => newGame()} className="w-full bg-teal-600 text-white py-3 rounded-xl font-bold text-base"
-          style={{ boxShadow: "0 4px 0 #0F6E56" }}>
-          {gameWon ? "🎉 Next Word →" : `😢 Try Again (${word})`}
-        </button>
-      )}
-
-      {/* Keyboard */}
-      <div className="flex flex-col gap-1.5 items-center">
-        {KEYBOARD_ROWS.map((row, ri) => (
-          <div key={ri} className="flex gap-1">
-            {row.map(key => (
-              <button key={key} onClick={() => pressKey(key)}
-                className={`${key.length > 1 ? "px-3 text-xs" : "w-8"} h-12 rounded-lg font-bold text-sm transition-all active:translate-y-0.5 ${keyBg[keyStates[key] || "unused"]}`}
-                style={{ boxShadow: "0 3px 0 rgba(0,0,0,0.15)", minWidth: key.length > 1 ? 48 : 32 }}>
-                {key}
-              </button>
+      <div className="space-y-3">
+        {/* Header row */}
+        <div className="flex justify-between items-center">
+          <div className="grid grid-cols-3 gap-2 flex-1 mr-3">
+            {[["Score", score], ["Wins", wins], ["Streak", streak]].map(([l, v]) => (
+              <div key={l} className="bg-gray-50 rounded-xl p-2 text-center border border-gray-100">
+                <p className="text-lg font-bold text-gray-900">{v}</p>
+                <p className="text-xs text-gray-500">{l}</p>
+              </div>
             ))}
           </div>
-        ))}
+          <button onClick={() => setShowHow(true)}
+            className="bg-teal-50 border border-teal-100 text-teal-700 rounded-xl px-3 py-2 text-xs font-bold hover:bg-teal-100 transition-colors">
+            ❓ How to Play
+          </button>
+        </div>
+
+        {/* Category selector */}
+        <div className="flex gap-2 overflow-x-auto pb-1">
+          {(["all","math","science","english"] as Category[]).map(cat => (
+            <button key={cat} onClick={() => { setCategory(cat); newGame(cat); }}
+              className={`px-3 py-1.5 rounded-full text-xs font-bold border whitespace-nowrap transition-all capitalize
+                ${category===cat?"bg-teal-600 text-white border-teal-700":"border-gray-200 text-gray-500 hover:border-teal-300"}`}>
+              {cat==="all"?"🌐 All":cat==="math"?"🧮 Math":cat==="science"?"🔬 Science":"📝 English"}
+            </button>
+          ))}
+          <button onClick={() => newGame()} className="px-3 py-1.5 rounded-full text-xs font-bold border border-gray-200 text-gray-500 hover:border-gray-400 whitespace-nowrap">
+            ↻ New Word
+          </button>
+        </div>
+
+        {/* Mobile keyboard tip */}
+        <div className="flex items-center gap-2 bg-blue-50 border border-blue-100 rounded-xl px-3 py-2 text-xs text-blue-600">
+          <span>📱</span>
+          <span><strong>Mobile:</strong> Tap the board to type with your keyboard · <strong>Desktop:</strong> Type directly</span>
+        </div>
+
+        {/* Board — tap to focus for mobile keyboard */}
+        <div className="flex flex-col gap-1.5 items-center cursor-pointer" onClick={focusInput}>
+          {renderBoard()}
+        </div>
+
+        {/* Message */}
+        {message && (
+          <div className="text-center py-2 px-4 bg-gray-900 text-white rounded-full text-sm font-semibold animate-bounce">
+            {message}
+          </div>
+        )}
+
+        {/* Hint */}
+        <div className="text-center">
+          <button onClick={() => { setHintShown(true); if (!hintUsed) { setHintUsed(true); setScore(s => Math.max(0, s-5)); } }}
+            className="text-xs border border-amber-200 bg-amber-50 text-amber-700 px-4 py-1.5 rounded-full font-semibold hover:bg-amber-100 transition-colors">
+            💡 Hint {hintUsed ? "(used)" : "(-5 pts)"}
+          </button>
+          {hintShown && <p className="text-xs text-gray-500 mt-2 italic bg-gray-50 rounded-xl py-2 px-4">{hint}</p>}
+        </div>
+
+        {/* Result buttons */}
+        {(gameWon || gameLost) && (
+          <button onClick={() => newGame()}
+            className={`w-full py-3 rounded-xl font-bold text-base text-white ${gameWon?"bg-teal-600":"bg-gray-700"}`}
+            style={{ boxShadow: gameWon?"0 4px 0 #0F6E56":"0 4px 0 #333" }}>
+            {gameWon ? "🎉 Next Word →" : `😢 Try Again — Word was: ${word}`}
+          </button>
+        )}
+
+        {/* On-screen keyboard */}
+        <div className="flex flex-col gap-1.5 items-center">
+          {KEYBOARD_ROWS.map((row, ri) => (
+            <div key={ri} className="flex gap-1">
+              {row.map(key => (
+                <button key={key} onClick={() => pressKey(key)}
+                  className={`${key.length > 1 ? "px-2 text-xs" : "w-8"} h-12 rounded-lg font-bold text-sm transition-all active:translate-y-0.5 select-none ${keyBg[keyStates[key] || "unused"]}`}
+                  style={{ boxShadow: "0 3px 0 rgba(0,0,0,0.15)", minWidth: key.length > 1 ? 48 : 32 }}>
+                  {key}
+                </button>
+              ))}
+            </div>
+          ))}
+        </div>
+
+        {/* Streak celebration */}
+        {streak >= 3 && (
+          <div className="text-center py-2 bg-amber-50 border border-amber-100 rounded-xl text-amber-800 text-sm font-bold">
+            🔥 {streak} game streak! Keep going!
+          </div>
+        )}
       </div>
-    </div>
+    </>
   );
 }
