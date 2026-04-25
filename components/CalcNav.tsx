@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 const calcs = [
   { href: "/tools/simple-calculator", label: "Simple", emoji: "🔢" },
   { href: "/tools/scientific-calculator", label: "Scientific", emoji: "🔬" },
-  { href: "/tools/cfa-calculator", label: "CFA / TVM", emoji: "📊" },
+  { href: "/tools/cfa-calculator", label: "Financial", emoji: "📊" },
   { href: "/tools/number-to-words", label: "Words", emoji: "🔡" },
 ];
 

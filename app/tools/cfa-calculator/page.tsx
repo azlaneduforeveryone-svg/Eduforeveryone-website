@@ -40,7 +40,7 @@ export default function Page() {
         <div className="flex items-center gap-3 mb-4">
           <span className="text-4xl">📊</span>
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">CFA Financial Calculator</h1>
+            <h1 className="text-2xl font-bold text-gray-900">Financial Calculator</h1>
             <p className="text-gray-500 text-sm">Time Value of Money — N, I/Y, PV, PMT, FV</p>
           </div>
         </div>
