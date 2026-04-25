@@ -9,6 +9,8 @@ const navLinks = [
   { href: '/notes', label: 'Notes' },
   { href: '/quiz', label: 'Quiz' },
   { href: '/tools', label: 'Tools' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 export default function Navbar() {
