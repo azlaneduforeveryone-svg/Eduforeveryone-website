@@ -83,15 +83,21 @@ function toWordsUR(n: number): string {
   return toWordsUR(Math.floor(n/10_000_000)) + " کروڑ" + (n%10_000_000 ? " " + toWordsUR(n%10_000_000) : "");
 }
 
-// ── Spanish ──────────────────────────────────────────────────────────────────
+// ── Spanish (FIXED: irregular hundreds: 500=quinientos, 700=setecientos, 900=novecientos) ──
 const ones_es = ["","uno","dos","tres","cuatro","cinco","seis","siete","ocho","nueve","diez","once","doce","trece","catorce","quince","dieciséis","diecisiete","dieciocho","diecinueve"];
 const tens_es = ["","","veinte","treinta","cuarenta","cincuenta","sesenta","setenta","ochenta","noventa"];
+const hundreds_es = ["","ciento","doscientos","trescientos","cuatrocientos","quinientos","seiscientos","setecientos","ochocientos","novecientos"];
 function toWordsES(n: number): string {
   if (n === 0) return "cero";
   if (n < 20) return ones_es[n];
   if (n < 30) return n === 20 ? "veinte" : "veinti" + ones_es[n-20];
   if (n < 100) return tens_es[Math.floor(n/10)] + (n%10 ? " y " + ones_es[n%10] : "");
-  if (n < 1000) return (n === 100 ? "cien" : "ciento") + (n%100 ? " " + toWordsES(n%100) : "");
+  if (n < 1000) {
+    const h = Math.floor(n/100);
+    const rest = n % 100;
+    const hundredWord = n === 100 ? "cien" : hundreds_es[h];
+    return hundredWord + (rest ? " " + toWordsES(rest) : "");
+  }
   if (n < 1_000_000) return toWordsES(Math.floor(n/1000)) + " mil" + (n%1000 ? " " + toWordsES(n%1000) : "");
   if (n < 1_000_000_000) return toWordsES(Math.floor(n/1_000_000)) + (Math.floor(n/1_000_000)===1?" millón":" millones") + (n%1_000_000?" "+toWordsES(n%1_000_000):"");
   return toWordsES(Math.floor(n/1_000_000_000)) + " mil millones" + (n%1_000_000_000?" "+toWordsES(n%1_000_000_000):"");
