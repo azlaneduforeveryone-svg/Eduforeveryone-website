@@ -18,8 +18,9 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
         <Link href="/" className="flex items-center gap-2 font-bold text-xl text-teal-600">
-          <span className="text-2xl">📚</span>
+          <img src="/Main_Logo.jpg" alt="EduForEveryone Logo" className="h-10 w-10 object-contain" />
           <span>EduForEveryone</span>
+
         </Link>
         <ul className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
