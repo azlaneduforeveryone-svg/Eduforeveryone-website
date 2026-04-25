@@ -4,10 +4,10 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-400 mt-auto">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <span className="text-2xl">📚</span>
+              <img src="/Main_Logo.jpg" alt="EduForEveryone Logo" className="h-8 w-8 object-contain" />
               <span className="text-white font-bold text-lg">EduForEveryone</span>
             </div>
             <p className="text-sm leading-relaxed">
@@ -20,6 +20,7 @@ export default function Footer() {
               <li><Link href="/courses" className="hover:text-teal-400 transition-colors">Courses</Link></li>
               <li><Link href="/notes" className="hover:text-teal-400 transition-colors">Study Notes</Link></li>
               <li><Link href="/quiz" className="hover:text-teal-400 transition-colors">Quizzes</Link></li>
+              <li><Link href="/tools" className="hover:text-teal-400 transition-colors">Tools</Link></li>
             </ul>
           </div>
           <div>
@@ -29,6 +30,12 @@ export default function Footer() {
               <li>Science</li>
               <li>English</li>
               <li>History</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-white font-semibold mb-3">Legal</h3>
+            <ul className="space-y-2 text-sm">
+              <li><Link href="/privacy-policy" className="hover:text-teal-400 transition-colors">Privacy Policy</Link></li>
             </ul>
           </div>
         </div>
