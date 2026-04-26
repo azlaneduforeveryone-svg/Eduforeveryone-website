@@ -34,6 +34,7 @@ const faqs = [
   { q:"Is EduForEveryone really free?", a:"Yes — 100% free forever. No subscriptions, no hidden fees, no sign-up required. Every course, note, quiz, calculator and game on this website is completely free." },
   { q:"Who is EduForEveryone for?", a:"Everyone — from elementary school students to working professionals. Our content is designed to be accessible at every level of learning." },
   { q:"What subjects are available?", a:"We currently cover Mathematics, Science, English and History. We are constantly adding more subjects and content." },
+  { q:"What games are available?", a:"We have three free games — Math Puzzle (arithmetic and algebra challenges), WordWise (guess hidden education words), and Quiz Battle (answer questions across all subjects with lives and powerups). All completely free!" },
   { q:"Can I use the calculators for free?", a:"Yes! Our scientific calculator, financial calculator (TVM, NPV, IRR, Bond Pricing), simple calculator and number to words converter are all completely free to use." },
   { q:"Do I need to create an account?", a:"No account needed. Just visit the website and start learning immediately." },
   { q:"Will more content be added?", a:"Yes! We are constantly adding new courses, notes, quizzes, tools and games. More languages and subjects are coming soon." },
@@ -73,6 +74,28 @@ export default function HomePage() {
               Play Math Puzzle 🎮
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* ── Quick Play Banner ── */}
+      <section className="bg-gray-900 py-3 px-4">
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="flex items-center gap-3 flex-wrap justify-center sm:justify-start">
+            <span className="text-white text-sm font-bold">🎮 Play & Learn:</span>
+            {[
+              { href:"/games/math-puzzle", label:"🧮 Math Puzzle", color:"bg-teal-600 hover:bg-teal-500" },
+              { href:"/games/word-puzzle", label:"🔤 WordWise",    color:"bg-indigo-600 hover:bg-indigo-500" },
+              { href:"/games/quiz-battle", label:"🧠 Quiz Battle", color:"bg-amber-600 hover:bg-amber-500" },
+            ].map(g => (
+              <Link key={g.href} href={g.href}
+                className={`${g.color} text-white text-xs font-bold px-3 py-1.5 rounded-lg transition-colors`}>
+                {g.label}
+              </Link>
+            ))}
+          </div>
+          <Link href="/games" className="text-gray-400 text-xs hover:text-white transition-colors whitespace-nowrap">
+            View all games →
+          </Link>
         </div>
       </section>
 
@@ -138,17 +161,74 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Game Banner ── */}
-      <section className="py-10 px-4 bg-gradient-to-r from-teal-600 to-teal-700">
-        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-white">
-          <div>
-            <p className="font-semibold text-teal-200 text-sm mb-1">🎮 New Game</p>
-            <h2 className="text-2xl font-bold mb-1">Math Puzzle Challenge</h2>
-            <p className="text-teal-100 text-sm">10 questions · 4 levels · Beat the clock · Build your streak</p>
+      {/* ── Games Section ── */}
+      <section className="py-14 px-4 bg-gray-900">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex justify-between items-center mb-8">
+            <div>
+              <p className="text-teal-400 font-semibold text-sm uppercase tracking-wider mb-1">🎮 Play & Learn</p>
+              <h2 className="text-2xl font-bold text-white">Free Educational Games</h2>
+              <p className="text-gray-400 text-sm mt-1">Make studying addictive — play, score, and learn!</p>
+            </div>
+            <Link href="/games" className="text-teal-400 text-sm font-semibold hover:text-teal-300 transition-colors whitespace-nowrap">
+              View all →
+            </Link>
           </div>
-          <Link href="/games/math-puzzle" className="bg-white text-teal-700 px-6 py-3 rounded-xl font-bold whitespace-nowrap hover:bg-teal-50 transition-colors">
-            Play Now →
-          </Link>
+          <div className="grid sm:grid-cols-3 gap-5">
+            {[
+              {
+                href:"/games/math-puzzle",
+                emoji:"🧮",
+                title:"Math Puzzle",
+                desc:"Solve arithmetic, algebra and sequences against the clock. 4 difficulty levels — Easy to Expert!",
+                tags:["Addition","Algebra","Sequences"],
+                color:"border-teal-500/30 hover:border-teal-400",
+                badge:"Popular",
+                badgeColor:"bg-teal-900 text-teal-300",
+                btnColor:"bg-teal-600 hover:bg-teal-500",
+              },
+              {
+                href:"/games/word-puzzle",
+                emoji:"🔤",
+                title:"WordWise",
+                desc:"Guess hidden education words in 6 tries. Math, Science & English words. Difficulty rises with your streak!",
+                tags:["Vocabulary","Spelling","Wordle"],
+                color:"border-indigo-500/30 hover:border-indigo-400",
+                badge:"1682 Words",
+                badgeColor:"bg-indigo-900 text-indigo-300",
+                btnColor:"bg-indigo-600 hover:bg-indigo-500",
+              },
+              {
+                href:"/games/quiz-battle",
+                emoji:"🧠",
+                title:"Quiz Battle",
+                desc:"Answer 10 questions across all subjects. 3 lives, powerups and streak bonuses make it exciting!",
+                tags:["All Subjects","Trivia","Powerups"],
+                color:"border-amber-500/30 hover:border-amber-400",
+                badge:"New",
+                badgeColor:"bg-amber-900 text-amber-300",
+                btnColor:"bg-amber-600 hover:bg-amber-500",
+              },
+            ].map(game => (
+              <div key={game.href} className={`bg-gray-800 border ${game.color} rounded-2xl p-6 flex flex-col transition-all group`}>
+                <div className="flex items-start justify-between mb-4">
+                  <span className="text-5xl">{game.emoji}</span>
+                  <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${game.badgeColor}`}>{game.badge}</span>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">{game.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed mb-4 flex-1">{game.desc}</p>
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  {game.tags.map(tag => (
+                    <span key={tag} className="text-xs px-2 py-0.5 bg-gray-700 text-gray-400 rounded-md">{tag}</span>
+                  ))}
+                </div>
+                <Link href={game.href}
+                  className={`${game.btnColor} text-white text-center py-2.5 rounded-xl font-bold text-sm transition-colors`}>
+                  Play Now →
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
