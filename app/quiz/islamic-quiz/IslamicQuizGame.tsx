@@ -355,7 +355,7 @@ export default function IslamicQuizGame() {
       {/* Start screen */}
       {!started && (
         <div className="text-center py-10">
-          <p className="text-5xl mb-4">☪️</p>
+          <img src="/Islamic_Quiz_Logo.jpeg" alt="Islamic Quiz" className="w-20 h-20 object-contain mx-auto mb-4 rounded-xl" />
           <h2 className="text-xl font-bold text-gray-900 mb-2">{u.title}</h2>
           <p className="text-gray-500 text-sm mb-6 leading-relaxed">{u.sub}</p>
           <button onClick={startGame} className="bg-teal-600 text-white px-8 py-3 rounded-xl font-bold text-base"
@@ -368,7 +368,7 @@ export default function IslamicQuizGame() {
       {/* Game Over */}
       {gameOver && (
         <div className="bg-gradient-to-b from-teal-50 to-white border border-teal-100 rounded-2xl p-6 text-center">
-          <p className="text-4xl mb-2">☪️</p>
+          <img src="/Islamic_Quiz_Logo.jpeg" alt="Islamic Quiz" className="w-14 h-14 object-contain mx-auto mb-2 rounded-xl" />
           <p className="text-4xl font-black text-teal-600 my-2">{score}</p>
           <p className="text-lg font-bold text-gray-900 mb-1">{correct}/{qList.length} {u.correct}</p>
           <p className="text-gray-500 text-sm mb-5">{msg}</p>
