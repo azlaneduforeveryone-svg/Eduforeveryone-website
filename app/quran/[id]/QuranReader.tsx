@@ -334,12 +334,6 @@ export default function QuranReader({ surahId }: { surahId: number }) {
       {/* Ayahs */}
       <div className="space-y-4">
         {surah.ayahs.map((ayah) => {
-          // For Surah 1 (Al-Fatiha): show all ayahs normally since Bismillah IS ayah 1
-          // For all other Surahs (except 9): skip the first ayah if it's the Bismillah
-          // The API returns Bismillah as ayah 1 for most Surahs — we already show it in header
-          const isBismillahAyah = surah.number !== 1 && surah.number !== 9 && ayah.numberInSurah === 1;
-          if (isBismillahAyah) return null;
-
           return (
           <div key={ayah.numberInSurah} id={`ayah-${ayah.number}`}
             className={`bg-white border rounded-2xl p-5 transition-all ${audioPlaying === ayah.number ? "border-teal-300 bg-teal-50" : "border-gray-200"}`}>
