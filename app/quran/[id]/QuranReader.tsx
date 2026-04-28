@@ -152,7 +152,7 @@ export default function QuranReader({ surahId }: { surahId: number }) {
       {/* Surah Header */}
       <div className="bg-gradient-to-b from-teal-600 to-teal-700 text-white rounded-2xl p-8 text-center mb-6">
         <p className="text-teal-200 text-sm font-semibold mb-1">Surah {surah.number}</p>
-        <p className="text-5xl font-bold mb-2" style={{ fontFamily: "serif" }}>{surah.name}</p>
+        <p className="text-5xl font-bold mb-2" style={{ fontFamily: "var(--font-arabic), 'Amiri', serif" }}>{surah.name}</p>
         <p className="text-2xl font-semibold mb-1">{surah.englishName}</p>
         <p className="text-teal-200 mb-4">{surah.englishNameTranslation}</p>
         <div className="flex justify-center gap-6 text-sm">
@@ -161,7 +161,7 @@ export default function QuranReader({ surahId }: { surahId: number }) {
         </div>
         {/* Bismillah */}
         {surah.number !== 1 && surah.number !== 9 && (
-          <p className="text-3xl mt-6 font-bold" style={{ fontFamily: "serif" }}>
+          <p className="text-3xl mt-6 font-bold" style={{ fontFamily: "var(--font-arabic), 'Amiri', serif" }}>
             بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
           </p>
         )}
@@ -275,7 +275,7 @@ export default function QuranReader({ surahId }: { surahId: number }) {
 
             {/* Arabic text */}
             <p className="text-right leading-loose text-gray-900 mb-4"
-              style={{ fontFamily: "serif", fontSize: `${fontSize}px`, direction: "rtl" }}>
+              style={{ fontFamily: "var(--font-arabic), 'Amiri', serif", fontSize: `${fontSize}px`, direction: "rtl", lineHeight: "2.5" }}>
               {ayah.text}
             </p>
 
@@ -294,7 +294,7 @@ export default function QuranReader({ surahId }: { surahId: number }) {
                     <div key={edId}>
                       <p className="text-xs font-bold text-teal-600 mb-1">{edInfo?.englishName}</p>
                       <p className={`text-sm text-gray-700 leading-relaxed ${isRtl ? "text-right" : ""}`}
-                        style={isRtl ? { direction: "rtl", fontFamily: "serif" } : {}}>
+                        style={isRtl ? { direction: "rtl", fontFamily: "var(--font-arabic), 'Amiri', serif", lineHeight: "2.2" } : {}}>
                         {ayahTrans.text}
                       </p>
                     </div>
