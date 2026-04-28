@@ -33,6 +33,61 @@ interface SurahData {
 
 const AUDIO_CDN = "https://cdn.islamic.network/quran/audio/128/ar.alafasy";
 
+// Full language names with flags
+const LANG_NAMES: Record<string, { name: string; flag: string }> = {
+  ar:    { name: "Arabic",              flag: "🇸🇦" },
+  en:    { name: "English",             flag: "🇬🇧" },
+  ur:    { name: "Urdu",                flag: "🇵🇰" },
+  hi:    { name: "Hindi",               flag: "🇮🇳" },
+  bn:    { name: "Bengali",             flag: "🇧🇩" },
+  tr:    { name: "Turkish",             flag: "🇹🇷" },
+  fr:    { name: "French",              flag: "🇫🇷" },
+  de:    { name: "German",              flag: "🇩🇪" },
+  es:    { name: "Spanish",             flag: "🇪🇸" },
+  id:    { name: "Indonesian",          flag: "🇮🇩" },
+  ms:    { name: "Malay",               flag: "🇲🇾" },
+  ru:    { name: "Russian",             flag: "🇷🇺" },
+  nl:    { name: "Dutch",               flag: "🇳🇱" },
+  it:    { name: "Italian",             flag: "🇮🇹" },
+  fa:    { name: "Persian (Farsi)",     flag: "🇮🇷" },
+  ps:    { name: "Pashto",              flag: "🇦🇫" },
+  so:    { name: "Somali",              flag: "🇸🇴" },
+  sw:    { name: "Swahili",             flag: "🇰🇪" },
+  ha:    { name: "Hausa",               flag: "🇳🇬" },
+  sq:    { name: "Albanian",            flag: "🇦🇱" },
+  az:    { name: "Azerbaijani",         flag: "🇦🇿" },
+  bs:    { name: "Bosnian",             flag: "🇧🇦" },
+  bg:    { name: "Bulgarian",           flag: "🇧🇬" },
+  cs:    { name: "Czech",               flag: "🇨🇿" },
+  dv:    { name: "Divehi (Maldivian)",  flag: "🇲🇻" },
+  fi:    { name: "Finnish",             flag: "🇫🇮" },
+  gu:    { name: "Gujarati",            flag: "🇮🇳" },
+  he:    { name: "Hebrew",              flag: "🇮🇱" },
+  ja:    { name: "Japanese",            flag: "🇯🇵" },
+  ko:    { name: "Korean",              flag: "🇰🇷" },
+  ku:    { name: "Kurdish",             flag: "🏳️" },
+  ml:    { name: "Malayalam",           flag: "🇮🇳" },
+  mr:    { name: "Marathi",             flag: "🇮🇳" },
+  nb:    { name: "Norwegian",           flag: "🇳🇴" },
+  pl:    { name: "Polish",              flag: "🇵🇱" },
+  pt:    { name: "Portuguese",          flag: "🇵🇹" },
+  ro:    { name: "Romanian",            flag: "🇷🇴" },
+  sd:    { name: "Sindhi",              flag: "🇵🇰" },
+  si:    { name: "Sinhala",             flag: "🇱🇰" },
+  sl:    { name: "Slovenian",           flag: "🇸🇮" },
+  sr:    { name: "Serbian",             flag: "🇷🇸" },
+  ta:    { name: "Tamil",               flag: "🇮🇳" },
+  te:    { name: "Telugu",              flag: "🇮🇳" },
+  tg:    { name: "Tajik",               flag: "🇹🇯" },
+  th:    { name: "Thai",                flag: "🇹🇭" },
+  uz:    { name: "Uzbek",               flag: "🇺🇿" },
+  zh:    { name: "Chinese",             flag: "🇨🇳" },
+};
+
+function getLangDisplay(code: string): { name: string; flag: string } {
+  return LANG_NAMES[code] ?? { name: code.toUpperCase(), flag: "🌐" };
+}
+
 export default function QuranReader({ surahId }: { surahId: number }) {
   const [surah, setSurah] = useState<SurahData | null>(null);
   const [editions, setEditions] = useState<Edition[]>([]);
@@ -118,10 +173,14 @@ export default function QuranReader({ surahId }: { surahId: number }) {
     localStorage.setItem(`quran-bookmark-${surahId}`, ayahNum.toString());
   };
 
-  const filteredEditions = editions.filter(e =>
-    e.englishName.toLowerCase().includes(searchEd.toLowerCase()) ||
-    e.language.toLowerCase().includes(searchEd.toLowerCase())
-  );
+  const filteredEditions = editions.filter(e => {
+    const langFull = getLangDisplay(e.language).name.toLowerCase();
+    return (
+      e.englishName.toLowerCase().includes(searchEd.toLowerCase()) ||
+      e.language.toLowerCase().includes(searchEd.toLowerCase()) ||
+      langFull.includes(searchEd.toLowerCase())
+    );
+  });
 
   // Group editions by language
   const byLang: Record<string, Edition[]> = {};
@@ -214,12 +273,20 @@ export default function QuranReader({ surahId }: { surahId: number }) {
             <button onClick={() => setShowEditions(false)} className="text-gray-400 hover:text-gray-600 text-xl">×</button>
           </div>
           <input type="text" value={searchEd} onChange={e => setSearchEd(e.target.value)}
-            placeholder="Search by language or translator..."
+            placeholder="Search by language name or translator..."
             className="w-full border border-gray-200 rounded-xl px-4 py-2 text-sm mb-4 focus:outline-none focus:ring-2 focus:ring-teal-500" />
           <div className="max-h-80 overflow-y-auto space-y-4">
-            {Object.entries(byLang).sort(([a], [b]) => a.localeCompare(b)).map(([lang, eds]) => (
+            {Object.entries(byLang).sort(([a], [b]) => {
+              const nameA = getLangDisplay(a).name;
+              const nameB = getLangDisplay(b).name;
+              return nameA.localeCompare(nameB);
+            }).map(([lang, eds]) => {
+              const { name, flag } = getLangDisplay(lang);
+              return (
               <div key={lang}>
-                <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">{lang}</p>
+                <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                  <span>{flag}</span><span>{name}</span>
+                </p>
                 <div className="space-y-1.5">
                   {eds.map(e => (
                     <label key={e.identifier} className="flex items-center gap-3 cursor-pointer hover:bg-gray-50 rounded-lg p-2">
@@ -234,7 +301,8 @@ export default function QuranReader({ surahId }: { surahId: number }) {
                   ))}
                 </div>
               </div>
-            ))}
+            );
+            })}
           </div>
         </div>
       )}
