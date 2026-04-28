@@ -33,6 +33,17 @@ interface SurahData {
 
 const AUDIO_CDN = "https://cdn.islamic.network/quran/audio/128/ar.alafasy";
 
+// Strip Bismillah from start of Ayah 1 text
+// Bismillah is always exactly 4 words in Arabic starting with ب (Ba)
+function stripBismillah(text: string): string {
+  const words = text.trim().split(/\s+/);
+  // First word starts with ب (Ba = Bismi) — Bismillah is 4 words
+  if (words.length > 4 && /^[\u0628\u0628]/.test(words[0])) {
+    return words.slice(4).join(" ").trim();
+  }
+  return text;
+}
+
 // Full language names with flags
 const LANG_NAMES: Record<string, { name: string; flag: string }> = {
   ar:    { name: "Arabic",              flag: "🇸🇦" },
@@ -190,6 +201,20 @@ export default function QuranReader({ surahId }: { surahId: number }) {
     byLang[e.language].push(e);
   });
 
+  // Strip Bismillah from beginning of ayah 1 text
+  // Works with any Arabic Unicode variant (with/without tashkeel)
+  const stripBismillah = (text: string): string => {
+    // Match Bismillah in any form: starts with بسم and ends with رحيم
+    // The regex ignores diacritics and handles multiple Unicode variants
+    const cleaned = text.replace(/^[\u0600-\u06FF\u064B-\u065F\u0670\u0671\s]*ب[\u064B-\u065F]*س[\u064B-\u065F]*م[\u064B-\u065F\s]+[^\n]*?ر[\u064B-\u065F]*ح[\u064B-\u065F]*ي[\u064B-\u065F]*م[\u064B-\u065F]*\s*/, "");
+    // Fallback: if regex didn't work, try splitting at space after first ~50 chars
+    if (cleaned === text && text.length > 50) {
+      const afterBismillah = text.indexOf(' ', 45);
+      if (afterBismillah > 0) return text.slice(afterBismillah + 1);
+    }
+    return cleaned.trim();
+  };
+
   if (loading) return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="space-y-4">
@@ -225,9 +250,9 @@ export default function QuranReader({ surahId }: { surahId: number }) {
           <span className="bg-white/10 px-3 py-1 rounded-full">{surah.numberOfAyahs} Ayahs</span>
           <span className="bg-white/10 px-3 py-1 rounded-full">{surah.revelationType}</span>
         </div>
-        {/* Bismillah — only show for Surahs that have it, NOT Surah 1 (it starts with Bismillah as first ayah) and NOT Surah 9 */}
-        {surah.number !== 1 && surah.number !== 9 && (
-          <p className="text-3xl mt-6 font-bold border-t border-white/20 pt-5"
+        {/* Bismillah in header — shown for ALL Surahs except At-Tawbah (9) */}
+        {surah.number !== 9 && (
+          <p className="text-3xl mt-6 pt-5 border-t border-white/20 font-bold"
             style={{ fontFamily: "var(--font-arabic), 'Amiri', serif" }}>
             بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
           </p>
@@ -358,10 +383,12 @@ export default function QuranReader({ surahId }: { surahId: number }) {
               </div>
             </div>
 
-            {/* Arabic text */}
+            {/* Arabic text — strip Bismillah from Ayah 1 for all Surahs except Al-Fatiha and At-Tawbah */}
             <p className="text-right leading-loose text-gray-900 mb-4"
               style={{ fontFamily: "var(--font-arabic), 'Amiri', serif", fontSize: `${fontSize}px`, direction: "rtl", lineHeight: "2.5" }}>
-              {ayah.text}
+              {surah.number !== 1 && surah.number !== 9 && ayah.numberInSurah === 1
+                ? stripBismillah(ayah.text)
+                : ayah.text}
             </p>
 
             {/* Translations */}
