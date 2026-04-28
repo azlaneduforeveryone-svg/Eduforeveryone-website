@@ -166,6 +166,7 @@ export default function QuranReader({ surahId }: { surahId: number }) {
     setSelectedEditions(prev =>
       prev.includes(id) ? prev.filter(e => e !== id) : [...prev, id]
     );
+    // Keep panel open so user can select multiple — close only on X button
   };
 
   const saveBookmark = (ayahNum: number) => {
@@ -210,17 +211,24 @@ export default function QuranReader({ surahId }: { surahId: number }) {
 
       {/* Surah Header */}
       <div className="bg-gradient-to-b from-teal-600 to-teal-700 text-white rounded-2xl p-8 text-center mb-6">
-        <p className="text-teal-200 text-sm font-semibold mb-1">Surah {surah.number}</p>
-        <p className="text-5xl font-bold mb-2" style={{ fontFamily: "var(--font-arabic), 'Amiri', serif" }}>{surah.name}</p>
+        <div className="flex justify-center items-center gap-3 mb-3">
+          <span className="bg-white/20 text-white text-sm font-bold px-3 py-1 rounded-full flex-shrink-0">
+            {surah.number}
+          </span>
+          <p className="text-5xl font-bold" style={{ fontFamily: "var(--font-arabic), 'Amiri', serif" }}>
+            {surah.name}
+          </p>
+        </div>
         <p className="text-2xl font-semibold mb-1">{surah.englishName}</p>
         <p className="text-teal-200 mb-4">{surah.englishNameTranslation}</p>
         <div className="flex justify-center gap-6 text-sm">
           <span className="bg-white/10 px-3 py-1 rounded-full">{surah.numberOfAyahs} Ayahs</span>
           <span className="bg-white/10 px-3 py-1 rounded-full">{surah.revelationType}</span>
         </div>
-        {/* Bismillah */}
+        {/* Bismillah — only show for Surahs that have it, NOT Surah 1 (it starts with Bismillah as first ayah) and NOT Surah 9 */}
         {surah.number !== 1 && surah.number !== 9 && (
-          <p className="text-3xl mt-6 font-bold" style={{ fontFamily: "var(--font-arabic), 'Amiri', serif" }}>
+          <p className="text-3xl mt-6 font-bold border-t border-white/20 pt-5"
+            style={{ fontFamily: "var(--font-arabic), 'Amiri', serif" }}>
             بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
           </p>
         )}
@@ -304,6 +312,14 @@ export default function QuranReader({ surahId }: { surahId: number }) {
             );
             })}
           </div>
+          {/* Done button */}
+          <div className="pt-3 border-t border-gray-100 mt-2 flex justify-between items-center">
+            <p className="text-xs text-gray-400">{selectedEditions.length} translation(s) selected</p>
+            <button onClick={() => setShowEditions(false)}
+              className="px-5 py-2 bg-teal-600 text-white rounded-xl text-sm font-bold hover:bg-teal-700 transition-colors">
+              Done ✓
+            </button>
+          </div>
         </div>
       )}
 
@@ -317,7 +333,14 @@ export default function QuranReader({ surahId }: { surahId: number }) {
 
       {/* Ayahs */}
       <div className="space-y-4">
-        {surah.ayahs.map((ayah) => (
+        {surah.ayahs.map((ayah) => {
+          // For Surah 1 (Al-Fatiha): show all ayahs normally since Bismillah IS ayah 1
+          // For all other Surahs (except 9): skip the first ayah if it's the Bismillah
+          // The API returns Bismillah as ayah 1 for most Surahs — we already show it in header
+          const isBismillahAyah = surah.number !== 1 && surah.number !== 9 && ayah.numberInSurah === 1;
+          if (isBismillahAyah) return null;
+
+          return (
           <div key={ayah.numberInSurah} id={`ayah-${ayah.number}`}
             className={`bg-white border rounded-2xl p-5 transition-all ${audioPlaying === ayah.number ? "border-teal-300 bg-teal-50" : "border-gray-200"}`}>
 
@@ -371,7 +394,8 @@ export default function QuranReader({ surahId }: { surahId: number }) {
               </div>
             )}
           </div>
-        ))}
+        );
+        })}
       </div>
 
       {/* Bottom navigation */}
