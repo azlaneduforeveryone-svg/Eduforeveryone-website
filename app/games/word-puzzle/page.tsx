@@ -1,3 +1,4 @@
+import ShareScore from "@/components/ShareScore";
 import type { Metadata } from "next";
 import WordWiseGame from "./WordWiseGame";
 

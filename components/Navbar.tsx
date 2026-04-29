@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import SearchBar from "@/components/SearchBar";
 
 const navLinks = [
   { href: "/",                 label: "Home"             },
@@ -37,6 +38,11 @@ export default function Navbar() {
             <Image src="/Main_Logo.jpg" alt="EduForEveryone" width={36} height={36} className="rounded-lg" />
             <span className="font-bold text-gray-900 text-lg hidden sm:block">EduForEveryone</span>
           </Link>
+
+          {/* ── Search Bar (Desktop) ── */}
+          <div className="hidden md:flex flex-1 max-w-sm mx-4">
+            <SearchBar />
+          </div>
 
           {/* ── Desktop Nav ── */}
           <div className="hidden md:flex items-center gap-0.5">
@@ -92,6 +98,10 @@ export default function Navbar() {
         {/* ── Mobile Menu ── */}
         {menuOpen && (
           <div className="md:hidden py-3 border-t border-gray-100 space-y-0.5 pb-4">
+            {/* Mobile Search */}
+            <div className="px-4 pb-3">
+              <SearchBar />
+            </div>
             {navLinks.map(l => (
               <Link key={l.href} href={l.href} onClick={() => setMenuOpen(false)}
                 className={`block px-4 py-2.5 rounded-xl text-sm font-medium transition-all

@@ -1,3 +1,4 @@
+import ShareScore from "@/components/ShareScore";
 import type { Metadata } from "next";
 import IslamicQuizGame from "./IslamicQuizGame";
 

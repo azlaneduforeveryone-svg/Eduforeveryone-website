@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback, useRef } from "react";
+import ShareScore from "@/components/ShareScore";
 
 type Category = "all" | "math" | "science" | "english";
 type CellState = "correct" | "present" | "absent" | "revealed";
@@ -2090,6 +2091,18 @@ export default function WordWiseGame(){
               </div>
             )}
             <MeaningCard entry={entry} streak={streak}/>
+
+            {/* Share Score — only on win */}
+            {gameWon&&(
+              <ShareScore
+                score={score}
+                gameName="WordWise"
+                gameEmoji="🔤"
+                detail={`Guessed "${entry.w}" · Streak: ${streak} · ${DIFF_INFO[getDiff(streak)].label}`}
+                gameUrl="/games/word-puzzle"
+              />
+            )}
+
             <button onClick={()=>newGame(category,gameWon?streak:0)}
               className={`w-full py-3 rounded-xl font-bold text-base text-white ${gameWon?"bg-teal-600":"bg-gray-700"}`}
               style={{boxShadow:gameWon?"0 4px 0 #0F6E56":"0 4px 0 #333"}}>

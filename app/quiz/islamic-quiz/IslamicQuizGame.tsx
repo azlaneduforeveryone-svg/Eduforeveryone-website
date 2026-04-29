@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback, useRef } from "react";
+import ShareScore from "@/components/ShareScore";
 
 type Lang = "en" | "ur" | "hi";
 type Cat = "all" | "quran" | "hadith" | "fiqh" | "seerah" | "history" | "pillars" | "names";
@@ -355,7 +356,7 @@ export default function IslamicQuizGame() {
       {/* Start screen */}
       {!started && (
         <div className="text-center py-10">
-          <img src="/Islamic_Quiz_Logo.jpeg" alt="Islamic Quiz" className="w-20 h-20 object-contain mx-auto mb-4 rounded-xl" />
+          <p className="text-5xl mb-4">☪️</p>
           <h2 className="text-xl font-bold text-gray-900 mb-2">{u.title}</h2>
           <p className="text-gray-500 text-sm mb-6 leading-relaxed">{u.sub}</p>
           <button onClick={startGame} className="bg-teal-600 text-white px-8 py-3 rounded-xl font-bold text-base"
@@ -368,14 +369,24 @@ export default function IslamicQuizGame() {
       {/* Game Over */}
       {gameOver && (
         <div className="bg-gradient-to-b from-teal-50 to-white border border-teal-100 rounded-2xl p-6 text-center">
-          <img src="/Islamic_Quiz_Logo.jpeg" alt="Islamic Quiz" className="w-14 h-14 object-contain mx-auto mb-2 rounded-xl" />
+          <img src="/Islamic_Quiz_Logo.jpeg" alt="Islamic Quiz" className="w-16 h-16 object-contain mx-auto mb-2 rounded-xl" />
           <p className="text-4xl font-black text-teal-600 my-2">{score}</p>
           <p className="text-lg font-bold text-gray-900 mb-1">{correct}/{qList.length} {u.correct}</p>
           <p className="text-gray-500 text-sm mb-5">{msg}</p>
-          <button onClick={startGame} className="bg-teal-600 text-white px-8 py-3 rounded-xl font-bold"
+          <button onClick={startGame} className="bg-teal-600 text-white px-8 py-3 rounded-xl font-bold mb-5"
             style={{boxShadow:"0 4px 0 #0F6E56"}}>
             {u.again}
           </button>
+
+          {/* Share Score */}
+          <ShareScore
+            score={score}
+            gameName="Islamic Quiz"
+            gameEmoji="☪️"
+            detail={`${correct}/${qList.length} correct · ${diff.charAt(0).toUpperCase()+diff.slice(1)} level`}
+            gameUrl="/quiz/islamic-quiz"
+          />
+
           <div className="mt-5 space-y-1.5 text-left max-h-48 overflow-y-auto" dir={isRtl?"rtl":"ltr"}>
             {history.map((h, i) => (
               <div key={i} className={`flex justify-between text-xs rounded-lg px-3 py-2 ${h?"bg-teal-50 text-teal-700":"bg-red-50 text-red-700"}`}>

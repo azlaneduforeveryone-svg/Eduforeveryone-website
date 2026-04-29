@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback, useRef } from "react";
+import ShareScore from "@/components/ShareScore";
 
 type Level = "easy" | "medium" | "hard" | "expert";
 type QuestionType = "add" | "sub" | "mul" | "div" | "missing" | "equation" | "sequence" | "power" | "mcq";
@@ -219,9 +220,19 @@ export default function MathPuzzleGame() {
           <p className="text-gray-500 text-sm mb-5">
             {correct>=9?"🏆 Outstanding!":correct>=7?"🌟 Great job!":correct>=5?"👍 Good effort!":"📚 Keep practicing!"}
           </p>
-          <button onClick={() => startGame()} className="bg-teal-600 text-white px-8 py-3 rounded-xl font-bold" style={{boxShadow:"0 4px 0 #0F6E56"}}>
+          <button onClick={() => startGame()} className="bg-teal-600 text-white px-8 py-3 rounded-xl font-bold mb-5" style={{boxShadow:"0 4px 0 #0F6E56"}}>
             Play Again
           </button>
+
+          {/* Share Score */}
+          <ShareScore
+            score={score}
+            gameName="Math Puzzle"
+            gameEmoji="🧮"
+            detail={`${correct}/${TOTAL_Q} correct · Level: ${level}`}
+            gameUrl="/games/math-puzzle"
+          />
+
           <div className="mt-5 space-y-2 text-left">
             <p className="text-xs text-gray-400 font-semibold mb-2">Round Summary</p>
             {history.map((h, i) => (

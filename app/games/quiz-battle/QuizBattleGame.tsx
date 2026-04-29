@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback, useRef } from "react";
+import ShareScore from "@/components/ShareScore";
 
 type Category = "all" | "math" | "science" | "history" | "english";
 type Difficulty = "easy" | "medium" | "hard";
@@ -221,9 +222,19 @@ export default function QuizBattleGame() {
           <p className="text-4xl font-black my-2">{score}</p>
           <p className="text-lg font-bold mb-1">{correct}/{TOTAL} Correct</p>
           <p className="text-indigo-200 text-sm mb-5">{correct>=9?"Outstanding!":correct>=7?"Excellent!":correct>=5?"Good Job!":"Keep Studying!"}</p>
-          <button onClick={() => startGame()} className="bg-white text-indigo-700 px-8 py-3 rounded-xl font-bold" style={{boxShadow:"0 4px 0 rgba(0,0,0,0.2)"}}>
+          <button onClick={() => startGame()} className="bg-white text-indigo-700 px-8 py-3 rounded-xl font-bold mb-5" style={{boxShadow:"0 4px 0 rgba(0,0,0,0.2)"}}>
             Play Again
           </button>
+
+          {/* Share Score */}
+          <ShareScore
+            score={score}
+            gameName="Quiz Battle"
+            gameEmoji="🧠"
+            detail={`${correct}/${TOTAL} correct · ${lives} lives remaining`}
+            gameUrl="/games/quiz-battle"
+          />
+
           <div className="mt-5 space-y-1.5 text-left max-h-48 overflow-y-auto">
             <p className="text-xs text-indigo-300 font-semibold mb-2">Round Summary</p>
             {history.map((h, i) => (
