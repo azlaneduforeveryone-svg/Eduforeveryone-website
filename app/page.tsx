@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import MarqueeBanner from "@/components/MarqueeBanner";
 
 export const metadata: Metadata = {
   title: "EduForEveryone — Free Education, Courses, Tools & Games for Students",
@@ -77,27 +78,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Quick Play Banner ── */}
-      <section className="bg-gray-900 py-3 px-4">
-        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="flex items-center gap-3 flex-wrap justify-center sm:justify-start">
-            <span className="text-white text-sm font-bold">🎮 Play & Learn:</span>
-            {[
-              { href:"/games/math-puzzle", label:"🧮 Math Puzzle", color:"bg-teal-600 hover:bg-teal-500" },
-              { href:"/games/word-puzzle", label:"🔤 WordWise",    color:"bg-indigo-600 hover:bg-indigo-500" },
-              { href:"/games/quiz-battle", label:"🧠 Quiz Battle", color:"bg-amber-600 hover:bg-amber-500" },
-            ].map(g => (
-              <Link key={g.href} href={g.href}
-                className={`${g.color} text-white text-xs font-bold px-3 py-1.5 rounded-lg transition-colors`}>
-                {g.label}
-              </Link>
-            ))}
-          </div>
-          <Link href="/games" className="text-gray-400 text-xs hover:text-white transition-colors whitespace-nowrap">
-            View all games →
-          </Link>
-        </div>
-      </section>
+      {/* ── Marquee Banner ── */}
+      <MarqueeBanner />
 
       {/* ── Stats ── */}
       <section className="bg-white border-b border-gray-100 py-8 px-4">

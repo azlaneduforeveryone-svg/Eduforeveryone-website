@@ -88,7 +88,7 @@ function stripBismillah(text: string): string {
 export default function QuranReader({ surahId }: { surahId: number }) {
   const [surah,           setSurah]           = useState<SurahData | null>(null);
   const [editions,        setEditions]        = useState<Edition[]>([]);
-  const [selectedEd,      setSelectedEd]      = useState<string[]>(["en.sahih"]);
+  const [selectedEd,      setSelectedEd]      = useState<string[]>([]);
   const [translations,    setTranslations]    = useState<Record<string, Ayah[]>>({});
   const [loading,         setLoading]         = useState(true);
   const [loadingTrans,    setLoadingTrans]    = useState(false);
@@ -259,16 +259,57 @@ export default function QuranReader({ surahId }: { surahId: number }) {
             🔊 Play
           </button>
 
-          {/* Translations */}
-          <button onClick={() => setShowEditions(v => !v)}
-            className={`flex items-center gap-1.5 px-3 py-2 border ${border} rounded-xl text-sm font-semibold ${sub} hover:border-teal-400`}>
-            🌐 Translations {selectedEd.length > 0 && <span className="bg-teal-600 text-white text-xs px-1.5 py-0.5 rounded-full">{selectedEd.length}</span>}
-          </button>
-
           {/* Dark mode */}
           <button onClick={() => setDarkMode(v => !v)}
             className={`px-3 py-2 border ${border} rounded-xl text-sm font-semibold ${sub} hover:border-teal-400`}>
             {darkMode ? "☀️ Light" : "🌙 Dark"}
+          </button>
+        </div>
+
+        {/* ── Quick Language Buttons ── */}
+        <div className={`${cardBg} border ${border} rounded-2xl p-4 mb-5`}>
+          <p className={`text-xs font-bold ${sub} uppercase tracking-wider mb-3`}>🌐 Quick Translation</p>
+          <div className="flex flex-wrap gap-2">
+            {[
+              { id:"en.sahih",      label:"🇬🇧 English",  },
+              { id:"ur.jalandhry",  label:"🇵🇰 Urdu",     },
+              { id:"hi.hindi",      label:"🇮🇳 Hindi",    },
+              { id:"fa.ayati",      label:"🇮🇷 Farsi",    },
+            ].map(l => (
+              <button key={l.id} onClick={() => toggleEd(l.id)}
+                className={`px-4 py-2 rounded-xl text-sm font-semibold border transition-all
+                  ${selectedEd.includes(l.id)
+                    ? "bg-teal-600 text-white border-teal-700"
+                    : `${darkMode ? "bg-gray-800 border-gray-700 text-gray-300" : "bg-white border-gray-200 text-gray-600"} hover:border-teal-400`}`}>
+                {l.label}
+              </button>
+            ))}
+            <button onClick={() => setShowEditions(v => !v)}
+              className={`px-4 py-2 rounded-xl text-sm font-semibold border transition-all
+                ${showEditions
+                  ? "bg-gray-800 text-white border-gray-900"
+                  : `${darkMode ? "bg-gray-800 border-gray-700 text-gray-300" : "bg-white border-gray-200 text-gray-600"} hover:border-teal-400`}`}>
+              🌐 More {selectedEd.filter(e => !["en.sahih","ur.jalandhry","hi.hindi","fa.ayati"].includes(e)).length > 0 &&
+                <span className="ml-1 bg-teal-600 text-white text-xs px-1.5 py-0.5 rounded-full">
+                  +{selectedEd.filter(e => !["en.sahih","ur.jalandhry","hi.hindi","fa.ayati"].includes(e)).length}
+                </span>}
+            </button>
+            {selectedEd.length > 0 && (
+              <button onClick={() => setSelectedEd([])}
+                className={`px-4 py-2 rounded-xl text-sm font-semibold border transition-all
+                  ${darkMode ? "bg-red-900/30 border-red-800 text-red-400" : "bg-red-50 border-red-200 text-red-600"} hover:opacity-80`}>
+                ✕ Clear All
+              </button>
+            )}
+          </div>
+        </div>
+
+        {/* Hidden Translations button placeholder - keep for reference */}
+        <div className="hidden">
+          {/* Translations */}
+          <button onClick={() => setShowEditions(v => !v)}
+            className={`flex items-center gap-1.5 px-3 py-2 border ${border} rounded-xl text-sm font-semibold ${sub} hover:border-teal-400`}>
+            🌐 Translations {selectedEd.length > 0 && <span className="bg-teal-600 text-white text-xs px-1.5 py-0.5 rounded-full">{selectedEd.length}</span>}
           </button>
         </div>
 

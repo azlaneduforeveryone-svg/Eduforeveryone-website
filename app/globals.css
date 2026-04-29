@@ -35,3 +35,18 @@ body {
   text-align: right;
   line-height: 2.2;
 }
+/* Add this to the bottom of your globals.css */
+
+/* Marquee animation */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
