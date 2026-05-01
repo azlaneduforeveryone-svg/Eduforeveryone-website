@@ -1,41 +1,70 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+import type { MetadataRoute } from "next";
+import { MATH_TOPICS } from "@/lib/mathTopics";
 
-  <!-- Core Pages -->
-  <url><loc>https://eduforeveryone.com</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://eduforeveryone.com/courses</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://eduforeveryone.com/notes</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://eduforeveryone.com/quiz</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://eduforeveryone.com/tools</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://eduforeveryone.com/games</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://eduforeveryone.com/about</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://eduforeveryone.com/contact</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://eduforeveryone.com/privacy-policy</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+export default function sitemap(): MetadataRoute.Sitemap {
+  const base = "https://eduforeveryone.com";
+  const now  = new Date();
 
-  <!-- Courses -->
-  <url><loc>https://eduforeveryone.com/courses/math-algebra-basics</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://eduforeveryone.com/courses/science-biology-cells</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://eduforeveryone.com/courses/history-world-war-2</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  const mathTopicUrls = MATH_TOPICS.map(t => ({
+    url: `${base}/courses/mathematics/${t.id}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
 
-  <!-- Notes -->
-  <url><loc>https://eduforeveryone.com/notes/algebra-cheatsheet</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://eduforeveryone.com/notes/cell-biology-notes</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://eduforeveryone.com/notes/essay-writing-guide</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  return [
+    // ── Core Pages ──────────────────────────────────────────────────────────
+    { url: base,                                    lastModified: now, changeFrequency: "weekly",  priority: 1.0 },
+    { url: `${base}/courses`,                       lastModified: now, changeFrequency: "weekly",  priority: 0.9 },
+    { url: `${base}/courses/mathematics`,           lastModified: now, changeFrequency: "weekly",  priority: 0.95 },
+    { url: `${base}/notes`,                         lastModified: now, changeFrequency: "weekly",  priority: 0.9 },
+    { url: `${base}/quiz`,                          lastModified: now, changeFrequency: "weekly",  priority: 0.9 },
+    { url: `${base}/tools`,                         lastModified: now, changeFrequency: "weekly",  priority: 0.9 },
+    { url: `${base}/games`,                         lastModified: now, changeFrequency: "weekly",  priority: 0.9 },
+    { url: `${base}/islamic-studies`,               lastModified: now, changeFrequency: "weekly",  priority: 0.9 },
+    { url: `${base}/search`,                        lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/about`,                         lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/contact`,                       lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/privacy-policy`,                lastModified: now, changeFrequency: "monthly", priority: 0.4 },
 
-  <!-- Quizzes -->
-  <url><loc>https://eduforeveryone.com/quiz/algebra-quiz</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://eduforeveryone.com/quiz/cell-biology-quiz</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://eduforeveryone.com/quiz/wwii-quiz</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    // ── Math Topics (20) ────────────────────────────────────────────────────
+    ...mathTopicUrls,
 
-  <!-- Tools -->
-  <url><loc>https://eduforeveryone.com/tools/simple-calculator</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://eduforeveryone.com/tools/scientific-calculator</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://eduforeveryone.com/tools/cfa-calculator</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://eduforeveryone.com/tools/number-to-words</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    // ── Other Courses ────────────────────────────────────────────────────────
+    { url: `${base}/courses/science-biology-cells`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/courses/history-world-war-2`,   lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/courses/english-essay-writing`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/courses/physics-mechanics`,     lastModified: now, changeFrequency: "monthly", priority: 0.8 },
 
-  <!-- Games -->
-  <url><loc>https://eduforeveryone.com/games/math-puzzle</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://eduforeveryone.com/games/word-puzzle</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://eduforeveryone.com/games/quiz-battle</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+    // ── Notes ────────────────────────────────────────────────────────────────
+    { url: `${base}/notes/algebra-cheatsheet`,      lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/notes/cell-biology-notes`,      lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/notes/essay-writing-guide`,     lastModified: now, changeFrequency: "monthly", priority: 0.8 },
 
-</urlset>
+    // ── Quizzes ──────────────────────────────────────────────────────────────
+    { url: `${base}/quiz/algebra-quiz`,             lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/quiz/cell-biology-quiz`,        lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/quiz/wwii-quiz`,                lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/quiz/islamic-quiz`,             lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+
+    // ── Games ────────────────────────────────────────────────────────────────
+    { url: `${base}/games/math-puzzle`,             lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/games/word-puzzle`,             lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/games/quiz-battle`,             lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+
+    // ── Tools ────────────────────────────────────────────────────────────────
+    { url: `${base}/tools/simple-calculator`,       lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/tools/scientific-calculator`,   lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/tools/cfa-calculator`,          lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/tools/number-to-words`,         lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+
+    // ── Islamic Studies ───────────────────────────────────────────────────────
+    { url: `${base}/quran`,                         lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    ...Array.from({ length: 114 }, (_, i) => ({
+      url: `${base}/quran/${i + 1}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+  ];
+}
