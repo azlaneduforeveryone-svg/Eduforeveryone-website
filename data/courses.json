@@ -1,38 +1,5 @@
 [
   {
-    "id": "math-algebra-basics",
-    "title": "Algebra Basics",
-    "subject": "Mathematics",
-    "description": "Master the fundamentals of algebra, from variables and equations to functions and graphs.",
-    "thumbnail": "🧮",
-    "level": "Beginner",
-    "lessonCount": 3,
-    "featured": true,
-    "lessons": [
-      {
-        "id": "lesson-1",
-        "title": "Introduction to Variables",
-        "duration": "12 min",
-        "type": "video",
-        "youtubeId": "NybHckSEQBI"
-      },
-      {
-        "id": "lesson-2",
-        "title": "Solving Linear Equations",
-        "duration": "15 min",
-        "type": "video",
-        "youtubeId": "l3XzepN03KQ"
-      },
-      {
-        "id": "lesson-3",
-        "title": "Graphing Linear Functions",
-        "duration": "10 min",
-        "type": "text",
-        "content": "A linear function has the form y = mx + b, where m is the slope and b is the y-intercept. To graph it, plot the y-intercept, then use the slope to find additional points."
-      }
-    ]
-  },
-  {
     "id": "science-biology-cells",
     "title": "Cell Biology",
     "subject": "Science",
@@ -42,93 +9,9 @@
     "lessonCount": 3,
     "featured": true,
     "lessons": [
-      {
-        "id": "lesson-1",
-        "title": "Cell Structure Overview",
-        "duration": "14 min",
-        "type": "video",
-        "youtubeId": "URUJD5NEXC8"
-      },
-      {
-        "id": "lesson-2",
-        "title": "Organelles and Their Functions",
-        "duration": "18 min",
-        "type": "video",
-        "youtubeId": "Hmwvj9X4GNY"
-      },
-      {
-        "id": "lesson-3",
-        "title": "Cell Division: Mitosis",
-        "duration": "11 min",
-        "type": "video",
-        "youtubeId": "Q3mFi48a3_M"
-      }
-    ]
-  },
-  {
-    "id": "english-essay-writing",
-    "title": "Essay Writing",
-    "subject": "English",
-    "description": "Learn how to craft clear, compelling essays with strong arguments and evidence.",
-    "thumbnail": "✍️",
-    "level": "Beginner",
-    "lessonCount": 3,
-    "featured": false,
-    "lessons": [
-      {
-        "id": "lesson-1",
-        "title": "The Essay Structure",
-        "duration": "10 min",
-        "type": "text",
-        "content": "Every essay has three main parts: Introduction, Body, and Conclusion. The introduction presents your thesis, the body supports it with evidence, and the conclusion summarizes your argument."
-      },
-      {
-        "id": "lesson-2",
-        "title": "Writing a Strong Thesis",
-        "duration": "12 min",
-        "type": "video",
-        "youtubeId": "PEtIGHU0AFc"
-      },
-      {
-        "id": "lesson-3",
-        "title": "Paragraph Structure",
-        "duration": "8 min",
-        "type": "text",
-        "content": "Use the PEEL method: Point, Evidence, Explanation, Link. Each paragraph should make one clear point, support it with evidence, explain the evidence, and link back to your thesis."
-      }
-    ]
-  },
-  {
-    "id": "history-world-war-2",
-    "title": "World War II",
-    "subject": "History",
-    "description": "Understand the causes, key events, and lasting impact of the Second World War.",
-    "thumbnail": "🌍",
-    "level": "Intermediate",
-    "lessonCount": 3,
-    "featured": true,
-    "lessons": [
-      {
-        "id": "lesson-1",
-        "title": "Causes of WWII",
-        "duration": "16 min",
-        "type": "video",
-        "youtubeId": "fo2Rb9h788s"
-      },
-      {
-        "id": "lesson-2",
-        "title": "Key Battles and Turning Points",
-        "duration": "20 min",
-        "type": "video",
-        "youtubeId": "_uk_6vfqwTA"
-      },
-      {
-        "id": "lesson-3",
-        "title": "The Holocaust and Its Legacy",
-        "duration": "18 min",
-        "type": "video",
-        "youtubeId": "SX7cL0-i9Mg"
-      }
+      { "id": "lesson-1", "title": "Cell Structure Overview",        "duration": "14 min", "type": "video", "youtubeId": "URUJD5NEXC8" },
+      { "id": "lesson-2", "title": "Organelles and Their Functions",  "duration": "18 min", "type": "video", "youtubeId": "Hmwvj9X4GNY" },
+      { "id": "lesson-3", "title": "Cell Division: Mitosis",          "duration": "11 min", "type": "video", "youtubeId": "Q3mFi48a3_M" }
     ]
   },
   {
@@ -141,53 +24,39 @@
     "lessonCount": 3,
     "featured": false,
     "lessons": [
-      {
-        "id": "lesson-1",
-        "title": "Newton's Three Laws",
-        "duration": "13 min",
-        "type": "video",
-        "youtubeId": "kKKM8Y-u7ds"
-      },
-      {
-        "id": "lesson-2",
-        "title": "Kinematics: Motion in 1D",
-        "duration": "15 min",
-        "type": "video",
-        "youtubeId": "ZM8ECpBuQYE"
-      },
-      {
-        "id": "lesson-3",
-        "title": "Work, Energy, and Power",
-        "duration": "14 min",
-        "type": "text",
-        "content": "Work is done when a force moves an object. W = F × d × cos(θ). Energy is the capacity to do work. Power is the rate of doing work: P = W/t."
-      }
+      { "id": "lesson-1", "title": "Newton's Three Laws",    "duration": "13 min", "type": "video", "youtubeId": "kKKM8Y-u7ds" },
+      { "id": "lesson-2", "title": "Kinematics: Motion in 1D", "duration": "15 min", "type": "video", "youtubeId": "ZM8ECpBuQYE" },
+      { "id": "lesson-3", "title": "Work, Energy, and Power",  "duration": "14 min", "type": "text",  "content": "Work is done when a force moves an object. W = F × d × cos(θ). Energy is the capacity to do work. Power is the rate of doing work: P = W/t." }
     ]
   },
   {
-    "id": "math-geometry",
-    "title": "Geometry Fundamentals",
-    "subject": "Mathematics",
-    "description": "Shapes, angles, theorems, and proofs — geometry from the ground up.",
-    "thumbnail": "📐",
+    "id": "english-essay-writing",
+    "title": "Essay Writing",
+    "subject": "English",
+    "description": "Learn how to craft clear, compelling essays with strong arguments and evidence.",
+    "thumbnail": "✏️",
     "level": "Beginner",
-    "lessonCount": 2,
+    "lessonCount": 3,
     "featured": false,
     "lessons": [
-      {
-        "id": "lesson-1",
-        "title": "Angles and Triangles",
-        "duration": "12 min",
-        "type": "video",
-        "youtubeId": "WqivB0sYd2o"
-      },
-      {
-        "id": "lesson-2",
-        "title": "The Pythagorean Theorem",
-        "duration": "10 min",
-        "type": "video",
-        "youtubeId": "AA6RfgP-AHU"
-      }
+      { "id": "lesson-1", "title": "The Essay Structure",      "duration": "10 min", "type": "text",  "content": "Every essay has three main parts: Introduction, Body, and Conclusion. The introduction presents your thesis, the body supports it with evidence, and the conclusion summarizes your argument." },
+      { "id": "lesson-2", "title": "Writing a Strong Thesis",  "duration": "12 min", "type": "video", "youtubeId": "PEtIGHU0AFc" },
+      { "id": "lesson-3", "title": "Paragraph Structure",      "duration": "8 min",  "type": "text",  "content": "Use the PEEL method: Point, Evidence, Explanation, Link. Each paragraph should make one clear point, support it with evidence, explain the evidence, and link back to your thesis." }
+    ]
+  },
+  {
+    "id": "history-world-war-2",
+    "title": "World War II",
+    "subject": "History",
+    "description": "Understand the causes, key events, and lasting impact of the Second World War.",
+    "thumbnail": "🌍",
+    "level": "Intermediate",
+    "lessonCount": 3,
+    "featured": true,
+    "lessons": [
+      { "id": "lesson-1", "title": "Causes of WWII",                  "duration": "16 min", "type": "video", "youtubeId": "fo2Rb9h788s" },
+      { "id": "lesson-2", "title": "Key Battles and Turning Points",  "duration": "20 min", "type": "video", "youtubeId": "_uk_6vfqwTA" },
+      { "id": "lesson-3", "title": "The Holocaust and Its Legacy",    "duration": "18 min", "type": "video", "youtubeId": "SX7cL0-i9Mg" }
     ]
   }
 ]
