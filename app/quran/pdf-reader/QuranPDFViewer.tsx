@@ -325,14 +325,31 @@ export default function QuranPDFViewer() {
               </div>
             )}
 
-            {/* PDF embed */}
+            {/* PDF viewer */}
             <div className="bg-white rounded-2xl shadow-md overflow-hidden" style={{height:"80vh"}}>
-              <iframe
+              <object
                 key={`${pdf.id}-${currentPage}`}
-                src={pdfUrl}
-                className="w-full h-full border-0"
-                title={`${pdf.name} - Page ${currentPage}`}
-              />
+                data={`${pdf.file}#page=${currentPage}&toolbar=1&navpanes=1`}
+                type="application/pdf"
+                className="w-full h-full"
+              >
+                {/* Fallback for browsers that don't support PDF object */}
+                <div className="flex flex-col items-center justify-center h-full bg-gray-50 p-8 text-center">
+                  <p className="text-5xl mb-4">📄</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">PDF Viewer</h3>
+                  <p className="text-gray-500 text-sm mb-6 max-w-sm">
+                    Your browser doesn't support inline PDF viewing.
+                    Click below to open the PDF directly.
+                  </p>
+                  <a href={`${pdf.file}#page=${currentPage}`} target="_blank" rel="noopener noreferrer"
+                    className="bg-teal-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-teal-700 transition-colors">
+                    📖 Open PDF in New Tab
+                  </a>
+                  <a href={pdf.file} download className="mt-3 text-sm text-teal-600 hover:underline font-semibold">
+                    ⬇️ Download PDF
+                  </a>
+                </div>
+              </object>
             </div>
 
             {/* Page navigation bottom */}
