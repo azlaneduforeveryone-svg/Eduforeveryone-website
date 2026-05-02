@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 
 // ── Surah Names ───────────────────────────────────────────────────────────────
-const SURAHS = [
+const SURAHS: [number, string, string][] = [
   [1,"Al-Fatiha","الفاتحة"],[2,"Al-Baqarah","البقرة"],[3,"Al-Imran","آل عمران"],
   [4,"An-Nisa","النساء"],[5,"Al-Maidah","المائدة"],[6,"Al-Anam","الأنعام"],
   [7,"Al-Araf","الأعراف"],[8,"Al-Anfal","الأنفال"],[9,"At-Tawbah","التوبة"],
