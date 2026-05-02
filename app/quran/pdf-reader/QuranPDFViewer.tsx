@@ -200,8 +200,8 @@ export default function QuranPDFViewer() {
   };
 
   const filteredSurahs = SURAHS.filter(([num, name, nameAr]) =>
-    name.toLowerCase().includes(searchSurah.toLowerCase()) ||
-    nameAr.includes(searchSurah) ||
+    (name as string).toLowerCase().includes(searchSurah.toLowerCase()) ||
+    (nameAr as string).includes(searchSurah) ||
     num.toString().includes(searchSurah)
   );
 
