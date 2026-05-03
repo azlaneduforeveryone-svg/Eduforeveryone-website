@@ -81,7 +81,7 @@ const PDF_FILES = [
     id: "15line",
     name: "15 Line Standard Quran",
     nameAr: "المصحف الشريف (15 سطر)",
-    file: "/quran-pdfs/15line-standard.pdf",
+    file: "https://pub-8abd18b123d249afbfea45177c4d7d94.r2.dev/15line-standard.pdf",
     totalPages: 612,
     getPage: (surah: number) => SURAH_15LINE[surah] || 1,
     publisher: "Standard 15-Line Quran Script",
@@ -93,7 +93,7 @@ const PDF_FILES = [
     id: "13line-color",
     name: "13 Line Colour Coded Tajweed",
     nameAr: "المصحف المجود ملون (13 سطر)",
-    file: "/quran-pdfs/13line-color-tajweed.pdf",
+    file: "https://pub-8abd18b123d249afbfea45177c4d7d94.r2.dev/13line-color-tajweed.pdf",
     totalPages: 851,
     getPage: (surah: number) => SURAH_13LINE[surah] || 1,
     publisher: "Colour Coded Tajweed Rules Quran",
@@ -325,11 +325,11 @@ export default function QuranPDFViewer() {
               </div>
             )}
 
-            {/* PDF viewer using Google Docs Viewer — works on all browsers */}
+            {/* PDF viewer — loads from Cloudflare R2 */}
             <div className="bg-white rounded-2xl shadow-md overflow-hidden" style={{height:"80vh"}}>
               <iframe
                 key={`${pdf.id}-${currentPage}`}
-                src={`https://docs.google.com/viewer?url=https://eduforeveryone.com${pdf.file}&embedded=true`}
+                src={`${pdf.file}#page=${currentPage}`}
                 className="w-full h-full border-0"
                 title={`${pdf.name} - Page ${currentPage}`}
                 allowFullScreen
