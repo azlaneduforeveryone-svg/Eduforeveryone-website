@@ -1,0 +1,1 @@
+import TajweedListingPage from "./TajweedListingPage"; export default function Page() { return <TajweedListingPage />; }

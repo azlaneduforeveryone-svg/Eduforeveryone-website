@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
-import QuranPDFViewer from "./QuranPDFViewer";
+import dynamic from "next/dynamic";
 
-export const metadata: Metadata = {
-  title: "Quran PDF Reader — Tajweed Colour Coded | EduForEveryone",
-  description: "Read the Holy Quran in PDF format. 15-line standard script and 13-line colour coded Tajweed rules. Jump to any Surah instantly. Free online Quran reader.",
-  keywords: ["quran pdf","quran tajweed pdf","colour coded quran","15 line quran","13 line quran","tajweed rules","read quran online"],
-  alternates: { canonical: "https://eduforeveryone.com/quran/pdf-reader" },
-};
+const QuranPDFViewer = dynamic(
+  () => import("./QuranPDFViewer"),
+  { ssr: false, loading: () => (
+    <div className="flex items-center justify-center min-h-screen">
+      <div className="w-12 h-12 border-4 border-teal-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+    </div>
+  )}
+);
 
 export default function Page() {
-  return <QuranPDFViewer />;
+  return <QuranPDFViewer type="15line" />;
 }
