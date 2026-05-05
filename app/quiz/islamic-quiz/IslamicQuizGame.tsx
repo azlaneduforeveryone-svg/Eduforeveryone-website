@@ -608,9 +608,24 @@ export default function IslamicQuizGame() {
   const [history, setHistory] = useState<boolean[]>([]);
   const [gameOver, setGameOver] = useState(false);
   const [started, setStarted] = useState(false);
+  // Shuffled options: {opts, correctIdx} per language
+  const [shuffledOpts, setShuffledOpts] = useState<Record<Lang,{opts:string[];ans:number}>>({
+    en:{opts:[],ans:0}, ur:{opts:[],ans:0}, hi:{opts:[],ans:0}
+  });
+  const seenIdsRef = useRef<Set<number>>(new Set());  // tracks seen questions across games
   const timerRef = useRef<ReturnType<typeof setInterval>|null>(null);
   const totalTimeRef = useRef(0);
   const u = UI[lang];
+
+  // Helper: shuffle options for all 3 languages using same permutation
+  const buildShuffledOpts = (q: Question): Record<Lang,{opts:string[];ans:number}> => {
+    const perm = q.en.opts.map((_,i) => i).sort(() => Math.random() - 0.5);
+    return {
+      en: { opts: perm.map(i => q.en.opts[i]), ans: perm.indexOf(q.en.ans) },
+      ur: { opts: perm.map(i => q.ur.opts[i]), ans: perm.indexOf(q.ur.ans) },
+      hi: { opts: perm.map(i => q.hi.opts[i]), ans: perm.indexOf(q.hi.ans) },
+    };
+  };
 
   const clearTimer = () => { if (timerRef.current) clearInterval(timerRef.current); };
 
@@ -621,10 +636,12 @@ export default function IslamicQuizGame() {
     return pool;
   }, []);
 
-  const loadQ = useCallback((list: Question[], idx: number) => {
+  const loadQ = useCallback((list: Question[], idx: number, opts: Record<Lang,{opts:string[];ans:number}>[]) => {
     if (idx >= list.length) { setGameOver(true); clearTimer(); return; }
     const q = list[idx];
-    setCurQ(q); setAnswered(false); setSelected(null); setFeedback(null);
+    setCurQ(q);
+    setShuffledOpts(opts[idx]);
+    setAnswered(false); setSelected(null); setFeedback(null);
     const t = DIFF_TIME[diff];
     totalTimeRef.current = t; setTimeLeft(t);
     clearTimer();
@@ -634,22 +651,62 @@ export default function IslamicQuizGame() {
   useEffect(() => {
     if (timeLeft === 0 && curQ && !answered && started && !gameOver) {
       clearTimer(); setAnswered(true);
-      setFeedback({ text:`${u.timesUp} ${u.answer} ${curQ[lang].opts[curQ[lang].ans]}`, ok:false });
+      const correctOpt = shuffledOpts[lang].opts[shuffledOpts[lang].ans];
+      setFeedback({ text:`${u.timesUp} ${u.answer} ${correctOpt}`, ok:false });
       setStreak(0); setHistory(h => [...h, false]);
     }
-  }, [timeLeft, curQ, answered, started, gameOver, lang, u]);
+  }, [timeLeft, curQ, answered, started, gameOver, lang, u, shuffledOpts]);
 
   const startGame = useCallback(() => {
-    const pool = shuffle(getPool(selectedCats, diff)).slice(0, TOTAL);
-    setQList(pool); setQIdx(0); setScore(0); setCorrect(0); setStreak(0);
+    let pool = getPool(selectedCats, diff);
+
+    // Fisher-Yates shuffle for true randomness
+    const fisherYates = <T,>(arr: T[]): T[] => {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    };
+
+    // Filter out already-seen questions
+    let unseen = pool.filter(q => !seenIdsRef.current.has((q as any).id ?? QB.indexOf(q)));
+    // If all questions seen — reset the seen list and start fresh
+    if (unseen.length < TOTAL) {
+      seenIdsRef.current = new Set();
+      unseen = fisherYates(pool);
+    } else {
+      unseen = fisherYates(unseen);
+    }
+
+    const selected10 = unseen.slice(0, TOTAL);
+    // Mark these as seen
+    selected10.forEach(q => seenIdsRef.current.add((q as any).id ?? QB.indexOf(q)));
+
+    // Pre-build shuffled options for all 10 questions
+    const allOpts = selected10.map(q => buildShuffledOpts(q));
+
+    setQList(selected10); setQIdx(0); setScore(0); setCorrect(0); setStreak(0);
     setHistory([]); setGameOver(false); setStarted(true);
-    loadQ(pool, 0);
-  }, [selectedCats, diff, getPool, loadQ]);
+    setShuffledOpts(allOpts[0]);
+    setCurQ(selected10[0]);
+    setAnswered(false); setSelected(null); setFeedback(null);
+    const t = DIFF_TIME[diff];
+    totalTimeRef.current = t; setTimeLeft(t);
+    clearTimer();
+    timerRef.current = setInterval(() => setTimeLeft(v => Math.max(0, parseFloat((v-0.1).toFixed(1)))), 100);
+
+    // store opts in ref for use in next()
+    optsListRef.current = allOpts;
+  }, [selectedCats, diff, getPool, buildShuffledOpts]);
+
+  const optsListRef = useRef<Record<Lang,{opts:string[];ans:number}>[]>([]);
 
   const handleAnswer = useCallback((idx: number) => {
     if (answered || !curQ) return;
     setAnswered(true); setSelected(idx); clearTimer();
-    const isRight = idx === curQ[lang].ans;
+    const isRight = idx === shuffledOpts[lang].ans;
     if (isRight) {
       const tb = Math.round(timeLeft * 2);
       const earned = curQ.pts + tb;
@@ -658,15 +715,25 @@ export default function IslamicQuizGame() {
       setHistory(h => [...h, true]);
     } else {
       setStreak(0);
-      setFeedback({ text:`❌ ${u.answer} ${curQ[lang].opts[curQ[lang].ans]}`, ok:false });
+      const correctOpt = shuffledOpts[lang].opts[shuffledOpts[lang].ans];
+      setFeedback({ text:`❌ ${u.answer} ${correctOpt}`, ok:false });
       setHistory(h => [...h, false]);
     }
-  }, [answered, curQ, lang, timeLeft, streak, u]);
+  }, [answered, curQ, lang, timeLeft, streak, u, shuffledOpts]);
 
   const next = () => {
     const ni = qIdx + 1;
     setQIdx(ni);
-    loadQ(qList, ni);
+    if (ni >= qList.length) { setGameOver(true); clearTimer(); return; }
+    const nextQ = qList[ni];
+    const nextOpts = optsListRef.current[ni];
+    setCurQ(nextQ);
+    setShuffledOpts(nextOpts);
+    setAnswered(false); setSelected(null); setFeedback(null);
+    const t = DIFF_TIME[diff];
+    totalTimeRef.current = t; setTimeLeft(t);
+    clearTimer();
+    timerRef.current = setInterval(() => setTimeLeft(v => Math.max(0, parseFloat((v-0.1).toFixed(1)))), 100);
   };
 
   const toggleCat = (cat: Cat) => {
@@ -756,6 +823,11 @@ export default function IslamicQuizGame() {
           <p className="text-4xl font-black text-teal-600 my-2">{score}</p>
           <p className="text-lg font-bold text-gray-900 mb-1">{correct}/{qList.length} {u.correct}</p>
           <p className="text-gray-500 text-sm mb-5">{msg}</p>
+          <p className="text-xs text-gray-400 mb-4">
+            {lang==="en" ? `Questions seen: ${seenIdsRef.current.size} / ${QB.length} total` :
+             lang==="ur" ? `دیکھے گئے سوالات: ${seenIdsRef.current.size} / ${QB.length} کل` :
+             `देखे गए सवाल: ${seenIdsRef.current.size} / ${QB.length} कुल`}
+          </p>
           <button onClick={startGame} className="bg-teal-600 text-white px-8 py-3 rounded-xl font-bold mb-5"
             style={{boxShadow:"0 4px 0 #0F6E56"}}>
             {u.again}
@@ -827,10 +899,10 @@ export default function IslamicQuizGame() {
 
           {/* Options */}
           <div className="space-y-2.5">
-            {curQ[lang].opts.map((opt, i) => {
+            {shuffledOpts[lang].opts.map((opt, i) => {
               let cls = "bg-white border-gray-200 text-gray-900";
               if (answered) {
-                if (i === curQ[lang].ans) cls = "bg-teal-600 border-teal-700 text-white";
+                if (i === shuffledOpts[lang].ans) cls = "bg-teal-600 border-teal-700 text-white";
                 else if (i === selected) cls = "bg-red-500 border-red-600 text-white";
                 else cls = "bg-gray-50 border-gray-200 text-gray-400";
               }
