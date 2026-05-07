@@ -1,6 +1,3 @@
-// lib/firebase.ts
-// Replace the config values with your own from Firebase Console
-
 import { initializeApp, getApps } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
@@ -14,7 +11,8 @@ const firebaseConfig = {
   appId:             process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-const app  = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
+const app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
+
 export const auth = getAuth(app);
 export const db   = getFirestore(app);
 export default app;
