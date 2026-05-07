@@ -124,7 +124,7 @@ export default function HomePage() {
           </div>
           <div className="grid sm:grid-cols-3 gap-5">
             {[
-              { href:"/courses/math-algebra-basics", emoji:"🧮", level:"Beginner", subject:"Mathematics", title:"Algebra Basics", desc:"Master variables, equations and functions.", lessons:3 },
+              { href:"/courses/mathematics/algebra-basics", emoji:"🧮", level:"Beginner", subject:"Mathematics", title:"Algebra Basics", desc:"Master variables, equations and functions.", lessons:3 },
               { href:"/courses/science-biology-cells", emoji:"🔬", level:"Intermediate", subject:"Science", title:"Cell Biology", desc:"Explore cell structure, function and division.", lessons:3 },
               { href:"/courses/history-world-war-2", emoji:"🌍", level:"Intermediate", subject:"History", title:"World War II", desc:"Causes, key events and lasting impact.", lessons:3 },
             ].map(c => (
@@ -152,7 +152,7 @@ export default function HomePage() {
               <h2 className="text-2xl font-bold text-white">Free Educational Games</h2>
               <p className="text-gray-400 text-sm mt-1">Make studying addictive — play, score, and learn!</p>
             </div>
-            <Link href="/games" className="text-teal-400 text-sm font-semibold hover:text-teal-300 transition-colors whitespace-nowrap">
+            <Link href="/courses" className="text-teal-400 text-sm font-semibold hover:text-teal-300 transition-colors whitespace-nowrap">
               View all →
             </Link>
           </div>
@@ -309,7 +309,7 @@ export default function HomePage() {
         <div className="flex flex-wrap gap-3 justify-center">
           <Link href="/courses" className="bg-white text-teal-700 px-8 py-3 rounded-xl font-bold hover:bg-teal-50 transition-colors">Browse Courses</Link>
           <Link href="/tools" className="bg-teal-500 border border-white/20 text-white px-8 py-3 rounded-xl font-bold hover:bg-teal-400 transition-colors">Try Our Tools</Link>
-          <Link href="/games" className="bg-teal-500 border border-white/20 text-white px-8 py-3 rounded-xl font-bold hover:bg-teal-400 transition-colors">Play Games 🎮</Link>
+          <Link href="/courses" className="bg-teal-500 border border-white/20 text-white px-8 py-3 rounded-xl font-bold hover:bg-teal-400 transition-colors">Play Games 🎮</Link>
         </div>
       </section>
     </>

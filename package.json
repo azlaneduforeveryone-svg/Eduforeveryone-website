@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "check-links": "blc https://eduforeveryone.com -ro --exclude linkedin.com"
   },
   "dependencies": {
     "firebase": "^12.12.1",
@@ -20,6 +21,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "broken-link-checker": "^0.7.8",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
     "postcss": "^8",

@@ -1,6 +1,21 @@
+import type { Metadata } from "next";
 import { getAllCourses, getAllSubjects } from '@/lib/data';
 import CoursesFilter from './CoursesFilter';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: "All Courses — Free Education | EduForEveryone",
+  description: "Browse our complete library of free courses in Mathematics, Science, English, History and more. Learn at your own pace with expert content.",
+  keywords: ["free courses", "online learning", "mathematics", "science", "english", "history"],
+  alternates: { canonical: "https://eduforeveryone.com/courses" },
+  openGraph: {
+    title: "All Courses | EduForEveryone",
+    description: "Browse free courses in Mathematics, Science, English and History.",
+    url: "https://eduforeveryone.com/courses",
+    siteName: "EduForEveryone",
+    type: "website",
+  },
+};
 
 export default function CoursesPage() {
   const courses = getAllCourses();
@@ -13,7 +28,7 @@ export default function CoursesPage() {
         <p className="text-lg text-gray-500">Browse our complete library of free courses.</p>
       </div>
 
-      {/* ── Mathematics Hub Banner ── */}
+      {/* Mathematics Hub Banner */}
       <Link href="/courses/mathematics"
         className="group flex flex-col sm:flex-row items-start sm:items-center gap-5 bg-gradient-to-r from-teal-600 to-teal-700 text-white rounded-2xl p-6 mb-8 hover:from-teal-700 hover:to-teal-800 transition-all">
         <div className="text-5xl flex-shrink-0">🧮</div>
@@ -40,7 +55,7 @@ export default function CoursesPage() {
         </div>
       </Link>
 
-      {/* ── Other Courses ── */}
+      {/* Other Courses */}
       <div className="mb-6">
         <h2 className="text-xl font-bold text-gray-900 mb-1">Other Courses</h2>
         <p className="text-gray-500 text-sm">Science, English, History and more.</p>
