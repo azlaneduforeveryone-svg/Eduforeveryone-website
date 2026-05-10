@@ -1,12 +1,11 @@
 "use client";
-// components/AuthModal.tsx
 import { useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 
 type Mode = "signin" | "signup" | "reset";
 
 export default function AuthModal({ onClose }: { onClose: () => void }) {
-  const { signInGoogle, signInEmail, signUpEmail, resetPassword, error, clearError, loading } = useAuth();
+  const { signInGoogle, signInEmail, signUpEmail, resetPassword, error, clearError } = useAuth();
   const [mode,     setMode]     = useState<Mode>("signin");
   const [name,     setName]     = useState("");
   const [email,    setEmail]    = useState("");
@@ -34,19 +33,32 @@ export default function AuthModal({ onClose }: { onClose: () => void }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm overflow-y-auto" onClick={onClose}>
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm p-6 my-auto" onClick={e => e.stopPropagation()}>
+    // ── Overlay ── position:fixed so it covers the whole VIEWPORT regardless of scroll
+    <div
+      style={{ position:"fixed", inset:0, zIndex:9999,
+               display:"flex", alignItems:"center", justifyContent:"center",
+               padding:"1rem", backgroundColor:"rgba(0,0,0,0.5)",
+               backdropFilter:"blur(4px)" }}
+      onClick={onClose}
+    >
+      {/* Modal card */}
+      <div
+        style={{ background:"#fff", borderRadius:"1rem", boxShadow:"0 25px 50px rgba(0,0,0,0.25)",
+                 width:"100%", maxWidth:"24rem", padding:"1.5rem",
+                 position:"relative", maxHeight:"90vh", overflowY:"auto" }}
+        onClick={e => e.stopPropagation()}
+      >
         {/* Header */}
         <div className="flex justify-between items-start mb-5">
           <div>
             <h2 className="text-xl font-black text-gray-900">
-              {mode === "signin" ? "Welcome Back 👋" : mode === "signup" ? "Create Account 🌟" : "Reset Password 🔑"}
+              {mode==="signin" ? "Welcome Back 👋" : mode==="signup" ? "Create Account 🌟" : "Reset Password 🔑"}
             </h2>
             <p className="text-gray-500 text-sm mt-0.5">
-              {mode === "signin" ? "Sign in to track your progress" : mode === "signup" ? "Join EduForEveryone — free!" : "We'll send a reset link"}
+              {mode==="signin" ? "Sign in to track your progress" : mode==="signup" ? "Join EduForEveryone — free!" : "We'll send a reset link"}
             </p>
           </div>
-          <button onClick={onClose} className="text-gray-400 hover:text-gray-600 text-2xl leading-none">×</button>
+          <button onClick={onClose} className="text-gray-400 hover:text-gray-600 text-2xl leading-none ml-4">×</button>
         </div>
 
         {/* Google Button */}
@@ -62,7 +74,6 @@ export default function AuthModal({ onClose }: { onClose: () => void }) {
               </svg>
               Continue with Google
             </button>
-
             <div className="flex items-center gap-3 mb-4">
               <div className="flex-1 h-px bg-gray-200" />
               <span className="text-xs text-gray-400 font-medium">or</span>
@@ -90,58 +101,35 @@ export default function AuthModal({ onClose }: { onClose: () => void }) {
             <input type="email" placeholder="Email address" value={email} onChange={e => setEmail(e.target.value)}
               className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500" />
             {mode !== "reset" && (
-              <input type="password" placeholder="Password (min. 6 characters)" value={password} onChange={e => setPassword(e.target.value)}
-                className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500"
-                onKeyDown={e => e.key === "Enter" && handleSubmit()} />
+              <input type="password" placeholder="Password (min. 6 characters)" value={password}
+                onChange={e => setPassword(e.target.value)}
+                onKeyDown={e => e.key === "Enter" && handleSubmit()}
+                className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500" />
             )}
-
             {error && (
-              <div className="bg-red-50 border border-red-200 rounded-xl px-4 py-3 text-sm text-red-700">
-                {error}
-              </div>
+              <div className="bg-red-50 border border-red-200 rounded-xl px-4 py-3 text-sm text-red-700">{error}</div>
             )}
-
             <button onClick={handleSubmit} disabled={busy || !email}
               className="w-full bg-teal-600 text-white font-bold py-3 rounded-xl hover:bg-teal-700 disabled:opacity-50 transition-all"
-              style={{ boxShadow: "0 4px 0 #0F6E56" }}>
-              {busy ? "Please wait..." :
-               mode === "signin" ? "Sign In" :
-               mode === "signup" ? "Create Account" : "Send Reset Email"}
+              style={{ boxShadow:"0 4px 0 #0F6E56" }}>
+              {busy ? "Please wait..." : mode==="signin" ? "Sign In" : mode==="signup" ? "Create Account" : "Send Reset Email"}
             </button>
           </div>
         )}
 
-        {/* Footer links */}
+        {/* Footer */}
         <div className="mt-4 text-center text-sm text-gray-500 space-y-1">
           {mode === "signin" && (
             <>
-              <p>
-                <button onClick={() => switchMode("reset")} className="text-teal-600 hover:underline font-medium">
-                  Forgot password?
-                </button>
-              </p>
-              <p>
-                Don't have an account?{" "}
-                <button onClick={() => switchMode("signup")} className="text-teal-600 hover:underline font-semibold">
-                  Sign Up
-                </button>
-              </p>
+              <p><button onClick={() => switchMode("reset")} className="text-teal-600 hover:underline font-medium">Forgot password?</button></p>
+              <p>Don't have an account?{" "}<button onClick={() => switchMode("signup")} className="text-teal-600 hover:underline font-semibold">Sign Up</button></p>
             </>
           )}
           {mode === "signup" && (
-            <p>
-              Already have an account?{" "}
-              <button onClick={() => switchMode("signin")} className="text-teal-600 hover:underline font-semibold">
-                Sign In
-              </button>
-            </p>
+            <p>Already have an account?{" "}<button onClick={() => switchMode("signin")} className="text-teal-600 hover:underline font-semibold">Sign In</button></p>
           )}
           {mode === "reset" && (
-            <p>
-              <button onClick={() => switchMode("signin")} className="text-teal-600 hover:underline font-medium">
-                ← Back to Sign In
-              </button>
-            </p>
+            <p><button onClick={() => switchMode("signin")} className="text-teal-600 hover:underline font-medium">← Back to Sign In</button></p>
           )}
         </div>
       </div>
