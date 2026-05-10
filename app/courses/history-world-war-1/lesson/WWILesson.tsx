@@ -53,19 +53,14 @@ export default function WWILesson() {
   const [tab,       setTab]       = useState<"lesson"|"practice"|"quiz">("lesson");
   const [answers,   setAnswers]   = useState<Record<number,number>>({});
   const [submitted, setSubmitted] = useState(false);
-  const [revealed,  setRevealed]  = useState<Record<number,boolean>>({});
   const [hints,     setHints]     = useState<Record<number,boolean>>({});
 
   const score = QUIZ.filter((_,i) => answers[i] === QUIZ[i].ans).length;
 
-  const handleSubmit = () => {
-    const r: Record<number,boolean> = {};
-    QUIZ.forEach((q,i) => { if (answers[i] !== q.ans) r[i] = true; });
-    setRevealed(r); setSubmitted(true);
-  };
+  const handleSubmit = () => { setSubmitted(true); };
 
   const reset = () => {
-    setAnswers({}); setRevealed({}); setSubmitted(false);
+    setAnswers({}); setHints({}); setSubmitted(false);
   };
 
   return (
@@ -74,7 +69,7 @@ export default function WWILesson() {
       <nav className="flex items-center gap-2 text-sm text-gray-400 mb-6">
         <Link href="/courses" className="hover:text-teal-600">Courses</Link>
         <span>/</span>
-        <Link href="/courses/history-world-war-2" className="hover:text-teal-600">History</Link>
+        <Link href="/courses/history-world-war-1" className="hover:text-teal-600">History</Link>
         <span>/</span>
         <span className="text-gray-700 font-medium">Causes of World War I</span>
       </nav>

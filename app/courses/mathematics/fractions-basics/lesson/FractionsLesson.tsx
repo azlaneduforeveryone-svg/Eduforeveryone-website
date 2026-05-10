@@ -244,7 +244,7 @@ export default function FractionsLesson() {
         <div className="space-y-5">
           {submitted ? (
             <>
-              <div className={`rounded-2xl p-6 text-center ${score>=4?"bg-teal-50 border border-teal-100":"score>=3?bg-amber-50 border border-amber-100":"bg-red-50 border border-red-100"}`}>
+              <div className={`rounded-2xl p-6 text-center ${score>=4?"bg-teal-50 border border-teal-100":score>=3?"bg-amber-50 border border-amber-100":"bg-red-50 border border-red-100"}`}>
                 <p className="text-4xl mb-2">{score===5?"🏆":score>=3?"👍":"📚"}</p>
                 <p className="text-4xl font-black text-teal-600">{score}/5</p>
                 <p className="font-bold text-gray-900 mt-1">{score===5?"Perfect! You've mastered fractions!":score>=3?"Good effort! Review the missed questions.":"Keep practising — you'll get there!"}</p>
