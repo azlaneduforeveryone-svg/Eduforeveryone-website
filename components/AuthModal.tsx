@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import { useAuth } from "@/contexts/AuthContext";
 
 type Mode = "signin" | "signup" | "reset";
@@ -12,6 +13,9 @@ export default function AuthModal({ onClose }: { onClose: () => void }) {
   const [password, setPassword] = useState("");
   const [sent,     setSent]     = useState(false);
   const [busy,     setBusy]     = useState(false);
+  const [mounted,  setMounted]  = useState(false);
+
+  useEffect(() => { setMounted(true); }, []);
 
   const switchMode = (m: Mode) => { setMode(m); clearError(); setSent(false); };
 
@@ -32,12 +36,14 @@ export default function AuthModal({ onClose }: { onClose: () => void }) {
     if (!error && mode !== "reset") onClose();
   };
 
-  return (
-    // ── Overlay ── position:fixed so it covers the whole VIEWPORT regardless of scroll
+  if (!mounted) return null;
+
+  const modal = (
+    // ── Overlay ── rendered into document.body via portal so fixed positioning always works
     <div
-      style={{ position:"fixed", inset:0, zIndex:9999,
+      style={{ position:"fixed", inset:0, zIndex:99999,
                display:"flex", alignItems:"center", justifyContent:"center",
-               padding:"1rem", backgroundColor:"rgba(0,0,0,0.5)",
+               padding:"1rem", backgroundColor:"rgba(0,0,0,0.55)",
                backdropFilter:"blur(4px)" }}
       onClick={onClose}
     >
@@ -135,4 +141,6 @@ export default function AuthModal({ onClose }: { onClose: () => void }) {
       </div>
     </div>
   );
+
+  return createPortal(modal, document.body);
 }
