@@ -22,8 +22,8 @@ const TAJWEED_RULES: Record<string, { color: string; name: string; nameAr: strin
 
 // Inject global tajweed CSS
 const TAJWEED_CSS = Object.entries(TAJWEED_RULES)
-  .map(([cls, r]) => `tajweed.${cls} { color: ${r.color}; cursor: pointer; }`)
-  .join("\n");
+  .map(([cls, r]) => `tajweed.${cls} { color: ${r.color}; cursor: pointer; text-decoration: underline dotted; text-underline-offset: 4px; }`)
+  .join("\n") + "\ntajweed { display: inline; }";
 
 interface Ayah {
   id: number;
@@ -77,7 +77,8 @@ export default function TajweedQuranReader({ surahId }: { surahId: number }) {
     const target = e.target as HTMLElement;
     const tajweedEl = target.closest("tajweed") as HTMLElement | null;
     if (tajweedEl) {
-      const cls = tajweedEl.className;
+      e.stopPropagation(); // prevent bubble clearing the popup
+      const cls = tajweedEl.className.trim();
       if (TAJWEED_RULES[cls]) {
         setPopup({ rule: cls, x: e.clientX, y: e.clientY });
       }
@@ -136,9 +137,9 @@ export default function TajweedQuranReader({ surahId }: { surahId: number }) {
 
         {/* Header */}
         <div className="bg-gradient-to-b from-amber-500 to-orange-600 text-white rounded-2xl p-8 text-center mb-5">
-          <div className="flex justify-center items-center gap-3 mb-3">
+          <div className="flex justify-center items-center gap-3 mb-3 flex-wrap">
             <span className="bg-white/20 text-white text-sm font-bold px-3 py-1 rounded-full flex-shrink-0">{surahId}</span>
-            <p className="text-5xl font-bold leading-normal" style={{ fontFamily:"var(--font-arabic),'Amiri',serif" }}>{surah.name_arabic}</p>
+            <p className="text-4xl sm:text-5xl font-bold" style={{ fontFamily:"var(--font-arabic),'Amiri',serif", lineHeight:"2", overflow:"visible" }}>{surah.name_arabic}</p>
           </div>
           <p className="text-2xl font-semibold mb-1">{surah.name_simple}</p>
           <p className="text-orange-200 mb-3">{surah.translated_name?.name}</p>
@@ -251,24 +252,33 @@ export default function TajweedQuranReader({ surahId }: { surahId: number }) {
       </div>
 
       {/* ── Tajweed Rule Popup ── */}
-      {popup && TAJWEED_RULES[popup.rule] && (
-        <div
-          className="fixed z-50 bg-white border border-amber-200 rounded-2xl shadow-2xl p-4 w-72"
-          style={{ top: Math.min(popup.y + 10, window.innerHeight - 200), left: Math.min(popup.x - 100, window.innerWidth - 300) }}
-          onClick={e => e.stopPropagation()}>
-          <div className="flex items-start gap-3 mb-3">
-            <div className="w-8 h-8 rounded-full flex-shrink-0" style={{background:TAJWEED_RULES[popup.rule].color}} />
-            <div>
-              <p className="font-black text-gray-900 text-base">{TAJWEED_RULES[popup.rule].name}</p>
-              <p className="text-sm text-gray-500" style={{fontFamily:"'Amiri',serif"}}>{TAJWEED_RULES[popup.rule].nameAr}</p>
+      {popup && TAJWEED_RULES[popup.rule] && (() => {
+        const rule = TAJWEED_RULES[popup.rule];
+        const vw = typeof window !== "undefined" ? window.innerWidth : 400;
+        const vh = typeof window !== "undefined" ? window.innerHeight : 800;
+        const popW = 288; // w-72
+        const popH = 160;
+        const x = Math.max(8, Math.min(popup.x - popW / 2, vw - popW - 8));
+        const y = popup.y + 16 + popH > vh ? popup.y - popH - 10 : popup.y + 16;
+        return (
+          <div
+            className="fixed z-50 bg-white border border-amber-200 rounded-2xl shadow-2xl p-4 w-72"
+            style={{ top: y, left: x }}
+            onClick={e => e.stopPropagation()}>
+            <div className="flex items-start gap-3 mb-3">
+              <div className="w-8 h-8 rounded-full flex-shrink-0" style={{background: rule.color}} />
+              <div className="flex-1">
+                <p className="font-black text-gray-900 text-base">{rule.name}</p>
+                <p className="text-sm text-gray-500" style={{fontFamily:"'Amiri',serif", direction:"rtl"}}>{rule.nameAr}</p>
+              </div>
+              <button onClick={() => setPopup(null)} className="text-gray-400 hover:text-gray-600 text-xl leading-none flex-shrink-0">×</button>
             </div>
-            <button onClick={() => setPopup(null)} className="ml-auto text-gray-400 hover:text-gray-600 text-xl leading-none">×</button>
+            <p className="text-sm text-gray-700 leading-relaxed bg-amber-50 rounded-xl p-3">
+              {rule.desc}
+            </p>
           </div>
-          <p className="text-sm text-gray-700 leading-relaxed bg-amber-50 rounded-xl p-3">
-            {TAJWEED_RULES[popup.rule].desc}
-          </p>
-        </div>
-      )}
+        );
+      })()}
     </div>
   );
 }
