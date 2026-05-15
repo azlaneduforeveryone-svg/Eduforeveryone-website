@@ -507,6 +507,8 @@ export default function IELTSPage() {
               </div>
             ))}
           </div>
+        </section>
+
         {/* ── FREE TOOLS ───────────────────────────────────────────────── */}
         <section>
           <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-2">Free Study Companions</h2>
