@@ -2,12 +2,14 @@
 import { useState } from "react";
 import Link from "next/link";
 
+// ─── Static data types ───────────────────────────────────────────────────────
+
 interface Question {
   id: number;
   type: "mcq" | "tfng";
   q: string;
-  opts?: string[];
-  answer: string;
+  opts?: string[];  // "A. text" | "B. text" | "C. text" | "D. text"
+  answer: string;   // MCQ: "A"|"B"|"C"|"D"  TFNG: "TRUE"|"FALSE"|"NOT GIVEN"
   explanation: string;
 }
 
@@ -20,7 +22,74 @@ interface Passage {
   questions: Question[];
 }
 
+// ─── Runtime shuffled types ──────────────────────────────────────────────────
+
+interface ShuffledOpt {
+  label: string;   // "A" | "B" | "C" | "D"
+  text: string;    // option body text (no letter prefix)
+  isCorrect: boolean;
+}
+
+interface ShuffledQ {
+  id: number;
+  type: "mcq" | "tfng";
+  q: string;
+  shuffledOpts?: ShuffledOpt[];  // MCQ: letter-mapped after shuffle
+  tfngOrder?: string[];           // TFNG: shuffled button order
+  answer: string;                 // MCQ: recomputed letter; TFNG: unchanged string
+  explanation: string;
+}
+
+// ─── Fisher-Yates shuffle ────────────────────────────────────────────────────
+
+function fisherYates<T>(arr: readonly T[]): T[] {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+const LABELS = ["A", "B", "C", "D"] as const;
+
+function buildShuffled(passage: Passage): ShuffledQ[] {
+  // Shuffle question order, then shuffle option positions for MCQ
+  return fisherYates(passage.questions).map(q => {
+    if (q.type === "mcq" && q.opts) {
+      // Strip letter prefix and mark which is correct
+      const parsed = q.opts.map(o => ({ text: o.slice(3), isCorrect: o[0] === q.answer }));
+      const shuffled = fisherYates(parsed);
+      const shuffledOpts: ShuffledOpt[] = shuffled.map((item, i) => ({
+        label: LABELS[i],
+        text: item.text,
+        isCorrect: item.isCorrect,
+      }));
+      return {
+        id: q.id,
+        type: "mcq",
+        q: q.q,
+        shuffledOpts,
+        answer: shuffledOpts.find(o => o.isCorrect)!.label,
+        explanation: q.explanation,
+      };
+    }
+    // TFNG: shuffle button display order; answer value comparison stays string-based
+    return {
+      id: q.id,
+      type: "tfng",
+      q: q.q,
+      tfngOrder: fisherYates(["TRUE", "FALSE", "NOT GIVEN"]),
+      answer: q.answer,
+      explanation: q.explanation,
+    };
+  });
+}
+
+// ─── Passage data ─────────────────────────────────────────────────────────────
+
 const PASSAGES: Passage[] = [
+  // ── Existing Passage 1 ──────────────────────────────────────────────────────
   {
     id: "sleep-science",
     title: "The Science of Sleep",
@@ -34,55 +103,15 @@ Research conducted at the University of Berkeley demonstrated that sleep depriva
 
 Modern lifestyles present numerous threats to healthy sleep. Artificial light — particularly the blue light emitted by smartphones and tablets — suppresses melatonin production, the hormone responsible for signalling sleep onset. Additionally, the increasing demands of work and social commitments have led many people to view sleep as a luxury rather than a necessity. Sleep scientists argue that this cultural attitude must change if society is to address the growing epidemic of sleep-related health problems, including obesity, diabetes and cardiovascular disease.`,
     questions: [
-      {
-        id: 1,
-        type: "tfng",
-        q: "Humans have understood the importance of sleep for a very long time.",
-        answer: "FALSE",
-        explanation: "The passage states humans have 'only recently begun to understand why sleep is so essential', contradicting this statement.",
-      },
-      {
-        id: 2,
-        type: "tfng",
-        q: "Growth hormone is released during the deepest stage of non-REM sleep.",
-        answer: "TRUE",
-        explanation: "The passage explicitly states: 'Growth hormone is released, muscles are repaired' during slow-wave sleep (the deepest non-REM stage).",
-      },
-      {
-        id: 3,
-        type: "tfng",
-        q: "The Berkeley study participants were fully aware of how impaired they had become.",
-        answer: "FALSE",
-        explanation: "The passage says they 'reported feeling only slightly sleepy', indicating they underestimated their impairment.",
-      },
-      {
-        id: 4,
-        type: "mcq",
-        q: "According to the passage, which function does REM sleep primarily serve?",
-        opts: [
-          "A. Physical restoration and muscle repair",
-          "B. Immune system strengthening",
-          "C. Emotional processing and memory formation",
-          "D. Melatonin production",
-        ],
-        answer: "C",
-        explanation: "The passage states REM sleep 'is believed to be essential for emotional processing and memory formation'.",
-      },
-      {
-        id: 5,
-        type: "mcq",
-        q: "What does the writer suggest about society's view of sleep?",
-        opts: [
-          "A. It is appropriately valued as a health priority",
-          "B. It needs to change to combat health problems",
-          "C. It has improved thanks to scientific research",
-          "D. It only affects younger generations",
-        ],
-        answer: "B",
-        explanation: "The passage says 'this cultural attitude must change if society is to address the growing epidemic of sleep-related health problems'.",
-      },
+      { id: 1, type: "tfng", q: "Humans have understood the importance of sleep for a very long time.", answer: "FALSE", explanation: "The passage states humans have 'only recently begun to understand why sleep is so essential', contradicting this statement." },
+      { id: 2, type: "tfng", q: "Growth hormone is released during the deepest stage of non-REM sleep.", answer: "TRUE", explanation: "The passage explicitly states: 'Growth hormone is released, muscles are repaired' during slow-wave sleep (the deepest non-REM stage)." },
+      { id: 3, type: "tfng", q: "The Berkeley study participants were fully aware of how impaired they had become.", answer: "FALSE", explanation: "The passage says they 'reported feeling only slightly sleepy', indicating they underestimated their impairment." },
+      { id: 4, type: "mcq", q: "According to the passage, which function does REM sleep primarily serve?", opts: ["A. Physical restoration and muscle repair", "B. Immune system strengthening", "C. Emotional processing and memory formation", "D. Melatonin production"], answer: "C", explanation: "The passage states REM sleep 'is believed to be essential for emotional processing and memory formation'." },
+      { id: 5, type: "mcq", q: "What does the writer suggest about society's view of sleep?", opts: ["A. It is appropriately valued as a health priority", "B. It needs to change to combat health problems", "C. It has improved thanks to scientific research", "D. It only affects younger generations"], answer: "B", explanation: "The passage says 'this cultural attitude must change if society is to address the growing epidemic of sleep-related health problems'." },
     ],
   },
+
+  // ── Existing Passage 2 ──────────────────────────────────────────────────────
   {
     id: "urban-farming",
     title: "The Rise of Urban Farming",
@@ -96,82 +125,178 @@ Critics, however, question whether urban farming can ever be more than a supplem
 
 Technological innovations are beginning to address some of these constraints. Hydroponic and aeroponic systems allow crops to grow without soil, using up to 90% less water than traditional agriculture. LED lighting technology has made indoor farming viable in buildings with limited natural light. Some companies are now operating fully automated vertical farms in former warehouses, producing leafy greens and herbs at competitive costs. Whether these advances will allow urban farming to scale sufficiently to make a meaningful contribution to a city's food needs remains an open question.`,
     questions: [
-      {
-        id: 1,
-        type: "mcq",
-        q: "How does the writer describe the historical perception of urban farming?",
-        opts: [
-          "A. As an innovative modern concept",
-          "B. As something associated with wartime",
-          "C. As a leading agricultural method",
-          "D. As a threat to rural farming",
-        ],
-        answer: "B",
-        explanation: "The passage states urban farming was 'once viewed as a relic of wartime necessity'.",
-      },
-      {
-        id: 2,
-        type: "tfng",
-        q: "Community gardens have been proven to eliminate crime in urban areas.",
-        answer: "FALSE",
-        explanation: "The passage says gardens 'reduce crime rates', not eliminate them. 'Proven to eliminate' is too strong and inaccurate.",
-      },
-      {
-        id: 3,
-        type: "tfng",
-        q: "Hydroponic systems use considerably less water than conventional farming.",
-        answer: "TRUE",
-        explanation: "The passage states these systems use 'up to 90% less water than traditional agriculture'.",
-      },
-      {
-        id: 4,
-        type: "mcq",
-        q: "Which of the following is NOT mentioned as a challenge facing urban farming?",
-        opts: [
-          "A. High land costs in cities",
-          "B. Lower yields compared to rural farms",
-          "C. Lack of consumer interest",
-          "D. Insufficient sunlight in some locations",
-        ],
-        answer: "C",
-        explanation: "Lack of consumer interest is never mentioned. The passage raises land costs, lower yields and sunlight issues.",
-      },
-      {
-        id: 5,
-        type: "mcq",
-        q: "What is the writer's overall tone regarding the future of urban farming?",
-        opts: [
-          "A. Fully optimistic — urban farming will replace traditional agriculture",
-          "B. Entirely negative — the challenges are insurmountable",
-          "C. Cautiously uncertain — the potential is there but questions remain",
-          "D. Indifferent — the topic is of little practical importance",
-        ],
-        answer: "C",
-        explanation: "The final sentence 'remains an open question' reflects cautious uncertainty, balanced between promise and unresolved challenges.",
-      },
+      { id: 1, type: "mcq", q: "How does the writer describe the historical perception of urban farming?", opts: ["A. As an innovative modern concept", "B. As something associated with wartime", "C. As a leading agricultural method", "D. As a threat to rural farming"], answer: "B", explanation: "The passage states urban farming was 'once viewed as a relic of wartime necessity'." },
+      { id: 2, type: "tfng", q: "Community gardens have been proven to eliminate crime in urban areas.", answer: "FALSE", explanation: "The passage says gardens 'reduce crime rates', not eliminate them. 'Proven to eliminate' is too strong and inaccurate." },
+      { id: 3, type: "tfng", q: "Hydroponic systems use considerably less water than conventional farming.", answer: "TRUE", explanation: "The passage states these systems use 'up to 90% less water than traditional agriculture'." },
+      { id: 4, type: "mcq", q: "Which of the following is NOT mentioned as a challenge facing urban farming?", opts: ["A. High land costs in cities", "B. Lower yields compared to rural farms", "C. Lack of consumer interest", "D. Insufficient sunlight in some locations"], answer: "C", explanation: "Lack of consumer interest is never mentioned. The passage raises land costs, lower yields and sunlight issues." },
+      { id: 5, type: "mcq", q: "What is the writer's overall tone regarding the future of urban farming?", opts: ["A. Fully optimistic — urban farming will replace traditional agriculture", "B. Entirely negative — the challenges are insurmountable", "C. Cautiously uncertain — the potential is there but questions remain", "D. Indifferent — the topic is of little practical importance"], answer: "C", explanation: "The final sentence 'remains an open question' reflects cautious uncertainty, balanced between promise and unresolved challenges." },
+    ],
+  },
+
+  // ── New Passage 1: Bilingualism ──────────────────────────────────────────────
+  {
+    id: "bilingualism",
+    title: "The Neurological Architecture of Bilingualism",
+    tag: "Academic",
+    level: "Band 7–8",
+    text: `For much of the twentieth century, bilingualism was viewed with suspicion by educators and psychologists alike. Early studies suggested that children raised speaking two languages simultaneously were at a cognitive disadvantage, experiencing what researchers described as "language confusion" — an apparent inability to keep the two linguistic systems separate. This deficit model dominated academic thinking for decades until more rigorous experimental methods overturned it entirely.
+
+The revolution began in the 1960s with the work of Elizabeth Peal and Wallace Lambert at McGill University, whose study of French-English bilingual children in Montreal demonstrated that, far from being handicapped, bilingual individuals outperformed their monolingual counterparts on a range of intellectual tasks. Subsequent decades of research have confirmed and extended these findings, revealing that managing two language systems simultaneously exercises and strengthens the brain's executive control network — the set of neural processes responsible for attention, task-switching, conflict resolution, and inhibitory control.
+
+Neuroimaging studies have provided anatomical evidence for these cognitive advantages. Research published in the journal Cerebral Cortex has shown that lifelong bilinguals possess greater grey matter density in the left inferior parietal cortex, a region associated with language processing and executive function. Additionally, functional MRI studies indicate that when a bilingual person speaks in one language, both languages remain simultaneously active in the brain, with the non-target language constantly suppressed. This ongoing neurological management is believed to strengthen the prefrontal cortex — the area most closely linked to planning, attention, and self-regulation.
+
+Perhaps the most striking finding concerns the onset of neurodegenerative disease. Multiple large-scale clinical studies, including influential research from the Rotman Research Institute in Toronto, have found that Alzheimer's disease symptoms appear an average of four to five years later in bilingual patients compared with monolinguals, even after controlling for variables such as education level, immigration status, and cognitive activities. Researchers hypothesise that the constant exercise of managing two language systems builds what is termed "cognitive reserve" — a neural resilience that enables the brain to continue functioning normally despite the accumulating damage of disease.
+
+It should be noted, however, that the concept of a "bilingual advantage" remains contested. Some researchers argue that publication bias — the tendency of journals to favour positive findings — has inflated the apparent benefits of bilingualism. A 2014 meta-analysis found that the advantage in executive function tasks disappeared when larger, more representative samples were used. What is generally agreed upon is that the brain is profoundly shaped by experience, and managing the complexity of two language systems is one of the most cognitively demanding experiences the human brain can undergo.`,
+    questions: [
+      { id: 1, type: "tfng", q: "Early twentieth-century researchers believed that bilingualism benefited children's cognitive development.", answer: "FALSE", explanation: "The passage states early studies believed bilingual children were 'at a cognitive disadvantage', not at a benefit." },
+      { id: 2, type: "tfng", q: "The McGill University study involved children who spoke French and English.", answer: "TRUE", explanation: "The passage explicitly describes 'French-English bilingual children in Montreal' in the Peal and Lambert study." },
+      { id: 3, type: "tfng", q: "Neuroimaging has confirmed that the non-target language is completely deactivated when a bilingual person speaks.", answer: "FALSE", explanation: "The passage states both languages remain 'simultaneously active', with the non-target language 'constantly suppressed' — not deactivated." },
+      { id: 4, type: "mcq", q: "According to the passage, what does the term 'cognitive reserve' mean?", opts: ["A. The total number of languages a person speaks fluently", "B. A neural resilience built through cognitively demanding activity", "C. A region of the brain linked to executive language processing", "D. The capacity to switch rapidly between language tasks"], answer: "B", explanation: "The passage defines it as 'a neural resilience that enables the brain to continue functioning normally despite the accumulating damage of disease'." },
+      { id: 5, type: "mcq", q: "What conclusion did the 2014 meta-analysis reach about the bilingual advantage?", opts: ["A. It proved the advantage was even larger than previously thought", "B. It confirmed clear benefits across all cognitive tasks studied", "C. It suggested the advantage may be overstated due to sample limitations", "D. It concluded bilingualism has no measurable cognitive effect"], answer: "C", explanation: "The passage states 'the advantage in executive function tasks disappeared when larger, more representative samples were used', suggesting overstatement." },
+      { id: 6, type: "tfng", q: "All researchers in the field agree that bilingualism provides clear and measurable cognitive benefits.", answer: "FALSE", explanation: "The passage says the concept 'remains contested', with some researchers citing publication bias." },
+      { id: 7, type: "mcq", q: "Why do bilingual brains appear to develop greater resilience against neurodegeneration, according to the passage?", opts: ["A. Bilinguals tend to have significantly higher levels of formal education", "B. The constant management of two active language systems exercises key brain regions", "C. Bilinguals engage in more varied leisure and cognitive activities", "D. The left inferior parietal cortex grows larger in all multilingual speakers"], answer: "B", explanation: "The passage explains that 'the constant exercise of managing two language systems builds cognitive reserve' — a form of neural resilience." },
+    ],
+  },
+
+  // ── New Passage 2: Wood Wide Web ─────────────────────────────────────────────
+  {
+    id: "wood-wide-web",
+    title: "The Subterranean Wood Wide Web",
+    tag: "Academic",
+    level: "Band 7–8",
+    text: `Beneath the forest floor, invisible to the casual observer, lies a communications and nutrient-transfer network of extraordinary complexity. This underground system — informally termed the "Wood Wide Web" — consists of mycorrhizal fungi whose thread-like filaments, known as hyphae, extend through soil across vast distances, connecting the root systems of individual trees and plants in a living web of chemical exchange.
+
+The relationship between trees and mycorrhizal fungi is one of the most ancient symbioses on Earth, believed to have originated approximately 450 million years ago when the first land plants began colonising terrestrial environments. In this mutualistic arrangement, fungi penetrate or surround plant root cells, dramatically increasing the surface area through which the plant can absorb water and mineral nutrients — particularly phosphorus and nitrogen, which are critical for growth but poorly accessible through root absorption alone. In exchange, the fungi receive sugars produced through the plant's photosynthesis, energy they cannot generate independently due to their inability to photosynthesize.
+
+The Canadian ecologist Suzanne Simard's pioneering research in British Columbia during the 1990s demonstrated that this underground network facilitates not only nutrient absorption but active resource transfer between trees. Using radioactive carbon isotopes as tracers, Simard showed that carbon fixed by birch trees could be detected in the root systems of nearby Douglas firs within hours. Crucially, transfer appeared to be directional rather than random: mature "mother trees" — large, established individuals with extensive fungal networks — were found to channel disproportionately large quantities of nutrients toward younger, shaded seedlings of the same species, apparently sustaining seedlings that would otherwise perish in the low-light conditions of the forest understory.
+
+This finding prompted significant debate about whether trees could be said to "communicate" or show forms of preferential behaviour. Critics argue that the nutrient flows observed are simply the result of diffusion gradients and passive chemical processes — trees are not deliberate agents. Supporters of Simard's interpretation point out that the patterns of transfer are too consistent and directional to be fully explained by simple diffusion, and that the network shows dynamic responsiveness to environmental stress. When one tree is attacked by insects, for instance, chemical defence signals appear to travel through the mycorrhizal network and prime neighbouring trees' own defence systems.
+
+Beyond individual tree relationships, the mycorrhizal network has profound implications for forest resilience. Forests connected by rich fungal networks recover faster from disturbance — drought, disease, or selective logging — than fragmented forests where network integrity has been compromised. Forest management practices that ignore the underground dimension of forest ecology, such as clear-cutting or the heavy use of soil-disruptive machinery, may damage networks that took centuries to form. Conservation biologists increasingly argue that protecting the mycorrhizal web must become as central to forest management policy as protecting the trees themselves.`,
+    questions: [
+      { id: 1, type: "tfng", q: "The mycorrhizal network was first discovered by Suzanne Simard during her British Columbia research.", answer: "NOT GIVEN", explanation: "The passage describes Simard's research on resource transfer, but does not attribute the discovery of mycorrhizal fungi to her." },
+      { id: 2, type: "tfng", q: "Mycorrhizal fungi are able to produce their own energy through photosynthesis.", answer: "FALSE", explanation: "The passage explicitly states fungi have an 'inability to photosynthesize' and cannot generate energy independently." },
+      { id: 3, type: "mcq", q: "What did Simard's use of radioactive carbon isotopes demonstrate?", opts: ["A. That fungi produce sugars through a chemical process similar to photosynthesis", "B. That carbon from birch trees could be traced in the root systems of Douglas firs", "C. That young seedlings absorb more nutrients than mature trees", "D. That phosphorus is the primary nutrient transferred through the network"], answer: "B", explanation: "The passage states Simard 'showed that carbon fixed by birch trees could be detected in the root systems of nearby Douglas firs within hours'." },
+      { id: 4, type: "tfng", q: "All scientists agree that trees deliberately direct nutrients toward seedlings through the fungal network.", answer: "FALSE", explanation: "Critics argue the transfers are 'simply the result of diffusion gradients and passive chemical processes', not deliberate tree behaviour." },
+      { id: 5, type: "mcq", q: "What criticism do sceptics make of Simard's interpretation of the mycorrhizal network?", opts: ["A. That the network has no measurable effect on tree survival rates", "B. That radioactive tracers are an unreliable measurement method", "C. That the nutrient transfers result from passive chemical processes, not deliberate action", "D. That mother trees receive more nutrients than they contribute"], answer: "C", explanation: "Critics argue flows are 'the result of diffusion gradients and passive chemical processes', rejecting the idea of deliberate tree behaviour." },
+      { id: 6, type: "mcq", q: "What does the writer suggest about forest management practices?", opts: ["A. Clear-cutting is necessary to allow younger trees to access fungal networks", "B. Modern logging technology has successfully preserved mycorrhizal networks", "C. The underground network deserves the same conservation priority as the trees above it", "D. Mycorrhizal networks naturally regenerate within a few years after disturbance"], answer: "C", explanation: "The passage concludes that 'protecting the mycorrhizal web must become as central to forest management policy as protecting the trees themselves'." },
+      { id: 7, type: "tfng", q: "Forests with intact mycorrhizal networks recover more quickly from environmental stress than fragmented ones.", answer: "TRUE", explanation: "The passage states 'forests connected by rich fungal networks recover faster from disturbance… than fragmented forests where network integrity has been compromised'." },
+    ],
+  },
+
+  // ── New Passage 3: Chronometer ───────────────────────────────────────────────
+  {
+    id: "chronometer",
+    title: "The Chronometer Revolution and the Problem of Longitude",
+    tag: "Academic",
+    level: "Band 7–8",
+    text: `Of all the practical challenges that confronted maritime navigators in the Age of Exploration, none proved more persistently lethal than the problem of longitude. While determining latitude — a ship's north-south position — was achievable through straightforward astronomical observation of the sun's altitude or the angle of Polaris above the horizon, longitude required knowing the precise difference in time between the ship's current position and a fixed reference point. Since the Earth rotates 15 degrees per hour, a one-hour error in timekeeping translated to a positional error of over one hundred kilometres, enough to drive an entire fleet onto an uncharted reef.
+
+The catastrophic scale of longitude-related maritime disasters prompted the British Parliament to establish, in 1714, the Board of Longitude, which offered a prize of £20,000 — equivalent to several million pounds in contemporary terms — to whoever could determine longitude at sea with an accuracy of half a degree. The scientific establishment of the day anticipated that the solution would come from astronomy — specifically from the "lunar distance" method, which required calculating a ship's longitude from the angle between the moon and certain fixed stars. This method, while theoretically sound, demanded hours of calculation and exceptional mathematical skill, making it impractical for everyday navigation.
+
+The solution that ultimately prevailed came not from astronomy but from horology — the science of timekeeping. John Harrison, a self-taught carpenter and clockmaker from Lincolnshire, spent four decades designing a succession of marine timekeepers that could maintain accurate time aboard a ship despite the continuous motion, temperature fluctuations, and humidity of a sea voyage. His first three devices — the H1, H2, and H3 — were large, complex mechanisms that, though impressive, failed to meet the longitude prize's strict accuracy requirements. His fourth instrument, the H4, completed in 1759, was a revolutionary departure from his earlier designs: a compact, watch-like device that performed with stunning precision during its trial voyages to Jamaica.
+
+Despite the H4's demonstrable success in sea trials, Harrison's claim to the full longitude prize was obstructed by Nevil Maskelyne, the Astronomer Royal, who was personally invested in the competing lunar distance method. Maskelyne dismissed Harrison's instruments as a practical solution and arranged for the official trials to be conducted in circumstances that he controlled. Harrison was compelled to petition King George III directly before Parliament eventually awarded him the full prize in 1773, at the age of eighty.
+
+Harrison's chronometer did more than solve a navigational problem — it fundamentally transformed the nature of global commerce, warfare, and exploration. The ability to know one's precise longitudinal position enabled ship captains to chart accurate courses, reduce journey times, and navigate with a confidence that had been impossible for previous generations. The accurate maps produced from chronometer-assisted surveys redrew the world's coastlines and formed the geographic foundation upon which modern cartography is built.`,
+    questions: [
+      { id: 1, type: "tfng", q: "Latitude was more difficult to determine at sea than longitude during the Age of Exploration.", answer: "FALSE", explanation: "Latitude was 'achievable through straightforward astronomical observation', whereas longitude was the persistently difficult problem." },
+      { id: 2, type: "mcq", q: "Why did the British Parliament offer the longitude prize?", opts: ["A. To encourage the development of better astronomical telescopes", "B. Because longitude errors had caused catastrophic maritime disasters", "C. To compete with rival European powers in navigation technology", "D. Because Harrison had already demonstrated the potential of marine timekeepers"], answer: "B", explanation: "The passage states 'the catastrophic scale of longitude-related maritime disasters' directly prompted Parliament to establish the prize." },
+      { id: 3, type: "tfng", q: "The scientific establishment of 1714 expected the longitude solution to come from advances in clockmaking.", answer: "FALSE", explanation: "The passage states the establishment 'anticipated that the solution would come from astronomy', not horology." },
+      { id: 4, type: "mcq", q: "What was John Harrison's main background before designing marine timekeepers?", opts: ["A. A trained naval navigator with practical sea experience", "B. A professional astronomer employed at a royal observatory", "C. A self-taught carpenter and clockmaker from Lincolnshire", "D. A mathematician engaged by the Board of Longitude"], answer: "C", explanation: "The passage describes Harrison as 'a self-taught carpenter and clockmaker from Lincolnshire'." },
+      { id: 5, type: "tfng", q: "Harrison's H4 was similar in design to his three earlier marine timekeepers.", answer: "FALSE", explanation: "The passage describes the H4 as 'a revolutionary departure from his earlier designs' — a compact, watch-like device." },
+      { id: 6, type: "mcq", q: "According to the passage, what role did Nevil Maskelyne play in relation to Harrison's prize claim?", opts: ["A. He publicly endorsed the H4 after its successful trial voyage", "B. He arranged impartial and fair tests of Harrison's instruments", "C. He obstructed Harrison's claim while favouring the lunar distance method", "D. He was the official who recommended awarding Harrison the full prize"], answer: "C", explanation: "The passage states Maskelyne 'dismissed Harrison's instruments' and 'arranged for the official trials to be conducted in circumstances that he controlled'." },
+      { id: 7, type: "tfng", q: "The chronometer had no significant impact on global commerce or warfare beyond solving the longitude problem.", answer: "FALSE", explanation: "The passage says the chronometer 'fundamentally transformed the nature of global commerce, warfare, and exploration'." },
+    ],
+  },
+
+  // ── New Passage 4: Biophilic Urbanism ───────────────────────────────────────
+  {
+    id: "biophilic-urbanism",
+    title: "Biophilic Urbanism: Designing the Cities of Tomorrow",
+    tag: "Academic",
+    level: "Band 7–8",
+    text: `Cities have long been conceived in opposition to nature — the concrete and steel of the urban environment contrasted against the organic complexity of the natural world. This dichotomy is increasingly recognised, both by urban planners and public health researchers, as not merely an aesthetic failing but a contributor to measurable physical and psychological harm. The emerging discipline of biophilic urbanism — which seeks to reintegrate natural systems into the design and function of cities — represents one of the most ambitious responses to this recognition.
+
+The theoretical foundation of biophilic urbanism rests on the concept of biophilia, a term coined by the Harvard biologist Edward O. Wilson in his 1984 book of the same name. Wilson proposed that human beings possess an innate, genetically embedded affinity for other living systems — an evolutionary inheritance from the hundreds of thousands of years our ancestors spent embedded in natural environments. The implication for urban design is significant: if humans are neurologically predisposed to respond positively to natural forms, textures, and processes, then incorporating these elements into the built environment should produce measurable wellbeing benefits.
+
+The empirical evidence for these benefits is substantial. Research published in the British Journal of Psychiatry found that residents of urban areas with more green space reported significantly lower rates of anxiety and depression, even after controlling for income and socioeconomic status. Studies of hospital recovery rates have shown that patients with window views of trees or natural landscapes recover faster from surgery and require less pain medication than those facing brick walls or blank windows. In the workplace, access to daylight and vegetation has been linked to significant improvements in concentration, productivity, and absenteeism rates.
+
+Translating these findings into practice has led to a diverse range of architectural and urban planning interventions. Singapore is frequently cited as the world's leading example of biophilic urbanism in practice: the city-state has mandated that for every square metre of green space displaced by new construction, an equivalent area must be replaced at height — on rooftops, terraces, and building facades. The result is a city whose skyline is draped in cascading vegetation, earning it the designation of a "City in a Garden." In Europe, cities such as Oslo and Amsterdam are embedding biodiversity requirements into planning policy, requiring new developments to include native species planting, green roofs, and permeable surfaces that support urban water cycles.
+
+Critics of biophilic urbanism raise practical objections. Green infrastructure has significant ongoing maintenance costs — a living wall in a temperate climate may require regular irrigation, specialist horticultural expertise, and periodic replacement of dead vegetation. In cities where housing is already severely unaffordable, the additional cost of biophilic design may be passed on to residents in the form of higher rents or property prices, potentially excluding the very communities most in need of access to green space. These tensions suggest that while the principles of biophilic urbanism are sound, their equitable implementation requires careful policy design rather than purely market-led approaches.`,
+    questions: [
+      { id: 1, type: "mcq", q: "According to the passage, what does the concept of biophilia propose?", opts: ["A. That cities are fundamentally incompatible with natural environments", "B. That humans have a genetically inherited affinity for other living systems", "C. That urban areas can never replicate the conditions of the natural world", "D. That green spaces in cities reduce carbon emissions significantly"], answer: "B", explanation: "Wilson proposed 'that human beings possess an innate, genetically embedded affinity for other living systems'." },
+      { id: 2, type: "tfng", q: "Edward O. Wilson's book on biophilia was published in 1994.", answer: "FALSE", explanation: "The passage states the book was published 'in 1984', not 1994." },
+      { id: 3, type: "tfng", q: "Research has shown that hospital patients with views of nature require less pain medication after surgery.", answer: "TRUE", explanation: "The passage states patients with natural views 'recover faster from surgery and require less pain medication than those facing brick walls or blank windows'." },
+      { id: 4, type: "mcq", q: "How has Singapore implemented biophilic urbanism, according to the passage?", opts: ["A. By banning all new construction that permanently removes green space", "B. By requiring that displaced green space be replaced with equivalent area at height", "C. By mandating native species gardens in all residential properties", "D. By creating a national fund to subsidise green roofing for private developers"], answer: "B", explanation: "Singapore mandated that 'for every square metre of green space displaced by new construction, an equivalent area must be replaced at height'." },
+      { id: 5, type: "tfng", q: "The passage suggests that biophilic design is equally accessible and affordable for all urban communities.", answer: "FALSE", explanation: "Critics note the costs 'may be passed on to residents', potentially 'excluding the very communities most in need of access to green space'." },
+      { id: 6, type: "mcq", q: "What concern do critics of biophilic urbanism raise regarding its implementation?", opts: ["A. That green infrastructure causes structural instability in tall buildings", "B. That biodiversity requirements reduce the aesthetic value of city architecture", "C. That costs may be passed to residents, making housing even less affordable", "D. That living walls are completely ineffective in temperate climates"], answer: "C", explanation: "Critics argue additional costs 'may be passed on to residents in the form of higher rents or property prices', worsening affordability." },
+      { id: 7, type: "mcq", q: "What is the primary purpose of the final paragraph?", opts: ["A. To argue that biophilic urbanism should be abandoned in favour of conventional design", "B. To acknowledge practical limitations requiring policy solutions for equitable implementation", "C. To present evidence that green infrastructure maintenance costs are steadily declining", "D. To suggest that higher property prices ultimately benefit urban economies"], answer: "B", explanation: "The paragraph presents critics' practical concerns and concludes that 'equitable implementation requires careful policy design', balancing principles with reality." },
+    ],
+  },
+
+  // ── New Passage 5: Silk Road ─────────────────────────────────────────────────
+  {
+    id: "silk-road",
+    title: "The Micro-Economic Dynamics of the Silk Road",
+    tag: "Academic",
+    level: "Band 8",
+    text: `The Silk Road — a loose network of overland and maritime trade routes connecting China, Central Asia, Persia, the Arabian Peninsula, Africa, and Europe — is commonly imagined as a single highway of continuous commerce. In reality, the Silk Road was an assemblage of overlapping regional routes, each controlled by different political entities, and characterised by a series of relay stations and merchant cities where goods were exchanged, re-packaged, and passed onward rather than transported in their entirety from origin to destination.
+
+This relay structure had profound micro-economic consequences. Merchants rarely completed the entire transcontinental route; instead, goods passed through the hands of multiple intermediaries across different cultural and political zones. A bolt of Chinese silk might be acquired at a Han Dynasty market town, transported by Sogdian merchants across Central Asia to Persia, sold to Arab traders who moved it through the Persian Gulf, and finally distributed by Byzantine or Italian merchants into European luxury markets — each transaction adding a margin of profit and inflating the final price paid by the European consumer many times over. The Sogdians of Central Asia — an Iranian-speaking people centred in the cities of Samarkand and Bukhara — were perhaps the most commercially adept participants in this system, operating a sophisticated network of trading colonies that extended from China to the Byzantine Empire.
+
+Contrary to its romantic image as a route exclusively for silk, the Silk Road carried a far more diverse cargo. Precious metals, glassware, spices, medicines, gemstones, dyes, and paper all travelled the routes in significant quantities. Ideas and technologies moved alongside physical goods: papermaking technology, gunpowder, and the compass all made their westward journey through Silk Road networks, as did Buddhist, Islamic, and Nestorian Christian religious ideas moving in multiple directions simultaneously.
+
+The economics of the Silk Road were inseparable from its political infrastructure. Trade flourished most intensely during periods of political stability and territorial consolidation — the Pax Romana in the west, the Han Dynasty in the east, and above all during the Pax Mongolica of the thirteenth and fourteenth centuries, when the Mongol Empire's control of Eurasia from China to Eastern Europe created unprecedented security and standardisation of commercial practice across the routes. Conversely, the disruption of political order — the collapse of the Han Dynasty, the fragmentation of the Abbasid Caliphate, or the Ottoman Empire's eventual blockage of traditional eastern trade routes — consistently contracted Silk Road commerce and redirected merchant enterprise toward alternative channels.
+
+The long-term economic legacy of the Silk Road is visible in the commercial geography of the modern world. Cities that served as major entrepôts — Samarkand, Bukhara, Kashgar, Hormuz — retain today only shadows of their former commercial prominence. The Ottoman disruption of Silk Road routes played a significant role in motivating the Portuguese and Spanish maritime expeditions of the fifteenth century, as European powers sought direct sea routes to Asian markets. The wealth generated by this maritime redirecting of trade provided the capital that financed the colonisation of the Americas and underwrote the early modern transformation of European economies.`,
+    questions: [
+      { id: 1, type: "tfng", q: "The Silk Road was a single, continuous overland route connecting China directly to Europe.", answer: "FALSE", explanation: "The passage describes it as 'a loose network of overlapping regional routes', not a single continuous highway." },
+      { id: 2, type: "mcq", q: "According to the passage, who were the Sogdians?", opts: ["A. Chinese merchants who controlled the eastern section of the Silk Road", "B. Persian traders who operated primarily from the Arabian Peninsula", "C. An Iranian-speaking people with trading colonies from China to the Byzantine Empire", "D. A nomadic group that provided protection for merchant caravans across Central Asia"], answer: "C", explanation: "The passage describes the Sogdians as 'an Iranian-speaking people centred in Samarkand and Bukhara' operating colonies 'from China to the Byzantine Empire'." },
+      { id: 3, type: "tfng", q: "The Silk Road was used almost exclusively for transporting silk between China and Europe.", answer: "FALSE", explanation: "The passage explicitly states the Silk Road 'carried a far more diverse cargo' including metals, spices, medicines, and technologies." },
+      { id: 4, type: "mcq", q: "According to the passage, what was a key factor in the flourishing of Silk Road trade?", opts: ["A. The standardisation of currency across all trading regions", "B. The commercial dominance of a single ethnic merchant group", "C. Periods of political stability and territorial consolidation", "D. The development of faster and more efficient transportation technology"], answer: "C", explanation: "The passage states 'trade flourished most intensely during periods of political stability and territorial consolidation', citing the Pax Romana and Pax Mongolica." },
+      { id: 5, type: "mcq", q: "What role did the Pax Mongolica play in Silk Road commerce, according to the passage?", opts: ["A. It redirected commerce from overland to maritime trade routes", "B. It created security and standardisation of commercial practice across Eurasian routes", "C. It enabled Chinese merchants to travel directly to European markets for the first time", "D. It caused the decline of major entrepôt cities such as Samarkand"], answer: "B", explanation: "The passage states the Mongol Empire 'created unprecedented security and standardisation of commercial practice across the routes'." },
+      { id: 6, type: "tfng", q: "The Ottoman Empire's disruption of Silk Road trade motivated Portuguese and Spanish maritime expeditions.", answer: "TRUE", explanation: "The passage states 'the Ottoman disruption of Silk Road routes played a significant role in motivating the Portuguese and Spanish maritime expeditions of the fifteenth century'." },
+      { id: 7, type: "mcq", q: "What does the passage suggest about the long-term economic legacy of the Silk Road?", opts: ["A. Modern global trade routes continue to follow the same paths as the ancient Silk Road", "B. The wealth from redirected maritime trade contributed directly to European colonial expansion", "C. Former Silk Road entrepôt cities remain major commercial centres in the contemporary world", "D. The Silk Road's most significant contribution was the westward transfer of silk production techniques"], answer: "B", explanation: "The passage states the wealth from maritime redirected trade 'financed the colonisation of the Americas and underwrote the early modern transformation of European economies'." },
     ],
   },
 ];
 
+// ─── State types ─────────────────────────────────────────────────────────────
+
 type UserAnswers = Record<number, string>;
 type ResultState = { score: number; total: number } | null;
 
+// ─── Component ───────────────────────────────────────────────────────────────
+
 export default function ReadingPage() {
-  const [selected, setSelected] = useState<Passage | null>(null);
-  const [answers, setAnswers]   = useState<UserAnswers>({});
-  const [result, setResult]     = useState<ResultState>(null);
+  const [selected,    setSelected]    = useState<Passage | null>(null);
+  const [shuffledQs,  setShuffledQs]  = useState<ShuffledQ[]>([]);
+  const [answers,     setAnswers]     = useState<UserAnswers>({});
+  const [result,      setResult]      = useState<ResultState>(null);
 
   function startPassage(p: Passage) {
     setSelected(p);
+    setShuffledQs(buildShuffled(p));
+    setAnswers({});
+    setResult(null);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function retestPassage() {
+    if (!selected) return;
+    // Re-shuffle everything — questions reorder, MCQ option positions change
+    setShuffledQs(buildShuffled(selected));
     setAnswers({});
     setResult(null);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   function submit() {
-    if (!selected) return;
-    const total = selected.questions.length;
-    const score = selected.questions.reduce((acc, q) => {
+    const total = shuffledQs.length;
+    const score = shuffledQs.reduce((acc, q) => {
       const given = (answers[q.id] ?? "").toUpperCase().trim();
       return acc + (given === q.answer ? 1 : 0);
     }, 0);
@@ -179,122 +304,216 @@ export default function ReadingPage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  function reset() {
+  function backToList() {
     setSelected(null);
+    setShuffledQs([]);
     setAnswers({});
     setResult(null);
   }
 
-  if (selected) {
+  const answeredCount = Object.keys(answers).length;
+
+  // ── Active passage view ─────────────────────────────────────────────────────
+  if (selected && shuffledQs.length > 0) {
+    const passPct = result
+      ? Math.round((result.score / result.total) * 100)
+      : 0;
+    const passed = result && result.score >= Math.ceil(result.total * 0.6);
+
     return (
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
+
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-sm text-gray-400 mb-6">
           <Link href="/ielts" className="hover:text-indigo-600 transition-colors">IELTS</Link>
           <span>›</span>
-          <Link href="/ielts/reading" className="hover:text-indigo-600 transition-colors">Reading</Link>
+          <button onClick={backToList} className="hover:text-indigo-600 transition-colors">Reading</button>
           <span>›</span>
-          <span className="text-gray-600 font-medium">{selected.title}</span>
+          <span className="text-gray-700 font-medium truncate max-w-[200px]">{selected.title}</span>
         </div>
 
         {/* Result banner */}
         {result && (
-          <div className={`rounded-2xl p-6 mb-8 text-center ${result.score >= Math.ceil(result.total * 0.6) ? "bg-green-50 border border-green-200" : "bg-amber-50 border border-amber-200"}`}>
-            <p className="text-4xl font-black mb-1" style={{ color: result.score >= Math.ceil(result.total * 0.6) ? "#16a34a" : "#d97706" }}>
+          <div className={`rounded-2xl p-6 mb-8 text-center border ${passed ? "bg-green-50 border-green-200" : "bg-amber-50 border-amber-200"}`}>
+            <p className="text-5xl font-black mb-2" style={{ color: passed ? "#16a34a" : "#d97706" }}>
               {result.score} / {result.total}
             </p>
-            <p className="font-semibold text-gray-700">{result.score === result.total ? "Perfect score! Excellent work." : result.score >= Math.ceil(result.total * 0.6) ? "Good work — review the ones you missed." : "Keep practising — check the explanations below."}</p>
-            <button onClick={reset} className="mt-4 bg-indigo-600 text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-indigo-700 transition-colors">
-              Try Another Passage
-            </button>
+            <p className="text-lg font-semibold text-gray-700 mb-1">
+              {result.score === result.total
+                ? "Perfect score! Outstanding work."
+                : passed
+                ? "Good work — review the highlighted explanations below."
+                : "Keep practising — read the explanations carefully."}
+            </p>
+            <p className="text-gray-400 text-sm mb-5">{passPct}% correct</p>
+            <div className="flex flex-wrap gap-3 justify-center">
+              <button
+                onClick={retestPassage}
+                className="bg-indigo-600 text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-indigo-700 transition-colors"
+              >
+                🔀 Retest (New Question Order)
+              </button>
+              <button
+                onClick={backToList}
+                className="border border-gray-200 text-gray-600 px-6 py-2.5 rounded-xl font-bold text-sm hover:border-indigo-300 hover:text-indigo-600 transition-colors"
+              >
+                ← Choose Another Passage
+              </button>
+            </div>
           </div>
         )}
 
-        {/* Header */}
+        {/* Passage header */}
         <div className="mb-6">
           <div className="flex flex-wrap items-center gap-2 mb-2">
             <span className="text-xs bg-indigo-100 text-indigo-700 px-2.5 py-1 rounded-full font-medium">{selected.tag}</span>
             <span className="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">{selected.level}</span>
+            <span className="text-xs bg-gray-100 text-gray-500 px-2.5 py-1 rounded-full">{selected.questions.length} Questions</span>
           </div>
           <h1 className="text-2xl font-bold text-gray-900">{selected.title}</h1>
         </div>
 
-        {/* Passage */}
-        <div className="bg-white border border-gray-200 rounded-2xl p-6 mb-8">
-          <h2 className="font-bold text-gray-700 mb-4 text-sm uppercase tracking-wider">Reading Passage</h2>
+        {/* Passage text */}
+        <div className="bg-white border border-gray-200 rounded-2xl p-6 mb-8 shadow-sm">
+          <h2 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Reading Passage</h2>
           {selected.text.split("\n\n").map((para, i) => (
-            <p key={i} className="text-gray-700 leading-relaxed mb-4 last:mb-0">{para}</p>
+            <p key={i} className="text-gray-700 leading-[1.85] mb-4 last:mb-0 text-[0.95rem]">{para}</p>
           ))}
         </div>
+
+        {/* Progress bar while answering */}
+        {!result && (
+          <div className="bg-white border border-gray-200 rounded-xl px-5 py-3 mb-6 flex items-center gap-3">
+            <span className="text-sm text-gray-500 flex-shrink-0">{answeredCount} / {shuffledQs.length} answered</span>
+            <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-indigo-500 rounded-full transition-all duration-300"
+                style={{ width: `${(answeredCount / shuffledQs.length) * 100}%` }}
+              />
+            </div>
+          </div>
+        )}
 
         {/* Questions */}
-        <div className="space-y-6 mb-8">
+        <div className="space-y-5 mb-8">
           <h2 className="font-bold text-gray-900 text-lg">Questions</h2>
-          {selected.questions.map((q, i) => (
-            <div key={q.id} className={`bg-white border rounded-2xl p-5 ${result ? (answers[q.id]?.toUpperCase().trim() === q.answer ? "border-green-300 bg-green-50/40" : "border-red-300 bg-red-50/30") : "border-gray-200"}`}>
-              <p className="font-semibold text-gray-900 mb-3">
-                <span className="text-indigo-600 mr-2">{i + 1}.</span>
-                {q.type === "tfng" && <span className="text-xs bg-indigo-100 text-indigo-600 px-2 py-0.5 rounded-full mr-2 font-medium">True / False / Not Given</span>}
-                {q.q}
-              </p>
 
-              {q.type === "mcq" && q.opts && (
-                <div className="space-y-2">
-                  {q.opts.map(opt => {
-                    const letter = opt[0];
-                    const chosen = answers[q.id] === letter;
-                    const correct = result && letter === q.answer;
-                    const wrong = result && chosen && letter !== q.answer;
-                    return (
-                      <button key={opt} onClick={() => !result && setAnswers(a => ({ ...a, [q.id]: letter }))}
-                        className={`w-full text-left px-4 py-2.5 rounded-xl border text-sm transition-all ${
-                          correct ? "bg-green-100 border-green-400 text-green-800 font-semibold" :
-                          wrong   ? "bg-red-100 border-red-400 text-red-800" :
-                          chosen  ? "bg-indigo-100 border-indigo-400 text-indigo-800 font-semibold" :
-                          "border-gray-200 text-gray-700 hover:border-indigo-300"
-                        }`}>
-                        {opt}
-                      </button>
-                    );
-                  })}
-                </div>
-              )}
+          {shuffledQs.map((q, displayIdx) => {
+            const userAnswer = answers[q.id] ?? "";
+            const isCorrect  = result && userAnswer.toUpperCase().trim() === q.answer;
 
-              {q.type === "tfng" && (
-                <div className="flex flex-wrap gap-2">
-                  {["TRUE", "FALSE", "NOT GIVEN"].map(opt => {
-                    const chosen = answers[q.id] === opt;
-                    const correct = result && opt === q.answer;
-                    const wrong = result && chosen && opt !== q.answer;
-                    return (
-                      <button key={opt} onClick={() => !result && setAnswers(a => ({ ...a, [q.id]: opt }))}
-                        className={`px-4 py-2 rounded-xl border text-sm font-semibold transition-all ${
-                          correct ? "bg-green-100 border-green-400 text-green-800" :
-                          wrong   ? "bg-red-100 border-red-400 text-red-800" :
-                          chosen  ? "bg-indigo-100 border-indigo-400 text-indigo-800" :
-                          "border-gray-200 text-gray-600 hover:border-indigo-300"
-                        }`}>
-                        {opt}
-                      </button>
-                    );
-                  })}
-                </div>
-              )}
+            return (
+              <div
+                key={q.id}
+                className={`bg-white border rounded-2xl p-5 transition-colors ${
+                  !result
+                    ? "border-gray-200"
+                    : isCorrect
+                    ? "border-green-300 bg-green-50/30"
+                    : "border-red-300 bg-red-50/20"
+                }`}
+              >
+                {/* Question text */}
+                <p className="font-semibold text-gray-900 mb-3 leading-snug">
+                  <span className="text-indigo-500 font-bold mr-2">{displayIdx + 1}.</span>
+                  {q.type === "tfng" && (
+                    <span className="text-xs bg-indigo-100 text-indigo-600 px-2 py-0.5 rounded-full mr-2 font-semibold align-middle">
+                      True / False / Not Given
+                    </span>
+                  )}
+                  {q.q}
+                </p>
 
-              {result && (
-                <div className={`mt-3 text-xs p-3 rounded-xl ${answers[q.id]?.toUpperCase().trim() === q.answer ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}>
-                  <span className="font-bold">{answers[q.id]?.toUpperCase().trim() === q.answer ? "✓ Correct" : `✗ Correct answer: ${q.answer}`}</span> — {q.explanation}
-                </div>
-              )}
-            </div>
-          ))}
+                {/* MCQ options */}
+                {q.type === "mcq" && q.shuffledOpts && (
+                  <div className="space-y-2">
+                    {q.shuffledOpts.map(opt => {
+                      const chosen   = userAnswer === opt.label;
+                      const showGood = result && opt.isCorrect;
+                      const showBad  = result && chosen && !opt.isCorrect;
+                      return (
+                        <button
+                          key={opt.label}
+                          onClick={() => !result && setAnswers(a => ({ ...a, [q.id]: opt.label }))}
+                          className={`w-full text-left px-4 py-2.5 rounded-xl border text-sm transition-all ${
+                            showGood
+                              ? "bg-green-100 border-green-400 text-green-800 font-semibold"
+                              : showBad
+                              ? "bg-red-100 border-red-400 text-red-800"
+                              : chosen
+                              ? "bg-indigo-100 border-indigo-400 text-indigo-800 font-semibold"
+                              : "border-gray-200 text-gray-700 hover:border-indigo-300 hover:bg-indigo-50/50"
+                          } ${result ? "cursor-default" : "cursor-pointer"}`}
+                        >
+                          <span className="font-bold mr-2">{opt.label}.</span>
+                          {opt.text}
+                          {showGood && <span className="ml-2 text-green-600">✓</span>}
+                          {showBad  && <span className="ml-2 text-red-500">✗</span>}
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
+
+                {/* TFNG options (shuffled button order) */}
+                {q.type === "tfng" && (
+                  <div className="flex flex-wrap gap-2">
+                    {(q.tfngOrder ?? ["TRUE", "FALSE", "NOT GIVEN"]).map(opt => {
+                      const chosen   = userAnswer === opt;
+                      const showGood = result && opt === q.answer;
+                      const showBad  = result && chosen && opt !== q.answer;
+                      return (
+                        <button
+                          key={opt}
+                          onClick={() => !result && setAnswers(a => ({ ...a, [q.id]: opt }))}
+                          className={`px-5 py-2 rounded-xl border text-sm font-semibold transition-all ${
+                            showGood
+                              ? "bg-green-100 border-green-400 text-green-800"
+                              : showBad
+                              ? "bg-red-100 border-red-400 text-red-800"
+                              : chosen
+                              ? "bg-indigo-100 border-indigo-400 text-indigo-800"
+                              : "border-gray-200 text-gray-600 hover:border-indigo-300 hover:bg-indigo-50/50"
+                          } ${result ? "cursor-default" : "cursor-pointer"}`}
+                        >
+                          {opt}
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
+
+                {/* Explanation after submit */}
+                {result && (
+                  <div className={`mt-3 p-3 rounded-xl text-xs leading-relaxed ${isCorrect ? "bg-green-100 text-green-800" : "bg-red-50 text-red-800 border border-red-200"}`}>
+                    {isCorrect ? (
+                      <span className="font-bold">✓ Correct</span>
+                    ) : (
+                      <span className="font-bold">
+                        ✗ Correct answer:{" "}
+                        {q.type === "mcq" && q.shuffledOpts
+                          ? `${q.answer}. ${q.shuffledOpts.find(o => o.isCorrect)?.text}`
+                          : q.answer}
+                      </span>
+                    )}
+                    {" — "}
+                    {q.explanation}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
 
+        {/* Submit button */}
         {!result && (
-          <button onClick={submit} disabled={Object.keys(answers).length < selected.questions.length}
-            className="w-full bg-indigo-600 text-white py-3.5 rounded-xl font-bold text-sm hover:bg-indigo-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
-            {Object.keys(answers).length < selected.questions.length
-              ? `Answer all questions (${Object.keys(answers).length}/${selected.questions.length} done)`
+          <button
+            onClick={submit}
+            disabled={answeredCount < shuffledQs.length}
+            className="w-full bg-indigo-600 text-white py-4 rounded-xl font-bold text-sm hover:bg-indigo-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {answeredCount < shuffledQs.length
+              ? `Answer all questions to submit (${answeredCount}/${shuffledQs.length} done)`
               : "Submit Answers →"}
           </button>
         )}
@@ -302,25 +521,28 @@ export default function ReadingPage() {
     );
   }
 
+  // ── Passage listing view ────────────────────────────────────────────────────
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10">
+
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-sm text-gray-400 mb-6">
         <Link href="/ielts" className="hover:text-indigo-600 transition-colors">IELTS</Link>
         <span>›</span>
-        <span className="text-gray-600 font-medium">Reading</span>
+        <span className="text-gray-700 font-medium">Reading</span>
       </div>
 
+      {/* Header */}
       <div className="mb-10">
         <div className="flex items-center gap-3 mb-3">
           <span className="text-4xl">📖</span>
           <div>
             <h1 className="text-3xl font-bold text-gray-900">IELTS Reading Practice</h1>
-            <p className="text-gray-500 mt-1">Academic passages with instant scoring and answer explanations</p>
+            <p className="text-gray-500 mt-1">Academic passages with instant scoring, explanations, and dynamic question shuffling on retest</p>
           </div>
         </div>
         <div className="flex flex-wrap gap-2 mt-4">
-          {["Multiple Choice","True / False / Not Given","Gap Fill (coming soon)","Matching (coming soon)"].map(t => (
+          {["Multiple Choice", "True / False / Not Given", "🔀 Dynamic Shuffle on Retest"].map(t => (
             <span key={t} className="text-xs bg-indigo-50 text-indigo-600 px-3 py-1 rounded-full font-medium">{t}</span>
           ))}
         </div>
@@ -328,28 +550,41 @@ export default function ReadingPage() {
 
       {/* Tips */}
       <div className="bg-indigo-50 border border-indigo-100 rounded-2xl p-5 mb-8">
-        <h2 className="font-bold text-indigo-800 mb-2">Reading Tips</h2>
-        <ul className="text-sm text-indigo-700 space-y-1">
-          <li>• Skim the passage first to get the main idea, then read questions before reading in detail</li>
-          <li>• For True/False/Not Given — "Not Given" means the information is not in the passage at all</li>
-          <li>• Answers follow the order of the passage for most question types</li>
+        <h2 className="font-bold text-indigo-800 mb-2">📌 Reading Strategy Tips</h2>
+        <ul className="text-sm text-indigo-700 space-y-1.5">
+          <li>• <strong>Skim first:</strong> read the passage quickly to grasp the overall structure and main ideas</li>
+          <li>• <strong>Read questions before detail reading:</strong> know what you are looking for before you look</li>
+          <li>• <strong>True / False / Not Given:</strong> "Not Given" means the information is absent from the passage — do not infer or guess</li>
+          <li>• <strong>Retest feature:</strong> click "Retest" after any passage to get a completely new question order with reshuffled MCQ options</li>
         </ul>
       </div>
 
-      {/* Passage cards */}
-      <h2 className="text-xl font-bold text-gray-900 mb-5">Choose a Passage</h2>
-      <div className="grid sm:grid-cols-2 gap-5">
+      {/* Passage grid */}
+      <h2 className="text-xl font-bold text-gray-900 mb-5">
+        Choose a Passage
+        <span className="ml-2 text-sm font-normal text-gray-400">({PASSAGES.length} available)</span>
+      </h2>
+
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {PASSAGES.map(p => (
-          <div key={p.id} className="bg-white border border-gray-200 rounded-2xl p-6 hover:border-indigo-300 hover:shadow-md transition-all">
-            <div className="flex items-start justify-between mb-3">
-              <span className="text-xs bg-indigo-100 text-indigo-700 px-2.5 py-1 rounded-full font-medium">{p.tag}</span>
-              <span className="text-xs bg-gray-100 text-gray-500 px-2.5 py-1 rounded-full">{p.level}</span>
+          <div
+            key={p.id}
+            className="bg-white border border-gray-200 rounded-2xl p-5 hover:border-indigo-300 hover:shadow-md transition-all flex flex-col"
+          >
+            <div className="flex items-start justify-between mb-3 gap-2">
+              <span className="text-xs bg-indigo-100 text-indigo-700 px-2.5 py-1 rounded-full font-medium flex-shrink-0">{p.tag}</span>
+              <span className="text-xs bg-gray-100 text-gray-500 px-2.5 py-1 rounded-full flex-shrink-0">{p.level}</span>
             </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2">{p.title}</h3>
-            <p className="text-gray-500 text-sm mb-4 leading-relaxed">{p.text.slice(0, 120)}…</p>
-            <div className="flex items-center justify-between">
-              <span className="text-xs text-gray-400">{p.questions.length} questions</span>
-              <button onClick={() => startPassage(p)} className="bg-indigo-600 text-white px-4 py-2 rounded-xl font-bold text-sm hover:bg-indigo-700 transition-colors">
+            <h3 className="text-base font-bold text-gray-900 mb-2 leading-snug">{p.title}</h3>
+            <p className="text-gray-400 text-xs leading-relaxed mb-4 flex-1 line-clamp-3">
+              {p.text.slice(0, 130)}…
+            </p>
+            <div className="flex items-center justify-between mt-auto">
+              <span className="text-xs text-gray-400">{p.questions.length} questions · Mixed types</span>
+              <button
+                onClick={() => startPassage(p)}
+                className="bg-indigo-600 text-white px-4 py-2 rounded-xl font-bold text-xs hover:bg-indigo-700 transition-colors flex-shrink-0"
+              >
                 Start →
               </button>
             </div>
@@ -357,9 +592,11 @@ export default function ReadingPage() {
         ))}
       </div>
 
-      <div className="mt-8 text-center">
-        <p className="text-gray-400 text-sm">More passages coming soon — including General Training texts</p>
-        <Link href="/ielts" className="inline-block mt-4 text-indigo-600 text-sm font-semibold hover:underline">← Back to IELTS Hub</Link>
+      <div className="mt-10 text-center">
+        <p className="text-gray-400 text-sm">General Training passages coming soon</p>
+        <Link href="/ielts" className="inline-block mt-4 text-indigo-600 text-sm font-semibold hover:underline">
+          ← Back to IELTS Hub
+        </Link>
       </div>
     </div>
   );
