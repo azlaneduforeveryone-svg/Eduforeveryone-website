@@ -1,5 +1,5 @@
 # CLAUDE.md — EduForEveryone Project Memory
-> Last updated: May 2026 | Use this file at the start of every Claude session to avoid re-scanning the codebase.
+> Last updated: May 2026 (IELTS module fully live) | Use this file at the start of every Claude session to avoid re-scanning the codebase.
 
 ---
 
@@ -83,6 +83,23 @@ app/
 │   ├── scientific-calculator/
 │   ├── cfa-calculator/         # CFA financial calculator
 │   └── number-to-words/
+├── ielts/
+│   ├── page.tsx                    # IELTS hub — indigo card layout (same pattern as /courses)
+│   ├── reading/
+│   │   ├── page.tsx                # Server (metadata)
+│   │   ├── ReadingPage.tsx         # Passage listing — links to dynamic routes
+│   │   └── [passageId]/
+│   │       ├── page.tsx            # Server (generateStaticParams + generateMetadata per passage)
+│   │       └── ReadingTest.tsx     # Full exam: 20-min timer, split-pane, no-repeat localStorage rotation
+│   ├── listening/
+│   │   ├── page.tsx
+│   │   └── ListeningPage.tsx       # 2 sections live (transcript fill-in + MCQ)
+│   ├── writing/
+│   │   ├── page.tsx
+│   │   └── WritingPage.tsx         # 4 prompts, custom timer, live word counter
+│   └── speaking/
+│       ├── page.tsx
+│       └── SpeakingPage.tsx        # 2 topics, Part 1/2/3 cards, cue card timer
 ├── islamic-studies/
 │   └── page.tsx                # Islamic Studies landing
 ├── quran/
@@ -126,6 +143,7 @@ lib/
 ├── firebaseDB.ts               # All Firestore functions
 ├── data.ts                     # getAllCourses(), getAllSubjects()
 ├── mathTopics.ts               # 20 MATH_TOPICS with full content
+├── ieltsReadingData.ts         # 7 passages × 10Q each (70Q total); types: mcq/tfng/ynng/sentence_completion/short_answer
 └── searchData.ts               # Search index
 
 public/
@@ -169,6 +187,12 @@ public/
 /quran/pdf/13line               PDF viewer (13-line colour)
 /quran/[surahId]                Surah reader
 /quran/juz/[juzId]              Juz reader
+/ielts                          IELTS hub — 4 skill cards (indigo theme, same card layout as /courses)
+/ielts/reading                  Passage listing (7 Academic passages, 10Q bank each)
+/ielts/reading/[passageId]      Full exam — 20-min timer, 10 random Q/session, no-repeat localStorage rotation
+/ielts/listening                2 sections live (transcript fill-in + MCQ); Sections 3–4 coming soon
+/ielts/writing                  4 prompts (2× Task 1, 2× Task 2), timed editor, word counter
+/ielts/speaking                 2 topics (Technology, Education), Part 1/2/3 cards, cue card timer
 /profile                        User dashboard
 /leaderboard                    Global + category leaderboards
 /search                         Full-text search
@@ -227,6 +251,23 @@ public/
 - **QuizBattle:** rapid-fire quiz game
 - All games have `ShareScore` component
 
+### IELTS Module (`/ielts`)
+- **Hub page** (`/ielts`): indigo-600/700 colour scheme; card layout matches `/courses` page pattern; comprehensive content: test format, band score table, marking criteria, strategies, FAQs, official sources
+- **Linked** from Navbar (`IELTS` link), homepage (block between Featured Courses and Games), and `/courses` (indigo banner)
+- **Reading** (`/ielts/reading/[passageId]`):
+  - 7 Academic passages in `lib/ieltsReadingData.ts`, 10Q bank each (70Q total)
+  - Question types: MCQ (A–D, Fisher-Yates shuffled options), True/False/Not Given, Yes/No/Not Given, Sentence Completion, Short Answer
+  - 10 random questions per session; localStorage no-repeat rotation — bank cycles, resets when exhausted
+  - 20-minute countdown timer; auto-submits at zero
+  - Desktop: split-pane (passage sticky-left 55%, questions right 45%); Mobile: passage accordion toggle above questions
+  - Numbered navigation panel (1–10 dots); Previous / Next / Submit All flow
+  - Band score estimate 4.0–9.0 on results; full answer review with explanations
+  - SSG: `generateStaticParams` pre-renders all 7 routes; `generateMetadata` gives each passage its own SEO title/description
+- **Listening** (`/ielts/listening`): 2 sections live — Section 1 (everyday conversation, transcript + fill-in) and Section 2 (monologue, MCQ); Sections 3–4 UI placeholder "coming soon"
+- **Writing** (`/ielts/writing`): 4 prompts (2× Task 1 bar/line chart, 2× Task 2 essay); custom timer hook with pause/resume; live word counter + progress bar; min-word enforcement before submit; key points reveal after submission
+- **Speaking** (`/ielts/speaking`): 2 topics (Technology, Education); Part 1/2/3 question cards; cue card timer (1-min prep → 2-min speak phases); expandable model answers per question
+- **No login required** for all practice; guest scores via localStorage
+
 ### Quran PDF Viewer
 - `react-pdf` with `{ ssr: false }` dynamic import (fixes DOMMatrix SSR error)
 - PDFs on Cloudflare R2: `pub-8abd18b123d249afbfea45177c4d7d94.r2.dev`
@@ -262,6 +303,7 @@ public/
 - **Science:** `green-600`
 - **English:** `purple-600`
 - **History:** `red-700`
+- **IELTS:** `indigo-600/700` — hub, reading, listening, writing, speaking
 - **Background:** `gray-50`
 - **Cards:** `white` with `border-gray-200`
 
@@ -505,12 +547,13 @@ export const metadata: Metadata = {
 2. Add Firebase score saving to Math Topic quizzes
 3. Fix R2 CORS configuration
 4. Add `UserButton` links to Profile/Leaderboard in mobile menu
-5. Update sitemap with lesson page routes
+5. IELTS Listening — add Sections 3 & 4 with audio
+6. IELTS Writing — AI evaluation via Claude API (see Section 15)
 
 ### Short Term
-1. **IELTS Module** (see Section 15)
-2. More lesson pages (remaining 17 math topics)
-3. Progress tracking per math topic in ProfilePage
+1. More lesson pages (remaining 17 math topics)
+2. Progress tracking per math topic in ProfilePage
+3. IELTS Speaking — audio recording or self-assessment flow
 4. Email notifications for leaderboard milestones
 5. Upgrade to Next.js 15
 
@@ -530,108 +573,43 @@ export const metadata: Metadata = {
 
 ---
 
-## 15. IELTS Module Plan
+## 15. IELTS Module (Live)
 
-### Overview
-Full IELTS preparation platform — free, no signup required to practice, optional account to save scores.
+### Status: All 4 skills live at `/ielts`. No login required for any practice.
 
-### Folder Structure
-```
-app/ielts/
-├── page.tsx                    # IELTS hub — 4 skill cards
-├── reading/
-│   ├── page.tsx                # Passage list
-│   └── [passageId]/
-│       ├── page.tsx
-│       └── ReadingTest.tsx     # Timed passage + MCQ/T-F-NG/short answer
-├── listening/
-│   ├── page.tsx
-│   └── [testId]/
-│       ├── page.tsx
-│       └── ListeningTest.tsx   # Audio + questions (Section 1-4)
-├── writing/
-│   ├── page.tsx
-│   └── task/
-│       ├── [taskId]/
-│       │   ├── page.tsx
-│       │   └── WritingTask.tsx # Timer + textarea + AI evaluation
-├── speaking/
-│   ├── page.tsx
-│   └── [topicId]/
-│       └── SpeakingPractice.tsx # Question cards + timer + recording tips
-└── results/
-    └── page.tsx                # Score history (Firebase, logged-in only)
+### Reading — Key Implementation Details
+- **Data file:** `lib/ieltsReadingData.ts` — `PASSAGES: Passage[]` array, exported types `Question`, `Passage`, `QuestionType`
+- **Question types:** `"mcq" | "tfng" | "ynng" | "sentence_completion" | "short_answer"`
+- **`Question` interface:** `{ id, type, q, opts?, answer, acceptedAnswers?, explanation, sentenceTemplate? }`
+  - MCQ `answer`: `"A"–"D"` (pre-shuffle canonical letter)
+  - TFNG `answer`: `"TRUE" | "FALSE" | "NOT GIVEN"`
+  - YNNG `answer`: `"YES" | "NO" | "NOT GIVEN"`
+  - Text types `answer`: exact word/phrase; `acceptedAnswers[]` for alternate forms
+- **No-repeat localStorage key:** `ielts_seen_${passageId}` → `number[]` of seen question IDs; resets when bank exhausted
+- **Band map (10Q session):** 10→9.0, 9→8.5, 8→8.0, 7→7.5, 6→7.0, 5→6.5, 4→6.0, 3→5.5, 2→5.0, 1→4.5, 0→4.0
+- **Grading text answers:** case-insensitive match against `acceptedAnswers` array; strips leading "the " for flexibility
 
-lib/
-├── ieltsReadingData.ts         # Passages + question banks
-├── ieltsListeningData.ts       # Audio URLs + answer keys
-└── ieltsWritingPrompts.ts      # Task 1 + Task 2 prompts
-```
+### When Adding More Passages
+1. Add to `PASSAGES` array in `lib/ieltsReadingData.ts`
+2. `generateStaticParams` auto-picks it up — no other file changes needed
+3. Add URL to `app/sitemap.ts`
 
-### Features Per Skill
-
-**Reading**
-- Academic + General Training passages
-- Question types: MCQ, True/False/NG, Matching headings, Short answer, Gap fill
-- 60-min timer (full test) or per-passage mode
-- Instant scoring with explanations
-
-**Listening**
-- Audio player (hosted or YouTube embed)
-- 4 sections, all question types
-- Transcript reveal after submission
-- Score + band estimate
-
-**Writing**
-- Task 1 (Academic: graph/chart/diagram description) + Task 2 (essay)
-- 20/40-min timers
-- **AI Evaluation** via Claude API:
-  - Task Achievement / Task Response
-  - Coherence & Cohesion
-  - Lexical Resource
-  - Grammatical Range & Accuracy
-  - Band score estimate + specific feedback
-
-**Speaking**
-- Part 1/2/3 question cards
-- Cue card timer (1-min prep, 2-min talk)
-- Sample answer toggle
-- Tips for each question type
-
-### AI Evaluation (Writing)
+### Planned: AI Writing Evaluation
 ```typescript
+// Target: /ielts/writing — "Evaluate with AI" button after submission
 const WRITING_PROMPT = `
-You are an IELTS examiner. Evaluate this essay:
+You are an IELTS examiner. Evaluate this essay on official band descriptors (0–9):
 Task: [task prompt]
 Essay: [user essay]
-
-Score using official band descriptors (0-9) for:
-1. Task Achievement/Response
-2. Coherence and Cohesion  
-3. Lexical Resource
-4. Grammatical Range and Accuracy
-
 Return JSON: { ta: number, cc: number, lr: number, gra: number, overall: number, feedback: string, improvements: string[] }
 `;
+// criteria: Task Achievement/Response, Coherence & Cohesion, Lexical Resource, Grammatical Range & Accuracy
 ```
 
-### Guest Access Strategy
-- All practice: **no login required**
-- Score saving + history: **optional login**
-- Show "Save your score" banner after completion (same as Islamic Quiz pattern)
-- Guest scores stored in `localStorage` with prompt to sync on login
-
-### Data Architecture
+### Planned: Firestore Score Saving
 ```typescript
 // Firestore: ieltsResults/{uid}/sessions/{auto-id}
-{
-  skill: "writing" | "reading" | "listening" | "speaking",
-  testId: string,
-  score: number,
-  band: number,
-  aiFeedback?: string,
-  completedAt: Timestamp
-}
+{ skill: "reading" | "writing" | "listening" | "speaking", testId: string, score: number, band: number, aiFeedback?: string, completedAt: Timestamp }
 ```
 
 ---
