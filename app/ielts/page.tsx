@@ -508,25 +508,7 @@ export default function IELTSPage() {
             ))}
           </div>
 
-          {/* Study Plans */}
-          <h3 className="text-lg font-black text-gray-900 mb-4">📅 Choose Your Study Roadmap</h3>
-          <div className="grid sm:grid-cols-3 gap-4">
-            {STUDY_PLANS.map(p => (
-              <div key={p.duration} className="bg-white border border-gray-200 rounded-2xl p-5 text-center">
-                <span className="text-3xl">{p.emoji}</span>
-                <div className={`inline-block text-white font-black px-4 py-1.5 rounded-full text-sm mt-3 mb-2 ${p.color}`}>
-                  {p.duration} {p.label}
-                </div>
-                <p className="text-xs text-gray-500 leading-relaxed">{p.for}</p>
-                <Link href="/ielts"
-                  className="mt-3 inline-block text-xs font-bold text-teal-600 hover:underline">
-                  Start this plan →
-                </Link>
-              </div>
-            ))}
-          </div>
-        </section>
-
+        
         {/* ── FREE TOOLS ───────────────────────────────────────────────── */}
         <section>
           <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-2">Free Study Companions</h2>
