@@ -3,7 +3,14 @@
     "allow": [
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(git commit -m 'fix: Add missing </section> closing tag in IELTS page strategies section *)",
+      "Bash(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\HP\\\\Downloads\\\\eduforeveryone\\\\eduforeveryone\\\\app\\\\ielts\\\\reading\\\\[passageId]\")",
+      "PowerShell(Get-ChildItem -Recurse \"c:\\\\Users\\\\HP\\\\Downloads\\\\ielts-checker\" | Where-Object { -not $_.PSIsContainer } | Select-Object FullName, Length)",
+      "Bash(find /mnt/c/Users/HP/Downloads/ielts-checker -type f | sort && echo \"---\" && wc -l /mnt/c/Users/HP/Downloads/ielts-checker/worker/index.js /mnt/c/Users/HP/Downloads/ielts-checker/worker/wrangler.toml /mnt/c/Users/HP/Downloads/ielts-checker/public/index.html /mnt/c/Users/HP/Downloads/ielts-checker/public/style.css /mnt/c/Users/HP/Downloads/ielts-checker/public/app.js /mnt/c/Users/HP/Downloads/ielts-checker/README.md)",
+      "Read(//mnt/c/Users/HP/Downloads/**)",
+      "Read(//mnt/c/Users/HP/Downloads/ielts-checker/worker/**)",
+      "PowerShell(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\HP\\\\Downloads\\\\eduforeveryone\\\\eduforeveryone\\\\app\\\\api\\\\ielts\")"
     ]
   }
 }

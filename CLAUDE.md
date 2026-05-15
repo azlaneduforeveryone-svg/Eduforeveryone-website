@@ -1,3 +1,23 @@
+# CRITICAL RULES — READ BEFORE DOING ANYTHING
+
+## Files you must NEVER touch or modify:
+- .env.local — contains all API keys, do not read, edit, or delete any values
+- lib/firebase.ts — do not modify Firebase configuration
+- next.config.mjs — do not modify
+- vercel.json — do not modify
+
+## When adding new environment variables:
+- Tell me the variable name and I will add it myself
+- Never write to .env.local directly
+
+## General rules:
+- Never delete existing code unless I explicitly say "delete" or "remove"
+- When editing a file, only change what the task requires
+- Do not refactor, rename, or restructure files I didn't mention
+- If unsure whether to touch a file, ask first
+
+---
+
 # CLAUDE.md — EduForEveryone Project Memory
 > Last updated: May 2026 (IELTS module fully live) | Use this file at the start of every Claude session to avoid re-scanning the codebase.
 
@@ -503,7 +523,7 @@ export const metadata: Metadata = {
 ### Analytics
 - GA4: `G-F7MCW76675`
 - Loaded via `next/script` with `strategy="afterInteractive"` in `layout.tsx`
-- AdSense: `ca-pub-4849924746775880`
+
 
 ---
 

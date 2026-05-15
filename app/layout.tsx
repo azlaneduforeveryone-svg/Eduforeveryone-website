@@ -33,13 +33,6 @@ export default function RootLayout({
         <AuthProvider>
 
           <Script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4849924746775880"
-            crossOrigin="anonymous"
-            strategy="afterInteractive"
-          />
-
-          <Script
             src="https://www.googletagmanager.com/gtag/js?id=G-F7MCW76675"
             strategy="afterInteractive"
           />
