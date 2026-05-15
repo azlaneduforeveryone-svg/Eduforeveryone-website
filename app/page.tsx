@@ -143,6 +143,51 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── IELTS Section ── */}
+      <section className="py-14 px-4 bg-indigo-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex justify-between items-center mb-6">
+            <div>
+              <p className="text-indigo-600 font-semibold text-sm uppercase tracking-wider mb-1">Exam Prep</p>
+              <h2 className="text-2xl font-bold text-gray-900">IELTS Preparation</h2>
+              <p className="text-gray-500 text-sm mt-1">Free practice for all 4 skills — no signup needed</p>
+            </div>
+            <Link href="/ielts" className="text-indigo-600 text-sm font-semibold hover:underline whitespace-nowrap">View all →</Link>
+          </div>
+          <Link href="/ielts" className="group flex flex-col sm:flex-row items-start sm:items-center gap-5 bg-gradient-to-r from-indigo-700 to-indigo-800 text-white rounded-2xl p-6 mb-5 hover:from-indigo-800 hover:to-indigo-900 transition-all">
+            <div className="text-5xl flex-shrink-0">📚</div>
+            <div className="flex-1">
+              <div className="flex flex-wrap gap-2 mb-2">
+                <span className="text-xs bg-white/20 border border-white/20 px-2.5 py-1 rounded-full font-medium">Free Forever</span>
+                <span className="text-xs bg-white/20 border border-white/20 px-2.5 py-1 rounded-full font-medium">No Signup</span>
+                <span className="text-xs bg-white/20 border border-white/20 px-2.5 py-1 rounded-full font-medium">AI Writing Feedback</span>
+              </div>
+              <h3 className="text-xl font-black mb-1">Complete IELTS Preparation Platform</h3>
+              <p className="text-indigo-200 text-sm">Reading, Listening, Writing and Speaking — all 4 skills with real exam-style practice</p>
+            </div>
+            <div className="flex-shrink-0">
+              <span className="bg-white text-indigo-700 px-5 py-2.5 rounded-xl font-bold text-sm group-hover:bg-indigo-50 transition-colors whitespace-nowrap">
+                Start Free Practice →
+              </span>
+            </div>
+          </Link>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {[
+              { href:"/ielts/reading",   emoji:"📖", label:"Reading",   sub:"Passages & MCQ" },
+              { href:"/ielts/listening", emoji:"🎧", label:"Listening", sub:"4-Section Tests" },
+              { href:"/ielts/writing",   emoji:"✍️", label:"Writing",   sub:"Task 1 & Task 2" },
+              { href:"/ielts/speaking",  emoji:"🗣️", label:"Speaking",  sub:"Part 1, 2 & 3" },
+            ].map(s => (
+              <Link key={s.href} href={s.href} className="bg-white border border-indigo-100 rounded-2xl p-4 hover:border-indigo-300 hover:shadow-md transition-all group text-center">
+                <span className="text-3xl block mb-2">{s.emoji}</span>
+                <h4 className="font-bold text-gray-900 text-sm group-hover:text-indigo-600 transition-colors">{s.label}</h4>
+                <p className="text-gray-400 text-xs mt-1">{s.sub}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Games Section ── */}
       <section className="py-14 px-4 bg-gray-900">
         <div className="max-w-5xl mx-auto">

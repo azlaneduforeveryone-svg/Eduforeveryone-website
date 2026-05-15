@@ -30,5 +30,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/games/math-puzzle`,               lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/games/word-puzzle`,               lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/games/quiz-battle`,               lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/ielts`,                           lastModified: now, changeFrequency: "weekly",  priority: 0.9 },
+    { url: `${base}/ielts/reading`,                   lastModified: now, changeFrequency: "weekly",  priority: 0.8 },
+    { url: `${base}/ielts/listening`,                 lastModified: now, changeFrequency: "weekly",  priority: 0.8 },
+    { url: `${base}/ielts/writing`,                   lastModified: now, changeFrequency: "weekly",  priority: 0.8 },
+    { url: `${base}/ielts/speaking`,                  lastModified: now, changeFrequency: "weekly",  priority: 0.8 },
   ];
 }

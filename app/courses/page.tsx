@@ -55,6 +55,32 @@ export default function CoursesPage() {
         </div>
       </Link>
 
+      {/* IELTS Banner */}
+      <Link href="/ielts"
+        className="group flex flex-col sm:flex-row items-start sm:items-center gap-5 bg-gradient-to-r from-indigo-700 to-indigo-800 text-white rounded-2xl p-6 mb-8 hover:from-indigo-800 hover:to-indigo-900 transition-all">
+        <div className="text-5xl flex-shrink-0">📚</div>
+        <div className="flex-1">
+          <div className="flex flex-wrap items-center gap-2 mb-1">
+            <span className="text-xs font-bold bg-white/20 px-2.5 py-1 rounded-full">FREE</span>
+            <span className="text-xs text-indigo-200">Exam Preparation · All Levels</span>
+          </div>
+          <h2 className="text-xl font-black mb-1">IELTS Preparation — All 4 Skills</h2>
+          <p className="text-indigo-200 text-sm leading-relaxed">
+            Free practice tests for Reading, Listening, Writing and Speaking. AI-powered writing feedback. No signup required.
+          </p>
+          <div className="flex flex-wrap gap-2 mt-3">
+            {["📖 Reading","🎧 Listening","✍️ Writing","🗣️ Speaking"].map(l => (
+              <span key={l} className="text-xs bg-white/10 border border-white/20 px-2.5 py-1 rounded-full">{l}</span>
+            ))}
+          </div>
+        </div>
+        <div className="flex-shrink-0">
+          <span className="bg-white text-indigo-700 px-5 py-2.5 rounded-xl font-bold text-sm group-hover:bg-indigo-50 transition-colors whitespace-nowrap">
+            Start Free Practice →
+          </span>
+        </div>
+      </Link>
+
       {/* Other Courses */}
       <div className="mb-6">
         <h2 className="text-xl font-bold text-gray-900 mb-1">Other Courses</h2>

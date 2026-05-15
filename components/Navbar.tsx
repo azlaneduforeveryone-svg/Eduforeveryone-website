@@ -6,6 +6,7 @@ import UserButton from "./UserButton";
 const NAV_LINKS = [
   { href: "/islamic-studies", label: "☪ Islamic Studies" },
   { href: "/courses",         label: "Courses"           },
+  { href: "/ielts",           label: "IELTS"             },
   { href: "/notes",           label: "Notes"             },
   { href: "/quiz",            label: "Quiz"              },
   { href: "/games",           label: "Games"             },
