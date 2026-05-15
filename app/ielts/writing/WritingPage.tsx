@@ -2,6 +2,36 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 
+interface IELTSResult {
+  overall: number;
+  ta: { score: number; feedback: string };
+  cc: { score: number; feedback: string };
+  lr: { score: number; feedback: string };
+  gr: { score: number; feedback: string };
+  summary: string;
+  top_fix: string;
+}
+
+const CRITERIA: { key: keyof Pick<IELTSResult, "ta" | "cc" | "lr" | "gr">; label: string }[] = [
+  { key: "ta", label: "Task Achievement" },
+  { key: "cc", label: "Coherence & Cohesion" },
+  { key: "lr", label: "Lexical Resource" },
+  { key: "gr", label: "Grammatical Range & Accuracy" },
+];
+
+function bandColor(s: number) {
+  return s >= 7 ? "text-green-700" : s >= 5.5 ? "text-amber-700" : "text-red-600";
+}
+function bandBg(s: number) {
+  return s >= 7 ? "bg-green-50 border-green-200" : s >= 5.5 ? "bg-amber-50 border-amber-200" : "bg-red-50 border-red-200";
+}
+function barColor(s: number) {
+  return s >= 7 ? "bg-green-500" : s >= 5.5 ? "bg-amber-500" : "bg-red-500";
+}
+function fmtScore(n: number) {
+  return Number.isInteger(n) ? String(n) : n.toFixed(1);
+}
+
 interface Prompt {
   id: string;
   task: 1 | 2;
@@ -170,6 +200,9 @@ export default function WritingPage() {
   const [text, setText] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [tab, setTab] = useState<1 | 2>(1);
+  const [aiResult, setAiResult] = useState<IELTSResult | null>(null);
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiError, setAiError] = useState<string | null>(null);
   const timer = useTimer(selected ? selected.timeMin * 60 : 1200);
 
   const wordCount = text.trim() === "" ? 0 : text.trim().split(/\s+/).length;
@@ -178,20 +211,46 @@ export default function WritingPage() {
     setSelected(p);
     setText("");
     setSubmitted(false);
+    setAiResult(null);
+    setAiError(null);
     timer.reset(p.timeMin * 60);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  function handleSubmit() {
+  async function handleSubmit() {
+    if (!selected) return;
     timer.pause();
     setSubmitted(true);
+    setAiResult(null);
+    setAiError(null);
+    setAiLoading(true);
     window.scrollTo({ top: 0, behavior: "smooth" });
+
+    try {
+      const res = await fetch("/api/ielts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ task: selected.prompt, response: text }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setAiError(data.error || "Scoring failed. Please try again.");
+      } else {
+        setAiResult(data as IELTSResult);
+      }
+    } catch {
+      setAiError("Could not reach the scoring service. Check your connection and try again.");
+    } finally {
+      setAiLoading(false);
+    }
   }
 
   function handleBack() {
     setSelected(null);
     setText("");
     setSubmitted(false);
+    setAiResult(null);
+    setAiError(null);
   }
 
   const task1 = PROMPTS.filter(p => p.task === 1);
@@ -211,24 +270,89 @@ export default function WritingPage() {
           <span className="text-gray-600 font-medium">Task {selected.task}</span>
         </div>
 
-        {submitted && (
-          <div className="bg-violet-50 border border-violet-200 rounded-2xl p-6 mb-8">
-            <h2 className="font-bold text-violet-900 text-lg mb-2">✓ Response Submitted</h2>
-            <p className="text-violet-700 text-sm mb-3">Your response has been recorded. Word count: <strong>{wordCount}</strong> {wordCount >= selected.minWords ? "✓ (meets minimum)" : `(minimum: ${selected.minWords})`}</p>
-            <div className="mb-4">
-              <h3 className="font-semibold text-violet-800 text-sm mb-2">Key points to consider when reviewing your response:</h3>
-              <ul className="space-y-1">
-                {selected.samplePoints.map((pt, i) => (
-                  <li key={i} className="text-sm text-violet-700 flex gap-2">
-                    <span className="text-violet-400 flex-shrink-0">•</span>
-                    {pt}
-                  </li>
-                ))}
-              </ul>
-            </div>
+        {/* ── Loading ─────────────────────────────────────────────────────── */}
+        {submitted && aiLoading && (
+          <div className="bg-violet-50 border border-violet-200 rounded-2xl p-8 mb-8 flex flex-col items-center gap-3 text-center">
+            <div className="w-9 h-9 border-4 border-violet-200 border-t-violet-600 rounded-full animate-spin" />
+            <p className="font-semibold text-violet-800">Scoring your response…</p>
+            <p className="text-violet-500 text-sm">Gemini is evaluating your essay against IELTS band descriptors</p>
+          </div>
+        )}
+
+        {/* ── Error ───────────────────────────────────────────────────────── */}
+        {submitted && aiError && !aiLoading && (
+          <div className="bg-red-50 border border-red-200 rounded-2xl p-6 mb-8">
+            <p className="font-bold text-red-800 mb-1">⚠ Scoring failed</p>
+            <p className="text-red-700 text-sm mb-4">{aiError}</p>
             <div className="flex flex-wrap gap-3">
-              <button onClick={() => { setSubmitted(false); }} className="bg-violet-600 text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-violet-700 transition-colors">
+              <button
+                onClick={handleSubmit}
+                className="bg-violet-600 text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-violet-700 transition-colors"
+              >
+                Retry
+              </button>
+              <button
+                onClick={() => { setSubmitted(false); setAiError(null); }}
+                className="border border-red-200 text-red-700 px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-red-50 transition-colors"
+              >
                 Edit Response
+              </button>
+              <button onClick={handleBack} className="border border-gray-200 text-gray-600 px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-gray-50 transition-colors">
+                Try Another Prompt
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* ── AI results ──────────────────────────────────────────────────── */}
+        {submitted && aiResult && !aiLoading && (
+          <div className="mb-8 space-y-5">
+            {/* Overall band score */}
+            <div className={`border rounded-2xl p-6 text-center ${bandBg(aiResult.overall)}`}>
+              <p className={`text-6xl font-black leading-none mb-1 ${bandColor(aiResult.overall)}`}>
+                {fmtScore(aiResult.overall)}
+              </p>
+              <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Overall Band Score</p>
+              <p className="text-sm text-gray-600 italic max-w-md mx-auto">{aiResult.summary}</p>
+            </div>
+
+            {/* Criterion cards — 2×2 grid */}
+            <div className="grid sm:grid-cols-2 gap-4">
+              {CRITERIA.map(({ key, label }) => {
+                const c = aiResult[key];
+                return (
+                  <div key={key} className="bg-white border border-gray-200 rounded-2xl p-5">
+                    <div className="flex items-baseline justify-between mb-2">
+                      <span className="text-xs font-bold text-gray-500 uppercase tracking-wide">{label}</span>
+                      <span className={`text-lg font-black ${bandColor(c.score)}`}>
+                        {fmtScore(c.score)}<span className="text-xs font-normal text-gray-400">/9</span>
+                      </span>
+                    </div>
+                    <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden mb-3">
+                      <div
+                        className={`h-full rounded-full transition-all duration-500 ${barColor(c.score)}`}
+                        style={{ width: `${(c.score / 9) * 100}%` }}
+                      />
+                    </div>
+                    <p className="text-xs text-gray-600 leading-relaxed">{c.feedback}</p>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Priority fix */}
+            <div className="bg-indigo-50 border border-indigo-200 rounded-2xl p-5">
+              <p className="text-xs font-bold text-indigo-600 uppercase tracking-wide mb-1">⚡ Priority Fix</p>
+              <p className="text-sm text-indigo-900 font-medium leading-relaxed">{aiResult.top_fix}</p>
+            </div>
+
+            {/* Actions */}
+            <div className="flex flex-wrap gap-3">
+              <button
+                onClick={() => { setSubmitted(false); setAiResult(null); }}
+                className="bg-violet-600 text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-violet-700 transition-colors"
+              >
+                Edit &amp; Resubmit
               </button>
               <button onClick={handleBack} className="border border-violet-300 text-violet-700 px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-violet-50 transition-colors">
                 Try Another Prompt
