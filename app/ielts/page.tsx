@@ -219,7 +219,7 @@ export default function IELTSPage() {
               style={{ boxShadow: "0 4px 0 rgba(0,0,0,0.2)" }}>
               🚀 Start Free Preparation
             </Link>
-            <Link href="/ielts"
+            <Link href="/ielts/guide"
               className="bg-teal-800 border border-white/30 text-white px-8 py-3.5 rounded-xl font-bold text-base hover:bg-teal-900 transition-all">
               📥 Download IELTS Guide
             </Link>
@@ -572,7 +572,7 @@ export default function IELTSPage() {
               className="bg-teal-800 border border-white/30 text-white px-7 py-3.5 rounded-xl font-bold hover:bg-teal-900 transition-all">
               ✍️ Practice Writing Now
             </Link>
-            <Link href="/ielts"
+            <Link href="/ielts/guide"
               className="bg-teal-800 border border-white/30 text-white px-7 py-3.5 rounded-xl font-bold hover:bg-teal-900 transition-all">
               📅 Get 60-Day Study Plan
             </Link>
