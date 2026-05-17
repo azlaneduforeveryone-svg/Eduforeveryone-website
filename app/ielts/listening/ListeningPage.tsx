@@ -156,14 +156,26 @@ function AudioPlayer({
   section: Section;
   onFinished: () => void;
 }) {
-  const [voices,     setVoices]     = useState<SpeechSynthesisVoice[]>([]);
-  const [voice,      setVoice]      = useState<SpeechSynthesisVoice | null>(null);
-  const [rate,       setRate]       = useState(0.85);
-  const [status,     setStatus]     = useState<"idle"|"reading"|"playing"|"paused"|"done">("idle");
-  const [readTime,   setReadTime]   = useState(45);
-  const [progress,   setProgress]   = useState(0);
-  const timerRef    = useRef<ReturnType<typeof setInterval>|null>(null);
-  const progressRef = useRef<ReturnType<typeof setInterval>|null>(null);
+  const [voices,   setVoices]   = useState<SpeechSynthesisVoice[]>([]);
+  const [voice,    setVoice]    = useState<SpeechSynthesisVoice | null>(null);
+  const [rate,     setRate]     = useState(0.85);
+  const [status,   setStatus]   = useState<"idle"|"reading"|"playing"|"paused"|"done">("idle");
+  const [readTime, setReadTime] = useState(45);
+  const [progress, setProgress] = useState(0);
+
+  const timerRef     = useRef<ReturnType<typeof setInterval>|null>(null);
+  const progressRef  = useRef<ReturnType<typeof setInterval>|null>(null);
+  const keepAliveRef = useRef<ReturnType<typeof setInterval>|null>(null);
+  const chunksRef    = useRef<string[]>([]);
+  const chunkIdxRef  = useRef(0);
+  const stoppedRef   = useRef(false);
+  const totalChunksRef = useRef(0);
+
+  const clearAll = useCallback(() => {
+    if (timerRef.current)     clearInterval(timerRef.current);
+    if (progressRef.current)  clearInterval(progressRef.current);
+    if (keepAliveRef.current) clearInterval(keepAliveRef.current);
+  }, []);
 
   // Load voices
   useEffect(() => {
@@ -180,48 +192,102 @@ function AudioPlayer({
     load();
     window.speechSynthesis.onvoiceschanged = load;
     return () => {
+      stoppedRef.current = true;
       window.speechSynthesis.cancel();
-      if (timerRef.current)    clearInterval(timerRef.current);
-      if (progressRef.current) clearInterval(progressRef.current);
+      clearAll();
     };
+  }, [clearAll]);
+
+  // Split transcript into sentence-sized chunks (~200 chars max)
+  // This fixes Chrome's bug of stopping after ~15 seconds on long texts
+  const buildChunks = useCallback((text: string): string[] => {
+    // Split on sentence boundaries
+    const sentences = text
+      .replace(/([.!?])\s+/g, "$1\n")
+      .split("\n")
+      .map(s => s.trim())
+      .filter(Boolean);
+
+    const chunks: string[] = [];
+    let current = "";
+    for (const sentence of sentences) {
+      if ((current + " " + sentence).length > 220) {
+        if (current) chunks.push(current.trim());
+        current = sentence;
+      } else {
+        current = current ? current + " " + sentence : sentence;
+      }
+    }
+    if (current.trim()) chunks.push(current.trim());
+    return chunks;
   }, []);
 
-  const playAudio = useCallback(() => {
-    window.speechSynthesis.cancel();
-    const utter = new SpeechSynthesisUtterance(section.transcript);
-    utter.rate = rate;
-    if (voice) utter.voice = voice;
-
-    const wordCount = section.transcript.split(/\s+/).length;
-    const estSecs   = Math.ceil((wordCount / (150 * rate)) * 60);
-    setProgress(0);
-    let elapsed = 0;
-    progressRef.current = setInterval(() => {
-      elapsed++;
-      setProgress(Math.min((elapsed / estSecs) * 100, 96));
-    }, 1000);
-
-    utter.onend = () => {
-      if (progressRef.current) clearInterval(progressRef.current);
+  const speakChunk = useCallback((idx: number) => {
+    if (stoppedRef.current) return;
+    const chunks = chunksRef.current;
+    if (idx >= chunks.length) {
+      // All chunks done
+      clearAll();
       setProgress(100);
       setStatus("done");
       onFinished();
+      return;
+    }
+
+    const utter = new SpeechSynthesisUtterance(chunks[idx]);
+    utter.rate = rate;
+    if (voice) utter.voice = voice;
+
+    utter.onend = () => {
+      if (stoppedRef.current) return;
+      chunkIdxRef.current = idx + 1;
+      setProgress(Math.round(((idx + 1) / totalChunksRef.current) * 100));
+      speakChunk(idx + 1);
+    };
+
+    utter.onerror = (e) => {
+      // Ignore "interrupted" errors from cancel() — just skip to next chunk
+      if (e.error === "interrupted" || stoppedRef.current) return;
+      chunkIdxRef.current = idx + 1;
+      speakChunk(idx + 1);
     };
 
     window.speechSynthesis.speak(utter);
+  }, [rate, voice, onFinished, clearAll]);
+
+  const playAudio = useCallback(() => {
+    stoppedRef.current = false;
+    // IMPORTANT: cancel + 250ms delay before speaking — fixes "no sound" after cancel
+    window.speechSynthesis.cancel();
+    clearAll();
+
+    const chunks = buildChunks(section.transcript);
+    chunksRef.current    = chunks;
+    totalChunksRef.current = chunks.length;
+    chunkIdxRef.current  = 0;
+    setProgress(0);
     setStatus("playing");
-  }, [section.transcript, rate, voice, onFinished]);
+
+    // Chrome keepalive: resume every 10s to prevent silent pause bug
+    keepAliveRef.current = setInterval(() => {
+      if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
+        window.speechSynthesis.pause();
+        window.speechSynthesis.resume();
+      }
+    }, 10000);
+
+    // Delay start slightly after cancel to let browser reset
+    setTimeout(() => {
+      if (!stoppedRef.current) speakChunk(0);
+    }, 250);
+  }, [section.transcript, buildChunks, speakChunk, clearAll]);
 
   const startReading = () => {
     setStatus("reading");
     setReadTime(45);
     timerRef.current = setInterval(() => {
       setReadTime(v => {
-        if (v <= 1) {
-          clearInterval(timerRef.current!);
-          playAudio();
-          return 0;
-        }
+        if (v <= 1) { clearInterval(timerRef.current!); playAudio(); return 0; }
         return v - 1;
       });
     }, 1000);
@@ -238,8 +304,9 @@ function AudioPlayer({
   };
 
   const stopEarly = () => {
+    stoppedRef.current = true;
     window.speechSynthesis.cancel();
-    if (progressRef.current) clearInterval(progressRef.current);
+    clearAll();
     setProgress(100);
     setStatus("done");
     onFinished();
@@ -362,13 +429,16 @@ export default function ListeningPage() {
   const [audioFinished,   setAudioFinished]   = useState(false);
 
   function start(s: Section) {
+    // Fully reset speech engine before loading new section
     window.speechSynthesis.cancel();
-    setActiveSection(s);
-    setAnswers({});
-    setResults(null);
-    setShowTranscript(false);
-    setAudioFinished(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    setTimeout(() => {
+      setActiveSection(s);
+      setAnswers({});
+      setResults(null);
+      setShowTranscript(false);
+      setAudioFinished(false);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 300);
   }
 
   function submit() {
