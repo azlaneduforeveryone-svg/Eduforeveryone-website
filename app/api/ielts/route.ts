@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 const GEMINI_URL =
-  'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent'
+  'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-001:generateContent'
 
 const clamp = (n: unknown): number => {
   const v = typeof n === 'number' ? n : parseFloat(String(n))
@@ -67,7 +67,6 @@ Return ONLY valid JSON, no markdown, no preamble:
         contents: [{ parts: [{ text: prompt }] }],
         generationConfig: {
           temperature: 0.3,
-          responseMimeType: 'application/json',
         },
       }),
     })
