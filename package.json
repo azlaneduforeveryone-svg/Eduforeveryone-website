@@ -7,11 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "check-links": "blc https://eduforeveryone.com -ro --exclude linkedin.com"
+    "check-links": "blc https://eduforeveryone.com -ro --exclude britishcouncil.org --exclude idp.com"
   },
   "dependencies": {
     "firebase": "^12.12.1",
-    "next": "^16.2.6",
+    "next": "^14.2.5",
     "react": "^18",
     "react-dom": "^18",
     "react-pdf": "^10.4.1",
