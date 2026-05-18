@@ -2,6 +2,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { saveQuizScore } from "@/lib/firebaseDB";
+import { getAdminQuizQuestions } from "@/lib/adminDB";
 import AuthModal from "@/components/AuthModal";
 import ShareScore from "@/components/ShareScore";
 
@@ -493,6 +494,8 @@ export default function IslamicQuizGame() {
   const [shuffledOpts, setShuffledOpts] = useState<Record<Lang,{opts:string[];ans:number}>>({
     en:{opts:[],ans:0}, ur:{opts:[],ans:0}, hi:{opts:[],ans:0}
   });
+  const [firebaseQs,   setFirebaseQs]   = useState<Question[]>([]);
+  const [fbLoading,    setFbLoading]    = useState(true);
 
   const seenIdsRef  = useRef<Set<number>>(new Set());
   const savedRef    = useRef(false);
@@ -502,6 +505,19 @@ export default function IslamicQuizGame() {
 
   const { user } = useAuth();
   const u = UI[lang];
+
+  // Load questions from Firebase (admin uploaded) — merge with local QB
+  useEffect(() => {
+    getAdminQuizQuestions()
+      .then(data => {
+        setFirebaseQs(data as Question[]);
+        setFbLoading(false);
+      })
+      .catch(() => setFbLoading(false));
+  }, []);
+
+  // Combined question bank: Firebase first, then local
+  const ALL_QUESTIONS = [...firebaseQs, ...QB];
 
   const clearTimer = () => { if (timerRef.current) clearInterval(timerRef.current); };
 
@@ -538,11 +554,12 @@ export default function IslamicQuizGame() {
   }, [user, selectedCats, diff]);
 
   const getPool = useCallback((c: Set<Cat>, d: Diff) => {
-    let pool = QB.filter(q => q.diff === d);
+    let pool = ALL_QUESTIONS.filter(q => q.diff === d);
     if (!c.has("all")) pool = pool.filter(q => c.has(q.cat as Cat));
-    if (pool.length === 0) pool = QB.filter(q => q.diff === d);
+    if (pool.length === 0) pool = ALL_QUESTIONS.filter(q => q.diff === d);
     return pool;
-  }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [firebaseQs]);
 
   // Time up effect
   useEffect(() => {
@@ -698,10 +715,19 @@ export default function IslamicQuizGame() {
         <div className="text-center py-10">
           <p className="text-5xl mb-4">☪️</p>
           <h2 className="text-xl font-bold text-gray-900 mb-2">{u.title}</h2>
-          <p className="text-gray-500 text-sm mb-6 leading-relaxed">{u.sub}</p>
-          <button onClick={startGame} className="bg-teal-600 text-white px-8 py-3 rounded-xl font-bold text-base"
+          <p className="text-gray-500 text-sm mb-2 leading-relaxed">{u.sub}</p>
+          {fbLoading ? (
+            <p className="text-xs text-gray-400 mb-6">Loading questions…</p>
+          ) : (
+            <p className="text-xs text-gray-400 mb-6">
+              {ALL_QUESTIONS.length} questions
+              {firebaseQs.length > 0 && ` (${firebaseQs.length} from admin)`}
+            </p>
+          )}
+          <button onClick={startGame} disabled={fbLoading}
+            className="bg-teal-600 text-white px-8 py-3 rounded-xl font-bold text-base disabled:opacity-50"
             style={{boxShadow:"0 4px 0 #0F6E56"}}>
-            {u.start}
+            {fbLoading ? "Loading…" : u.start}
           </button>
         </div>
       )}
