@@ -201,8 +201,10 @@ function downloadTemplate(tab: Tab) {
 // ── Main Component ────────────────────────────────────────────────────────────
 export default function AdminPanel() {
   const [loggedIn,   setLoggedIn]   = useState(false);
+  const [checking,   setChecking]   = useState(true); // verifying session on mount
   const [password,   setPassword]   = useState("");
   const [pwError,    setPwError]    = useState(false);
+  const [loginBusy,  setLoginBusy]  = useState(false);
   const [activeTab,  setActiveTab]  = useState<Tab>("quiz");
   const [dragging,   setDragging]   = useState(false);
   const [parsed,     setParsed]     = useState<ParsedFile | null>(null);
@@ -214,21 +216,39 @@ export default function AdminPanel() {
   const [loadingStats, setLoadingStats] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
 
-  const ADMIN_PW = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || "eduadmin2025";
-
   // ── Auth ──────────────────────────────────────────────────────────────────
+  // Verify existing session cookie on mount
   useEffect(() => {
-    if (sessionStorage.getItem("admin_auth") === "1") setLoggedIn(true);
+    fetch("/api/admin/verify")
+      .then(r => { if (r.ok) setLoggedIn(true); })
+      .catch(() => {})
+      .finally(() => setChecking(false));
   }, []);
 
-  const handleLogin = () => {
-    if (password === ADMIN_PW) {
-      sessionStorage.setItem("admin_auth", "1");
-      setLoggedIn(true);
-    } else {
+  const handleLogin = async () => {
+    setLoginBusy(true);
+    try {
+      const res = await fetch("/api/admin/auth", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password }),
+      });
+      if (res.ok) {
+        setLoggedIn(true);
+      } else {
+        setPwError(true);
+        setTimeout(() => setPwError(false), 2000);
+      }
+    } catch {
       setPwError(true);
-      setTimeout(() => setPwError(false), 2000);
     }
+    setLoginBusy(false);
+  };
+
+  const handleLogout = async () => {
+    await fetch("/api/admin/logout", { method: "POST" }).catch(() => {});
+    setLoggedIn(false);
+    setPassword("");
   };
 
   // ── Load stats ────────────────────────────────────────────────────────────
@@ -367,6 +387,12 @@ export default function AdminPanel() {
   };
 
   // ── Login Screen ──────────────────────────────────────────────────────────
+  if (checking) return (
+    <div className="min-h-screen bg-gray-950 flex items-center justify-center">
+      <div className="w-8 h-8 border-4 border-teal-600 border-t-transparent rounded-full animate-spin" />
+    </div>
+  );
+
   if (!loggedIn) return (
     <div className="min-h-screen bg-gray-950 flex items-center justify-center px-4">
       <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 w-full max-w-sm">
@@ -384,12 +410,12 @@ export default function AdminPanel() {
           className={`w-full bg-gray-800 border rounded-xl px-4 py-3 text-white text-sm mb-3 focus:outline-none focus:border-teal-500 ${pwError ? "border-red-500" : "border-gray-700"}`}
         />
         {pwError && <p className="text-red-400 text-xs mb-3 text-center">Incorrect password</p>}
-        <button onClick={handleLogin}
-          className="w-full bg-teal-600 text-white py-3 rounded-xl font-bold hover:bg-teal-700 transition-all">
-          Sign In →
+        <button onClick={handleLogin} disabled={loginBusy || !password}
+          className="w-full bg-teal-600 text-white py-3 rounded-xl font-bold hover:bg-teal-700 disabled:opacity-50 transition-all">
+          {loginBusy ? "Checking…" : "Sign In →"}
         </button>
         <p className="text-gray-600 text-xs text-center mt-4">
-          Set password via NEXT_PUBLIC_ADMIN_PASSWORD env var
+          Set via ADMIN_PASSWORD env var (server-side only)
         </p>
       </div>
     </div>
@@ -428,7 +454,7 @@ export default function AdminPanel() {
         </nav>
 
         <div className="p-3 border-t border-gray-800">
-          <button onClick={() => { sessionStorage.removeItem("admin_auth"); setLoggedIn(false); }}
+          <button onClick={handleLogout}
             className="w-full text-left px-3 py-2 rounded-xl text-xs text-gray-500 hover:text-red-400 hover:bg-gray-800 transition-all">
             🚪 Sign Out
           </button>
