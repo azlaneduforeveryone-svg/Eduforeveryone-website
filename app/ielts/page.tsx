@@ -214,14 +214,18 @@ export default function IELTSPage() {
 
           {/* Primary CTAs */}
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
-            <Link href="/ielts/reading"
+            <Link href="/ielts/practice"
               className="bg-white text-teal-700 px-8 py-3.5 rounded-xl font-bold text-base hover:bg-teal-50 transition-all"
               style={{ boxShadow: "0 4px 0 rgba(0,0,0,0.2)" }}>
               🚀 Start Free Preparation
             </Link>
-            <Link href="/ielts/guide"
+            <Link href="/ielts/diagnostic"
               className="bg-teal-800 border border-white/30 text-white px-8 py-3.5 rounded-xl font-bold text-base hover:bg-teal-900 transition-all">
-              📥 Download IELTS Guide
+              🎯 Take Free Diagnostic Test
+            </Link>
+            <Link href="/ielts/guide"
+              className="bg-teal-900/60 border border-white/20 text-white px-8 py-3.5 rounded-xl font-bold text-base hover:bg-teal-900 transition-all">
+              📥 Download Guide
             </Link>
           </div>
 
@@ -507,6 +511,24 @@ export default function IELTSPage() {
               </div>
             ))}
           </div>
+
+          {/* Study Plans */}
+          <h3 className="text-lg font-black text-gray-900 mb-4">📅 Choose Your Study Roadmap</h3>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {STUDY_PLANS.map(p => (
+              <div key={p.duration} className="bg-white border border-gray-200 rounded-2xl p-5 text-center">
+                <span className="text-3xl">{p.emoji}</span>
+                <div className={`inline-block text-white font-black px-4 py-1.5 rounded-full text-sm mt-3 mb-2 ${p.color}`}>
+                  {p.duration} {p.label}
+                </div>
+                <p className="text-xs text-gray-500 leading-relaxed">{p.for}</p>
+                <Link href="/ielts"
+                  className="mt-3 inline-block text-xs font-bold text-teal-600 hover:underline">
+                  Start this plan →
+                </Link>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* ── FREE TOOLS ───────────────────────────────────────────────── */}
@@ -563,10 +585,10 @@ export default function IELTSPage() {
             confidence and guarantee results — completely free.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link href="/ielts/reading"
+            <Link href="/ielts/practice"
               className="bg-white text-teal-700 px-7 py-3.5 rounded-xl font-bold hover:bg-teal-50 transition-all"
               style={{ boxShadow: "0 4px 0 rgba(0,0,0,0.2)" }}>
-              📝 Take Free Diagnostic Test
+              📚 Start Skill Practice
             </Link>
             <Link href="/ielts/writing"
               className="bg-teal-800 border border-white/30 text-white px-7 py-3.5 rounded-xl font-bold hover:bg-teal-900 transition-all">
@@ -574,7 +596,7 @@ export default function IELTSPage() {
             </Link>
             <Link href="/ielts/guide"
               className="bg-teal-800 border border-white/30 text-white px-7 py-3.5 rounded-xl font-bold hover:bg-teal-900 transition-all">
-              📅 Get 60-Day Study Plan
+              📥 Download Study Guide
             </Link>
           </div>
         </section>
