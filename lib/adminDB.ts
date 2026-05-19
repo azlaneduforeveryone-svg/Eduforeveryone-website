@@ -1,12 +1,17 @@
 // lib/adminDB.ts
 import {
   collection, getDocs, writeBatch, doc,
-  deleteDoc, addDoc, serverTimestamp,
+  addDoc, serverTimestamp,
   query, orderBy, limit,
 } from "firebase/firestore";
 import { db } from "./firebase";
 
 export type SaveMode = "replace" | "append";
+
+// ── Remove undefined values — Firebase rejects them ───────────────────────────
+function cleanUndefined(obj: Record<string, unknown>): Record<string, unknown> {
+  return JSON.parse(JSON.stringify(obj, (_, v) => v === undefined ? null : v));
+}
 
 // ── Generic batch write (handles >500 items) ──────────────────────────────────
 export async function saveToCollection(
@@ -28,7 +33,7 @@ export async function saveToCollection(
     const batch = writeBatch(db);
     for (const item of chunk) {
       const ref = doc(collection(db, collectionName));
-      batch.set(ref, { ...item, _uploadedAt: serverTimestamp() });
+      batch.set(ref, cleanUndefined({ ...item, _uploadedAt: serverTimestamp() }));
     }
     await batch.commit();
   }
