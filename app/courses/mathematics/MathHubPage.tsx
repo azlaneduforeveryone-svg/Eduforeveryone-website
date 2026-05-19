@@ -18,12 +18,13 @@ function transformMathTopics(raw: Record<string, unknown>[]): MathTopic[] {
       description:   String(r.description || ""),
       keyPoints:     [r.key_point_1, r.key_point_2, r.key_point_3, r.key_point_4, r.key_point_5]
         .filter(Boolean).map(String),
-      explanation:   String(r.description || ""),
-      examples:      r.example_problem ? [{
-        problem:  String(r.example_problem),
-        solution: String(r.example_solution || ""),
-        steps:    [] as string[],
-      }] : [],
+      explanation:   [String(r.description || "")],
+      examples: r.example_problem ? [{
+      title:   String(r.title || "Example"),
+      problem: String(r.example_problem),
+      steps:   String(r.example_solution || "").split("\n").filter(Boolean),
+      answer:  String(r.example_solution || ""),
+    }] : [],
       exercises:     [],
       quiz:          [],
       relatedTopics: [] as string[],
