@@ -1,7 +1,31 @@
 "use client";
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import { MATH_TOPICS, LEVELS, CATEGORIES, searchTopics, type Level } from "@/lib/mathTopics";
+import { MATH_TOPICS, LEVELS, CATEGORIES, searchTopics, type Level, type MathTopic } from "@/lib/mathTopics";
+import { useAdminCollection } from "@/lib/useAdminCollection";
+
+// ── Transform Firebase admin_math → MathTopic[] ───────────────────────────────
+function transformMathTopics(raw: Record<string, unknown>[]): MathTopic[] {
+  return raw
+    .filter(r => r.topic_id || r.id)
+    .map(r => ({
+      id:          String(r.topic_id || r.id || ""),
+      title:       String(r.title || ""),
+      level:       String(r.level || "High School") as Level,
+      category:    String(r.category || "algebra"),
+      description: String(r.description || ""),
+      keyPoints: [r.key_point_1, r.key_point_2, r.key_point_3, r.key_point_4, r.key_point_5]
+        .filter(Boolean).map(String),
+      examples: r.example_problem ? [{
+        problem:  String(r.example_problem),
+        solution: String(r.example_solution || ""),
+        steps:    [],
+      }] : [],
+      exercises: [],
+      quiz: [],
+    }))
+    .filter(t => t.id && t.title);
+}
 
 const LEVEL_COLORS: Record<string, string> = {
   "Elementary":   "bg-green-100 text-green-700 border-green-200",
@@ -24,12 +48,27 @@ export default function MathHubPage() {
   const [levelFilter, setLevelFilter] = useState<Level | "All">("All");
   const [catFilter,   setCatFilter]   = useState("All");
 
+  // Load from Firebase admin_math — merges with local MATH_TOPICS
+  const { data: fbTopics, loading: fbLoading, fromFirebase } = useAdminCollection(
+    "admin_math",
+    transformMathTopics,
+    []
+  );
+
+  // Combine: Firebase topics first, then local ones not already in Firebase
+  const ALL_TOPICS = useMemo(() => {
+    if (!fromFirebase) return MATH_TOPICS;
+    const fbIds = new Set(fbTopics.map(t => t.id));
+    const localOnly = MATH_TOPICS.filter(t => !fbIds.has(t.id));
+    return [...fbTopics, ...localOnly];
+  }, [fbTopics, fromFirebase]);
+
   const filtered = useMemo(() => {
-    let topics = query.trim().length >= 2 ? searchTopics(query) : MATH_TOPICS;
+    let topics = query.trim().length >= 2 ? searchTopics(query) : ALL_TOPICS;
     if (levelFilter !== "All") topics = topics.filter(t => t.level === levelFilter);
     if (catFilter   !== "All") topics = topics.filter(t => t.category === catFilter);
     return topics;
-  }, [query, levelFilter, catFilter]);
+  }, [query, levelFilter, catFilter, ALL_TOPICS]);
 
   // Group by level for display
   const byLevel = useMemo(() => {
@@ -54,6 +93,17 @@ export default function MathHubPage() {
           From elementary counting to university calculus. Every topic includes
           clear explanation, worked examples, practice exercises and a quiz.
         </p>
+        {fromFirebase && (
+          <div className="inline-flex items-center gap-2 mt-3 bg-teal-50 border border-teal-200 text-teal-700 text-xs font-semibold px-3 py-1.5 rounded-full">
+            ✅ {fbTopics.length} topics loaded from admin panel · {ALL_TOPICS.length} total
+          </div>
+        )}
+        {fbLoading && (
+          <div className="inline-flex items-center gap-2 mt-3 text-gray-400 text-xs">
+            <span className="w-3 h-3 border-2 border-gray-300 border-t-teal-500 rounded-full animate-spin" />
+            Loading topics…
+          </div>
+        )}
       </div>
 
       {/* Level badges */}

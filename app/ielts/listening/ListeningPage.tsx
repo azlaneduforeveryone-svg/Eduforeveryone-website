@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
+import { getAdminIELTSListening } from "@/lib/adminDB";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 interface ListeningQ {
@@ -420,6 +421,63 @@ function AudioPlayer({
   );
 }
 
+// ── Transform Firebase data → Section[] ───────────────────────────────────────
+// Handles both formats:
+//   Format A: each doc is a section with embedded questions array
+//   Format B: each doc is an individual question with sectionNum field
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function transformFirebaseSections(data: any[]): Section[] {
+  if (!data.length) return [];
+
+  // Format A — documents already have a questions array
+  if (data[0]?.questions && Array.isArray(data[0].questions)) {
+    return data
+      .filter(d => d.num && d.title)
+      .map(d => ({
+        num:        Number(d.num),
+        title:      String(d.title || ""),
+        context:    String(d.context || ""),
+        transcript: String(d.transcript || ""),
+        questions:  (d.questions as any[]).map((q: any, i: number) => ({
+          id:     Number(q.id ?? q.q_id ?? i + 1),
+          type:   (q.type === "mcq" ? "mcq" : "fill") as "fill" | "mcq",
+          q:      String(q.q || q.question || ""),
+          opts:   Array.isArray(q.opts) ? q.opts : undefined,
+          answer: String(q.answer ?? ""),
+          hint:   q.hint || undefined,
+        })).filter(q => q.q),
+      }))
+      .filter(s => s.questions.length > 0)
+      .sort((a, b) => a.num - b.num);
+  }
+
+  // Format B — individual question documents, group by sectionNum
+  const map: Record<number, Section> = {};
+  for (const item of data) {
+    const num = Number(item.sectionNum ?? item.num ?? 1);
+    if (!map[num]) {
+      map[num] = {
+        num,
+        title:      String(item.title || `Section ${num}`),
+        context:    String(item.context || ""),
+        transcript: String(item.transcript || ""),
+        questions:  [],
+      };
+    }
+    if (item.q || item.question) {
+      map[num].questions.push({
+        id:     Number(item.id ?? item.q_id ?? map[num].questions.length + 1),
+        type:   (item.type === "mcq" ? "mcq" : "fill") as "fill" | "mcq",
+        q:      String(item.q || item.question || ""),
+        opts:   Array.isArray(item.opts) ? item.opts : undefined,
+        answer: String(item.answer ?? ""),
+        hint:   item.hint || undefined,
+      });
+    }
+  }
+  return Object.values(map).sort((a, b) => a.num - b.num);
+}
+
 // ── Main Page Component ───────────────────────────────────────────────────────
 export default function ListeningPage() {
   const [activeSection,   setActiveSection]   = useState<Section | null>(null);
@@ -427,6 +485,23 @@ export default function ListeningPage() {
   const [results,         setResults]         = useState<Results>(null);
   const [showTranscript,  setShowTranscript]  = useState(false);
   const [audioFinished,   setAudioFinished]   = useState(false);
+  // Firebase sections — replaces local SECTIONS if data exists
+  const [fbSections,      setFbSections]      = useState<Section[]>([]);
+  const [fbLoading,       setFbLoading]       = useState(true);
+
+  // Load sections from Firebase admin upload on mount
+  useEffect(() => {
+    getAdminIELTSListening()
+      .then(data => {
+        const transformed = transformFirebaseSections(data);
+        if (transformed.length > 0) setFbSections(transformed);
+      })
+      .catch(e => console.error("Failed to load IELTS listening from Firebase:", e))
+      .finally(() => setFbLoading(false));
+  }, []);
+
+  // Use Firebase sections if available, otherwise fall back to local SECTIONS
+  const ACTIVE_SECTIONS = fbSections.length > 0 ? fbSections : SECTIONS;
 
   function start(s: Section) {
     // Fully reset speech engine before loading new section
@@ -681,26 +756,48 @@ export default function ListeningPage() {
 
       {/* Section cards */}
       <h2 className="text-xl font-bold text-gray-900 mb-5">Choose a Section</h2>
-      <div className="grid sm:grid-cols-2 gap-5">
-        {SECTIONS.map(s => (
-          <div key={s.num}
-            className="bg-white border border-gray-200 rounded-2xl p-6 hover:border-emerald-300 hover:shadow-md transition-all">
-            <div className="flex items-start justify-between mb-3">
-              <span className="text-xs bg-emerald-100 text-emerald-700 px-2.5 py-1 rounded-full font-bold">
-                Section {s.num}
-              </span>
-              <span className="text-xs text-gray-400">{s.questions.length} questions</span>
+
+      {fbLoading ? (
+        <div className="grid sm:grid-cols-2 gap-5">
+          {[1,2,3,4].map(i => (
+            <div key={i} className="bg-white border border-gray-200 rounded-2xl p-6 animate-pulse">
+              <div className="h-4 bg-gray-200 rounded w-1/3 mb-3" />
+              <div className="h-3 bg-gray-100 rounded w-2/3 mb-2" />
+              <div className="h-3 bg-gray-100 rounded w-1/2 mb-4" />
+              <div className="h-10 bg-gray-200 rounded-xl" />
             </div>
-            <p className="font-bold text-gray-900 text-sm mb-1">{s.title.split("—")[1]?.trim()}</p>
-            <p className="text-gray-500 text-xs mb-4 leading-relaxed">{s.context}</p>
-            <button onClick={() => start(s)}
-              className="w-full bg-emerald-600 text-white py-2.5 rounded-xl font-bold text-sm hover:bg-emerald-700 transition-all"
-              style={{ boxShadow: "0 3px 0 #065f46" }}>
-              🎧 Start Section {s.num} →
-            </button>
+          ))}
+        </div>
+      ) : (
+        <>
+          {fbSections.length > 0 && (
+            <div className="bg-emerald-50 border border-emerald-200 rounded-xl px-4 py-2.5 mb-4 text-sm text-emerald-700 flex items-center gap-2">
+              <span>✅</span>
+              <span><strong>{fbSections.length} sections</strong> loaded from admin panel</span>
+            </div>
+          )}
+          <div className="grid sm:grid-cols-2 gap-5">
+            {ACTIVE_SECTIONS.map(s => (
+              <div key={s.num}
+                className="bg-white border border-gray-200 rounded-2xl p-6 hover:border-emerald-300 hover:shadow-md transition-all">
+                <div className="flex items-start justify-between mb-3">
+                  <span className="text-xs bg-emerald-100 text-emerald-700 px-2.5 py-1 rounded-full font-bold">
+                    Section {s.num}
+                  </span>
+                  <span className="text-xs text-gray-400">{s.questions.length} questions</span>
+                </div>
+                <p className="font-bold text-gray-900 text-sm mb-1">{s.title.split("—")[1]?.trim() || s.title}</p>
+                <p className="text-gray-500 text-xs mb-4 leading-relaxed">{s.context}</p>
+                <button onClick={() => start(s)}
+                  className="w-full bg-emerald-600 text-white py-2.5 rounded-xl font-bold text-sm hover:bg-emerald-700 transition-all"
+                  style={{ boxShadow: "0 3px 0 #065f46" }}>
+                  🎧 Start Section {s.num} →
+                </button>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      )}
 
       <div className="mt-8 text-center">
         <Link href="/ielts"

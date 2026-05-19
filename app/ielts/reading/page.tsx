@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ReadingPage from "./ReadingPage";
+import ReadingHub from "./ReadingHub";
 
 export const metadata: Metadata = {
   title: "IELTS Reading Practice — Free Tests with Instant Scoring | EduForEveryone",
@@ -16,5 +16,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <ReadingPage />;
+  return <ReadingHub />;
 }
