@@ -625,6 +625,15 @@ export default function AdminPanel() {
                     </div>
                   )}
 
+                  {saveMode === "append" && (counts[activeTabConfig.collection] ?? 0) > 0 && (
+                    <div className="bg-amber-900/20 border border-amber-700 rounded-lg px-3 py-2 mb-3">
+                      <p className="text-amber-400 text-xs">
+                        ⚠️ <strong>Duplicate risk:</strong> This collection already has {counts[activeTabConfig.collection]} items.
+                        Appending the same file again will create duplicates. Use <strong>Replace all</strong> if you are re-uploading the same data.
+                      </p>
+                    </div>
+                  )}
+
                   {saveMsg && (
                     <div className={`rounded-lg px-4 py-3 mb-3 text-sm font-semibold ${saveMsg.ok ? "bg-emerald-900/30 border border-emerald-700 text-emerald-300" : "bg-red-900/30 border border-red-700 text-red-300"}`}>
                       {saveMsg.text}

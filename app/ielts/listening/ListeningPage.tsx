@@ -422,16 +422,16 @@ function AudioPlayer({
 }
 
 // ── Transform Firebase data → Section[] ───────────────────────────────────────
-// Handles both formats:
-//   Format A: each doc is a section with embedded questions array
-//   Format B: each doc is an individual question with sectionNum field
+// Handles both formats + deduplicates by section num (prevents double uploads showing twice)
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function transformFirebaseSections(data: any[]): Section[] {
   if (!data.length) return [];
 
+  let sections: Section[] = [];
+
   // Format A — documents already have a questions array
   if (data[0]?.questions && Array.isArray(data[0].questions)) {
-    return data
+    sections = data
       .filter(d => d.num && d.title)
       .map(d => ({
         num:        Number(d.num),
@@ -447,35 +447,45 @@ function transformFirebaseSections(data: any[]): Section[] {
           hint:   q.hint || undefined,
         })).filter(q => q.q),
       }))
-      .filter(s => s.questions.length > 0)
-      .sort((a, b) => a.num - b.num);
+      .filter(s => s.questions.length > 0);
+  } else {
+    // Format B — individual question documents, group by sectionNum
+    const map: Record<number, Section> = {};
+    for (const item of data) {
+      const num = Number(item.sectionNum ?? item.num ?? 1);
+      if (!map[num]) {
+        map[num] = {
+          num,
+          title:      String(item.title || `Section ${num}`),
+          context:    String(item.context || ""),
+          transcript: String(item.transcript || ""),
+          questions:  [],
+        };
+      }
+      if (item.q || item.question) {
+        map[num].questions.push({
+          id:     Number(item.id ?? item.q_id ?? map[num].questions.length + 1),
+          type:   (item.type === "mcq" ? "mcq" : "fill") as "fill" | "mcq",
+          q:      String(item.q || item.question || ""),
+          opts:   Array.isArray(item.opts) ? item.opts : undefined,
+          answer: String(item.answer ?? ""),
+          hint:   item.hint || undefined,
+        });
+      }
+    }
+    sections = Object.values(map);
   }
 
-  // Format B — individual question documents, group by sectionNum
-  const map: Record<number, Section> = {};
-  for (const item of data) {
-    const num = Number(item.sectionNum ?? item.num ?? 1);
-    if (!map[num]) {
-      map[num] = {
-        num,
-        title:      String(item.title || `Section ${num}`),
-        context:    String(item.context || ""),
-        transcript: String(item.transcript || ""),
-        questions:  [],
-      };
-    }
-    if (item.q || item.question) {
-      map[num].questions.push({
-        id:     Number(item.id ?? item.q_id ?? map[num].questions.length + 1),
-        type:   (item.type === "mcq" ? "mcq" : "fill") as "fill" | "mcq",
-        q:      String(item.q || item.question || ""),
-        opts:   Array.isArray(item.opts) ? item.opts : undefined,
-        answer: String(item.answer ?? ""),
-        hint:   item.hint || undefined,
-      });
+  // ── Deduplicate by section num — keep the one with most questions ──────────
+  const dedupMap = new Map<number, Section>();
+  for (const s of sections) {
+    const existing = dedupMap.get(s.num);
+    if (!existing || s.questions.length > existing.questions.length) {
+      dedupMap.set(s.num, s);
     }
   }
-  return Object.values(map).sort((a, b) => a.num - b.num);
+
+  return Array.from(dedupMap.values()).sort((a, b) => a.num - b.num);
 }
 
 // ── Main Page Component ───────────────────────────────────────────────────────
