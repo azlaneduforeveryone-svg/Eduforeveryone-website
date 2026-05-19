@@ -9,20 +9,25 @@ function transformMathTopics(raw: Record<string, unknown>[]): MathTopic[] {
   return raw
     .filter(r => r.topic_id || r.id)
     .map(r => ({
-      id:          String(r.topic_id || r.id || ""),
-      title:       String(r.title || ""),
-      level:       String(r.level || "High School") as Level,
-      category:    String(r.category || "algebra"),
-      description: String(r.description || ""),
-      keyPoints: [r.key_point_1, r.key_point_2, r.key_point_3, r.key_point_4, r.key_point_5]
+      id:            String(r.topic_id || r.id || ""),
+      title:         String(r.title || ""),
+      subtitle:      String(r.description || ""),
+      emoji:         "🧮",
+      level:         String(r.level || "High School") as Level,
+      category:      String(r.category || "algebra"),
+      description:   String(r.description || ""),
+      keyPoints:     [r.key_point_1, r.key_point_2, r.key_point_3, r.key_point_4, r.key_point_5]
         .filter(Boolean).map(String),
-      examples: r.example_problem ? [{
+      explanation:   String(r.description || ""),
+      examples:      r.example_problem ? [{
         problem:  String(r.example_problem),
         solution: String(r.example_solution || ""),
-        steps:    [],
+        steps:    [] as string[],
       }] : [],
-      exercises: [],
-      quiz: [],
+      exercises:     [],
+      quiz:          [],
+      relatedTopics: [] as string[],
+      tags:          [] as string[],
     }))
     .filter(t => t.id && t.title);
 }
@@ -112,7 +117,7 @@ export default function MathHubPage() {
           <div key={l} className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border ${LEVEL_COLORS[l]}`}>
             <span>{LEVEL_EMOJIS[l]}</span>
             <span>{l}</span>
-            <span className="bg-white/60 px-1.5 rounded-full">{MATH_TOPICS.filter(t=>t.level===l).length}</span>
+            <span className="bg-white/60 px-1.5 rounded-full">{ALL_TOPICS.filter(t=>t.level===l).length}</span>
           </div>
         ))}
       </div>
@@ -136,7 +141,6 @@ export default function MathHubPage() {
 
       {/* Filters */}
       <div className="flex flex-wrap gap-2 mb-8">
-        {/* Level filter */}
         <div className="flex gap-1.5 flex-wrap">
           {(["All", ...LEVELS] as (Level|"All")[]).map(l => (
             <button key={l} onClick={() => setLevelFilter(l)}
@@ -146,7 +150,6 @@ export default function MathHubPage() {
             </button>
           ))}
         </div>
-        {/* Category filter */}
         <div className="flex gap-1.5 flex-wrap">
           {["All", ...CATEGORIES].map(c => (
             <button key={c} onClick={() => setCatFilter(c)}
@@ -167,7 +170,7 @@ export default function MathHubPage() {
         </p>
       )}
 
-      {/* ── Grouped by Level ── */}
+      {/* Grouped by Level */}
       {showGroups ? (
         <div className="space-y-12">
           {LEVELS.map(level => {
@@ -193,7 +196,6 @@ export default function MathHubPage() {
           })}
         </div>
       ) : (
-        /* Flat list when filtering/searching */
         filtered.length === 0 ? (
           <div className="text-center py-16">
             <p className="text-4xl mb-4">🔍</p>

@@ -89,3 +89,7 @@ export async function getAdminQuizQuestions() {
   const snap = await getDocs(collection(db, "admin_quiz"));
   return snap.docs.map(d => d.data());
 }
+export async function getAdminIELTSListening() {
+  const snap = await getDocs(collection(db, "admin_ielts_listening"));
+  return snap.docs.map(d => d.data());
+}
