@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import Link from "next/link";
 import { getAdminIELTSListening } from "@/lib/adminDB";
 
@@ -488,6 +488,23 @@ function transformFirebaseSections(data: any[]): Section[] {
   return Array.from(dedupMap.values()).sort((a, b) => a.num - b.num);
 }
 
+// ── Shuffle & Session Helpers ─────────────────────────────────────────────────
+const QUESTIONS_PER_SECTION = 10;
+const LBLS = ["A","B","C","D"] as const;
+function shuffle<T>(arr: T[]): T[] {
+  const a=[...arr]; for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a;
+}
+function shuffleMCQL(q: ListeningQ): ListeningQ {
+  if(q.type!=="mcq"||!q.opts||q.opts.length<2) return q;
+  const texts=q.opts.map(o=>o.slice(3));
+  const correctText=texts[LBLS.indexOf(q.answer as typeof LBLS[number])]??texts[0];
+  const s=shuffle(texts); const ni=s.indexOf(correctText);
+  return {...q,opts:s.map((t,i)=>`${LBLS[i]}. ${t}`),answer:LBLS[ni]??"A"};
+}
+function pickQuestions(s: Section, n: number): Section {
+  return {...s,questions:shuffle(s.questions).slice(0,Math.min(n,s.questions.length)).map(shuffleMCQL)};
+}
+
 // ── Main Page Component ───────────────────────────────────────────────────────
 export default function ListeningPage() {
   const [activeSection,   setActiveSection]   = useState<Section | null>(null);
@@ -495,6 +512,7 @@ export default function ListeningPage() {
   const [results,         setResults]         = useState<Results>(null);
   const [showTranscript,  setShowTranscript]  = useState(false);
   const [audioFinished,   setAudioFinished]   = useState(false);
+  const [sessionKey,      setSessionKey]      = useState(0);
   // Firebase sections — replaces local SECTIONS if data exists
   const [fbSections,      setFbSections]      = useState<Section[]>([]);
   const [fbLoading,       setFbLoading]       = useState(true);
@@ -510,11 +528,14 @@ export default function ListeningPage() {
       .finally(() => setFbLoading(false));
   }, []);
 
-  // Use Firebase sections if available, otherwise fall back to local SECTIONS
-  const ACTIVE_SECTIONS = fbSections.length > 0 ? fbSections : SECTIONS;
+  // Pick 10 shuffled questions per section — recomputed on sessionKey change or new Firebase data
+  const ACTIVE_SECTIONS = useMemo(() => {
+    const base = fbSections.length > 0 ? fbSections : SECTIONS;
+    return base.map(s => pickQuestions(s, QUESTIONS_PER_SECTION));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sessionKey, fbSections]);
 
   function start(s: Section) {
-    // Fully reset speech engine before loading new section
     window.speechSynthesis.cancel();
     setTimeout(() => {
       setActiveSection(s);
@@ -724,9 +745,14 @@ export default function ListeningPage() {
         <span className="text-5xl">🎧</span>
         <div>
           <h1 className="text-3xl font-black text-gray-900 mb-1">IELTS Listening Practice</h1>
-          <p className="text-gray-500">All 4 sections · 20 questions · Real audio via browser speech synthesis</p>
+          <p className="text-gray-500">All 4 sections · {QUESTIONS_PER_SECTION} questions each · shuffled every attempt · Real audio</p>
         </div>
-      </div>
+        <button onClick={() => setSessionKey(k => k + 1)}
+          className="flex-shrink-0 text-xs border border-gray-200 text-gray-500 hover:text-emerald-600 hover:border-emerald-300 px-3 py-2 rounded-xl transition-all">
+          🔀 New Shuffle
+        </button>
+        </div>
+      
 
       {/* How it works */}
       <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-5 mb-8">

@@ -1,7 +1,7 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { getTopicById, type MathTopic } from "@/lib/mathTopics";
+import { getTopicById, type MathTopic, type Level } from "@/lib/mathTopics";
 
 const LEVEL_COLORS: Record<string, string> = {
   "Elementary":   "bg-green-100 text-green-700",
@@ -175,8 +175,56 @@ function TopicExercises({ topic }: { topic: MathTopic }) {
 
 // ── Main Topic Page ───────────────────────────────────────────────────────────
 export default function MathTopicPage({ topicId }: { topicId: string }) {
-  const topic = getTopicById(topicId);
+  const localTopic = getTopicById(topicId);
+  const [topic,     setTopic]     = useState<MathTopic | null>(localTopic ?? null);
+  const [fbLoading, setFbLoading] = useState(!localTopic); // only load Firebase if not found locally
   const [activeTab, setActiveTab] = useState<Tab>("explain");
+
+  // Firebase fallback — fetch from admin_math if not in local MATH_TOPICS
+  useEffect(() => {
+    if (localTopic) return; // already found locally
+    import("@/lib/adminDB").then(({ getCollectionData }) =>
+      getCollectionData("admin_math")
+        .then(docs => {
+          const found = docs.find((d: Record<string, unknown>) =>
+            String(d.topic_id || d.id || "") === topicId
+          ) as Record<string, unknown> | undefined;
+          if (found) {
+            setTopic({
+              id:            String(found.topic_id || found.id || topicId),
+              title:         String(found.title || ""),
+              subtitle:      String(found.description || ""),
+              emoji:         "🧮",
+              level:         String(found.level || "High School") as Level,
+              category:      String(found.category || "algebra"),
+              description:   String(found.description || ""),
+              explanation:   [String(found.description || "")],
+              keyPoints:     [found.key_point_1, found.key_point_2, found.key_point_3, found.key_point_4, found.key_point_5]
+                .filter(Boolean).map(String),
+              examples:      found.example_problem ? [{
+                title:   String(found.title || "Example"),
+                problem: String(found.example_problem),
+                steps:   String(found.example_solution || "").split("\n").filter(Boolean),
+                answer:  String(found.example_solution || ""),
+              }] : [],
+              exercises:     [],
+              quiz:          [],
+              relatedTopics: [],
+              tags:          [],
+            });
+          }
+          setFbLoading(false);
+        })
+        .catch(() => setFbLoading(false))
+    );
+  }, [topicId, localTopic]);
+
+  if (fbLoading) return (
+    <div className="text-center py-20">
+      <div className="w-10 h-10 border-4 border-teal-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+      <p className="text-gray-500 text-sm">Loading topic…</p>
+    </div>
+  );
 
   if (!topic) return (
     <div className="text-center py-20">
