@@ -16,7 +16,7 @@ interface Passage {
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 const QUESTIONS_PER_PASSAGE = 13;
-const TEST_SECONDS = 60 * 60; // 60 minutes
+const TEST_SECONDS = 20 * 60; // 20 minutes
 const PARA_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const MCQLABELS = ["A","B","C","D"] as const;
 const HEADING_NUMS = ["i","ii","iii","iv","v","vi","vii","viii","ix","x"];
@@ -717,7 +717,7 @@ export default function ReadingHub({ localPassages = [] }: { localPassages?: Pas
           <h1 className="text-3xl font-black text-gray-900 mb-1">IELTS Academic Reading</h1>
           <p className="text-gray-500 text-sm">
             {loading ? "Loading passages…" :
-              `${passages.length} passage${passages.length!==1?"s":""} · ${QUESTIONS_PER_PASSAGE} questions each · 60 minute timer`}
+              `${passages.length} passage${passages.length!==1?"s":""} · ${QUESTIONS_PER_PASSAGE} questions each · 20 minute  per passage`}
             {fromFirebase && <span className="ml-2 text-indigo-600 font-semibold">· from admin panel</span>}
           </p>
         </div>
@@ -731,7 +731,7 @@ export default function ReadingHub({ localPassages = [] }: { localPassages?: Pas
       <div className="bg-indigo-50 border border-indigo-200 rounded-2xl p-5 mb-6">
         <p className="font-bold text-indigo-800 mb-3 text-sm">📋 Official IELTS Computer Test Format</p>
         <div className="grid sm:grid-cols-3 gap-3 text-xs text-indigo-700">
-          <div className="flex gap-2"><span>⏱</span><span>60 minutes · timer auto-submits</span></div>
+          <div className="flex gap-2"><span>⏱</span><span>20 minutes  per passage · timer auto-submits</span></div>
           <div className="flex gap-2"><span>🔢</span><span>One question at a time with navigation</span></div>
           <div className="flex gap-2"><span>🚩</span><span>Flag questions to review later</span></div>
           <div className="flex gap-2"><span>[A][B]</span><span>Paragraph labels in passage</span></div>
@@ -773,7 +773,7 @@ export default function ReadingHub({ localPassages = [] }: { localPassages?: Pas
             </div>
             <h3 className="font-bold text-gray-900 text-sm mb-1">{passage.title}</h3>
             <p className="text-gray-500 text-xs mb-1">{passage.tag}</p>
-            <p className="text-gray-400 text-xs mb-4">{passage.wordCount} words · {sessionQs.length} questions · 60 min</p>
+            <p className="text-gray-400 text-xs mb-4">{passage.wordCount} words · {sessionQs.length} questions · 20 min</p>
             <button onClick={() => setActiveTest({ passage, sessionQs, startNum })}
               className="w-full bg-indigo-600 text-white py-2.5 rounded-xl font-bold text-sm hover:bg-indigo-700 transition-all">
               Start Practice Test →
