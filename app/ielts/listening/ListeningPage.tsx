@@ -5,35 +5,24 @@ import { getAdminIELTSListening } from "@/lib/adminDB";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 interface ListeningQ {
-  id: number;
-  q: string;
-  type: "fill" | "mcq";
-  opts?: string[];
-  answer: string;
-  hint?: string;
+  id: number; q: string; type: "fill" | "mcq";
+  opts?: string[]; answer: string; hint?: string;
 }
-
 interface Section {
-  num: number;
-  title: string;
-  context: string;
-  transcript: string;
-  questions: ListeningQ[];
+  num: number; title: string; context: string;
+  transcript: string; questions: ListeningQ[];
 }
-
 type Answers = Record<number, string>;
 type Results = { score: number; total: number } | null;
 
-// ── Band Score Conversion ─────────────────────────────────────────────────────
+// ── Band Score ────────────────────────────────────────────────────────────────
 const RAW_TO_BAND: [number, number][] = [
   [39,9],[37,8.5],[35,8],[32,7.5],[30,7],[26,6.5],
   [23,6],[18,5.5],[16,5],[13,4.5],[10,4],[6,3.5],[4,3],[2,2.5],[0,1],
 ];
 const getBand = (raw: number, total: number) => {
   const scaled = Math.round((raw / total) * 40);
-  for (const [min, band] of RAW_TO_BAND) {
-    if (scaled >= min) return band;
-  }
+  for (const [min, band] of RAW_TO_BAND) { if (scaled >= min) return band; }
   return 1;
 };
 
@@ -62,7 +51,7 @@ Customer: No, that covers everything. Thank you very much.`,
       { id:2, type:"fill", q:"The premium membership includes unlimited _____, spinning and pilates.", answer:"yoga", hint:"Three types of classes are mentioned." },
       { id:3, type:"fill", q:"The one-off joining fee is £_____.", answer:"15", hint:"The receptionist mentions this after discussing membership types." },
       { id:4, type:"fill", q:"The customer's surname is _____.", answer:"Collins", hint:"The customer spells it out letter by letter." },
-      { id:5, type:"mcq",  q:"When can the joining fee be waived?",
+      { id:5, type:"mcq", q:"When can the joining fee be waived?",
         opts:["A. Always for new members","B. If signing up online only","C. Before the end of the month during a promotion","D. If paying annually"],
         answer:"C", hint:"The receptionist explains a specific condition for waiving the fee." },
     ],
@@ -81,11 +70,11 @@ A few important reminders: please stay on the marked paths at all times, as goin
     questions: [
       { id:1, type:"fill", q:"The reserve covers approximately _____ hectares.", answer:"450", hint:"A specific number is given at the start of the description." },
       { id:2, type:"fill", q:"The woodland area is home to over _____ species of birds.", answer:"60", hint:"Listen for the number given about the woodland." },
-      { id:3, type:"mcq",  q:"Where are the otters located in the reserve?",
+      { id:3, type:"mcq", q:"Where are the otters located in the reserve?",
         opts:["A. In the ancient woodland","B. In the open meadows","C. In the freshwater wetlands","D. Near the entrance"],
         answer:"C", hint:"The guide describes the central area of the reserve." },
       { id:4, type:"fill", q:"The shorter walking loop is _____ kilometres.", answer:"3", hint:"An alternative route length is mentioned." },
-      { id:5, type:"mcq",  q:"What do the café and gift shop proceeds support?",
+      { id:5, type:"mcq", q:"What do the café and gift shop proceeds support?",
         opts:["A. Staff salaries","B. The reserve's conservation programmes","C. Free entry for school groups","D. New walking trail construction"],
         answer:"B", hint:"The guide mentions this at the very end of his talk." },
     ],
@@ -111,13 +100,13 @@ Nina: There are counter-arguments though. Community gardening programmes reduce 
 Tom: Good point. I'll draft the social and economic parts if you handle the introduction and environmental section.
 Nina: Perfect. Let's meet Thursday to put it all together.`,
     questions: [
-      { id:1, type:"mcq",  q:"How many insect species can a small urban park support?",
+      { id:1, type:"mcq", q:"How many insect species can a small urban park support?",
         opts:["A. Over 50","B. Over 100","C. Over 200","D. Over 500"], answer:"B", hint:"Nina mentions a specific number from the article." },
       { id:2, type:"fill", q:"Workers with views of trees reported _____% lower stress levels.", answer:"20", hint:"Nina quotes a specific statistic." },
       { id:3, type:"fill", q:"Singapore's vegetation coverage target is _____% of the city.", answer:"47", hint:"Tom describes Singapore's government target." },
-      { id:4, type:"mcq",  q:"What does Professor Keane specifically require in the assignment?",
+      { id:4, type:"mcq", q:"What does Professor Keane specifically require in the assignment?",
         opts:["A. Case studies","B. Interviews","C. Quantitative data","D. A literature review"], answer:"C", hint:"Nina reminds Tom what the professor asked for." },
-      { id:5, type:"mcq",  q:"Who will draft the introduction and environmental section?",
+      { id:5, type:"mcq", q:"Who will draft the introduction and environmental section?",
         opts:["A. Tom","B. Nina","C. Both together","D. Professor Keane"], answer:"B", hint:"Listen to who agrees to write which part at the end." },
     ],
   },
@@ -141,248 +130,268 @@ Bioluminescence has evolved independently at least forty separate times across t
     questions: [
       { id:1, type:"fill", q:"The enzyme that enables bioluminescence is called _____.", answer:"luciferase", hint:"Two chemical names are mentioned — listen for the enzyme." },
       { id:2, type:"fill", q:"Bioluminescence converts _____ to 95% of its energy into visible light.", answer:"90", hint:"A percentage range is given." },
-      { id:3, type:"mcq",  q:"Why is blue-green light most common in the ocean?",
+      { id:3, type:"mcq", q:"Why is blue-green light most common in the ocean?",
         opts:["A. It is most visible to humans","B. It travels furthest through seawater","C. It requires least energy","D. It is least visible to predators"], answer:"B", hint:"The lecturer explains the biological reason." },
-      { id:4, type:"mcq",  q:"How does the anglerfish use bioluminescence?",
+      { id:4, type:"mcq", q:"How does the anglerfish use bioluminescence?",
         opts:["A. For camouflage","B. To communicate with mates","C. As a lure to attract prey","D. As a defensive mechanism"], answer:"C", hint:"The first function described is predation." },
       { id:5, type:"fill", q:"About _____% of deep ocean marine species exhibit bioluminescence.", answer:"76", hint:"A specific percentage is stated." },
     ],
   },
 ];
 
-// ── Audio Player Component ────────────────────────────────────────────────────
-function AudioPlayer({
-  section, onFinished,
-}: {
-  section: Section;
-  onFinished: () => void;
-}) {
-  const [voices,   setVoices]   = useState<SpeechSynthesisVoice[]>([]);
-  const [voice,    setVoice]    = useState<SpeechSynthesisVoice | null>(null);
-  const [rate,     setRate]     = useState(0.85);
-  const [status,   setStatus]   = useState<"idle"|"reading"|"playing"|"paused"|"done">("idle");
-  const [readTime, setReadTime] = useState(45);
-  const [progress, setProgress] = useState(0);
+// ── CRITICAL FIX: Chunk-based TTS ────────────────────────────────────────────
+// Chrome's Web Speech API silently stops after ~15 seconds on long text.
+// Solution: split into ~200-char sentence chunks, chain via onend callback.
+function splitChunks(text: string, max = 200): string[] {
+  const sentences = text.match(/[^.!?\n]+[.!?\n]*/g) ?? [text];
+  const chunks: string[] = [];
+  let buf = "";
+  for (const s of sentences) {
+    if (buf.length + s.length > max && buf.trim()) {
+      chunks.push(buf.trim());
+      buf = s;
+    } else {
+      buf += s;
+    }
+  }
+  if (buf.trim()) chunks.push(buf.trim());
+  return chunks;
+}
 
-  const timerRef     = useRef<ReturnType<typeof setInterval>|null>(null);
-  const progressRef  = useRef<ReturnType<typeof setInterval>|null>(null);
-  const keepAliveRef = useRef<ReturnType<typeof setInterval>|null>(null);
-  const chunksRef    = useRef<string[]>([]);
-  const chunkIdxRef  = useRef(0);
+// ── AudioPlayer ───────────────────────────────────────────────────────────────
+function AudioPlayer({ section, onFinished }: { section: Section; onFinished: () => void }) {
+  const [status,    setStatus]    = useState<"idle"|"reading"|"playing"|"paused"|"done">("idle");
+  const [voices,    setVoices]    = useState<SpeechSynthesisVoice[]>([]);
+  const [voiceName, setVoiceName] = useState("");
+  const [rate,      setRate]      = useState(0.87);
+  const [readTime,  setReadTime]  = useState(45);
+  const [progress,  setProgress]  = useState(0);
+
+  // Stable refs — never cause re-renders
   const stoppedRef   = useRef(false);
-  const totalChunksRef = useRef(0);
+  const pausedRef    = useRef(false);
+  const chunkRef     = useRef(0);
+  const chunksRef    = useRef<string[]>([]);
+  const keepAliveRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const readTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  const clearAll = useCallback(() => {
-    if (timerRef.current)     clearInterval(timerRef.current);
-    if (progressRef.current)  clearInterval(progressRef.current);
-    if (keepAliveRef.current) clearInterval(keepAliveRef.current);
-  }, []);
-
-  // Load voices
+  // ── Load voices ONCE on mount ─────────────────────────────────────────────
   useEffect(() => {
     const load = () => {
-      const v = window.speechSynthesis.getVoices();
-      setVoices(v.filter(x => x.lang.startsWith("en")));
-      const preferred =
-        v.find(x => x.lang === "en-GB") ||
-        v.find(x => x.lang === "en-AU") ||
-        v.find(x => x.lang.startsWith("en-US")) ||
-        v[0] || null;
-      setVoice(preferred);
+      const all = window.speechSynthesis.getVoices();
+      if (!all.length) return;
+      // Priority: British > Australian > US > any English > everything
+      const gb = all.filter(v => v.lang === "en-GB");
+      const au = all.filter(v => v.lang === "en-AU");
+      const us = all.filter(v => v.lang.startsWith("en-US"));
+      const en = all.filter(v => v.lang.startsWith("en"));
+      const ranked = gb.length ? gb : au.length ? au : us.length ? us : en.length ? en : all;
+      setVoices(ranked);
+      setVoiceName(prev => prev || ranked[0]?.name || "");
     };
     load();
     window.speechSynthesis.onvoiceschanged = load;
+    // Cleanup on unmount
     return () => {
-      stoppedRef.current = true;
       window.speechSynthesis.cancel();
-      clearAll();
+      if (keepAliveRef.current) clearInterval(keepAliveRef.current);
+      if (readTimerRef.current) clearInterval(readTimerRef.current);
     };
-  }, [clearAll]);
+  }, []); // ← empty dep array — runs ONCE, no duplicate
 
-  // Split transcript into sentence-sized chunks (~200 chars max)
-  // This fixes Chrome's bug of stopping after ~15 seconds on long texts
-  const buildChunks = useCallback((text: string): string[] => {
-    // Split on sentence boundaries
-    const sentences = text
-      .replace(/([.!?])\s+/g, "$1\n")
-      .split("\n")
-      .map(s => s.trim())
-      .filter(Boolean);
-
-    const chunks: string[] = [];
-    let current = "";
-    for (const sentence of sentences) {
-      if ((current + " " + sentence).length > 220) {
-        if (current) chunks.push(current.trim());
-        current = sentence;
-      } else {
-        current = current ? current + " " + sentence : sentence;
-      }
-    }
-    if (current.trim()) chunks.push(current.trim());
-    return chunks;
-  }, []);
-
+  // ── Speak one chunk, then chain to the next ───────────────────────────────
   const speakChunk = useCallback((idx: number) => {
-    if (stoppedRef.current) return;
-    const chunks = chunksRef.current;
-    if (idx >= chunks.length) {
-      // All chunks done
-      clearAll();
-      setProgress(100);
-      setStatus("done");
-      onFinished();
+    if (stoppedRef.current || idx >= chunksRef.current.length) {
+      if (!stoppedRef.current) {
+        if (keepAliveRef.current) clearInterval(keepAliveRef.current);
+        setProgress(100);
+        setStatus("done");
+        onFinished();
+      }
       return;
     }
-
-    const utter = new SpeechSynthesisUtterance(chunks[idx]);
-    utter.rate = rate;
-    if (voice) utter.voice = voice;
-
-    utter.onend = () => {
+    const u = new SpeechSynthesisUtterance(chunksRef.current[idx]);
+    u.rate = rate;
+    const v = window.speechSynthesis.getVoices().find(v => v.name === voiceName);
+    if (v) u.voice = v;
+    u.onend = () => {
       if (stoppedRef.current) return;
-      chunkIdxRef.current = idx + 1;
-      setProgress(Math.round(((idx + 1) / totalChunksRef.current) * 100));
-      speakChunk(idx + 1);
+      const next = idx + 1;
+      chunkRef.current = next;
+      setProgress(Math.round((next / chunksRef.current.length) * 100));
+      speakChunk(next);
     };
-
-    utter.onerror = (e) => {
-      // Ignore "interrupted" errors from cancel() — just skip to next chunk
+    u.onerror = (e) => {
       if (e.error === "interrupted" || stoppedRef.current) return;
-      chunkIdxRef.current = idx + 1;
-      speakChunk(idx + 1);
+      speakChunk(idx + 1); // skip bad chunk
     };
+    window.speechSynthesis.speak(u);
+  }, [rate, voiceName, onFinished]);
 
-    window.speechSynthesis.speak(utter);
-  }, [rate, voice, onFinished, clearAll]);
-
+  // ── Start playback ────────────────────────────────────────────────────────
   const playAudio = useCallback(() => {
-    stoppedRef.current = false;
-    // IMPORTANT: cancel + 250ms delay before speaking — fixes "no sound" after cancel
     window.speechSynthesis.cancel();
-    clearAll();
-
-    const chunks = buildChunks(section.transcript);
-    chunksRef.current    = chunks;
-    totalChunksRef.current = chunks.length;
-    chunkIdxRef.current  = 0;
+    stoppedRef.current = false;
+    pausedRef.current  = false;
+    chunkRef.current   = 0;
+    chunksRef.current  = splitChunks(section.transcript);
     setProgress(0);
     setStatus("playing");
-
-    // Chrome keepalive: resume every 10s to prevent silent pause bug
-    keepAliveRef.current = setInterval(() => {
-      if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
-        window.speechSynthesis.pause();
-        window.speechSynthesis.resume();
-      }
-    }, 10000);
-
-    // Delay start slightly after cancel to let browser reset
+    // 300ms delay — Chrome needs time to reset after cancel()
     setTimeout(() => {
-      if (!stoppedRef.current) speakChunk(0);
-    }, 250);
-  }, [section.transcript, buildChunks, speakChunk, clearAll]);
+      if (stoppedRef.current) return;
+      // Keep-alive: ping every 10s to prevent Chrome GC killing synthesis
+      if (keepAliveRef.current) clearInterval(keepAliveRef.current);
+      keepAliveRef.current = setInterval(() => {
+        if (!stoppedRef.current && !pausedRef.current &&
+            window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
+          window.speechSynthesis.pause();
+          window.speechSynthesis.resume();
+        }
+      }, 10_000);
+      speakChunk(0);
+    }, 300);
+  }, [section.transcript, speakChunk]);
 
+  // ── 45-second reading countdown ───────────────────────────────────────────
   const startReading = () => {
+    window.speechSynthesis.cancel();
+    stoppedRef.current = false;
     setStatus("reading");
     setReadTime(45);
-    timerRef.current = setInterval(() => {
-      setReadTime(v => {
-        if (v <= 1) { clearInterval(timerRef.current!); playAudio(); return 0; }
-        return v - 1;
+    readTimerRef.current = setInterval(() => {
+      setReadTime(t => {
+        if (t <= 1) { clearInterval(readTimerRef.current!); playAudio(); return 0; }
+        return t - 1;
       });
-    }, 1000);
+    }, 1_000);
   };
 
+  // ── Pause / Resume ────────────────────────────────────────────────────────
   const togglePause = () => {
-    if (status === "paused") {
-      window.speechSynthesis.resume();
-      setStatus("playing");
-    } else {
+    if (status === "playing") {
       window.speechSynthesis.pause();
+      pausedRef.current = true;
       setStatus("paused");
+    } else {
+      window.speechSynthesis.resume();
+      pausedRef.current = false;
+      setStatus("playing");
     }
   };
 
-  const stopEarly = () => {
+  // ── Stop ─────────────────────────────────────────────────────────────────
+  const stop = () => {
     stoppedRef.current = true;
     window.speechSynthesis.cancel();
-    clearAll();
-    setProgress(100);
+    if (keepAliveRef.current) clearInterval(keepAliveRef.current);
+    if (readTimerRef.current) clearInterval(readTimerRef.current);
     setStatus("done");
     onFinished();
   };
 
+  // ── Replay ────────────────────────────────────────────────────────────────
+  const replay = () => {
+    stoppedRef.current = false;
+    pausedRef.current  = false;
+    setProgress(0);
+    playAudio();
+  };
+
+  // ── Render ────────────────────────────────────────────────────────────────
   return (
     <div className="bg-gray-900 text-white rounded-2xl p-5 mb-6">
-      {/* Voice + speed settings (only before start) */}
+
+      {/* ── IDLE: settings ── */}
       {status === "idle" && (
-        <div className="space-y-3 mb-5">
+        <div className="space-y-4 mb-5">
           <p className="font-bold text-sm text-gray-300">⚙️ Audio Settings</p>
+
+          {/* Voice selector */}
           <div>
-            <label className="text-xs text-gray-400 block mb-1">Voice</label>
-            <select value={voice?.name || ""}
-              onChange={e => setVoice(voices.find(v => v.name === e.target.value) || null)}
-              className="w-full bg-gray-800 border border-gray-600 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-400">
+            <label className="text-xs text-gray-400 block mb-1.5">Voice</label>
+            <select value={voiceName} onChange={e => setVoiceName(e.target.value)}
+              className="w-full bg-gray-800 border border-gray-600 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500">
               {voices.map(v => (
                 <option key={v.name} value={v.name}>{v.name} ({v.lang})</option>
               ))}
             </select>
           </div>
+
+          {/* Speed buttons */}
           <div>
-            <label className="text-xs text-gray-400 block mb-1">
-              Speed: {rate === 0.8 ? "Slow" : rate === 0.85 ? "Normal (Recommended)" : "Fast"}
+            <label className="text-xs text-gray-400 block mb-1.5">
+              Speed — {rate === 0.8 ? "Slow" : rate === 0.87 ? "Normal ✅" : "Fast"}
             </label>
             <div className="flex gap-2">
-              {([["0.8","🐢 Slow"],["0.85","✅ Normal"],["1.0","🐇 Fast"]] as [string,string][]).map(([r,l]) => (
-                <button key={r} onClick={() => setRate(parseFloat(r))}
-                  className={`flex-1 py-2 rounded-xl text-xs font-bold border transition-all
-                    ${rate === parseFloat(r)
+              {([
+                [0.8,  "🐢 Slow"],
+                [0.87, "✅ Normal"],
+                [1.0,  "🐇 Fast"],
+              ] as [number, string][]).map(([r, label]) => (
+                <button key={r} onClick={() => setRate(r)}
+                  className={`flex-1 py-2.5 rounded-xl text-xs font-bold border transition-all
+                    ${rate === r
                       ? "bg-emerald-500 text-white border-emerald-600"
                       : "bg-gray-800 text-gray-300 border-gray-600 hover:border-emerald-400"}`}>
-                  {l}
+                  {label}
                 </button>
               ))}
             </div>
           </div>
+
+          <button onClick={startReading}
+            className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3.5 rounded-xl font-bold transition-all"
+            style={{ boxShadow: "0 4px 0 #065f46" }}>
+            🎧 Start Listening
+          </button>
         </div>
       )}
 
-      {/* Reading countdown */}
+      {/* ── READING: countdown ── */}
       {status === "reading" && (
-        <div className="text-center mb-4">
-          <p className="text-xs text-gray-400 mb-1 uppercase tracking-wider">Reading Time</p>
-          <p className="text-5xl font-black text-emerald-400">{readTime}s</p>
-          <p className="text-xs text-gray-400 mt-1">Review the questions below — audio starts automatically</p>
-          <button onClick={playAudio} className="mt-3 text-xs text-emerald-400 font-semibold hover:underline">
+        <div className="text-center py-3">
+          <p className="text-xs text-gray-400 uppercase tracking-widest mb-1">Reading Time</p>
+          <p className="text-7xl font-black text-emerald-400 mb-2">{readTime}</p>
+          <p className="text-gray-400 text-sm mb-4">Preview the questions below — audio starts automatically</p>
+          <button onClick={() => { clearInterval(readTimerRef.current!); playAudio(); }}
+            className="text-xs text-emerald-400 hover:underline">
             Skip → Play now
           </button>
         </div>
       )}
 
-      {/* Playing / paused */}
+      {/* ── PLAYING / PAUSED ── */}
       {(status === "playing" || status === "paused") && (
-        <div className="mb-4">
+        <div>
           <div className="flex items-center gap-3 mb-3">
-            <div className={`w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0
+            <div className={`w-10 h-10 rounded-full flex items-center justify-center text-lg flex-shrink-0 transition-all
               ${status === "playing" ? "bg-emerald-500 animate-pulse" : "bg-gray-600"}`}>
               🎧
             </div>
             <div>
-              <p className="font-bold text-sm">Section {section.num} Audio</p>
-              <p className="text-xs text-gray-400">{status === "paused" ? "Paused" : "Playing..."}</p>
+              <p className="font-bold text-sm">Section {section.num} — Now Playing</p>
+              <p className="text-gray-400 text-xs">
+                {status === "paused"
+                  ? "⏸ Paused — press Resume to continue"
+                  : "In the real IELTS, each recording plays once only"}
+              </p>
             </div>
           </div>
+
+          {/* Progress bar */}
           <div className="h-2 bg-gray-700 rounded-full overflow-hidden mb-3">
-            <div className="h-full bg-emerald-500 rounded-full transition-all duration-1000"
+            <div className="h-full bg-emerald-500 rounded-full transition-all duration-500"
               style={{ width: `${progress}%` }} />
           </div>
+          <p className="text-xs text-gray-500 text-right mb-3">{progress}%</p>
+
           <div className="flex gap-2">
             <button onClick={togglePause}
               className="flex-1 bg-gray-700 hover:bg-gray-600 py-2.5 rounded-xl text-sm font-bold transition-all">
               {status === "paused" ? "▶ Resume" : "⏸ Pause"}
             </button>
-            <button onClick={stopEarly}
+            <button onClick={stop}
               className="flex-1 bg-emerald-600 hover:bg-emerald-700 py-2.5 rounded-xl text-sm font-bold transition-all">
               ⏹ Stop & Answer
             </button>
@@ -390,145 +399,98 @@ function AudioPlayer({
         </div>
       )}
 
-      {/* Done */}
+      {/* ── DONE ── */}
       {status === "done" && (
-        <div className="flex items-center gap-3 mb-3">
-          <div className="w-9 h-9 bg-emerald-500 rounded-full flex items-center justify-center flex-shrink-0">✓</div>
-          <div>
-            <p className="font-bold text-sm text-emerald-400">Audio Complete</p>
-            <p className="text-xs text-gray-400">Now answer all questions below</p>
+        <div>
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center text-lg flex-shrink-0">✓</div>
+            <div>
+              <p className="font-bold text-sm text-emerald-400">Audio Complete</p>
+              <p className="text-gray-400 text-xs">Now answer all questions below, then submit</p>
+            </div>
           </div>
+          <button onClick={replay}
+            className="w-full bg-gray-700 hover:bg-gray-600 py-2.5 rounded-xl text-sm font-bold transition-all">
+            ↺ Replay Audio
+          </button>
         </div>
-      )}
-
-      {/* Start button */}
-      {status === "idle" && (
-        <button onClick={startReading}
-          className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-xl font-bold text-sm transition-all"
-          style={{ boxShadow: "0 4px 0 #065f46" }}>
-          🎧 Start Listening
-        </button>
-      )}
-
-      {/* Replay after done */}
-      {status === "done" && (
-        <button onClick={playAudio}
-          className="w-full bg-gray-700 hover:bg-gray-600 text-white py-2.5 rounded-xl text-sm font-bold transition-all mt-2">
-          ↺ Replay Audio
-        </button>
       )}
     </div>
   );
 }
 
-// ── Transform Firebase data → Section[] ───────────────────────────────────────
-// Handles both formats + deduplicates by section num (prevents double uploads showing twice)
+// ── Firebase Transform ─────────────────────────────────────────────────────────
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function transformFirebaseSections(data: any[]): Section[] {
-  if (!data.length) return [];
-
+  if (!data?.length) return [];
   let sections: Section[] = [];
-
-  // Format A — documents already have a questions array
   if (data[0]?.questions && Array.isArray(data[0].questions)) {
-    sections = data
-      .filter(d => d.num && d.title)
-      .map(d => ({
-        num:        Number(d.num),
-        title:      String(d.title || ""),
-        context:    String(d.context || ""),
-        transcript: String(d.transcript || ""),
-        questions:  (d.questions as any[]).map((q: any, i: number) => ({
-          id:     Number(q.id ?? q.q_id ?? i + 1),
-          type:   (q.type === "mcq" ? "mcq" : "fill") as "fill" | "mcq",
-          q:      String(q.q || q.question || ""),
-          opts:   Array.isArray(q.opts) ? q.opts : undefined,
-          answer: String(q.answer ?? ""),
-          hint:   q.hint || undefined,
-        })).filter(q => q.q),
-      }))
-      .filter(s => s.questions.length > 0);
+    sections = data.filter(d => d.num && d.title).map(d => ({
+      num: Number(d.num), title: String(d.title || ""),
+      context: String(d.context || ""), transcript: String(d.transcript || ""),
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      questions: (d.questions as any[]).map((q: any, i: number) => ({
+        id: Number(q.id ?? i + 1),
+        type: (q.type === "mcq" ? "mcq" : "fill") as "fill" | "mcq",
+        q: String(q.q || q.question || ""),
+        opts: Array.isArray(q.opts) ? q.opts : undefined,
+        answer: String(q.answer ?? ""), hint: q.hint || undefined,
+      })).filter((q: ListeningQ) => q.q),
+    })).filter(s => s.questions.length > 0);
   } else {
-    // Format B — individual question documents, group by sectionNum
     const map: Record<number, Section> = {};
     for (const item of data) {
       const num = Number(item.sectionNum ?? item.num ?? 1);
-      if (!map[num]) {
-        map[num] = {
-          num,
-          title:      String(item.title || `Section ${num}`),
-          context:    String(item.context || ""),
-          transcript: String(item.transcript || ""),
-          questions:  [],
-        };
-      }
-      if (item.q || item.question) {
-        map[num].questions.push({
-          id:     Number(item.id ?? item.q_id ?? map[num].questions.length + 1),
-          type:   (item.type === "mcq" ? "mcq" : "fill") as "fill" | "mcq",
-          q:      String(item.q || item.question || ""),
-          opts:   Array.isArray(item.opts) ? item.opts : undefined,
-          answer: String(item.answer ?? ""),
-          hint:   item.hint || undefined,
-        });
-      }
+      if (!map[num]) map[num] = { num, title: String(item.title || `Section ${num}`), context: String(item.context || ""), transcript: String(item.transcript || ""), questions: [] };
+      if (item.q || item.question) map[num].questions.push({ id: Number(item.id ?? map[num].questions.length + 1), type: (item.type === "mcq" ? "mcq" : "fill") as "fill" | "mcq", q: String(item.q || item.question || ""), opts: Array.isArray(item.opts) ? item.opts : undefined, answer: String(item.answer ?? ""), hint: item.hint || undefined });
     }
     sections = Object.values(map);
   }
-
-  // ── Deduplicate by section num — keep the one with most questions ──────────
-  const dedupMap = new Map<number, Section>();
+  const dedup = new Map<number, Section>();
   for (const s of sections) {
-    const existing = dedupMap.get(s.num);
-    if (!existing || s.questions.length > existing.questions.length) {
-      dedupMap.set(s.num, s);
-    }
+    const ex = dedup.get(s.num);
+    if (!ex || s.questions.length > ex.questions.length) dedup.set(s.num, s);
   }
-
-  return Array.from(dedupMap.values()).sort((a, b) => a.num - b.num);
+  return Array.from(dedup.values()).sort((a, b) => a.num - b.num);
 }
 
-// ── Shuffle & Session Helpers ─────────────────────────────────────────────────
+// ── Shuffle helpers ────────────────────────────────────────────────────────────
 const QUESTIONS_PER_SECTION = 10;
 const LBLS = ["A","B","C","D"] as const;
 function shuffle<T>(arr: T[]): T[] {
-  const a=[...arr]; for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a;
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+  return a;
 }
 function shuffleMCQL(q: ListeningQ): ListeningQ {
-  if(q.type!=="mcq"||!q.opts||q.opts.length<2) return q;
-  const texts=q.opts.map(o=>o.slice(3));
-  const correctText=texts[LBLS.indexOf(q.answer as typeof LBLS[number])]??texts[0];
-  const s=shuffle(texts); const ni=s.indexOf(correctText);
-  return {...q,opts:s.map((t,i)=>`${LBLS[i]}. ${t}`),answer:LBLS[ni]??"A"};
+  if (q.type !== "mcq" || !q.opts || q.opts.length < 2) return q;
+  const texts = q.opts.map(o => o.slice(3));
+  const correctText = texts[LBLS.indexOf(q.answer as typeof LBLS[number])] ?? texts[0];
+  const s = shuffle(texts); const ni = s.indexOf(correctText);
+  return { ...q, opts: s.map((t, i) => `${LBLS[i]}. ${t}`), answer: LBLS[ni] ?? "A" };
 }
 function pickQuestions(s: Section, n: number): Section {
-  return {...s,questions:shuffle(s.questions).slice(0,Math.min(n,s.questions.length)).map(shuffleMCQL)};
+  return { ...s, questions: shuffle(s.questions).slice(0, Math.min(n, s.questions.length)).map(shuffleMCQL) };
 }
 
-// ── Main Page Component ───────────────────────────────────────────────────────
+// ── Main Page ─────────────────────────────────────────────────────────────────
 export default function ListeningPage() {
-  const [activeSection,   setActiveSection]   = useState<Section | null>(null);
-  const [answers,         setAnswers]         = useState<Answers>({});
-  const [results,         setResults]         = useState<Results>(null);
-  const [showTranscript,  setShowTranscript]  = useState(false);
-  const [audioFinished,   setAudioFinished]   = useState(false);
-  const [sessionKey,      setSessionKey]      = useState(0);
-  // Firebase sections — replaces local SECTIONS if data exists
-  const [fbSections,      setFbSections]      = useState<Section[]>([]);
-  const [fbLoading,       setFbLoading]       = useState(true);
+  const [activeSection,  setActiveSection]  = useState<Section | null>(null);
+  const [answers,        setAnswers]        = useState<Answers>({});
+  const [results,        setResults]        = useState<Results>(null);
+  const [showTranscript, setShowTranscript] = useState(false);
+  const [audioFinished,  setAudioFinished]  = useState(false);
+  const [sessionKey,     setSessionKey]     = useState(0);
+  const [fbSections,     setFbSections]     = useState<Section[]>([]);
+  const [fbLoading,      setFbLoading]      = useState(true);
 
-  // Load sections from Firebase admin upload on mount
   useEffect(() => {
     getAdminIELTSListening()
-      .then(data => {
-        const transformed = transformFirebaseSections(data);
-        if (transformed.length > 0) setFbSections(transformed);
-      })
-      .catch(e => console.error("Failed to load IELTS listening from Firebase:", e))
+      .then(data => { const t = transformFirebaseSections(data); if (t.length) setFbSections(t); })
+      .catch(e => console.error("[Listening] Firebase load failed:", e))
       .finally(() => setFbLoading(false));
   }, []);
 
-  // Pick 10 shuffled questions per section — recomputed on sessionKey change or new Firebase data
   const ACTIVE_SECTIONS = useMemo(() => {
     const base = fbSections.length > 0 ? fbSections : SECTIONS;
     return base.map(s => pickQuestions(s, QUESTIONS_PER_SECTION));
@@ -538,11 +500,8 @@ export default function ListeningPage() {
   function start(s: Section) {
     window.speechSynthesis.cancel();
     setTimeout(() => {
-      setActiveSection(s);
-      setAnswers({});
-      setResults(null);
-      setShowTranscript(false);
-      setAudioFinished(false);
+      setActiveSection(s); setAnswers({}); setResults(null);
+      setShowTranscript(false); setAudioFinished(false);
       window.scrollTo({ top: 0, behavior: "smooth" });
     }, 300);
   }
@@ -558,231 +517,178 @@ export default function ListeningPage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  // ── Active section view ───────────────────────────────────────────────────
-  if (activeSection) {
-    return (
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10">
+  // ── Active section view ────────────────────────────────────────────────────
+  if (activeSection) return (
+    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10">
 
-        {/* Breadcrumb */}
-        <div className="flex items-center gap-2 text-sm text-gray-400 mb-6">
-          <Link href="/ielts" className="hover:text-emerald-600 transition-colors">IELTS</Link>
-          <span>›</span>
-          <Link href="/ielts/listening" className="hover:text-emerald-600 transition-colors">Listening</Link>
-          <span>›</span>
-          <span className="text-gray-700 font-medium">Section {activeSection.num}</span>
-        </div>
+      <div className="flex items-center gap-2 text-sm text-gray-400 mb-6">
+        <Link href="/ielts" className="hover:text-emerald-600">IELTS</Link>
+        <span>›</span>
+        <Link href="/ielts/listening" className="hover:text-emerald-600">Listening</Link>
+        <span>›</span>
+        <span className="text-gray-700 font-medium">Section {activeSection.num}</span>
+      </div>
 
-        {/* Results banner */}
-        {results && (
-          <div className={`rounded-2xl p-6 mb-6 text-center border
-            ${results.score >= Math.ceil(results.total * 0.7)
-              ? "bg-green-50 border-green-200"
-              : results.score >= Math.ceil(results.total * 0.5)
-              ? "bg-amber-50 border-amber-200"
-              : "bg-red-50 border-red-200"}`}>
-            <p className="text-5xl font-black mb-1"
-               style={{ color: results.score >= Math.ceil(results.total * 0.7) ? "#16a34a" : results.score >= Math.ceil(results.total * 0.5) ? "#d97706" : "#dc2626" }}>
-              {results.score} / {results.total}
-            </p>
-            <p className="text-sm text-gray-500 mb-1">
-              Estimated band: <strong>{getBand(results.score, results.total)}</strong>
-            </p>
-            <p className="font-semibold text-gray-700 mb-4">
-              {results.score === results.total ? "🎉 Perfect score!" : results.score >= Math.ceil(results.total * 0.7) ? "👍 Good work!" : "📚 Keep practising!"}
-            </p>
-            <div className="flex gap-3 justify-center flex-wrap">
-              <button onClick={() => setShowTranscript(v => !v)}
-                className="text-sm text-emerald-600 font-semibold border border-emerald-300 px-4 py-2 rounded-xl hover:bg-emerald-50">
-                {showTranscript ? "Hide" : "Show"} Transcript
-              </button>
-              <button onClick={() => { setActiveSection(null); window.speechSynthesis.cancel(); }}
-                className="bg-emerald-600 text-white px-5 py-2 rounded-xl font-bold text-sm hover:bg-emerald-700">
-                Try Another Section
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* Section context */}
-        <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-5 mb-5">
-          <div className="flex items-center gap-2 mb-1">
-            <span className="text-xs bg-emerald-100 text-emerald-700 font-bold px-2.5 py-1 rounded-full">
-              Section {activeSection.num} of 4
-            </span>
-          </div>
-          <h2 className="font-bold text-emerald-900 mb-1">{activeSection.title}</h2>
-          <p className="text-emerald-700 text-sm">{activeSection.context}</p>
-        </div>
-
-        {/* Audio player — only shown before results */}
-        {!results && (
-          <AudioPlayer
-            section={activeSection}
-            onFinished={() => setAudioFinished(true)}
-          />
-        )}
-
-        {/* Transcript */}
-        {showTranscript && (
-          <div className="bg-white border border-gray-200 rounded-2xl p-6 mb-6">
-            <div className="flex justify-between items-center mb-4">
-              <h3 className="font-bold text-gray-700">📄 Full Transcript</h3>
-              <button onClick={() => setShowTranscript(false)} className="text-sm text-gray-400 hover:text-gray-600">Hide ✕</button>
-            </div>
-            <pre className="text-sm text-gray-700 leading-relaxed whitespace-pre-wrap font-sans">{activeSection.transcript}</pre>
-          </div>
-        )}
-
-        {/* Show transcript link before audio done */}
-        {!results && !showTranscript && !audioFinished && (
-          <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 mb-5 text-sm text-amber-800">
-            💡 Tip: Listen to the audio first, then answer the questions.
-            <button onClick={() => setShowTranscript(true)} className="ml-2 underline font-semibold">
-              Show transcript instead
+      {results && (
+        <div className={`rounded-2xl p-6 mb-6 text-center border ${
+          results.score >= Math.ceil(results.total * 0.7) ? "bg-green-50 border-green-200" :
+          results.score >= Math.ceil(results.total * 0.5) ? "bg-amber-50 border-amber-200" :
+          "bg-red-50 border-red-200"}`}>
+          <p className="text-5xl font-black mb-1" style={{
+            color: results.score >= Math.ceil(results.total * 0.7) ? "#16a34a" :
+                   results.score >= Math.ceil(results.total * 0.5) ? "#d97706" : "#dc2626"
+          }}>{results.score} / {results.total}</p>
+          <p className="text-sm text-gray-500 mb-1">Estimated band: <strong>{getBand(results.score, results.total)}</strong></p>
+          <p className="font-semibold text-gray-700 mb-4">
+            {results.score === results.total ? "🎉 Perfect score!" : results.score >= Math.ceil(results.total * 0.7) ? "👍 Good work!" : "📚 Keep practising!"}
+          </p>
+          <div className="flex gap-3 justify-center flex-wrap">
+            <button onClick={() => setShowTranscript(v => !v)}
+              className="text-sm text-emerald-600 font-semibold border border-emerald-300 px-4 py-2 rounded-xl hover:bg-emerald-50">
+              {showTranscript ? "Hide" : "Show"} Transcript
+            </button>
+            <button onClick={() => { window.speechSynthesis.cancel(); setActiveSection(null); }}
+              className="bg-emerald-600 text-white px-5 py-2 rounded-xl font-bold text-sm hover:bg-emerald-700">
+              Try Another Section
             </button>
           </div>
-        )}
-
-        {/* Questions */}
-        <div className="space-y-4 mb-8">
-          <h3 className="font-bold text-gray-900 text-base">
-            Questions (Section {activeSection.num})
-          </h3>
-          {activeSection.questions.map((q, i) => {
-            const given   = (answers[q.id] ?? "").toLowerCase().trim();
-            const correct = results ? given === q.answer.toLowerCase() : null;
-            return (
-              <div key={q.id}
-                className={`bg-white border rounded-2xl p-5 transition-all
-                  ${correct === true  ? "border-green-300 bg-green-50/40" :
-                    correct === false ? "border-red-300 bg-red-50/30" :
-                    "border-gray-200"}`}>
-                <p className="font-semibold text-gray-900 mb-3">
-                  <span className="text-emerald-600 font-black mr-2">{i + 1}.</span>
-                  {q.q}
-                </p>
-
-                {q.type === "fill" ? (
-                  <input type="text"
-                    value={answers[q.id] ?? ""}
-                    onChange={e => !results && setAnswers(a => ({ ...a, [q.id]: e.target.value }))}
-                    onKeyDown={e => e.key === "Enter" && !results && submit()}
-                    placeholder="Type your answer…"
-                    disabled={!!results}
-                    className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-emerald-400 disabled:bg-gray-50 disabled:text-gray-500" />
-                ) : (
-                  <div className="space-y-2">
-                    {(q.opts ?? []).map(opt => {
-                      const letter    = opt[0];
-                      const chosen    = answers[q.id] === letter;
-                      const isCorrect = results && letter === q.answer;
-                      const isWrong   = results && chosen && letter !== q.answer;
-                      return (
-                        <button key={opt}
-                          onClick={() => !results && setAnswers(a => ({ ...a, [q.id]: letter }))}
-                          className={`w-full text-left px-4 py-2.5 rounded-xl border text-sm transition-all
-                            ${isCorrect ? "bg-green-100 border-green-400 text-green-800 font-semibold" :
-                              isWrong   ? "bg-red-100 border-red-400 text-red-800" :
-                              chosen    ? "bg-emerald-100 border-emerald-400 text-emerald-800 font-semibold" :
-                              "border-gray-200 text-gray-700 hover:border-emerald-300 hover:bg-emerald-50/50"}`}>
-                          {opt}
-                        </button>
-                      );
-                    })}
-                  </div>
-                )}
-
-                {results && (
-                  <div className={`mt-3 text-xs px-3 py-2 rounded-xl
-                    ${correct ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}>
-                    {correct
-                      ? `✓ Correct!`
-                      : `✗ Correct answer: ${q.answer}`}
-                    {q.hint && <span className="ml-2 text-gray-500">— {q.hint}</span>}
-                  </div>
-                )}
-              </div>
-            );
-          })}
         </div>
+      )}
 
-        {/* Submit */}
-        {!results && (
-          <button onClick={submit}
-            disabled={Object.keys(answers).length < activeSection.questions.length}
-            className="w-full bg-emerald-600 text-white py-4 rounded-2xl font-bold text-base hover:bg-emerald-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-            style={{ boxShadow: "0 4px 0 #065f46" }}>
-            {Object.keys(answers).length < activeSection.questions.length
-              ? `Answer all questions (${Object.keys(answers).length}/${activeSection.questions.length} done)`
-              : "Submit Answers →"}
-          </button>
-        )}
-
-        {/* Back link */}
-        <div className="mt-6 text-center">
-          <button onClick={() => { setActiveSection(null); window.speechSynthesis.cancel(); }}
-            className="text-sm text-gray-400 hover:text-gray-600">
-            ← Back to all sections
-          </button>
-        </div>
+      <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-5 mb-5">
+        <span className="text-xs bg-emerald-100 text-emerald-700 font-bold px-2.5 py-1 rounded-full">Section {activeSection.num} of 4</span>
+        <h2 className="font-bold text-emerald-900 mt-2 mb-1">{activeSection.title}</h2>
+        <p className="text-emerald-700 text-sm">{activeSection.context}</p>
       </div>
-    );
-  }
 
-  // ── Section hub ───────────────────────────────────────────────────────────
+      {!results && (
+        <AudioPlayer section={activeSection} onFinished={() => setAudioFinished(true)} />
+      )}
+
+      {showTranscript && (
+        <div className="bg-white border border-gray-200 rounded-2xl p-6 mb-6">
+          <div className="flex justify-between items-center mb-4">
+            <h3 className="font-bold text-gray-700">📄 Full Transcript</h3>
+            <button onClick={() => setShowTranscript(false)} className="text-sm text-gray-400 hover:text-gray-600">Hide ✕</button>
+          </div>
+          <pre className="text-sm text-gray-700 leading-relaxed whitespace-pre-wrap font-sans">{activeSection.transcript}</pre>
+        </div>
+      )}
+
+      {!results && !showTranscript && !audioFinished && (
+        <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 mb-5 text-sm text-amber-800">
+          💡 Listen to the audio first, then answer the questions.
+          <button onClick={() => setShowTranscript(true)} className="ml-2 underline font-semibold">Show transcript instead</button>
+        </div>
+      )}
+
+      <div className="space-y-4 mb-8">
+        <h3 className="font-bold text-gray-900">Questions — Section {activeSection.num}</h3>
+        {activeSection.questions.map((q, i) => {
+          const given   = (answers[q.id] ?? "").toLowerCase().trim();
+          const correct = results ? given === q.answer.toLowerCase() : null;
+          return (
+            <div key={q.id} className={`bg-white border rounded-2xl p-5 transition-all ${
+              correct === true  ? "border-green-300 bg-green-50/40" :
+              correct === false ? "border-red-300 bg-red-50/30" : "border-gray-200"}`}>
+              <p className="font-semibold text-gray-900 mb-3">
+                <span className="text-emerald-600 font-black mr-2">{i + 1}.</span>{q.q}
+              </p>
+              {q.type === "fill" ? (
+                <input type="text" value={answers[q.id] ?? ""}
+                  onChange={e => !results && setAnswers(a => ({ ...a, [q.id]: e.target.value }))}
+                  onKeyDown={e => e.key === "Enter" && !results && submit()}
+                  placeholder="Type your answer…" disabled={!!results}
+                  className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-emerald-400 disabled:bg-gray-50 disabled:text-gray-500" />
+              ) : (
+                <div className="space-y-2">
+                  {(q.opts ?? []).map(opt => {
+                    const letter = opt[0]; const chosen = answers[q.id] === letter;
+                    const isCorrect = results && letter === q.answer;
+                    const isWrong   = results && chosen && letter !== q.answer;
+                    return (
+                      <button key={opt} onClick={() => !results && setAnswers(a => ({ ...a, [q.id]: letter }))}
+                        className={`w-full text-left px-4 py-2.5 rounded-xl border text-sm transition-all ${
+                          isCorrect ? "bg-green-100 border-green-400 text-green-800 font-semibold" :
+                          isWrong   ? "bg-red-100 border-red-400 text-red-800" :
+                          chosen    ? "bg-emerald-100 border-emerald-400 text-emerald-800 font-semibold" :
+                          "border-gray-200 text-gray-700 hover:border-emerald-300 hover:bg-emerald-50/50"}`}>
+                        {opt}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+              {results && (
+                <div className={`mt-3 text-xs px-3 py-2 rounded-xl ${correct ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}>
+                  {correct ? "✓ Correct!" : `✗ Correct answer: ${q.answer}`}
+                  {q.hint && <span className="ml-2 text-gray-500">— {q.hint}</span>}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      {!results && (
+        <button onClick={submit}
+          disabled={Object.keys(answers).length < activeSection.questions.length}
+          className="w-full bg-emerald-600 text-white py-4 rounded-2xl font-bold text-base hover:bg-emerald-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+          style={{ boxShadow: "0 4px 0 #065f46" }}>
+          {Object.keys(answers).length < activeSection.questions.length
+            ? `Answer all questions (${Object.keys(answers).length}/${activeSection.questions.length} done)`
+            : "Submit Answers →"}
+        </button>
+      )}
+
+      <div className="mt-6 text-center">
+        <button onClick={() => { window.speechSynthesis.cancel(); setActiveSection(null); }}
+          className="text-sm text-gray-400 hover:text-gray-600 transition-colors">
+          ← Back to all sections
+        </button>
+      </div>
+    </div>
+  );
+
+  // ── Hub view ───────────────────────────────────────────────────────────────
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10">
 
-      {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-sm text-gray-400 mb-6">
-        <Link href="/ielts" className="hover:text-emerald-600 transition-colors">IELTS</Link>
+        <Link href="/ielts" className="hover:text-emerald-600">IELTS</Link>
         <span>›</span>
         <span className="text-gray-700 font-medium">Listening</span>
       </div>
 
-      {/* Header */}
       <div className="flex items-start gap-4 mb-8">
         <span className="text-5xl">🎧</span>
-        <div>
+        <div className="flex-1">
           <h1 className="text-3xl font-black text-gray-900 mb-1">IELTS Listening Practice</h1>
-          <p className="text-gray-500">All 4 sections · {QUESTIONS_PER_SECTION} questions each · shuffled every attempt · Real audio</p>
+          <p className="text-gray-500 text-sm">4 sections · {QUESTIONS_PER_SECTION} questions each · shuffled every attempt · real browser TTS audio</p>
         </div>
         <button onClick={() => setSessionKey(k => k + 1)}
           className="flex-shrink-0 text-xs border border-gray-200 text-gray-500 hover:text-emerald-600 hover:border-emerald-300 px-3 py-2 rounded-xl transition-all">
           🔀 New Shuffle
         </button>
-        </div>
-      
+      </div>
 
-      {/* How it works */}
       <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-5 mb-8">
         <p className="font-bold text-emerald-800 mb-3">🎙️ How the Audio Works</p>
         <div className="grid sm:grid-cols-3 gap-3 text-sm text-emerald-700">
-          <div className="flex gap-2">
-            <span className="font-black text-emerald-500">1.</span>
-            <span>Choose your voice and speed in settings</span>
-          </div>
-          <div className="flex gap-2">
-            <span className="font-black text-emerald-500">2.</span>
-            <span>45-second reading time to preview questions</span>
-          </div>
-          <div className="flex gap-2">
-            <span className="font-black text-emerald-500">3.</span>
-            <span>Audio plays automatically — answer as you listen</span>
-          </div>
+          <div className="flex gap-2"><span className="font-black text-emerald-500">1.</span><span>Choose your voice and speed in the settings</span></div>
+          <div className="flex gap-2"><span className="font-black text-emerald-500">2.</span><span>45-second reading time before audio begins</span></div>
+          <div className="flex gap-2"><span className="font-black text-emerald-500">3.</span><span>Audio plays automatically — answer as you listen</span></div>
         </div>
       </div>
 
-      {/* Section type overview */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
         {[
-          { num:1, label:"Social Need",   desc:"Everyday conversation between two people",  available:true },
-          { num:2, label:"Social Need",   desc:"Monologue in an everyday public context",    available:true },
-          { num:3, label:"Educational",   desc:"Discussion between students / tutor",        available:true },
-          { num:4, label:"Educational",   desc:"Academic lecture or monologue",              available:true },
+          { num:1, label:"Social Need",  desc:"Everyday conversation between two people" },
+          { num:2, label:"Social Need",  desc:"Monologue in an everyday public context" },
+          { num:3, label:"Educational",  desc:"Discussion between students or a tutor" },
+          { num:4, label:"Educational",  desc:"Academic lecture or monologue" },
         ].map(s => (
-          <div key={s.num}
-            className="bg-white border border-emerald-200 rounded-2xl p-4 text-center">
+          <div key={s.num} className="bg-white border border-emerald-200 rounded-2xl p-4 text-center">
             <p className="text-2xl font-black text-emerald-600 mb-1">{s.num}</p>
             <p className="text-xs font-semibold text-gray-700 mb-1">{s.label}</p>
             <p className="text-xs text-gray-400 leading-tight">{s.desc}</p>
@@ -790,7 +696,6 @@ export default function ListeningPage() {
         ))}
       </div>
 
-      {/* Section cards */}
       <h2 className="text-xl font-bold text-gray-900 mb-5">Choose a Section</h2>
 
       {fbLoading ? (
@@ -805,39 +710,27 @@ export default function ListeningPage() {
           ))}
         </div>
       ) : (
-        <>
-          {fbSections.length > 0 && (
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl px-4 py-2.5 mb-4 text-sm text-emerald-700 flex items-center gap-2">
-              <span>✅</span>
-              <span><strong>{fbSections.length} sections</strong> loaded from admin panel</span>
-            </div>
-          )}
-          <div className="grid sm:grid-cols-2 gap-5">
-            {ACTIVE_SECTIONS.map(s => (
-              <div key={s.num}
-                className="bg-white border border-gray-200 rounded-2xl p-6 hover:border-emerald-300 hover:shadow-md transition-all">
-                <div className="flex items-start justify-between mb-3">
-                  <span className="text-xs bg-emerald-100 text-emerald-700 px-2.5 py-1 rounded-full font-bold">
-                    Section {s.num}
-                  </span>
-                  <span className="text-xs text-gray-400">{s.questions.length} questions</span>
-                </div>
-                <p className="font-bold text-gray-900 text-sm mb-1">{s.title.split("—")[1]?.trim() || s.title}</p>
-                <p className="text-gray-500 text-xs mb-4 leading-relaxed">{s.context}</p>
-                <button onClick={() => start(s)}
-                  className="w-full bg-emerald-600 text-white py-2.5 rounded-xl font-bold text-sm hover:bg-emerald-700 transition-all"
-                  style={{ boxShadow: "0 3px 0 #065f46" }}>
-                  🎧 Start Section {s.num} →
-                </button>
+        <div className="grid sm:grid-cols-2 gap-5">
+          {ACTIVE_SECTIONS.map(s => (
+            <div key={s.num} className="bg-white border border-gray-200 rounded-2xl p-6 hover:border-emerald-300 hover:shadow-md transition-all">
+              <div className="flex items-start justify-between mb-3">
+                <span className="text-xs bg-emerald-100 text-emerald-700 px-2.5 py-1 rounded-full font-bold">Section {s.num}</span>
+                <span className="text-xs text-gray-400">{s.questions.length} questions</span>
               </div>
-            ))}
-          </div>
-        </>
+              <p className="font-bold text-gray-900 text-sm mb-1">{s.title.split("—")[1]?.trim() || s.title}</p>
+              <p className="text-gray-500 text-xs mb-4 leading-relaxed">{s.context}</p>
+              <button onClick={() => start(s)}
+                className="w-full bg-emerald-600 text-white py-2.5 rounded-xl font-bold text-sm hover:bg-emerald-700 transition-all"
+                style={{ boxShadow: "0 3px 0 #065f46" }}>
+                🎧 Start Section {s.num} →
+              </button>
+            </div>
+          ))}
+        </div>
       )}
 
       <div className="mt-8 text-center">
-        <Link href="/ielts"
-          className="inline-block text-emerald-600 text-sm font-semibold hover:underline">
+        <Link href="/ielts" className="inline-block text-emerald-600 text-sm font-semibold hover:underline">
           ← Back to IELTS Hub
         </Link>
       </div>
