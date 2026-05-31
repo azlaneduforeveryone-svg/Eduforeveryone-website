@@ -219,9 +219,9 @@ export default function IELTSPage() {
               style={{ boxShadow: "0 4px 0 rgba(0,0,0,0.2)" }}>
               🚀 Start Free Preparation
             </Link>
-            <Link href="/ielts/diagnostic"
-              className="bg-teal-800 border border-white/30 text-white px-8 py-3.5 rounded-xl font-bold text-base hover:bg-teal-900 transition-all">
-              🎯 Take Free Diagnostic Test
+            <Link href="/ielts/full-test"
+              className="bg-indigo-600 border border-white/30 text-white px-8 py-3.5 rounded-xl font-bold text-base hover:bg-indigo-700 transition-all">
+              📋 Take Full Mock Test
             </Link>
             <Link href="/ielts/guide"
               className="bg-teal-900/60 border border-white/20 text-white px-8 py-3.5 rounded-xl font-bold text-base hover:bg-teal-900 transition-all">
@@ -280,37 +280,75 @@ export default function IELTSPage() {
           </div>
         </section>
 
-        {/* ── TEST TYPES ────────────────────────────────────────────────── */}
-        <section>
-          <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-2">IELTS Test Types</h2>
-          <p className="text-gray-500 mb-8">Choose the stream that matches your goal.</p>
+        {/* ── TEST YOURSELF ─────────────────────────────────────────────── */}
+<section className="bg-white border-b border-gray-200">
+  <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10">
+    <div className="text-center mb-7">
+      <h2 className="text-xl font-black text-gray-900">Take a Full IELTS Mock Test</h2>
+      <p className="text-gray-500 text-sm mt-1">Academic or General Training — real exam conditions, instant band estimates.</p>
+    </div>
 
-          <div className="grid sm:grid-cols-2 gap-4 mb-5">
-            {TEST_TYPES.map(t => (
-              <Link key={t.title} href={t.href}
-                className={`group bg-white ${t.border} border rounded-2xl p-5 hover:shadow-md transition-all`}>
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="text-3xl">{t.emoji}</span>
-                  <div>
-                    <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${t.badge}`}>{t.title}</span>
-                  </div>
-                </div>
-                <p className="text-xs text-gray-500 font-semibold uppercase tracking-wide mb-1">Audience</p>
-                <p className="text-sm text-gray-700 mb-2">{t.audience}</p>
-                <p className="text-xs text-gray-500 font-semibold uppercase tracking-wide mb-1">Focus</p>
-                <p className="text-sm text-gray-700">{t.focus}</p>
-              </Link>
+    <div className="bg-gradient-to-br from-indigo-700 to-indigo-800 text-white rounded-2xl p-7 relative">
+      {/* NEW badge */}
+      <div className="absolute -top-2 -right-2">
+        <span className="bg-amber-400 text-amber-900 text-xs font-black px-2.5 py-1 rounded-full">NEW</span>
+      </div>
+
+      <div className="flex flex-col sm:flex-row sm:items-start gap-6">
+        {/* Left — info */}
+        <div className="flex-1">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="text-4xl">📋</span>
+            <div>
+              <span className="text-xs font-bold bg-white/20 border border-white/25 px-3 py-1 rounded-full">🕒 ~2h 45min</span>
+              <h3 className="text-2xl font-black mt-2">Full Mock Test</h3>
+              <p className="text-indigo-200 text-sm">Academic or General Training — your choice at the start</p>
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-2 mb-5">
+            {[
+              "🎧 40 listening questions — 4 sections, one play only",
+              "📖 40 reading questions — 3 passages or GT sections",
+              "✍️ Writing Task 1 + Task 2 — timed, word counted",
+              "🗣️ Speaking Parts 1, 2 & 3 — self-assessed",
+              "⏱ 10-minute answer transfer period after listening",
+              "📊 Instant band scores for all 4 skills + overall",
+            ].map(f => (
+              <div key={f} className="flex items-center gap-2 text-sm text-indigo-100">
+                <span className="text-indigo-300 font-bold shrink-0">✓</span>{f}
+              </div>
             ))}
           </div>
 
-          <div className="bg-teal-50 border border-teal-200 rounded-2xl px-5 py-4">
-            <p className="text-sm text-teal-800">
-              <span className="font-black">💡 Quick Rule:</span> Study or practice a licensed profession → <strong>Academic</strong>.
-              Work, migrate, or train → <strong>General Training</strong>.
+          {/* Warning note */}
+          <div className="bg-amber-400/20 border border-amber-400/40 rounded-xl px-4 py-3 mb-5">
+            <p className="text-amber-200 text-sm font-semibold">
+              ⚠️ Important: This test must be completed in one sitting.
+            </p>
+            <p className="text-amber-300 text-xs mt-1">
+              Refreshing or closing the page will reset all your progress. Find a quiet space and allow the full 2 hours 45 minutes before starting.
             </p>
           </div>
-        </section>
+        </div>
 
+        {/* Right — CTA */}
+        <div className="sm:w-52 flex flex-col gap-3 shrink-0">
+          <Link href="/ielts/full-test"
+            className="w-full bg-white text-indigo-700 py-3.5 rounded-xl font-black text-sm text-center hover:bg-indigo-50 transition-all block"
+            style={{ boxShadow: "0 4px 0 rgba(0,0,0,0.2)" }}>
+            Start Full Test →
+          </Link>
+          <div className="text-center space-y-1">
+            <p className="text-indigo-300 text-xs">5 random question pools</p>
+            <p className="text-indigo-300 text-xs">No signup required</p>
+            <p className="text-indigo-300 text-xs">Completely free</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
         {/* ── EXAM FORMAT ──────────────────────────────────────────────── */}
         <section>
           <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-2">IELTS Exam Format</h2>
