@@ -7,208 +7,295 @@ interface Props {
   onComplete: (band: number) => void;
 }
 
+type SectionPhase = "reading" | "playing" | "finishing" | "done";
+
+const READ_SECONDS = 40;   // pre-reading time per section
+const FINISH_SECONDS = 30; // time after audio ends to finish writing
+
+function fmt(s: number) {
+  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+}
+
 export default function ListeningSection({ test, onComplete }: Props) {
-  const [sectionIdx, setSectionIdx] = useState(0);
-  const [hasPlayed, setHasPlayed] = useState<boolean[]>([false, false, false, false]);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [answers, setAnswers] = useState<Record<number, string>>({});
-  const [phase, setPhase] = useState<"pre" | "playing" | "answering" | "done">("pre");
-  const [submitted, setSubmitted] = useState(false);
-  const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
+  const [sectionIdx, setSectionIdx]   = useState(0);
+  const [phase, setPhase]             = useState<SectionPhase>("reading");
+  const [readTime, setReadTime]       = useState(READ_SECONDS);
+  const [finishTime, setFinishTime]   = useState(FINISH_SECONDS);
+  const [answers, setAnswers]         = useState<Record<number, string>>({});
+  const [submitted, setSubmitted]     = useState(false);
+
+  const readTimerRef   = useRef<ReturnType<typeof setInterval> | null>(null);
+  const finishTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const section: LSType = test.sections[sectionIdx];
 
-  const stopSpeech = useCallback(() => {
-    if (typeof window !== "undefined" && window.speechSynthesis) {
-      window.speechSynthesis.cancel();
-    }
-    setIsPlaying(false);
+  // ── Clean up all timers and speech on unmount ──────────────────────────────
+  useEffect(() => {
+    return () => {
+      clearInterval(readTimerRef.current!);
+      clearInterval(finishTimerRef.current!);
+      window.speechSynthesis?.cancel();
+    };
   }, []);
 
+  // ── Start reading countdown when section changes ───────────────────────────
   useEffect(() => {
-    return () => stopSpeech();
-  }, [stopSpeech]);
+    setPhase("reading");
+    setReadTime(READ_SECONDS);
+    clearInterval(readTimerRef.current!);
 
-  function playSection() {
-    if (hasPlayed[sectionIdx]) return;
-    const updated = [...hasPlayed];
-    updated[sectionIdx] = true;
-    setHasPlayed(updated);
+    readTimerRef.current = setInterval(() => {
+      setReadTime(t => {
+        if (t <= 1) {
+          clearInterval(readTimerRef.current!);
+          startAudio();
+          return 0;
+        }
+        return t - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(readTimerRef.current!);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sectionIdx]);
+
+  // ── Play audio ─────────────────────────────────────────────────────────────
+  const startAudio = useCallback(() => {
     setPhase("playing");
+    window.speechSynthesis?.cancel();
 
-    if (typeof window !== "undefined" && window.speechSynthesis) {
-      const utter = new SpeechSynthesisUtterance(section.script.trim());
-      utter.rate = 0.9;
-      utter.lang = "en-GB";
-      utter.onend = () => {
-        setIsPlaying(false);
-        setPhase("answering");
-      };
-      utteranceRef.current = utter;
-      setIsPlaying(true);
-      window.speechSynthesis.speak(utter);
-    } else {
-      // Fallback: no TTS — show script as text
-      setPhase("answering");
+    if (!window.speechSynthesis) {
+      // No TTS — skip straight to finishing phase
+      startFinishing();
+      return;
     }
-  }
 
-  function setAnswer(qId: number, value: string) {
-    setAnswers((prev) => ({ ...prev, [qId]: value }));
-  }
+    const speak = () => {
+      const utter = new SpeechSynthesisUtterance(section.script.trim());
+      utter.rate = 0.88;
+      utter.lang = "en-GB";
+      const voices = window.speechSynthesis.getVoices();
+      const voice  = voices.find(v => v.lang === "en-GB") ||
+                     voices.find(v => v.lang.startsWith("en-GB")) ||
+                     voices.find(v => v.lang.startsWith("en")) || null;
+      if (voice) utter.voice = voice;
+      utter.onend   = () => startFinishing();
+      utter.onerror = () => startFinishing();
+      window.speechSynthesis.speak(utter);
+    };
 
-  function nextSection() {
-    stopSpeech();
-    if (sectionIdx < 3) {
-      setSectionIdx((i) => i + 1);
-      setPhase("pre");
+    const voices = window.speechSynthesis.getVoices();
+    if (voices.length > 0) {
+      speak();
     } else {
+      window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.onvoiceschanged = null;
+        speak();
+      };
+      setTimeout(() => { if (window.speechSynthesis.pending === false) speak(); }, 1000);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sectionIdx, section.script]);
+
+  // ── After audio ends — 30 s to finish writing ─────────────────────────────
+  const startFinishing = useCallback(() => {
+    setPhase("finishing");
+    setFinishTime(FINISH_SECONDS);
+    clearInterval(finishTimerRef.current!);
+
+    finishTimerRef.current = setInterval(() => {
+      setFinishTime(t => {
+        if (t <= 1) {
+          clearInterval(finishTimerRef.current!);
+          advanceSection();
+          return 0;
+        }
+        return t - 1;
+      });
+    }, 1000);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sectionIdx]);
+
+  // ── Move to next section or submit ─────────────────────────────────────────
+  const advanceSection = useCallback(() => {
+    clearInterval(finishTimerRef.current!);
+    window.speechSynthesis?.cancel();
+    if (sectionIdx < 3) {
+      setSectionIdx(i => i + 1);
+    } else {
+      setPhase("done");
       setSubmitted(true);
     }
+  }, [sectionIdx]);
+
+  function setAnswer(qId: number, value: string) {
+    setAnswers(prev => ({ ...prev, [qId]: value }));
   }
 
+  // ── Final submit ───────────────────────────────────────────────────────────
   function handleSubmit() {
-    stopSpeech();
-    // Score all questions
     let correct = 0;
-    test.sections.forEach((sec) => {
-      sec.questions.forEach((q) => {
-        const userAns = (answers[q.id] ?? "").trim().toLowerCase();
-        const correct_ans = q.answer.trim().toLowerCase();
-        if (q.type === "mcq") {
-          if (userAns === correct_ans) correct++;
-        } else {
-          if (userAns === correct_ans) correct++;
-        }
-      });
-    });
+    test.sections.forEach(sec =>
+      sec.questions.forEach(q => {
+        const ua = (answers[q.id] ?? "").trim().toLowerCase();
+        if (ua === q.answer.trim().toLowerCase()) correct++;
+      })
+    );
     onComplete(rawToBand(correct));
   }
 
-  // Review all answers before final submit
+  // ── Review screen ──────────────────────────────────────────────────────────
   if (submitted) {
     return (
       <div className="max-w-3xl mx-auto p-6 space-y-8">
-        <h2 className="text-2xl font-bold text-gray-800">Review Your Answers</h2>
-        {test.sections.map((sec) => (
+        <div className="bg-green-50 border border-green-200 rounded-xl p-4 text-center">
+          <p className="text-green-700 font-bold">Listening complete — review your answers below</p>
+        </div>
+
+        {test.sections.map(sec => (
           <div key={sec.sectionNumber} className="space-y-3">
             <h3 className="font-semibold text-gray-700 border-b pb-1">{sec.title}</h3>
-            {sec.questions.map((q) => (
-              <div key={q.id} className="text-sm flex gap-4">
-                <span className="text-gray-500 w-6">Q{q.id}</span>
+            {sec.questions.map(q => (
+              <div key={q.id} className="flex gap-4 text-sm">
+                <span className="text-gray-400 w-6 shrink-0">Q{q.id}</span>
                 <span className="flex-1 text-gray-700">{q.q}</span>
-                <span className="font-medium text-gray-900 w-24 text-right">
+                <span className="font-medium text-gray-900 text-right w-28 shrink-0">
                   {answers[q.id] ?? "—"}
                 </span>
               </div>
             ))}
           </div>
         ))}
+
         <button
           onClick={handleSubmit}
           className="w-full py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition"
         >
-          Submit Listening
+          Submit Listening →
         </button>
       </div>
     );
   }
 
+  const isReading   = phase === "reading";
+  const isPlaying   = phase === "playing";
+  const isFinishing = phase === "finishing";
+
   return (
-    <div className="max-w-3xl mx-auto p-6 space-y-6">
-      {/* Progress */}
+    <div className="max-w-3xl mx-auto p-6 space-y-5">
+
+      {/* ── Section progress bar ─────────────────────────────────────── */}
       <div className="flex items-center gap-2">
         {test.sections.map((_, i) => (
-          <div
-            key={i}
-            className={`h-2 flex-1 rounded-full transition-colors ${
-              i < sectionIdx
-                ? "bg-green-500"
-                : i === sectionIdx
-                ? "bg-blue-500"
-                : "bg-gray-200"
-            }`}
-          />
+          <div key={i} className={`h-2 flex-1 rounded-full transition-colors ${
+            i < sectionIdx ? "bg-green-500" : i === sectionIdx ? "bg-blue-500" : "bg-gray-200"
+          }`} />
         ))}
       </div>
 
+      {/* ── Status banner ────────────────────────────────────────────── */}
+      {isReading && (
+        <div className="flex items-center justify-between bg-amber-50 border border-amber-300 rounded-xl px-5 py-3">
+          <div>
+            <p className="font-semibold text-amber-800 text-sm">
+              📖 Read the questions now — audio starts in
+            </p>
+            <p className="text-amber-600 text-xs mt-0.5">
+              {section.instructions}
+            </p>
+          </div>
+          <span className={`font-mono font-black text-3xl ml-4 shrink-0 ${
+            readTime <= 10 ? "text-red-600 animate-pulse" : "text-amber-600"
+          }`}>
+            {readTime}s
+          </span>
+        </div>
+      )}
+
+      {isPlaying && (
+        <div className="flex items-center gap-3 bg-blue-600 text-white rounded-xl px-5 py-3">
+          <span className="animate-pulse text-xl shrink-0">🔊</span>
+          <div className="flex-1">
+            <p className="font-semibold text-sm">Audio playing — answer as you listen</p>
+            <p className="text-blue-200 text-xs mt-0.5">Recording plays once only. No rewind or replay.</p>
+          </div>
+        </div>
+      )}
+
+      {isFinishing && (
+        <div className="flex items-center justify-between bg-green-50 border border-green-300 rounded-xl px-5 py-3">
+          <div>
+            <p className="font-semibold text-green-800 text-sm">✅ Audio finished — complete any remaining answers</p>
+            <p className="text-green-600 text-xs mt-0.5">Next section begins automatically.</p>
+          </div>
+          <div className="text-right shrink-0 ml-4">
+            <span className={`font-mono font-black text-2xl ${
+              finishTime <= 10 ? "text-red-600 animate-pulse" : "text-green-600"
+            }`}>{finishTime}s</span>
+            <button
+              onClick={advanceSection}
+              className="block text-xs text-green-600 underline mt-1 hover:text-green-800"
+            >
+              {sectionIdx < 3 ? "Next section →" : "Finish →"}
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* ── Section header ────────────────────────────────────────────── */}
       <div>
-        <h2 className="text-xl font-bold text-gray-800">{section.title}</h2>
-        <p className="text-sm text-gray-500 mt-1">{section.context}</p>
+        <h2 className="text-lg font-bold text-gray-800">{section.title}</h2>
+        <p className="text-sm text-gray-500 mt-0.5">{section.context}</p>
       </div>
 
-      {/* Play button */}
-      {phase === "pre" && (
-        <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 text-center space-y-3">
-          <p className="text-sm text-blue-800 font-medium">
-            ⚠ The audio plays once only. Prepare before clicking Play.
-          </p>
-          <p className="text-xs text-blue-600">{section.instructions}</p>
-          <button
-            onClick={playSection}
-            className="mt-2 px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition"
-          >
-            ▶ Play Section {section.sectionNumber}
-          </button>
-        </div>
-      )}
+      {/* ── Questions — always visible ────────────────────────────────── */}
+      <div className="space-y-5">
+        {section.questions.map(q => (
+          <div key={q.id} className="space-y-2">
+            <label className="flex gap-3 text-sm text-gray-800">
+              <span className="font-bold text-blue-600 w-6 shrink-0">{q.id}.</span>
+              <span>{q.q}</span>
+            </label>
 
-      {phase === "playing" && (
-        <div className="bg-amber-50 border border-amber-300 rounded-xl p-6 text-center space-y-2">
-          <div className="flex items-center justify-center gap-2 text-amber-700 font-semibold">
-            <span className="animate-pulse">🔊</span> Audio playing — listen carefully
+            {q.type === "mcq" && q.opts ? (
+              <div className="pl-9 space-y-1">
+                {q.opts.map(opt => (
+                  <label key={opt} className="flex items-center gap-2 cursor-pointer text-sm">
+                    <input
+                      type="radio"
+                      name={`q-${q.id}`}
+                      value={opt[0]}
+                      checked={answers[q.id] === opt[0]}
+                      onChange={() => setAnswer(q.id, opt[0])}
+                      className="accent-blue-600"
+                    />
+                    {opt}
+                  </label>
+                ))}
+              </div>
+            ) : (
+              <div className="pl-9">
+                <input
+                  type="text"
+                  value={answers[q.id] ?? ""}
+                  onChange={e => setAnswer(q.id, e.target.value)}
+                  placeholder="Your answer"
+                  className="w-full max-w-xs border border-gray-300 rounded-lg px-3 py-1.5 text-sm focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none"
+                />
+              </div>
+            )}
           </div>
-          <p className="text-xs text-amber-600">Questions will appear when the audio ends.</p>
-        </div>
-      )}
+        ))}
+      </div>
 
-      {/* Questions */}
-      {phase === "answering" && (
-        <div className="space-y-5">
-          <p className="text-sm font-medium text-gray-600 border-b pb-2">{section.instructions}</p>
-          {section.questions.map((q) => (
-            <div key={q.id} className="space-y-2">
-              <label className="flex gap-3 text-sm text-gray-800">
-                <span className="font-bold text-blue-600 w-6 shrink-0">{q.id}.</span>
-                <span>{q.q}</span>
-              </label>
-              {q.type === "mcq" && q.opts ? (
-                <div className="pl-9 space-y-1">
-                  {q.opts.map((opt) => (
-                    <label key={opt} className="flex items-center gap-2 cursor-pointer text-sm">
-                      <input
-                        type="radio"
-                        name={`q-${q.id}`}
-                        value={opt[0]}
-                        checked={answers[q.id] === opt[0]}
-                        onChange={() => setAnswer(q.id, opt[0])}
-                        className="accent-blue-600"
-                      />
-                      {opt}
-                    </label>
-                  ))}
-                </div>
-              ) : (
-                <div className="pl-9">
-                  <input
-                    type="text"
-                    value={answers[q.id] ?? ""}
-                    onChange={(e) => setAnswer(q.id, e.target.value)}
-                    placeholder="Your answer"
-                    className="w-full max-w-xs border border-gray-300 rounded-lg px-3 py-1.5 text-sm focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none"
-                  />
-                </div>
-              )}
-            </div>
-          ))}
-
-          <button
-            onClick={nextSection}
-            className="w-full py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition mt-4"
-          >
-            {sectionIdx < 3 ? `Next: Section ${sectionIdx + 2} →` : "Finish Listening →"}
-          </button>
-        </div>
+      {/* ── Manual skip (finishing phase only) ───────────────────────── */}
+      {isFinishing && (
+        <button
+          onClick={advanceSection}
+          className="w-full py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition"
+        >
+          {sectionIdx < 3 ? `Next: Section ${sectionIdx + 2} →` : "Finish Listening →"}
+        </button>
       )}
     </div>
   );
