@@ -201,15 +201,16 @@ export default function SpeakingPage() {
   };
 
   const handleStopRecording = () => {
-    SpeechRecognition.stopListening();
-    setIsRecording(false);
-  };
+  SpeechRecognition.stopListening();
+  setTranscript(liveTranscript); // ← add this BEFORE setIsRecording
+  setIsRecording(false);
+};
 
   const handleSubmit = async () => {
     if (!transcript || transcript.trim().length < 30) {
-      setAiError("Please record at least 30 seconds of speech before submitting.");
-      return;
-    }
+  setAiError("Please speak for longer before submitting."); // ← clearer message
+  return;
+}
     if (!activeTopic) return;
 
     setSubmitted(true);
