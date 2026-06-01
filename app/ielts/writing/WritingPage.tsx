@@ -183,7 +183,7 @@ export default function WritingPage() {
 
     try {
       // 🔁 CHANGED: Now sending testType, taskType, task, response
-      const res = await fetch("/api/Writing", {
+      const res = await fetch("/api/writing", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

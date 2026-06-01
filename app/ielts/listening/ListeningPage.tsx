@@ -212,7 +212,8 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
     }
     const u = new SpeechSynthesisUtterance(chunksRef.current[idx]);
     u.rate = rate;
-    const v = window.speechSynthesis.getVoices().find(v => v.name === voiceName);
+    const allVoices = window.speechSynthesis.getVoices();
+    const v = allVoices.find(v => v.name === voiceName) ?? allVoices[0];
     if (v) u.voice = v;
     u.onend = () => {
       if (stoppedRef.current) return;
@@ -341,9 +342,10 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
           </div>
 
           <button onClick={startReading}
-            className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3.5 rounded-xl font-bold transition-all"
-            style={{ boxShadow: "0 4px 0 #065f46" }}>
-            🎧 Start Listening
+          disabled={voices.length === 0}
+          className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3.5 rounded-xl font-bold transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+          style={{ boxShadow: "0 4px 0 #065f46" }}>
+          {voices.length === 0 ? "⏳ Loading voices…" : "🎧 Start Listening"}
           </button>
         </div>
       )}
