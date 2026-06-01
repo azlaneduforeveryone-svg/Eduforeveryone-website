@@ -3,7 +3,6 @@ import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import Link from "next/link";
 import { getAdminIELTSListening } from "@/lib/adminDB";
 
-// ── Types ─────────────────────────────────────────────────────────────────────
 interface ListeningQ {
   id: number; q: string; type: "fill" | "mcq";
   opts?: string[]; answer: string; hint?: string;
@@ -15,7 +14,6 @@ interface Section {
 type Answers = Record<number, string>;
 type Results = { score: number; total: number } | null;
 
-// ── Band Score ────────────────────────────────────────────────────────────────
 const RAW_TO_BAND: [number, number][] = [
   [39,9],[37,8.5],[35,8],[32,7.5],[30,7],[26,6.5],
   [23,6],[18,5.5],[16,5],[13,4.5],[10,4],[6,3.5],[4,3],[2,2.5],[0,1],
@@ -26,7 +24,6 @@ const getBand = (raw: number, total: number) => {
   return 1;
 };
 
-// ── Section Data ──────────────────────────────────────────────────────────────
 const SECTIONS: Section[] = [
   {
     num: 1,
@@ -66,7 +63,7 @@ The reserve covers approximately four hundred and fifty hectares and contains th
 
 Our walk today will take approximately two hours. The full route is six kilometres, though there is a shorter three kilometre loop if anyone has mobility concerns — please let me know and I'll ensure you're not left behind. The terrain is mostly flat, though there are two gentle hills in the eastern section near the meadows.
 
-A few important reminders: please stay on the marked paths at all times, as going off-trail can disturb nesting wildlife. Dogs are permitted but must remain on a lead throughout. Photography is encouraged — the reserve is particularly photogenic at this time of year. Finally, a small gift shop and café are located at the exit. The café offers hot drinks and light snacks, and proceeds from both help fund the reserve's conservation programmes.`,
+A few important reminders: please stay on the marked paths at all times, as going off-trail can disturb nesting wildlife. Dogs are permitted but must remain on a lead throughout. Photography is encouraged — the reserve is particularly photogenic at this time of year. Finally, a small gift shop and cafe are located at the exit. The cafe offers hot drinks and light snacks, and proceeds from both help fund the reserve's conservation programmes.`,
     questions: [
       { id:1, type:"fill", q:"The reserve covers approximately _____ hectares.", answer:"450", hint:"A specific number is given at the start of the description." },
       { id:2, type:"fill", q:"The woodland area is home to over _____ species of birds.", answer:"60", hint:"Listen for the number given about the woodland." },
@@ -74,7 +71,7 @@ A few important reminders: please stay on the marked paths at all times, as goin
         opts:["A. In the ancient woodland","B. In the open meadows","C. In the freshwater wetlands","D. Near the entrance"],
         answer:"C", hint:"The guide describes the central area of the reserve." },
       { id:4, type:"fill", q:"The shorter walking loop is _____ kilometres.", answer:"3", hint:"An alternative route length is mentioned." },
-      { id:5, type:"mcq", q:"What do the café and gift shop proceeds support?",
+      { id:5, type:"mcq", q:"What do the cafe and gift shop proceeds support?",
         opts:["A. Staff salaries","B. The reserve's conservation programmes","C. Free entry for school groups","D. New walking trail construction"],
         answer:"B", hint:"The guide mentions this at the very end of his talk." },
     ],
@@ -139,26 +136,18 @@ Bioluminescence has evolved independently at least forty separate times across t
   },
 ];
 
-// ── CRITICAL FIX: Chunk-based TTS ────────────────────────────────────────────
-// Chrome's Web Speech API silently stops after ~15 seconds on long text.
-// Solution: split into ~200-char sentence chunks, chain via onend callback.
 function splitChunks(text: string, max = 200): string[] {
   const sentences = text.match(/[^.!?\n]+[.!?\n]*/g) ?? [text];
   const chunks: string[] = [];
   let buf = "";
   for (const s of sentences) {
-    if (buf.length + s.length > max && buf.trim()) {
-      chunks.push(buf.trim());
-      buf = s;
-    } else {
-      buf += s;
-    }
+    if (buf.length + s.length > max && buf.trim()) { chunks.push(buf.trim()); buf = s; }
+    else buf += s;
   }
   if (buf.trim()) chunks.push(buf.trim());
   return chunks;
 }
 
-// ── AudioPlayer ───────────────────────────────────────────────────────────────
 function AudioPlayer({ section, onFinished }: { section: Section; onFinished: () => void }) {
   const [status,    setStatus]    = useState<"idle"|"reading"|"playing"|"paused"|"done">("idle");
   const [voices,    setVoices]    = useState<SpeechSynthesisVoice[]>([]);
@@ -167,7 +156,6 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
   const [readTime,  setReadTime]  = useState(45);
   const [progress,  setProgress]  = useState(0);
 
-  // Stable refs — never cause re-renders
   const stoppedRef   = useRef(false);
   const pausedRef    = useRef(false);
   const chunkRef     = useRef(0);
@@ -175,47 +163,25 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
   const keepAliveRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const readTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  // ── Load voices ONCE on mount ─────────────────────────────────────────────
   useEffect(() => {
     const load = () => {
       const all = window.speechSynthesis.getVoices();
-      if (!all.length) {
-        console.warn("[AudioPlayer] No voices available from speechSynthesis.getVoices()");
-        return false;
-      }
-      // Priority: British > Australian > US > any English > everything
+      if (!all.length) return false;
       const gb = all.filter(v => v.lang === "en-GB");
       const au = all.filter(v => v.lang === "en-AU");
       const us = all.filter(v => v.lang.startsWith("en-US"));
       const en = all.filter(v => v.lang.startsWith("en"));
       const ranked = gb.length ? gb : au.length ? au : us.length ? us : en.length ? en : all;
       setVoices(ranked);
-      // CRITICAL: Always set a default voice if none is set yet
       setVoiceName(prev => prev || ranked[0]?.name || "");
-      console.log(`[AudioPlayer] Loaded ${ranked.length} voices, using: ${ranked[0]?.name}`);
       return true;
     };
-    
-    // Try loading immediately
-    let loaded = load();
-    
-    // If not loaded, listen for when voices become available
+
+    const loaded = load();
+
     if (!loaded) {
-      const retryTimer = setTimeout(() => {
-        const all = window.speechSynthesis.getVoices();
-        if (all.length) {
-          console.log("[AudioPlayer] Voices loaded after delay, retrying...");
-          load();
-        }
-      }, 500);
-      
-      const handleVoicesChanged = () => {
-        console.log("[AudioPlayer] onvoiceschanged event fired");
-        load();
-      };
-      window.speechSynthesis.onvoiceschanged = handleVoicesChanged;
-      
-      // Cleanup on unmount
+      const retryTimer = setTimeout(() => { load(); }, 500);
+      window.speechSynthesis.onvoiceschanged = () => { load(); };
       return () => {
         window.speechSynthesis.cancel();
         if (keepAliveRef.current) clearInterval(keepAliveRef.current);
@@ -224,8 +190,7 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
         window.speechSynthesis.onvoiceschanged = null;
       };
     }
-    
-    // Cleanup if voices were already loaded
+
     return () => {
       window.speechSynthesis.cancel();
       if (keepAliveRef.current) clearInterval(keepAliveRef.current);
@@ -233,7 +198,6 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
     };
   }, []);
 
-  // ── Speak one chunk, then chain to the next ───────────────────────────────
   const speakChunk = useCallback((idx: number) => {
     if (stoppedRef.current || idx >= chunksRef.current.length) {
       if (!stoppedRef.current) {
@@ -246,18 +210,9 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
     }
     const u = new SpeechSynthesisUtterance(chunksRef.current[idx]);
     u.rate = rate;
-<<<<<<< HEAD
     const allVoices = window.speechSynthesis.getVoices();
     const v = allVoices.find(v => v.name === voiceName) ?? allVoices[0];
     if (v) u.voice = v;
-=======
-    const v = window.speechSynthesis.getVoices().find(v => v.name === voiceName);
-    if (v) {
-      u.voice = v;
-    } else if (voiceName) {
-      console.warn(`[AudioPlayer] Voice "${voiceName}" not found, using system default`);
-    }
->>>>>>> a3884149cc0ab3824221f36bcab28acdf42f2aee
     u.onend = () => {
       if (stoppedRef.current) return;
       const next = idx + 1;
@@ -266,14 +221,12 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
       speakChunk(next);
     };
     u.onerror = (e) => {
-      console.error(`[AudioPlayer] Speech error: ${e.error}`, e);
       if (e.error === "interrupted" || stoppedRef.current) return;
-      speakChunk(idx + 1); // skip bad chunk
+      speakChunk(idx + 1);
     };
     window.speechSynthesis.speak(u);
   }, [rate, voiceName, onFinished]);
 
-  // ── Start playback ────────────────────────────────────────────────────────
   const playAudio = useCallback(() => {
     window.speechSynthesis.cancel();
     stoppedRef.current = false;
@@ -282,10 +235,8 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
     chunksRef.current  = splitChunks(section.transcript);
     setProgress(0);
     setStatus("playing");
-    // 300ms delay — Chrome needs time to reset after cancel()
     setTimeout(() => {
       if (stoppedRef.current) return;
-      // Keep-alive: ping every 10s to prevent Chrome GC killing synthesis
       if (keepAliveRef.current) clearInterval(keepAliveRef.current);
       keepAliveRef.current = setInterval(() => {
         if (!stoppedRef.current && !pausedRef.current &&
@@ -298,7 +249,6 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
     }, 300);
   }, [section.transcript, speakChunk]);
 
-  // ── 45-second reading countdown ───────────────────────────────────────────
   const startReading = () => {
     window.speechSynthesis.cancel();
     stoppedRef.current = false;
@@ -312,7 +262,6 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
     }, 1_000);
   };
 
-  // ── Pause / Resume ────────────────────────────────────────────────────────
   const togglePause = () => {
     if (status === "playing") {
       window.speechSynthesis.pause();
@@ -325,7 +274,6 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
     }
   };
 
-  // ── Stop ─────────────────────────────────────────────────────────────────
   const stop = () => {
     stoppedRef.current = true;
     window.speechSynthesis.cancel();
@@ -335,7 +283,6 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
     onFinished();
   };
 
-  // ── Replay ────────────────────────────────────────────────────────────────
   const replay = () => {
     stoppedRef.current = false;
     pausedRef.current  = false;
@@ -343,40 +290,27 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
     playAudio();
   };
 
-  // ── Render ────────────────────────────────────────────────────────────────
   return (
     <div className="bg-gray-900 text-white rounded-2xl p-5 mb-6">
-
-      {/* ── IDLE: settings ── */}
       {status === "idle" && (
         <div className="space-y-4 mb-5">
-          <p className="font-bold text-sm text-gray-300">⚙️ Audio Settings</p>
-
-          {/* Voice status indicator */}
+          <p className="font-bold text-sm text-gray-300">Audio Settings</p>
           {voices.length === 0 && (
             <div className="bg-red-900 border border-red-700 rounded-lg px-3 py-2 text-xs text-red-100">
-              ⚠️ <strong>No voices loaded.</strong> Web Speech API may not be supported in your browser. 
-              <br/>Try: Chrome, Edge, Safari, or Firefox. Allow microphone access if prompted.
+              No voices loaded. Try Chrome, Edge, Safari, or Firefox.
             </div>
           )}
-
-          {/* Voice selector */}
           <div>
             <label className="text-xs text-gray-400 block mb-1.5">Voice {voiceName ? "✓" : "⚠️"}</label>
             <select value={voiceName} onChange={e => setVoiceName(e.target.value)}
-              className="w-full bg-gray-800 border border-gray-600 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500"
-              disabled={voices.length === 0}>
-              {voices.length === 0 ? (
-                <option disabled>No voices available</option>
-              ) : (
-                voices.map(v => (
-                  <option key={v.name} value={v.name}>{v.name} ({v.lang})</option>
-                ))
-              )}
+              disabled={voices.length === 0}
+              className="w-full bg-gray-800 border border-gray-600 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500">
+              {voices.length === 0
+                ? <option disabled>No voices available</option>
+                : voices.map(v => <option key={v.name} value={v.name}>{v.name} ({v.lang})</option>)
+              }
             </select>
           </div>
-
-          {/* Speed buttons */}
           <div>
             <label className="text-xs text-gray-400 block mb-1.5">
               Speed — {rate === 0.8 ? "Slow" : rate === 0.87 ? "Normal ✅" : "Fast"}
@@ -389,32 +323,21 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
               ] as [number, string][]).map(([r, label]) => (
                 <button key={r} onClick={() => setRate(r)}
                   className={`flex-1 py-2.5 rounded-xl text-xs font-bold border transition-all
-                    ${rate === r
-                      ? "bg-emerald-500 text-white border-emerald-600"
-                      : "bg-gray-800 text-gray-300 border-gray-600 hover:border-emerald-400"}`}>
+                    ${rate === r ? "bg-emerald-500 text-white border-emerald-600" : "bg-gray-800 text-gray-300 border-gray-600 hover:border-emerald-400"}`}>
                   {label}
                 </button>
               ))}
             </div>
           </div>
-
           <button onClick={startReading}
-<<<<<<< HEAD
-          disabled={voices.length === 0}
-          className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3.5 rounded-xl font-bold transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-          style={{ boxShadow: "0 4px 0 #065f46" }}>
-          {voices.length === 0 ? "⏳ Loading voices…" : "🎧 Start Listening"}
-=======
             disabled={voices.length === 0}
             className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3.5 rounded-xl font-bold transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             style={{ boxShadow: "0 4px 0 #065f46" }}>
-            🎧 Start Listening
->>>>>>> a3884149cc0ab3824221f36bcab28acdf42f2aee
+            {voices.length === 0 ? "⏳ Loading voices…" : "🎧 Start Listening"}
           </button>
         </div>
       )}
 
-      {/* ── READING: countdown ── */}
       {status === "reading" && (
         <div className="text-center py-3">
           <p className="text-xs text-gray-400 uppercase tracking-widest mb-1">Reading Time</p>
@@ -427,7 +350,6 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
         </div>
       )}
 
-      {/* ── PLAYING / PAUSED ── */}
       {(status === "playing" || status === "paused") && (
         <div>
           <div className="flex items-center gap-3 mb-3">
@@ -438,20 +360,14 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
             <div>
               <p className="font-bold text-sm">Section {section.num} — Now Playing</p>
               <p className="text-gray-400 text-xs">
-                {status === "paused"
-                  ? "⏸ Paused — press Resume to continue"
-                  : "In the real IELTS, each recording plays once only"}
+                {status === "paused" ? "⏸ Paused — press Resume to continue" : "In the real IELTS, each recording plays once only"}
               </p>
             </div>
           </div>
-
-          {/* Progress bar */}
           <div className="h-2 bg-gray-700 rounded-full overflow-hidden mb-3">
-            <div className="h-full bg-emerald-500 rounded-full transition-all duration-500"
-              style={{ width: `${progress}%` }} />
+            <div className="h-full bg-emerald-500 rounded-full transition-all duration-500" style={{ width: `${progress}%` }} />
           </div>
           <p className="text-xs text-gray-500 text-right mb-3">{progress}%</p>
-
           <div className="flex gap-2">
             <button onClick={togglePause}
               className="flex-1 bg-gray-700 hover:bg-gray-600 py-2.5 rounded-xl text-sm font-bold transition-all">
@@ -465,7 +381,6 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
         </div>
       )}
 
-      {/* ── DONE ── */}
       {status === "done" && (
         <div>
           <div className="flex items-center gap-3 mb-4">
@@ -475,8 +390,7 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
               <p className="text-gray-400 text-xs">Now answer all questions below, then submit</p>
             </div>
           </div>
-          <button onClick={replay}
-            className="w-full bg-gray-700 hover:bg-gray-600 py-2.5 rounded-xl text-sm font-bold transition-all">
+          <button onClick={replay} className="w-full bg-gray-700 hover:bg-gray-600 py-2.5 rounded-xl text-sm font-bold transition-all">
             ↺ Replay Audio
           </button>
         </div>
@@ -485,7 +399,6 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
   );
 }
 
-// ── Firebase Transform ─────────────────────────────────────────────────────────
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function transformFirebaseSections(data: any[]): Section[] {
   if (!data?.length) return [];
@@ -520,7 +433,6 @@ function transformFirebaseSections(data: any[]): Section[] {
   return Array.from(dedup.values()).sort((a, b) => a.num - b.num);
 }
 
-// ── Shuffle helpers ────────────────────────────────────────────────────────────
 const QUESTIONS_PER_SECTION = 10;
 const LBLS = ["A","B","C","D"] as const;
 function shuffle<T>(arr: T[]): T[] {
@@ -539,7 +451,6 @@ function pickQuestions(s: Section, n: number): Section {
   return { ...s, questions: shuffle(s.questions).slice(0, Math.min(n, s.questions.length)).map(shuffleMCQL) };
 }
 
-// ── Main Page ─────────────────────────────────────────────────────────────────
 export default function ListeningPage() {
   const [activeSection,  setActiveSection]  = useState<Section | null>(null);
   const [answers,        setAnswers]        = useState<Answers>({});
@@ -583,10 +494,8 @@ export default function ListeningPage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  // ── Active section view ────────────────────────────────────────────────────
   if (activeSection) return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10">
-
       <div className="flex items-center gap-2 text-sm text-gray-400 mb-6">
         <Link href="/ielts" className="hover:text-emerald-600">IELTS</Link>
         <span>›</span>
@@ -716,10 +625,8 @@ export default function ListeningPage() {
     </div>
   );
 
-  // ── Hub view ───────────────────────────────────────────────────────────────
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10">
-
       <div className="flex items-center gap-2 text-sm text-gray-400 mb-6">
         <Link href="/ielts" className="hover:text-emerald-600">IELTS</Link>
         <span>›</span>
