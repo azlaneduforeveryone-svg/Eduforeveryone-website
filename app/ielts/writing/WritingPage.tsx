@@ -50,7 +50,7 @@ const PROMPTS: Prompt[] = [
   {
     id: "t1-bar-chart",
     task: 1,
-    taskType: "bar-chart",
+    taskType: "t1-bar-chart",
     title: "Bar Chart — University Subjects",
     timeMin: 20,
     minWords: 150,
@@ -65,7 +65,7 @@ Summarise the information by selecting and reporting the main features, and make
   {
     id: "t1-line-graph",
     task: 1,
-    taskType: "line-graph",
+    taskType: "t1-line-graph",
     title: "Line Graph — Coffee Consumption",
     timeMin: 20,
     minWords: 150,
@@ -76,7 +76,7 @@ Summarise the information by selecting and reporting the main features, and make
   {
     id: "t2-technology",
     task: 2,
-    taskType: "discuss-both",  // example: "discuss both views"
+    taskType: "t2-discuss-both",  // example: "discuss both views"
     title: "Technology & Society",
     timeMin: 40,
     minWords: 250,
@@ -87,7 +87,7 @@ Summarise the information by selecting and reporting the main features, and make
   {
     id: "t2-environment",
     task: 2,
-    taskType: "agree-disagree",
+    taskType: "t2-agree-disagree",
     title: "Environment & Individual Responsibility",
     timeMin: 40,
     minWords: 250,
