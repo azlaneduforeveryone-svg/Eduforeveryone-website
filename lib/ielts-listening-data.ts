@@ -741,6 +741,123 @@ The expertise reversal effect is also important: as learners become more expert,
       },
     ],
   },
+
+ {
+    id: "LA1",
+    label: "Academic Listening Test 1",
+    sections: [
+      {
+        sectionNumber: 1 as const,
+        title: "Section 1 – University Accommodation Enquiry",
+        context: "Student Tom discusses on-campus housing with accommodation advisor Sarah.",
+        instructions: "Complete the notes below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.",
+        script: `Sarah: Good morning. You must be Tom. I'm Sarah, the accommodation advisor. How can I help?
+Tom: Hi Sarah. I've just been accepted for the Master's in Environmental Science, and I need somewhere to live for the academic year starting in September.
+Sarah: We have several options. Traditional dormitories — shared rooms — that's the cheapest, at about three hundred and fifty pounds per month, but you share a bathroom and kitchen with the whole floor.
+Tom: I'd prefer more privacy. What about single rooms?
+Sarah: Yes, single ensuite rooms in Willow Hall. That costs five hundred and fifty pounds per month, including all bills except internet, which is fifteen pounds extra per month.
+Tom: Is there anything cheaper but still private?
+Sarah: Single non-ensuite rooms in Oak Hall — four hundred and fifty pounds per month, bills included. Internet is free there. But it's a ten-minute walk from the main campus.
+Tom: Which hall is closest to the Science Block?
+Sarah: Willow Hall is right behind the Science Block — just two minutes. Oak Hall has a free shuttle bus every twenty minutes. There's also Birch Apartments — postgraduate students only. You get a studio — your own kitchen and bathroom — for seven hundred and fifty pounds per month. Often a waiting list though.
+Tom: Let's go with Willow Hall. How do I apply?
+Sarah: Complete the online application form on the accommodation portal using your student ID. The deadline for guaranteed accommodation is August first. There's a two-hundred-and-fifty-pound deposit, refundable at year end. You'll receive an offer email within two weeks of applying, then you have five working days to accept.`,
+        questions: [
+          { id: 1,  type: "fill" as const, q: "Tom is starting a _____ in Environmental Science.", answer: "Master's" },
+          { id: 2,  type: "fill" as const, q: "Traditional dormitory monthly rent: £_____", answer: "350" },
+          { id: 3,  type: "fill" as const, q: "Willow Hall bills excluded: _____ only.", answer: "internet" },
+          { id: 4,  type: "fill" as const, q: "Willow Hall internet cost: £_____ per month extra.", answer: "15" },
+          { id: 5,  type: "fill" as const, q: "Oak Hall monthly rent (bills included): £_____", answer: "450" },
+          { id: 6,  type: "mcq"  as const, q: "How far is Willow Hall from the Science Block?",
+            opts: ["A. 5 minutes", "B. 2 minutes", "C. 10 minutes", "D. 20 minutes"], answer: "B" },
+          { id: 7,  type: "fill" as const, q: "Shuttle bus to Oak Hall runs every _____ minutes.", answer: "20" },
+          { id: 8,  type: "fill" as const, q: "Birch Apartments cost £_____ per month.", answer: "750" },
+          { id: 9,  type: "fill" as const, q: "Accommodation deposit: £_____", answer: "250" },
+          { id: 10, type: "fill" as const, q: "After offer email: accept within _____ working days.", answer: "5" },
+        ],
+      },
+      {
+        sectionNumber: 2 as const,
+        title: "Section 2 – Academic Integrity and Plagiarism",
+        context: "University librarian David gives a talk on plagiarism to first-year students.",
+        instructions: "Questions 11–15: Choose A, B or C. Questions 16–20: Complete the notes.",
+        script: `David: Good afternoon. I'm David from the University Library. Every year we have students who fail or face expulsion because they didn't take plagiarism seriously.
+Plagiarism means using someone else's work or ideas without giving them credit. Accidental plagiarism — forgetting to cite a source — is usually treated as a learning opportunity. Deliberate plagiarism — buying essays, copying large chunks from a textbook — can lead to a zero, a fail in the course, suspension, or even expulsion.
+We have software called Turnitin that compares your work against billions of web pages, journals, and previously submitted student papers.
+The golden rule: cite everything that is not common knowledge. Common knowledge means facts like 'water boils at one hundred degrees Celsius' — no citation needed. But if you state a statistic from a specific study, you need the source.
+Referencing styles: your department will specify APA, MLA, or Harvard. In APA, you write the author name, year, and page number in brackets after a quote. Don't mix styles.
+Good paraphrasing means changing sentence structure, vocabulary, and often the order of information — and still citing the source. The library offers free workshops every Wednesday at two PM. You can also book twenty-minute one-to-one sessions online. Chapter four of our website guide is all about paraphrasing.`,
+        questions: [
+          { id: 11, type: "mcq" as const, q: "Accidental plagiarism is typically treated as:",
+            opts: ["A. A learning opportunity", "B. Grounds for immediate suspension", "C. A zero on the assignment plus expulsion"], answer: "A" },
+          { id: 12, type: "mcq" as const, q: "What does Turnitin compare your work against?",
+            opts: ["A. Web pages only", "B. Web pages, journals and previously submitted student papers", "C. Published textbooks only"], answer: "B" },
+          { id: 13, type: "mcq" as const, q: "Which statement does NOT require a citation?",
+            opts: ["A. A statistic from a 2023 study", "B. Water boils at 100°C", "C. A direct quotation from a book"], answer: "B" },
+          { id: 14, type: "mcq" as const, q: "APA in-text citation format includes:",
+            opts: ["A. Author name, year, and page number", "B. Author name and page number only", "C. Title and year only"], answer: "A" },
+          { id: 15, type: "mcq" as const, q: "Good paraphrasing requires changing structure, vocabulary, and:",
+            opts: ["A. Adding completely new ideas", "B. Often the order of information", "C. The original meaning"], answer: "B" },
+          { id: 16, type: "fill" as const, q: "Free plagiarism workshops: every _____ at 2 PM.", answer: "Wednesday" },
+          { id: 17, type: "fill" as const, q: "One-to-one session duration: _____ minutes.", answer: "20" },
+          { id: 18, type: "fill" as const, q: "Sessions booked: _____ (method).", answer: "online" },
+          { id: 19, type: "fill" as const, q: "Library guide chapter on paraphrasing: chapter _____", answer: "4" },
+          { id: 20, type: "fill" as const, q: "Turnitin checks against previously submitted _____ papers.", answer: "student" },
+        ],
+      },
+      {
+        sectionNumber: 3 as const,
+        title: "Section 3 – Renewable Energy Survey Discussion",
+        context: "Students Emma and James analyse their rural solar panel survey findings. Tutor joins briefly.",
+        instructions: "Answer questions 21–30.",
+        script: `Emma: James, I've started analysing our survey data and the numbers are surprising. We surveyed two hundred households in three rural villages — whether they'd install solar panels if the government paid fifty percent of the cost. I expected about eighty percent yes. But only forty-two percent said yes. The main reason was upfront cost — fifty percent still leaves three to five thousand pounds.
+James: Did we ask about alternative financing?
+Emma: Yes. For households that said no, we asked if a zero-interest loan would change their mind. The yes rate jumped to seventy-one percent. So financing seems critical.
+James: There's a paper by Sardianou and Genoudi from twenty-eighteen — they found in Greece that upfront cost was the biggest barrier, but low-interest loans increased adoption by three hundred percent. We should cite that.
+Emma: We also found a geographic difference. The remote village had only twenty-eight percent initial yes, even with the subsidy.
+James: For a typical household, solar panels cost about eight thousand pounds installed. They save around five hundred per year on electricity bills. Payback without subsidy: sixteen years. With fifty percent subsidy: eight years.
+Tutor: The final report is due April thirtieth, and your presentation is May fifth. Each of you speaks for eight minutes. Summary tables in the main body only — full dataset in the appendix, anonymised, no names or addresses.`,
+        questions: [
+          { id: 21, type: "fill" as const, q: "Households surveyed across three villages: _____", answer: "200" },
+          { id: 22, type: "fill" as const, q: "Initial yes rate for 50% government subsidy: _____% ", answer: "42" },
+          { id: 23, type: "fill" as const, q: "Yes rate if a zero-interest loan is offered: _____% ", answer: "71" },
+          { id: 24, type: "fill" as const, q: "Referenced paper year — Sardianou and Genoudi: _____", answer: "2018" },
+          { id: 25, type: "fill" as const, q: "Remote village initial yes rate: _____% ", answer: "28" },
+          { id: 26, type: "fill" as const, q: "Solar panel installed cost: approximately £_____", answer: "8,000" },
+          { id: 27, type: "fill" as const, q: "Annual electricity bill savings: £_____", answer: "500" },
+          { id: 28, type: "fill" as const, q: "Payback period with 50% subsidy: _____ years.", answer: "8" },
+          { id: 29, type: "fill" as const, q: "Final report due: _____ 30th.", answer: "April" },
+          { id: 30, type: "fill" as const, q: "Each student's presentation time: _____ minutes.", answer: "8" },
+        ],
+      },
+      {
+        sectionNumber: 4 as const,
+        title: "Section 4 – Lecture: Hydrothermal Vents",
+        context: "A marine biology professor lectures on deep-sea hydrothermal vent ecosystems.",
+        instructions: "Complete the notes. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.",
+        script: `Professor: Today we're exploring one of the most extraordinary ecosystems on Earth — hydrothermal vents. These are underwater geysers found along mid-ocean ridges. Seawater seeps into cracks, gets heated to over four hundred degrees Celsius, and erupts back carrying dissolved minerals.
+The first vent was discovered in nineteen seventy-seven near the Galápagos Rift by a team using a deep-submersible vehicle called Alvin. Before that, everyone assumed the deep ocean was a cold, barren desert. They were spectacularly wrong.
+Vents support ecosystems entirely independent of sunlight. Instead of photosynthesis, the base of the food chain is chemosynthesis — bacteria oxidise hydrogen sulphide to produce organic matter. These bacteria support giant tube worms, clams, mussels, shrimp, and crabs.
+The giant tube worm, Riftia pachyptila, can grow up to two-point-four metres. It has no mouth, gut, or digestive system. It has a specialised organ called a trophosome packed with chemosynthetic bacteria. The red colour of its plume comes from haemoglobin — similar to our blood but more efficient.
+The Pompeii worm lives where temperatures reach eighty degrees Celsius — the most heat-tolerant animal on Earth.
+Why care about vents? One: vent conditions resemble early Earth — life may have begun here, not in shallow pools. Two: vent enzymes work at extreme temperatures and are used industrially in PCR machines for DNA amplification. Three: vents contain deposits of copper, zinc, and gold.
+For your assignment: a two-page essay on the potential impacts of deep-sea mining on vent ecosystems. Due in three weeks.`,
+        questions: [
+          { id: 31, type: "fill" as const, q: "First vent discovered: _____ near the Galápagos Rift.", answer: "1977" },
+          { id: 32, type: "fill" as const, q: "Deep-submersible vehicle used for discovery: _____", answer: "Alvin" },
+          { id: 33, type: "fill" as const, q: "Vent food chain base (not photosynthesis): _____", answer: "chemosynthesis" },
+          { id: 34, type: "fill" as const, q: "Giant tube worm maximum length: _____ metres.", answer: "2.4" },
+          { id: 35, type: "fill" as const, q: "Tube worm organ housing chemosynthetic bacteria: _____", answer: "trophosome" },
+          { id: 36, type: "mcq"  as const, q: "What gives the tube worm's plume its red colour?",
+            opts: ["A. Iron minerals", "B. Haemoglobin", "C. Hydrogen sulphide", "D. Red clay"], answer: "B" },
+          { id: 37, type: "fill" as const, q: "Pompeii worm survives temperatures up to _____ °C.", answer: "80" },
+          { id: 38, type: "fill" as const, q: "Industrial use of vent enzymes: in _____ machines for DNA amplification.", answer: "PCR" },
+          { id: 39, type: "fill" as const, q: "Assignment: _____ -page essay on deep-sea mining impacts.", answer: "2" },
+          { id: 40, type: "fill" as const, q: "Assignment due: _____ weeks.", answer: "3" },
+        ],
+      },
+    ],
+  },
 ];
 
 /** Returns one random listening test pool per session */
