@@ -1,6 +1,8 @@
 // app/api/writing/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 
+export const maxDuration = 60;
+
 const DEEPSEEK_URL = 'https://api.deepseek.com/chat/completions'
 
 const clamp = (n: unknown): number => {
