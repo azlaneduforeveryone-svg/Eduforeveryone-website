@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import UserButton from "./UserButton";
 
@@ -30,7 +31,13 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 font-black text-gray-900 text-lg">
-            <span className="text-2xl">🎓</span>
+            <Image 
+              src="/Main_Logo.jpg" 
+              alt="EduForEveryone Logo" 
+              width={32} 
+              height={32}
+              className="rounded-lg"
+            />
             <span className="hidden sm:block">EduForEveryone</span>
           </Link>
 

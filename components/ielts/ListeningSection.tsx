@@ -65,34 +65,77 @@ export default function ListeningSection({ test, onComplete }: Props) {
     window.speechSynthesis?.cancel();
 
     if (!window.speechSynthesis) {
+      console.warn("[ListeningSection] Web Speech API not available");
       // No TTS — skip straight to finishing phase
       startFinishing();
       return;
     }
 
     const speak = () => {
-      const utter = new SpeechSynthesisUtterance(section.script.trim());
-      utter.rate = 0.88;
-      utter.lang = "en-GB";
-      const voices = window.speechSynthesis.getVoices();
-      const voice  = voices.find(v => v.lang === "en-GB") ||
-                     voices.find(v => v.lang.startsWith("en-GB")) ||
-                     voices.find(v => v.lang.startsWith("en")) || null;
-      if (voice) utter.voice = voice;
-      utter.onend   = () => startFinishing();
-      utter.onerror = () => startFinishing();
-      window.speechSynthesis.speak(utter);
+      try {
+        window.speechSynthesis.cancel();
+        const utter = new SpeechSynthesisUtterance(section.script.trim());
+        utter.rate = 0.88;
+        utter.lang = "en-GB";
+        
+        const voices = window.speechSynthesis.getVoices();
+        if (voices.length === 0) {
+          console.warn("[ListeningSection] No voices available");
+          startFinishing();
+          return;
+        }
+        
+        const voice  = voices.find(v => v.lang === "en-GB") ||
+                       voices.find(v => v.lang.startsWith("en-GB")) ||
+                       voices.find(v => v.lang.startsWith("en")) ||
+                       voices[0] || null;
+        if (voice) {
+          utter.voice = voice;
+          console.log(`[ListeningSection] Using voice: ${voice.name}`);
+        }
+        utter.onend   = () => { 
+          console.log("[ListeningSection] Audio finished");
+          startFinishing(); 
+        };
+        utter.onerror = (e) => { 
+          console.error("[ListeningSection] Speech error:", e.error);
+          startFinishing(); 
+        };
+        window.speechSynthesis.speak(utter);
+        console.log("[ListeningSection] Started speaking");
+      } catch (err) {
+        console.error("[ListeningSection] Error during speak:", err);
+        startFinishing();
+      }
     };
 
     const voices = window.speechSynthesis.getVoices();
+    console.log(`[ListeningSection] Available voices: ${voices.length}`);
+    
     if (voices.length > 0) {
       speak();
     } else {
-      window.speechSynthesis.onvoiceschanged = () => {
-        window.speechSynthesis.onvoiceschanged = null;
+      console.log("[ListeningSection] Waiting for voices to load...");
+      
+      // Try again after a short delay
+      const retryTimer = setTimeout(() => {
+        const retryVoices = window.speechSynthesis.getVoices();
+        if (retryVoices.length > 0) {
+          console.log(`[ListeningSection] Voices loaded after delay (${retryVoices.length})`);
+          speak();
+        } else {
+          console.warn("[ListeningSection] Still no voices after delay, skipping audio");
+          startFinishing();
+        }
+      }, 800);
+      
+      const handleVoicesChanged = () => {
+        console.log("[ListeningSection] onvoiceschanged fired");
+        clearTimeout(retryTimer);
         speak();
       };
-      setTimeout(() => { if (window.speechSynthesis.pending === false) speak(); }, 1000);
+      
+      window.speechSynthesis.onvoiceschanged = handleVoicesChanged;
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sectionIdx, section.script]);
