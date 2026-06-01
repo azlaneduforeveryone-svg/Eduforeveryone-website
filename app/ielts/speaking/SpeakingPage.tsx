@@ -1,7 +1,9 @@
 "use client";
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
+// ---------- Types and Data (unchanged from your original) ----------
 interface P1Question { q: string; sample: string; }
 interface CueCard { title: string; points: string[]; followUp: string; sample: string; }
 interface P3Question { q: string; sample: string; }
@@ -55,6 +57,40 @@ const TOPICS: Topic[] = [
   },
 ];
 
+// ---------- Helper Functions for Band Score Display ----------
+function bandColor(s: number) {
+  return s >= 7 ? "text-green-700" : s >= 5.5 ? "text-amber-700" : "text-red-600";
+}
+function bandBg(s: number) {
+  return s >= 7 ? "bg-green-50 border-green-200" : s >= 5.5 ? "bg-amber-50 border-amber-200" : "bg-red-50 border-red-200";
+}
+function barColor(s: number) {
+  return s >= 7 ? "bg-green-500" : s >= 5.5 ? "bg-amber-500" : "bg-red-500";
+}
+function fmtScore(n: number) {
+  return Number.isInteger(n) ? String(n) : n.toFixed(1);
+}
+
+// ---------- Type for AI Grading Result (same as writing) ----------
+interface IELTSResult {
+  overall: number;
+  ta: { score: number; feedback: string };
+  cc: { score: number; feedback: string };
+  lr: { score: number; feedback: string };
+  gr: { score: number; feedback: string };
+  summary: string;
+  top_fix: string;
+}
+
+// Speaking criteria labels (keys match the result object)
+const SPEAKING_CRITERIA = [
+  { key: "ta", label: "Fluency & Coherence" },
+  { key: "cc", label: "Lexical Resource" },
+  { key: "lr", label: "Grammatical Range & Accuracy" },
+  { key: "gr", label: "Pronunciation" },
+];
+
+// ---------- Cue Card Timer Component (unchanged from your original) ----------
 function CueCardTimer() {
   const [phase, setPhase] = useState<"prep" | "speak" | "done" | "idle">("idle");
   const [remaining, setRemaining] = useState(60);
@@ -126,10 +162,93 @@ function CueCardTimer() {
   );
 }
 
+// ---------- Main Speaking Page Component ----------
 export default function SpeakingPage() {
   const [activeTopic, setActiveTopic] = useState<Topic | null>(null);
   const [activePart, setActivePart] = useState<1 | 2 | 3>(1);
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+
+  // --- Speech & Grading States ---
+  const [isRecording, setIsRecording] = useState(false);
+  const [transcript, setTranscript] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiResult, setAiResult] = useState<IELTSResult | null>(null);
+  const [aiError, setAiError] = useState<string | null>(null);
+
+  const {
+    transcript: liveTranscript,
+    listening,
+    resetTranscript,
+    browserSupportsSpeechRecognition
+  } = useSpeechRecognition();
+
+  // Update local transcript when liveTranscript changes
+  useEffect(() => {
+    if (isRecording) {
+      setTranscript(liveTranscript);
+    }
+  }, [liveTranscript, isRecording]);
+
+  const handleStartRecording = () => {
+    resetTranscript();
+    setTranscript("");
+    setSubmitted(false);
+    setAiResult(null);
+    setAiError(null);
+    SpeechRecognition.startListening({ continuous: true, language: 'en-US' });
+    setIsRecording(true);
+  };
+
+  const handleStopRecording = () => {
+    SpeechRecognition.stopListening();
+    setIsRecording(false);
+  };
+
+  const handleSubmit = async () => {
+    if (!transcript || transcript.trim().length < 30) {
+      setAiError("Please record at least 30 seconds of speech before submitting.");
+      return;
+    }
+    if (!activeTopic) return;
+
+    setSubmitted(true);
+    setAiLoading(true);
+    setAiError(null);
+
+    // Build a prompt based on current part
+    let taskPrompt = "";
+    if (activePart === 2 && activeTopic.cueCard) {
+      taskPrompt = `Cue Card: ${activeTopic.cueCard.title}\nPoints: ${activeTopic.cueCard.points.join(", ")}\nFollow-up: ${activeTopic.cueCard.followUp}`;
+    } else if (activePart === 1) {
+      taskPrompt = `Part 1 question (example): ${activeTopic.part1[0]?.q || "Tell me about yourself."}`;
+    } else {
+      taskPrompt = `Part 3 discussion question: ${activeTopic.part3[0]?.q || "What are the effects of technology on society?"}`;
+    }
+
+    try {
+      const res = await fetch("/api/speaking", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          task: taskPrompt,
+          response: transcript,
+          part: activePart,
+          topic: activeTopic.theme,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setAiError(data.error || "Grading failed. Please try again.");
+      } else {
+        setAiResult(data as IELTSResult);
+      }
+    } catch {
+      setAiError("Could not reach the scoring service. Check your connection.");
+    } finally {
+      setAiLoading(false);
+    }
+  };
 
   function toggle(key: string) {
     setExpanded(e => ({ ...e, [key]: !e[key] }));
@@ -139,12 +258,31 @@ export default function SpeakingPage() {
     setActiveTopic(t);
     setActivePart(1);
     setExpanded({});
+    setTranscript("");
+    setSubmitted(false);
+    setAiResult(null);
+    setAiError(null);
+    setIsRecording(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
+  // If browser doesn't support speech recognition
+  if (!browserSupportsSpeechRecognition) {
+    return (
+      <div className="max-w-4xl mx-auto px-4 py-10">
+        <div className="bg-red-50 border border-red-200 rounded-2xl p-6 text-center">
+          <p className="text-red-700">⚠️ Your browser does not support speech recognition. Please use Chrome, Edge, or Safari.</p>
+          <Link href="/ielts" className="inline-block mt-4 text-indigo-600">← Back to IELTS Hub</Link>
+        </div>
+      </div>
+    );
+  }
+
+  // ---------------- Topic View (when a topic is selected) ----------------
   if (activeTopic) {
     return (
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
+        {/* Breadcrumbs */}
         <div className="flex items-center gap-2 text-sm text-gray-400 mb-6">
           <Link href="/ielts" className="hover:text-indigo-600 transition-colors">IELTS</Link>
           <span>›</span>
@@ -155,16 +293,112 @@ export default function SpeakingPage() {
 
         <h1 className="text-2xl font-bold text-gray-900 mb-6">Topic: {activeTopic.theme}</h1>
 
-        {/* Part tabs */}
+        {/* Part Tabs */}
         <div className="flex gap-2 mb-6">
           {([1, 2, 3] as const).map(p => (
-            <button key={p} onClick={() => setActivePart(p)}
-              className={`px-4 py-2 rounded-xl font-bold text-sm transition-colors ${activePart === p ? "bg-amber-600 text-white" : "bg-white border border-gray-200 text-gray-600 hover:border-amber-300"}`}>
+            <button
+              key={p}
+              onClick={() => {
+                setActivePart(p);
+                setSubmitted(false);
+                setAiResult(null);
+                setTranscript("");
+                setIsRecording(false);
+              }}
+              className={`px-4 py-2 rounded-xl font-bold text-sm transition-colors ${
+                activePart === p ? "bg-amber-600 text-white" : "bg-white border border-gray-200 text-gray-600 hover:border-amber-300"
+              }`}
+            >
               Part {p}
             </button>
           ))}
         </div>
 
+        {/* ---------- Recording & AI Grading Section (shown on all parts) ---------- */}
+        <div className="bg-white border border-amber-200 rounded-2xl p-5 mb-6 shadow-sm">
+          <h3 className="font-bold text-amber-800 mb-3">🎙️ Practice & Get AI Feedback</h3>
+          <p className="text-sm text-gray-600 mb-4">
+            Answer the question above. Click record, speak clearly, then submit for AI evaluation.
+          </p>
+          <div className="flex flex-wrap gap-3 items-center mb-4">
+            {!isRecording ? (
+              <button
+                onClick={handleStartRecording}
+                className="bg-red-600 text-white px-5 py-2 rounded-xl font-bold text-sm hover:bg-red-700 transition-colors flex items-center gap-2"
+              >
+                🔴 Start Recording
+              </button>
+            ) : (
+              <button
+                onClick={handleStopRecording}
+                className="bg-gray-600 text-white px-5 py-2 rounded-xl font-bold text-sm hover:bg-gray-700 transition-colors flex items-center gap-2"
+              >
+                ⏹️ Stop Recording
+              </button>
+            )}
+            {transcript && (
+              <button
+                onClick={handleSubmit}
+                disabled={aiLoading}
+                className="bg-amber-600 text-white px-5 py-2 rounded-xl font-bold text-sm hover:bg-amber-700 disabled:opacity-50"
+              >
+                {aiLoading ? "Grading..." : "Submit & Grade"}
+              </button>
+            )}
+          </div>
+          {listening && (
+            <div className="text-sm text-green-600 animate-pulse mb-2">🔊 Listening... speak now</div>
+          )}
+          {transcript && (
+            <div className="bg-gray-50 rounded-xl p-4 border border-gray-200 mt-2">
+              <p className="text-xs font-semibold text-gray-500 uppercase mb-1">Your transcript:</p>
+              <p className="text-gray-700 text-sm leading-relaxed">{transcript}</p>
+            </div>
+          )}
+          {aiError && (
+            <div className="bg-red-50 border border-red-200 rounded-xl p-3 mt-3">
+              <p className="text-red-700 text-sm">{aiError}</p>
+            </div>
+          )}
+        </div>
+
+        {/* ---------- AI Results Display (if submitted) ---------- */}
+        {submitted && aiResult && !aiLoading && (
+          <div className="mb-8 space-y-5">
+            <div className={`border rounded-2xl p-6 text-center ${bandBg(aiResult.overall)}`}>
+              <p className={`text-6xl font-black leading-none mb-1 ${bandColor(aiResult.overall)}`}>
+                {fmtScore(aiResult.overall)}
+              </p>
+              <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Overall Band Score</p>
+              <p className="text-sm text-gray-600 italic max-w-md mx-auto">{aiResult.summary}</p>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {SPEAKING_CRITERIA.map(({ key, label }) => {
+                const c = aiResult[key as keyof IELTSResult] as { score: number; feedback: string };
+                return (
+                  <div key={key} className="bg-white border border-gray-200 rounded-2xl p-5">
+                    <div className="flex items-baseline justify-between mb-2">
+                      <span className="text-xs font-bold text-gray-500 uppercase tracking-wide">{label}</span>
+                      <span className={`text-lg font-black ${bandColor(c.score)}`}>
+                        {fmtScore(c.score)}<span className="text-xs font-normal text-gray-400">/9</span>
+                      </span>
+                    </div>
+                    <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden mb-3">
+                      <div className={`h-full rounded-full ${barColor(c.score)}`} style={{ width: `${(c.score / 9) * 100}%` }} />
+                    </div>
+                    <p className="text-xs text-gray-600 leading-relaxed">{c.feedback}</p>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="bg-indigo-50 border border-indigo-200 rounded-2xl p-5">
+              <p className="text-xs font-bold text-indigo-600 uppercase tracking-wide mb-1">⚡ Priority Fix</p>
+              <p className="text-sm text-indigo-900 font-medium leading-relaxed">{aiResult.top_fix}</p>
+            </div>
+          </div>
+        )}
+
+        {/* ---------- Part 1 Content (questions + sample answers) ---------- */}
         {activePart === 1 && (
           <div>
             <div className="bg-amber-50 border border-amber-100 rounded-xl p-4 mb-5">
@@ -191,6 +425,7 @@ export default function SpeakingPage() {
           </div>
         )}
 
+        {/* ---------- Part 2 Content (Cue Card + Timer) ---------- */}
         {activePart === 2 && (
           <div>
             <div className="bg-amber-50 border border-amber-100 rounded-xl p-4 mb-5">
@@ -223,6 +458,7 @@ export default function SpeakingPage() {
           </div>
         )}
 
+        {/* ---------- Part 3 Content (Discussion questions) ---------- */}
         {activePart === 3 && (
           <div>
             <div className="bg-amber-50 border border-amber-100 rounded-xl p-4 mb-5">
@@ -249,13 +485,17 @@ export default function SpeakingPage() {
           </div>
         )}
 
+        {/* Back button */}
         <div className="mt-8">
-          <button onClick={() => setActiveTopic(null)} className="text-sm text-indigo-600 font-semibold hover:underline">← Back to Speaking Topics</button>
+          <button onClick={() => setActiveTopic(null)} className="text-sm text-indigo-600 font-semibold hover:underline">
+            ← Back to Speaking Topics
+          </button>
         </div>
       </div>
     );
   }
 
+  // ---------------- Topic Selection Screen (when no topic is selected) ----------------
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10">
       <div className="flex items-center gap-2 text-sm text-gray-400 mb-6">
@@ -274,7 +514,7 @@ export default function SpeakingPage() {
         </div>
       </div>
 
-      {/* Part overview */}
+      {/* Part Overview Cards */}
       <div className="grid sm:grid-cols-3 gap-4 mb-8">
         {[
           { part: 1, label: "Introduction", time: "4–5 min", desc: "Personal questions about yourself and familiar topics." },
