@@ -179,7 +179,10 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
   useEffect(() => {
     const load = () => {
       const all = window.speechSynthesis.getVoices();
-      if (!all.length) return;
+      if (!all.length) {
+        console.warn("[AudioPlayer] No voices available from speechSynthesis.getVoices()");
+        return;
+      }
       // Priority: British > Australian > US > any English > everything
       const gb = all.filter(v => v.lang === "en-GB");
       const au = all.filter(v => v.lang === "en-AU");
@@ -187,17 +190,34 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
       const en = all.filter(v => v.lang.startsWith("en"));
       const ranked = gb.length ? gb : au.length ? au : us.length ? us : en.length ? en : all;
       setVoices(ranked);
+      // CRITICAL: Always set a default voice if none is set yet
       setVoiceName(prev => prev || ranked[0]?.name || "");
+      console.log(`[AudioPlayer] Loaded ${ranked.length} voices, using: ${ranked[0]?.name}`);
     };
+    
+    // Try loading immediately
     load();
+    
+    // Re-try after short delay in case voices haven't loaded yet
+    const retryTimer = setTimeout(() => {
+      const all = window.speechSynthesis.getVoices();
+      if (all.length && voices.length === 0) {
+        console.log("[AudioPlayer] Voices loaded after delay, retrying...");
+        load();
+      }
+    }, 500);
+    
+    // Also listen for when voices become available
     window.speechSynthesis.onvoiceschanged = load;
+    
     // Cleanup on unmount
     return () => {
       window.speechSynthesis.cancel();
       if (keepAliveRef.current) clearInterval(keepAliveRef.current);
       if (readTimerRef.current) clearInterval(readTimerRef.current);
+      clearTimeout(retryTimer);
     };
-  }, []); // ← empty dep array — runs ONCE, no duplicate
+  }, [voices.length]); // ← Re-run if voices.length changes (empty → loaded)
 
   // ── Speak one chunk, then chain to the next ───────────────────────────────
   const speakChunk = useCallback((idx: number) => {
@@ -213,7 +233,11 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
     const u = new SpeechSynthesisUtterance(chunksRef.current[idx]);
     u.rate = rate;
     const v = window.speechSynthesis.getVoices().find(v => v.name === voiceName);
-    if (v) u.voice = v;
+    if (v) {
+      u.voice = v;
+    } else if (voiceName) {
+      console.warn(`[AudioPlayer] Voice "${voiceName}" not found, using system default`);
+    }
     u.onend = () => {
       if (stoppedRef.current) return;
       const next = idx + 1;
@@ -222,6 +246,7 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
       speakChunk(next);
     };
     u.onerror = (e) => {
+      console.error(`[AudioPlayer] Speech error: ${e.error}`, e);
       if (e.error === "interrupted" || stoppedRef.current) return;
       speakChunk(idx + 1); // skip bad chunk
     };
@@ -307,14 +332,27 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
         <div className="space-y-4 mb-5">
           <p className="font-bold text-sm text-gray-300">⚙️ Audio Settings</p>
 
+          {/* Voice status indicator */}
+          {voices.length === 0 && (
+            <div className="bg-red-900 border border-red-700 rounded-lg px-3 py-2 text-xs text-red-100">
+              ⚠️ <strong>No voices loaded.</strong> Web Speech API may not be supported in your browser. 
+              <br/>Try: Chrome, Edge, Safari, or Firefox. Allow microphone access if prompted.
+            </div>
+          )}
+
           {/* Voice selector */}
           <div>
-            <label className="text-xs text-gray-400 block mb-1.5">Voice</label>
+            <label className="text-xs text-gray-400 block mb-1.5">Voice {voiceName ? "✓" : "⚠️"}</label>
             <select value={voiceName} onChange={e => setVoiceName(e.target.value)}
-              className="w-full bg-gray-800 border border-gray-600 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500">
-              {voices.map(v => (
-                <option key={v.name} value={v.name}>{v.name} ({v.lang})</option>
-              ))}
+              className="w-full bg-gray-800 border border-gray-600 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500"
+              disabled={voices.length === 0}>
+              {voices.length === 0 ? (
+                <option disabled>No voices available</option>
+              ) : (
+                voices.map(v => (
+                  <option key={v.name} value={v.name}>{v.name} ({v.lang})</option>
+                ))
+              )}
             </select>
           </div>
 
@@ -341,7 +379,8 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
           </div>
 
           <button onClick={startReading}
-            className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3.5 rounded-xl font-bold transition-all"
+            disabled={voices.length === 0}
+            className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3.5 rounded-xl font-bold transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             style={{ boxShadow: "0 4px 0 #065f46" }}>
             🎧 Start Listening
           </button>
