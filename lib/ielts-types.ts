@@ -27,7 +27,7 @@ export interface ListeningSection {
 export interface ListeningTest {
   id: string;
   label: string;
-  sections: [ListeningSection, ListeningSection, ListeningSection, ListeningSection];
+  sections: ListeningSection[];
 }
 
 // ─── READING (ACADEMIC) ──────────────────────────────────────
@@ -53,7 +53,7 @@ export interface ReadingPassage {
 export interface AcademicReadingTest {
   id: string;
   label: string;
-  passages: [ReadingPassage, ReadingPassage, ReadingPassage];
+  passages: ReadingPassage[];
 }
 
 // ─── READING (GENERAL TRAINING) ──────────────────────────────
@@ -75,7 +75,7 @@ export interface GTReadingSection {
 export interface GTReadingTest {
   id: string;
   label: string;
-  sections: [GTReadingSection, GTReadingSection, GTReadingSection];
+  sections: GTReadingSection[];
 }
 
 // ─── WRITING ─────────────────────────────────────────────────
@@ -86,6 +86,7 @@ export interface AcademicWritingTask1 {
   chartTypeLabel: string;
   prompt: string;
   chartDescription: string;
+  minWords: number;   // 150 words for Task 1
 }
 
 export interface GTWritingTask1 {
@@ -94,6 +95,7 @@ export interface GTWritingTask1 {
   letterTypeLabel: string;
   prompt: string;
   bulletPoints: string[];
+  minWords: number;   // 150 words for Task 1
 }
 
 export interface WritingTask2 {
@@ -102,6 +104,7 @@ export interface WritingTask2 {
   taskTypeLabel: string;
   prompt: string;
   planningHints: string[];
+  minWords: number;   // 250 words for Task 2
 }
 
 export interface AcademicWritingTest {
@@ -118,20 +121,20 @@ export interface GTWritingTest {
 
 export type WritingTest = AcademicWritingTest | GTWritingTest;
 
-// ─── SPEAKING ────────────────────────────────────────────────
+/// ─── SPEAKING ────────────────────────────────────────────────
 
 export interface SpeakingPart2 {
-  topic: string;
-  points: string[];
-  followUp: string;
+  cueCard: string;
+  preparation: number;   // seconds (usually 60)
+  speaking: number;      // seconds (usually 120)
 }
 
 export interface SpeakingTest {
   id: string;
-  part1Topic: string;
-  part1Questions: string[];
+  part1Topic?: string;
+  part1?: string[];      // not used by component but kept for completeness
   part2: SpeakingPart2;
-  part3Questions: string[];
+  part3: { questions: string[] };
 }
 
 // ─── UTILITIES ───────────────────────────────────────────────

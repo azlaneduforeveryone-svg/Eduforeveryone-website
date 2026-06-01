@@ -1,15 +1,11 @@
 // lib/ielts-speaking-data.ts
-// 5 speaking test pools. Structure identical for Academic and General Training.
-// Each pool: Part 1 (intro questions), Part 2 (cue card), Part 3 (discussion).
-// Export: getSpeakingTest()
-
 import { SpeakingTest, pickRandom } from "./ielts-types";
 
 const speakingPool: SpeakingTest[] = [
   {
     id: "SP-A",
     part1Topic: "Your Daily Routine & Hobbies",
-    part1Questions: [
+    part1: [
       "Can you tell me about where you live?",
       "What do you usually do in the mornings?",
       "Do you have any hobbies? How did you get into them?",
@@ -17,27 +13,25 @@ const speakingPool: SpeakingTest[] = [
       "Has your daily routine changed much in recent years?",
     ],
     part2: {
-      topic: "Describe a skill you have learned that you consider very useful.",
-      points: [
-        "What the skill is",
-        "When and how you learned it",
-        "Why you decided to learn it",
-      ],
-      followUp:
-        "Explain how this skill has benefited you in your daily life or career.",
+      cueCard:
+        "Describe a skill you have learned that you consider very useful.\nYou should say:\n- What the skill is\n- When and how you learned it\n- Why you decided to learn it\nand explain how this skill has benefited you in your daily life or career.",
+      preparation: 60,
+      speaking: 120,
     },
-    part3Questions: [
-      "Why do you think people continue learning new skills throughout their lives?",
-      "Do you think formal education is the best way to learn skills, or are there better alternatives?",
-      "How has technology changed the way people learn new things?",
-      "In your opinion, which skills are most important for young people to develop today?",
-      "Do you think schools in your country prepare students well for working life? Why or why not?",
-    ],
+    part3: {
+      questions: [
+        "Why do you think people continue learning new skills throughout their lives?",
+        "Do you think formal education is the best way to learn skills, or are there better alternatives?",
+        "How has technology changed the way people learn new things?",
+        "In your opinion, which skills are most important for young people to develop today?",
+        "Do you think schools in your country prepare students well for working life? Why or why not?",
+      ],
+    },
   },
   {
     id: "SP-B",
     part1Topic: "Food & Eating Habits",
-    part1Questions: [
+    part1: [
       "What kind of food do you enjoy eating most?",
       "Do you prefer eating at home or at restaurants?",
       "Have your eating habits changed since you were a child?",
@@ -45,27 +39,25 @@ const speakingPool: SpeakingTest[] = [
       "How important is mealtimes for your family or social life?",
     ],
     part2: {
-      topic:
-        "Describe a time when you tried a new type of food and enjoyed it.",
-      points: [
-        "What the food was and where you tried it",
-        "Who you were with at the time",
-        "Why it was different from food you normally eat",
-      ],
-      followUp: "Explain why you would or would not try it again.",
+      cueCard:
+        "Describe a time when you tried a new type of food and enjoyed it.\nYou should say:\n- What the food was and where you tried it\n- Who you were with at the time\n- Why it was different from food you normally eat\nand explain why you would or would not try it again.",
+      preparation: 60,
+      speaking: 120,
     },
-    part3Questions: [
-      "How have international travel and migration influenced the food culture in your country?",
-      "Do you think fast food is becoming too dominant in people's diets? Why?",
-      "What role do governments have in encouraging people to eat more healthily?",
-      "How do you think people's food choices will change over the next 20 years?",
-      "Is it important for young people to learn to cook? Why or why not?",
-    ],
+    part3: {
+      questions: [
+        "How have international travel and migration influenced the food culture in your country?",
+        "Do you think fast food is becoming too dominant in people's diets? Why?",
+        "What role do governments have in encouraging people to eat more healthily?",
+        "How do you think people's food choices will change over the next 20 years?",
+        "Is it important for young people to learn to cook? Why or why not?",
+      ],
+    },
   },
   {
     id: "SP-C",
     part1Topic: "Travel & Transport",
-    part1Questions: [
+    part1: [
       "How do you usually get to work or study?",
       "Do you enjoy travelling? What kind of trips do you prefer?",
       "Have you ever had a particularly memorable journey? What made it special?",
@@ -73,27 +65,25 @@ const speakingPool: SpeakingTest[] = [
       "What form of transport do you think is the most convenient in your city?",
     ],
     part2: {
-      topic: "Describe a place outside your home country that you would like to visit.",
-      points: [
-        "Where the place is and what it is known for",
-        "Why you are interested in visiting it",
-        "Who you would like to go with",
-      ],
-      followUp:
-        "Explain what you think you would learn or gain from visiting this place.",
+      cueCard:
+        "Describe a place outside your home country that you would like to visit.\nYou should say:\n- Where the place is and what it is known for\n- Why you are interested in visiting it\n- Who you would like to go with\nand explain what you think you would learn or gain from visiting this place.",
+      preparation: 60,
+      speaking: 120,
     },
-    part3Questions: [
-      "Why do you think international tourism has grown so rapidly in recent decades?",
-      "What are some of the negative effects of mass tourism on local communities?",
-      "Do you think people have a responsibility to travel sustainably? Why or why not?",
-      "How has the rise of budget airlines changed the way people travel?",
-      "Should governments invest more in public transport rather than roads? Why?",
-    ],
+    part3: {
+      questions: [
+        "Why do you think international tourism has grown so rapidly in recent decades?",
+        "What are some of the negative effects of mass tourism on local communities?",
+        "Do you think people have a responsibility to travel sustainably? Why or why not?",
+        "How has the rise of budget airlines changed the way people travel?",
+        "Should governments invest more in public transport rather than roads? Why?",
+      ],
+    },
   },
   {
     id: "SP-D",
     part1Topic: "Technology & Media",
-    part1Questions: [
+    part1: [
       "How often do you use social media?",
       "What kinds of things do you use the internet for most?",
       "Do you think you spend too much time on your phone or computer?",
@@ -101,28 +91,25 @@ const speakingPool: SpeakingTest[] = [
       "Do you prefer reading news online or in print? Why?",
     ],
     part2: {
-      topic:
-        "Describe a piece of technology that you find particularly useful in your everyday life.",
-      points: [
-        "What the technology is",
-        "How long you have been using it",
-        "How you use it on a daily basis",
-      ],
-      followUp:
-        "Explain how your life would be different without this piece of technology.",
+      cueCard:
+        "Describe a piece of technology that you find particularly useful in your everyday life.\nYou should say:\n- What the technology is\n- How long you have been using it\n- How you use it on a daily basis\nand explain how your life would be different without this piece of technology.",
+      preparation: 60,
+      speaking: 120,
     },
-    part3Questions: [
-      "Do you think people have become too dependent on technology? Can you give examples?",
-      "How has social media affected the way people form relationships and friendships?",
-      "What are the main risks of storing personal data online?",
-      "Do you think artificial intelligence will create more jobs than it destroys? Why or why not?",
-      "How should parents manage their children's use of digital devices?",
-    ],
+    part3: {
+      questions: [
+        "Do you think people have become too dependent on technology? Can you give examples?",
+        "How has social media affected the way people form relationships and friendships?",
+        "What are the main risks of storing personal data online?",
+        "Do you think artificial intelligence will create more jobs than it destroys? Why or why not?",
+        "How should parents manage their children's use of digital devices?",
+      ],
+    },
   },
   {
     id: "SP-E",
     part1Topic: "Environment & Nature",
-    part1Questions: [
+    part1: [
       "Do you enjoy spending time outdoors? What do you usually do?",
       "Are there many green spaces or parks near where you live?",
       "How aware are you of environmental issues in your daily life?",
@@ -130,27 +117,22 @@ const speakingPool: SpeakingTest[] = [
       "Was nature an important part of your childhood? How?",
     ],
     part2: {
-      topic:
-        "Describe an environmental problem that you feel strongly about.",
-      points: [
-        "What the problem is",
-        "What you believe causes it",
-        "What effects it has on people or wildlife",
-      ],
-      followUp:
-        "Explain what you think should be done to address this problem.",
+      cueCard:
+        "Describe an environmental problem that you feel strongly about.\nYou should say:\n- What the problem is\n- What you believe causes it\n- What effects it has on people or wildlife\nand explain what you think should be done to address this problem.",
+      preparation: 60,
+      speaking: 120,
     },
-    part3Questions: [
-      "Do you think individuals or governments have greater responsibility for protecting the environment?",
-      "How effective do you think international agreements on climate change have been?",
-      "Are people in your country becoming more or less environmentally conscious? Why?",
-      "What changes in lifestyle do you think people will need to make over the next 50 years?",
-      "Do you think economic development and environmental protection can coexist? How?",
-    ],
+    part3: {
+      questions: [
+        "Do you think individuals or governments have greater responsibility for protecting the environment?",
+        "How effective do you think international agreements on climate change have been?",
+        "Are people in your country becoming more or less environmentally conscious? Why?",
+        "What changes in lifestyle do you think people will need to make over the next 50 years?",
+        "Do you think economic development and environmental protection can coexist? How?",
+      ],
+    },
   },
 ];
-
-// ─── EXPORT ──────────────────────────────────────────────────
 
 export function getSpeakingTest(): SpeakingTest {
   return pickRandom(speakingPool);

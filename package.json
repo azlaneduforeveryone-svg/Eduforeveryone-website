@@ -22,6 +22,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-speech-recognition": "^3.9.6",
     "autoprefixer": "^10.0.1",
     "broken-link-checker": "^0.7.8",
     "eslint": "^8",
