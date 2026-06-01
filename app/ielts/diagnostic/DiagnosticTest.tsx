@@ -218,6 +218,7 @@ export default function DiagnosticTest() {
   // ── SpeechSynthesis: wait for voices, then play ────────────────────────────
   const playListening = useCallback(() => {
     if (typeof window === "undefined" || !window.speechSynthesis) {
+      console.error("[DiagnosticTest] Web Speech API not available");
       setPlayError(true);
       setAudioDone(true);
       return;
@@ -226,35 +227,87 @@ export default function DiagnosticTest() {
     setIsPlaying(true);
 
     const speak = () => {
-      window.speechSynthesis.cancel();
-      const utter = new SpeechSynthesisUtterance(lSection.script);
-      utter.rate = 0.88;
-      utter.lang = "en-GB";
-      const voices = window.speechSynthesis.getVoices();
-      const voice = voices.find(v => v.lang === "en-GB") ||
-                    voices.find(v => v.lang.startsWith("en-GB")) ||
-                    voices.find(v => v.lang.startsWith("en")) || null;
-      if (voice) utter.voice = voice;
-      utter.onend  = () => { setIsPlaying(false); setAudioDone(true); };
-      utter.onerror = () => { setIsPlaying(false); setPlayError(true); setAudioDone(true); };
-      window.speechSynthesis.speak(utter);
+      try {
+        window.speechSynthesis.cancel();
+        const utter = new SpeechSynthesisUtterance(lSection.script);
+        utter.rate = 0.88;
+        utter.lang = "en-GB";
+        
+        const voices = window.speechSynthesis.getVoices();
+        if (voices.length === 0) {
+          console.warn("[DiagnosticTest] No voices available");
+          setPlayError(true);
+          setIsPlaying(false);
+          setAudioDone(true);
+          return;
+        }
+        
+        // Find best matching voice
+        const voice = voices.find(v => v.lang === "en-GB") ||
+                      voices.find(v => v.lang.startsWith("en-GB")) ||
+                      voices.find(v => v.lang.startsWith("en")) || 
+                      voices[0];
+        
+        if (voice) {
+          utter.voice = voice;
+          console.log(`[DiagnosticTest] Using voice: ${voice.name}`);
+        }
+        
+        utter.onend  = () => { 
+          console.log("[DiagnosticTest] Audio finished");
+          setIsPlaying(false); 
+          setAudioDone(true); 
+        };
+        utter.onerror = (e) => { 
+          console.error("[DiagnosticTest] Speech error:", e.error);
+          setIsPlaying(false); 
+          setPlayError(true); 
+          setAudioDone(true); 
+        };
+        
+        window.speechSynthesis.speak(utter);
+        console.log("[DiagnosticTest] Started speaking");
+      } catch (err) {
+        console.error("[DiagnosticTest] Error during speak:", err);
+        setPlayError(true);
+        setIsPlaying(false);
+        setAudioDone(true);
+      }
     };
 
     // Voices may not be loaded yet — wait for them
     const voices = window.speechSynthesis.getVoices();
+    console.log(`[DiagnosticTest] Available voices: ${voices.length}`);
+    
     if (voices.length > 0) {
       speak();
     } else {
-      window.speechSynthesis.onvoiceschanged = () => {
-        window.speechSynthesis.onvoiceschanged = null;
+      console.log("[DiagnosticTest] Waiting for voices to load...");
+      
+      // Try again after a short delay (Chrome needs this sometimes)
+      const retryTimer = setTimeout(() => {
+        const retryVoices = window.speechSynthesis.getVoices();
+        if (retryVoices.length > 0) {
+          console.log(`[DiagnosticTest] Voices loaded after delay (${retryVoices.length})`);
+          speak();
+        }
+      }, 500);
+      
+      const handleVoicesChanged = () => {
+        console.log("[DiagnosticTest] onvoiceschanged fired");
+        clearTimeout(retryTimer);
         speak();
       };
-      // Fallback if onvoiceschanged never fires (Firefox)
-      setTimeout(() => {
-        if (!isPlaying) speak();
-      }, 1000);
+      
+      window.speechSynthesis.onvoiceschanged = handleVoicesChanged;
+      
+      // Cleanup function
+      return () => {
+        clearTimeout(retryTimer);
+        window.speechSynthesis.onvoiceschanged = null;
+      };
     }
-  }, [lSection.script, isPlaying]);
+  }, [lSection.script]);
 
   // ── Phase transitions ──────────────────────────────────────────────────────
   const goReading  = () => { window.speechSynthesis?.cancel(); setPhase("reading");  startTimer(20*60, () => goWriting()); };

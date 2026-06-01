@@ -181,7 +181,7 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
       const all = window.speechSynthesis.getVoices();
       if (!all.length) {
         console.warn("[AudioPlayer] No voices available from speechSynthesis.getVoices()");
-        return;
+        return false;
       }
       // Priority: British > Australian > US > any English > everything
       const gb = all.filter(v => v.lang === "en-GB");
@@ -193,31 +193,45 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
       // CRITICAL: Always set a default voice if none is set yet
       setVoiceName(prev => prev || ranked[0]?.name || "");
       console.log(`[AudioPlayer] Loaded ${ranked.length} voices, using: ${ranked[0]?.name}`);
+      return true;
     };
     
     // Try loading immediately
-    load();
+    let loaded = load();
     
-    // Re-try after short delay in case voices haven't loaded yet
-    const retryTimer = setTimeout(() => {
-      const all = window.speechSynthesis.getVoices();
-      if (all.length && voices.length === 0) {
-        console.log("[AudioPlayer] Voices loaded after delay, retrying...");
+    // If not loaded, listen for when voices become available
+    if (!loaded) {
+      const retryTimer = setTimeout(() => {
+        const all = window.speechSynthesis.getVoices();
+        if (all.length) {
+          console.log("[AudioPlayer] Voices loaded after delay, retrying...");
+          load();
+        }
+      }, 500);
+      
+      const handleVoicesChanged = () => {
+        console.log("[AudioPlayer] onvoiceschanged event fired");
         load();
-      }
-    }, 500);
+      };
+      window.speechSynthesis.onvoiceschanged = handleVoicesChanged;
+      
+      // Cleanup on unmount
+      return () => {
+        window.speechSynthesis.cancel();
+        if (keepAliveRef.current) clearInterval(keepAliveRef.current);
+        if (readTimerRef.current) clearInterval(readTimerRef.current);
+        clearTimeout(retryTimer);
+        window.speechSynthesis.onvoiceschanged = null;
+      };
+    }
     
-    // Also listen for when voices become available
-    window.speechSynthesis.onvoiceschanged = load;
-    
-    // Cleanup on unmount
+    // Cleanup if voices were already loaded
     return () => {
       window.speechSynthesis.cancel();
       if (keepAliveRef.current) clearInterval(keepAliveRef.current);
       if (readTimerRef.current) clearInterval(readTimerRef.current);
-      clearTimeout(retryTimer);
     };
-  }, [voices.length]); // ← Re-run if voices.length changes (empty → loaded)
+  }, []);
 
   // ── Speak one chunk, then chain to the next ───────────────────────────────
   const speakChunk = useCallback((idx: number) => {
