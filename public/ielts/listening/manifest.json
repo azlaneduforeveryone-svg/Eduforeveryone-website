@@ -1,0 +1,214 @@
+[
+  {
+    "id": "section-1",
+    "title": "Section 1",
+    "audio": "/ielts/listening/section-1.mp3",
+    "durationSec": 126.7,
+    "transcript": [
+      {
+        "speaker": "narrator",
+        "text": "Section one. You will hear a telephone conversation between a customer and a receptionist at a sports centre. First, you have some time to look at the questions."
+      },
+      {
+        "speaker": "receptionist",
+        "text": "Good morning, Riverside Sports Centre. How can I help you?"
+      },
+      {
+        "speaker": "customer",
+        "text": "Hi, I'm interested in joining the centre. Could you tell me about your membership options?"
+      },
+      {
+        "speaker": "receptionist",
+        "text": "Of course. We have three types. A basic membership is twenty five pounds per month, which gives you access to the gym and the swimming pool during off-peak hours — that's before 4pm on weekdays."
+      },
+      {
+        "speaker": "customer",
+        "text": "And what about peak hours?"
+      },
+      {
+        "speaker": "receptionist",
+        "text": "For full access including evenings and weekends, the standard membership is forty pounds per month. We also have a premium option at fifty five pounds which includes unlimited classes such as yoga, spinning and pilates."
+      },
+      {
+        "speaker": "customer",
+        "text": "Great. How do I sign up?"
+      },
+      {
+        "speaker": "receptionist",
+        "text": "You can register online, or come in and fill out a form at reception. You'll need a passport or driving licence for identification, and your bank details for the direct debit."
+      },
+      {
+        "speaker": "customer",
+        "text": "Is there a joining fee?"
+      },
+      {
+        "speaker": "receptionist",
+        "text": "Yes, there's a one-off joining fee of fifteen pounds for all memberships. However, if you sign up before the end of the month we're waiving it as part of our summer promotion."
+      },
+      {
+        "speaker": "customer",
+        "text": "Excellent. My name is Sarah Collins — C, O, L, L, I, N, S."
+      },
+      {
+        "speaker": "receptionist",
+        "text": "Perfect, I've noted that. Can I take your email address to send you the registration link?"
+      },
+      {
+        "speaker": "customer",
+        "text": "It's sarah dot collins at mailbox dot com."
+      },
+      {
+        "speaker": "receptionist",
+        "text": "Wonderful. You'll receive an email within twenty four hours. Is there anything else?"
+      },
+      {
+        "speaker": "customer",
+        "text": "No, that covers everything. Thank you very much."
+      }
+    ]
+  },
+  {
+    "id": "section-2",
+    "title": "Section 2",
+    "audio": "/ielts/listening/section-2.mp3",
+    "durationSec": 102.0,
+    "transcript": [
+      {
+        "speaker": "narrator",
+        "text": "Section two. You will hear a guide giving a talk about a local nature reserve."
+      },
+      {
+        "speaker": "guide",
+        "text": "Welcome, everyone, to the Greenwood Nature Reserve. My name is David, and I'll be your guide today. Before we begin our walk, let me give you a brief overview of what you can expect."
+      },
+      {
+        "speaker": "guide",
+        "text": "The reserve covers approximately four hundred and fifty hectares and contains three distinct ecosystems: ancient woodland, freshwater wetlands, and open meadows. Each supports a unique range of wildlife. The woodland area, which we'll visit first, is home to over sixty species of birds, including the rare red kite. The wetlands, in the centre of the reserve, support a significant population of otters as well as various amphibians."
+      },
+      {
+        "speaker": "guide",
+        "text": "Our walk today will take approximately two hours. The full route is six kilometres, though there is a shorter three kilometre loop if anyone has mobility concerns — please let me know and I'll ensure you're not left behind. The terrain is mostly flat, though there are two gentle hills in the eastern section near the meadows."
+      },
+      {
+        "speaker": "guide",
+        "text": "A few important reminders: please stay on the marked paths at all times, as going off-trail can disturb nesting wildlife. Dogs are permitted but must remain on a lead throughout. Photography is encouraged — the reserve is particularly photogenic at this time of year. Finally, a small gift shop and cafe are located at the exit. The cafe offers hot drinks and light snacks, and proceeds from both help fund the reserve's conservation programmes."
+      }
+    ]
+  },
+  {
+    "id": "section-3",
+    "title": "Section 3",
+    "audio": "/ielts/listening/section-3.mp3",
+    "durationSec": 173.3,
+    "transcript": [
+      {
+        "speaker": "narrator",
+        "text": "Section three. You will hear two university students, Tom and Nina, discussing an assignment about urban green spaces."
+      },
+      {
+        "speaker": "tom",
+        "text": "Nina, have you finished reading the articles Professor Keane assigned for our urban ecology assignment?"
+      },
+      {
+        "speaker": "nina",
+        "text": "I've read two of them. The one on biodiversity in city parks was really interesting — apparently even small parks with just a few trees can support over a hundred different insect species."
+      },
+      {
+        "speaker": "tom",
+        "text": "I read that one too. It made me think differently about those tiny pocket parks you see between office buildings."
+      },
+      {
+        "speaker": "nina",
+        "text": "And the second article I read argued that the psychological benefits of green spaces are just as significant as the ecological ones. Office workers who could see trees from their desks reported twenty percent lower stress levels."
+      },
+      {
+        "speaker": "tom",
+        "text": "That's a compelling figure. I've been looking at how different cities have approached urban greening, and Singapore is extraordinary. They have a government target to keep forty seven percent of the city covered in vegetation."
+      },
+      {
+        "speaker": "nina",
+        "text": "Really? That's remarkable. How do they achieve that in such a dense city?"
+      },
+      {
+        "speaker": "tom",
+        "text": "Rooftop gardens, vertical green walls on skyscrapers, and they've integrated parks directly into transport infrastructure — like greenery along major expressways."
+      },
+      {
+        "speaker": "nina",
+        "text": "For our assignment, I think we need to focus on measurable outcomes rather than just describing what cities have done. Professor Keane specifically said she wants quantitative data."
+      },
+      {
+        "speaker": "tom",
+        "text": "Agreed. I was thinking we could look at three metrics: air quality improvement, property values near parks, and mental health outcomes."
+      },
+      {
+        "speaker": "nina",
+        "text": "The property value angle is interesting — I read a study showing that homes within three hundred metres of a public park are valued on average eight percent higher."
+      },
+      {
+        "speaker": "tom",
+        "text": "That's a strong economic argument for investment in green spaces."
+      },
+      {
+        "speaker": "nina",
+        "text": "For the structure of our presentation, should we start with the environmental case and move to the social and economic arguments?"
+      },
+      {
+        "speaker": "tom",
+        "text": "I think so. And we should probably address the main criticism — that green spaces are expensive to maintain."
+      },
+      {
+        "speaker": "nina",
+        "text": "There are counter-arguments though. Community gardening programmes reduce council maintenance costs."
+      },
+      {
+        "speaker": "tom",
+        "text": "Good point. I'll draft the social and economic parts if you handle the introduction and environmental section."
+      },
+      {
+        "speaker": "nina",
+        "text": "Perfect. Let's meet Thursday to put it all together."
+      }
+    ]
+  },
+  {
+    "id": "section-4",
+    "title": "Section 4",
+    "audio": "/ielts/listening/section-4.mp3",
+    "durationSec": 158.4,
+    "transcript": [
+      {
+        "speaker": "narrator",
+        "text": "Section four. You will hear part of a university lecture about bioluminescence."
+      },
+      {
+        "speaker": "lecturer",
+        "text": "Good morning. Today we're going to examine one of nature's most extraordinary phenomena — bioluminescence. The ability of living organisms to produce and emit light. By the end of this lecture, I want you to understand the biochemical mechanism behind it, its ecological functions, and its emerging applications in medicine and technology."
+      },
+      {
+        "speaker": "lecturer",
+        "text": "Let's begin with the biochemistry. Bioluminescence occurs when a light-emitting compound called luciferin reacts with oxygen in the presence of an enzyme called luciferase. This reaction produces light with remarkable efficiency — approximately ninety to ninety-five percent of the energy released is emitted as visible light, with almost no heat generated. By comparison, a typical incandescent light bulb converts only about ten percent of its energy into light, wasting the rest as heat. This makes bioluminescence one of the most efficient light-producing processes known to science."
+      },
+      {
+        "speaker": "lecturer",
+        "text": "The colour of bioluminescent light varies between species. The most common colour in the ocean is blue-green, with a wavelength of around four hundred and eighty nanometres. This makes biological sense — blue-green light travels furthest through seawater."
+      },
+      {
+        "speaker": "lecturer",
+        "text": "Now, let's consider why organisms produce light. Researchers have identified four primary functions. First, predation — the anglerfish uses a bioluminescent lure dangling from its head to attract prey in the darkness of the deep ocean. Second, bioluminescence serves as a defensive mechanism. The sea firefly releases a cloud of glowing mucus when threatened, which disorientates predators. Third, it functions as camouflage — called counter-illumination, where organisms match the faint light filtering down from the surface to eliminate their shadow. And fourth, it facilitates communication, particularly for reproductive signalling."
+      },
+      {
+        "speaker": "lecturer",
+        "text": "Approximately seventy-six percent of marine species in the deep ocean exhibit some form of bioluminescence."
+      },
+      {
+        "speaker": "lecturer",
+        "text": "In medicine, the luciferase gene has been inserted into cancer cells, allowing surgeons to locate tumours with extraordinary precision using a light-detecting camera. In environmental science, bioluminescent organisms are used as biological indicators of water quality — a decrease in coastal bioluminescence can provide an early warning of chemical contamination."
+      },
+      {
+        "speaker": "lecturer",
+        "text": "Bioluminescence has evolved independently at least forty separate times across the tree of life. I'll leave you with that thought."
+      }
+    ]
+  }
+]

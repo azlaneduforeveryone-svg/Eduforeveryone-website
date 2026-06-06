@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
-import type { Passage, Question } from "@/lib/ieltsReadingData";
+import type { Passage, Question } from "@/lib/ielts-reading-academic-data";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 

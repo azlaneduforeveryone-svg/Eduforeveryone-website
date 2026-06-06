@@ -34,7 +34,7 @@ Public health benefits are equally important. Access to green spaces encourages 
 
 Socially, well‑maintained parks become gathering places that foster community interaction. They provide neutral ground where people from different backgrounds can meet, reducing social isolation and building trust. In cities with ample green space, residents report higher levels of neighbourhood satisfaction and lower crime rates.
 
-However, the distribution of green spaces is often unequal. Wealthier neighbourhoods typically have more and better‑maintained parks than poorer areas. This ‘green gap’ exacerbates health and social inequalities. Policymakers are increasingly recognising the need for equitable access to nature as a matter of environmental justice.`,
+However, the distribution of green spaces is often unequal. Wealthier neighbourhoods typically have more and better‑maintained parks than poorer areas. This 'green gap' exacerbates health and social inequalities. Policymakers are increasingly recognising the need for equitable access to nature as a matter of environmental justice.`,
         instructions: "Read the passage and answer questions 1–13.",
         questions: [
           { id: 1, type: "tfng", q: "Urban green spaces only provide aesthetic benefits.", answer: "FALSE", explanation: "The passage states they provide environmental, health, and social benefits beyond aesthetics." },
@@ -55,13 +55,13 @@ However, the distribution of green spaces is often unequal. Wealthier neighbourh
       // Passage 2 – Moderate (history / archaeology)
       {
         title: "The Lost City of Great Zimbabwe",
-        text: `Great Zimbabwe is a ruined city in the southeastern hills of Zimbabwe, near Lake Mutirikwe. It was the capital of the Kingdom of Zimbabwe during the Late Iron Age, flourishing between the 11th and 15th centuries. The city’s most impressive structure is the Great Enclosure – a massive elliptical wall made of granite blocks, some weighing several tonnes, fitted together without mortar.
+        text: `Great Zimbabwe is a ruined city in the southeastern hills of Zimbabwe, near Lake Mutirikwe. It was the capital of the Kingdom of Zimbabwe during the Late Iron Age, flourishing between the 11th and 15th centuries. The city's most impressive structure is the Great Enclosure – a massive elliptical wall made of granite blocks, some weighing several tonnes, fitted together without mortar.
 
 European explorers who rediscovered the ruins in the late 19th century refused to believe that indigenous Africans could have built such sophisticated stonework. Instead, they attributed the site to Phoenicians, Arabs, or even the Queen of Sheba. This colonial bias delayed proper archaeological investigation for decades.
 
 It was not until the 1920s that British archaeologist Gertrude Caton‑Thompson conducted the first systematic excavations. Her team found evidence of African settlement – pottery, iron tools, and soapstone carvings – dating back to the 4th century. She concluded definitively that Great Zimbabwe was built by the Shona people, ancestors of the modern population.
 
-The city was a major trading centre. Archaeological finds include glass beads from Persia, porcelain from China, and gold coins from Kilwa (modern‑day Tanzania). This indicates that Great Zimbabwe controlled extensive trade routes across the Indian Ocean. The city’s wealth came from cattle herding and gold mining, which were used to acquire luxury goods from distant lands.
+The city was a major trading centre. Archaeological finds include glass beads from Persia, porcelain from China, and gold coins from Kilwa (modern‑day Tanzania). This indicates that Great Zimbabwe controlled extensive trade routes across the Indian Ocean. The city's wealth came from cattle herding and gold mining, which were used to acquire luxury goods from distant lands.
 
 Despite its historical significance, Great Zimbabwe suffered from neglect and looting. In the 1980s, the newly independent Zimbabwean government began a major conservation project, and the site was designated a UNESCO World Heritage Site in 1986. Today, it remains a powerful symbol of African achievement and national identity.`,
         instructions: "Read the passage and answer questions 14–26.",
@@ -70,10 +70,10 @@ Despite its historical significance, Great Zimbabwe suffered from neglect and lo
           { id: 15, type: "ynng", q: "European explorers correctly identified the builders of Great Zimbabwe.", answer: "NO", explanation: "They refused to believe Africans built it and attributed it to non-African peoples." },
           { id: 16, type: "fill", q: "Gertrude Caton‑Thompson excavated Great Zimbabwe in the _____ .", answer: "1920s", explanation: "Paragraph 3: 'in the 1920s'." },
           { id: 17, type: "mcq", q: "Which items were NOT found at Great Zimbabwe?", opts: ["A. Persian glass beads", "B. Chinese porcelain", "C. Roman coins", "D. Gold coins from Kilwa"], answer: "C", explanation: "Roman coins are not mentioned; Persian beads, Chinese porcelain, and Kilwa coins are listed." },
-          { id: 18, type: "ynng", q: "Great Zimbabwe’s wealth was primarily based on agriculture.", answer: "NO", explanation: "Paragraph 4: wealth came from cattle herding and gold mining, not agriculture." },
+          { id: 18, type: "ynng", q: "Great Zimbabwe's wealth was primarily based on agriculture.", answer: "NO", explanation: "Paragraph 4: wealth came from cattle herding and gold mining, not agriculture." },
           { id: 19, type: "fill", q: "The city was designated a UNESCO World Heritage Site in _____ .", answer: "1986", explanation: "Final paragraph." },
           { id: 20, type: "summary", q: "Complete the summary: Colonial bias led to the site being attributed to _____ or Arabs instead of Africans.", answer: "Phoenicians", explanation: "Paragraph 2 lists Phoenicians, Arabs, Queen of Sheba." },
-          { id: 21, type: "mcq", q: "What did Caton‑Thompson’s excavations prove?", opts: ["A. The site was Phoenician", "B. The site was built by the Shona people", "C. The site was a burial ground", "D. The site was never inhabited"], answer: "B", explanation: "She concluded it was built by the Shona people." },
+          { id: 21, type: "mcq", q: "What did Caton‑Thompson's excavations prove?", opts: ["A. The site was Phoenician", "B. The site was built by the Shona people", "C. The site was a burial ground", "D. The site was never inhabited"], answer: "B", explanation: "She concluded it was built by the Shona people." },
           { id: 22, type: "ynng", q: "Looting occurred after UNESCO designation.", answer: "NO", explanation: "Looting happened earlier; conservation began after independence in the 1980s, before 1986." },
           { id: 23, type: "fill", q: "The Great Enclosure is made of _____ blocks fitted without mortar.", answer: "granite", explanation: "Paragraph 1." },
           { id: 24, type: "ynng", q: "Great Zimbabwe controlled trade routes across the Indian Ocean.", answer: "YES", explanation: "Paragraph 4 explicitly states that." },
@@ -84,15 +84,15 @@ Despite its historical significance, Great Zimbabwe suffered from neglect and lo
       // Passage 3 – Hard (technology / psychology – more abstract)
       {
         title: "The Paradox of Automation",
-        text: `Automation has transformed industries, from manufacturing to air travel. Yet an unexpected consequence has emerged: the “automation paradox”. While automated systems reduce human error in routine tasks, they can also degrade human performance in ways that increase the risk of catastrophic failure.
+        text: `Automation has transformed industries, from manufacturing to air travel. Yet an unexpected consequence has emerged: the "automation paradox". While automated systems reduce human error in routine tasks, they can also degrade human performance in ways that increase the risk of catastrophic failure.
 
-Consider the aviation industry. Modern aircraft are highly automated. The autopilot handles cruise flight, and flight management computers control navigation. Pilots have become “monitors” rather than active operators. Studies show that during normal operations, automation reduces workload. However, when an unexpected event occurs – a sudden system failure or unusual weather – pilots who have relied on automation often struggle to regain manual control. Their manual flying skills atrophy, and their situational awareness is poorer than pilots who routinely fly without automation.
+Consider the aviation industry. Modern aircraft are highly automated. The autopilot handles cruise flight, and flight management computers control navigation. Pilots have become "monitors" rather than active operators. Studies show that during normal operations, automation reduces workload. However, when an unexpected event occurs – a sudden system failure or unusual weather – pilots who have relied on automation often struggle to regain manual control. Their manual flying skills atrophy, and their situational awareness is poorer than pilots who routinely fly without automation.
 
-This phenomenon is known as “out‑of‑the‑loop” performance degradation. When humans are removed from active control, they lose touch with the system’s dynamics. They become less able to detect anomalies, less able to intervene effectively, and slower to react. A famous example is Air France Flight 447, which crashed into the Atlantic in 2009 after the autopilot disengaged. The pilots, confused by unreliable airspeed readings, made a series of incorrect manual inputs that stalled the aircraft.
+This phenomenon is known as "out‑of‑the‑loop" performance degradation. When humans are removed from active control, they lose touch with the system's dynamics. They become less able to detect anomalies, less able to intervene effectively, and slower to react. A famous example is Air France Flight 447, which crashed into the Atlantic in 2009 after the autopilot disengaged. The pilots, confused by unreliable airspeed readings, made a series of incorrect manual inputs that stalled the aircraft.
 
 The paradox extends beyond aviation. In medicine, automated drug infusion pumps have reduced dosage errors, but nurses who override the automation without understanding the underlying calculations can make dangerous mistakes. In driving, lane‑keeping assistance and adaptive cruise control reduce fatigue, but drivers become distracted and slower to respond to emergencies.
 
-The solution is not to abandon automation but to design systems that keep humans “in the loop”. This means providing continuous feedback, requiring periodic manual interaction, and training for abnormal situations. The most effective approach is “adaptive automation” – where the system adjusts its level of autonomy based on the operator’s state and the task demands. Ultimately, automation should augment human skill, not replace it.`,
+The solution is not to abandon automation but to design systems that keep humans "in the loop". This means providing continuous feedback, requiring periodic manual interaction, and training for abnormal situations. The most effective approach is "adaptive automation" – where the system adjusts its level of autonomy based on the operator's state and the task demands. Ultimately, automation should augment human skill, not replace it.`,
         instructions: "Read the passage and answer questions 27–40.",
         questions: [
           { id: 27, type: "mcq", q: "What is the 'automation paradox'?", opts: ["A. Automation reduces errors but may degrade human performance", "B. Automation is too expensive", "C. Automation always increases safety", "D. Automation eliminates the need for humans"], answer: "A", explanation: "First paragraph: reduces routine errors but can degrade human performance, increasing risk." },
@@ -103,7 +103,7 @@ The solution is not to abandon automation but to design systems that keep humans
           { id: 32, type: "tfng", q: "In medicine, automated infusion pumps have completely eliminated dosage errors.", answer: "FALSE", explanation: "Paragraph 4: 'reduced dosage errors' but nurses overriding can make mistakes." },
           { id: 33, type: "fill", q: "Lane‑keeping assistance can make drivers become _____ and slower to respond.", answer: "distracted", explanation: "Paragraph 4." },
           { id: 34, type: "mcq", q: "What does 'keeping humans in the loop' mean?", opts: ["A. Replacing humans with machines", "B. Giving humans continuous feedback and periodic manual interaction", "C. Eliminating all automation", "D. Only using automation for simple tasks"], answer: "B", explanation: "Final paragraph: continuous feedback, periodic manual interaction, training." },
-          { id: 35, type: "tfng", q: "Adaptive automation changes its level of autonomy based on the operator's state.", answer: "TRUE", explanation: "Final paragraph: 'adjusts its level of autonomy based on the operator’s state and the task demands'." },
+          { id: 35, type: "tfng", q: "Adaptive automation changes its level of autonomy based on the operator's state.", answer: "TRUE", explanation: "Final paragraph: 'adjusts its level of autonomy based on the operator's state and the task demands'." },
           { id: 36, type: "fill", q: "The ideal role of automation is to _____ human skill, not replace it.", answer: "augment", explanation: "Last sentence." },
           { id: 37, type: "short", q: "Name one industry besides aviation mentioned where automation causes problems.", answer: "medicine (or driving)", explanation: "Paragraph 4 mentions medicine and driving." },
           { id: 38, type: "fill", q: "Air France Flight 447 crashed in _____ .", answer: "2009", explanation: "Paragraph 3." },
@@ -120,21 +120,21 @@ The solution is not to abandon automation but to design systems that keep humans
       // Passage 1 – Easy (environment)
       {
         title: "Plastic Pollution in the Oceans",
-        text: `Every year, approximately 8 million tonnes of plastic enter the world’s oceans. This waste comes from a variety of sources: litter, industrial discharge, fishing gear, and microplastics from synthetic clothing and cosmetics. Once in the ocean, plastic does not biodegrade; instead, it fragments into smaller pieces called microplastics.
+        text: `Every year, approximately 8 million tonnes of plastic enter the world's oceans. This waste comes from a variety of sources: litter, industrial discharge, fishing gear, and microplastics from synthetic clothing and cosmetics. Once in the ocean, plastic does not biodegrade; instead, it fragments into smaller pieces called microplastics.
 
-Marine animals often mistake plastic for food. Sea turtles ingest plastic bags, thinking they are jellyfish. Seabirds feed plastic pieces to their chicks, causing starvation. Whales have been found with stomachs full of plastic debris. Beyond ingestion, animals become entangled in abandoned fishing nets – known as “ghost gear” – leading to drowning or severe injury.
+Marine animals often mistake plastic for food. Sea turtles ingest plastic bags, thinking they are jellyfish. Seabirds feed plastic pieces to their chicks, causing starvation. Whales have been found with stomachs full of plastic debris. Beyond ingestion, animals become entangled in abandoned fishing nets – known as "ghost gear" – leading to drowning or severe injury.
 
 Microplastics have been found everywhere from Arctic ice to the deep sea. They enter the food chain when tiny organisms consume them, and they accumulate as they move up to larger predators, including humans. A recent study detected microplastics in human blood and lung tissue, raising concerns about long‑term health effects.
 
-International efforts to address plastic pollution include the United Nations’ Clean Seas campaign and the Basel Convention, which regulates plastic waste trade. However, the most effective solution is to reduce plastic production and improve waste management, particularly in countries with rapidly growing economies. Individual actions – using reusable bags, bottles, and refusing single‑use plastics – also contribute.`,
+International efforts to address plastic pollution include the United Nations' Clean Seas campaign and the Basel Convention, which regulates plastic waste trade. However, the most effective solution is to reduce plastic production and improve waste management, particularly in countries with rapidly growing economies. Individual actions – using reusable bags, bottles, and refusing single‑use plastics – also contribute.`,
         instructions: "Read the passage and answer questions 1–13.",
         questions: [
           { id: 1, type: "tfng", q: "Plastic in the ocean completely biodegrades within a few years.", answer: "FALSE", explanation: "It does not biodegrade; it fragments." },
           { id: 2, type: "fill", q: "Small plastic pieces are known as _____ .", answer: "microplastics", explanation: "Paragraph 1." },
           { id: 3, type: "mcq", q: "What do sea turtles mistake plastic bags for?", opts: ["A. Fish", "B. Jellyfish", "C. Seaweed", "D. Corals"], answer: "B", explanation: "Paragraph 2." },
-          { id: 4, type: "tfng", q: "Ghost gear refers to abandoned fishing nets.", answer: "TRUE", explanation: "Paragraph 2: 'abandoned fishing nets – known as “ghost gear”'." },
+          { id: 4, type: "tfng", q: "Ghost gear refers to abandoned fishing nets.", answer: "TRUE", explanation: "Paragraph 2: 'abandoned fishing nets – known as \"ghost gear\"'." },
           { id: 5, type: "fill", q: "Microplastics have been found in human blood and _____ tissue.", answer: "lung", explanation: "Paragraph 3." },
-          { id: 6, type: "mcq", q: "Which international campaign is mentioned?", opts: ["A. Ocean Cleanup", "B. Clean Seas", "C. Blue Planet", "D. Marine Protection"], answer: "B", explanation: "Paragraph 4: UN’s Clean Seas campaign." },
+          { id: 6, type: "mcq", q: "Which international campaign is mentioned?", opts: ["A. Ocean Cleanup", "B. Clean Seas", "C. Blue Planet", "D. Marine Protection"], answer: "B", explanation: "Paragraph 4: UN's Clean Seas campaign." },
           { id: 7, type: "tfng", q: "The Basel Convention encourages plastic waste trade.", answer: "FALSE", explanation: "It regulates (controls) plastic waste trade, not encourages." },
           { id: 8, type: "fill", q: "The most effective solution is to reduce plastic _____ and improve waste management.", answer: "production", explanation: "Final paragraph." },
           { id: 9, type: "short", q: "Name one individual action mentioned to reduce plastic pollution.", answer: "using reusable bags (or bottles, refusing single-use plastics)", explanation: "Last sentence." },
@@ -186,7 +186,7 @@ The modern consensus is that language does not imprison thought, but it does gui
         instructions: "Read the passage and answer questions 27–40.",
         questions: [
           { id: 27, type: "tfng", q: "The strong form of Sapir‑Whorf is called linguistic determinism.", answer: "TRUE", explanation: "Paragraph 1." },
-          { id: 28, type: "tfng", q: "Research has fully supported Whorf’s claims about Hopi time perception.", answer: "FALSE", explanation: "Paragraph 2: 'little support for this specific claim'." },
+          { id: 28, type: "tfng", q: "Research has fully supported Whorf's claims about Hopi time perception.", answer: "FALSE", explanation: "Paragraph 2: 'little support for this specific claim'." },
           { id: 29, type: "fill", q: "Russian speakers distinguish between goluboy (light blue) and _____ (dark blue).", answer: "siniy", explanation: "Paragraph 3." },
           { id: 30, type: "mcq", q: "Which language uses cardinal directions instead of left/right?", opts: ["A. Hopi", "B. Russian", "C. Kuuk Thaayorre", "D. English"], answer: "C", explanation: "Paragraph 4." },
           { id: 31, type: "tfng", q: "Speakers of Kuuk Thaayorre are worse at orienteering than English speakers.", answer: "FALSE", explanation: "They maintain 'extraordinary orientation skills'." },
@@ -262,11 +262,11 @@ One limitation of bioacoustics is background noise – both natural (wind, rain,
       },
       {
         title: "The History of Maps: From Clay to Digital",
-        text: `Maps are among humanity’s oldest forms of communication, predating written language by millennia. The earliest known world map is a Babylonian clay tablet from circa 600 BCE, showing Babylon at the centre of a circular world surrounded by an ocean. This map was not intended for navigation but to express cosmological and political ideas.
+        text: `Maps are among humanity's oldest forms of communication, predating written language by millennia. The earliest known world map is a Babylonian clay tablet from circa 600 BCE, showing Babylon at the centre of a circular world surrounded by an ocean. This map was not intended for navigation but to express cosmological and political ideas.
 
-The Greek geographer Ptolemy, writing in the 2nd century CE, revolutionised cartography by introducing longitude and latitude. His work, Geographia, provided instructions for creating maps using mathematical projections. Although Ptolemy’s maps contained significant errors – he underestimated the circumference of the Earth – his grid system remained the foundation of Western cartography for over a thousand years.
+The Greek geographer Ptolemy, writing in the 2nd century CE, revolutionised cartography by introducing longitude and latitude. His work, Geographia, provided instructions for creating maps using mathematical projections. Although Ptolemy's maps contained significant errors – he underestimated the circumference of the Earth – his grid system remained the foundation of Western cartography for over a thousand years.
 
-The Age of Exploration spurred dramatic advances. Portolan charts, developed in the Mediterranean, prioritised coastal detail and used rhumb lines to aid navigation. Gerardus Mercator’s 1569 projection solved the problem of plotting constant compass bearings as straight lines, but at the cost of distorting land masses – Greenland appears larger than Africa, though in reality Africa is fourteen times larger.
+The Age of Exploration spurred dramatic advances. Portolan charts, developed in the Mediterranean, prioritised coastal detail and used rhumb lines to aid navigation. Gerardus Mercator's 1569 projection solved the problem of plotting constant compass bearings as straight lines, but at the cost of distorting land masses – Greenland appears larger than Africa, though in reality Africa is fourteen times larger.
 
 Modern cartography has been transformed by satellite technology and Geographic Information Systems (GIS). GIS allows multiple layers of data – population, elevation, land use – to be combined on a single map, enabling sophisticated spatial analysis. Digital maps on smartphones have democratised access to geographic information, but they also raise concerns about privacy and the erosion of traditional wayfinding skills.`,
         instructions: "Read the passage and answer questions 27–40.",
@@ -427,3 +427,42 @@ export function getAcademicReadingTest(): AcademicReadingTest {
 export function getGTReadingTest(): GTReadingTest {
   return pickRandom(gtReadingPool);
 }
+// ─── Flat Passage API (used by the individual /ielts/reading page) ──────────
+// Consolidated here so the individual Reading page and the full mock both read
+// from this single canonical file. Replaces the legacy lib/ieltsReadingData.ts.
+export interface Question {
+  id: number;
+  type: string;
+  q: string;
+  opts?: string[];
+  answer: string;
+  acceptedAnswers?: string[];
+  explanation: string;
+  sentenceTemplate?: string;
+}
+
+export interface Passage {
+  id: string;
+  tag: string;
+  level: string;
+  title: string;
+  text: string;
+  wordCount: number;
+  questions: Question[];
+}
+
+const LEVEL_LABELS = ["Easy", "Moderate", "Hard"] as const;
+
+export const PASSAGES: Passage[] = academicReadingPool
+  .flatMap(test =>
+    test.passages.map((p, i) => ({
+      id: `${test.id.toLowerCase()}-p${i + 1}`,
+      tag: "Academic",
+      level: LEVEL_LABELS[i] ?? "Hard",
+      title: p.title,
+      text: p.text,
+      wordCount: p.text.trim().split(/\s+/).length,
+      questions: p.questions as Question[],
+    }))
+  )
+  .filter(p => p.questions.length >= 10);

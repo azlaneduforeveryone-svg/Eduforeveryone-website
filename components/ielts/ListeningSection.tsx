@@ -11,6 +11,7 @@ type SectionPhase = "reading" | "playing" | "finishing" | "done";
 
 const READ_SECONDS = 40;   // pre-reading time per section
 const FINISH_SECONDS = 30; // time after audio ends to finish writing
+const MOCK_AUDIO_BASE = "/ielts/listening/mock";
 
 function fmt(s: number) {
   return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
@@ -23,18 +24,21 @@ export default function ListeningSection({ test, onComplete }: Props) {
   const [finishTime, setFinishTime]   = useState(FINISH_SECONDS);
   const [answers, setAnswers]         = useState<Record<number, string>>({});
   const [submitted, setSubmitted]     = useState(false);
+  const [audioIssue, setAudioIssue]   = useState(false);
 
   const readTimerRef   = useRef<ReturnType<typeof setInterval> | null>(null);
   const finishTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const audioRef       = useRef<HTMLAudioElement | null>(null);
 
   const section: LSType = test.sections[sectionIdx];
+  const audioSrc = `${MOCK_AUDIO_BASE}/${test.id}-s${section.sectionNumber}.mp3`;
 
   // ── Clean up all timers and speech on unmount ──────────────────────────────
   useEffect(() => {
     return () => {
       clearInterval(readTimerRef.current!);
       clearInterval(finishTimerRef.current!);
-      window.speechSynthesis?.cancel();
+      audioRef.current?.pause();
     };
   }, []);
 
@@ -62,83 +66,13 @@ export default function ListeningSection({ test, onComplete }: Props) {
   // ── Play audio ─────────────────────────────────────────────────────────────
   const startAudio = useCallback(() => {
     setPhase("playing");
-    window.speechSynthesis?.cancel();
-
-    if (!window.speechSynthesis) {
-      console.warn("[ListeningSection] Web Speech API not available");
-      // No TTS — skip straight to finishing phase
-      startFinishing();
-      return;
-    }
-
-    const speak = () => {
-      try {
-        window.speechSynthesis.cancel();
-        const utter = new SpeechSynthesisUtterance(section.script.trim());
-        utter.rate = 0.88;
-        utter.lang = "en-GB";
-        
-        const voices = window.speechSynthesis.getVoices();
-        if (voices.length === 0) {
-          console.warn("[ListeningSection] No voices available");
-          startFinishing();
-          return;
-        }
-        
-        const voice  = voices.find(v => v.lang === "en-GB") ||
-                       voices.find(v => v.lang.startsWith("en-GB")) ||
-                       voices.find(v => v.lang.startsWith("en")) ||
-                       voices[0] || null;
-        if (voice) {
-          utter.voice = voice;
-          console.log(`[ListeningSection] Using voice: ${voice.name}`);
-        }
-        utter.onend   = () => { 
-          console.log("[ListeningSection] Audio finished");
-          startFinishing(); 
-        };
-        utter.onerror = (e) => { 
-          console.error("[ListeningSection] Speech error:", e.error);
-          startFinishing(); 
-        };
-        window.speechSynthesis.speak(utter);
-        console.log("[ListeningSection] Started speaking");
-      } catch (err) {
-        console.error("[ListeningSection] Error during speak:", err);
-        startFinishing();
-      }
-    };
-
-    const voices = window.speechSynthesis.getVoices();
-    console.log(`[ListeningSection] Available voices: ${voices.length}`);
-    
-    if (voices.length > 0) {
-      speak();
-    } else {
-      console.log("[ListeningSection] Waiting for voices to load...");
-      
-      // Try again after a short delay
-      const retryTimer = setTimeout(() => {
-        const retryVoices = window.speechSynthesis.getVoices();
-        if (retryVoices.length > 0) {
-          console.log(`[ListeningSection] Voices loaded after delay (${retryVoices.length})`);
-          speak();
-        } else {
-          console.warn("[ListeningSection] Still no voices after delay, skipping audio");
-          startFinishing();
-        }
-      }, 800);
-      
-      const handleVoicesChanged = () => {
-        console.log("[ListeningSection] onvoiceschanged fired");
-        clearTimeout(retryTimer);
-        speak();
-      };
-      
-      window.speechSynthesis.onvoiceschanged = handleVoicesChanged;
-    }
+    setAudioIssue(false);
+    const a = audioRef.current;
+    if (!a) { startFinishing(); return; }
+    a.currentTime = 0;
+    a.play().catch(() => setAudioIssue(true));
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sectionIdx, section.script]);
+  }, [sectionIdx]);
 
   // ── After audio ends — 30 s to finish writing ─────────────────────────────
   const startFinishing = useCallback(() => {
@@ -162,7 +96,7 @@ export default function ListeningSection({ test, onComplete }: Props) {
   // ── Move to next section or submit ─────────────────────────────────────────
   const advanceSection = useCallback(() => {
     clearInterval(finishTimerRef.current!);
-    window.speechSynthesis?.cancel();
+    audioRef.current?.pause();
     if (sectionIdx < 3) {
       setSectionIdx(i => i + 1);
     } else {
@@ -227,6 +161,8 @@ export default function ListeningSection({ test, onComplete }: Props) {
   return (
     <div className="max-w-3xl mx-auto p-6 space-y-5">
 
+      <audio ref={audioRef} src={audioSrc} key={audioSrc} preload="none" onEnded={startFinishing} />
+
       {/* ── Section progress bar ─────────────────────────────────────── */}
       <div className="flex items-center gap-2">
         {test.sections.map((_, i) => (
@@ -256,12 +192,26 @@ export default function ListeningSection({ test, onComplete }: Props) {
       )}
 
       {isPlaying && (
-        <div className="flex items-center gap-3 bg-blue-600 text-white rounded-xl px-5 py-3">
-          <span className="animate-pulse text-xl shrink-0">🔊</span>
-          <div className="flex-1">
-            <p className="font-semibold text-sm">Audio playing — answer as you listen</p>
-            <p className="text-blue-200 text-xs mt-0.5">Recording plays once only. No rewind or replay.</p>
-          </div>
+        <div className="bg-blue-600 text-white rounded-xl px-5 py-3">
+          {!audioIssue ? (
+            <div className="flex items-center gap-3">
+              <span className="animate-pulse text-xl shrink-0">🔊</span>
+              <div className="flex-1">
+                <p className="font-semibold text-sm">Audio playing — answer as you listen</p>
+                <p className="text-blue-200 text-xs mt-0.5">Recording plays once only. No rewind or replay.</p>
+              </div>
+            </div>
+          ) : (
+            <div>
+              <p className="font-semibold text-sm mb-2">Audio didn't start automatically</p>
+              <div className="flex gap-2">
+                <button onClick={() => audioRef.current?.play().then(() => setAudioIssue(false)).catch(() => {})}
+                  className="flex-1 bg-white/20 hover:bg-white/30 py-2 rounded-lg text-sm font-bold transition">▶ Play audio</button>
+                <button onClick={startFinishing}
+                  className="flex-1 bg-white/20 hover:bg-white/30 py-2 rounded-lg text-sm font-bold transition">Continue →</button>
+              </div>
+            </div>
+          )}
         </div>
       )}
 

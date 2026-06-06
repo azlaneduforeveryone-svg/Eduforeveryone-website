@@ -136,204 +136,107 @@ Bioluminescence has evolved independently at least forty separate times across t
   },
 ];
 
-function splitChunks(text: string, max = 200): string[] {
-  const sentences = text.match(/[^.!?\n]+[.!?\n]*/g) ?? [text];
-  const chunks: string[] = [];
-  let buf = "";
-  for (const s of sentences) {
-    if (buf.length + s.length > max && buf.trim()) { chunks.push(buf.trim()); buf = s; }
-    else buf += s;
-  }
-  if (buf.trim()) chunks.push(buf.trim());
-  return chunks;
-}
+// ─── Pre-generated audio config ──────────────────────────────────────────────
+// Files live in /public/ielts/listening/ as section-1.mp3 … section-4.mp3,
+// produced by the edge-tts pipeline (see listening_scripts.json).
+const AUDIO_BASE = "/ielts/listening";
+const READ_SECONDS = 45;
+const ALLOW_PAUSE  = true;  // set false for strict exam realism (no pausing)
+const ALLOW_REPLAY = true;  // set false for strict exam realism (one listen only)
 
 function AudioPlayer({ section, onFinished }: { section: Section; onFinished: () => void }) {
-  const [status,    setStatus]    = useState<"idle"|"reading"|"playing"|"paused"|"done">("idle");
-  const [voices,    setVoices]    = useState<SpeechSynthesisVoice[]>([]);
-  const [voiceName, setVoiceName] = useState("");
-  const [rate,      setRate]      = useState(0.87);
-  const [readTime,  setReadTime]  = useState(45);
-  const [progress,  setProgress]  = useState(0);
+  const [status,   setStatus]   = useState<"idle"|"reading"|"playing"|"paused"|"done"|"error">("idle");
+  const [readTime, setReadTime] = useState(READ_SECONDS);
+  const [progress, setProgress] = useState(0);
 
-  const stoppedRef   = useRef(false);
-  const pausedRef    = useRef(false);
-  const chunkRef     = useRef(0);
-  const chunksRef    = useRef<string[]>([]);
-  const keepAliveRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const audioRef     = useRef<HTMLAudioElement | null>(null);
   const readTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
+  const src = `${AUDIO_BASE}/section-${section.num}.mp3`;
+
   useEffect(() => {
-    const load = () => {
-      const all = window.speechSynthesis.getVoices();
-      if (!all.length) return false;
-      const gb = all.filter(v => v.lang === "en-GB");
-      const au = all.filter(v => v.lang === "en-AU");
-      const us = all.filter(v => v.lang.startsWith("en-US"));
-      const en = all.filter(v => v.lang.startsWith("en"));
-      const ranked = gb.length ? gb : au.length ? au : us.length ? us : en.length ? en : all;
-      setVoices(ranked);
-      setVoiceName(prev => prev || ranked[0]?.name || "");
-      return true;
-    };
-
-    const loaded = load();
-
-    if (!loaded) {
-      const retryTimer = setTimeout(() => { load(); }, 500);
-      window.speechSynthesis.onvoiceschanged = () => { load(); };
-      return () => {
-        window.speechSynthesis.cancel();
-        if (keepAliveRef.current) clearInterval(keepAliveRef.current);
-        if (readTimerRef.current) clearInterval(readTimerRef.current);
-        clearTimeout(retryTimer);
-        window.speechSynthesis.onvoiceschanged = null;
-      };
-    }
-
     return () => {
-      window.speechSynthesis.cancel();
-      if (keepAliveRef.current) clearInterval(keepAliveRef.current);
       if (readTimerRef.current) clearInterval(readTimerRef.current);
+      audioRef.current?.pause();
     };
+  }, [section.num]);
+
+  const play = useCallback(() => {
+    const a = audioRef.current;
+    if (!a) return;
+    setStatus("playing");
+    a.play().catch(() => setStatus("error"));
   }, []);
 
-  const speakChunk = useCallback((idx: number) => {
-    if (stoppedRef.current || idx >= chunksRef.current.length) {
-      if (!stoppedRef.current) {
-        if (keepAliveRef.current) clearInterval(keepAliveRef.current);
-        setProgress(100);
-        setStatus("done");
-        onFinished();
-      }
-      return;
-    }
-    const u = new SpeechSynthesisUtterance(chunksRef.current[idx]);
-    u.rate = rate;
-    const allVoices = window.speechSynthesis.getVoices();
-    const v = allVoices.find(v => v.name === voiceName) ?? allVoices[0];
-    if (v) u.voice = v;
-    u.onend = () => {
-      if (stoppedRef.current) return;
-      const next = idx + 1;
-      chunkRef.current = next;
-      setProgress(Math.round((next / chunksRef.current.length) * 100));
-      speakChunk(next);
-    };
-    u.onerror = (e) => {
-      if (e.error === "interrupted" || stoppedRef.current) return;
-      speakChunk(idx + 1);
-    };
-    window.speechSynthesis.speak(u);
-  }, [rate, voiceName, onFinished]);
-
-  const playAudio = useCallback(() => {
-    window.speechSynthesis.cancel();
-    stoppedRef.current = false;
-    pausedRef.current  = false;
-    chunkRef.current   = 0;
-    chunksRef.current  = splitChunks(section.transcript);
-    setProgress(0);
-    setStatus("playing");
-    setTimeout(() => {
-      if (stoppedRef.current) return;
-      if (keepAliveRef.current) clearInterval(keepAliveRef.current);
-      keepAliveRef.current = setInterval(() => {
-        if (!stoppedRef.current && !pausedRef.current &&
-            window.speechSynthesis.speaking && !window.speechSynthesis.paused) {
-          window.speechSynthesis.pause();
-          window.speechSynthesis.resume();
-        }
-      }, 10_000);
-      speakChunk(0);
-    }, 300);
-  }, [section.transcript, speakChunk]);
-
   const startReading = () => {
-    window.speechSynthesis.cancel();
-    stoppedRef.current = false;
     setStatus("reading");
-    setReadTime(45);
+    setReadTime(READ_SECONDS);
     readTimerRef.current = setInterval(() => {
       setReadTime(t => {
-        if (t <= 1) { clearInterval(readTimerRef.current!); playAudio(); return 0; }
+        if (t <= 1) { clearInterval(readTimerRef.current!); play(); return 0; }
         return t - 1;
       });
     }, 1_000);
   };
 
+  const skipToPlay = () => {
+    if (readTimerRef.current) clearInterval(readTimerRef.current);
+    play();
+  };
+
   const togglePause = () => {
-    if (status === "playing") {
-      window.speechSynthesis.pause();
-      pausedRef.current = true;
-      setStatus("paused");
-    } else {
-      window.speechSynthesis.resume();
-      pausedRef.current = false;
-      setStatus("playing");
-    }
+    const a = audioRef.current;
+    if (!a) return;
+    if (status === "playing") { a.pause(); setStatus("paused"); }
+    else { setStatus("playing"); a.play().catch(() => setStatus("error")); }
   };
 
   const stop = () => {
-    stoppedRef.current = true;
-    window.speechSynthesis.cancel();
-    if (keepAliveRef.current) clearInterval(keepAliveRef.current);
+    audioRef.current?.pause();
     if (readTimerRef.current) clearInterval(readTimerRef.current);
     setStatus("done");
     onFinished();
   };
 
   const replay = () => {
-    stoppedRef.current = false;
-    pausedRef.current  = false;
+    const a = audioRef.current;
+    if (!a) return;
+    a.currentTime = 0;
     setProgress(0);
-    playAudio();
+    play();
   };
+
+  const handleTimeUpdate = () => {
+    const a = audioRef.current;
+    if (!a || !a.duration || isNaN(a.duration)) return;
+    setProgress(Math.round((a.currentTime / a.duration) * 100));
+  };
+  const handleEnded = () => { setProgress(100); setStatus("done"); onFinished(); };
 
   return (
     <div className="bg-gray-900 text-white rounded-2xl p-5 mb-6">
+      {/* No `controls` attribute on purpose — students cannot scrub or seek. */}
+      <audio
+        ref={audioRef}
+        src={src}
+        preload="auto"
+        onTimeUpdate={handleTimeUpdate}
+        onEnded={handleEnded}
+        onError={() => setStatus("error")}
+      />
+
       {status === "idle" && (
-        <div className="space-y-4 mb-5">
-          <p className="font-bold text-sm text-gray-300">Audio Settings</p>
-          {voices.length === 0 && (
-            <div className="bg-red-900 border border-red-700 rounded-lg px-3 py-2 text-xs text-red-100">
-              No voices loaded. Try Chrome, Edge, Safari, or Firefox.
-            </div>
-          )}
+        <div className="space-y-4">
           <div>
-            <label className="text-xs text-gray-400 block mb-1.5">Voice {voiceName ? "✓" : "⚠️"}</label>
-            <select value={voiceName} onChange={e => setVoiceName(e.target.value)}
-              disabled={voices.length === 0}
-              className="w-full bg-gray-800 border border-gray-600 rounded-xl px-3 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500">
-              {voices.length === 0
-                ? <option disabled>No voices available</option>
-                : voices.map(v => <option key={v.name} value={v.name}>{v.name} ({v.lang})</option>)
-              }
-            </select>
-          </div>
-          <div>
-            <label className="text-xs text-gray-400 block mb-1.5">
-              Speed — {rate === 0.8 ? "Slow" : rate === 0.87 ? "Normal ✅" : "Fast"}
-            </label>
-            <div className="flex gap-2">
-              {([
-                [0.8,  "🐢 Slow"],
-                [0.87, "✅ Normal"],
-                [1.0,  "🐇 Fast"],
-              ] as [number, string][]).map(([r, label]) => (
-                <button key={r} onClick={() => setRate(r)}
-                  className={`flex-1 py-2.5 rounded-xl text-xs font-bold border transition-all
-                    ${rate === r ? "bg-emerald-500 text-white border-emerald-600" : "bg-gray-800 text-gray-300 border-gray-600 hover:border-emerald-400"}`}>
-                  {label}
-                </button>
-              ))}
-            </div>
+            <p className="font-bold text-sm text-gray-200">Section {section.num} Audio</p>
+            <p className="text-gray-400 text-xs mt-1">
+              AI-generated audio · plays once, like the real exam. You get {READ_SECONDS} seconds to read the questions first.
+            </p>
           </div>
           <button onClick={startReading}
-            disabled={voices.length === 0}
-            className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3.5 rounded-xl font-bold transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3.5 rounded-xl font-bold transition-all"
             style={{ boxShadow: "0 4px 0 #065f46" }}>
-            {voices.length === 0 ? "⏳ Loading voices…" : "🎧 Start Listening"}
+            🎧 Start Listening
           </button>
         </div>
       )}
@@ -343,8 +246,7 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
           <p className="text-xs text-gray-400 uppercase tracking-widest mb-1">Reading Time</p>
           <p className="text-7xl font-black text-emerald-400 mb-2">{readTime}</p>
           <p className="text-gray-400 text-sm mb-4">Preview the questions below — audio starts automatically</p>
-          <button onClick={() => { clearInterval(readTimerRef.current!); playAudio(); }}
-            className="text-xs text-emerald-400 hover:underline">
+          <button onClick={skipToPlay} className="text-xs text-emerald-400 hover:underline">
             Skip → Play now
           </button>
         </div>
@@ -365,14 +267,16 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
             </div>
           </div>
           <div className="h-2 bg-gray-700 rounded-full overflow-hidden mb-3">
-            <div className="h-full bg-emerald-500 rounded-full transition-all duration-500" style={{ width: `${progress}%` }} />
+            <div className="h-full bg-emerald-500 rounded-full transition-all duration-300" style={{ width: `${progress}%` }} />
           </div>
           <p className="text-xs text-gray-500 text-right mb-3">{progress}%</p>
           <div className="flex gap-2">
-            <button onClick={togglePause}
-              className="flex-1 bg-gray-700 hover:bg-gray-600 py-2.5 rounded-xl text-sm font-bold transition-all">
-              {status === "paused" ? "▶ Resume" : "⏸ Pause"}
-            </button>
+            {ALLOW_PAUSE && (
+              <button onClick={togglePause}
+                className="flex-1 bg-gray-700 hover:bg-gray-600 py-2.5 rounded-xl text-sm font-bold transition-all">
+                {status === "paused" ? "▶ Resume" : "⏸ Pause"}
+              </button>
+            )}
             <button onClick={stop}
               className="flex-1 bg-emerald-600 hover:bg-emerald-700 py-2.5 rounded-xl text-sm font-bold transition-all">
               ⏹ Stop & Answer
@@ -390,8 +294,22 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
               <p className="text-gray-400 text-xs">Now answer all questions below, then submit</p>
             </div>
           </div>
-          <button onClick={replay} className="w-full bg-gray-700 hover:bg-gray-600 py-2.5 rounded-xl text-sm font-bold transition-all">
-            ↺ Replay Audio
+          {ALLOW_REPLAY && (
+            <button onClick={replay} className="w-full bg-gray-700 hover:bg-gray-600 py-2.5 rounded-xl text-sm font-bold transition-all">
+              ↺ Replay Audio
+            </button>
+          )}
+        </div>
+      )}
+
+      {status === "error" && (
+        <div>
+          <div className="bg-amber-900/40 border border-amber-700 rounded-lg px-3 py-2 text-xs text-amber-100 mb-3">
+            Audio for this section isn't available yet. You can still read the transcript and answer the questions below.
+          </div>
+          <button onClick={onFinished}
+            className="w-full bg-gray-700 hover:bg-gray-600 py-2.5 rounded-xl text-sm font-bold transition-all">
+            Continue →
           </button>
         </div>
       )}
@@ -475,12 +393,9 @@ export default function ListeningPage() {
   }, [sessionKey, fbSections]);
 
   function start(s: Section) {
-    window.speechSynthesis.cancel();
-    setTimeout(() => {
-      setActiveSection(s); setAnswers({}); setResults(null);
-      setShowTranscript(false); setAudioFinished(false);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 300);
+    setActiveSection(s); setAnswers({}); setResults(null);
+    setShowTranscript(false); setAudioFinished(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   function submit() {
@@ -522,7 +437,7 @@ export default function ListeningPage() {
               className="text-sm text-emerald-600 font-semibold border border-emerald-300 px-4 py-2 rounded-xl hover:bg-emerald-50">
               {showTranscript ? "Hide" : "Show"} Transcript
             </button>
-            <button onClick={() => { window.speechSynthesis.cancel(); setActiveSection(null); }}
+            <button onClick={() => { setActiveSection(null); }}
               className="bg-emerald-600 text-white px-5 py-2 rounded-xl font-bold text-sm hover:bg-emerald-700">
               Try Another Section
             </button>
@@ -617,7 +532,7 @@ export default function ListeningPage() {
       )}
 
       <div className="mt-6 text-center">
-        <button onClick={() => { window.speechSynthesis.cancel(); setActiveSection(null); }}
+        <button onClick={() => { setActiveSection(null); }}
           className="text-sm text-gray-400 hover:text-gray-600 transition-colors">
           ← Back to all sections
         </button>
@@ -637,7 +552,7 @@ export default function ListeningPage() {
         <span className="text-5xl">🎧</span>
         <div className="flex-1">
           <h1 className="text-3xl font-black text-gray-900 mb-1">IELTS Listening Practice</h1>
-          <p className="text-gray-500 text-sm">4 sections · {QUESTIONS_PER_SECTION} questions each · shuffled every attempt · real browser TTS audio</p>
+          <p className="text-gray-500 text-sm">4 sections · {QUESTIONS_PER_SECTION} questions each · shuffled every attempt · AI-generated audio</p>
         </div>
         <button onClick={() => setSessionKey(k => k + 1)}
           className="flex-shrink-0 text-xs border border-gray-200 text-gray-500 hover:text-emerald-600 hover:border-emerald-300 px-3 py-2 rounded-xl transition-all">
@@ -648,7 +563,7 @@ export default function ListeningPage() {
       <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-5 mb-8">
         <p className="font-bold text-emerald-800 mb-3">🎙️ How the Audio Works</p>
         <div className="grid sm:grid-cols-3 gap-3 text-sm text-emerald-700">
-          <div className="flex gap-2"><span className="font-black text-emerald-500">1.</span><span>Choose your voice and speed in the settings</span></div>
+          <div className="flex gap-2"><span className="font-black text-emerald-500">1.</span><span>Pick a section and press "Start Listening"</span></div>
           <div className="flex gap-2"><span className="font-black text-emerald-500">2.</span><span>45-second reading time before audio begins</span></div>
           <div className="flex gap-2"><span className="font-black text-emerald-500">3.</span><span>Audio plays automatically — answer as you listen</span></div>
         </div>

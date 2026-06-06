@@ -1,0 +1,1055 @@
+{
+  "voices": {
+    "agent": "en-GB-SoniaNeural",
+    "marcus": "en-GB-RyanNeural",
+    "speaker": "en-AU-NatashaNeural",
+    "osei": "en-CA-LiamNeural",
+    "priya": "en-GB-LibbyNeural",
+    "callum": "en-AU-WilliamNeural",
+    "three": "en-US-AriaNeural",
+    "staff": "en-US-GuyNeural",
+    "rachel": "en-GB-SoniaNeural",
+    "yemi": "en-GB-RyanNeural",
+    "harman": "en-AU-NatashaNeural",
+    "fatima": "en-CA-LiamNeural",
+    "lars": "en-GB-LibbyNeural",
+    "librarian": "en-AU-WilliamNeural",
+    "ben": "en-US-AriaNeural",
+    "malik": "en-US-GuyNeural",
+    "sophie": "en-GB-SoniaNeural",
+    "ethan": "en-GB-RyanNeural",
+    "receptionist": "en-AU-NatashaNeural",
+    "sarah": "en-CA-LiamNeural",
+    "reeves": "en-GB-LibbyNeural",
+    "amara": "en-AU-WilliamNeural",
+    "jake": "en-US-AriaNeural",
+    "ling": "en-US-GuyNeural",
+    "hana": "en-GB-SoniaNeural",
+    "vasquez": "en-GB-RyanNeural",
+    "kai": "en-AU-NatashaNeural",
+    "preethi": "en-CA-LiamNeural",
+    "tom": "en-GB-LibbyNeural",
+    "david": "en-AU-WilliamNeural",
+    "emma": "en-US-AriaNeural",
+    "james": "en-US-GuyNeural",
+    "tutor": "en-GB-SoniaNeural",
+    "professor": "en-GB-RyanNeural",
+    "one": "en-AU-NatashaNeural",
+    "two": "en-CA-LiamNeural",
+    "guest": "en-GB-LibbyNeural",
+    "student": "en-AU-WilliamNeural",
+    "caller": "en-US-AriaNeural"
+  },
+  "defaults": {
+    "rate": "-6%",
+    "gap_between_turns_ms": 650,
+    "gap_after_narrator_ms": 1200,
+    "bitrate": "128k"
+  },
+  "sections": [
+    {
+      "id": "L1-s1",
+      "title": "L1 Section 1",
+      "rate": "-6%",
+      "turns": [
+        {
+          "speaker": "agent",
+          "text": "Good morning, City Lettings, how can I help you?"
+        },
+        {
+          "speaker": "marcus",
+          "text": "Hi, I'm looking to rent somewhere near the university. My name is Marcus Webb."
+        },
+        {
+          "speaker": "agent",
+          "text": "Are you looking for a room in a shared house, or a self-contained flat?"
+        },
+        {
+          "speaker": "marcus",
+          "text": "A self-contained flat please. I'd prefer to be within walking distance of the campus."
+        },
+        {
+          "speaker": "agent",
+          "text": "And your budget per month?"
+        },
+        {
+          "speaker": "marcus",
+          "text": "Up to eight hundred and fifty pounds."
+        },
+        {
+          "speaker": "agent",
+          "text": "How many bedrooms do you need?"
+        },
+        {
+          "speaker": "marcus",
+          "text": "Just one. I'm on my own."
+        },
+        {
+          "speaker": "agent",
+          "text": "When would you need to move in?"
+        },
+        {
+          "speaker": "marcus",
+          "text": "The first of September. I'm starting a master's degree."
+        },
+        {
+          "speaker": "agent",
+          "text": "We have two options. The first is Hartley Road, number fourteen. It's a first-floor flat, one bedroom, furnished, eight hundred per month including all bills."
+        },
+        {
+          "speaker": "marcus",
+          "text": "Is there parking?"
+        },
+        {
+          "speaker": "agent",
+          "text": "No parking, but the bus stop is right outside."
+        },
+        {
+          "speaker": "agent",
+          "text": "The second is on Elm Street, a basement flat, eight hundred and thirty per month, bills excluded. It does come with a small garden."
+        },
+        {
+          "speaker": "marcus",
+          "text": "What are the bills roughly?"
+        },
+        {
+          "speaker": "agent",
+          "text": "Around one hundred and ten per month."
+        },
+        {
+          "speaker": "marcus",
+          "text": "That would push me over budget. I think Hartley Road sounds better."
+        },
+        {
+          "speaker": "agent",
+          "text": "Excellent. Can I take your phone number and email?"
+        },
+        {
+          "speaker": "marcus",
+          "text": "My mobile is zero seven eight one, four four two, nine six three one. Email is m dot webb at campus dot ac dot uk."
+        },
+        {
+          "speaker": "agent",
+          "text": "We'll need references from your previous landlord and proof of student status. Can you come in Thursday at two-thirty?"
+        },
+        {
+          "speaker": "marcus",
+          "text": "Perfect."
+        }
+      ]
+    },
+    {
+      "id": "L1-s2",
+      "title": "L1 Section 2",
+      "rate": "-6%",
+      "turns": [
+        {
+          "speaker": "speaker",
+          "text": "Good afternoon and welcome to Heritage Walks. I'm Diana and I'll be your guide for the next two hours. Our route covers approximately three kilometres so please wear comfortable shoes.\n\nWe start here at Market Square, then head north along Castle Street to the medieval gatehouse, which dates from thirteen-seventy-two. Photographs are permitted outside but not inside the gatehouse.\n\nAfter the gatehouse we visit St Agatha's Church. The tower is open to visitors and offers panoramic views of the city. Entry costs three pounds fifty for adults; children under twelve are free.\n\nFrom the church we cross Millbank to the old tannery district, the city's industrial heart from the seventeenth century. Several original buildings remain. We'll stop for refreshments at the Copper Kettle café — included in your tour price.\n\nOur final stop is the Riverside Museum, which closes at five-thirty. We'll aim to arrive by a quarter past four. The museum has a new exhibition on Viking trade routes running until the end of March.\n\nPlease switch phones to silent, and let me know of any medical needs or mobility concerns before we begin."
+        }
+      ]
+    },
+    {
+      "id": "L1-s3",
+      "title": "L1 Section 3",
+      "rate": "-6%",
+      "turns": [
+        {
+          "speaker": "speaker",
+          "text": "Dr"
+        },
+        {
+          "speaker": "osei",
+          "text": "So what angle have you decided to take?"
+        },
+        {
+          "speaker": "priya",
+          "text": "We want to focus on how social media influences purchasing decisions in people aged eighteen to thirty.\nDr"
+        },
+        {
+          "speaker": "osei",
+          "text": "That's a crowded field. What will make your work distinctive?"
+        },
+        {
+          "speaker": "callum",
+          "text": "We're planning to conduct our own survey, which gives us original data.\nDr"
+        },
+        {
+          "speaker": "osei",
+          "text": "Good. How many participants?"
+        },
+        {
+          "speaker": "priya",
+          "text": "We were thinking one hundred.\nDr"
+        },
+        {
+          "speaker": "osei",
+          "text": "For a quantitative undergraduate study, one hundred is acceptable, but you'll need to justify it in your methodology. What sampling method?"
+        },
+        {
+          "speaker": "callum",
+          "text": "Convenience sampling — students on campus.\nDr"
+        },
+        {
+          "speaker": "osei",
+          "text": "That's the most common mistake. Your results will have very limited generalisability. Consider stratified sampling — split by age and gender at minimum."
+        },
+        {
+          "speaker": "priya",
+          "text": "We thought it seemed complicated.\nDr"
+        },
+        {
+          "speaker": "osei",
+          "text": "It's worth the effort. Now your research questions?"
+        },
+        {
+          "speaker": "three",
+          "text": "which platforms have most influence, whether influencer endorsements change behaviour, and whether brand values matter.\nDr"
+        },
+        {
+          "speaker": "osei",
+          "text": "Solid. For your literature review I'd strongly recommend the work of Kim and Johnson from twenty-eighteen — they studied Instagram's effect on impulse buying. Also look at the European Journal of Marketing, volume forty-two, for the meta-analysis on influencer trust."
+        },
+        {
+          "speaker": "priya",
+          "text": "We've been using Google Scholar mainly.\nDr"
+        },
+        {
+          "speaker": "osei",
+          "text": "Don't neglect the library's Business Source Complete database. For analysis — are you using software?"
+        },
+        {
+          "speaker": "callum",
+          "text": "We planned to use Excel manually.\nDr"
+        },
+        {
+          "speaker": "osei",
+          "text": "For one hundred responses, that's very time-consuming. I'd suggest SPSS or the free version of JASP. JASP is on the university computers — third floor of the library. Submission is the fifteenth of November. Have your data collected by end of October."
+        }
+      ]
+    },
+    {
+      "id": "L1-s4",
+      "title": "L1 Section 4",
+      "rate": "-6%",
+      "turns": [
+        {
+          "speaker": "speaker",
+          "text": "Today I want to examine the monetary value of biodiversity — not because nature should be reduced to a price, but because demonstrating economic worth has been one of the most effective ways of securing conservation funding.\n\nEcosystem services are divided into four categories: provisioning services, such as food and water; regulating services, such as climate regulation and flood control; cultural services, including recreation and tourism; and supporting services, like soil formation and nutrient cycling.\n\nA landmark study by Robert Costanza in nineteen ninety-seven estimated global ecosystem services at thirty-three trillion US dollars per year. Global GDP at the time was approximately eighteen trillion — meaning nature's services exceeded the entire global economy.\n\nThe Dasgupta Review, published in twenty-twenty-one by the UK Treasury, introduced the concept of natural capital — framing nature as an asset generating returns like financial capital.\n\nOne quantifiable loss is pollination. Pollinators contribute an estimated five hundred and seventy-seven billion dollars annually to global food production. US managed honeybee colonies declined by forty percent between two thousand and nine and two thousand and nineteen.\n\nThe Kunming-Montreal Global Biodiversity Framework, agreed in twenty-twenty-two, set a target of protecting thirty percent of land and oceans by twenty-thirty — the thirty-by-thirty commitment — to be delivered through public funding and instruments such as biodiversity credits."
+        }
+      ]
+    },
+    {
+      "id": "L2-s1",
+      "title": "L2 Section 1",
+      "rate": "-6%",
+      "turns": [
+        {
+          "speaker": "staff",
+          "text": "Good afternoon, Westfield Leisure Centre."
+        },
+        {
+          "speaker": "rachel",
+          "text": "Hi. I'd like to find out about joining the gym. My name is Rachel Dunmore. D-U-N-M-O-R-E."
+        },
+        {
+          "speaker": "staff",
+          "text": "Are you looking for a monthly rolling or annual membership?"
+        },
+        {
+          "speaker": "rachel",
+          "text": "Annual. Is there a discount?"
+        },
+        {
+          "speaker": "staff",
+          "text": "Yes — annual is five hundred and forty pounds, which works out at forty-five a month. Monthly rolling is fifty-eight."
+        },
+        {
+          "speaker": "rachel",
+          "text": "I'll go annual. Does that include all facilities?"
+        },
+        {
+          "speaker": "staff",
+          "text": "Gym, swimming, and group classes. Squash courts are an extra four pounds per session."
+        },
+        {
+          "speaker": "rachel",
+          "text": "What about the sauna?"
+        },
+        {
+          "speaker": "staff",
+          "text": "That's included in annual membership, yes."
+        },
+        {
+          "speaker": "staff",
+          "text": "Date of birth?"
+        },
+        {
+          "speaker": "rachel",
+          "text": "Third of April, nineteen ninety-one."
+        },
+        {
+          "speaker": "staff",
+          "text": "Address?"
+        },
+        {
+          "speaker": "rachel",
+          "text": "Flat six, thirty-two Beech Avenue, Northfield. Postcode B31 2HT."
+        },
+        {
+          "speaker": "staff",
+          "text": "Contact number?"
+        },
+        {
+          "speaker": "rachel",
+          "text": "Mobile — zero seven nine one two, three three five six seven eight."
+        },
+        {
+          "speaker": "staff",
+          "text": "We'll need photo ID and bank details to set up the direct debit. Can you come in Wednesday at twelve?"
+        },
+        {
+          "speaker": "rachel",
+          "text": "Yes, perfect. Who do I ask for?"
+        },
+        {
+          "speaker": "staff",
+          "text": "Ask for James at reception."
+        }
+      ]
+    },
+    {
+      "id": "L2-s2",
+      "title": "L2 Section 2",
+      "rate": "-6%",
+      "turns": [
+        {
+          "speaker": "speaker",
+          "text": "Good evening. I'm here to explain our new Green Streets recycling initiative, launching next month.\n\nTwo aims: first, to increase recycling rates, currently at forty-two percent — well below our sixty-five percent target. Second, to reduce contamination, currently costing the council eight hundred thousand pounds annually.\n\nEvery household gets two new bins. The blue bin is for dry mixed recycling: paper, cardboard, glass bottles, tins, and plastic bottles with a neck. Plastic bags, polystyrene, and food-contaminated packaging cannot go in the blue bin — they cause the entire load to be rejected at the sorting facility.\n\nThe green bin is for food waste only, collected every Thursday and sent to an anaerobic digestion facility generating both compost and electricity. Garden waste collection moves to fortnightly from April.\n\nBlack bags for general waste will be collected fortnightly, not weekly. Evidence from other councils shows that once the food waste bin is in use, general waste reduces by around forty percent.\n\nIf you have mobility difficulties, please register for our assisted collection service — call the number on your leaflet or visit the council website. The dedicated helpline is open Monday to Friday, nine to five."
+        }
+      ]
+    },
+    {
+      "id": "L2-s3",
+      "title": "L2 Section 3",
+      "rate": "-6%",
+      "turns": [
+        {
+          "speaker": "yemi",
+          "text": "We've split the field trip into three zones.\nDr"
+        },
+        {
+          "speaker": "harman",
+          "text": "Tell me about each."
+        },
+        {
+          "speaker": "fatima",
+          "text": "I'm covering Zone A — the coastal area. I'm mapping erosion patterns and measuring cliff retreat using GPS data from the past decade. I'm using DSAS software — Digital Shoreline Analysis System — which gives annual rates in metres.\nDr"
+        },
+        {
+          "speaker": "harman",
+          "text": "Excellent. Lars?"
+        },
+        {
+          "speaker": "lars",
+          "text": "Zone B — the river valley. I'm looking at sediment deposition and comparing cross-sections from this year with data from nineteen ninety-six. I'm using a surveying staff and a dumpy level — traditional but accurate.\nDr"
+        },
+        {
+          "speaker": "harman",
+          "text": "And Yemi?"
+        },
+        {
+          "speaker": "yemi",
+          "text": "Zone C — the urban fringe. I'm using questionnaires with local residents about flood risk perceptions, combined with flood zone mapping from the Environment Agency. I've completed sixty-four so far — targeting eighty minimum.\nDr"
+        },
+        {
+          "speaker": "harman",
+          "text": "What about ethical approval?"
+        },
+        {
+          "speaker": "yemi",
+          "text": "I submitted the form last week, waiting on confirmation. No more questionnaires until that comes through.\nDr"
+        },
+        {
+          "speaker": "harman",
+          "text": "Good. Who's leading the methodology section?"
+        },
+        {
+          "speaker": "fatima",
+          "text": "I'll write the first draft — I've done the most primary data collection.\nDr"
+        },
+        {
+          "speaker": "harman",
+          "text": "Referencing system?"
+        },
+        {
+          "speaker": "lars",
+          "text": "Harvard. We checked the department guidelines.\nDr"
+        },
+        {
+          "speaker": "harman",
+          "text": "The report is due twenty-second of March. Have a full draft ready by the eighth so I can give formative feedback."
+        }
+      ]
+    },
+    {
+      "id": "L2-s4",
+      "title": "L2 Section 4",
+      "rate": "-6%",
+      "turns": [
+        {
+          "speaker": "speaker",
+          "text": "Memory is not a single unified system. We recognise at least three distinct types relying on different brain regions.\n\nEpisodic memory is our autobiographical record — contextualised in time and place. The hippocampus is critical here. Damage to the hippocampus, as in patient H.M. who had both hippocampi removed in nineteen fifty-three, results in anterograde amnesia — the inability to form new long-term episodic memories.\n\nSemantic memory is general world knowledge divorced from personal context — knowing Paris is the capital of France. It can survive hippocampal damage, suggesting storage across the cortex.\n\nProcedural memory — how to ride a bike or play an instrument — is handled by the basal ganglia and cerebellum, and is largely unconscious.\n\nMemory formation involves three stages: encoding, consolidation, and retrieval. Consolidation strengthens the memory trace primarily during sleep — specifically slow-wave sleep in the first part of the night. Matthew Walker at Berkeley showed sleep deprivation reduces consolidation efficiency by up to forty percent.\n\nRetrieval is reconstructive, not passive. Each retrieval slightly modifies the memory, making it susceptible to distortion — with implications for eyewitness testimony.\n\nPractically: spaced repetition — reviewing material at increasing intervals — consistently outperforms cramming for long-term retention."
+        }
+      ]
+    },
+    {
+      "id": "L3-s1",
+      "title": "L3 Section 1",
+      "rate": "-6%",
+      "turns": [
+        {
+          "speaker": "librarian",
+          "text": "Good morning. How can I help?"
+        },
+        {
+          "speaker": "ben",
+          "text": "I'd like to register for a library card. I'm a new postgraduate student. My name is Benjamin Carter."
+        },
+        {
+          "speaker": "librarian",
+          "text": "Student ID?"
+        },
+        {
+          "speaker": "ben",
+          "text": "PG dash four seven two one eight."
+        },
+        {
+          "speaker": "librarian",
+          "text": "Department?"
+        },
+        {
+          "speaker": "ben",
+          "text": "Environmental Science."
+        },
+        {
+          "speaker": "librarian",
+          "text": "Full-time or part-time?"
+        },
+        {
+          "speaker": "ben",
+          "text": "Full-time."
+        },
+        {
+          "speaker": "librarian",
+          "text": "Address?"
+        },
+        {
+          "speaker": "ben",
+          "text": "Twenty-two Maple Drive, Kingsley. Postcode SK4 7RQ."
+        },
+        {
+          "speaker": "librarian",
+          "text": "Email?"
+        },
+        {
+          "speaker": "ben",
+          "text": "b dot carter at unimail dot ac dot uk."
+        },
+        {
+          "speaker": "librarian",
+          "text": "With a postgraduate card you can borrow up to fifteen books at a time for six weeks each. You can renew twice online before returning."
+        },
+        {
+          "speaker": "ben",
+          "text": "Can I access journals from home?"
+        },
+        {
+          "speaker": "librarian",
+          "text": "Yes, through the off-campus portal using your student ID and a PIN. I'll set it to your date of birth."
+        },
+        {
+          "speaker": "ben",
+          "text": "Fourteenth of June, nineteen ninety-nine."
+        },
+        {
+          "speaker": "librarian",
+          "text": "So your PIN will be one-four-zero-six-nine-nine. Change it in your account settings. Your card will be ready in about twenty minutes."
+        }
+      ]
+    },
+    {
+      "id": "L3-s2",
+      "title": "L3 Section 2",
+      "rate": "-6%",
+      "turns": [
+        {
+          "speaker": "speaker",
+          "text": "Welcome to the careers fair. We have sixty-two employers here today across four halls.\n\nStudents who make the best impression have researched beforehand. Choose five to eight companies you're genuinely interested in and know something about them.\n\nHall A contains large graduate schemes — banks, law firms, consultancies. Hall B has SMEs and start-ups, often overlooked but offering more immediate responsibility. Hall C is the public sector — NHS, civil service, local government. Hall D is for postgraduate and research opportunities, including funded PhDs.\n\nThere's a CV review service all day in Room twelve on the ground floor — no appointment needed. Three employers give presentations in Lecture Theatre B: Greenfield Consulting at eleven, the NHS Graduate Scheme at one-thirty, and Alderson Technology at three-fifteen.\n\nOn approaching stands: introduce yourself confidently and ask a question. Good questions include team culture, development opportunities, or a recent project. Avoid asking about salary at a first meeting.\n\nFinally, collect business cards and send a follow-up email within forty-eight hours — done by fewer than ten percent of students, and employers notice."
+        }
+      ]
+    },
+    {
+      "id": "L3-s3",
+      "title": "L3 Section 3",
+      "rate": "-6%",
+      "turns": [
+        {
+          "speaker": "speaker",
+          "text": "Dr"
+        },
+        {
+          "speaker": "malik",
+          "text": "Tell me about your documentary concept."
+        },
+        {
+          "speaker": "sophie",
+          "text": "A fifteen-minute documentary on urban food poverty — specifically the rise of food banks in our city over ten years.\nDr"
+        },
+        {
+          "speaker": "malik",
+          "text": "Have you confirmed interview subjects?"
+        },
+        {
+          "speaker": "ethan",
+          "text": "Three confirmed — a food bank coordinator, a regular service user happy to be filmed, and a local councillor overseeing social welfare.\nDr"
+        },
+        {
+          "speaker": "malik",
+          "text": "Good range. What about data visualisation?"
+        },
+        {
+          "speaker": "sophie",
+          "text": "Animated infographics showing the rise in usage statistics. We've sourced data from the Trussell Trust, which publishes annual reports from two thousand and ten.\nDr"
+        },
+        {
+          "speaker": "malik",
+          "text": "Ethical considerations?"
+        },
+        {
+          "speaker": "ethan",
+          "text": "Written consent from all subjects. The service user doesn't want their face shown — we'll use a profile shot or silhouette.\nDr"
+        },
+        {
+          "speaker": "malik",
+          "text": "Location releases?"
+        },
+        {
+          "speaker": "sophie",
+          "text": "We have releases for the food bank itself. Still waiting for the council offices.\nDr"
+        },
+        {
+          "speaker": "malik",
+          "text": "That needs sorting before you film there. Shooting schedule?"
+        },
+        {
+          "speaker": "ethan",
+          "text": "Interviews in week one, B-roll in week two, editing from week three. We want to submit by the twenty-eighth.\nDr"
+        },
+        {
+          "speaker": "malik",
+          "text": "Narration approach?"
+        },
+        {
+          "speaker": "sophie",
+          "text": "Voiceover — it feels more journalistic given the subject matter.\nDr"
+        },
+        {
+          "speaker": "malik",
+          "text": "Sound design?"
+        },
+        {
+          "speaker": "ethan",
+          "text": "Minimal — ambient sound from the food bank, plus a royalty-free piano track.\nDr"
+        },
+        {
+          "speaker": "malik",
+          "text": "Equipment?"
+        },
+        {
+          "speaker": "sophie",
+          "text": "Using department cameras, but hiring a directional microphone — about sixty pounds for the week."
+        }
+      ]
+    },
+    {
+      "id": "L3-s4",
+      "title": "L3 Section 4",
+      "rate": "-6%",
+      "turns": [
+        {
+          "speaker": "speaker",
+          "text": "Classical economic theory assumed individuals make decisions by rationally calculating expected utility — weighing outcomes and probabilities to maximise benefit. This idealised rational actor is called Homo economicus.\n\nIn the nineteen seventies, Kahneman and Tversky systematically challenged this. Their most influential framework, Prospect Theory, published in nineteen seventy-nine, showed people evaluate outcomes relative to a reference point, not in absolute terms. Losses and gains are treated asymmetrically — the pain of losing one hundred pounds is approximately twice as powerful as the pleasure of gaining one hundred pounds. This is called loss aversion.\n\nKahneman later developed the two-system model: System One is fast, automatic, and intuitive; System Two is slow, deliberate, and analytical.\n\nThe availability heuristic: we judge probability by how easily examples come to mind. This causes people to overestimate dramatic rare events like plane crashes and underestimate common dangers like cardiovascular disease.\n\nAnchoring: when estimating numbers, people rely too heavily on the first number they encounter. In one study, participants who were first shown sixty-five million gave significantly higher population estimates than those shown thirty-five million.\n\nThese findings underpin nudge theory — deliberately designing choice environments to promote better decisions without restricting freedom. This field is called libertarian paternalism."
+        }
+      ]
+    },
+    {
+      "id": "L4-s1",
+      "title": "L4 Section 1",
+      "rate": "-6%",
+      "turns": [
+        {
+          "speaker": "receptionist",
+          "text": "Good morning, Elmwood Medical Practice."
+        },
+        {
+          "speaker": "sarah",
+          "text": "Hi, I'd like to register as a new patient. My name is Sarah Chen. C-H-E-N."
+        },
+        {
+          "speaker": "receptionist",
+          "text": "Date of birth?"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Seventeenth of February, nineteen ninety-five."
+        },
+        {
+          "speaker": "receptionist",
+          "text": "Address?"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Nine Park Crescent, Westbridge. Postcode WB2 4LT."
+        },
+        {
+          "speaker": "receptionist",
+          "text": "Phone number?"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Mobile — zero seven six eight three, two two one four five nine."
+        },
+        {
+          "speaker": "receptionist",
+          "text": "Previous GP?"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Dr Patel at Riverside Surgery, Northtown."
+        },
+        {
+          "speaker": "receptionist",
+          "text": "Any existing conditions I should note?"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Yes — I have asthma. I use a blue reliever inhaler. No hospital admissions in the last two years."
+        },
+        {
+          "speaker": "receptionist",
+          "text": "Allergies?"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Penicillin — causes a rash."
+        },
+        {
+          "speaker": "receptionist",
+          "text": "Next available new patient appointment is Thursday the fourth, at ten-fifteen."
+        },
+        {
+          "speaker": "sarah",
+          "text": "Perfect. Is it with a specific GP?"
+        },
+        {
+          "speaker": "receptionist",
+          "text": "Dr Farida Okonkwo — she'll be your named GP."
+        },
+        {
+          "speaker": "sarah",
+          "text": "And do I need to bring anything?"
+        },
+        {
+          "speaker": "receptionist",
+          "text": "Photo ID and your inhaler prescription if you have it."
+        }
+      ]
+    },
+    {
+      "id": "L4-s2",
+      "title": "L4 Section 2",
+      "rate": "-6%",
+      "turns": [
+        {
+          "speaker": "speaker",
+          "text": "Welcome to the Natural History Museum's new exhibition: Giants of the Ice Age. This six-month exhibition runs from the fifteenth of March to the fourteenth of September.\n\nThe exhibition spans twelve galleries across two floors. Ground floor galleries one to seven cover the Pleistocene epoch — the period from approximately two million to eleven thousand years ago — and focus on the large mammals that dominated this era: the woolly mammoth, the woolly rhinoceros, the giant ground sloth, and the sabre-toothed cat.\n\nGallery eight is dedicated to a single spectacular find — a ninety-percent complete mammoth skeleton excavated in Siberia in twenty-fourteen, nicknamed Boris by the excavation team. This is the most complete mammoth skeleton ever displayed in the United Kingdom.\n\nGalleries nine to twelve on the first floor explore causes of the megafauna extinctions — climate change, vegetation shifts, and the role of early human hunting.\n\nAudio guide handsets are available in the main lobby at three pounds each, returnable on exit. The family quiz trail is free and can be collected at the information desk. Photography is permitted throughout without flash.\n\nThe café on the ground floor is open from nine-thirty until four. The museum shop is at the exit."
+        }
+      ]
+    },
+    {
+      "id": "L4-s3",
+      "title": "L4 Section 3",
+      "rate": "-6%",
+      "turns": [
+        {
+          "speaker": "speaker",
+          "text": "Dr"
+        },
+        {
+          "speaker": "reeves",
+          "text": "Where are you with the footbridge project?"
+        },
+        {
+          "speaker": "amara",
+          "text": "We've completed the site survey and agreed on a cable-stayed design — it best handles the sixty-metre span.\nDr"
+        },
+        {
+          "speaker": "reeves",
+          "text": "What influenced that choice over a suspension bridge?"
+        },
+        {
+          "speaker": "jake",
+          "text": "A cable-stayed design uses less cable, is faster to construct, and gives better stiffness for pedestrian loading.\nDr"
+        },
+        {
+          "speaker": "reeves",
+          "text": "What are your material choices?"
+        },
+        {
+          "speaker": "ling",
+          "text": "High-strength steel for the pylons, and we're proposing a composite deck — steel beams with a concrete slab. It reduces weight while maintaining load capacity.\nDr"
+        },
+        {
+          "speaker": "reeves",
+          "text": "What live load are you designing for?"
+        },
+        {
+          "speaker": "amara",
+          "text": "Five kilonewtons per square metre — the standard for public pedestrian bridges in the UK.\nDr"
+        },
+        {
+          "speaker": "reeves",
+          "text": "And dynamic loading? Footbridges can be vulnerable to resonance."
+        },
+        {
+          "speaker": "jake",
+          "text": "We've modelled pedestrian-induced vibration. Our natural frequency is well above the critical range — three point two hertz, against the problematic one-to-three hertz band.\nDr"
+        },
+        {
+          "speaker": "reeves",
+          "text": "Good. What's your safety factor?"
+        },
+        {
+          "speaker": "ling",
+          "text": "One point five for dead load and one point six for live load, in accordance with Eurocode.\nDr"
+        },
+        {
+          "speaker": "reeves",
+          "text": "Drainage?"
+        },
+        {
+          "speaker": "amara",
+          "text": "A two percent cross-fall on the deck with scuppers at twenty-metre intervals.\nDr"
+        },
+        {
+          "speaker": "reeves",
+          "text": "Presentation is the ninth of May. You'll have fifteen minutes plus ten minutes for questions."
+        },
+        {
+          "speaker": "jake",
+          "text": "We're planning a physical scale model plus a digital visualisation."
+        }
+      ]
+    },
+    {
+      "id": "L4-s4",
+      "title": "L4 Section 4",
+      "rate": "-6%",
+      "turns": [
+        {
+          "speaker": "speaker",
+          "text": "Since the first confirmed detection of a planet orbiting a sun-like star in nineteen ninety-five, our understanding of planetary systems has been transformed. As of early twenty twenty-four, more than five thousand five hundred exoplanets have been confirmed, with thousands more candidates awaiting verification.\n\nThe most productive detection method has been the transit method — detecting the tiny dimming of a star's light as a planet passes in front of it. NASA's Kepler Space Telescope, operational from two thousand and nine to two thousand and eighteen, used this method to discover over two thousand six hundred confirmed planets.\n\nThe transit method has a significant limitation: it only detects planets whose orbital plane aligns with the observer — a small fraction of all planetary systems. For this reason, most confirmed transiting planets orbit very close to their stars, giving them short periods.\n\nThe second major method is radial velocity, also called Doppler spectroscopy. As a planet orbits its star, it exerts a gravitational pull that causes the star to wobble. This wobble shifts the star's spectral lines, which can be measured from Earth. Radial velocity is particularly effective at detecting large planets — those with masses comparable to Jupiter.\n\nDirect imaging — actually photographing a planet — is possible but extremely challenging because planets are so much fainter than their host stars. Contrast ratios of ten billion to one are typical. Advances in coronagraphy and adaptive optics have allowed about a dozen planetary systems to be directly imaged.\n\nThe habitable zone — the range of orbital distances at which liquid water could exist on a planetary surface — is now mapped for hundreds of stars, and several Earth-sized planets in habitable zones have been identified."
+        }
+      ]
+    },
+    {
+      "id": "L5-s1",
+      "title": "L5 Section 1",
+      "rate": "-6%",
+      "turns": [
+        {
+          "speaker": "staff",
+          "text": "Good morning, City Language Academy."
+        },
+        {
+          "speaker": "hana",
+          "text": "Hello. I'd like to enrol on an English course. My name is Hana Novak. N-O-V-A-K."
+        },
+        {
+          "speaker": "staff",
+          "text": "Nationality?"
+        },
+        {
+          "speaker": "hana",
+          "text": "Czech. I've been in the UK for six months."
+        },
+        {
+          "speaker": "staff",
+          "text": "Which course are you interested in?"
+        },
+        {
+          "speaker": "hana",
+          "text": "The upper-intermediate course — I had a placement test online and scored B2."
+        },
+        {
+          "speaker": "staff",
+          "text": "That maps to our Advanced Preparation course. Classes are Monday to Thursday, nine-fifteen to twelve-thirty."
+        },
+        {
+          "speaker": "hana",
+          "text": "How long is the course?"
+        },
+        {
+          "speaker": "staff",
+          "text": "Ten weeks. The next intake starts the twelfth of January."
+        },
+        {
+          "speaker": "staff",
+          "text": "Address?"
+        },
+        {
+          "speaker": "hana",
+          "text": "Forty-one Chestnut Road, Brixton. Postcode SW9 0BJ."
+        },
+        {
+          "speaker": "staff",
+          "text": "Phone?"
+        },
+        {
+          "speaker": "hana",
+          "text": "My UK mobile is zero seven four five one, six six three two seven zero."
+        },
+        {
+          "speaker": "staff",
+          "text": "The course fee is eight hundred and seventy-five pounds. We require a deposit of one hundred and fifty to hold your place, with the balance due by the first day."
+        },
+        {
+          "speaker": "hana",
+          "text": "Can I pay the deposit by card today?"
+        },
+        {
+          "speaker": "staff",
+          "text": "Of course. And if you'd like to add one-to-one conversation sessions, they're thirty pounds per hour with a thirty-minute minimum booking."
+        },
+        {
+          "speaker": "hana",
+          "text": "Maybe later. Do I need to bring anything on the first day?"
+        },
+        {
+          "speaker": "staff",
+          "text": "Your enrolment confirmation email and one form of photo ID."
+        }
+      ]
+    },
+    {
+      "id": "L5-s2",
+      "title": "L5 Section 2",
+      "rate": "-6%",
+      "turns": [
+        {
+          "speaker": "speaker",
+          "text": "Good morning and welcome to Cranmore Nature Reserve. I'm Pete, the head warden.\n\nCranmore covers six hundred and forty hectares across three distinct habitat types: ancient woodland in the north, wetland and reedbeds in the centre, and open grassland in the south. The reserve is home to over two hundred species of bird recorded annually.\n\nToday is particularly good for spotting bittern — our reedbed is one of only twelve sites in England with a breeding population. Listen for their distinctive booming call, especially in the early morning.\n\nOur main trail is the seven-kilometre green route, which takes approximately two and a half hours at a comfortable pace. Shorter visitors can take the accessible one-kilometre blue route, fully surfaced and suitable for wheelchairs and pushchairs.\n\nDogs are welcome on all routes but must be kept on leads from the first of March to the thirty-first of July — this is the bird nesting season. Outside this period, dogs may be let off leads in the grassland only.\n\nThe visitor centre has a café open ten to four — hot drinks and light meals. Binocular hire is two pounds for the day at the information desk. Entry to the reserve is free; guided walks cost five pounds per person and run at eleven and two on weekends only.\n\nPlease do not feed the waterfowl — it disrupts natural foraging and encourages aggressive behaviour."
+        }
+      ]
+    },
+    {
+      "id": "L5-s3",
+      "title": "L5 Section 3",
+      "rate": "-6%",
+      "turns": [
+        {
+          "speaker": "speaker",
+          "text": "Dr"
+        },
+        {
+          "speaker": "vasquez",
+          "text": "Walk me through your design concept."
+        },
+        {
+          "speaker": "kai",
+          "text": "Our proposal is a community housing scheme for forty-two units on the brownfield site in the east of the city. The design is centred on a shared courtyard — we wanted to prioritise social interaction and passive surveillance.\nDr"
+        },
+        {
+          "speaker": "vasquez",
+          "text": "What's your approach to energy performance?"
+        },
+        {
+          "speaker": "preethi",
+          "text": "We're targeting a Passivhaus standard. The building fabric achieves a U-value of zero-point-one-five watts per square metre kelvin for external walls, which requires three hundred millimetres of mineral wool insulation. The triple-glazed windows contribute significantly to thermal performance.\nDr"
+        },
+        {
+          "speaker": "vasquez",
+          "text": "Ventilation?"
+        },
+        {
+          "speaker": "kai",
+          "text": "Mechanical heat recovery ventilation throughout — MVHR — with a heat recovery efficiency of eighty-seven percent. This allows continuous fresh air without significant heat loss.\nDr"
+        },
+        {
+          "speaker": "vasquez",
+          "text": "Water?"
+        },
+        {
+          "speaker": "preethi",
+          "text": "Rainwater harvesting for toilet flushing and irrigation, reducing mains water use by approximately forty percent. Greywater recycling from showers and basins feeds the garden areas.\nDr"
+        },
+        {
+          "speaker": "vasquez",
+          "text": "Social mix?"
+        },
+        {
+          "speaker": "kai",
+          "text": "The scheme includes thirty percent affordable housing — set by the local authority planning requirement — a mix of one, two, and three-bedroom units.\nDr"
+        },
+        {
+          "speaker": "vasquez",
+          "text": "Your sustainability assessment — which framework?"
+        },
+        {
+          "speaker": "preethi",
+          "text": "BREEAM Excellent. We've scored well on energy, transport — the site is two hundred metres from a tram stop — and ecology, where we're adding native planting and bee bricks throughout the scheme.\nDr"
+        },
+        {
+          "speaker": "vasquez",
+          "text": "Structural system?"
+        },
+        {
+          "speaker": "kai",
+          "text": "Cross-laminated timber — CLT — for the superstructure. It reduces the carbon footprint versus concrete by approximately sixty percent over the building lifecycle."
+        }
+      ]
+    },
+    {
+      "id": "L5-s4",
+      "title": "L5 Section 4",
+      "rate": "-6%",
+      "turns": [
+        {
+          "speaker": "speaker",
+          "text": "Cognitive load theory, developed by John Sweller in the nineteen eighties, is one of the most influential frameworks in educational psychology. It explains why some instructional designs are effective and others are not, by examining the demands placed on working memory during learning.\n\nWorking memory is severely limited. Research consistently shows it can hold approximately four chunks of information simultaneously — some researchers suggest as few as three, others up to seven, but four is the commonly accepted working estimate. When working memory is overwhelmed, learning breaks down.\n\nCognitive load theory identifies three types. Intrinsic load is inherent in the material itself — it depends on the complexity of what is being learned and the learner's existing knowledge. Extraneous load is created by poor instructional design — unnecessary complexity, distracting formatting, or unclear instructions that consume working memory without contributing to learning. Germane load is the effortful processing that directly contributes to schema formation — the building of durable knowledge structures.\n\nSweller's key practical insight was that effective teaching should minimise extraneous load and maximise germane load. Several evidence-based techniques follow from this. The worked example effect shows that studying fully worked-out solutions is more effective for novices than problem-solving, because it reduces extraneous cognitive load. The split-attention effect demonstrates that presenting related information separately — for instance, text away from diagrams — forces learners to mentally integrate them, adding extraneous load. Combining them as an integrated format removes this burden.\n\nThe expertise reversal effect is also important: as learners become more expert, instructional designs that benefit novices — such as worked examples and explicit guidance — become redundant and can even impede performance. Adaptive instruction that tracks learner expertise is therefore more effective than one-size-fits-all approaches."
+        }
+      ]
+    },
+    {
+      "id": "LA1-s1",
+      "title": "LA1 Section 1",
+      "rate": "-6%",
+      "turns": [
+        {
+          "speaker": "sarah",
+          "text": "Good morning. You must be Tom. I'm Sarah, the accommodation advisor. How can I help?"
+        },
+        {
+          "speaker": "tom",
+          "text": "Hi Sarah. I've just been accepted for the Master's in Environmental Science, and I need somewhere to live for the academic year starting in September."
+        },
+        {
+          "speaker": "sarah",
+          "text": "We have several options. Traditional dormitories — shared rooms — that's the cheapest, at about three hundred and fifty pounds per month, but you share a bathroom and kitchen with the whole floor."
+        },
+        {
+          "speaker": "tom",
+          "text": "I'd prefer more privacy. What about single rooms?"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Yes, single ensuite rooms in Willow Hall. That costs five hundred and fifty pounds per month, including all bills except internet, which is fifteen pounds extra per month."
+        },
+        {
+          "speaker": "tom",
+          "text": "Is there anything cheaper but still private?"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Single non-ensuite rooms in Oak Hall — four hundred and fifty pounds per month, bills included. Internet is free there. But it's a ten-minute walk from the main campus."
+        },
+        {
+          "speaker": "tom",
+          "text": "Which hall is closest to the Science Block?"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Willow Hall is right behind the Science Block — just two minutes. Oak Hall has a free shuttle bus every twenty minutes. There's also Birch Apartments — postgraduate students only. You get a studio — your own kitchen and bathroom — for seven hundred and fifty pounds per month. Often a waiting list though."
+        },
+        {
+          "speaker": "tom",
+          "text": "Let's go with Willow Hall. How do I apply?"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Complete the online application form on the accommodation portal using your student ID. The deadline for guaranteed accommodation is August first. There's a two-hundred-and-fifty-pound deposit, refundable at year end. You'll receive an offer email within two weeks of applying, then you have five working days to accept."
+        }
+      ]
+    },
+    {
+      "id": "LA1-s2",
+      "title": "LA1 Section 2",
+      "rate": "-6%",
+      "turns": [
+        {
+          "speaker": "david",
+          "text": "Good afternoon. I'm David from the University Library. Every year we have students who fail or face expulsion because they didn't take plagiarism seriously.\nPlagiarism means using someone else's work or ideas without giving them credit. Accidental plagiarism — forgetting to cite a source — is usually treated as a learning opportunity. Deliberate plagiarism — buying essays, copying large chunks from a textbook — can lead to a zero, a fail in the course, suspension, or even expulsion.\nWe have software called Turnitin that compares your work against billions of web pages, journals, and previously submitted student papers.\nThe golden rule: cite everything that is not common knowledge. Common knowledge means facts like 'water boils at one hundred degrees Celsius' — no citation needed. But if you state a statistic from a specific study, you need the source.\nReferencing styles: your department will specify APA, MLA, or Harvard. In APA, you write the author name, year, and page number in brackets after a quote. Don't mix styles.\nGood paraphrasing means changing sentence structure, vocabulary, and often the order of information — and still citing the source. The library offers free workshops every Wednesday at two PM. You can also book twenty-minute one-to-one sessions online. Chapter four of our website guide is all about paraphrasing."
+        }
+      ]
+    },
+    {
+      "id": "LA1-s3",
+      "title": "LA1 Section 3",
+      "rate": "-6%",
+      "turns": [
+        {
+          "speaker": "emma",
+          "text": "James, I've started analysing our survey data and the numbers are surprising. We surveyed two hundred households in three rural villages — whether they'd install solar panels if the government paid fifty percent of the cost. I expected about eighty percent yes. But only forty-two percent said yes. The main reason was upfront cost — fifty percent still leaves three to five thousand pounds."
+        },
+        {
+          "speaker": "james",
+          "text": "Did we ask about alternative financing?"
+        },
+        {
+          "speaker": "emma",
+          "text": "Yes. For households that said no, we asked if a zero-interest loan would change their mind. The yes rate jumped to seventy-one percent. So financing seems critical."
+        },
+        {
+          "speaker": "james",
+          "text": "There's a paper by Sardianou and Genoudi from twenty-eighteen — they found in Greece that upfront cost was the biggest barrier, but low-interest loans increased adoption by three hundred percent. We should cite that."
+        },
+        {
+          "speaker": "emma",
+          "text": "We also found a geographic difference. The remote village had only twenty-eight percent initial yes, even with the subsidy."
+        },
+        {
+          "speaker": "james",
+          "text": "For a typical household, solar panels cost about eight thousand pounds installed. They save around five hundred per year on electricity bills. Payback without subsidy: sixteen years. With fifty percent subsidy: eight years."
+        },
+        {
+          "speaker": "tutor",
+          "text": "The final report is due April thirtieth, and your presentation is May fifth. Each of you speaks for eight minutes. Summary tables in the main body only — full dataset in the appendix, anonymised, no names or addresses."
+        }
+      ]
+    },
+    {
+      "id": "LA1-s4",
+      "title": "LA1 Section 4",
+      "rate": "-6%",
+      "turns": [
+        {
+          "speaker": "professor",
+          "text": "Today we're exploring one of the most extraordinary ecosystems on Earth — hydrothermal vents. These are underwater geysers found along mid-ocean ridges. Seawater seeps into cracks, gets heated to over four hundred degrees Celsius, and erupts back carrying dissolved minerals.\nThe first vent was discovered in nineteen seventy-seven near the Galápagos Rift by a team using a deep-submersible vehicle called Alvin. Before that, everyone assumed the deep ocean was a cold, barren desert. They were spectacularly wrong.\nVents support ecosystems entirely independent of sunlight. Instead of photosynthesis, the base of the food chain is chemosynthesis — bacteria oxidise hydrogen sulphide to produce organic matter. These bacteria support giant tube worms, clams, mussels, shrimp, and crabs.\nThe giant tube worm, Riftia pachyptila, can grow up to two-point-four metres. It has no mouth, gut, or digestive system. It has a specialised organ called a trophosome packed with chemosynthetic bacteria. The red colour of its plume comes from haemoglobin — similar to our blood but more efficient.\nThe Pompeii worm lives where temperatures reach eighty degrees Celsius — the most heat-tolerant animal on Earth.\nWhy care about vents?"
+        },
+        {
+          "speaker": "one",
+          "text": "vent conditions resemble early Earth — life may have begun here, not in shallow pools."
+        },
+        {
+          "speaker": "two",
+          "text": "vent enzymes work at extreme temperatures and are used industrially in PCR machines for DNA amplification."
+        },
+        {
+          "speaker": "three",
+          "text": "vents contain deposits of copper, zinc, and gold.\nFor your assignment: a two-page essay on the potential impacts of deep-sea mining on vent ecosystems. Due in three weeks."
+        }
+      ]
+    }
+  ]
+}

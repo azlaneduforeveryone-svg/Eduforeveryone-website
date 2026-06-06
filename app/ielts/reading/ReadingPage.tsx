@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { PASSAGES } from "@/lib/ieltsReadingData";
+import { PASSAGES } from "@/lib/ielts-reading-academic-data";
 
 const TYPE_LABELS: Record<string, string> = {
   mcq: "MCQ",

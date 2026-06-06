@@ -52,15 +52,9 @@ export default function PracticePage() {
         <h1 className="text-3xl sm:text-4xl font-black text-gray-900 mb-3">
           Choose Your Practice Area
         </h1>
-        <p className="text-gray-500 max-w-xl mx-auto text-sm leading-relaxed mb-6">
+        <p className="text-gray-500 max-w-xl mx-auto text-sm leading-relaxed">
           Select any skill to start practising. All tests are completely free — no signup required.
-          Or take a full diagnostic test to estimate your band score across all 4 skills.
         </p>
-        <Link href="/ielts/diagnostic"
-          className="inline-flex items-center gap-2 bg-teal-600 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-teal-700 transition-all"
-          style={{ boxShadow: "0 4px 0 #0F6E56" }}>
-          🎯 Take Full Diagnostic Test
-        </Link>
       </div>
 
       {/* 4 Skill cards */}

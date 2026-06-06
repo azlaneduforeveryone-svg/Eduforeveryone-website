@@ -2,60 +2,8 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+import { SPEAKING_TOPICS as TOPICS, type SpeakingTopic as Topic } from "@/lib/ielts-speaking-data";
 
-// ---------- Types and Data (unchanged from your original) ----------
-interface P1Question { q: string; sample: string; }
-interface CueCard { title: string; points: string[]; followUp: string; sample: string; }
-interface P3Question { q: string; sample: string; }
-
-interface Topic {
-  id: string;
-  theme: string;
-  part1: P1Question[];
-  cueCard: CueCard;
-  part3: P3Question[];
-}
-
-const TOPICS: Topic[] = [
-  {
-    id: "technology",
-    theme: "Technology",
-    part1: [
-      { q: "How often do you use the internet?", sample: "I use the internet constantly throughout the day — mainly for work, keeping in touch with friends and watching educational content. I'd say I'm online for at least six or seven hours on a typical weekday." },
-      { q: "What do you mainly use your phone for?", sample: "Primarily for communication — messaging, emails and video calls. I also use it a lot for navigation when I'm in an unfamiliar area, and I listen to podcasts during my commute." },
-      { q: "Do you think young people spend too much time on social media?", sample: "I think many do, yes. While social media has genuine benefits for staying connected and discovering new ideas, the endless scrolling can easily become a habit that takes time away from more productive activities like reading or exercise." },
-    ],
-    cueCard: {
-      title: "Describe a piece of technology you use every day.",
-      points: ["What it is", "How long you have had it", "What you use it for", "Why it is important to you"],
-      followUp: "Would you feel uncomfortable if you didn't have it for a day?",
-      sample: "The piece of technology I rely on most every day is my laptop. I've had it for about three years and it's become absolutely central to both my work and my personal life. I use it for everything — writing, research, video calls and online learning. Without it, I'd struggle to complete most of my daily tasks. What I appreciate most about it is the portability — I can work from virtually anywhere, which gives me a lot of flexibility. If I didn't have it for a day, I'd honestly feel quite lost. So much of my routine depends on it that I'd have to completely reorganise my day.",
-    },
-    part3: [
-      { q: "How has technology changed the way people communicate?", sample: "It's transformed communication in ways that would have been unimaginable a few decades ago. We can now connect with people across the world instantly, at virtually no cost. Video calls have made remote relationships feel much more personal than phone calls, and messaging apps have made short, informal communication the norm. However, some argue this has reduced the depth of our interactions — we communicate more frequently but perhaps less meaningfully." },
-      { q: "Do you think technology is making us less creative?", sample: "That's an interesting question. I think the relationship between technology and creativity is actually quite complex. On one hand, digital tools like design software, music production apps and video editing platforms have democratised creative expression — anyone with a smartphone can now create content. On the other hand, there's a valid concern that the constant availability of entertainment means people spend less time in quiet reflection, which is often when creative ideas emerge." },
-    ],
-  },
-  {
-    id: "education",
-    theme: "Education",
-    part1: [
-      { q: "What subject did you enjoy most at school?", sample: "I particularly enjoyed science, especially biology. I found the study of living systems fascinating — understanding how the human body works or how ecosystems maintain balance felt relevant in a way that some other subjects didn't." },
-      { q: "Do you prefer studying alone or with others?", sample: "It depends on the task. For absorbing new material or writing essays, I prefer studying alone because I can concentrate fully. But for reviewing difficult concepts or problem-solving, I find study groups genuinely helpful — hearing how others approach a problem often gives me a new perspective." },
-      { q: "Is there anything you would like to learn in the future?", sample: "Absolutely. I've always wanted to learn a third language — probably Spanish, since it would open up communication with so many more people. I'd also like to improve my data analysis skills, which are increasingly valuable across almost every profession." },
-    ],
-    cueCard: {
-      title: "Describe a teacher who had a positive influence on you.",
-      points: ["Who the teacher was", "What subject they taught", "What they did that influenced you", "How this affected your life or studies"],
-      followUp: "Have you stayed in contact with this teacher since leaving school?",
-      sample: "The teacher who had the greatest positive influence on me was my secondary school English teacher, Mr. Hassan. He taught English Literature, and what made him exceptional was his genuine enthusiasm for the subject — it was clear he wasn't just doing a job, but that literature actually mattered to him. He encouraged critical thinking rather than memorisation. Rather than simply telling us what a poem meant, he would ask us what we thought, and then guide us to dig deeper. That approach taught me to think independently and to appreciate complexity. It made me a much stronger writer and reader, and those skills have benefited me in every area of my life since. I genuinely believe his class changed the way I think.",
-    },
-    part3: [
-      { q: "Should education systems focus more on practical skills or academic knowledge?", sample: "I think the most effective systems find a balance between the two. Pure academic knowledge without practical application can leave graduates ill-equipped for the workplace, while focusing exclusively on vocational skills risks narrowing students' intellectual horizons. Ideally, students should develop strong foundational knowledge alongside the practical abilities to apply it — critical thinking, communication and problem-solving are the skills most employers consistently say they value." },
-      { q: "How important is it for students to study subjects they are interested in?", sample: "It's enormously important, in my view. Intrinsic motivation is one of the strongest predictors of academic success — when students genuinely care about what they're learning, they engage more deeply and retain information better. However, a purely interest-based curriculum has limitations. Some fundamental skills like mathematics, literacy and scientific reasoning are valuable regardless of personal preference, so there needs to be some core structure even within a more interest-driven system." },
-    ],
-  },
-];
 
 // ---------- Helper Functions for Band Score Display ----------
 function bandColor(s: number) {
@@ -71,23 +19,22 @@ function fmtScore(n: number) {
   return Number.isInteger(n) ? String(n) : n.toFixed(1);
 }
 
-// ---------- Type for AI Grading Result (same as writing) ----------
+// ---------- AI Grading Result (text-based: 3 criteria, no pronunciation) ----------
+interface Criterion { score: number; feedback: string; }
 interface IELTSResult {
   overall: number;
-  ta: { score: number; feedback: string };
-  cc: { score: number; feedback: string };
-  lr: { score: number; feedback: string };
-  gr: { score: number; feedback: string };
+  scope?: string;
+  lr: Criterion;   // Lexical Resource
+  gra: Criterion;  // Grammatical Range & Accuracy
+  coh: Criterion;  // Coherence & Organisation
   summary: string;
   top_fix: string;
 }
 
-// Speaking criteria labels (keys match the result object)
 const SPEAKING_CRITERIA = [
-  { key: "ta", label: "Fluency & Coherence" },
-  { key: "cc", label: "Lexical Resource" },
-  { key: "lr", label: "Grammatical Range & Accuracy" },
-  { key: "gr", label: "Pronunciation" },
+  { key: "lr",  label: "Lexical Resource (Vocabulary)" },
+  { key: "gra", label: "Grammatical Range & Accuracy" },
+  { key: "coh", label: "Coherence & Organisation" },
 ];
 
 // ---------- Cue Card Timer Component (unchanged from your original) ----------
@@ -180,7 +127,8 @@ export default function SpeakingPage() {
     transcript: liveTranscript,
     listening,
     resetTranscript,
-    browserSupportsSpeechRecognition
+    browserSupportsSpeechRecognition,
+    isMicrophoneAvailable
   } = useSpeechRecognition();
 
   // Update local transcript when liveTranscript changes
@@ -350,12 +298,22 @@ export default function SpeakingPage() {
           {listening && (
             <div className="text-sm text-green-600 animate-pulse mb-2">🔊 Listening... speak now</div>
           )}
-          {transcript && (
-            <div className="bg-gray-50 rounded-xl p-4 border border-gray-200 mt-2">
-              <p className="text-xs font-semibold text-gray-500 uppercase mb-1">Your transcript:</p>
-              <p className="text-gray-700 text-sm leading-relaxed">{transcript}</p>
-            </div>
+          {browserSupportsSpeechRecognition && isMicrophoneAvailable === false && (
+            <div className="text-xs text-red-600 mb-2">Microphone access is blocked. Allow it in your browser settings, or just type your answer below.</div>
           )}
+          <div className="mt-2">
+            <p className="text-xs font-semibold text-gray-500 uppercase mb-1">Your transcript (you can edit or type it):</p>
+            <textarea
+              value={transcript}
+              onChange={(e) => setTranscript(e.target.value)}
+              rows={5}
+              placeholder="Speak using the button above and your words appear here. If the mic doesn't work on your device, just type your answer instead."
+              className="w-full border border-gray-200 rounded-xl p-3 text-sm text-gray-700 leading-relaxed focus:outline-none focus:border-amber-400"
+            />
+            <p className="text-[11px] text-gray-400 mt-1">
+              {transcript.trim() ? `${transcript.trim().split(/\s+/).filter(Boolean).length} words` : "Aim for at least 20 words."}
+            </p>
+          </div>
           {aiError && (
             <div className="bg-red-50 border border-red-200 rounded-xl p-3 mt-3">
               <p className="text-red-700 text-sm">{aiError}</p>
@@ -372,6 +330,9 @@ export default function SpeakingPage() {
               </p>
               <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Overall Band Score</p>
               <p className="text-sm text-gray-600 italic max-w-md mx-auto">{aiResult.summary}</p>
+            </div>
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-3 text-xs text-blue-800">
+              ℹ️ Indicative score from your transcript — it covers vocabulary, grammar and coherence. Pronunciation and full fluency can&apos;t be judged from text, so they aren&apos;t graded here. Use it to sharpen word choice and accuracy, not as a final speaking band.
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
               {SPEAKING_CRITERIA.map(({ key, label }) => {
