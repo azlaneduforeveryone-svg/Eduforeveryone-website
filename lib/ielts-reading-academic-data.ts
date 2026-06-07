@@ -13,6 +13,7 @@ import {
   ReadingQuestion,
   pickRandom,
 } from "./ielts-types";
+import { READING_BANK } from "./ielts-reading-bank";
 
 // ═══════════════════════════════════════════════════════════════════════════
 // ACADEMIC READING TEST POOLS (5 tests × 3 passages = 15 passages)
@@ -453,16 +454,19 @@ export interface Passage {
 
 const LEVEL_LABELS = ["Easy", "Moderate", "Hard"] as const;
 
-export const PASSAGES: Passage[] = academicReadingPool
-  .flatMap(test =>
-    test.passages.map((p, i) => ({
-      id: `${test.id.toLowerCase()}-p${i + 1}`,
-      tag: "Academic",
-      level: LEVEL_LABELS[i] ?? "Hard",
-      title: p.title,
-      text: p.text,
-      wordCount: p.text.trim().split(/\s+/).length,
-      questions: p.questions as Question[],
-    }))
-  )
-  .filter(p => p.questions.length >= 10);
+export const PASSAGES: Passage[] = [
+  ...academicReadingPool
+    .flatMap(test =>
+      test.passages.map((p, i) => ({
+        id: `${test.id.toLowerCase()}-p${i + 1}`,
+        tag: "Academic",
+        level: LEVEL_LABELS[i] ?? "Hard",
+        title: p.title,
+        text: p.text,
+        wordCount: p.text.trim().split(/\s+/).length,
+        questions: p.questions as Question[],
+      }))
+    )
+    .filter(p => p.questions.length >= 10),
+  ...READING_BANK,
+];

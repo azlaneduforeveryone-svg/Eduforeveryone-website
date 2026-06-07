@@ -107,6 +107,7 @@ function qTypeLabel(type: string): { label: string; color: string } {
     fill:               { label:"Short Answer",                  color:"bg-teal-100 text-teal-800" },
     sentence_completion:{ label:"Sentence Completion",           color:"bg-teal-100 text-teal-800" },
     summary_completion: { label:"Summary Completion",            color:"bg-teal-100 text-teal-800" },
+    summary:            { label:"Summary Completion",            color:"bg-teal-100 text-teal-800" },
     word_box:           { label:"Summary Completion (Word Box)", color:"bg-teal-100 text-teal-800" },
     matching_headings:  { label:"Matching Headings",             color:"bg-indigo-100 text-indigo-800" },
     matching_info:      { label:"Matching Information",          color:"bg-indigo-100 text-indigo-800" },
@@ -115,8 +116,8 @@ function qTypeLabel(type: string): { label: string; color: string } {
   return map[type] || { label:"Question", color:"bg-gray-100 text-gray-700" };
 }
 
-const isTextInput = (t: string) =>
-  ["fill","sentence_completion","summary_completion","word_box","short_answer"].includes(t);
+const BUTTON_TYPES = ["tfng", "ynng", "mcq", "matching_headings", "matching_info"];
+const isTextInput = (t: string) => !BUTTON_TYPES.includes(t);
 
 const wordLimits: Record<string,string> = {
   fill:               "NO MORE THAN TWO WORDS AND/OR A NUMBER",

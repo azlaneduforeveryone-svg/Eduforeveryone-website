@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ReadingHub from "./ReadingHub";
+import { PASSAGES } from "@/lib/ielts-reading-academic-data";
 
 export const metadata: Metadata = {
   title: "IELTS Reading Practice — Free Tests with Instant Scoring | EduForEveryone",
@@ -16,5 +17,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <ReadingHub />;
+  return <ReadingHub localPassages={PASSAGES} />;
 }
