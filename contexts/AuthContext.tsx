@@ -1,103 +1,96 @@
-"use client";
-// contexts/AuthContext.tsx
-import { createContext, useContext, useEffect, useState, ReactNode } from "react";
-import {
-  User, GoogleAuthProvider, signInWithPopup,
-  createUserWithEmailAndPassword, signInWithEmailAndPassword,
-  signOut, onAuthStateChanged, updateProfile, sendPasswordResetEmail,
-} from "firebase/auth";
-import { auth } from "@/lib/firebase";
-import { createOrUpdateUser } from "@/lib/firebaseDB";
+'use client';
 
-interface AuthContextType {
-  user:            User | null;
-  loading:         boolean;
-  signInGoogle:    () => Promise<void>;
-  signInEmail:     (email: string, password: string) => Promise<void>;
-  signUpEmail:     (email: string, password: string, name: string) => Promise<void>;
-  resetPassword:   (email: string) => Promise<void>;
-  logout:          () => Promise<void>;
-  error:           string | null;
-  clearError:      () => void;
-}
+import { createContext, useContext, useState, useEffect } from 'react';
+import {
+  onAuthStateChanged, signInWithPopup, GoogleAuthProvider,
+  signInWithEmailAndPassword, createUserWithEmailAndPassword,
+  sendPasswordResetEmail, updateProfile, signOut, User,
+} from 'firebase/auth';
+import { auth } from '@/lib/firebase';
+import { createOrUpdateUser } from '@/lib/firebaseDB';
+
+type AuthContextType = {
+  user: User | null;
+  loading: boolean;
+  error: string | null;
+  signInGoogle: () => Promise<void>;
+  signInEmail: (email: string, password: string) => Promise<void>;
+  signUpEmail: (email: string, password: string, name: string) => Promise<void>;
+  resetPassword: (email: string) => Promise<void>;
+  logout: () => Promise<void>;
+  clearError: () => void;
+};
 
 const AuthContext = createContext<AuthContextType | null>(null);
 
-export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user,    setUser]    = useState<User | null>(null);
+export function AuthProvider({ children }: { children: React.ReactNode }) {
+  const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error,   setError]   = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, async (u) => {
       setUser(u);
-      setLoading(false);
       if (u) {
         try {
           await createOrUpdateUser({
             uid: u.uid, displayName: u.displayName,
             email: u.email, photoURL: u.photoURL,
           });
-        } catch {}
+        } catch (e) { console.error('createOrUpdateUser failed', e); }
       }
+      setLoading(false);
     });
-    return unsub;
+    return () => unsub();
   }, []);
 
   const signInGoogle = async () => {
-    setError(null);
-    try {
-      const provider = new GoogleAuthProvider();
-      await signInWithPopup(auth, provider);
-    } catch (e: unknown) {
-      setError(e instanceof Error ? e.message : "Google sign-in failed");
-    }
+    try { setError(null); await signInWithPopup(auth, new GoogleAuthProvider()); }
+    catch (err: any) { setError(err?.message ?? 'Google sign-in failed'); }
   };
 
   const signInEmail = async (email: string, password: string) => {
-    setError(null);
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-    } catch (e: unknown) {
-      setError(e instanceof Error ? "Invalid email or password" : "Sign in failed");
-    }
+    try { setError(null); await signInWithEmailAndPassword(auth, email, password); }
+    catch (err: any) { setError(err?.message ?? 'Sign-in failed'); }
   };
 
   const signUpEmail = async (email: string, password: string, name: string) => {
-    setError(null);
     try {
+      setError(null);
       const cred = await createUserWithEmailAndPassword(auth, email, password);
-      await updateProfile(cred.user, { displayName: name });
+      if (name) await updateProfile(cred.user, { displayName: name });
+      // ensure the profile doc uses the entered name
       await createOrUpdateUser({
-        uid: cred.user.uid, displayName: name,
-        email: cred.user.email, photoURL: null,
+        uid: cred.user.uid, displayName: name || cred.user.displayName,
+        email: cred.user.email, photoURL: cred.user.photoURL,
       });
-    } catch (e: unknown) {
-      const msg = e instanceof Error ? e.message : "";
-      if (msg.includes("email-already-in-use")) setError("Email already registered. Please sign in.");
-      else if (msg.includes("weak-password")) setError("Password must be at least 6 characters.");
-      else setError("Sign up failed. Please try again.");
-    }
+    } catch (err: any) { setError(err?.message ?? 'Sign-up failed'); }
   };
 
   const resetPassword = async (email: string) => {
-    setError(null);
-    try { await sendPasswordResetEmail(auth, email); }
-    catch { setError("Could not send reset email. Check the address."); }
+    try { setError(null); await sendPasswordResetEmail(auth, email); }
+    catch (err: any) { setError(err?.message ?? 'Reset failed'); }
   };
 
-  const logout = async () => { await signOut(auth); };
+  const logout = async () => {
+    try { await signOut(auth); }
+    catch (err: any) { setError(err?.message ?? 'Sign-out failed'); }
+  };
+
   const clearError = () => setError(null);
 
   return (
-    <AuthContext.Provider value={{ user, loading, signInGoogle, signInEmail, signUpEmail, resetPassword, logout, error, clearError }}>
+    <AuthContext.Provider value={{
+      user, loading, error,
+      signInGoogle, signInEmail, signUpEmail, resetPassword, logout, clearError,
+    }}>
       {children}
     </AuthContext.Provider>
   );
 }
 
 export function useAuth() {
-  const ctx = useContext(AuthContext);
-  if (!ctx) throw new Error("useAuth must be used inside AuthProvider");
-  return ctx;
+  const context = useContext(AuthContext);
+  if (!context) throw new Error('useAuth must be used inside AuthProvider');
+  return context;
 }

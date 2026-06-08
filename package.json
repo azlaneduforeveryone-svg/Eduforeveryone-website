@@ -10,7 +10,7 @@
     "check-links": "blc https://eduforeveryone.com -ro --exclude britishcouncil.org --exclude idp.com"
   },
   "dependencies": {
-    "firebase": "^12.12.1",
+    "firebase": "^12.14.0",
     "next": "^14.2.5",
     "react": "^18",
     "react-dom": "^18",
