@@ -1,7 +1,7 @@
 "use client";
 import { useState, useMemo, useEffect, useRef } from "react";
 import { IELTSFormat, overallBand } from "@/lib/ielts-types";
-import { getListeningTest } from "@/lib/ielts-listening-data";
+import { getMockListeningTest } from "@/lib/ielts-listening-bank";
 import { getAcademicReadingTest } from "@/lib/ielts-reading-academic-data";
 import { getGTReadingTest } from "@/lib/ielts-reading-gt-data";
 import { getAcademicWritingTest, getGTWritingTest } from "@/lib/ielts-writing-data";
@@ -64,7 +64,7 @@ export default function FullTestPage() {
   const transferRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   // Initialise test data once format is chosen
-  const listeningTest = useMemo(() => getListeningTest(), []);
+  const listeningTest = useMemo(() => getMockListeningTest() as unknown as import("@/lib/ielts-types").ListeningTest, []);
   const academicReadingTest = useMemo(() => getAcademicReadingTest(), []);
   const gtReadingTest = useMemo(() => getGTReadingTest(), []);
   const academicWritingTest = useMemo(() => getAcademicWritingTest(), []);

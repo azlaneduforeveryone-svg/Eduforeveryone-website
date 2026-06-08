@@ -10,7 +10,10 @@
       "Bash(find /mnt/c/Users/HP/Downloads/ielts-checker -type f | sort && echo \"---\" && wc -l /mnt/c/Users/HP/Downloads/ielts-checker/worker/index.js /mnt/c/Users/HP/Downloads/ielts-checker/worker/wrangler.toml /mnt/c/Users/HP/Downloads/ielts-checker/public/index.html /mnt/c/Users/HP/Downloads/ielts-checker/public/style.css /mnt/c/Users/HP/Downloads/ielts-checker/public/app.js /mnt/c/Users/HP/Downloads/ielts-checker/README.md)",
       "Read(//mnt/c/Users/HP/Downloads/**)",
       "Read(//mnt/c/Users/HP/Downloads/ielts-checker/worker/**)",
-      "PowerShell(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\HP\\\\Downloads\\\\eduforeveryone\\\\eduforeveryone\\\\app\\\\api\\\\ielts\")"
+      "PowerShell(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\HP\\\\Downloads\\\\eduforeveryone\\\\eduforeveryone\\\\app\\\\api\\\\ielts\")",
+      "Bash(git checkout *)",
+      "Bash(Get-Content lib/ielts-listening-bank.ts)",
+      "Bash(Select-Object -Last 30)"
     ]
   }
 }

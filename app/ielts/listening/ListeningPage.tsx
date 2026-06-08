@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import Link from "next/link";
 import { getAdminIELTSListening } from "@/lib/adminDB";
+import { getPracticeSections } from "@/lib/ielts-listening-bank";
 
 interface ListeningQ {
   id: number; q: string; type: "fill" | "mcq";
@@ -10,6 +11,7 @@ interface ListeningQ {
 interface Section {
   num: number; title: string; context: string;
   transcript: string; questions: ListeningQ[];
+  audio?: string;
 }
 type Answers = Record<number, string>;
 type Results = { score: number; total: number } | null;
@@ -24,117 +26,17 @@ const getBand = (raw: number, total: number) => {
   return 1;
 };
 
-const SECTIONS: Section[] = [
-  {
-    num: 1,
-    title: "Section 1 — Everyday Conversation",
-    context: "A customer calls a local sports centre to enquire about membership options.",
-    transcript: `Receptionist: Good morning, Riverside Sports Centre. How can I help you?
-Customer: Hi, I'm interested in joining the centre. Could you tell me about your membership options?
-Receptionist: Of course. We have three types. A basic membership is twenty five pounds per month, which gives you access to the gym and the swimming pool during off-peak hours — that's before 4pm on weekdays.
-Customer: And what about peak hours?
-Receptionist: For full access including evenings and weekends, the standard membership is forty pounds per month. We also have a premium option at fifty five pounds which includes unlimited classes such as yoga, spinning and pilates.
-Customer: Great. How do I sign up?
-Receptionist: You can register online, or come in and fill out a form at reception. You'll need a passport or driving licence for identification, and your bank details for the direct debit.
-Customer: Is there a joining fee?
-Receptionist: Yes, there's a one-off joining fee of fifteen pounds for all memberships. However, if you sign up before the end of the month we're waiving it as part of our summer promotion.
-Customer: Excellent. My name is Sarah Collins — C, O, L, L, I, N, S.
-Receptionist: Perfect, I've noted that. Can I take your email address to send you the registration link?
-Customer: It's sarah dot collins at mailbox dot com.
-Receptionist: Wonderful. You'll receive an email within twenty four hours. Is there anything else?
-Customer: No, that covers everything. Thank you very much.`,
-    questions: [
-      { id:1, type:"fill", q:"The basic membership costs £_____ per month.", answer:"25", hint:"Listen for the price mentioned for basic access." },
-      { id:2, type:"fill", q:"The premium membership includes unlimited _____, spinning and pilates.", answer:"yoga", hint:"Three types of classes are mentioned." },
-      { id:3, type:"fill", q:"The one-off joining fee is £_____.", answer:"15", hint:"The receptionist mentions this after discussing membership types." },
-      { id:4, type:"fill", q:"The customer's surname is _____.", answer:"Collins", hint:"The customer spells it out letter by letter." },
-      { id:5, type:"mcq", q:"When can the joining fee be waived?",
-        opts:["A. Always for new members","B. If signing up online only","C. Before the end of the month during a promotion","D. If paying annually"],
-        answer:"C", hint:"The receptionist explains a specific condition for waiving the fee." },
-    ],
-  },
-  {
-    num: 2,
-    title: "Section 2 — Public Information Talk",
-    context: "A guide gives a talk about a local nature reserve to a group of visitors.",
-    transcript: `Welcome, everyone, to the Greenwood Nature Reserve. My name is David, and I'll be your guide today. Before we begin our walk, let me give you a brief overview of what you can expect.
-
-The reserve covers approximately four hundred and fifty hectares and contains three distinct ecosystems: ancient woodland, freshwater wetlands, and open meadows. Each supports a unique range of wildlife. The woodland area, which we'll visit first, is home to over sixty species of birds, including the rare red kite. The wetlands, in the centre of the reserve, support a significant population of otters as well as various amphibians.
-
-Our walk today will take approximately two hours. The full route is six kilometres, though there is a shorter three kilometre loop if anyone has mobility concerns — please let me know and I'll ensure you're not left behind. The terrain is mostly flat, though there are two gentle hills in the eastern section near the meadows.
-
-A few important reminders: please stay on the marked paths at all times, as going off-trail can disturb nesting wildlife. Dogs are permitted but must remain on a lead throughout. Photography is encouraged — the reserve is particularly photogenic at this time of year. Finally, a small gift shop and cafe are located at the exit. The cafe offers hot drinks and light snacks, and proceeds from both help fund the reserve's conservation programmes.`,
-    questions: [
-      { id:1, type:"fill", q:"The reserve covers approximately _____ hectares.", answer:"450", hint:"A specific number is given at the start of the description." },
-      { id:2, type:"fill", q:"The woodland area is home to over _____ species of birds.", answer:"60", hint:"Listen for the number given about the woodland." },
-      { id:3, type:"mcq", q:"Where are the otters located in the reserve?",
-        opts:["A. In the ancient woodland","B. In the open meadows","C. In the freshwater wetlands","D. Near the entrance"],
-        answer:"C", hint:"The guide describes the central area of the reserve." },
-      { id:4, type:"fill", q:"The shorter walking loop is _____ kilometres.", answer:"3", hint:"An alternative route length is mentioned." },
-      { id:5, type:"mcq", q:"What do the cafe and gift shop proceeds support?",
-        opts:["A. Staff salaries","B. The reserve's conservation programmes","C. Free entry for school groups","D. New walking trail construction"],
-        answer:"B", hint:"The guide mentions this at the very end of his talk." },
-    ],
-  },
-  {
-    num: 3,
-    title: "Section 3 — Academic Discussion",
-    context: "Two university students, Tom and Nina, discuss their group assignment about urban green spaces.",
-    transcript: `Tom: Nina, have you finished reading the articles Professor Keane assigned for our urban ecology assignment?
-Nina: I've read two of them. The one on biodiversity in city parks was really interesting — apparently even small parks with just a few trees can support over a hundred different insect species.
-Tom: I read that one too. It made me think differently about those tiny pocket parks you see between office buildings.
-Nina: And the second article I read argued that the psychological benefits of green spaces are just as significant as the ecological ones. Office workers who could see trees from their desks reported twenty percent lower stress levels.
-Tom: That's a compelling figure. I've been looking at how different cities have approached urban greening, and Singapore is extraordinary. They have a government target to keep forty seven percent of the city covered in vegetation.
-Nina: Really? That's remarkable. How do they achieve that in such a dense city?
-Tom: Rooftop gardens, vertical green walls on skyscrapers, and they've integrated parks directly into transport infrastructure — like greenery along major expressways.
-Nina: For our assignment, I think we need to focus on measurable outcomes rather than just describing what cities have done. Professor Keane specifically said she wants quantitative data.
-Tom: Agreed. I was thinking we could look at three metrics: air quality improvement, property values near parks, and mental health outcomes.
-Nina: The property value angle is interesting — I read a study showing that homes within three hundred metres of a public park are valued on average eight percent higher.
-Tom: That's a strong economic argument for investment in green spaces.
-Nina: For the structure of our presentation, should we start with the environmental case and move to the social and economic arguments?
-Tom: I think so. And we should probably address the main criticism — that green spaces are expensive to maintain.
-Nina: There are counter-arguments though. Community gardening programmes reduce council maintenance costs.
-Tom: Good point. I'll draft the social and economic parts if you handle the introduction and environmental section.
-Nina: Perfect. Let's meet Thursday to put it all together.`,
-    questions: [
-      { id:1, type:"mcq", q:"How many insect species can a small urban park support?",
-        opts:["A. Over 50","B. Over 100","C. Over 200","D. Over 500"], answer:"B", hint:"Nina mentions a specific number from the article." },
-      { id:2, type:"fill", q:"Workers with views of trees reported _____% lower stress levels.", answer:"20", hint:"Nina quotes a specific statistic." },
-      { id:3, type:"fill", q:"Singapore's vegetation coverage target is _____% of the city.", answer:"47", hint:"Tom describes Singapore's government target." },
-      { id:4, type:"mcq", q:"What does Professor Keane specifically require in the assignment?",
-        opts:["A. Case studies","B. Interviews","C. Quantitative data","D. A literature review"], answer:"C", hint:"Nina reminds Tom what the professor asked for." },
-      { id:5, type:"mcq", q:"Who will draft the introduction and environmental section?",
-        opts:["A. Tom","B. Nina","C. Both together","D. Professor Keane"], answer:"B", hint:"Listen to who agrees to write which part at the end." },
-    ],
-  },
-  {
-    num: 4,
-    title: "Section 4 — Academic Lecture",
-    context: "A university lecture on bioluminescence — the ability of living organisms to produce light.",
-    transcript: `Lecturer: Good morning. Today we're going to examine one of nature's most extraordinary phenomena — bioluminescence. The ability of living organisms to produce and emit light. By the end of this lecture, I want you to understand the biochemical mechanism behind it, its ecological functions, and its emerging applications in medicine and technology.
-
-Let's begin with the biochemistry. Bioluminescence occurs when a light-emitting compound called luciferin reacts with oxygen in the presence of an enzyme called luciferase. This reaction produces light with remarkable efficiency — approximately ninety to ninety-five percent of the energy released is emitted as visible light, with almost no heat generated. By comparison, a typical incandescent light bulb converts only about ten percent of its energy into light, wasting the rest as heat. This makes bioluminescence one of the most efficient light-producing processes known to science.
-
-The colour of bioluminescent light varies between species. The most common colour in the ocean is blue-green, with a wavelength of around four hundred and eighty nanometres. This makes biological sense — blue-green light travels furthest through seawater.
-
-Now, let's consider why organisms produce light. Researchers have identified four primary functions. First, predation — the anglerfish uses a bioluminescent lure dangling from its head to attract prey in the darkness of the deep ocean. Second, bioluminescence serves as a defensive mechanism. The sea firefly releases a cloud of glowing mucus when threatened, which disorientates predators. Third, it functions as camouflage — called counter-illumination, where organisms match the faint light filtering down from the surface to eliminate their shadow. And fourth, it facilitates communication, particularly for reproductive signalling.
-
-Approximately seventy-six percent of marine species in the deep ocean exhibit some form of bioluminescence.
-
-In medicine, the luciferase gene has been inserted into cancer cells, allowing surgeons to locate tumours with extraordinary precision using a light-detecting camera. In environmental science, bioluminescent organisms are used as biological indicators of water quality — a decrease in coastal bioluminescence can provide an early warning of chemical contamination.
-
-Bioluminescence has evolved independently at least forty separate times across the tree of life. I'll leave you with that thought.`,
-    questions: [
-      { id:1, type:"fill", q:"The enzyme that enables bioluminescence is called _____.", answer:"luciferase", hint:"Two chemical names are mentioned — listen for the enzyme." },
-      { id:2, type:"fill", q:"Bioluminescence converts _____ to 95% of its energy into visible light.", answer:"90", hint:"A percentage range is given." },
-      { id:3, type:"mcq", q:"Why is blue-green light most common in the ocean?",
-        opts:["A. It is most visible to humans","B. It travels furthest through seawater","C. It requires least energy","D. It is least visible to predators"], answer:"B", hint:"The lecturer explains the biological reason." },
-      { id:4, type:"mcq", q:"How does the anglerfish use bioluminescence?",
-        opts:["A. For camouflage","B. To communicate with mates","C. As a lure to attract prey","D. As a defensive mechanism"], answer:"C", hint:"The first function described is predation." },
-      { id:5, type:"fill", q:"About _____% of deep ocean marine species exhibit bioluminescence.", answer:"76", hint:"A specific percentage is stated." },
-    ],
-  },
-];
+const SECTIONS: Section[] = getPracticeSections().map((s, i) => ({
+  num: i + 1,
+  title: s.title,
+  context: s.context,
+  transcript: s.transcript,
+  audio: s.audio,
+  questions: s.questions.map(q => ({
+    id: q.id, type: q.type, q: q.q,
+    opts: q.opts, answer: q.answer, hint: q.explanation,
+  })),
+}));
 
 // ─── Pre-generated audio config ──────────────────────────────────────────────
 // Files live in /public/ielts/listening/ as section-1.mp3 … section-4.mp3,
@@ -152,7 +54,7 @@ function AudioPlayer({ section, onFinished }: { section: Section; onFinished: ()
   const audioRef     = useRef<HTMLAudioElement | null>(null);
   const readTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  const src = `${AUDIO_BASE}/section-${section.num}.mp3`;
+  const src = section.audio ?? `${AUDIO_BASE}/section-${section.num}.mp3`;
 
   useEffect(() => {
     return () => {
@@ -446,7 +348,7 @@ export default function ListeningPage() {
       )}
 
       <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-5 mb-5">
-        <span className="text-xs bg-emerald-100 text-emerald-700 font-bold px-2.5 py-1 rounded-full">Section {activeSection.num} of 4</span>
+        <span className="text-xs bg-emerald-100 text-emerald-700 font-bold px-2.5 py-1 rounded-full">{activeSection.title}</span>
         <h2 className="font-bold text-emerald-900 mt-2 mb-1">{activeSection.title}</h2>
         <p className="text-emerald-700 text-sm">{activeSection.context}</p>
       </div>
@@ -552,7 +454,7 @@ export default function ListeningPage() {
         <span className="text-5xl">🎧</span>
         <div className="flex-1">
           <h1 className="text-3xl font-black text-gray-900 mb-1">IELTS Listening Practice</h1>
-          <p className="text-gray-500 text-sm">4 sections · {QUESTIONS_PER_SECTION} questions each · shuffled every attempt · AI-generated audio</p>
+          <p className="text-gray-500 text-sm">{ACTIVE_SECTIONS.length} sections · {QUESTIONS_PER_SECTION} questions each · shuffled every attempt · AI-generated audio</p>
         </div>
         <button onClick={() => setSessionKey(k => k + 1)}
           className="flex-shrink-0 text-xs border border-gray-200 text-gray-500 hover:text-emerald-600 hover:border-emerald-300 px-3 py-2 rounded-xl transition-all">

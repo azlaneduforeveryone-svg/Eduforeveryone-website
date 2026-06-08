@@ -80,12 +80,58 @@ export interface GTReadingTest {
 
 // ─── WRITING ─────────────────────────────────────────────────
 
+// Structured data for rendering a real Academic Task 1 visual to the student.
+// The text grader (DeepSeek, no vision) still reads `chartDescription`; this
+// union only drives what the candidate SEES, so it must stay consistent with
+// the numbers quoted in `chartDescription`.
+export type Task1Figure =
+  | {
+      kind: "bar";
+      mode: "grouped" | "stacked";
+      unit: string;                 // e.g. "%", "minutes", "kg/person/year"
+      categories: string[];         // x-axis groups
+      series: { name: string; values: number[]; color?: string }[];
+    }
+  | {
+      kind: "line";
+      unit: string;
+      xLabels: string[];
+      series: { name: string; values: number[]; color?: string }[];
+      projectionFromIndex?: number; // x-index at which a dashed projection starts
+    }
+  | {
+      kind: "pie";
+      unit?: string;                // defaults to "%"
+      charts: {
+        title: string;
+        slices: { label: string; value: number; color?: string }[];
+      }[];
+    }
+  | {
+      kind: "table";
+      columns: string[];
+      rows: (string | number)[][];
+    }
+  | {
+      kind: "process";
+      cyclical: boolean;
+      steps: { n: number; text: string }[];
+    }
+  | {
+      kind: "map";
+      beforeTitle: string;
+      afterTitle: string;
+      before: string[];             // labelled features
+      after: string[];
+    };
+
 export interface AcademicWritingTask1 {
   id: string;
   chartType: "bar_chart" | "line_graph" | "pie_charts" | "table" | "process" | "map";
   chartTypeLabel: string;
   prompt: string;
   chartDescription: string;
+  figure: Task1Figure;              // real visual shown to the candidate
   minWords: number;   // 150 words for Task 1
 }
 

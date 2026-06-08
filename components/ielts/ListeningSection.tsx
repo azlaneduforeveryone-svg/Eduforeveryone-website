@@ -31,7 +31,9 @@ export default function ListeningSection({ test, onComplete }: Props) {
   const audioRef       = useRef<HTMLAudioElement | null>(null);
 
   const section: LSType = test.sections[sectionIdx];
-  const audioSrc = `${MOCK_AUDIO_BASE}/${test.id}-s${section.sectionNumber}.mp3`;
+  const audioSrc =
+    (section as { audio?: string }).audio ??
+    `${MOCK_AUDIO_BASE}/${test.id}-s${section.sectionNumber}.mp3`;
 
   // ── Clean up all timers and speech on unmount ──────────────────────────────
   useEffect(() => {

@@ -1,7 +1,17 @@
 // app/ielts/writing/page.tsx
 "use client";
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import Link from "next/link";
+import { IELTSFormat, Task1Figure as Task1FigureData } from "@/lib/ielts-types";
+import {
+  academicTask1Pool,
+  gtTask1Pool,
+  task2Pool,
+  academicT1ApiType,
+  gtT1ApiType,
+  task2ApiType,
+} from "@/lib/ielts-writing-data";
+import Task1Figure from "@/components/ielts/Task1Figure";
 
 interface IELTSResult {
   overall: number;
@@ -43,59 +53,65 @@ interface Prompt {
   timeMin: number;
   tips: string[];
   samplePoints: string[];
+  figure?: Task1FigureData;   // academic Task 1 visual
 }
 
-// Updated PROMPTS with taskType
-const PROMPTS: Prompt[] = [
-  {
-    id: "t1-bar-chart",
-    task: 1,
-    taskType: "t1-bar-chart",
-    title: "Bar Chart — University Subjects",
-    timeMin: 20,
-    minWords: 150,
-    prompt: `The bar chart below shows the percentage of students who chose different subjects at a UK university in 2015 and 2023.
+// ── Prompts are now sourced from lib/ielts-writing-data.ts (single source of truth) ──
+// The standalone Writing page lists whatever exists in the lib pools, so adding a
+// task in the lib automatically appears here AND in the full mock test.
+function buildPrompts(format: IELTSFormat): Prompt[] {
+  const t1: Prompt[] =
+    format === "academic"
+      ? academicTask1Pool.map((a) => ({
+          id: a.id,
+          task: 1 as const,
+          taskType: academicT1ApiType(a.chartType),
+          title: a.chartTypeLabel,
+          prompt: `${a.prompt}\n\n[Chart data to describe: ${a.chartDescription}]`,
+          minWords: a.minWords,
+          timeMin: 20,
+          tips: [
+            "Do NOT give your opinion — only describe the data/diagram",
+            "Open with an overview sentence summarising the main trend(s)",
+            "Group and compare data logically; don't list every figure",
+            "Use precise language: 'rose sharply', 'remained stable', 'the highest'",
+          ],
+          samplePoints: [],
+          figure: a.figure,
+        }))
+      : gtTask1Pool.map((g) => ({
+          id: g.id,
+          task: 1 as const,
+          taskType: gtT1ApiType(),
+          title: g.letterTypeLabel,
+          prompt: `${g.prompt}\n\nYou should cover:\n${g.bulletPoints
+            .map((b) => `• ${b}`)
+            .join("\n")}`,
+          minWords: g.minWords,
+          timeMin: 20,
+          tips: [
+            `Match the tone to the letter type (${g.letterTypeLabel.toLowerCase()})`,
+            "Cover all three bullet points fully",
+            "Use an appropriate greeting and sign-off",
+            "Stay on task — 150+ words; no addresses needed",
+          ],
+          samplePoints: g.bulletPoints,
+        }));
 
-Summarise the information by selecting and reporting the main features, and make comparisons where relevant.
+  const t2: Prompt[] = task2Pool.map((e) => ({
+    id: e.id,
+    task: 2 as const,
+    taskType: task2ApiType(e.taskType),
+    title: e.taskTypeLabel,
+    prompt: e.prompt,
+    minWords: e.minWords,
+    timeMin: 40,
+    tips: e.planningHints,
+    samplePoints: [],
+  }));
 
-[Chart description: In 2015, Business was the most popular subject at 28%, followed by Engineering at 22%, Arts at 18%, Sciences at 17%, and Law at 15%. By 2023, Sciences had risen sharply to 30%, Business fell to 21%, Engineering remained steady at 22%, Arts declined to 12%, and Law grew to 15%.]`,
-    tips: ["Do NOT give your opinion — only describe the data", "Open with an overview paragraph summarising the main trend", "Group and compare data logically", "Use precise language: 'rose sharply', 'remained stable'"],
-    samplePoints: ["Sciences saw the most significant increase (+13%)", "Business declined from the top position (28%) to 21%", "Engineering remained stable at 22%", "Arts experienced the largest fall"],
-  },
-  {
-    id: "t1-line-graph",
-    task: 1,
-    taskType: "t1-line-graph",
-    title: "Line Graph — Coffee Consumption",
-    timeMin: 20,
-    minWords: 150,
-    prompt: `The line graph below shows annual coffee consumption (in kilograms per person) in four countries between 2000 and 2020.\n\n[Graph description: Finland maintained the highest consumption throughout, starting at 11kg in 2000 and rising to 13kg by 2020. USA grew steadily from 4kg to 7kg. Brazil rose from 3kg to 6.5kg. China started at 0.5kg in 2000 and rose to 2.5kg by 2020.]`,
-    tips: ["Begin with an overview", "Describe highest/lowest values and changes", "Use trend language: 'climbed steadily', 'fluctuated'"],
-    samplePoints: ["Finland consistently led all four countries", "China showed dramatic relative growth", "USA and Brazil followed similar patterns", "All countries showed growth"],
-  },
-  {
-    id: "t2-technology",
-    task: 2,
-    taskType: "t2-discuss-both",  // example: "discuss both views"
-    title: "Technology & Society",
-    timeMin: 40,
-    minWords: 250,
-    prompt: `Some people believe that technology has made modern life more complicated. Others argue that technology simplifies our lives. Discuss both views and give your own opinion.`,
-    tips: ["Introduction → View 1 → View 2 → Your opinion → Conclusion", "Each body paragraph: topic sentence → explanation → example → link", "Clearly state your own opinion"],
-    samplePoints: ["View 1 (complicates): information overload, cyber security risks", "View 2 (simplifies): instant communication, automation", "Balanced opinion: net benefit depends on digital literacy"],
-  },
-  {
-    id: "t2-environment",
-    task: 2,
-    taskType: "t2-agree-disagree",
-    title: "Environment & Individual Responsibility",
-    timeMin: 40,
-    minWords: 250,
-    prompt: `Some people think that individuals can do very little to address environmental problems and that it is governments and large corporations that must take responsibility. To what extent do you agree or disagree?`,
-    tips: ["Decide your position: fully agree, partially agree, or disagree", "Partial agreement: acknowledge individual actions matter but systemic change is essential", "Include specific, realistic examples"],
-    samplePoints: ["Individual actions have limited systemic impact", "Governments can mandate emissions targets", "Collective consumer demand can pressure corporations"],
-  },
-];
+  return [...t1, ...t2];
+}
 
 type TimerState = "idle" | "running" | "paused" | "finished";
 
@@ -152,6 +168,8 @@ function useTimer(totalSeconds: number) {
 
 export default function WritingPage() {
   const [selected, setSelected] = useState<Prompt | null>(null);
+  const [format, setFormat] = useState<IELTSFormat>("academic");
+  const PROMPTS = useMemo(() => buildPrompts(format), [format]);
   const [text, setText] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [tab, setTab] = useState<1 | 2>(1);
@@ -187,7 +205,7 @@ export default function WritingPage() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          testType: "Academic",   // or "General" – you can determine from prompt or add a toggle
+          testType: format === "academic" ? "Academic" : "General",
           taskType: selected.taskType,
           task: selected.prompt,
           response: text,
@@ -296,6 +314,11 @@ export default function WritingPage() {
           <div className="bg-gray-50 rounded-xl p-4">
             <p className="text-gray-700 text-sm leading-relaxed whitespace-pre-line">{selected.prompt}</p>
           </div>
+          {selected.figure && (
+            <div className="mt-4">
+              <Task1Figure figure={selected.figure} />
+            </div>
+          )}
         </div>
 
         <div className="bg-violet-50 border border-violet-100 rounded-xl p-4 mb-6">
@@ -359,7 +382,7 @@ export default function WritingPage() {
 
       <div className="grid sm:grid-cols-2 gap-4 mb-8">
         {[
-          { task: 1, time: "20 minutes", words: "150+ words", desc: "Describe a graph, chart, diagram or process. No personal opinion required.", color: "bg-blue-50 border-blue-200" },
+          { task: 1, time: "20 minutes", words: "150+ words", desc: format === "academic" ? "Describe a graph, chart, table, map or process. No personal opinion required." : "Write a letter (formal, semi-formal or informal) responding to a given situation.", color: "bg-blue-50 border-blue-200" },
           { task: 2, time: "40 minutes", words: "250+ words", desc: "Write an essay responding to a point of view, argument or problem.", color: "bg-violet-50 border-violet-200" },
         ].map(t => (
           <div key={t.task} className={`border rounded-2xl p-5 ${t.color}`}>
@@ -370,8 +393,12 @@ export default function WritingPage() {
         ))}
       </div>
 
+      <div className="flex gap-2 mb-4">
+        <button onClick={() => { setFormat("academic"); setTab(1); setSelected(null); }} className={`px-4 py-2 rounded-xl font-bold text-xs transition-colors ${format === "academic" ? "bg-indigo-600 text-white" : "bg-white border border-gray-200 text-gray-600 hover:border-indigo-300"}`}>Academic</button>
+        <button onClick={() => { setFormat("general"); setTab(1); setSelected(null); }} className={`px-4 py-2 rounded-xl font-bold text-xs transition-colors ${format === "general" ? "bg-indigo-600 text-white" : "bg-white border border-gray-200 text-gray-600 hover:border-indigo-300"}`}>General Training</button>
+      </div>
       <div className="flex gap-2 mb-6">
-        <button onClick={() => setTab(1)} className={`px-5 py-2.5 rounded-xl font-bold text-sm transition-colors ${tab === 1 ? "bg-violet-600 text-white" : "bg-white border border-gray-200 text-gray-600 hover:border-violet-300"}`}>Task 1 — Graph Description</button>
+        <button onClick={() => setTab(1)} className={`px-5 py-2.5 rounded-xl font-bold text-sm transition-colors ${tab === 1 ? "bg-violet-600 text-white" : "bg-white border border-gray-200 text-gray-600 hover:border-violet-300"}`}>{format === "academic" ? "Task 1 — Graph / Chart" : "Task 1 — Letter"}</button>
         <button onClick={() => setTab(2)} className={`px-5 py-2.5 rounded-xl font-bold text-sm transition-colors ${tab === 2 ? "bg-violet-600 text-white" : "bg-white border border-gray-200 text-gray-600 hover:border-violet-300"}`}>Task 2 — Essay</button>
       </div>
 
