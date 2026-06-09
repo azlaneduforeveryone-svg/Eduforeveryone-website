@@ -3,6 +3,8 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import Link from "next/link";
 import { IELTSFormat, Task1Figure as Task1FigureData } from "@/lib/ielts-types";
+import { useAuth } from "@/contexts/AuthContext";
+import { saveIeltsResult } from "@/lib/firebaseDB";
 import {
   academicTask1Pool,
   gtTask1Pool,
@@ -167,6 +169,7 @@ function useTimer(totalSeconds: number) {
 }
 
 export default function WritingPage() {
+  const { user } = useAuth();
   const [selected, setSelected] = useState<Prompt | null>(null);
   const [format, setFormat] = useState<IELTSFormat>("academic");
   const PROMPTS = useMemo(() => buildPrompts(format), [format]);
@@ -216,6 +219,14 @@ export default function WritingPage() {
         setAiError(data.error || "Scoring failed. Please try again.");
       } else {
         setAiResult(data as IELTSResult);
+        saveIeltsResult({
+          uid: user?.uid,
+          displayName: user?.displayName ?? "",
+          skill: "writing",
+          band: (data as IELTSResult).overall,
+          testId: selected?.id,
+          source: "practice",
+        });
       }
     } catch {
       setAiError("Could not reach the scoring service. Check your connection and try again.");

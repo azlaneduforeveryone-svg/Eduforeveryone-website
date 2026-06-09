@@ -2,7 +2,7 @@
 import {
   doc, setDoc, getDoc, updateDoc, collection,
   query, orderBy, limit, getDocs, increment,
-  serverTimestamp, where, writeBatch,
+  serverTimestamp, where, writeBatch, addDoc,
 } from "firebase/firestore";
 import { db } from "./firebase";
 
@@ -205,6 +205,65 @@ export async function getUserSessions(uid: string, count = 10) {
     collection(db, "quizSessions"),
     where("uid", "==", uid),
     orderBy("playedAt", "desc"),
+    limit(count)
+  );
+  const snap = await getDocs(q);
+  return snap.docs.map(d => ({ id: d.id, ...d.data() }));
+}
+
+// ── IELTS Results ─────────────────────────────────────────────────────────────
+export interface IeltsResult {
+  uid?: string;
+  displayName?: string;
+  skill: "listening" | "reading" | "writing" | "speaking";
+  band: number;
+  raw?: number;
+  total?: number;
+  testId?: string;
+  source: "practice" | "full-mock";
+  mockId?: string;
+}
+
+const IELTS_LOCAL_KEY = "ielts_sessions";
+
+function saveLocalIelts(r: IeltsResult) {
+  if (typeof window === "undefined") return;
+  try {
+    const arr = JSON.parse(localStorage.getItem(IELTS_LOCAL_KEY) || "[]");
+    arr.unshift({ ...r, date: Date.now() });
+    localStorage.setItem(IELTS_LOCAL_KEY, JSON.stringify(arr.slice(0, 200)));
+  } catch { /* ignore */ }
+}
+
+export function getLocalIelts(): IeltsResult[] {
+  if (typeof window === "undefined") return [];
+  try { return JSON.parse(localStorage.getItem(IELTS_LOCAL_KEY) || "[]"); } catch { return []; }
+}
+
+export async function saveIeltsResult(r: IeltsResult) {
+  saveLocalIelts(r);
+  if (!r.uid) return;
+  try {
+    await addDoc(collection(db, "ieltsSessions"), {
+      uid: r.uid,
+      displayName: r.displayName || "Anonymous",
+      skill: r.skill,
+      band: r.band,
+      raw: r.raw ?? null,
+      total: r.total ?? null,
+      testId: r.testId ?? null,
+      source: r.source,
+      mockId: r.mockId ?? null,
+      date: serverTimestamp(),
+    });
+  } catch (e) { console.error("saveIeltsResult failed", e); }
+}
+
+export async function getIeltsSessions(uid: string, count = 100) {
+  const q = query(
+    collection(db, "ieltsSessions"),
+    where("uid", "==", uid),
+    orderBy("date", "desc"),
     limit(count)
   );
   const snap = await getDocs(q);

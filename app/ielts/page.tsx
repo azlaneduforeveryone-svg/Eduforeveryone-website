@@ -223,6 +223,10 @@ export default function IELTSPage() {
               className="bg-indigo-600 border border-white/30 text-white px-8 py-3.5 rounded-xl font-bold text-base hover:bg-indigo-700 transition-all">
               📋 Take Full Mock Test
             </Link>
+            <Link href="/ielts/progress"
+              className="bg-teal-900/60 border border-white/20 text-white px-8 py-3.5 rounded-xl font-bold text-base hover:bg-teal-900 transition-all">
+              📊 My Progress
+            </Link>
             <Link href="/ielts/guide"
               className="bg-teal-900/60 border border-white/20 text-white px-8 py-3.5 rounded-xl font-bold text-base hover:bg-teal-900 transition-all">
               📥 Download Guide

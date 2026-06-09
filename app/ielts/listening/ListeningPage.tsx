@@ -3,6 +3,8 @@ import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import Link from "next/link";
 import { getAdminIELTSListening } from "@/lib/adminDB";
 import { getPracticeSections } from "@/lib/ielts-listening-bank";
+import { useAuth } from "@/contexts/AuthContext";
+import { saveIeltsResult } from "@/lib/firebaseDB";
 
 interface ListeningQ {
   id: number; q: string; type: "fill" | "mcq";
@@ -272,6 +274,7 @@ function pickQuestions(s: Section, n: number): Section {
 }
 
 export default function ListeningPage() {
+  const { user } = useAuth();
   const [activeSection,  setActiveSection]  = useState<Section | null>(null);
   const [answers,        setAnswers]        = useState<Answers>({});
   const [results,        setResults]        = useState<Results>(null);
@@ -308,6 +311,16 @@ export default function ListeningPage() {
       return acc + (given === q.answer.toLowerCase() ? 1 : 0);
     }, 0);
     setResults({ score, total });
+    saveIeltsResult({
+      uid: user?.uid,
+      displayName: user?.displayName ?? "",
+      skill: "listening",
+      band: getBand(score, total),
+      raw: score,
+      total,
+      testId: activeSection.title,
+      source: "practice",
+    });
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 

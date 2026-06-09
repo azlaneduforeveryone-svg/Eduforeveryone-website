@@ -2,6 +2,8 @@
 import { useState, useMemo, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { useAdminCollection } from "@/lib/useAdminCollection";
+import { useAuth } from "@/contexts/AuthContext";
+import { saveIeltsResult } from "@/lib/firebaseDB";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 interface ReadingQ {
@@ -161,6 +163,7 @@ function IELTSReadingTest({
   onBack: () => void;
   onRetry: () => void;
 }) {
+  const { user } = useAuth();
   const [answers,        setAnswers]        = useState<Record<number,string>>({});
   const [marked,         setMarked]         = useState<Set<number>>(new Set());
   const [visited,        setVisited]        = useState<Set<number>>(new Set([0]));
@@ -171,6 +174,7 @@ function IELTSReadingTest({
   const [warned5min,     setWarned5min]     = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval>|null>(null);
   const qPanelRef = useRef<HTMLDivElement>(null);
+  const savedRef = useRef(false);
 
   const q = sessionQs[currentIdx];
   const totalQs = sessionQs.length;
@@ -193,6 +197,25 @@ function IELTSReadingTest({
   useEffect(() => {
     if(warning5&&!warned5min){ setWarned5min(true); }
   }, [warning5, warned5min]);
+
+  // Save result once when results phase begins
+  useEffect(() => {
+    if (phase !== "results" || savedRef.current) return;
+    savedRef.current = true;
+    const s = sessionQs.filter(sq => grade(answers[sq.id] || "", sq)).length;
+    const b = toBand(Math.round((s / sessionQs.length) * 40));
+    saveIeltsResult({
+      uid: user?.uid,
+      displayName: user?.displayName ?? "",
+      skill: "reading",
+      band: b,
+      raw: s,
+      total: sessionQs.length,
+      testId: passage.id,
+      source: "practice",
+    });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [phase]);
 
   const goTo = useCallback((idx: number) => {
     setVisited(v => new Set([...v, idx]));

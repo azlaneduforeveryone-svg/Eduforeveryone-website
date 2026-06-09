@@ -1,6 +1,8 @@
 "use client";
 import { useState, useMemo, useEffect, useRef } from "react";
 import { IELTSFormat, overallBand } from "@/lib/ielts-types";
+import { useAuth } from "@/contexts/AuthContext";
+import { saveIeltsResult } from "@/lib/firebaseDB";
 import { getMockListeningTest } from "@/lib/ielts-listening-bank";
 import { getAcademicReadingTest } from "@/lib/ielts-reading-academic-data";
 import { getGTReadingTest } from "@/lib/ielts-reading-gt-data";
@@ -57,6 +59,8 @@ function formatTime(s: number) {
 }
 
 export default function FullTestPage() {
+  const { user } = useAuth();
+  const mockId = useMemo(() => "mock-" + Date.now(), []);
   const [format, setFormat] = useState<IELTSFormat | null>(null);
   const [stage, setStage] = useState<Stage>("format_select");
   const [scores, setScores] = useState<Scores>({});
@@ -98,21 +102,25 @@ export default function FullTestPage() {
 
   function handleListeningComplete(band: number) {
     setScores((s) => ({ ...s, listening: band }));
+    saveIeltsResult({ uid: user?.uid, displayName: user?.displayName ?? "", skill: "listening", band, source: "full-mock", mockId });
     setStage("transfer");
   }
 
   function handleReadingComplete(band: number) {
     setScores((s) => ({ ...s, reading: band }));
+    saveIeltsResult({ uid: user?.uid, displayName: user?.displayName ?? "", skill: "reading", band, source: "full-mock", mockId });
     setStage("writing");
   }
 
   function handleWritingComplete(band: number) {
     setScores((s) => ({ ...s, writing: band }));
+    saveIeltsResult({ uid: user?.uid, displayName: user?.displayName ?? "", skill: "writing", band, source: "full-mock", mockId });
     setStage("speaking");
   }
 
   function handleSpeakingComplete(band: number) {
     setScores((s) => ({ ...s, speaking: band }));
+    saveIeltsResult({ uid: user?.uid, displayName: user?.displayName ?? "", skill: "speaking", band, source: "full-mock", mockId });
     setStage("results");
   }
 

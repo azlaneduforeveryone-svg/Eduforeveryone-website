@@ -3,6 +3,8 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import { SPEAKING_TOPICS as TOPICS, type SpeakingTopic as Topic } from "@/lib/ielts-speaking-data";
+import { useAuth } from "@/contexts/AuthContext";
+import { saveIeltsResult } from "@/lib/firebaseDB";
 
 
 // ---------- Helper Functions for Band Score Display ----------
@@ -111,6 +113,7 @@ function CueCardTimer() {
 
 // ---------- Main Speaking Page Component ----------
 export default function SpeakingPage() {
+  const { user } = useAuth();
   const [activeTopic, setActiveTopic] = useState<Topic | null>(null);
   const [activePart, setActivePart] = useState<1 | 2 | 3>(1);
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
@@ -191,6 +194,14 @@ export default function SpeakingPage() {
         setAiError(data.error || "Grading failed. Please try again.");
       } else {
         setAiResult(data as IELTSResult);
+        saveIeltsResult({
+          uid: user?.uid,
+          displayName: user?.displayName ?? "",
+          skill: "speaking",
+          band: (data as IELTSResult).overall,
+          testId: activeTopic?.id,
+          source: "practice",
+        });
       }
     } catch {
       setAiError("Could not reach the scoring service. Check your connection.");
