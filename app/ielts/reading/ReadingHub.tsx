@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useAdminCollection } from "@/lib/useAdminCollection";
 import { useAuth } from "@/contexts/AuthContext";
 import { saveIeltsResult } from "@/lib/firebaseDB";
+import ShareScore from "@/components/ielts/ShareScore";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 interface ReadingQ {
@@ -353,6 +354,7 @@ function IELTSReadingTest({
             </table>
           </div>
         </div>
+        <ShareScore skill="Reading" band={band} />
       </div>
     </div>
   );

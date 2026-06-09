@@ -5,6 +5,7 @@ import { getAdminIELTSListening } from "@/lib/adminDB";
 import { getPracticeSections } from "@/lib/ielts-listening-bank";
 import { useAuth } from "@/contexts/AuthContext";
 import { saveIeltsResult } from "@/lib/firebaseDB";
+import ShareScore from "@/components/ielts/ShareScore";
 
 interface ListeningQ {
   id: number; q: string; type: "fill" | "mcq";
@@ -357,6 +358,7 @@ export default function ListeningPage() {
               Try Another Section
             </button>
           </div>
+          <ShareScore skill="Listening" band={getBand(results.score, results.total)} />
         </div>
       )}
 

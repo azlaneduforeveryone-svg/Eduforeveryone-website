@@ -1,5 +1,6 @@
 "use client";
 import { IELTSFormat, overallBand } from "@/lib/ielts-types";
+import ShareScore from "@/components/ielts/ShareScore";
 
 interface Props {
   scores: {
@@ -90,6 +91,8 @@ export default function ResultsPage({ scores, format, onRestart }: Props) {
 
       {/* Tips based on weakest section */}
       <WeaknessTip scores={scores} />
+
+      <ShareScore skill="Full Mock" band={overall} />
 
       <button
         onClick={onRestart}
