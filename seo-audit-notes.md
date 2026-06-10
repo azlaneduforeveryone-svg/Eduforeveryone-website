@@ -1,0 +1,165 @@
+# SEO Audit Notes — Phase 0 Reconnaissance
+> Working note (not deployed). Branch: `seo-improvements-june2026`. Created June 2026.
+
+## Project shape
+- **Framework:** Next.js 14 **App Router** (`app/` dir). TypeScript.
+- **Metadata pattern:** server `page.tsx` exports `export const metadata` (static) or
+  `generateMetadata()` (dynamic routes). Client components (`"use client"`) CANNOT export
+  metadata — they must be wrapped by a server `page.tsx`.
+- **Root layout:** `app/layout.tsx` — shared `<Navbar/>` + `<Footer/>`, AuthProvider, GA4
+  (`G-F7MCW76675`). Root `metadata` has a generic title/description, **no `metadataBase`,
+  no canonical, no keywords** (good). All pages inherit Navbar + Footer from here.
+- **Nav & Footer are single shared components** (`components/Navbar.tsx`,
+  `components/Footer.tsx`), imported only in `layout.tsx`. No page forks them.
+
+## Routing map (public pages)
+- Home `/` → `app/page.tsx` (server, has metadata + keywords + EducationalOrganization JSON-LD)
+- `/ielts` hub, `/ielts/reading` (+ `/ielts/reading/[passageId]`), `/ielts/listening`,
+  `/ielts/writing`, `/ielts/speaking`, `/ielts/full-test`, `/ielts/practice`, `/ielts/guide`,
+  `/ielts/progress`
+- `/quran` (landing), `/quran/read`, `/quran/tajweed` (+ `/[id]`), `/quran/pdf/15line`,
+  `/quran/pdf/13line`, `/quran/pdf-reader`, `/quran/[id]` (114 surah reader, SSG),
+  `/quran/juz/[juzId]`
+- `/courses` (+ `/courses/[id]`, `/courses/mathematics` + `/[topicId]`, lesson pages)
+- `/islamic-studies`, `/notes` (+ `/[id]`), `/quiz` (+ `/[id]`, `/islamic-quiz`),
+  `/games` (+ math-puzzle, word-puzzle, quiz-battle), `/tools` (+ 4 calculators),
+  `/about`, `/contact`, `/privacy-policy`, `/search`, `/leaderboard`, `/profile`, `/calculators`
+
+## Data files — PROTECTED (read-only per Safety Rules)
+- IELTS: `lib/ielts-reading-academic-data.ts`, `ielts-reading-gt-data.ts`,
+  `ielts-reading-bank.ts`, `ielts-writing-data.ts`, `ielts-listening-data.ts`,
+  `ielts-listening-bank.ts`, `ielts-speaking-data.ts`, `ielts-data.ts`, `ielts-types.ts`
+- Other: `lib/data.ts` (courses/notes), `lib/searchData.ts`, `lib/mathTopics.ts`
+- Quiz/games data embedded in their components (e.g. `IslamicQuizGame.tsx`, `WordWiseGame.tsx`)
+- `/public`: `quran-pdfs/`, `ielts/` (audio), `Main_Logo.jpg`, `Islamic_Quiz_Logo.jpeg`,
+  `ads.txt`, `googlea9f7e69d3ac60582.html`
+- Config (per inner CLAUDE.md, never touch): `.env.local`, `lib/firebase.ts`,
+  `next.config.mjs`, `vercel.json`
+
+## Key data structures (for later phases)
+- **IELTS Reading passages** (`ielts-reading-academic-data.ts`): exports `PASSAGES: Passage[]`
+  at ~line 457, built partly from `READING_BANK` (`ielts-reading-bank.ts`, ids `passage_001…`).
+  Hand-written passage ids are `AR-T1…AR-T5` (+ a `GT-A`). Route `/ielts/reading/[passageId]`
+  uses `generateStaticParams()` = `PASSAGES.map(p => p.id)` and already has per-passage
+  `generateMetadata` (title from `passage.title`). **`passage.questions.length`, `.title`,
+  `.id` available.**
+- **IELTS Writing prompts** (`ielts-writing-data.ts`): Academic Task 1 pool ids `AT1-A…AT1-J`
+  with `chartType`, `chartTypeLabel`, `prompt`, `minWords`. Plus GT Task 1 + Task 2 pools
+  (per `WritingPage.tsx`: `academicTask1Pool`, `gtTask1Pool`, `task2Pool`). Good slug source
+  for Phase 6.
+- **Quran surah metadata:** ⚠️ **NO local data file.** Surah list + names + ayah counts are
+  fetched **client-side at runtime** from `https://api.alquran.cloud/v1/surah`
+  (`app/quran/QuranPage.tsx`, `QuranReader.tsx`). `JUZ_STARTS` in `JuzPage.tsx` has only Juz
+  boundaries (30 entries), not full 114. **DECISION NEEDED at Phase 5** (see below).
+
+## FINDINGS / ISSUES BY PHASE
+
+### Phase 1 (links)
+- ✅ Confirmed bugs: Homepage **Games "View all →"** → `/courses` (should be `/games`)
+  [`app/page.tsx:200`]; bottom CTA **"Play Games 🎮"** → `/courses` (should be `/games`)
+  [`app/page.tsx:357`].
+- `/ielts` hub misleading links/cards (`app/ielts/page.tsx`): "Take Free Diagnostic Test"
+  (none present — hero CTAs are "Start Free Preparation"/"Take Full Mock Test"/"My Progress"/
+  "Download Guide"; verify exact button before relabel), `FREE_TOOLS` array contains
+  "Full-Length Practice Tests", "Academic Vocabulary Banks", "Band Score Calculator" cards
+  → remove; explore-chips "IELTS UKVI" & "Computer vs Paper" link to `/ielts` itself → convert
+  to plain text or anchor links.
+- ⚠️ **Phase 1 item 4 (nav inconsistency) — premise NOT reproduced.** Nav is a single shared
+  `components/Navbar.tsx` (imported only in layout) and ALREADY includes the IELTS link
+  (`Navbar.tsx:10`). `/courses` does not fork the nav. **No action needed; will note as
+  already-satisfied.**
+
+### Phase 2 (claims)
+- Stats row `100% / 4+ / 10+ / ∞` at `app/page.tsx:87`.
+- Closing CTA "Join thousands of students…" at `app/page.tsx:353`.
+- "guarantee results" in `app/ielts/page.tsx` closing section.
+  - Other `guarantee` hits — `WWILesson.tsx`, `privacy-policy/page.tsx`,
+    `IslamicQuizGame.tsx` — are NOT score-related (lesson content / legal / quiz copy).
+    Leaving them; flagging here for awareness. Phase 2 only mandates the `/ielts` one.
+- "🧬 Science Quiz — 5 Questions" tile = `components/MarqueeBanner.tsx:15` (the scrolling
+  strip). Remove in Phase 2/4. (Quiz itself untouched.)
+- Footer copyright text — verify exact string in `components/Footer.tsx` at Phase 2.
+- Verifiable counts so far: Academic reading passages exported by `PASSAGES` (count at Phase 5
+  via import — hardcoded slugs in sitemap are stale, see below). Writing Task 1 academic pool
+  = 10 (AT1-A..J) + GT + Task 2 (confirm total at Phase 6). Quran "40+ translations" supported
+  by `QuranReader` LANG_NAMES (40+ entries) ✅.
+
+### Phase 3 (metadata)
+- **21 files contain `keywords:`** to delete: `app/page.tsx`, `app/ielts/page.tsx`,
+  `app/ielts/reading/page.tsx`, `app/ielts/reading/[passageId]/page.tsx`,
+  `app/ielts/listening/page.tsx`, `app/ielts/writing/page.tsx`, `app/ielts/speaking/page.tsx`,
+  `app/islamic-studies/page.tsx`, `app/courses/page.tsx`, `app/courses/mathematics/page.tsx`,
+  `app/courses/mathematics/[topicId]/page.tsx`, `app/games/page.tsx`,
+  `app/games/math-puzzle/page.tsx`, `app/games/word-puzzle/page.tsx`,
+  `app/games/quiz-battle/page.tsx`, `app/quiz/islamic-quiz/page.tsx`,
+  `app/quran/QuranLandingPage.tsx`, `app/tools/*` (4 files).
+- **"2025"** appears only in `app/ielts/page.tsx` (title "IELTS Preparation 2025…").
+- ⚠️ **CRITICAL — pages with NO metadata (fall back to root default title):**
+  `app/quran/page.tsx`, `app/quran/read/page.tsx`, `app/quran/tajweed/page.tsx`,
+  `app/quran/tajweed/[id]/page.tsx`, `app/quran/pdf/15line/page.tsx`,
+  `app/quran/pdf/13line/page.tsx`, `app/quran/pdf-reader/page.tsx`,
+  `app/quran/juz/[juzId]/page.tsx`, `app/quiz/page.tsx`, `app/quiz/[id]/page.tsx`,
+  `app/courses/[id]/page.tsx`, `app/notes/[id]/page.tsx`, `app/calculators/page.tsx`,
+  `app/leaderboard/page.tsx`, `app/profile/page.tsx`, `app/ielts/full-test/page.tsx`,
+  `app/ielts/progress/page.tsx`, `app/admin/page.tsx`.
+  - The Phase-3 table targets `/quran`, `/quran/read`, `/quran/tajweed`, `/quran/pdf/15line`,
+    `/quran/pdf/13line` — all currently metadata-less. These page.tsx files likely render
+    client components; Phase 3 must add `export const metadata` to each server `page.tsx`
+    (splitting client logic out if a page.tsx is itself `"use client"` — verify per file).
+  - Root layout has no `metadataBase`; canonicals use absolute URLs already, so OK.
+
+### Phase 4 (homepage)
+- Hero at `app/page.tsx:58-79` ("Learn Anything. Completely Free.", CTAs Browse Courses /
+  Play Math Puzzle). Section order currently: Hero → Marquee → Stats → Subjects →
+  Featured Courses → IELTS → Games → Tools → Notes+Quiz → FAQ → CTA. IELTS must move up to 2nd.
+- No existing Islamic Studies/Quran section on homepage — Phase 4 builds one.
+- FAQ is a local `faqs` array (`app/page.tsx:34`) — easy to extend + reuse for JSON-LD (Phase 7).
+- ⚠️ MarqueeBanner has **no IELTS tile** — Phase 4 item 5 ("IELTS & Quran tiles first")
+  requires ADDING an IELTS tile and moving Quran (`MarqueeBanner.tsx:5`) to front; remove
+  Science Quiz tile.
+
+### Phase 5 (Quran)
+- `/quran/[id]` already exists (SSG, 114 pages) with numeric-only `generateMetadata`
+  ("Surah {id}"). Phase 5 wants surah NAMES in titles.
+- ⚠️ **DECISION NEEDED:** no local surah metadata. Options:
+  (a) Add a NEW additive local file (e.g. `lib/quranSurahMeta.ts`) with the 114 canonical
+      surah names / ayah counts / revelation type (public-domain factual data) and generate
+      titles from it — does not modify any existing data file; OR
+  (b) keep numeric titles. The spec says "generate from existing data files, don't hand-write
+      114 entries" — but there IS no existing local file. Will treat (a) as additive (allowed)
+      using well-established factual data, NOT invented. **Flag for Azlan.**
+- **Sitemaps — TWO exist & conflict:** static `public/sitemap.xml` AND dynamic `app/sitemap.ts`
+  (Next serves the dynamic one at `/sitemap.xml`, shadowing the static — must remove/repoint
+  the static file in Phase 5). `app/sitemap.ts` is **missing** all Quran routes, math topics,
+  `/ielts/practice|full-test|guide|progress`, `/islamic-studies`, `/quiz/islamic-quiz`,
+  `/search`, and its hardcoded reading slugs (`sleep-science`, `urban-farming`, `bilingualism`,
+  `wood-wide-web`, …) **DO NOT match real passage ids** (`AR-T*`/`passage_*`) → stale/404.
+  Phase 5 must regenerate sitemap programmatically from `PASSAGES.map(p=>p.id)` etc.
+- `public/robots.txt` exists, allows crawling, references `/sitemap.xml` ✅.
+
+### Phase 6 (writing prompt pages)
+- Data available (`ielts-writing-data.ts`): `academicTask1Pool` (AT1-A..J, has chartTypeLabel),
+  `gtTask1Pool`, `task2Pool`. Editor flow in `app/ielts/writing/WritingPage.tsx` (client) —
+  preserve direct-practice flow; new prompt pages link into it.
+- Model answers must be labeled "Sample Band 8 Response — Model answer written by
+  EduForEveryone, for guidance only" + added to PENDING REVIEW checklist below.
+
+### Phase 7 (JSON-LD)
+- Homepage already has an `EducationalOrganization` JSON-LD (`app/page.tsx:47`). Phase 7 adds
+  Organization (layout), FAQPage (/ + /ielts), BreadcrumbList (IELTS + Quran sub-pages).
+- **Site search EXISTS** (`/search`, `components/SearchBar.tsx`, `lib/searchData.ts`) → WebSite
+  `SearchAction` is valid to include (confirm search URL param format at Phase 7).
+
+### Phase 8 (footer) / Phase 9 (about)
+- Footer is shared; restructure columns (read `Footer.tsx` at Phase 8).
+- About page exists (`app/about/page.tsx`) — review/rebuild at Phase 9 with placeholders.
+
+## ITEMS NEEDING AZLAN'S INPUT (running list)
+- [ ] Phase 5: approve adding new `lib/quranSurahMeta.ts` (114 factual surah names/counts) for
+      surah-name metadata — or keep numeric titles.
+- [ ] Phase 6: **MODEL ANSWERS — PENDING AZLAN'S REVIEW BEFORE DEPLOY** (all writing prompts).
+- [ ] Phase 9: About bio (2–3 sentences) + contact email.
+- [ ] Validate JSON-LD with Google Rich Results Test after deploy (Phase 7).
+
+## Build status
+- Phase 0 baseline build: see commit message / terminal — confirmed compiling before changes.
