@@ -151,12 +151,10 @@ const STUDY_PLANS = [
   { duration: "90-Day", label: "Mastery",   emoji: "🎯", color: "bg-indigo-600",for: "Beginners aiming for Band 7.5+ with a strong foundational programme" },
 ];
 
+// TODO: build band score calculator — would be a good future feature (was a dead /ielts self-link, removed June 2026)
 const FREE_TOOLS = [
-  { icon: "📝", title: "Full-Length Practice Tests",    desc: "Simulated exam conditions across all 4 skills",       href: "/ielts/reading" },
-  { icon: "📚", title: "Academic Vocabulary Banks",     desc: "Categorised by theme — 2,500+ essential words",      href: "/ielts" },
   { icon: "🖋️", title: "Band 8+ Model Essays",         desc: "Analysed Task 1 & Task 2 frameworks with commentary", href: "/ielts/writing" },
   { icon: "🗣️", title: "Latest Speaking Cue Cards",    desc: "Updated weekly with trending exam prompts",           href: "/ielts/speaking" },
-  { icon: "🧮", title: "Band Score Calculator",         desc: "Convert raw marks to official band scores instantly",  href: "/ielts" },
   { icon: "🎧", title: "Listening Practice Audio",      desc: "Native speaker recordings across 4 sections",        href: "/ielts/listening" },
 ];
 
@@ -236,11 +234,18 @@ export default function IELTSPage() {
           {/* Quick nav */}
           <div className="flex flex-wrap justify-center gap-2 text-sm">
             <span className="text-teal-200 self-center text-xs">Explore:</span>
-            {[["Academic IELTS","/ielts/reading"],["General Training","/ielts/reading"],["IELTS UKVI","/ielts"],["Computer vs Paper","/ielts"]].map(([l,h]) => (
-              <Link key={l} href={h}
-                className="bg-white/10 border border-white/20 px-3 py-1 rounded-full text-xs text-white hover:bg-white/20 transition-all">
-                {l}
-              </Link>
+            {([["Academic IELTS","/ielts/reading"],["General Training","/ielts/reading"],["IELTS UKVI",""],["Computer vs Paper",""]] as [string,string][]).map(([l,h]) => (
+              h ? (
+                <Link key={l} href={h}
+                  className="bg-white/10 border border-white/20 px-3 py-1 rounded-full text-xs text-white hover:bg-white/20 transition-all">
+                  {l}
+                </Link>
+              ) : (
+                <span key={l}
+                  className="bg-white/10 border border-white/20 px-3 py-1 rounded-full text-xs text-white">
+                  {l}
+                </span>
+              )
             ))}
           </div>
         </div>
