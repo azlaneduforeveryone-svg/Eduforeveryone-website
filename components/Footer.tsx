@@ -40,7 +40,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-800 pt-6 text-center text-sm">
-          <p>© {new Date().getFullYear()} EduForEveryone. All rights reserved. Unauthorized use, copying or distribution is strictly prohibited.</p>
+          <p>© {new Date().getFullYear()} EduForEveryone. Free for personal and educational use.</p>
         </div>
       </div>
     </footer>

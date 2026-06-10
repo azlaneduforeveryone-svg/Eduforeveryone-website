@@ -628,8 +628,8 @@ export default function IELTSPage() {
           <p className="text-4xl mb-4">🎯</p>
           <h2 className="text-2xl sm:text-3xl font-black mb-3">Ready to Secure Your Target Band Score?</h2>
           <p className="text-teal-100 text-sm sm:text-base max-w-xl mx-auto mb-8 leading-relaxed">
-            Don't guess your way through the test. Use our expert tools today to build
-            confidence and guarantee results — completely free.
+            Don't guess your way through the test. Practice with real exam-style
+            questions and track your progress — completely free.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link href="/ielts/practice"

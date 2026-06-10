@@ -84,7 +84,7 @@ export default function HomePage() {
       {/* ── Stats ── */}
       <section className="bg-white border-b border-gray-100 py-8 px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
-          {[["100%","Free Forever"],["4+","Subjects"],["10+","Free Tools"],["∞","Students Supported"]].map(([v,l]) => (
+          {[["95+","IELTS Reading Passages"],["60","IELTS Writing Prompts"],["40+","Quran Translations"],["100%","Free — No Sign-up"]].map(([v,l]) => (
             <div key={l}>
               <p className="text-3xl font-bold text-teal-600">{v}</p>
               <p className="text-gray-500 text-sm mt-1">{l}</p>
@@ -350,7 +350,7 @@ export default function HomePage() {
       {/* ── CTA ── */}
       <section className="py-16 px-4 bg-teal-600 text-white text-center">
         <h2 className="text-3xl font-bold mb-3">Start Learning Today</h2>
-        <p className="text-teal-100 mb-8 max-w-xl mx-auto">Join thousands of students who learn for free every day. No sign-up. No credit card. Just knowledge.</p>
+        <p className="text-teal-100 mb-8 max-w-xl mx-auto">Everything is free. No sign-up. No credit card. Start learning in one click.</p>
         <div className="flex flex-wrap gap-3 justify-center">
           <Link href="/courses" className="bg-white text-teal-700 px-8 py-3 rounded-xl font-bold hover:bg-teal-50 transition-colors">Browse Courses</Link>
           <Link href="/tools" className="bg-teal-500 border border-white/20 text-white px-8 py-3 rounded-xl font-bold hover:bg-teal-400 transition-colors">Try Our Tools</Link>

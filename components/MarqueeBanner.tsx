@@ -12,7 +12,6 @@ const items = [
   { emoji:"🔡", label:"Number to Words",     href:"/tools/number-to-words",  tag:"8 Languages"      },
   { emoji:"📚", label:"Free Courses",        href:"/courses",                tag:"4 Subjects"       },
   { emoji:"📝", label:"Study Notes",         href:"/notes",                  tag:"Free"             },
-  { emoji:"🧬", label:"Science Quiz",        href:"/quiz",                   tag:"5 Questions"      },
   { emoji:"🌍", label:"History Courses",     href:"/courses",                tag:"Free"             },
 ];
 
