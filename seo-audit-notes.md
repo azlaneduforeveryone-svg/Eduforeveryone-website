@@ -154,7 +154,8 @@
 - Footer is shared; restructure columns (read `Footer.tsx` at Phase 8).
 - About page exists (`app/about/page.tsx`) — review/rebuild at Phase 9 with placeholders.
 
-## MODEL ANSWERS — PENDING AZLAN'S REVIEW BEFORE DEPLOY
+## MODEL ANSWERS — ✅ REVIEWED & APPROVED BY AZLAN (2026-06-11)
+Azlan reviewed all 20 Academic Task 1 model answers and approved them for deploy.
 Phase 6 created 20 individual Academic Task 1 prompt pages at
 `/ielts/writing/task-1/[slug]`, each with a sample Band 8 model answer written by
 EduForEveryone (labelled on-page as "for guidance only, not an official examiner
@@ -175,6 +176,14 @@ NOTE: Phase 6 covered the **20 Academic Task 1** prompts only (spec's explicit
 and 20 Task 2 prompts still use the existing direct-practice editor flow (preserved
 per spec). Building prompt pages + model answers for those 40 is a documented
 follow-up requiring the same review.
+
+## Phase 7 — JSON-LD validation
+- [ ] After deploy, validate structured data with the Google Rich Results Test
+      (https://search.google.com/test/rich-results) for: `/` (Organization, WebSite,
+      FAQPage), `/ielts` (FAQPage + BreadcrumbList), a surah page, a reading passage,
+      and a writing prompt page (BreadcrumbList).
+- WebSite SearchAction points to `/search?q={search_term_string}`; the search page now
+  seeds its query from `?q=` so the action resolves to a working search.
 
 ## ITEMS NEEDING AZLAN'S INPUT (running list)
 - [ ] Phase 5: approve adding new `lib/quranSurahMeta.ts` (114 factual surah names/counts) for

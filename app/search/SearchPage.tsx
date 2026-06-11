@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { searchContent, SEARCH_DATA, type SearchItem } from "@/lib/searchData";
 import SearchBar from "@/components/SearchBar";
@@ -24,6 +24,14 @@ const POPULAR = [
 export default function SearchPage() {
   const [query,    setQuery]    = useState("");
   const [catFilter, setCatFilter] = useState("All");
+
+  // Seed the query from a ?q= URL parameter (enables shareable search links and
+  // a working WebSite SearchAction target).
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const q = new URLSearchParams(window.location.search).get("q");
+    if (q) setQuery(q);
+  }, []);
 
   const results = query.trim().length >= 2 ? searchContent(query) : SEARCH_DATA;
   const filtered = catFilter === "All" ? results : results.filter(r => r.category === catFilter);

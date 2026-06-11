@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import SpeakingPage from "./SpeakingPage";
+import JsonLd, { breadcrumbLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "IELTS Speaking Practice — Part 1, 2 & 3 Cue Cards",
@@ -15,5 +16,14 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <SpeakingPage />;
+  return (
+    <>
+      <JsonLd data={breadcrumbLd([
+        { name: "Home", path: "/" },
+        { name: "IELTS", path: "/ielts" },
+        { name: "Speaking", path: "/ielts/speaking" },
+      ])} />
+      <SpeakingPage />
+    </>
+  );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import MarqueeBanner from "@/components/MarqueeBanner";
+import JsonLd, { faqLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Free IELTS Practice & Quran Online — EduForEveryone",
@@ -55,6 +56,8 @@ export default function HomePage() {
         sameAs: ["https://github.com/azlaneduforeveryone-svg/Eduforeveryone-website"],
         offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       })}} />
+
+      <JsonLd data={faqLd(faqs)} />
 
       {/* ── Hero (IELTS-led) ── */}
       <section className="bg-gradient-to-b from-teal-600 to-teal-700 text-white py-16 px-4">

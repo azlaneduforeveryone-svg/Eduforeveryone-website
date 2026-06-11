@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import QuranPage from "./QuranPage";
+import JsonLd, { breadcrumbLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Quran with English & Urdu Translation — All 114 Surahs",
@@ -14,4 +15,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() { return <QuranPage />; }
+export default function Page() {
+  return (
+    <>
+      <JsonLd data={breadcrumbLd([
+        { name: "Home", path: "/" },
+        { name: "Quran", path: "/quran" },
+        { name: "Read Quran", path: "/quran/read" },
+      ])} />
+      <QuranPage />
+    </>
+  );
+}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PASSAGES } from "@/lib/ielts-reading-academic-data";
 import ReadingTest from "./ReadingTest";
+import JsonLd, { breadcrumbLd } from "@/components/JsonLd";
 
 export function generateStaticParams() {
   return PASSAGES.map(p => ({ passageId: p.id }));
@@ -29,5 +30,15 @@ export async function generateMetadata(
 export default function Page({ params }: { params: { passageId: string } }) {
   const passage = PASSAGES.find(p => p.id === params.passageId);
   if (!passage) notFound();
-  return <ReadingTest passage={passage} />;
+  return (
+    <>
+      <JsonLd data={breadcrumbLd([
+        { name: "Home", path: "/" },
+        { name: "IELTS", path: "/ielts" },
+        { name: "Reading", path: "/ielts/reading" },
+        { name: passage.title, path: `/ielts/reading/${passage.id}` },
+      ])} />
+      <ReadingTest passage={passage} />
+    </>
+  );
 }

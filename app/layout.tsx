@@ -4,6 +4,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Script from 'next/script';
+import JsonLd from '@/components/JsonLd';
 import { AuthProvider } from '@/contexts/AuthContext';
 
 const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-body' });
@@ -30,6 +31,27 @@ export default function RootLayout({
       className={`${dmSans.variable} ${playfair.variable} ${amiri.variable}`}
     >
       <body className="font-body bg-gray-50 min-h-screen flex flex-col text-gray-900 antialiased">
+        <JsonLd data={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "EduForEveryone",
+          url: "https://eduforeveryone.com",
+          logo: "https://eduforeveryone.com/Main_Logo.jpg",
+        }} />
+        <JsonLd data={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "EduForEveryone",
+          url: "https://eduforeveryone.com",
+          potentialAction: {
+            "@type": "SearchAction",
+            target: {
+              "@type": "EntryPoint",
+              urlTemplate: "https://eduforeveryone.com/search?q={search_term_string}",
+            },
+            "query-input": "required name=search_term_string",
+          },
+        }} />
         <AuthProvider>
 
           <Script

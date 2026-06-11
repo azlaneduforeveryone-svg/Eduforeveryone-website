@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
+import JsonLd, { breadcrumbLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "15 Line Quran PDF — Uthmani Script (Read Online & Free)",
@@ -24,5 +25,14 @@ const QuranPDFViewer = dynamic(
 );
 
 export default function Page() {
-  return <QuranPDFViewer type="15line" />;
+  return (
+    <>
+      <JsonLd data={breadcrumbLd([
+        { name: "Home", path: "/" },
+        { name: "Quran", path: "/quran" },
+        { name: "15 Line Quran PDF", path: "/quran/pdf/15line" },
+      ])} />
+      <QuranPDFViewer type="15line" />
+    </>
+  );
 }

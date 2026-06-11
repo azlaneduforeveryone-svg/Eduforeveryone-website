@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import JsonLd, { faqLd, breadcrumbLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Free IELTS Preparation — Academic & General Training",
@@ -188,6 +189,12 @@ const OFFICIAL_SOURCES = [
 export default function IELTSPage() {
   return (
     <div className="bg-gray-50 min-h-screen">
+
+      <JsonLd data={faqLd(FAQS)} />
+      <JsonLd data={breadcrumbLd([
+        { name: "Home", path: "/" },
+        { name: "IELTS Preparation", path: "/ielts" },
+      ])} />
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section className="bg-gradient-to-br from-teal-700 via-teal-600 to-emerald-600 text-white">

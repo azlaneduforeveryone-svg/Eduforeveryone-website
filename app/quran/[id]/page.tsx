@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import QuranReader from "./QuranReader";
 import { getSurahMeta } from "@/lib/quranSurahMeta";
+import JsonLd, { breadcrumbLd } from "@/components/JsonLd";
 
 interface Props { params: { id: string } }
 
@@ -30,7 +31,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default function Page({ params }: Props) {
   const id = parseInt(params.id);
   if (isNaN(id) || id < 1 || id > 114) return <div className="text-center py-20">Invalid Surah number</div>;
-  return <QuranReader surahId={id} />;
+  const s = getSurahMeta(id);
+  return (
+    <>
+      <JsonLd data={breadcrumbLd([
+        { name: "Home", path: "/" },
+        { name: "Quran", path: "/quran" },
+        { name: s ? `Surah ${s.name}` : `Surah ${id}`, path: `/quran/${id}` },
+      ])} />
+      <QuranReader surahId={id} />
+    </>
+  );
 }
 
 export function generateStaticParams() {

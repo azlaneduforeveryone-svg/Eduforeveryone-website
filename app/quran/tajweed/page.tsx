@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import TajweedListingPage from "./TajweedListingPage";
+import JsonLd, { breadcrumbLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Color Coded Tajweed Quran Online — Interactive Rules",
@@ -14,4 +15,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() { return <TajweedListingPage />; }
+export default function Page() {
+  return (
+    <>
+      <JsonLd data={breadcrumbLd([
+        { name: "Home", path: "/" },
+        { name: "Quran", path: "/quran" },
+        { name: "Tajweed Quran", path: "/quran/tajweed" },
+      ])} />
+      <TajweedListingPage />
+    </>
+  );
+}

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { academicTask1Pool } from "@/lib/ielts-writing-data";
 import { TASK1_MODEL_ANSWERS, getModelAnswerBySlug } from "@/lib/ielts-writing-model-answers";
 import Task1Figure from "@/components/ielts/Task1Figure";
+import JsonLd, { breadcrumbLd } from "@/components/JsonLd";
 
 export function generateStaticParams() {
   return TASK1_MODEL_ANSWERS.map(m => ({ slug: m.slug }));
@@ -38,6 +39,12 @@ export default function Page({ params }: { params: { slug: string } }) {
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10">
+      <JsonLd data={breadcrumbLd([
+        { name: "Home", path: "/" },
+        { name: "IELTS", path: "/ielts" },
+        { name: "Writing", path: "/ielts/writing" },
+        { name: model.topic, path: `/ielts/writing/task-1/${model.slug}` },
+      ])} />
       {/* Breadcrumbs */}
       <div className="flex items-center gap-2 text-sm text-gray-400 mb-6 flex-wrap">
         <Link href="/ielts" className="hover:text-indigo-600 transition-colors">IELTS</Link>

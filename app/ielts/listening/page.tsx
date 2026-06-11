@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ListeningPage from "./ListeningPage";
+import JsonLd, { breadcrumbLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "IELTS Listening Practice — Free 4-Section Tests",
@@ -15,5 +16,14 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <ListeningPage />;
+  return (
+    <>
+      <JsonLd data={breadcrumbLd([
+        { name: "Home", path: "/" },
+        { name: "IELTS", path: "/ielts" },
+        { name: "Listening", path: "/ielts/listening" },
+      ])} />
+      <ListeningPage />
+    </>
+  );
 }

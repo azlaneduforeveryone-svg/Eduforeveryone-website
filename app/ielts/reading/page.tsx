@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ReadingHub from "./ReadingHub";
 import { PASSAGES } from "@/lib/ielts-reading-academic-data";
+import JsonLd, { breadcrumbLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "IELTS Reading Practice — Free Tests with Instant Scoring",
@@ -16,5 +17,14 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <ReadingHub localPassages={PASSAGES} />;
+  return (
+    <>
+      <JsonLd data={breadcrumbLd([
+        { name: "Home", path: "/" },
+        { name: "IELTS", path: "/ielts" },
+        { name: "Reading", path: "/ielts/reading" },
+      ])} />
+      <ReadingHub localPassages={PASSAGES} />
+    </>
+  );
 }

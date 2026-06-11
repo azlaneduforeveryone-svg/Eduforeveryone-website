@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import WritingPage from "./WritingPage";
+import JsonLd, { breadcrumbLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "IELTS Writing Practice — Task 1 & Task 2 with AI Feedback",
@@ -15,5 +16,14 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <WritingPage />;
+  return (
+    <>
+      <JsonLd data={breadcrumbLd([
+        { name: "Home", path: "/" },
+        { name: "IELTS", path: "/ielts" },
+        { name: "Writing", path: "/ielts/writing" },
+      ])} />
+      <WritingPage />
+    </>
+  );
 }
