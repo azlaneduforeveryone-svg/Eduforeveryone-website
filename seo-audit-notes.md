@@ -186,11 +186,42 @@ follow-up requiring the same review.
   seeds its query from `?q=` so the action resolves to a working search.
 
 ## ITEMS NEEDING AZLAN'S INPUT (running list)
-- [ ] Phase 5: approve adding new `lib/quranSurahMeta.ts` (114 factual surah names/counts) for
-      surah-name metadata — or keep numeric titles.
-- [ ] Phase 6: **MODEL ANSWERS — PENDING AZLAN'S REVIEW BEFORE DEPLOY** (all writing prompts).
-- [ ] Phase 9: About bio (2–3 sentences) + contact email.
+- [x] Phase 5: approved adding `lib/quranSurahMeta.ts` (proceeded with approach A).
+- [x] Phase 6: 20 Academic Task 1 model answers — REVIEWED & APPROVED by Azlan (2026-06-11).
+- [ ] Phase 9: About **founder bio** (2–3 sentences) + **contact email** — both marked as
+      visible placeholders on `/about`; fill before deploy.
+- [ ] Phase 6 follow-up (optional): build prompt pages + model answers for the 40 GT Task 1
+      and Task 2 prompts (same review process).
 - [ ] Validate JSON-LD with Google Rich Results Test after deploy (Phase 7).
+
+---
+
+## FINAL VERIFICATION RESULTS (all phases complete)
+- [x] `npm run build` passes with zero errors (clean `.next` build exits 0).
+- [x] Data files untouched: `git diff --stat main..seo-improvements-june2026` shows NO changes
+      to any data/JSON/content file (ielts-*-data, data.ts, searchData, mathTopics), no env/
+      config (.env, next.config.mjs, vercel.json, lib/firebase.ts), no PDFs/audio/images.
+      The ONLY `/public` change is the deletion of the broken `public/sitemap.xml` (it
+      contained raw TypeScript and shadowed the dynamic `/sitemap.xml`). Two NEW additive lib
+      files were created: `quranSurahMeta.ts`, `ielts-writing-model-answers.ts`.
+- [x] Unique title + description + canonical on the spec's pages; rendered HTML spot-checked
+      for `/`, `/ielts`, `/quran`, `/quran/pdf/15line`, a surah page, a writing prompt page.
+- [x] No `meta keywords` tags remain anywhere in `app/`.
+- [x] No "guarantee" / "∞" / "thousands of students" / "2025" in titles/headings. (Note: `∞`
+      remains only in WordWise game content — a math limit example and a streak display — not
+      a title/heading or claim.)
+- [x] Homepage CTAs corrected (Games "View all" + "Play Games" → /games; hero/closing → /ielts
+      & /quran).
+- [x] sitemap.xml (dynamic, app/sitemap.ts) includes all new pages — 454 URLs incl. 114 surahs,
+      114 tajweed, 30 juz, 20 maths topics, all reading passages, 20 writing prompt pages.
+      robots.txt references /sitemap.xml and allows crawling.
+- [x] FAQ JSON-LD generated from the same arrays the pages render (9 on `/`, 5 on `/ielts`).
+- [x] Nav and Footer are single shared components used by every page (via app/layout.tsx).
+
+### Still needs Azlan before merge/deploy
+1. About page: founder bio + contact email (visible placeholders on `/about`).
+2. Run Google Rich Results Test on deployed URLs (JSON-LD).
+Branch `seo-improvements-june2026` is ready for review. NOT merged to main.
 
 ## Build status
 - Phase 0 baseline build: see commit message / terminal — confirmed compiling before changes.
