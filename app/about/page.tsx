@@ -38,21 +38,36 @@ export default function AboutPage() {
         </p>
       </div>
 
-      {/* Who built this — PLACEHOLDER (Azlan to provide) */}
-      {/* TODO: Azlan to provide a 2–3 sentence bio. Suggested angle: finance professional
-          (ACCA) based in Saudi Arabia who built EduForEveryone as a free education project
-          for students in Pakistan and South Asia. Do NOT fabricate — leave until provided. */}
+      {/* About / founder bio */}
       <div className="mb-12">
         <div className="flex items-center gap-3 mb-4">
           <span className="text-4xl">👤</span>
-          <h2 className="text-2xl font-bold text-gray-900">Who Built This</h2>
+          <h2 className="text-2xl font-bold text-gray-900">About EduForEveryone</h2>
         </div>
-        <div className="bg-amber-50 border border-dashed border-amber-300 rounded-2xl p-6">
-          <p className="text-amber-800 text-sm font-semibold mb-1">⚠️ Placeholder — pending Azlan&apos;s bio before deploy</p>
-          <p className="text-amber-700 text-sm leading-relaxed">
-            A short 2–3 sentence founder bio will appear here (background, location, and why
-            this project was started). This block is intentionally left as a clearly-marked
-            placeholder and must be filled in before the page is published.
+        <div className="space-y-4 text-gray-600 text-base leading-relaxed">
+          <p>
+            EduForEveryone was founded and built by <strong>Azlan Mahmood</strong>, a member of
+            the Association of Chartered Certified Accountants (ACCA). It is an independent
+            project, developed and maintained by one person rather than a company or institution.
+          </p>
+          <p>
+            The platform exists to address a single problem: access. Quality courses, study
+            materials, and practice platforms are often priced beyond the reach of the students
+            who would benefit from them most. EduForEveryone aims to remove that barrier by
+            providing free, openly accessible learning resources — including standardised-test
+            practice, the Holy Quran with translations, study notes, quizzes, and academic tools
+            — with no sign-up required.
+          </p>
+          <p>
+            This is not a test-preparation company or an accredited educational institution, and
+            it does not claim to be. It is a practical resource designed to give students a place
+            to study, assess their current level, and improve — regardless of their ability to pay.
+          </p>
+          <p>
+            The project is run by a Kashmiri–Pakistani national working in Saudi Arabia, built in
+            personal time out of a belief that access to education should not depend on what a
+            student can afford. Its purpose is straightforward: to make meaningful educational
+            practice available to anyone who needs it.
           </p>
         </div>
       </div>
@@ -117,15 +132,19 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Contact — PLACEHOLDER (Azlan to provide) */}
-      {/* TODO: Azlan to provide a contact email address to replace the placeholder below. */}
+      {/* Contact */}
       <div className="text-center bg-teal-50 border border-teal-100 rounded-2xl p-10">
-        <h2 className="text-2xl font-bold text-gray-900 mb-3">Get in Touch</h2>
-        <p className="text-gray-500 mb-3">
-          Questions, corrections or suggestions? We&apos;d love to hear from you.
-        </p>
-        <p className="text-amber-700 text-sm font-semibold mb-6">
-          ⚠️ Placeholder — contact email pending Azlan before deploy.
+        <h2 className="text-2xl font-bold text-gray-900 mb-3">Contact</h2>
+        <p className="text-gray-600 mb-6 max-w-2xl mx-auto leading-relaxed">
+          For enquiries, feedback, or to discuss placing educational resources on the platform,
+          email{" "}
+          <a href="mailto:azlaneduforeveryone@gmail.com" className="text-teal-600 font-semibold hover:underline">
+            azlaneduforeveryone@gmail.com
+          </a>{" "}
+          or visit our{" "}
+          <a href="https://www.facebook.com/profile.php?id=61577745517090" target="_blank" rel="noopener noreferrer" className="text-teal-600 font-semibold hover:underline">
+            Facebook page
+          </a>.
         </p>
         <div className="flex flex-wrap gap-3 justify-center">
           <Link href="/ielts" className="bg-teal-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-teal-700 transition-colors">
@@ -135,6 +154,9 @@ export default function AboutPage() {
             Contact Us
           </Link>
         </div>
+        <p className="mt-6 text-sm text-gray-500 italic">
+          EduForEveryone is committed to keeping all Quran and Islamic Studies content completely free and ad-free, always.
+        </p>
       </div>
 
     </div>
