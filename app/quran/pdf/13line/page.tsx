@@ -1,4 +1,18 @@
+import type { Metadata } from "next";
 import dynamic from "next/dynamic";
+
+export const metadata: Metadata = {
+  title: "Color Coded Tajweed Quran PDF — 13 Line Mushaf",
+  description: "13-line color-coded Tajweed Quran PDF, 851 pages. Every Tajweed rule highlighted in its color. Free, ad-free reading.",
+  alternates: { canonical: "https://eduforeveryone.com/quran/pdf/13line" },
+  openGraph: {
+    title: "Color Coded Tajweed Quran PDF — 13 Line Mushaf | EduForEveryone",
+    description: "13-line color-coded Tajweed Quran PDF, 851 pages. Every Tajweed rule highlighted. Free, ad-free.",
+    url: "https://eduforeveryone.com/quran/pdf/13line",
+    siteName: "EduForEveryone",
+    type: "website",
+  },
+};
 
 const QuranPDFViewer = dynamic(
   () => import("../QuranPDFViewer"),

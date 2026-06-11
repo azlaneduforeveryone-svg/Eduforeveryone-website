@@ -5,20 +5,6 @@ export const metadata: Metadata = {
   title: "Number to Words Converter | English, Arabic, Hindi, Urdu & More",
   description:
     "Free online number to words converter. Instantly convert numbers to words in English, Arabic, Hindi, Urdu, Spanish, French, German, and Turkish. Supports currency mode with USD, SAR, INR, PKR, EUR, GBP and more.",
-  keywords: [
-    "number to words",
-    "number to words converter",
-    "numbers in words",
-    "convert numbers to words",
-    "number to words in Arabic",
-    "number to words in Hindi",
-    "number to words in Urdu",
-    "currency in words",
-    "amount in words",
-    "cheque amount in words",
-    "tafqeet",
-    "تفقيط",
-  ],
   alternates: { canonical: "https://eduforeveryone.com/tools/number-to-words" },
   openGraph: {
     title: "Number to Words Converter — 8 Languages + Currency Support",

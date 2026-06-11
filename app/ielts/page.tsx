@@ -2,16 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "IELTS Preparation 2025 — Free Academic & General Training Guide | EduForEveryone",
-  description: "Master IELTS with our free complete preparation guide. Understand Academic vs General Training, Band Score system (0–9), exam format, marking criteria, and expert strategies for Listening, Reading, Writing and Speaking.",
-  keywords: [
-    "IELTS preparation", "IELTS band score", "Academic IELTS", "General Training IELTS",
-    "IELTS test format", "IELTS 2025", "IELTS writing task 2", "IELTS speaking tips",
-    "IELTS reading strategies", "IELTS listening practice", "IELTS UKVI", "free IELTS preparation"
-  ],
+  title: "Free IELTS Preparation — Academic & General Training",
+  description: "Free IELTS prep: test format, band scores 0–9, marking criteria and practice for Listening, Reading, Writing & Speaking. No sign-up.",
   alternates: { canonical: "https://eduforeveryone.com/ielts" },
   openGraph: {
-    title: "Free IELTS Preparation Guide 2025 | EduForEveryone",
+    title: "Free IELTS Preparation Guide | EduForEveryone",
     description: "Everything you need: test types, band scores, exam format, marking criteria, and expert strategies — completely free.",
     url: "https://eduforeveryone.com/ielts",
     siteName: "EduForEveryone",

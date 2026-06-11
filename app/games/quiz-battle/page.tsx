@@ -5,7 +5,6 @@ import QuizBattleGame from "./QuizBattleGame";
 export const metadata: Metadata = {
   title: "Quiz Battle — Free Educational Quiz Game | EduForEveryone",
   description: "Free quiz battle game for students. Answer Math, Science, History and English questions against the clock. 3 lives, powerups, streak bonuses and more!",
-  keywords: ["quiz game for students","educational quiz","free quiz game","math quiz","science quiz","history quiz","english quiz game","quiz battle"],
   alternates: { canonical: "https://eduforeveryone.com/games/quiz-battle" },
   openGraph: {
     title: "Quiz Battle — Free Educational Quiz | EduForEveryone",

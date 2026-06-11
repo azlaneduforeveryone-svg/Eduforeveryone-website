@@ -5,7 +5,6 @@ import CalcNav from "@/components/CalcNav";
 export const metadata: Metadata = {
   title: "Scientific Calculator Online Free | EduForEveryone",
   description: "Free scientific calculator for students. Trigonometry (sin, cos, tan), logarithms, powers, roots, factorial, memory. DEG, RAD, GRAD modes. Inverse trig with 2ND key.",
-  keywords: ["scientific calculator", "online scientific calculator", "free scientific calculator", "sin cos tan calculator", "trig calculator", "logarithm calculator", "scientific calculator for students"],
   alternates: { canonical: "https://eduforeveryone.com/tools/scientific-calculator" },
   openGraph: {
     title: "Scientific Calculator — Free Online | EduForEveryone",

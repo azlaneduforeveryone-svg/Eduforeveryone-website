@@ -3,9 +3,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Islamic Studies — Quran, Islamic Quiz | EduForEveryone",
-  description: "Free Islamic Studies resources. Read the Holy Quran with 40+ translations, take Islamic Quiz in English, Urdu and Hindi.",
-  keywords: ["islamic studies","quran online","islamic quiz","read quran","quran with translation","islamic education free"],
+  title: "Islamic Studies — Quran, Islamic Quiz in 3 Languages",
+  description: "Free Islamic Studies: read the Quran with 40+ translations, Islamic Quiz in English, Urdu & Hindi across 7 categories. Ad-free forever.",
   alternates: { canonical: "https://eduforeveryone.com/islamic-studies" },
 };
 

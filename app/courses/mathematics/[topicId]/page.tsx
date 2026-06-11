@@ -13,7 +13,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${topic.title} — ${topic.level} Math | EduForEveryone`,
     description: `${topic.description} Includes explanation, worked examples, practice exercises and a quiz.`,
-    keywords: topic.tags,
     alternates: { canonical: `https://eduforeveryone.com/courses/mathematics/${topic.id}` },
     openGraph: {
       title: `${topic.title} | EduForEveryone`,

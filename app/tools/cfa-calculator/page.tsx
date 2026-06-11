@@ -5,7 +5,6 @@ import CalcNav from "@/components/CalcNav";
 export const metadata: Metadata = {
   title: "CFA Financial Calculator Online Free | EduForEveryone",
   description: "Free CFA-style financial calculator. Time Value of Money (TVM): compute N, I/Y, PV, PMT, FV. BA II Plus style. Perfect for finance students and CFA exam prep.",
-  keywords: ["CFA calculator", "TVM calculator", "time value of money calculator", "financial calculator", "BA II plus calculator", "PV FV calculator", "finance calculator online", "CFA exam calculator"],
   alternates: { canonical: "https://eduforeveryone.com/tools/cfa-calculator" },
   openGraph: {
     title: "CFA Financial Calculator — Free TVM | EduForEveryone",

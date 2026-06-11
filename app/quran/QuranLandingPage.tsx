@@ -4,7 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Read Holy Quran Online — 4 Ways to Read | EduForEveryone",
   description: "Read the Holy Quran in 4 ways: Digital reader with 40+ translations, Colour coded Tajweed, 15-Line PDF and 13-Line Colour Tajweed PDF.",
-  keywords: ["read quran online","quran tajweed","quran pdf","15 line quran","colour coded quran"],
   alternates: { canonical: "https://eduforeveryone.com/quran" },
 };
 

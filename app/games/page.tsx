@@ -4,7 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Free Educational Games for Students | EduForEveryone",
   description: "Free educational games — Math Puzzle, WordWise word puzzle, and Quiz Battle. Learn while having fun. No sign-up required.",
-  keywords: ["educational games","math puzzle game","word puzzle game","quiz game","free games for students","learning games"],
   alternates: { canonical: "https://eduforeveryone.com/games" },
 };
 

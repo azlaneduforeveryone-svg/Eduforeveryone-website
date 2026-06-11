@@ -5,7 +5,6 @@ import CalcNav from "@/components/CalcNav";
 export const metadata: Metadata = {
   title: "Simple Calculator Online Free | EduForEveryone",
   description: "Free simple online calculator for students. Add, subtract, multiply and divide with full calculation history. Works on mobile and desktop.",
-  keywords: ["simple calculator", "online calculator", "free calculator", "basic calculator", "calculator for students"],
   alternates: { canonical: "https://eduforeveryone.com/tools/simple-calculator" },
   openGraph: {
     title: "Simple Calculator — Free Online | EduForEveryone",

@@ -5,8 +5,7 @@ import IslamicQuizGame from "./IslamicQuizGame";
 export const metadata: Metadata = {
   title: "Islamic Quiz in English, Urdu & Hindi | EduForEveryone",
   description: "Free Islamic quiz in English, Urdu and Hindi. 7 categories: Quran, Hadith, Fiqh, Seerah, Islamic History, Pillars of Islam and 99 Names of Allah. 4 difficulty levels.",
-  keywords: ["islamic quiz","islamic quiz in urdu","islamic quiz in hindi","quran quiz","hadith quiz","pillars of islam quiz","99 names quiz","islamic general knowledge","islamic mcqs"],
-  alternates: { canonical: "https://eduforeveryone.com/games/islamic-quiz" },
+  alternates: { canonical: "https://eduforeveryone.com/quiz/islamic-quiz" },
   openGraph: {
     title: "Islamic Quiz — English, Urdu & Hindi | EduForEveryone",
     description: "Test your Islamic knowledge in 3 languages. Quran, Hadith, Seerah and more!",

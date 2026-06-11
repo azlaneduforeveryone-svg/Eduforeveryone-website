@@ -3,9 +3,8 @@ import ReadingHub from "./ReadingHub";
 import { PASSAGES } from "@/lib/ielts-reading-academic-data";
 
 export const metadata: Metadata = {
-  title: "IELTS Reading Practice — Free Tests with Instant Scoring | EduForEveryone",
-  description: "Free IELTS Reading practice passages with MCQ, True/False/Not Given and gap fill questions. Academic and General Training. Instant scoring with answer explanations.",
-  keywords: ["IELTS reading practice", "IELTS reading test free", "IELTS true false not given", "IELTS academic reading", "IELTS reading questions"],
+  title: "IELTS Reading Practice — Free Tests with Instant Scoring",
+  description: "Free IELTS Reading passages (Academic & General Training) with T/F/NG, MCQ and sentence completion. Instant scoring and explanations.",
   alternates: { canonical: "https://eduforeveryone.com/ielts/reading" },
   openGraph: {
     title: "IELTS Reading Practice | EduForEveryone",

@@ -5,9 +5,8 @@ import CoursesFilter from './CoursesFilter';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: "All Courses — Free Education | EduForEveryone",
-  description: "Browse our complete library of free courses in Mathematics, Science, English, History and more.",
-  keywords: ["free courses", "online learning", "mathematics", "science", "english", "history"],
+  title: "Free Online Courses — Math, Science, English & History",
+  description: "Free courses including a complete 20-topic Mathematics curriculum from elementary to university level. Learn at your own pace.",
   alternates: { canonical: "https://eduforeveryone.com/courses" },
   openGraph: {
     title: "All Courses | EduForEveryone",

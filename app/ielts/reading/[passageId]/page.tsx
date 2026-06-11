@@ -15,7 +15,6 @@ export async function generateMetadata(
   return {
     title: `${passage.title} — IELTS Reading Practice | EduForEveryone`,
     description: `Practice IELTS Academic Reading with "${passage.title}". ${passage.questions.length} questions — MCQ, True/False/Not Given, and more. Instant scoring with explanations.`,
-    keywords: ["IELTS reading", "IELTS practice", "academic reading", passage.title, "band score"],
     alternates: { canonical: `https://eduforeveryone.com/ielts/reading/${params.passageId}` },
     openGraph: {
       title: `${passage.title} — IELTS Reading | EduForEveryone`,

@@ -5,7 +5,6 @@ import MathPuzzleGame from "./MathPuzzleGame";
 export const metadata: Metadata = {
   title: "Math Puzzle Game Free Online | EduForEveryone",
   description: "Free math puzzle game for students. Solve addition, subtraction, multiplication, division, algebra and sequence challenges. Beat the clock and build your streak!",
-  keywords: ["math puzzle game","math game for students","free math game","arithmetic puzzle","algebra game","math challenge online","educational math game"],
   alternates: { canonical: "https://eduforeveryone.com/games/math-puzzle" },
   openGraph: {
     title: "Math Puzzle Game — Free Online | EduForEveryone",

@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import ListeningPage from "./ListeningPage";
 
 export const metadata: Metadata = {
-  title: "IELTS Listening Practice — Free Tests | EduForEveryone",
-  description: "Free IELTS Listening practice with all 4 sections. Form fill, multiple choice, note completion and matching questions. Develop your listening skills for the real exam.",
-  keywords: ["IELTS listening practice", "IELTS listening test free", "IELTS listening sections", "IELTS listening questions"],
+  title: "IELTS Listening Practice — Free 4-Section Tests",
+  description: "Free IELTS Listening practice with 4-section tests and audio. Practice all question types with instant scoring. No sign-up needed.",
   alternates: { canonical: "https://eduforeveryone.com/ielts/listening" },
   openGraph: {
     title: "IELTS Listening Practice | EduForEveryone",

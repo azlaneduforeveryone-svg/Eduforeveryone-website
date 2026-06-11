@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 export const metadata: Metadata = {
-  title: "Free Online Tools for Students | EduForEveryone",
-  description: "Free educational tools — calculators, number to words converter and more. No sign-up required.",
+  title: "Free Calculators — Scientific, Financial (TVM/NPV/IRR) & More",
+  description: "Free online tools: scientific calculator, financial calculator (TVM, NPV, IRR, bonds), number-to-words in 8 languages.",
   alternates: { canonical: "https://eduforeveryone.com/tools" },
 };
 const tools = [

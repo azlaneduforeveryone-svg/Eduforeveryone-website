@@ -5,7 +5,6 @@ import WordWiseGame from "./WordWiseGame";
 export const metadata: Metadata = {
   title: "WordWise — Free Word Puzzle Game for Students | EduForEveryone",
   description: "Free educational word puzzle game. Guess hidden words from Math, Science and English. 1682 words, 4 difficulty levels, hints always shown. Fun for all students!",
-  keywords: ["word puzzle game","educational word game","wordle for students","math word game","science word game","free word puzzle","vocabulary game"],
   alternates: { canonical: "https://eduforeveryone.com/games/word-puzzle" },
   openGraph: {
     title: "WordWise — Free Word Puzzle Game | EduForEveryone",

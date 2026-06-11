@@ -3,9 +3,8 @@ import Link from "next/link";
 import MarqueeBanner from "@/components/MarqueeBanner";
 
 export const metadata: Metadata = {
-  title: "EduForEveryone — Free Education, Courses, Tools & Games for Students",
-  description: "Free high-quality education for every student. Courses, study notes, quizzes, math calculators, scientific calculator, financial calculator, math puzzle games — 100% free, no sign-up needed.",
-  keywords: ["free education", "free online courses", "free study notes", "free math calculator", "scientific calculator online", "financial calculator", "math puzzle game", "free quiz for students", "free education website", "learn online free"],
+  title: "Free IELTS Practice & Quran Online — EduForEveryone",
+  description: "Free IELTS practice tests for all 4 skills, Quran with 40+ translations, math tools and quizzes. No fees, no sign-up, ever.",
   alternates: { canonical: "https://eduforeveryone.com" },
   openGraph: {
     title: "EduForEveryone — Free Education for All Students",
