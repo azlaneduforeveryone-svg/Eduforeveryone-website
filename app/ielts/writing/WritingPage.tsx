@@ -15,6 +15,8 @@ import {
 } from "@/lib/ielts-writing-data";
 import Task1Figure from "@/components/ielts/Task1Figure";
 import { getModelAnswerById } from "@/lib/ielts-writing-model-answers";
+import { getGtModelAnswerById } from "@/lib/ielts-gt-task1-model-answers";
+import { getTask2ModelAnswerById } from "@/lib/ielts-task2-model-answers";
 
 interface IELTSResult {
   overall: number;
@@ -190,6 +192,9 @@ export default function WritingPage() {
     if (preloadedRef.current || typeof window === "undefined") return;
     const pid = new URLSearchParams(window.location.search).get("prompt");
     if (!pid) return;
+    // GT Task 1 prompts only exist in the "general" pool — switch format first,
+    // which rebuilds PROMPTS and re-runs this effect.
+    if (pid.startsWith("GT1") && format !== "general") { setFormat("general"); return; }
     const p = PROMPTS.find(x => x.id === pid);
     if (p) {
       preloadedRef.current = true;
@@ -262,6 +267,20 @@ export default function WritingPage() {
   const task1 = PROMPTS.filter(p => p.task === 1);
   const task2 = PROMPTS.filter(p => p.task === 2);
   const shown = tab === 1 ? task1 : task2;
+
+  // Link a card to its individual SEO prompt page, if one exists for that prompt.
+  function promptPageHref(p: Prompt): string | null {
+    if (p.task === 2) {
+      const m = getTask2ModelAnswerById(p.id);
+      return m ? `/ielts/writing/task-2/${m.slug}` : null;
+    }
+    if (format === "academic") {
+      const m = getModelAnswerById(p.id);
+      return m ? `/ielts/writing/task-1/${m.slug}` : null;
+    }
+    const m = getGtModelAnswerById(p.id);
+    return m ? `/ielts/writing/gt-task-1/${m.slug}` : null;
+  }
 
   if (selected) {
     const pctDone = Math.min(wordCount / selected.minWords, 1);
@@ -439,9 +458,9 @@ export default function WritingPage() {
             <h3 className="font-bold text-gray-900 mb-2">{p.title}</h3>
             <p className="text-gray-500 text-xs leading-relaxed mb-5 line-clamp-3">{p.prompt.slice(0, 150)}…</p>
             <button onClick={() => selectPrompt(p)} className="w-full bg-violet-600 text-white py-2.5 rounded-xl font-bold text-sm hover:bg-violet-700 transition-colors">Start Writing →</button>
-            {format === "academic" && p.task === 1 && getModelAnswerById(p.id) && (
+            {promptPageHref(p) && (
               <Link
-                href={`/ielts/writing/task-1/${getModelAnswerById(p.id)!.slug}`}
+                href={promptPageHref(p)!}
                 className="block w-full text-center mt-2 text-violet-600 text-xs font-semibold hover:underline"
               >
                 View prompt &amp; sample Band 8 answer →

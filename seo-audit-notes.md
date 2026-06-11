@@ -171,11 +171,36 @@ response"). **All 20 reviewed and approved by Azlan (2026-06-11):**
 - [x] AT1-I line-graph-tourist-attraction-visitors - [x] AT1-S line-graph-ageing-population
 - [x] AT1-J pie-chart-electricity-generation-sources - [x] AT1-T pie-chart-water-use-by-sector
 
-⚠️ NOT YET BUILT — PENDING FOLLOW-UP: the **20 GT Task 1** and **20 Task 2** prompt
-pages and their model answers have NOT been created. Only the 20 Academic Task 1 pages
-exist (`/ielts/writing/task-1/[slug]`). The GT Task 1 and Task 2 prompts currently use
-the existing direct-practice editor flow only. Building those 40 pages + model answers
-remains an outstanding follow-up requiring the same review.
+### GT Task 1 + Task 2 prompt pages — ⚠️ PENDING AZLAN'S REVIEW (do NOT mark approved)
+The 40 follow-up pages have now been BUILT: 20 GT Task 1 letters at
+`/ielts/writing/gt-task-1/[slug]` and 20 Task 2 essays at `/ielts/writing/task-2/[slug]`,
+each with a sample Band 8 model answer labelled "Sample Band 8 Response — written by
+EduForEveryone, for guidance only." **Every model answer below needs Azlan's review and
+sign-off before deploy — none are pre-approved:**
+
+GT Task 1 (letters):
+- [ ] GT1-A letter-hotel-conference-booking-change   - [ ] GT1-K letter-house-sitting-instructions
+- [ ] GT1-B letter-landlord-moving-out               - [ ] GT1-L letter-damaged-online-order
+- [ ] GT1-C letter-friend-visit-plans                - [ ] GT1-M letter-evening-classes-enquiry
+- [ ] GT1-D letter-faulty-laptop-complaint           - [ ] GT1-N letter-visiting-my-country
+- [ ] GT1-E letter-sports-club-hours                 - [ ] GT1-O letter-poor-repair-work
+- [ ] GT1-F letter-hotel-staff-praise                - [ ] GT1-P letter-time-off-request
+- [ ] GT1-G letter-new-city-invitation               - [ ] GT1-Q letter-apology-damaged-item
+- [ ] GT1-H letter-part-time-job-application          - [ ] GT1-R letter-library-opening-hours
+- [ ] GT1-I letter-building-site-noise               - [ ] GT1-S letter-thanking-a-neighbour
+- [ ] GT1-J letter-training-course-feedback          - [ ] GT1-T letter-train-delay-complaint
+
+Task 2 (essays):
+- [ ] T2-A essay-free-university-education            - [ ] T2-K essay-studying-abroad
+- [ ] T2-B essay-living-alone-trend                  - [ ] T2-L essay-school-starting-age
+- [ ] T2-C essay-traffic-congestion                  - [ ] T2-M essay-social-networking-impact
+- [ ] T2-D essay-children-screen-time                - [ ] T2-N essay-urban-wealth-gap
+- [ ] T2-E essay-permanent-working-from-home         - [ ] T2-O essay-feeling-unsafe
+- [ ] T2-F essay-technology-modern-life              - [ ] T2-P essay-living-in-large-cities
+- [ ] T2-G essay-individuals-and-the-environment     - [ ] T2-Q essay-public-services-vs-the-arts
+- [ ] T2-H essay-longer-prison-sentences             - [ ] T2-R essay-devices-and-literacy
+- [ ] T2-I essay-rising-obesity                      - [ ] T2-S essay-work-life-balance
+- [ ] T2-J essay-choosing-to-stay-single             - [ ] T2-T essay-working-longer-retiring-later
 
 ## Phase 7 — JSON-LD validation
 - [ ] After deploy, validate structured data with the Google Rich Results Test
