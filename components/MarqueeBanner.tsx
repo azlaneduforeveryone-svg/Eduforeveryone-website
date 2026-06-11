@@ -2,6 +2,7 @@
 import Link from "next/link";
 
 const items = [
+  { emoji:"📚", label:"IELTS Practice",      href:"/ielts",                  tag:"All 4 Skills"     },
   { emoji:"📖", label:"Holy Quran",          href:"/quran",                  tag:"40+ Translations" },
   { emoji:"🧮", label:"Math Puzzle Game",    href:"/games/math-puzzle",      tag:"4 Levels"         },
   { emoji:"🔤", label:"WordWise",            href:"/games/word-puzzle",      tag:"1682 Words"       },
