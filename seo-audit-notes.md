@@ -159,23 +159,23 @@ Azlan reviewed all 20 Academic Task 1 model answers and approved them for deploy
 Phase 6 created 20 individual Academic Task 1 prompt pages at
 `/ielts/writing/task-1/[slug]`, each with a sample Band 8 model answer written by
 EduForEveryone (labelled on-page as "for guidance only, not an official examiner
-response"). **Review each model answer for accuracy/quality before deploy:**
-- [ ] AT1-A bar-chart-car-ownership          - [ ] AT1-K table-household-expenditure
-- [ ] AT1-B line-graph-city-temperatures     - [ ] AT1-L table-international-students
-- [ ] AT1-C pie-chart-australia-household-energy - [ ] AT1-M process-diagram-glass-bottle-recycling
-- [ ] AT1-D table-country-population-gdp-life-expectancy - [ ] AT1-N process-diagram-butterfly-life-cycle
-- [ ] AT1-E process-diagram-rainwater-treatment - [ ] AT1-O map-town-centre-development
-- [ ] AT1-F bar-chart-university-subject-choices - [ ] AT1-P map-island-tourist-development
-- [ ] AT1-G line-graph-coffee-consumption    - [ ] AT1-Q map-university-campus-2030
-- [ ] AT1-H bar-chart-leisure-activities-by-age - [ ] AT1-R bar-chart-waste-recycling-by-country
-- [ ] AT1-I line-graph-tourist-attraction-visitors - [ ] AT1-S line-graph-ageing-population
-- [ ] AT1-J pie-chart-electricity-generation-sources - [ ] AT1-T pie-chart-water-use-by-sector
+response"). **All 20 reviewed and approved by Azlan (2026-06-11):**
+- [x] AT1-A bar-chart-car-ownership          - [x] AT1-K table-household-expenditure
+- [x] AT1-B line-graph-city-temperatures     - [x] AT1-L table-international-students
+- [x] AT1-C pie-chart-australia-household-energy - [x] AT1-M process-diagram-glass-bottle-recycling
+- [x] AT1-D table-country-population-gdp-life-expectancy - [x] AT1-N process-diagram-butterfly-life-cycle
+- [x] AT1-E process-diagram-rainwater-treatment - [x] AT1-O map-town-centre-development
+- [x] AT1-F bar-chart-university-subject-choices - [x] AT1-P map-island-tourist-development
+- [x] AT1-G line-graph-coffee-consumption    - [x] AT1-Q map-university-campus-2030
+- [x] AT1-H bar-chart-leisure-activities-by-age - [x] AT1-R bar-chart-waste-recycling-by-country
+- [x] AT1-I line-graph-tourist-attraction-visitors - [x] AT1-S line-graph-ageing-population
+- [x] AT1-J pie-chart-electricity-generation-sources - [x] AT1-T pie-chart-water-use-by-sector
 
-NOTE: Phase 6 covered the **20 Academic Task 1** prompts only (spec's explicit
-"20 Task 1 prompts" + example route `/ielts/writing/task-1/...`). The 20 GT Task 1
-and 20 Task 2 prompts still use the existing direct-practice editor flow (preserved
-per spec). Building prompt pages + model answers for those 40 is a documented
-follow-up requiring the same review.
+⚠️ NOT YET BUILT — PENDING FOLLOW-UP: the **20 GT Task 1** and **20 Task 2** prompt
+pages and their model answers have NOT been created. Only the 20 Academic Task 1 pages
+exist (`/ielts/writing/task-1/[slug]`). The GT Task 1 and Task 2 prompts currently use
+the existing direct-practice editor flow only. Building those 40 pages + model answers
+remains an outstanding follow-up requiring the same review.
 
 ## Phase 7 — JSON-LD validation
 - [ ] After deploy, validate structured data with the Google Rich Results Test
@@ -188,10 +188,10 @@ follow-up requiring the same review.
 ## ITEMS NEEDING AZLAN'S INPUT (running list)
 - [x] Phase 5: approved adding `lib/quranSurahMeta.ts` (proceeded with approach A).
 - [x] Phase 6: 20 Academic Task 1 model answers — REVIEWED & APPROVED by Azlan (2026-06-11).
-- [ ] Phase 9: About **founder bio** (2–3 sentences) + **contact email** — both marked as
-      visible placeholders on `/about`; fill before deploy.
-- [ ] Phase 6 follow-up (optional): build prompt pages + model answers for the 40 GT Task 1
-      and Task 2 prompts (same review process).
+- [x] Phase 9: About **founder bio** + **contact email** — DONE (finalized 2026-06-11; real
+      bio, `mailto:` and Facebook link now live on `/about`).
+- [ ] Phase 6 follow-up: the **20 GT Task 1** and **20 Task 2** prompt pages + model answers
+      are NOT built yet — outstanding follow-up (same review process as Academic Task 1).
 - [ ] Validate JSON-LD with Google Rich Results Test after deploy (Phase 7).
 
 ---
@@ -219,8 +219,9 @@ follow-up requiring the same review.
 - [x] Nav and Footer are single shared components used by every page (via app/layout.tsx).
 
 ### Still needs Azlan before merge/deploy
-1. About page: founder bio + contact email (visible placeholders on `/about`).
+1. About page: founder bio + contact email — DONE (finalized 2026-06-11).
 2. Run Google Rich Results Test on deployed URLs (JSON-LD).
+3. GT Task 1 + Task 2 prompt pages / model answers — NOT built yet (outstanding follow-up).
 Branch `seo-improvements-june2026` is ready for review. NOT merged to main.
 
 ## Build status
