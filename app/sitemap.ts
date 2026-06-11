@@ -1,50 +1,79 @@
 import type { MetadataRoute } from "next";
+import { MATH_TOPICS } from "@/lib/mathTopics";
+import { PASSAGES } from "@/lib/ielts-reading-academic-data";
+import { SURAH_META } from "@/lib/quranSurahMeta";
+import { getAllCourses, getAllNotes, getAllQuizzes } from "@/lib/data";
+
+type Freq = "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://eduforeveryone.com";
-  const now = new Date();
+  const now  = new Date();
+
+  const make = (path: string, priority: number, changeFrequency: Freq) => ({
+    url: `${base}${path}`,
+    lastModified: now,
+    changeFrequency,
+    priority,
+  });
+
+  // ── Static / hub routes ───────────────────────────────────────────────────
+  const staticRoutes: MetadataRoute.Sitemap = [
+    make("",                            1.0, "weekly"),
+    make("/ielts",                      0.9, "weekly"),
+    make("/ielts/reading",              0.8, "weekly"),
+    make("/ielts/listening",            0.8, "weekly"),
+    make("/ielts/writing",              0.8, "weekly"),
+    make("/ielts/speaking",             0.8, "weekly"),
+    make("/ielts/practice",             0.7, "weekly"),
+    make("/ielts/full-test",            0.7, "weekly"),
+    make("/ielts/guide",                0.6, "monthly"),
+    make("/ielts/progress",             0.4, "monthly"),
+    make("/quran",                      0.9, "weekly"),
+    make("/quran/read",                 0.8, "weekly"),
+    make("/quran/tajweed",              0.8, "weekly"),
+    make("/quran/pdf/15line",           0.7, "monthly"),
+    make("/quran/pdf/13line",           0.7, "monthly"),
+    make("/islamic-studies",            0.8, "weekly"),
+    make("/courses",                    0.9, "weekly"),
+    make("/courses/mathematics",        0.8, "weekly"),
+    make("/notes",                      0.8, "weekly"),
+    make("/quiz",                       0.8, "weekly"),
+    make("/quiz/islamic-quiz",          0.8, "weekly"),
+    make("/tools",                      0.9, "weekly"),
+    make("/tools/simple-calculator",    0.9, "monthly"),
+    make("/tools/scientific-calculator",0.9, "monthly"),
+    make("/tools/cfa-calculator",       0.9, "monthly"),
+    make("/tools/number-to-words",      0.9, "monthly"),
+    make("/games",                      0.9, "weekly"),
+    make("/games/math-puzzle",          0.9, "monthly"),
+    make("/games/word-puzzle",          0.9, "monthly"),
+    make("/games/quiz-battle",          0.9, "monthly"),
+    make("/search",                     0.5, "monthly"),
+    make("/about",                      0.7, "monthly"),
+    make("/contact",                    0.6, "monthly"),
+    make("/privacy-policy",             0.4, "monthly"),
+  ];
+
+  // ── Data-driven routes (generated, never hand-listed) ─────────────────────
+  const courseUrls   = getAllCourses().map(c => make(`/courses/${c.id}`, 0.7, "monthly"));
+  const noteUrls     = getAllNotes().map(n => make(`/notes/${n.id}`, 0.7, "monthly"));
+  const quizUrls     = getAllQuizzes().map(q => make(`/quiz/${q.id}`, 0.7, "monthly"));
+  const mathUrls     = MATH_TOPICS.map(t => make(`/courses/mathematics/${t.id}`, 0.8, "monthly"));
+  const readingUrls  = PASSAGES.map(p => make(`/ielts/reading/${p.id}`, 0.7, "monthly"));
+  const surahUrls    = SURAH_META.map(s => make(`/quran/${s.number}`, 0.7, "monthly"));
+  const tajweedUrls  = SURAH_META.map(s => make(`/quran/tajweed/${s.number}`, 0.6, "monthly"));
+  const juzUrls      = Array.from({ length: 30 }, (_, i) => make(`/quran/juz/${i + 1}`, 0.5, "monthly"));
 
   return [
-    { url: base,                                      lastModified: now, changeFrequency: "weekly",  priority: 1.0 },
-    { url: `${base}/courses`,                         lastModified: now, changeFrequency: "weekly",  priority: 0.9 },
-    { url: `${base}/notes`,                           lastModified: now, changeFrequency: "weekly",  priority: 0.9 },
-    { url: `${base}/quiz`,                            lastModified: now, changeFrequency: "weekly",  priority: 0.9 },
-    { url: `${base}/tools`,                           lastModified: now, changeFrequency: "weekly",  priority: 0.9 },
-    { url: `${base}/games`,                           lastModified: now, changeFrequency: "weekly",  priority: 0.9 },
-    { url: `${base}/about`,                           lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/contact`,                         lastModified: now, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${base}/privacy-policy`,                  lastModified: now, changeFrequency: "monthly", priority: 0.4 },
-    { url: `${base}/courses/math-algebra-basics`,     lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/courses/science-biology-cells`,   lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/courses/history-world-war-2`,     lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/notes/algebra-cheatsheet`,        lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/notes/cell-biology-notes`,        lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/notes/essay-writing-guide`,       lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/quiz/algebra-quiz`,               lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/quiz/cell-biology-quiz`,          lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/quiz/wwii-quiz`,                  lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/tools/simple-calculator`,         lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/tools/scientific-calculator`,     lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/tools/cfa-calculator`,            lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/tools/number-to-words`,           lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/games/math-puzzle`,               lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/games/word-puzzle`,               lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/games/quiz-battle`,               lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/ielts`,                           lastModified: now, changeFrequency: "weekly",  priority: 0.9 },
-    { url: `${base}/ielts/reading`,                   lastModified: now, changeFrequency: "weekly",  priority: 0.8 },
-    { url: `${base}/ielts/reading/sleep-science`,     lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/ielts/reading/urban-farming`,     lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/ielts/reading/bilingualism`,      lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/ielts/reading/wood-wide-web`,     lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/ielts/reading/chronometer`,       lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/ielts/reading/biophilic-urbanism`,lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/ielts/reading/silk-road`,         lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/ielts/reading/bicycle-couriers`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/ielts/reading/public-parks`,     lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/ielts/reading/remote-working`,   lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/ielts/reading/farmers-markets`,  lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/ielts/listening`,                 lastModified: now, changeFrequency: "weekly",  priority: 0.8 },
-    { url: `${base}/ielts/writing`,                   lastModified: now, changeFrequency: "weekly",  priority: 0.8 },
-    { url: `${base}/ielts/speaking`,                  lastModified: now, changeFrequency: "weekly",  priority: 0.8 },
+    ...staticRoutes,
+    ...courseUrls,
+    ...noteUrls,
+    ...quizUrls,
+    ...mathUrls,
+    ...readingUrls,
+    ...surahUrls,
+    ...tajweedUrls,
+    ...juzUrls,
   ];
 }
