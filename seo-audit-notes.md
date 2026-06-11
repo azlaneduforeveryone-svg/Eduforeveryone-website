@@ -154,6 +154,28 @@
 - Footer is shared; restructure columns (read `Footer.tsx` at Phase 8).
 - About page exists (`app/about/page.tsx`) — review/rebuild at Phase 9 with placeholders.
 
+## MODEL ANSWERS — PENDING AZLAN'S REVIEW BEFORE DEPLOY
+Phase 6 created 20 individual Academic Task 1 prompt pages at
+`/ielts/writing/task-1/[slug]`, each with a sample Band 8 model answer written by
+EduForEveryone (labelled on-page as "for guidance only, not an official examiner
+response"). **Review each model answer for accuracy/quality before deploy:**
+- [ ] AT1-A bar-chart-car-ownership          - [ ] AT1-K table-household-expenditure
+- [ ] AT1-B line-graph-city-temperatures     - [ ] AT1-L table-international-students
+- [ ] AT1-C pie-chart-australia-household-energy - [ ] AT1-M process-diagram-glass-bottle-recycling
+- [ ] AT1-D table-country-population-gdp-life-expectancy - [ ] AT1-N process-diagram-butterfly-life-cycle
+- [ ] AT1-E process-diagram-rainwater-treatment - [ ] AT1-O map-town-centre-development
+- [ ] AT1-F bar-chart-university-subject-choices - [ ] AT1-P map-island-tourist-development
+- [ ] AT1-G line-graph-coffee-consumption    - [ ] AT1-Q map-university-campus-2030
+- [ ] AT1-H bar-chart-leisure-activities-by-age - [ ] AT1-R bar-chart-waste-recycling-by-country
+- [ ] AT1-I line-graph-tourist-attraction-visitors - [ ] AT1-S line-graph-ageing-population
+- [ ] AT1-J pie-chart-electricity-generation-sources - [ ] AT1-T pie-chart-water-use-by-sector
+
+NOTE: Phase 6 covered the **20 Academic Task 1** prompts only (spec's explicit
+"20 Task 1 prompts" + example route `/ielts/writing/task-1/...`). The 20 GT Task 1
+and 20 Task 2 prompts still use the existing direct-practice editor flow (preserved
+per spec). Building prompt pages + model answers for those 40 is a documented
+follow-up requiring the same review.
+
 ## ITEMS NEEDING AZLAN'S INPUT (running list)
 - [ ] Phase 5: approve adding new `lib/quranSurahMeta.ts` (114 factual surah names/counts) for
       surah-name metadata — or keep numeric titles.

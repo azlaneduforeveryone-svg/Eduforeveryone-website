@@ -14,6 +14,7 @@ import {
   task2ApiType,
 } from "@/lib/ielts-writing-data";
 import Task1Figure from "@/components/ielts/Task1Figure";
+import { getModelAnswerById } from "@/lib/ielts-writing-model-answers";
 
 interface IELTSResult {
   overall: number;
@@ -182,6 +183,21 @@ export default function WritingPage() {
   const timer = useTimer(selected ? selected.timeMin * 60 : 1200);
 
   const wordCount = text.trim() === "" ? 0 : text.trim().split(/\s+/).length;
+
+  // Preload a specific prompt when deep-linked from a prompt page (?prompt=AT1-A).
+  const preloadedRef = useRef(false);
+  useEffect(() => {
+    if (preloadedRef.current || typeof window === "undefined") return;
+    const pid = new URLSearchParams(window.location.search).get("prompt");
+    if (!pid) return;
+    const p = PROMPTS.find(x => x.id === pid);
+    if (p) {
+      preloadedRef.current = true;
+      setTab(p.task);
+      selectPrompt(p);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [PROMPTS]);
 
   function selectPrompt(p: Prompt) {
     setSelected(p);
@@ -423,6 +439,14 @@ export default function WritingPage() {
             <h3 className="font-bold text-gray-900 mb-2">{p.title}</h3>
             <p className="text-gray-500 text-xs leading-relaxed mb-5 line-clamp-3">{p.prompt.slice(0, 150)}…</p>
             <button onClick={() => selectPrompt(p)} className="w-full bg-violet-600 text-white py-2.5 rounded-xl font-bold text-sm hover:bg-violet-700 transition-colors">Start Writing →</button>
+            {format === "academic" && p.task === 1 && getModelAnswerById(p.id) && (
+              <Link
+                href={`/ielts/writing/task-1/${getModelAnswerById(p.id)!.slug}`}
+                className="block w-full text-center mt-2 text-violet-600 text-xs font-semibold hover:underline"
+              >
+                View prompt &amp; sample Band 8 answer →
+              </Link>
+            )}
           </div>
         ))}
       </div>

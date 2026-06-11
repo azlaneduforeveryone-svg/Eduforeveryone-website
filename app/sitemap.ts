@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { MATH_TOPICS } from "@/lib/mathTopics";
 import { PASSAGES } from "@/lib/ielts-reading-academic-data";
 import { SURAH_META } from "@/lib/quranSurahMeta";
+import { TASK1_MODEL_ANSWERS } from "@/lib/ielts-writing-model-answers";
 import { getAllCourses, getAllNotes, getAllQuizzes } from "@/lib/data";
 
 type Freq = "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
@@ -61,6 +62,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const quizUrls     = getAllQuizzes().map(q => make(`/quiz/${q.id}`, 0.7, "monthly"));
   const mathUrls     = MATH_TOPICS.map(t => make(`/courses/mathematics/${t.id}`, 0.8, "monthly"));
   const readingUrls  = PASSAGES.map(p => make(`/ielts/reading/${p.id}`, 0.7, "monthly"));
+  const writingUrls  = TASK1_MODEL_ANSWERS.map(m => make(`/ielts/writing/task-1/${m.slug}`, 0.7, "monthly"));
   const surahUrls    = SURAH_META.map(s => make(`/quran/${s.number}`, 0.7, "monthly"));
   const tajweedUrls  = SURAH_META.map(s => make(`/quran/tajweed/${s.number}`, 0.6, "monthly"));
   const juzUrls      = Array.from({ length: 30 }, (_, i) => make(`/quran/juz/${i + 1}`, 0.5, "monthly"));
@@ -72,6 +74,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...quizUrls,
     ...mathUrls,
     ...readingUrls,
+    ...writingUrls,
     ...surahUrls,
     ...tajweedUrls,
     ...juzUrls,
