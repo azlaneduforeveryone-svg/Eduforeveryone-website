@@ -130,6 +130,50 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── GMAT Section ── */}
+      <section className="py-14 px-4 bg-emerald-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex justify-between items-center mb-6">
+            <div>
+              <p className="text-emerald-600 font-semibold text-sm uppercase tracking-wider mb-1">Exam Prep</p>
+              <h2 className="text-2xl font-bold text-gray-900">GMAT Focus Edition</h2>
+              <p className="text-gray-500 text-sm mt-1">Free section practice & full mock — no signup needed</p>
+            </div>
+            <Link href="/gmat" className="text-emerald-600 text-sm font-semibold hover:underline whitespace-nowrap">View all →</Link>
+          </div>
+          <Link href="/gmat/full-test" className="group flex flex-col sm:flex-row items-start sm:items-center gap-5 bg-gradient-to-r from-emerald-700 to-teal-700 text-white rounded-2xl p-6 mb-5 hover:from-emerald-800 hover:to-teal-800 transition-all">
+            <div className="text-5xl flex-shrink-0">🎓</div>
+            <div className="flex-1">
+              <div className="flex flex-wrap gap-2 mb-2">
+                <span className="text-xs bg-white/20 border border-white/20 px-2.5 py-1 rounded-full font-medium">Free Forever</span>
+                <span className="text-xs bg-white/20 border border-white/20 px-2.5 py-1 rounded-full font-medium">No Signup</span>
+                <span className="text-xs bg-white/20 border border-white/20 px-2.5 py-1 rounded-full font-medium">Estimated Scoring</span>
+              </div>
+              <h3 className="text-xl font-black mb-1">Full GMAT Focus Mock Test</h3>
+              <p className="text-emerald-200 text-sm">Quant, Verbal and Data Insights — timed sections, choose your order, detailed explanations</p>
+            </div>
+            <div className="flex-shrink-0">
+              <span className="bg-white text-emerald-700 px-5 py-2.5 rounded-xl font-bold text-sm group-hover:bg-emerald-50 transition-colors whitespace-nowrap">
+                Take Full Mock →
+              </span>
+            </div>
+          </Link>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { href:"/gmat/quant",          emoji:"🔢", label:"Quantitative", sub:"Problem Solving" },
+              { href:"/gmat/verbal",         emoji:"📖", label:"Verbal",       sub:"CR & Reading Comp" },
+              { href:"/gmat/data-insights",  emoji:"📊", label:"Data Insights", sub:"DS · MSR · Graphics" },
+            ].map(s => (
+              <Link key={s.href} href={s.href} className="bg-white border border-emerald-100 rounded-2xl p-4 hover:border-emerald-300 hover:shadow-md transition-all group text-center">
+                <span className="text-3xl block mb-2">{s.emoji}</span>
+                <h4 className="font-bold text-gray-900 text-sm group-hover:text-emerald-600 transition-colors">{s.label}</h4>
+                <p className="text-gray-400 text-xs mt-1">{s.sub}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Islamic Studies / Quran Section ── */}
       <section className="py-14 px-4 bg-amber-50">
         <div className="max-w-5xl mx-auto">

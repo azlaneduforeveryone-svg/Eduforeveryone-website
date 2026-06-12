@@ -5,6 +5,7 @@ import {
   serverTimestamp, where, writeBatch, addDoc,
 } from "firebase/firestore";
 import { db } from "./firebase";
+import type { GmatSessionResult } from "./gmat-types";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 export interface UserProfile {
@@ -268,4 +269,58 @@ export async function getIeltsSessions(uid: string, count = 100) {
   );
   const snap = await getDocs(q);
   return snap.docs.map(d => ({ id: d.id, ...d.data() }));
+}
+
+// ── GMAT Results ──────────────────────────────────────────────────────────────
+// Mirrors the IELTS pattern: always write localStorage; ALSO write Firestore
+// (gmatResults/{uid}/sessions/{autoId}) when logged in. Login is never a gate.
+// Scores are ESTIMATES only — never an official GMAT score.
+const GMAT_LOCAL_KEY = "gmat_history";
+
+export function getLocalGmat(): GmatSessionResult[] {
+  if (typeof window === "undefined") return [];
+  try { return JSON.parse(localStorage.getItem(GMAT_LOCAL_KEY) || "[]"); } catch { return []; }
+}
+
+function saveLocalGmat(r: GmatSessionResult) {
+  if (typeof window === "undefined") return;
+  try {
+    const arr = getLocalGmat();
+    arr.unshift(r);
+    localStorage.setItem(GMAT_LOCAL_KEY, JSON.stringify(arr.slice(0, 200)));
+  } catch { /* ignore */ }
+}
+
+export async function saveGmatResult(r: GmatSessionResult, uid?: string) {
+  saveLocalGmat(r);
+  if (!uid) return;
+  try {
+    await addDoc(collection(db, "gmatResults", uid, "sessions"), {
+      formId: r.formId,
+      sections: r.sections,
+      estimatedTotal: r.estimatedTotal,
+      completedAt: serverTimestamp(),
+    });
+  } catch (e) { console.error("saveGmatResult failed", e); }
+}
+
+export async function getGmatSessions(uid: string, count = 100): Promise<GmatSessionResult[]> {
+  try {
+    const q = query(
+      collection(db, "gmatResults", uid, "sessions"),
+      orderBy("completedAt", "desc"),
+      limit(count)
+    );
+    const snap = await getDocs(q);
+    return snap.docs.map(d => {
+      const data = d.data() as Record<string, unknown>;
+      const ts = data.completedAt as { toMillis?: () => number } | undefined;
+      return {
+        formId: data.formId as string,
+        sections: data.sections as GmatSessionResult["sections"],
+        estimatedTotal: data.estimatedTotal as number,
+        completedAt: ts?.toMillis ? ts.toMillis() : Date.now(),
+      };
+    });
+  } catch (e) { console.error("getGmatSessions failed", e); return []; }
 }
