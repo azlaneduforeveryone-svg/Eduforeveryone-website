@@ -142,11 +142,23 @@ export function sampleSection(
     pool = [...bank.items];
   }
 
-  const picked = shuffle(pool).slice(0, Math.min(count, pool.length));
-  picked.forEach((q) => seen.add(q.id));
-  setSeen(bank.id, seen);
+  const questionCount = (q: GmatQuestion) =>
+  q.type === "reading-comprehension" || q.type === "multi-source-reasoning"
+    ? q.questions.length
+    : 1;
 
-  return picked.map(prepareQuestion);
+const shuffled = shuffle(pool);
+const picked: GmatQuestion[] = [];
+let total = 0;
+for (const q of shuffled) {
+  if (total >= count) break;
+  picked.push(q);
+  total += questionCount(q);
+  seen.add(q.id);
+}
+
+setSeen(bank.id, seen);
+return picked.map(prepareQuestion);
 }
 
 /* Build a full mock: a fresh sample of the real per-section counts each time,

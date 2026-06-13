@@ -13,7 +13,7 @@
 // ---------------------------------------------------------------------------
 
 import { useState, useEffect, useRef, useCallback } from "react";
-import QuestionRenderer, { gradeFull, isAnswered } from "./QuestionRenderer";
+import QuestionRenderer, { gradeFull, isAnswered, unitCount } from "./QuestionRenderer";
 import type { GmatAnswer } from "./QuestionRenderer";
 import DataInsightsCalculator from "./DataInsightsCalculator";   // ← added import for Data Insights Calculator
 import { scoreSection } from "@/lib/gmat-engine";
@@ -113,7 +113,10 @@ export default function SectionRunner({
     });
   };
 
-  const answeredCount = questions.filter((qq) => isAnswered(qq, answers[qq.id])).length;
+  const answeredCount = questions
+  .filter((qq) => isAnswered(qq, answers[qq.id]))
+  .reduce((sum, qq) => sum + unitCount(qq), 0);
+  const totalQuestions = questions.reduce((sum, qq) => sum + unitCount(qq), 0);
   const urgent = !untimed && timeLeft <= 120;
 
   return (
@@ -134,7 +137,7 @@ export default function SectionRunner({
             )}
           </div>
           <div className="flex items-center gap-3 flex-wrap">
-            <span className="text-xs text-gray-400">{answeredCount}/{questions.length} answered</span>
+            <span className="text-xs text-gray-400">{answeredCount}/{totalQuestions} answered</span>
             <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-lg">
               ✏️ Edits left: {editsLeft}
             </span>
@@ -156,7 +159,7 @@ export default function SectionRunner({
           </div>
         </div>
         <div className="h-1 bg-gray-100">
-          <div className="h-full bg-emerald-500 transition-all" style={{ width: `${(answeredCount / questions.length) * 100}%` }} />
+          <div className="h-full bg-emerald-500 transition-all" style={{ width: `${(answeredCount / totalQuestions) * 100}%` }} />
         </div>
       </div>
 
@@ -201,7 +204,7 @@ export default function SectionRunner({
           <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
             <div className="flex items-center justify-between mb-4">
               <span className="text-xs text-gray-400 font-medium">
-                Question {idx + 1} of {questions.length}
+                Question {idx + 1} of {totalQuestions}
                 <span className="ml-2 text-gray-300">·</span>
                 <span className="ml-2 text-emerald-600 font-semibold">{TYPE_LABEL[q.type]}</span>
               </span>
