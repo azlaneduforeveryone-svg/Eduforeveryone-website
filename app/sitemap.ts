@@ -1,11 +1,13 @@
 import type { MetadataRoute } from "next";
-import { MATH_TOPICS } from "@/lib/mathTopics";
+// Temporarily hidden — reworking Courses, will re-add at same URLs.
+// import { MATH_TOPICS } from "@/lib/mathTopics";
 import { PASSAGES } from "@/lib/ielts-reading-academic-data";
 import { SURAH_META } from "@/lib/quranSurahMeta";
 import { TASK1_MODEL_ANSWERS } from "@/lib/ielts-writing-model-answers";
 import { GT_TASK1_MODEL_ANSWERS } from "@/lib/ielts-gt-task1-model-answers";
 import { TASK2_MODEL_ANSWERS } from "@/lib/ielts-task2-model-answers";
-import { getAllCourses, getAllNotes, getAllQuizzes } from "@/lib/data";
+// Temporarily hidden — reworking Courses & Notes; getAllCourses/getAllNotes will re-add later.
+import { getAllQuizzes } from "@/lib/data";
 
 type Freq = "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
 
@@ -43,9 +45,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     make("/quran/pdf/15line",           0.7, "monthly"),
     make("/quran/pdf/13line",           0.7, "monthly"),
     make("/islamic-studies",            0.8, "weekly"),
-    make("/courses",                    0.9, "weekly"),
-    make("/courses/mathematics",        0.8, "weekly"),
-    make("/notes",                      0.8, "weekly"),
+    // Temporarily hidden — reworking Courses & Notes, will re-add at same URLs.
+    // make("/courses",                    0.9, "weekly"),
+    // make("/courses/mathematics",        0.8, "weekly"),
+    // make("/notes",                      0.8, "weekly"),
     make("/quiz",                       0.8, "weekly"),
     make("/quiz/islamic-quiz",          0.8, "weekly"),
     make("/tools",                      0.9, "weekly"),
@@ -64,10 +67,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // ── Data-driven routes (generated, never hand-listed) ─────────────────────
-  const courseUrls   = getAllCourses().map(c => make(`/courses/${c.id}`, 0.7, "monthly"));
-  const noteUrls     = getAllNotes().map(n => make(`/notes/${n.id}`, 0.7, "monthly"));
+  // Temporarily hidden — reworking Courses & Notes, will re-add at same URLs.
+  // const courseUrls   = getAllCourses().map(c => make(`/courses/${c.id}`, 0.7, "monthly"));
+  // const noteUrls     = getAllNotes().map(n => make(`/notes/${n.id}`, 0.7, "monthly"));
   const quizUrls     = getAllQuizzes().map(q => make(`/quiz/${q.id}`, 0.7, "monthly"));
-  const mathUrls     = MATH_TOPICS.map(t => make(`/courses/mathematics/${t.id}`, 0.8, "monthly"));
+  // const mathUrls     = MATH_TOPICS.map(t => make(`/courses/mathematics/${t.id}`, 0.8, "monthly"));
   const readingUrls  = PASSAGES.map(p => make(`/ielts/reading/${p.id}`, 0.7, "monthly"));
   const writingUrls  = TASK1_MODEL_ANSWERS.map(m => make(`/ielts/writing/task-1/${m.slug}`, 0.7, "monthly"));
   const gtWritingUrls = GT_TASK1_MODEL_ANSWERS.map(m => make(`/ielts/writing/gt-task-1/${m.slug}`, 0.7, "monthly"));
@@ -78,10 +82,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...staticRoutes,
-    ...courseUrls,
-    ...noteUrls,
+    // Temporarily hidden — reworking Courses & Notes, will re-add at same URLs.
+    // ...courseUrls,
+    // ...noteUrls,
     ...quizUrls,
-    ...mathUrls,
+    // ...mathUrls,
     ...readingUrls,
     ...writingUrls,
     ...gtWritingUrls,

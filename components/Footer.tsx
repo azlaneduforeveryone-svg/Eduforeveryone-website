@@ -35,8 +35,10 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-3">Learn</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/courses" className="hover:text-teal-400 transition-colors">Courses</Link></li>
-              <li><Link href="/notes" className="hover:text-teal-400 transition-colors">Notes</Link></li>
+              {/* Temporarily hidden — reworking Courses, will re-add at same URL. */}
+              {/* <li><Link href="/courses" className="hover:text-teal-400 transition-colors">Courses</Link></li> */}
+              {/* Temporarily hidden — reworking Notes, will re-add at same URL. */}
+              {/* <li><Link href="/notes" className="hover:text-teal-400 transition-colors">Notes</Link></li> */}
               <li><Link href="/quiz" className="hover:text-teal-400 transition-colors">Quizzes</Link></li>
               <li><Link href="/tools" className="hover:text-teal-400 transition-colors">Tools</Link></li>
               <li><Link href="/games" className="hover:text-teal-400 transition-colors">Games</Link></li>
