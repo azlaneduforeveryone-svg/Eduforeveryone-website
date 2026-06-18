@@ -297,82 +297,194 @@ Modern cartography has been transformed by satellite technology and Geographic I
     id: "AR-T4",
     label: "Academic Reading Test 4",
     passages: [
+      // Passage 1 – Easy (natural world)
       {
-        title: "Passage 1 – Placeholder (to be completed)",
-        text: "This passage would contain a full academic text. For now, it is a placeholder.",
-        questions: Array.from({ length: 13 }, (_, i) => ({
-          id: i + 1,
-          type: "tfng" as const,
-          q: `Placeholder question ${i+1}`,
-          answer: "NOT GIVEN",
-          explanation: "Placeholder"
-        }))
+        title: "The Migration of the Monarch Butterfly",
+        text: `Each autumn, millions of monarch butterflies embark on one of the most remarkable journeys in the natural world. Travelling up to 4,800 kilometres, monarchs from across North America converge on a handful of forested mountains in central Mexico, where they spend the winter clustered in dense colonies. What makes this feat extraordinary is that no single butterfly completes the round trip. The monarchs that fly south in October are the great‑grandchildren of those that left Mexico the previous spring.
+ 
+The migration is bound up with the monarch's dependence on a single plant: milkweed. Female monarchs lay their eggs exclusively on milkweed, and the caterpillars eat nothing else. As they feed, the caterpillars absorb toxic compounds from the plant, which make the adult butterflies poisonous to predators. Their bright orange‑and‑black wings serve as a warning signal. As milkweed dies back in the cold northern winters, the butterflies must travel south to survive.
+ 
+How the monarchs navigate remains only partly understood. Scientists believe they use a combination of the position of the sun and an internal "circadian clock" located in their antennae to hold a southward bearing. There is also evidence that they can sense the Earth's magnetic field, allowing them to stay on course on cloudy days when the sun is hidden.
+ 
+The overwintering sites provide a delicate microclimate. The oyamel fir forests sit at altitudes where temperatures stay cool enough to keep the butterflies dormant — conserving energy — but not so cold that they freeze. The dense canopy acts at once like a blanket and an umbrella, trapping warmth and shielding the colonies from rain.
+ 
+In recent decades, monarch numbers have fallen sharply. The eastern population declined by more than 80% between the mid‑1990s and 2014. The causes are multiple: illegal logging at the Mexican overwintering sites, the loss of milkweed across North American farmland due to herbicide use, and increasingly erratic weather. Conservationists have responded by planting milkweed corridors and lobbying for forest protection. Whether these efforts can reverse the decline is still uncertain.`,
+        instructions: "Read the passage and answer questions 1–13.",
+        questions: [
+          { id: 1, type: "tfng", q: "A single monarch butterfly completes the entire round trip between Mexico and North America.", answer: "FALSE", explanation: "Paragraph 1: 'no single butterfly completes the round trip'." },
+          { id: 2, type: "fill", q: "Monarch caterpillars feed exclusively on _____.", answer: "milkweed", explanation: "Paragraph 2: 'the caterpillars eat nothing else' (milkweed)." },
+          { id: 3, type: "tfng", q: "The toxic compounds from milkweed make adult monarchs poisonous to predators.", answer: "TRUE", explanation: "Paragraph 2: 'make the adult butterflies poisonous to predators'." },
+          { id: 4, type: "mcq", q: "What do scientists believe lets monarchs stay on course on cloudy days?", opts: ["A. The position of the sun", "B. Visual landmarks", "C. The Earth's magnetic field", "D. Wind direction"], answer: "C", explanation: "Paragraph 3: they can sense the Earth's magnetic field on cloudy days." },
+          { id: 5, type: "tfng", q: "Monarchs migrate faster than any other insect.", answer: "NOT GIVEN", explanation: "No comparison of migration speed with other insects is made." },
+          { id: 6, type: "fill", q: "The monarch's internal circadian clock is located in its _____.", answer: "antennae", explanation: "Paragraph 3." },
+          { id: 7, type: "mcq", q: "The overwintering forest canopy is compared to:", opts: ["A. A tunnel", "B. A net", "C. A wall", "D. A blanket and an umbrella"], answer: "D", explanation: "Paragraph 4: 'like a blanket and an umbrella'." },
+          { id: 8, type: "tfng", q: "Temperatures at the overwintering sites are cold enough to freeze the butterflies.", answer: "FALSE", explanation: "Paragraph 4: 'but not so cold that they freeze'." },
+          { id: 9, type: "fill", q: "The eastern monarch population fell by more than _____ % between the mid‑1990s and 2014.", answer: "80", explanation: "Paragraph 5." },
+          { id: 10, type: "short", q: "Name one cause of the monarch's decline mentioned in the passage.", answer: "illegal logging (or herbicide use / loss of milkweed / erratic weather)", explanation: "Paragraph 5 lists logging, milkweed loss from herbicides, and erratic weather." },
+          { id: 11, type: "mcq", q: "Why must monarchs travel south in autumn?", opts: ["A. Because milkweed dies back in northern winters", "B. To find mates", "C. To escape predators", "D. To reach warmer oceans"], answer: "A", explanation: "Paragraph 2: milkweed dies back, so they must travel south to survive." },
+          { id: 12, type: "tfng", q: "Conservationists have planted milkweed corridors in response to the decline.", answer: "TRUE", explanation: "Paragraph 5: 'planting milkweed corridors'." },
+          { id: 13, type: "tfng", q: "Scientists fully understand how monarchs navigate.", answer: "FALSE", explanation: "Paragraph 3: navigation 'remains only partly understood'." },
+        ],
       },
+      // Passage 2 – Moderate (history / society)
       {
-        title: "Passage 2 – Placeholder (to be completed)",
-        text: "This passage would contain a full academic text.",
-        questions: Array.from({ length: 13 }, (_, i) => ({
-          id: i + 14,
-          type: "fill" as const,
-          q: `Placeholder question ${i+14}`,
-          answer: "example",
-          explanation: "Placeholder"
-        }))
+        title: "The History of Coffee",
+        text: `The story of coffee begins, according to legend, with an Ethiopian goat herder named Kaldi. Sometime around the 9th century, Kaldi is said to have noticed that his goats became unusually energetic after eating the bright red berries of a certain shrub. Curious, he tried the berries himself and felt similarly invigorated. Whether or not the tale is true, it reflects coffee's origins in the highlands of Ethiopia, where the coffee plant grows wild to this day.
+ 
+From Ethiopia, coffee spread across the Red Sea to Yemen, where by the 15th century it was being deliberately cultivated and roasted. Sufi monks drank it to stay awake during night‑time prayers. The Yemeni port of Mocha became so central to the trade that its name still denotes a variety of coffee. For a time, the rulers of the region guarded their monopoly jealously, forbidding the export of fertile beans that could be planted elsewhere.
+ 
+The monopoly could not last. In the early 17th century, coffee reached Europe, where it was at first viewed with suspicion as a strange foreign drink. That suspicion faded quickly once people experienced its effects, and coffee houses sprang up across the continent. In London, these establishments were nicknamed "penny universities", because for the price of a cup one could join in lively discussion and debate. Some historians argue that the coffee house played a meaningful role in the intellectual ferment of the Enlightenment.
+ 
+Coffee cultivation eventually escaped Arabian control. The Dutch obtained seedlings and established plantations in their colony of Java, in present‑day Indonesia. The French carried the plant to the Caribbean, and from there it spread to Central and South America. Brazil, where coffee was introduced in the 18th century, would in time become the world's largest producer — a position it still holds.
+ 
+Today coffee is among the most valuable traded commodities on the planet, supporting the livelihoods of an estimated 125 million people. Yet the industry faces serious challenges. Many of the small farmers who grow coffee earn very little, and price volatility on global markets can be devastating for them. Climate change poses a longer‑term threat: the narrow band of conditions in which high‑quality Arabica coffee thrives is shrinking as temperatures rise.`,
+        instructions: "Read the passage and answer questions 14–26.",
+        questions: [
+          { id: 14, type: "tfng", q: "The story of Kaldi is described as a legend rather than established fact.", answer: "TRUE", explanation: "Paragraph 1: 'according to legend' and 'Whether or not the tale is true'." },
+          { id: 15, type: "fill", q: "Coffee plants still grow wild in the highlands of _____.", answer: "Ethiopia", explanation: "Paragraph 1." },
+          { id: 16, type: "mcq", q: "Why did Sufi monks drink coffee?", opts: ["A. To stay awake during night prayers", "B. To aid digestion", "C. As a medicine", "D. For a religious ceremony"], answer: "A", explanation: "Paragraph 2: 'to stay awake during night‑time prayers'." },
+          { id: 17, type: "fill", q: "The Yemeni port whose name still denotes a coffee variety is _____.", answer: "Mocha", explanation: "Paragraph 2." },
+          { id: 18, type: "tfng", q: "The rulers of the Yemen region freely allowed fertile coffee beans to be exported.", answer: "FALSE", explanation: "Paragraph 2: they were 'forbidding the export of fertile beans'." },
+          { id: 19, type: "mcq", q: "Why were London coffee houses nicknamed 'penny universities'?", opts: ["A. They were funded by universities", "B. They charged a penny for formal lectures", "C. For the price of a cup one could join debate", "D. They taught people to read"], answer: "C", explanation: "Paragraph 3." },
+          { id: 20, type: "tfng", q: "All historians agree that the coffee house caused the Enlightenment.", answer: "NOT GIVEN", explanation: "Only that 'some historians argue' it 'played a meaningful role'; the views of all historians, and any causal claim, are not stated." },
+          { id: 21, type: "fill", q: "The Dutch established coffee plantations in their colony of _____.", answer: "Java", explanation: "Paragraph 4." },
+          { id: 22, type: "mcq", q: "Which country became the world's largest coffee producer?", opts: ["A. Indonesia", "B. Brazil", "C. Yemen", "D. Ethiopia"], answer: "B", explanation: "Paragraph 4: Brazil 'would in time become the world's largest producer'." },
+          { id: 23, type: "tfng", q: "Brazil is no longer the world's largest coffee producer.", answer: "FALSE", explanation: "Paragraph 4: 'a position it still holds'." },
+          { id: 24, type: "fill", q: "Coffee supports the livelihoods of an estimated _____ million people.", answer: "125", explanation: "Paragraph 5." },
+          { id: 25, type: "short", q: "Name one challenge facing the coffee industry today.", answer: "low farmer earnings (or price volatility / climate change)", explanation: "Paragraph 5." },
+          { id: 26, type: "tfng", q: "Climate change is expanding the area where Arabica coffee can be grown.", answer: "FALSE", explanation: "Paragraph 5: the suitable band 'is shrinking as temperatures rise'." },
+        ],
       },
+      // Passage 3 – Hard (medicine / psychology, abstract)
       {
-        title: "Passage 3 – Placeholder (to be completed)",
-        text: "This passage would contain a full academic text.",
-        questions: Array.from({ length: 14 }, (_, i) => ({
-          id: i + 27,
-          type: "mcq" as const,
-          q: `Placeholder question ${i+27}`,
-          opts: ["A", "B", "C", "D"],
-          answer: "A",
-          explanation: "Placeholder"
-        }))
-      }
-    ]
+        title: "The Placebo Effect",
+        text: `The placebo effect is one of the most intriguing phenomena in medicine. A placebo is an inert substance or sham treatment — a sugar pill, a saline injection — that contains no active ingredient, yet patients who receive it often report genuine improvement in their symptoms. For decades, this was dismissed as merely a nuisance, something clinical trials had to control for. More recently, researchers have come to see the placebo response as a window into the relationship between mind and body.
+ 
+The effect is real and measurable, but it is frequently misunderstood. A placebo does not shrink tumours or cure infections. What it can do is alter the subjective experience of illness — particularly symptoms such as pain, fatigue, nausea, and anxiety, which are heavily modulated by the brain. When a patient expects relief, the brain releases its own chemicals, including endorphins and dopamine. Brain imaging studies have shown that taking a placebo painkiller activates many of the same neural pathways as a genuine analgesic.
+ 
+Expectation is central, but it is not the whole story. The ritual surrounding treatment matters too. Studies have found that the colour, size, and even the price of a pill influence its perceived effectiveness. A placebo presented as an expensive brand‑name drug produces a stronger response than the same pill described as cheap. Injections tend to outperform tablets, and elaborate procedures outperform simple ones. The warmth and confidence of the physician administering the treatment also make a measurable difference.
+ 
+Perhaps the most surprising finding concerns so‑called "open‑label" placebos. Conventional wisdom held that a placebo could only work if the patient believed it was a real drug — that deception was essential. Yet in several trials, patients who were openly told they were receiving a placebo, with no active ingredient, still improved. This suggests that the act of taking a treatment, and the expectation built up through the therapeutic encounter, can trigger physiological responses even without belief in the pill itself.
+ 
+The placebo effect has a darker twin: the nocebo effect. Here, negative expectations produce negative outcomes. Patients warned of a drug's side effects are more likely to experience those very effects, even when given a placebo. The nocebo response poses a genuine dilemma for doctors, who are obliged to disclose risks but may, in doing so, inadvertently cause harm.
+ 
+Understanding these effects has practical consequences. If the manner in which a treatment is delivered can shape its outcome, then the relationship between clinician and patient is not incidental to medicine but part of the therapy itself. Some researchers argue that medicine, in its rush towards technology, has undervalued this human dimension.`,
+        instructions: "Read the passage and answer questions 27–40.",
+        questions: [
+          { id: 27, type: "tfng", q: "A placebo contains an active medical ingredient.", answer: "FALSE", explanation: "Paragraph 1: 'an inert substance... that contains no active ingredient'." },
+          { id: 28, type: "tfng", q: "Placebos are more effective than real drugs at treating pain.", answer: "NOT GIVEN", explanation: "The passage says placebos activate similar pathways but never claims they are more effective than real drugs." },
+          { id: 29, type: "fill", q: "Placebos mainly affect symptoms heavily modulated by the _____, such as pain and nausea.", answer: "brain", explanation: "Paragraph 2." },
+          { id: 30, type: "fill", q: "When a patient expects relief, the brain releases endorphins and _____.", answer: "dopamine", explanation: "Paragraph 2." },
+          { id: 31, type: "mcq", q: "Which factor is said to increase a placebo's perceived effectiveness?", opts: ["A. A higher price", "B. A lower price", "C. A smaller pill", "D. A plainer package"], answer: "A", explanation: "Paragraph 3: a placebo presented as an expensive brand‑name drug produces a stronger response." },
+          { id: 32, type: "tfng", q: "Tablets tend to produce a stronger placebo response than injections.", answer: "FALSE", explanation: "Paragraph 3: 'Injections tend to outperform tablets'." },
+          { id: 33, type: "mcq", q: "What is surprising about 'open‑label' placebos?", opts: ["A. They are cheaper to produce", "B. They work even when patients know they are placebos", "C. They contain a small active dose", "D. They only work on children"], answer: "B", explanation: "Paragraph 4." },
+          { id: 34, type: "tfng", q: "Deception was traditionally thought necessary for a placebo to work.", answer: "TRUE", explanation: "Paragraph 4: 'Conventional wisdom held... that deception was essential'." },
+          { id: 35, type: "fill", q: "The effect in which negative expectations cause negative outcomes is the _____ effect.", answer: "nocebo", explanation: "Paragraph 5." },
+          { id: 36, type: "tfng", q: "Patients warned about a drug's side effects never experience those effects when given a placebo.", answer: "FALSE", explanation: "Paragraph 5: they are 'more likely to experience those very effects'." },
+          { id: 37, type: "short", q: "What dilemma does the nocebo effect create for doctors?", answer: "disclosing required risks may inadvertently cause the very harms warned about", explanation: "Paragraph 5: doctors must disclose risks but doing so may cause harm." },
+          { id: 38, type: "mcq", q: "According to some researchers, modern medicine has:", opts: ["A. Overused placebos", "B. Eliminated the placebo effect", "C. Undervalued the human dimension of care", "D. Banned open‑label placebos"], answer: "C", explanation: "Final paragraph." },
+          { id: 39, type: "tfng", q: "Brain imaging shows placebo painkillers activate pathways similar to those of real analgesics.", answer: "TRUE", explanation: "Paragraph 2." },
+          { id: 40, type: "mcq", q: "What is the main argument of the passage?", opts: ["A. Placebos can replace most real drugs", "B. The placebo effect is a measurable mind–body phenomenon with practical value", "C. Placebos are useless in modern medicine", "D. The nocebo effect is imaginary"], answer: "B", explanation: "The passage frames the placebo response as real, measurable, and clinically relevant." },
+        ],
+      },
+    ],
   },
   {
     id: "AR-T5",
     label: "Academic Reading Test 5",
     passages: [
+      // Passage 1 – Easy (technology / environment)
       {
-        title: "Passage 1 – Placeholder (to be completed)",
-        text: "This passage would contain a full academic text.",
-        questions: Array.from({ length: 13 }, (_, i) => ({
-          id: i + 1,
-          type: "tfng" as const,
-          q: `Placeholder question ${i+1}`,
-          answer: "NOT GIVEN",
-          explanation: "Placeholder"
-        }))
+        title: "Vertical Farming",
+        text: `Vertical farming is the practice of growing crops in stacked layers, often inside controlled indoor environments such as warehouses or repurposed shipping containers. Instead of spreading outwards across fields, plants are grown upwards on shelves, allowing a large quantity of produce to be cultivated in a small footprint. Proponents see it as a way to feed growing urban populations while using far less land and water than conventional agriculture.
+ 
+In a typical vertical farm, crops grow without soil. Two common methods are hydroponics, in which roots are bathed in a nutrient‑rich water solution, and aeroponics, in which roots are suspended in air and misted with nutrients. LED lights replace sunlight, and their colour can be tuned to the specific wavelengths plants use for photosynthesis. Because the environment is sealed and tightly controlled, growers can adjust temperature, humidity, and carbon dioxide levels to maximise growth all year round, regardless of the weather outside.
+ 
+The advantages are considerable. Vertical farms can be located in or near cities, sharply reducing the distance food must travel to reach consumers. Crops are grown without pesticides, since pests are largely excluded from the sealed environment. Water use can be cut by up to 95% compared with field farming, because the water is recirculated rather than lost to the ground. And harvests are not at the mercy of droughts, floods, or frost.
+ 
+There are, however, significant obstacles. The biggest is energy. Replacing free sunlight with artificial lighting consumes enormous amounts of electricity, which is both expensive and, unless the power comes from renewable sources, environmentally costly. This is why most commercial vertical farms grow only high‑value, fast‑growing crops such as leafy greens and herbs. Staple crops like wheat and rice, which need a great deal of light and space relative to their value, remain uneconomical to grow this way.
+ 
+Whether vertical farming becomes a mainstream source of food or stays a niche supplier of salad leaves will depend largely on the future cost of energy and of the technology itself. As renewable electricity becomes cheaper and LED efficiency improves, the economics may shift. For now, vertical farming is best understood not as a replacement for traditional agriculture, but as a complement to it.`,
+        instructions: "Read the passage and answer questions 1–13.",
+        questions: [
+          { id: 1, type: "fill", q: "In vertical farming, crops are grown in stacked _____.", answer: "layers", explanation: "Paragraph 1." },
+          { id: 2, type: "tfng", q: "Vertical farms generally use more land than conventional agriculture.", answer: "FALSE", explanation: "Paragraph 1: they use 'far less land and water'." },
+          { id: 3, type: "mcq", q: "In hydroponics, plant roots are:", opts: ["A. Bathed in a nutrient‑rich water solution", "B. Suspended in air and misted", "C. Planted in enriched soil", "D. Wrapped in gel"], answer: "A", explanation: "Paragraph 2." },
+          { id: 4, type: "fill", q: "In aeroponics, roots are suspended in air and misted with _____.", answer: "nutrients", explanation: "Paragraph 2." },
+          { id: 5, type: "tfng", q: "LED light colour can be tuned to the wavelengths plants use for photosynthesis.", answer: "TRUE", explanation: "Paragraph 2." },
+          { id: 6, type: "mcq", q: "By how much can vertical farming cut water use compared with field farming?", opts: ["A. Up to 50%", "B. Up to 95%", "C. Up to 70%", "D. Up to 100%"], answer: "B", explanation: "Paragraph 3." },
+          { id: 7, type: "tfng", q: "Vertical farms rely heavily on chemical pesticides.", answer: "FALSE", explanation: "Paragraph 3: crops are 'grown without pesticides'." },
+          { id: 8, type: "fill", q: "The biggest obstacle for vertical farming is the cost of _____.", answer: "energy", explanation: "Paragraph 4: 'The biggest is energy.'" },
+          { id: 9, type: "mcq", q: "Which crops are most commonly grown in commercial vertical farms?", opts: ["A. Wheat and rice", "B. Root vegetables", "C. Leafy greens and herbs", "D. Fruit trees"], answer: "C", explanation: "Paragraph 4." },
+          { id: 10, type: "tfng", q: "Wheat and rice are currently economical to grow in vertical farms.", answer: "FALSE", explanation: "Paragraph 4: they 'remain uneconomical to grow this way'." },
+          { id: 11, type: "tfng", q: "Vertical farms already supply most of the food eaten in some major cities.", answer: "NOT GIVEN", explanation: "No claim is made about the share of any city's food that vertical farms supply." },
+          { id: 12, type: "short", q: "Name one advantage of locating vertical farms near cities.", answer: "reduces the distance food must travel to consumers", explanation: "Paragraph 3." },
+          { id: 13, type: "mcq", q: "How does the passage suggest vertical farming should be viewed?", opts: ["A. As a failed experiment", "B. As only useful in deserts", "C. As a replacement for traditional agriculture", "D. As a complement to traditional agriculture"], answer: "D", explanation: "Final sentence." },
+        ],
       },
+      // Passage 2 – Moderate (society / argument — uses YES/NO/NOT GIVEN)
       {
-        title: "Passage 2 – Placeholder (to be completed)",
-        text: "This passage would contain a full academic text.",
-        questions: Array.from({ length: 13 }, (_, i) => ({
-          id: i + 14,
-          type: "fill" as const,
-          q: `Placeholder question ${i+14}`,
-          answer: "example",
-          explanation: "Placeholder"
-        }))
+        title: "The Decline of Handwriting",
+        text: `As keyboards and touchscreens dominate daily life, the act of writing by hand is in steady retreat. In many schools, instruction in cursive handwriting has been reduced or dropped altogether, and a growing number of adults report that they rarely pick up a pen from one week to the next. To some, this is simply the natural obsolescence of an outdated skill. To others, it represents a quiet loss whose consequences are not yet fully appreciated.
+ 
+A body of research suggests that writing by hand is not merely a slower way of recording words. Several studies have found that students who take notes by hand tend to understand and remember material better than those who type. The leading explanation is that handwriting is slower, which forces the writer to summarise and rephrase ideas rather than transcribe them word for word. This act of mental processing, rather than the handwriting itself, appears to deepen learning.
+ 
+The benefits may begin even earlier. Brain imaging research with young children indicates that forming letters by hand activates regions associated with reading and memory more strongly than typing or tracing does. Some scientists propose that the effort of producing each letter's distinctive shape helps cement letter recognition, giving handwriting a role in early literacy that a keyboard cannot easily replace.
+ 
+Not everyone accepts that the decline is a cause for concern. Critics of the hand‑wringing point out that the printing press was once feared as a threat to memory, and that calculators did not destroy mathematical ability. Typing, they argue, is faster, more legible, and better suited to a digital world. Insisting that children master cursive, in this view, is nostalgia dressed up as pedagogy — time that could be spent on more useful skills.
+ 
+The debate is unlikely to be settled soon. What seems clear is that handwriting and typing are not simply interchangeable tools that produce the same result by different means. They engage the brain differently, and each may have its place. A reasonable conclusion is that handwriting need not be preserved for its own sake, but that abandoning it entirely, before its cognitive role is properly understood, would be premature.`,
+        instructions: "Read the passage and answer questions 14–26. Do the views of the writer agree with the statements?",
+        questions: [
+          { id: 14, type: "ynng", q: "Writing by hand is becoming less common in everyday life.", answer: "YES", explanation: "Paragraph 1: it 'is in steady retreat'." },
+          { id: 15, type: "ynng", q: "Everyone agrees that the decline of handwriting is a serious problem.", answer: "NO", explanation: "Paragraph 1: 'To some... To others' — opinions are explicitly divided." },
+          { id: 16, type: "fill", q: "Studies suggest students who take notes by _____ remember material better than those who type.", answer: "hand", explanation: "Paragraph 2." },
+          { id: 17, type: "mcq", q: "According to the leading explanation, why does handwriting improve memory?", opts: ["A. Its slowness forces summarising and rephrasing", "B. It is faster than typing", "C. It is more legible", "D. It uses more ink"], answer: "A", explanation: "Paragraph 2." },
+          { id: 18, type: "ynng", q: "Forming letters by hand activates brain regions linked to reading and memory in children.", answer: "YES", explanation: "Paragraph 3." },
+          { id: 19, type: "ynng", q: "Typing has been proven to harm children's reading ability.", answer: "NOT GIVEN", explanation: "The passage says handwriting activates certain regions more strongly, but makes no claim that typing harms reading." },
+          { id: 20, type: "fill", q: "Critics note that the _____ press was once feared as a threat to memory.", answer: "printing", explanation: "Paragraph 4." },
+          { id: 21, type: "mcq", q: "How do critics view insistence on teaching cursive?", opts: ["A. As essential pedagogy", "B. As nostalgia dressed up as pedagogy", "C. As a scientific necessity", "D. As a modern innovation"], answer: "B", explanation: "Paragraph 4." },
+          { id: 22, type: "ynng", q: "Calculators destroyed people's mathematical ability.", answer: "NO", explanation: "Paragraph 4: 'calculators did not destroy mathematical ability'." },
+          { id: 23, type: "fill", q: "The writer concludes that handwriting and typing are not simply _____ tools.", answer: "interchangeable", explanation: "Final paragraph." },
+          { id: 24, type: "ynng", q: "The writer believes handwriting should be preserved purely for its own sake.", answer: "NO", explanation: "Final paragraph: handwriting 'need not be preserved for its own sake'." },
+          { id: 25, type: "short", q: "Why does the writer think abandoning handwriting entirely would be premature?", answer: "its cognitive role is not yet properly understood", explanation: "Final sentence." },
+          { id: 26, type: "mcq", q: "What is the writer's overall position?", opts: ["A. Handwriting is obsolete and should be dropped", "B. Handwriting should be made compulsory for all", "C. Handwriting should not be abandoned before its cognitive role is understood", "D. Typing should be banned in schools"], answer: "C", explanation: "Final paragraph." },
+        ],
       },
+      // Passage 3 – Hard (economics / psychology, abstract)
       {
-        title: "Passage 3 – Placeholder (to be completed)",
-        text: "This passage would contain a full academic text.",
-        questions: Array.from({ length: 14 }, (_, i) => ({
-          id: i + 27,
-          type: "mcq" as const,
-          q: `Placeholder question ${i+27}`,
-          opts: ["A", "B", "C", "D"],
-          answer: "A",
-          explanation: "Placeholder"
-        }))
-      }
-    ]
-  }
+        title: "Nudges and Behavioural Economics",
+        text: `Classical economics rests on a tidy assumption: that people are rational agents who weigh costs and benefits and act in their own best interest. Behavioural economics, which grew out of the work of psychologists Daniel Kahneman and Amos Tversky, challenged that assumption. Through a series of experiments, they demonstrated that human decision‑making is riddled with predictable biases and mental shortcuts that lead people to behave in ways classical theory cannot explain.
+ 
+One of the most influential ideas to emerge from this field is the "nudge", popularised by economist Richard Thaler and legal scholar Cass Sunstein. A nudge is a small change to the way choices are presented — the "choice architecture" — that steers people towards a particular option without forbidding any alternatives or significantly changing economic incentives. Crucially, a nudge must preserve freedom of choice; it pushes, but it does not compel.
+ 
+The classic example concerns retirement savings. When employees must actively opt in to a pension scheme, participation rates are often low, because inertia and procrastination keep people from acting. But when enrolment is made the default — so that employees are automatically signed up unless they opt out — participation soars. The amount of money involved is unchanged, and anyone is free to leave; only the default has been altered. Yet the effect on behaviour is dramatic, precisely because people tend to stick with whatever requires no effort.
+ 
+Defaults are powerful in many domains. Countries where citizens are organ donors by default, and must opt out, have far higher donation rates than countries where they must opt in. Placing healthier food at eye level in a cafeteria increases its consumption without removing anyone's ability to choose chips. A letter telling taxpayers that most of their neighbours have already paid increases on‑time payment, by drawing on people's tendency to follow social norms.
+ 
+Nudge theory has been embraced by governments around the world, which have set up dedicated "behavioural insights" teams to apply it to public policy. Supporters praise nudges as cheap, effective, and respectful of liberty: they improve outcomes while leaving people free to decide. Yet the approach has drawn criticism. Some object that nudging is a form of manipulation, working through psychological weaknesses that people are often unaware of, which sits uneasily with the ideal of informed, autonomous choice. Others worry about who decides what counts as a "better" outcome, and whether the same techniques could just as easily serve the interests of those doing the nudging rather than those being nudged.
+ 
+The deeper significance of behavioural economics may lie less in any single technique than in its revised picture of human nature. If people are not the perfectly rational calculators of classical theory, then the design of every choice — by governments, employers, and companies alike — inevitably shapes behaviour. There is, in this sense, no neutral way to present a choice. The only question is whether that influence is exercised thoughtfully or by accident.`,
+        instructions: "Read the passage and answer questions 27–40.",
+        questions: [
+          { id: 27, type: "tfng", q: "Classical economics assumes people act rationally in their own best interest.", answer: "TRUE", explanation: "Paragraph 1." },
+          { id: 28, type: "fill", q: "Behavioural economics grew out of the work of Daniel Kahneman and Amos _____.", answer: "Tversky", explanation: "Paragraph 1." },
+          { id: 29, type: "mcq", q: "What is a 'nudge'?", opts: ["A. A law that forbids harmful choices", "B. A financial penalty for bad choices", "C. A small change in how choices are presented", "D. A tax incentive"], answer: "C", explanation: "Paragraph 2." },
+          { id: 30, type: "tfng", q: "A nudge removes some of the options available to people.", answer: "FALSE", explanation: "Paragraph 2: it forbids no alternatives and must preserve freedom of choice." },
+          { id: 31, type: "fill", q: "The way choices are presented is called the choice _____.", answer: "architecture", explanation: "Paragraph 2." },
+          { id: 32, type: "mcq", q: "Why does automatic enrolment increase pension participation?", opts: ["A. People tend to stick with the default that requires no effort", "B. It increases the financial reward", "C. It forbids opting out", "D. It reduces the contribution amount"], answer: "A", explanation: "Paragraph 3." },
+          { id: 33, type: "tfng", q: "Making pension enrolment the default changes how much money employees must contribute.", answer: "FALSE", explanation: "Paragraph 3: 'The amount of money involved is unchanged'." },
+          { id: 34, type: "tfng", q: "Opt‑out organ donation systems produce higher donation rates than opt‑in systems.", answer: "TRUE", explanation: "Paragraph 4." },
+          { id: 35, type: "short", q: "Give one example of a nudge mentioned in the passage.", answer: "automatic pension enrolment (or default organ donation / healthy food at eye level / tax letters citing neighbours)", explanation: "Paragraphs 3–4." },
+          { id: 36, type: "mcq", q: "Which criticism of nudging is mentioned?", opts: ["A. It is too expensive", "B. It always fails", "C. It is illegal", "D. It is a form of manipulation"], answer: "D", explanation: "Paragraph 5." },
+          { id: 37, type: "tfng", q: "Critics worry the same techniques could serve the interests of those doing the nudging.", answer: "TRUE", explanation: "Paragraph 5." },
+          { id: 38, type: "fill", q: "Tax letters raise on‑time payment by drawing on people's tendency to follow social _____.", answer: "norms", explanation: "Paragraph 4." },
+          { id: 39, type: "tfng", q: "The passage claims there is a completely neutral way to present any choice.", answer: "FALSE", explanation: "Final paragraph: 'there is... no neutral way to present a choice'." },
+          { id: 40, type: "mcq", q: "What does the passage suggest is the deeper significance of behavioural economics?", opts: ["A. It proves classical economics correct", "B. It shows that all choice design inevitably shapes behaviour", "C. It removes the need for governments", "D. It makes nudging illegal"], answer: "B", explanation: "Final paragraph." },
+        ],
+      },
+    ],
+  },
 ];
 
 // ═══════════════════════════════════════════════════════════════════════════
