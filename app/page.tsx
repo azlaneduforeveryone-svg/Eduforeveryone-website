@@ -98,13 +98,14 @@ const games = [
 const faqs = [
   { q: "Is the IELTS practice really free?", a: "Yes. All Reading, Writing, Listening and Speaking practice is free with no sign-up. AI writing feedback is also free." },
   { q: "Can I read the Quran with Urdu translation?", a: "Yes — the Quran reader includes 40+ translations including English, Urdu and Hindi, with audio recitation and a color-coded Tajweed mode." },
-  { q: "Is EduForEveryone really free?", a: "Yes — 100% free forever. No subscriptions, no hidden fees, no sign-up required. Every course, note, quiz, calculator and game on this website is completely free." },
-  { q: "Who is EduForEveryone for?", a: "Everyone — from elementary school students to working professionals. Our content is designed to be accessible at every level of learning." },
-  { q: "What subjects are available?", a: "We currently cover Mathematics, Science, English and History. We are constantly adding more subjects and content." },
+  { q: "Is the GMAT practice really free?", a: "Yes. Every GMAT Focus Edition section — Quantitative Reasoning, Verbal Reasoning and Data Insights — plus the full timed mock test is free with no sign-up. Scores shown are estimates, not official GMAT scores." },
+  { q: "Is EduForEveryone really free?", a: "Yes — 100% free forever. No subscriptions, no hidden fees, no sign-up required. Every practice test, quiz, calculator and game on this website is completely free." },
+  { q: "Who is EduForEveryone for?", a: "Everyone — from students preparing for IELTS or the GMAT to anyone reading the Quran or brushing up with our quizzes and tools. Our content is designed to be accessible at every level of learning." },
+  { q: "What can I study here?", a: "Our main areas are IELTS preparation, GMAT Focus Edition practice, and a full Quran reader with translations and Tajweed. We also offer free calculators, quizzes and learning games." },
   { q: "What games are available?", a: "We have three free games — Math Puzzle (arithmetic and algebra challenges), WordWise (guess hidden education words), and Quiz Battle (answer questions across all subjects with lives and powerups). All completely free!" },
   { q: "Can I use the calculators for free?", a: "Yes! Our scientific calculator, financial calculator (TVM, NPV, IRR, Bond Pricing), simple calculator and number to words converter are all completely free to use." },
   { q: "Do I need to create an account?", a: "No account needed. Just visit the website and start learning immediately." },
-  { q: "Will more content be added?", a: "Yes! We are constantly adding new courses, notes, quizzes, tools and games. More languages and subjects are coming soon." },
+  { q: "Will more content be added?", a: "Yes! We are constantly adding new practice tests, quizzes, tools and games. More languages and subjects are coming soon." },
 ];
 
 /* -------------------------------------------------------------------- page */
