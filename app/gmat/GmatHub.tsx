@@ -9,17 +9,17 @@ import PerformancePanel from "@/components/gmat/PerformancePanel";
 const SECTIONS = [
   {
     href: "/gmat/quant", emoji: "🔢", name: "Quantitative Reasoning",
-    meta: "21 questions · 45 min", types: "Problem Solving",
+    meta: "10-question practice set · full section is 21 Q / 45 min", types: "Problem Solving",
     desc: "Arithmetic, algebra, word problems and number properties — no calculator, no geometry-only items.",
   },
   {
     href: "/gmat/verbal", emoji: "📖", name: "Verbal Reasoning",
-    meta: "23 questions · 45 min", types: "Critical Reasoning · Reading Comprehension",
+    meta: "10-question practice set · full section is 23 Q / 45 min", types: "Critical Reasoning · Reading Comprehension",
     desc: "Evaluate arguments and read dense passages. No Sentence Correction in the Focus Edition.",
   },
   {
     href: "/gmat/data-insights", emoji: "📊", name: "Data Insights",
-    meta: "20 questions · 45 min", types: "DS · MSR · Table · Graphics · Two-Part",
+    meta: "10-question practice set · full section is 20 Q / 45 min", types: "DS · MSR · Table · Graphics · Two-Part",
     desc: "Interpret data across tables, charts and multiple sources — the signature Focus Edition section.",
   },
 ];
@@ -78,7 +78,7 @@ export default function GmatHub() {
         {/* Sections */}
         <section>
           <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-2">Practice by Section</h2>
-          <p className="text-gray-500 mb-8">10 fresh questions each session, with no-repeat rotation so you rarely see the same set twice.</p>
+          <p className="text-gray-500 mb-8">10 fresh questions in 22 minutes each session — the real-exam time-per-question ratio — with no-repeat rotation so you rarely see the same set twice. Sit the full mock below for true section lengths.</p>
           <div className="grid sm:grid-cols-3 gap-4">
             {SECTIONS.map((s) => (
               <Link key={s.href} href={s.href}
