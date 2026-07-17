@@ -5,17 +5,17 @@ import JsonLd, { faqLd } from "@/components/JsonLd";
 import HomeHero from "@/components/HomeHero";
 
 export const metadata: Metadata = {
-  title: "Free IELTS Practice & Quran Online — EduForEveryone",
-  description: "Free IELTS practice tests for all 4 skills, Quran with 40+ translations, math tools and quizzes. No fees, no sign-up, ever.",
+  title: "Free IELTS & GMAT Practice, Quran Online — EduForEveryone",
+  description: "Free IELTS practice for all 4 skills, GMAT Focus Edition practice and full mocks, Quran with 40+ translations, tools and quizzes. No fees, no sign-up, ever.",
   alternates: { canonical: "https://eduforeveryone.com" },
   openGraph: {
-    title: "EduForEveryone — Free Education for All Students",
-    description: "Courses, notes, quizzes, calculators and games. 100% free. No barriers.",
+    title: "EduForEveryone — Free IELTS, GMAT & Quran Study",
+    description: "IELTS and GMAT Focus practice, the Quran with 40+ translations, plus free tools, quizzes and games. 100% free. No barriers.",
     url: "https://eduforeveryone.com",
     siteName: "EduForEveryone",
     type: "website",
   },
-  twitter: { card: "summary_large_image", title: "EduForEveryone — Free Education for All", description: "Free courses, notes, quizzes, calculators and math games for students." },
+  twitter: { card: "summary_large_image", title: "EduForEveryone — Free IELTS, GMAT & Quran Study", description: "Free IELTS and GMAT Focus practice, Quran with 40+ translations, calculators, quizzes and games." },
 };
 
 /* ------------------------------------------------------------------ icons */
@@ -117,7 +117,7 @@ export default function HomePage() {
         "@type": "EducationalOrganization",
         name: "EduForEveryone",
         url: "https://eduforeveryone.com",
-        description: "Free education platform offering courses, notes, quizzes, calculators and games for students worldwide.",
+        description: "Free education platform offering IELTS and GMAT Focus practice tests, a full Quran reader with translations and Tajweed, plus calculators, quizzes and games for students worldwide.",
         logo: "https://eduforeveryone.com/Main_Logo.jpg",
         sameAs: ["https://github.com/azlaneduforeveryone-svg/Eduforeveryone-website"],
         offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
