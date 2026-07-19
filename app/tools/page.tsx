@@ -9,8 +9,8 @@ const tools = [
   { href:"/tools/simple-calculator", emoji:"🔢", title:"Simple Calculator", description:"Basic arithmetic calculator with full calculation history. Perfect for everyday maths.", tags:["Addition","Subtraction","History"], badge:"" },
   { href:"/tools/scientific-calculator", emoji:"🔬", title:"Scientific Calculator", description:"Trig, logarithms, powers, roots, factorial, memory & more. DEG/RAD/GRAD modes + 2ND key.", tags:["Trig","Logarithms","Memory"], badge:"Intermediate" },
   { href:"/tools/cfa-calculator", emoji:"📊", title:"Financial Calculator", description:"Time Value of Money calculator — compute N, I/Y, PV, PMT, FV instantly. BA II Plus style.", tags:["TVM","Finance","CFA"], badge:"Advanced" },
+  { href:"/tools/finance-tools/bank-reconciliation", emoji:"🏦", title:"Bank Reconciliation", description:"Match your bank statement against your cash book and surface unreconciled items instantly. CSV and Excel.", tags:["CSV","Excel","Matching"], badge:"New" },
   { href:"/tools/number-to-words", emoji:"🔡", title:"Number to Words", description:"Convert any number to words in 8 languages including Arabic, Hindi, Urdu. Supports 8 currencies.", tags:["Arabic","Hindi","Currency"], badge:"Popular" },
-  { href:"/tools/finance-tools", emoji:"🏦", title:"Finance Tools", description:"Bank reconciliation and other accounting utilities — upload your statements, get a formula-driven report back.", tags:["Bank Reconciliation","Accounting"], badge:"New" },
 ];
 export default function ToolsPage() {
   return (
