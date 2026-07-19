@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 /* ------------------------------------------------------------------ icons */
 /* NOTE: duplicated from HomeHero.tsx. Extract to components/Icon.tsx later. */
 
-type IconName = "arrow" | "calc" | "chart" | "type" | "flask" | "quiz";
+type IconName = "arrow" | "calc" | "chart" | "type" | "flask" | "quiz" | "bank";
 
 function Icon({ name, className = "h-5 w-5" }: { name: IconName; className?: string }) {
   const paths: Record<IconName, ReactNode> = {
@@ -48,6 +48,13 @@ function Icon({ name, className = "h-5 w-5" }: { name: IconName; className?: str
         <circle cx="12" cy="12" r="9" />
         <path d="M9.6 9.5a2.5 2.5 0 0 1 4.7 1c0 1.7-2.3 2-2.3 3.5" />
         <path d="M12 17h.01" />
+      </>
+    ),
+    bank: (
+      <>
+        <path d="M3 10 12 4l9 6" />
+        <path d="M5 10v8M10 10v8M14 10v8M19 10v8" />
+        <path d="M3 21h18" />
       </>
     ),
   };
@@ -86,6 +93,7 @@ const tools = [
   { icon: "calc",  name: "Simple Calculator",     href: "/tools/simple-calculator",     tag: "Free" },
   { icon: "flask", name: "Scientific Calculator", href: "/tools/scientific-calculator", tag: "Intermediate" },
   { icon: "chart", name: "Financial Calculator",  href: "/tools/cfa-calculator",        tag: "TVM·NPV·IRR" },
+  { icon: "bank",  name: "Bank Reconciliation",   href: "/tools/finance-tools/bank-reconciliation", tag: "CSV·Excel" },
   { icon: "type",  name: "Number to Words",       href: "/tools/number-to-words",       tag: "8 Languages" },
 ] as const;
 
@@ -133,7 +141,7 @@ export default function HomePage() {
       <section className="bg-slate-50 px-4 py-14">
         <div className="mx-auto max-w-5xl">
           <SectionHead eyebrow="Free tools" title="Calculators & tools" href="/tools" />
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
             {tools.map((t) => (
               <Link key={t.href} href={t.href}
                 className="group flex flex-col items-center rounded-2xl border border-slate-200 bg-white p-5 text-center transition-colors hover:border-brand-300">
