@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 export const metadata: Metadata = {
   title: "Free Calculators — Scientific, Financial (TVM/NPV/IRR) & More",
-  description: "Free online tools: scientific calculator, financial calculator (TVM, NPV, IRR, bonds), number-to-words in 8 languages.",
+  description: "Free online tools: scientific calculator, financial calculator (TVM, NPV, IRR, bonds), bank reconciliation, number-to-words in 8 languages.",
   alternates: { canonical: "https://eduforeveryone.com/tools" },
 };
 const tools = [
@@ -10,6 +10,7 @@ const tools = [
   { href:"/tools/scientific-calculator", emoji:"🔬", title:"Scientific Calculator", description:"Trig, logarithms, powers, roots, factorial, memory & more. DEG/RAD/GRAD modes + 2ND key.", tags:["Trig","Logarithms","Memory"], badge:"Intermediate" },
   { href:"/tools/cfa-calculator", emoji:"📊", title:"Financial Calculator", description:"Time Value of Money calculator — compute N, I/Y, PV, PMT, FV instantly. BA II Plus style.", tags:["TVM","Finance","CFA"], badge:"Advanced" },
   { href:"/tools/number-to-words", emoji:"🔡", title:"Number to Words", description:"Convert any number to words in 8 languages including Arabic, Hindi, Urdu. Supports 8 currencies.", tags:["Arabic","Hindi","Currency"], badge:"Popular" },
+  { href:"/tools/finance-tools", emoji:"🏦", title:"Finance Tools", description:"Bank reconciliation and other accounting utilities — upload your statements, get a formula-driven report back.", tags:["Bank Reconciliation","Accounting"], badge:"New" },
 ];
 export default function ToolsPage() {
   return (
