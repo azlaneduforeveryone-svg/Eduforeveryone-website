@@ -1,10 +1,19 @@
-// Shared types for the public bank-vs-book reconciliation tool.
-// Design note: unlike an intercompany recon (opposite-signed books),
-// bank statement and cash book use the SAME sign convention here -
-// money added to the account is positive on both sides, money removed
-// is negative. The column-mapping step is responsible for producing
-// that normalized signed amount from whatever the user's file actually
-// has (a single signed column, or separate in/out columns).
+// Shared types for the public reconciliation tool (bank / supplier /
+// customer / intercompany).
+//
+// Design note on sign convention: after column mapping, BOTH sides use
+// the same normalized convention - a positive amount INCREASES the
+// balance of that account as recorded in its own file, a negative
+// amount reduces it. For a bank recon that means money in = positive on
+// both the statement and the cash book. For supplier/customer/
+// intercompany recons it means invoices/charges = positive and
+// payments/credits = negative on both sides, which works because the
+// mapping step asks each file independently which column increases the
+// balance. The column-mapping step is responsible for producing that
+// normalized signed amount from whatever the user's file actually has
+// (a single signed column, or separate in/out columns).
+
+import type { DateOrder } from "./parsing";
 
 export interface Txn {
   id: number;            // stable row id within its own sheet, 0-based
@@ -40,6 +49,12 @@ export type AmountMode = "single" | "inOut";
 
 export interface ColumnMapping {
   dateCol: string;
+  /** Token order for TEXT dates in dateCol, resolved client-side by
+   *  inferDateOrder() or chosen by the user when inference was
+   *  ambiguous. Omitted when the column holds real Excel date cells or
+   *  when the client could not resolve it - the server then falls back
+   *  to its own inference (see applyMapping). */
+  dateOrder?: DateOrder;
   descriptionCol: string;
   amountMode: AmountMode;
   amountCol?: string;      // amountMode === "single"
@@ -58,6 +73,13 @@ export interface ReconcileConfig {
   maxComboAttempts: number;          // hard ceiling across the whole split pass
   maxComboAttemptsPerAnchor: number; // ceiling for a single anchor, so one
                                       // expensive row can't eat the whole budget
+  /** When true, Pass 1 reference/group matches and reference-equal
+   *  individual matches ignore the date windows entirely. Needed for
+   *  supplier/customer recons, where invoice date vs posting date
+   *  routinely differs by weeks - a reference match is stronger
+   *  evidence than a date window there. Amount-only matches (no shared
+   *  reference) still respect the windows. */
+  referenceMatchIgnoresDate: boolean;
 }
 
 export const DEFAULT_CONFIG: ReconcileConfig = {
@@ -68,4 +90,5 @@ export const DEFAULT_CONFIG: ReconcileConfig = {
   maxCandidatePool: 30,
   maxComboAttempts: 300_000,
   maxComboAttemptsPerAnchor: 20_000,
+  referenceMatchIgnoresDate: false, // bank default; overridden per recon type
 };

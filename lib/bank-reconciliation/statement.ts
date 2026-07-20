@@ -1,6 +1,8 @@
 import ExcelJS from "exceljs";
 import type { MatchedTxn } from "./types";
+import type { ReconType } from "./reconTypes";
 import { remarkFor } from "./remarks";
+import type { UnparsedRow } from "./mapping";
 
 const FONT = "Arial";
 const STATUS_FILL: Record<string, string> = {
@@ -10,6 +12,11 @@ const STATUS_FILL: Record<string, string> = {
 };
 const HEADER_FILL = "305496";
 const INPUT_FONT_COLOR = "0000FF"; // blue = hardcoded input, per standard model convention
+const NOTE_FONT = { name: FONT, italic: true, size: 9, color: { argb: "FF808080" } } as const;
+const CONTACT_TEXT =
+  "If you encounter any issues or have suggestions for improvement, please contact us at azlaneduforeveryone@gmail.com";
+const CONTACT_MAILTO = "mailto:azlaneduforeveryone@gmail.com";
+const MAX_UNPARSED_LISTED = 25; // per side, so a garbage file can't bloat the summary sheet
 
 function styleHeader(ws: ExcelJS.Worksheet, ncols: number) {
   const row = ws.getRow(1);
@@ -24,7 +31,7 @@ function styleHeader(ws: ExcelJS.Worksheet, ncols: number) {
 
 /** Green when a check cell computes to exactly 0, red otherwise - used for
  * every tie-out check in the statement (opening+movement vs. closing, and
- * the final bank-vs-book difference), so they all read the same way at a
+ * the final theirs-vs-ours difference), so they all read the same way at a
  * glance. */
 function addZeroCheckFormatting(ws: ExcelJS.Worksheet, cellRef: string) {
   ws.addConditionalFormatting({
@@ -75,22 +82,21 @@ function writeSideBySideSheet(
   wb: ExcelJS.Workbook,
   bookTxns: MatchedTxn[],
   bankTxns: MatchedTxn[],
-  bankLabel: string,
-  bookLabel: string
+  rt: ReconType
 ) {
-  const ws = wb.addWorksheet("Bank vs Cash Book");
+  const ws = wb.addWorksheet(rt.compareSheetName);
   const headers = [
-    `${bankLabel} Date`,
-    `${bankLabel} Reference`,
-    `${bankLabel} Description`,
-    `${bankLabel} Amount`,
+    `${rt.theirLabel} Date`,
+    `${rt.theirLabel} Reference`,
+    `${rt.theirLabel} Description`,
+    `${rt.theirLabel} Amount`,
     "Amount Diff",
     "Matching Code",
     "Remarks",
-    `${bookLabel} Amount`,
-    `${bookLabel} Description`,
-    `${bookLabel} Reference`,
-    `${bookLabel} Date`,
+    `${rt.ourLabel} Amount`,
+    `${rt.ourLabel} Description`,
+    `${rt.ourLabel} Reference`,
+    `${rt.ourLabel} Date`,
   ];
   ws.addRow(headers);
 
@@ -139,7 +145,7 @@ function writeSideBySideSheet(
     const status = bankRows[0]?.status ?? bookRows[0]?.status ?? "Matched";
     const splitRemark =
       status === "Split Match (verify)"
-        ? `Split match - ${bankRows.length} bank line(s) vs ${bookRows.length} book line(s) - verify`
+        ? `Split match - ${bankRows.length} ${rt.theirSheetName} line(s) vs ${bookRows.length} ${rt.ourSheetName} line(s) - verify`
         : null;
     const maxLen = Math.max(bankRows.length, bookRows.length);
     for (let i = 0; i < maxLen; i++) {
@@ -147,7 +153,9 @@ function writeSideBySideSheet(
     }
   }
 
-  // Then genuinely unmatched items, one side per row. Sorted by reference
+  // Then genuinely unmatched items, one side per row, with sign-aware
+  // remarks from the type registry ("Deposit in transit" vs "Invoice in
+  // your ledger, not on supplier statement", etc.). Sorted by reference
   // first (blank references last) so lines that share a reference - a
   // transfer fee and its VAT charge, say - end up adjacent even though
   // neither has a counterpart to match against; makes them easy to spot
@@ -160,10 +168,10 @@ function writeSideBySideSheet(
     return a.date.getTime() - b.date.getTime();
   };
   for (const t of bankTxns.filter((t) => t.status === "Unmatched").sort(unmatchedSort)) {
-    writeRow(t, null, "-", "Unmatched", null);
+    writeRow(t, null, "-", "Unmatched", t.amount >= 0 ? rt.remarks.theirsPositive : rt.remarks.theirsNegative);
   }
   for (const t of bookTxns.filter((t) => t.status === "Unmatched").sort(unmatchedSort)) {
-    writeRow(null, t, "-", "Unmatched", null);
+    writeRow(null, t, "-", "Unmatched", t.amount >= 0 ? rt.remarks.oursPositive : rt.remarks.oursNegative);
   }
 
   styleHeader(ws, headers.length);
@@ -174,15 +182,16 @@ function writeSideBySideSheet(
 }
 
 export interface StatementInputs {
-  bookLabel: string;   // e.g. "Cash Book" - sheet name used in formulas
-  bankLabel: string;   // e.g. "Bank Statement"
-  bankOpeningBalance: number;   // user-entered, required
-  bankClosingBalance: number;   // user-entered, required
-  bookOpeningBalance: number;   // user-entered, required
-  bookClosingBalance: number;   // user-entered, required
+  reconType: ReconType;
+  bankOpeningBalance: number;   // "their" side - user-entered, required
+  bankClosingBalance: number;
+  bookOpeningBalance: number;   // "our" side - user-entered, required
+  bookClosingBalance: number;
   periodLabel: string;
   excludedBankOpeningBalanceRows?: { description: string; amount: number }[];
   excludedBookOpeningBalanceRows?: { description: string; amount: number }[];
+  unparsedBankRows?: UnparsedRow[];
+  unparsedBookRows?: UnparsedRow[];
 }
 
 export async function buildReconciliationWorkbook(
@@ -190,17 +199,18 @@ export async function buildReconciliationWorkbook(
   bankTxns: MatchedTxn[],
   inputs: StatementInputs
 ): Promise<ExcelJS.Workbook> {
+  const rt = inputs.reconType;
   const wb = new ExcelJS.Workbook();
-  wb.creator = "Bank Reconciliation Tool";
+  wb.creator = "EduForEveryone Reconciliation Tool";
 
   const summary = wb.addWorksheet("Reconciliation Statement", {
     views: [{ showGridLines: false }],
   });
   // detail sheets added after, so the summary tab stays first; formulas
   // below reference them by name, which works regardless of add order
-  writeSideBySideSheet(wb, bookTxns, bankTxns, inputs.bankLabel, inputs.bookLabel);
-  writeDetailSheet(wb, inputs.bankLabel, bankTxns);
-  writeDetailSheet(wb, inputs.bookLabel, bookTxns);
+  writeSideBySideSheet(wb, bookTxns, bankTxns, rt);
+  writeDetailSheet(wb, rt.theirSheetName, bankTxns);
+  writeDetailSheet(wb, rt.ourSheetName, bookTxns);
 
   const bold = { name: FONT, bold: true };
   const normal = { name: FONT };
@@ -211,14 +221,14 @@ export async function buildReconciliationWorkbook(
   summary.getColumn(2).width = 18;
 
   let r = 1;
-  summary.getCell(`A${r}`).value = `Bank Reconciliation Statement`;
+  summary.getCell(`A${r}`).value = `${rt.displayName} Statement`;
   summary.getCell(`A${r}`).font = title;
   r++;
   summary.getCell(`A${r}`).value = inputs.periodLabel;
   summary.getCell(`A${r}`).font = normal;
   r += 2;
 
-  summary.getCell(`A${r}`).value = `Balance as per ${inputs.bankLabel}`;
+  summary.getCell(`A${r}`).value = `Balance as per ${rt.theirLabel}`;
   summary.getCell(`A${r}`).font = bold;
   r++;
 
@@ -233,7 +243,7 @@ export async function buildReconciliationWorkbook(
   summary.getCell(`A${r}`).value = "Net movement (sum of uploaded transactions)";
   summary.getCell(`A${r}`).font = normal;
   const bankNetRow = r;
-  summary.getCell(`B${r}`).value = { formula: `SUM('${inputs.bankLabel}'!D:D)` };
+  summary.getCell(`B${r}`).value = { formula: `SUM('${rt.theirSheetName}'!D:D)` };
   summary.getCell(`B${r}`).numFmt = moneyFmt;
   r++;
 
@@ -246,42 +256,42 @@ export async function buildReconciliationWorkbook(
   r++;
 
   summary.getCell(`A${r}`).value = "Check: opening + net movement vs. closing entered above (should be 0)";
-  summary.getCell(`A${r}`).font = { name: FONT, italic: true, size: 9, color: { argb: "FF808080" } };
+  summary.getCell(`A${r}`).font = NOTE_FONT;
   summary.getCell(`B${r}`).value = { formula: `(B${bankOpenRow}+B${bankNetRow})-B${bankBalRow}` };
   summary.getCell(`B${r}`).numFmt = moneyFmt;
   addZeroCheckFormatting(summary, `B${r}`);
   r += 2;
 
-  summary.getCell(`A${r}`).value = "Add: Deposits in transit (recorded in books, not yet on the bank statement)";
+  summary.getCell(`A${r}`).value = rt.statement.oursOnlyPositive;
   summary.getCell(`A${r}`).font = normal;
-  const depInTransitRow = r;
+  const oursPosRow = r;
   summary.getCell(`B${r}`).value = {
-    formula: `SUMIFS('${inputs.bookLabel}'!D:D,'${inputs.bookLabel}'!E:E,"Unmatched",'${inputs.bookLabel}'!D:D,">0")`,
+    formula: `SUMIFS('${rt.ourSheetName}'!D:D,'${rt.ourSheetName}'!E:E,"Unmatched",'${rt.ourSheetName}'!D:D,">0")`,
   };
   summary.getCell(`B${r}`).numFmt = moneyFmt;
   r++;
 
-  summary.getCell(`A${r}`).value = "Less: Outstanding payments (recorded in books, not yet cleared by the bank)";
+  summary.getCell(`A${r}`).value = rt.statement.oursOnlyNegative;
   summary.getCell(`A${r}`).font = normal;
-  const outstandingRow = r;
+  const oursNegRow = r;
   summary.getCell(`B${r}`).value = {
-    formula: `SUMIFS('${inputs.bookLabel}'!D:D,'${inputs.bookLabel}'!E:E,"Unmatched",'${inputs.bookLabel}'!D:D,"<0")`,
+    formula: `SUMIFS('${rt.ourSheetName}'!D:D,'${rt.ourSheetName}'!E:E,"Unmatched",'${rt.ourSheetName}'!D:D,"<0")`,
   };
   summary.getCell(`B${r}`).numFmt = moneyFmt;
   r++;
 
-  summary.getCell(`A${r}`).value = "Adjusted Bank Balance";
+  summary.getCell(`A${r}`).value = rt.statement.adjustedTheirs;
   summary.getCell(`A${r}`).font = bold;
   const adjBankRow = r;
   summary.getCell(`B${r}`).value = {
-    formula: `B${bankBalRow}+B${depInTransitRow}+B${outstandingRow}`,
+    formula: `B${bankBalRow}+B${oursPosRow}+B${oursNegRow}`,
   };
   summary.getCell(`B${r}`).font = bold;
   summary.getCell(`B${r}`).numFmt = moneyFmt;
   summary.getCell(`B${r}`).border = { top: { style: "thin" }, bottom: { style: "double" } };
   r += 2;
 
-  summary.getCell(`A${r}`).value = `Balance as per ${inputs.bookLabel}`;
+  summary.getCell(`A${r}`).value = `Balance as per ${rt.ourLabel}`;
   summary.getCell(`A${r}`).font = bold;
   r++;
 
@@ -296,7 +306,7 @@ export async function buildReconciliationWorkbook(
   summary.getCell(`A${r}`).value = "Net movement (sum of uploaded transactions)";
   summary.getCell(`A${r}`).font = normal;
   const bookNetRow = r;
-  summary.getCell(`B${r}`).value = { formula: `SUM('${inputs.bookLabel}'!D:D)` };
+  summary.getCell(`B${r}`).value = { formula: `SUM('${rt.ourSheetName}'!D:D)` };
   summary.getCell(`B${r}`).numFmt = moneyFmt;
   r++;
 
@@ -309,35 +319,35 @@ export async function buildReconciliationWorkbook(
   r++;
 
   summary.getCell(`A${r}`).value = "Check: opening + net movement vs. closing entered above (should be 0)";
-  summary.getCell(`A${r}`).font = { name: FONT, italic: true, size: 9, color: { argb: "FF808080" } };
+  summary.getCell(`A${r}`).font = NOTE_FONT;
   summary.getCell(`B${r}`).value = { formula: `(B${bookOpenRow}+B${bookNetRow})-B${bookBalRow}` };
   summary.getCell(`B${r}`).numFmt = moneyFmt;
   addZeroCheckFormatting(summary, `B${r}`);
   r += 2;
 
-  summary.getCell(`A${r}`).value = "Add: Bank credits not yet recorded in the books (e.g. interest, direct deposits)";
+  summary.getCell(`A${r}`).value = rt.statement.theirsOnlyPositive;
   summary.getCell(`A${r}`).font = normal;
-  const creditsNotBookedRow = r;
+  const theirsPosRow = r;
   summary.getCell(`B${r}`).value = {
-    formula: `SUMIFS('${inputs.bankLabel}'!D:D,'${inputs.bankLabel}'!E:E,"Unmatched",'${inputs.bankLabel}'!D:D,">0")`,
+    formula: `SUMIFS('${rt.theirSheetName}'!D:D,'${rt.theirSheetName}'!E:E,"Unmatched",'${rt.theirSheetName}'!D:D,">0")`,
   };
   summary.getCell(`B${r}`).numFmt = moneyFmt;
   r++;
 
-  summary.getCell(`A${r}`).value = "Less: Bank charges not yet recorded in the books (e.g. fees, standing orders)";
+  summary.getCell(`A${r}`).value = rt.statement.theirsOnlyNegative;
   summary.getCell(`A${r}`).font = normal;
-  const chargesNotBookedRow = r;
+  const theirsNegRow = r;
   summary.getCell(`B${r}`).value = {
-    formula: `SUMIFS('${inputs.bankLabel}'!D:D,'${inputs.bankLabel}'!E:E,"Unmatched",'${inputs.bankLabel}'!D:D,"<0")`,
+    formula: `SUMIFS('${rt.theirSheetName}'!D:D,'${rt.theirSheetName}'!E:E,"Unmatched",'${rt.theirSheetName}'!D:D,"<0")`,
   };
   summary.getCell(`B${r}`).numFmt = moneyFmt;
   r++;
 
-  summary.getCell(`A${r}`).value = "Adjusted Cash Book Balance";
+  summary.getCell(`A${r}`).value = rt.statement.adjustedOurs;
   summary.getCell(`A${r}`).font = bold;
   const adjBookRow = r;
   summary.getCell(`B${r}`).value = {
-    formula: `B${bookBalRow}+B${creditsNotBookedRow}+B${chargesNotBookedRow}`,
+    formula: `B${bookBalRow}+B${theirsPosRow}+B${theirsNegRow}`,
   };
   summary.getCell(`B${r}`).font = bold;
   summary.getCell(`B${r}`).numFmt = moneyFmt;
@@ -354,18 +364,18 @@ export async function buildReconciliationWorkbook(
 
   summary.getCell(`A${r}`).value =
     "Split Match (verify) items count as reconciled above but are worth a manual look - see the detail sheets.";
-  summary.getCell(`A${r}`).font = { name: FONT, italic: true, size: 9, color: { argb: "FF808080" } };
+  summary.getCell(`A${r}`).font = NOTE_FONT;
   r += 1;
 
   const excludedNotes: string[] = [];
   for (const row of inputs.excludedBankOpeningBalanceRows ?? []) {
     excludedNotes.push(
-      `${inputs.bankLabel}: excluded "${row.description}" (${row.amount.toFixed(2)}) - looked like an opening balance line, not a real transaction.`
+      `${rt.theirLabel}: excluded "${row.description}" (${row.amount.toFixed(2)}) - looked like an opening balance line, not a real transaction.`
     );
   }
   for (const row of inputs.excludedBookOpeningBalanceRows ?? []) {
     excludedNotes.push(
-      `${inputs.bookLabel}: excluded "${row.description}" (${row.amount.toFixed(2)}) - looked like an opening balance line, not a real transaction.`
+      `${rt.ourLabel}: excluded "${row.description}" (${row.amount.toFixed(2)}) - looked like an opening balance line, not a real transaction.`
     );
   }
   if (excludedNotes.length) {
@@ -375,9 +385,44 @@ export async function buildReconciliationWorkbook(
     for (const note of excludedNotes) {
       r += 1;
       summary.getCell(`A${r}`).value = note;
-      summary.getCell(`A${r}`).font = { name: FONT, italic: true, size: 9, color: { argb: "FF808080" } };
+      summary.getCell(`A${r}`).font = NOTE_FONT;
     }
   }
+
+  // Rows that had content but could not be parsed (unreadable date or
+  // amount). These are excluded from matching and from the net-movement
+  // sums, so they are the first place to look when a tie-out check above
+  // is red. Capped per side so a garbage file can't bloat this sheet.
+  const unparsedSections: [string, UnparsedRow[]][] = [
+    [rt.theirLabel, inputs.unparsedBankRows ?? []],
+    [rt.ourLabel, inputs.unparsedBookRows ?? []],
+  ];
+  if (unparsedSections.some(([, rowsU]) => rowsU.length > 0)) {
+    r += 2;
+    summary.getCell(`A${r}`).value =
+      "Rows that could not be read (excluded from matching AND from the net-movement sums above):";
+    summary.getCell(`A${r}`).font = { name: FONT, bold: true, size: 9, color: { argb: "FFB00000" } };
+    for (const [label, rowsU] of unparsedSections) {
+      for (const u of rowsU.slice(0, MAX_UNPARSED_LISTED)) {
+        r += 1;
+        summary.getCell(`A${r}`).value =
+          `${label} row ${u.rowNumber}: ${u.reason}` + (u.description ? ` - "${u.description}"` : "");
+        summary.getCell(`A${r}`).font = NOTE_FONT;
+      }
+      if (rowsU.length > MAX_UNPARSED_LISTED) {
+        r += 1;
+        summary.getCell(`A${r}`).value = `${label}: ${rowsU.length - MAX_UNPARSED_LISTED} more row(s) not listed.`;
+        summary.getCell(`A${r}`).font = NOTE_FONT;
+      }
+    }
+  }
+
+  // Contact note
+  r += 2;
+  summary.mergeCells(`A${r}:B${r}`);
+  const contactCell = summary.getCell(`A${r}`);
+  contactCell.value = { text: CONTACT_TEXT, hyperlink: CONTACT_MAILTO };
+  contactCell.font = { name: FONT, italic: true, size: 9, color: { argb: "FF6B7280" } };
 
   return wb;
 }

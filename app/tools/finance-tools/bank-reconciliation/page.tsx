@@ -2,13 +2,28 @@
 
 // app/tools/finance-tools/bank-reconciliation/page.tsx
 //
-// Styled to match the design tokens in your Navbar.tsx (teal-600 accent,
-// gray-900 headings, rounded-xl, font-semibold) - adjust if your actual
-// Tailwind config uses different shades.
+// Changes in this version:
+//   - Date-order inference wired in (lib/bank-reconciliation/parsing.ts):
+//     the date column of each file is scanned client-side; if the format is
+//     genuinely ambiguous (every date has day and month <= 12), a required
+//     date-format selector appears for that file. The resolved order is sent
+//     to the server inside the mapping JSON as `dateOrder`.
+//   - Contact note added at the bottom of the page.
+//
+// Server-side requirements (do together with deploying this file):
+//   1. types.ts: add `dateOrder?: "DMY" | "MDY" | "YMD" | "YDM"` to ColumnMapping.
+//   2. Wherever rows are converted to transactions, parse dates with
+//      makeDateParser(mapping.dateOrder ?? inferred) and amounts with
+//      parseAmount() - see the wiring comment at the top of parsing.ts.
 
 import { useState, useCallback, useRef, DragEvent } from "react";
 import { parseUpload } from "../../../../lib/bank-reconciliation/parseFile";
 import { guessMapping } from "../../../../lib/bank-reconciliation/mapping";
+import {
+  inferDateOrder,
+  type DateOrder,
+  type InferredOrder,
+} from "../../../../lib/bank-reconciliation/parsing";
 import type { ColumnMapping } from "../../../../lib/bank-reconciliation/types";
 
 // Kept in sync with the server-side check in app/api/bank-reconciliation/route.ts -
@@ -17,11 +32,25 @@ import type { ColumnMapping } from "../../../../lib/bank-reconciliation/types";
 const MAX_FILE_SIZE_BYTES = 3 * 1024 * 1024;
 const MAX_FILE_SIZE_LABEL = "3 MB";
 
+// Rows kept in memory per file for date-order inference. A statement with
+// 500 rows and no day above 12 does not exist in practice, so this is
+// plenty for inference while keeping state small.
+const INFERENCE_SAMPLE_ROWS = 500;
+
+const DATE_ORDER_OPTIONS: { value: DateOrder; label: string }[] = [
+  { value: "DMY", label: "DD-MM-YYYY (day first)" },
+  { value: "MDY", label: "MM-DD-YYYY (month first)" },
+  { value: "YMD", label: "YYYY-MM-DD (year, month, day)" },
+  { value: "YDM", label: "YYYY-DD-MM (year, day, month)" },
+];
+
 interface FileSlot {
   file: File | null;
   headers: string[];
   sampleRow: Record<string, unknown> | null;
+  sampleRows: Record<string, unknown>[]; // for date-order inference
   dateCol: string;
+  dateOrderOverride: DateOrder | ""; // user's choice when inference is ambiguous
   descriptionCol: string;
   referenceCol: string; // "" = none
   amountMode: "single" | "inOut" | "";
@@ -37,7 +66,9 @@ const EMPTY_SLOT: FileSlot = {
   file: null,
   headers: [],
   sampleRow: null,
+  sampleRows: [],
   dateCol: "",
+  dateOrderOverride: "",
   descriptionCol: "",
   referenceCol: "",
   amountMode: "",
@@ -58,7 +89,9 @@ async function loadFile(file: File): Promise<Partial<FileSlot>> {
     file,
     headers,
     sampleRow: rows[0] ?? null,
+    sampleRows: rows.slice(0, INFERENCE_SAMPLE_ROWS),
     dateCol: guess.dateCol ?? "",
+    dateOrderOverride: "",
     descriptionCol: guess.descriptionCol ?? "",
     referenceCol: guess.referenceCol ?? "",
     amountMode: guess.amountMode ?? "",
@@ -70,7 +103,23 @@ async function loadFile(file: File): Promise<Partial<FileSlot>> {
   };
 }
 
-function isReady(slot: FileSlot): boolean {
+function inferredOrderFor(slot: FileSlot): InferredOrder | "" {
+  if (!slot.dateCol || slot.sampleRows.length === 0) return "";
+  return inferDateOrder(slot.sampleRows.map((r) => r[slot.dateCol]));
+}
+
+function needsDateFormat(slot: FileSlot): boolean {
+  return !!slot.file && inferredOrderFor(slot) === "AMBIGUOUS" && !slot.dateOrderOverride;
+}
+
+function resolvedDateOrder(slot: FileSlot): DateOrder | undefined {
+  const inferred = inferredOrderFor(slot);
+  if (inferred === "AMBIGUOUS") return slot.dateOrderOverride || undefined;
+  if (inferred === "NO_TEXT_DATES" || inferred === "") return undefined;
+  return inferred;
+}
+
+function columnsReady(slot: FileSlot): boolean {
   if (!slot.file || !slot.dateCol || !slot.descriptionCol) return false;
   // Debit/Credit path: once debitMeansIn is answered, the mapping is fully
   // resolvable (toColumnMapping derives moneyInCol/moneyOutCol from it at
@@ -83,11 +132,17 @@ function isReady(slot: FileSlot): boolean {
   return false;
 }
 
+function isReady(slot: FileSlot): boolean {
+  return columnsReady(slot) && !needsDateFormat(slot);
+}
+
 function toColumnMapping(slot: FileSlot): ColumnMapping {
+  const dateOrder = resolvedDateOrder(slot);
   if (slot.debitCreditCandidates) {
     const [debitCol, creditCol] = slot.debitCreditCandidates;
     return {
       dateCol: slot.dateCol,
+      dateOrder,
       descriptionCol: slot.descriptionCol,
       referenceCol: slot.referenceCol || undefined,
       amountMode: "inOut",
@@ -98,6 +153,7 @@ function toColumnMapping(slot: FileSlot): ColumnMapping {
   if (slot.amountMode === "single") {
     return {
       dateCol: slot.dateCol,
+      dateOrder,
       descriptionCol: slot.descriptionCol,
       referenceCol: slot.referenceCol || undefined,
       amountMode: "single",
@@ -107,6 +163,7 @@ function toColumnMapping(slot: FileSlot): ColumnMapping {
   }
   return {
     dateCol: slot.dateCol,
+    dateOrder,
     descriptionCol: slot.descriptionCol,
     referenceCol: slot.referenceCol || undefined,
     amountMode: "inOut",
@@ -213,6 +270,7 @@ function ColumnMappingForm({
   onChange: (patch: Partial<FileSlot>) => void;
 }) {
   if (!slot.file) return null;
+  const inferred = inferredOrderFor(slot);
   const opts = (extra?: string) => (
     <>
       <option value="">-- select --</option>
@@ -235,10 +293,36 @@ function ColumnMappingForm({
 
       <label className={labelClass}>
         Date column
-        <select className={selectClass} value={slot.dateCol} onChange={(e) => onChange({ dateCol: e.target.value })}>
+        <select
+          className={selectClass}
+          value={slot.dateCol}
+          onChange={(e) => onChange({ dateCol: e.target.value, dateOrderOverride: "" })}
+        >
           {opts()}
         </select>
       </label>
+
+      {inferred === "AMBIGUOUS" && (
+        <div className="rounded-lg bg-amber-50 border border-amber-200 p-4 mb-3">
+          <p className="text-sm text-gray-700 mb-2">
+            The dates in this file (e.g.{" "}
+            <span className="font-mono">{String(slot.sampleRow?.[slot.dateCol] ?? "")}</span>) could be read more
+            than one way, because every date has both day and month of 12 or less. Please confirm the format used:
+          </p>
+          <select
+            className={selectClass}
+            value={slot.dateOrderOverride}
+            onChange={(e) => onChange({ dateOrderOverride: e.target.value as DateOrder | "" })}
+          >
+            <option value="">-- select date format --</option>
+            {DATE_ORDER_OPTIONS.map((o) => (
+              <option key={o.value} value={o.value}>
+                {o.label}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
 
       <label className={labelClass}>
         Description column
@@ -571,14 +655,28 @@ export default function BankReconciliationPage() {
             const items = [
               !balancesReady && "enter all four balance figures",
               !bank.file && "upload the bank statement",
-              bank.file && !isReady(bank) && "finish confirming the bank statement columns",
+              bank.file && !columnsReady(bank) && "finish confirming the bank statement columns",
+              needsDateFormat(bank) && "choose the bank statement date format",
               !book.file && "upload the cash book",
-              book.file && !isReady(book) && "finish confirming the cash book columns",
+              book.file && !columnsReady(book) && "finish confirming the cash book columns",
+              needsDateFormat(book) && "choose the cash book date format",
             ].filter(Boolean);
             return items.length ? `Still needed: ${items.join(", ")}.` : null;
           })()}
         </p>
       )}
+
+      {/* ---------------- Contact ---------------- */}
+      <p className="mt-12 text-center text-sm text-gray-500">
+        Found an issue or have a suggestion? We would love to hear from you at{" "}
+        <a
+          href="mailto:azlaneduforeveryone@gmail.com"
+          className="font-medium text-teal-600 hover:underline"
+        >
+          azlaneduforeveryone@gmail.com
+        </a>
+        .
+      </p>
     </main>
   );
 }

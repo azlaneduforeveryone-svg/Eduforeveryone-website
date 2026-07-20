@@ -12,8 +12,11 @@ interface Row {
 export function reconcile(
   bookTxns: Txn[],
   bankTxns: Txn[],
-  config: ReconcileConfig = DEFAULT_CONFIG
+  overrides: Partial<ReconcileConfig> = {}
 ): ReconcileResult {
+  // Per-type overrides (reconTypes.ts) merged over the bank-tuned defaults.
+  const config: ReconcileConfig = { ...DEFAULT_CONFIG, ...overrides };
+
   const book: Row[] = bookTxns.map((t) => ({ txn: t, amtC: cents(t.amount) }));
   const bank: Row[] = bankTxns.map((t) => ({ txn: t, amtC: cents(t.amount) }));
 
@@ -63,6 +66,13 @@ export function reconcile(
   // subset-sum search in Pass 3 to happen to find it (it has a line-count
   // cap for performance reasons - this pass doesn't need one, since
   // there's no combinatorial search involved, just a sum).
+  //
+  // referenceMatchIgnoresDate (supplier/customer/intercompany types):
+  // a shared reference is stronger evidence than date proximity in those
+  // reconciliations - invoice date vs posting date routinely differs by
+  // weeks - so the cross-side date window is lifted entirely for this
+  // pass. Candidates are still sorted by date gap, so the closest-dated
+  // pairing wins when one reference appears more than once.
   function groupByRefDate(byId: Map<number, Row>, openSet: Set<number>) {
     const groups = new Map<string, { rids: number[]; amtC: number; date: Date }>();
     for (const id of openSet) {
@@ -94,7 +104,7 @@ export function reconcile(
     for (const bankKey of bankGroupsByAmt.get(bg.amtC) ?? []) {
       const bnkg = bankRefGroups.get(bankKey)!;
       const dd = dayDiff(bg.date, bnkg.date);
-      if (dd > config.dateToleranceDays) continue;
+      if (!config.referenceMatchIgnoresDate && dd > config.dateToleranceDays) continue;
       refCandidates.push([dd, bookKey, bankKey]);
     }
   }
@@ -114,6 +124,12 @@ export function reconcile(
   }
 
   // ---------------- Pass 2: exact 1:1, same amount, date proximity, reference tie-break ----------------
+  // With referenceMatchIgnoresDate, a pair sharing a reference is admitted
+  // even outside the date window, and same-reference candidates are
+  // preferred over closer-dated ones - a reference is deliberate, a date
+  // gap is circumstance in AP/AR data. Without the flag, behavior is
+  // exactly the original: date window filter, closest date first,
+  // reference only as tie-break.
   const bankBuckets = new Map<number, number[]>();
   for (const id of bankOpen) {
     const r = byIdBank.get(id)!;
@@ -129,13 +145,18 @@ export function reconcile(
     for (const bankId of bankBuckets.get(br.amtC) ?? []) {
       const nr = byIdBank.get(bankId)!;
       const dd = dayDiff(br.txn.date, nr.txn.date);
-      if (dd > config.dateToleranceDays) continue;
-      const sameRef =
-        br.txn.reference && nr.txn.reference && br.txn.reference === nr.txn.reference;
+      const sameRef = !!(
+        br.txn.reference && nr.txn.reference && br.txn.reference === nr.txn.reference
+      );
+      if (dd > config.dateToleranceDays && !(config.referenceMatchIgnoresDate && sameRef)) continue;
       candidates.push([dd, sameRef ? 0 : 1, bookId, bankId]);
     }
   }
-  candidates.sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+  candidates.sort((a, b) =>
+    config.referenceMatchIgnoresDate
+      ? a[1] - b[1] || a[0] - b[0] // reference match first, then closest date
+      : a[0] - b[0] || a[1] - b[1] // original: closest date first, reference tie-break
+  );
   for (const [dd, , bookId, bankId] of candidates) {
     if (bookOpen.has(bookId) && bankOpen.has(bankId)) {
       mark([bookId], [bankId], "Matched", dd);
