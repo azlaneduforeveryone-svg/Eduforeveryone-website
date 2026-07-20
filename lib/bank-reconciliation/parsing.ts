@@ -63,7 +63,11 @@ function monthFromName(token: string): number | null {
 }
 
 function dateTokens(s: string): string[] {
-  return normalizeDigits(s).trim().split(/[\s\/\-.,]+/).filter(Boolean);
+  return normalizeDigits(s)
+    .replace(/[\u200E\u200F\u061C]/g, "") // RTL direction marks break tokenizing
+    .trim()
+    .split(/[\s\\\/\-.,]+/) // incl. backslash - some bank exports write 07\02\2026
+    .filter(Boolean);
 }
 
 function buildDate(y: number, m: number, d: number): Date | null {
@@ -198,6 +202,10 @@ export function parseAmountDetailed(raw: unknown): ParsedAmount {
 
   // Arabic thousands (U+066C), Arabic comma (U+060C), Arabic decimal (U+066B)
   s = s.replace(/[\u066C\u060C]/g, ",").replace(/\u066B/g, ".");
+  // Unicode minus (U+2212) and dash variants -> ASCII hyphen, and strip
+  // the invisible direction marks (LRM/RLM/ALM) that RTL Arabic exports
+  // wrap around negative numbers - without this, "−8,200" loses its sign.
+  s = s.replace(/[\u2010-\u2015\u2212]/g, "-").replace(/[\u200E\u200F\u061C]/g, "");
 
   let drcr: ParsedAmount["drcr"] = null;
   const lead = s.match(/^(DR|CR)\b\.?/i);
@@ -218,8 +226,20 @@ export function parseAmountDetailed(raw: unknown): ParsedAmount {
     s = s.replace(/-\s*$/, "");
   }
 
-  // Strip currency symbols/codes, letters (Latin + Arabic), spaces, NBSP.
-  s = s.replace(/[^0-9.,-]/g, "").replace(/^-+/, "");
+  // Strip currency symbols/codes, letters (Latin + Arabic), spaces, NBSP -
+  // then read the sign AGAIN. "SAR -8,200" only exposes its leading minus
+  // after the currency code is gone; checking the sign only before this
+  // strip silently turned every currency-prefixed negative into a
+  // positive, which inverts all outflows on that side.
+  s = s.replace(/[^0-9.,-]/g, "");
+  if (/^-/.test(s)) {
+    negative = true;
+    s = s.replace(/^-+/, "");
+  }
+  if (/-$/.test(s)) {
+    negative = true;
+    s = s.replace(/-+$/, "");
+  }
   if (!s || s.includes("-")) return { value: null, drcr };
 
   // Resolve separators.

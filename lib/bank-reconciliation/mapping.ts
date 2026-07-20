@@ -24,18 +24,31 @@ const isBlank = (v: unknown) => v == null || String(v).trim() === "";
  */
 export function guessMapping(headers: string[]): Partial<ColumnMapping> {
   const norm = (h: string) => h.toLowerCase().replace(/[^a-z]/g, "");
-  const find = (...keywords: string[]) =>
-    headers.find((h) => keywords.some((k) => norm(h).includes(k)));
+  // Arabic headers: hamza variants and taa-marbuta normalized so one
+  // keyword matches all common spellings.
+  const normAr = (h: string) => h.replace(/[إأآ]/g, "ا").replace(/ة/g, "ه");
+  const find = (keywords: string[], arKeywords: string[] = []) =>
+    headers.find(
+      (h) =>
+        keywords.some((k) => norm(h).includes(k)) ||
+        arKeywords.some((k) => normAr(h).includes(k))
+    );
 
-  const dateCol = find("date", "txndate", "transactiondate", "valuedate");
-  const descriptionCol = find("description", "narration", "particulars", "details", "memo");
-  const referenceCol = find("reference", "chequeno", "chequenumber", "refno", "transactionid");
-  const balanceCol = find("balance", "runningbalance");
-  const amountCol = find("amount");
-  const debitCol = find("debit");
-  const creditCol = find("credit");
-  const depositCol = find("deposit", "moneyin");
-  const withdrawalCol = find("withdrawal", "moneyout", "payment");
+  const dateCol = find(["date", "txndate", "transactiondate", "valuedate"], ["تاريخ"]);
+  const descriptionCol = find(
+    ["description", "narration", "particulars", "details", "memo"],
+    ["بيان", "وصف", "تفاصيل"]
+  );
+  const referenceCol = find(
+    ["reference", "chequeno", "chequenumber", "refno", "transactionid"],
+    ["مرجع", "شيك", "سند"]
+  );
+  const balanceCol = find(["balance", "runningbalance"], ["رصيد"]);
+  const amountCol = find(["amount"], ["مبلغ", "قيمه"]);
+  const debitCol = find(["debit"], ["مدين"]);
+  const creditCol = find(["credit"], ["دائن"]);
+  const depositCol = find(["deposit", "moneyin"], ["ايداع"]);
+  const withdrawalCol = find(["withdrawal", "moneyout", "payment"], ["سحب", "مسحوب"]);
 
   const guess: Partial<ColumnMapping> = { dateCol, descriptionCol, referenceCol, balanceCol };
   if (amountCol) {
