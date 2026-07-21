@@ -360,7 +360,14 @@ export async function buildReconciliationWorkbook(
   summary.getCell(`B${r}`).font = bold;
   summary.getCell(`B${r}`).numFmt = moneyFmt;
   addZeroCheckFormatting(summary, `B${r}`);
-  r += 2;
+  r += 1;
+
+  if (rt.balanceSignNote) {
+    summary.getCell(`A${r}`).value = rt.balanceSignNote;
+    summary.getCell(`A${r}`).font = NOTE_FONT;
+    r += 1;
+  }
+  r += 1;
 
   summary.getCell(`A${r}`).value =
     "Split Match (verify) items count as reconciled above but are worth a manual look - see the detail sheets.";

@@ -16,6 +16,7 @@ import { guessMapping } from "../../../../../lib/bank-reconciliation/mapping";
 import {
   inferDateOrder,
   makeDateParser,
+  parseAmountDetailed,
   type DateOrder,
   type InferredOrder,
 } from "../../../../../lib/bank-reconciliation/parsing";
@@ -219,6 +220,55 @@ function formatBytes(n: number): string {
   if (n < 1024) return `${n} B`;
   if (n < 1024 * 1024) return `${(n / 1024).toFixed(0)} KB`;
   return `${(n / (1024 * 1024)).toFixed(2)} MB`;
+}
+
+/** Signed amounts (integer cents) of the sample rows under the current
+ * mapping - a lightweight client-side mirror of applyMapping's amount
+ * logic, used only for the opposite-sign detector below. */
+function slotAmountsCents(slot: FileSlot): number[] {
+  const m = toColumnMapping(slot);
+  const cell = (v: unknown): number | null => {
+    if (v == null || String(v).trim() === "") return 0;
+    const p = parseAmountDetailed(v);
+    if (p.value === null) return null;
+    if (p.drcr) return (p.drcr === "DR" ? -1 : 1) * Math.abs(p.value);
+    return p.value;
+  };
+  const out: number[] = [];
+  for (const r of slot.sampleRows) {
+    let a: number | null;
+    if (m.amountMode === "single") {
+      const v = cell(r[m.amountCol!]);
+      a = v === null ? null : v * (m.amountSign ?? 1);
+    } else {
+      const i = cell(r[m.moneyInCol!]);
+      const o = cell(r[m.moneyOutCol!]);
+      a = i === null || o === null ? null : i - o;
+    }
+    if (a !== null && a !== 0) out.push(Math.round(a * 100));
+  }
+  return out;
+}
+
+/** Detects the classic killer of supplier/customer/intercompany recons:
+ * the two files use OPPOSITE sign conventions (one ledger records
+ * increases as positive, the other as negative), so every real
+ * counterpart is invisible to the matcher and amounts pair up with
+ * unrelated transactions instead. Warned here, before generation. */
+function mirrorSignWarning(theirSlot: FileSlot, ourSlot: FileSlot): boolean {
+  if (!columnsReady(theirSlot) || !columnsReady(ourSlot)) return false;
+  const a = slotAmountsCents(theirSlot);
+  const bList = slotAmountsCents(ourSlot);
+  if (a.length < 4 || bList.length < 4) return false;
+  const same = new Set(bList);
+  const mirror = new Set(bList.map((x) => -x));
+  let sameHits = 0;
+  let mirrorHits = 0;
+  for (const x of a) {
+    if (same.has(x)) sameHits++;
+    if (mirror.has(x)) mirrorHits++;
+  }
+  return mirrorHits >= 4 && mirrorHits > sameHits * 2;
 }
 
 // ---------------- Type selector: links to the sibling routes ----------------
@@ -729,6 +779,16 @@ export default function ReconciliationClient({ rt }: { rt: ReconType }) {
 
       {error && (
         <p className="mt-6 text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg px-4 py-3">{error}</p>
+      )}
+
+      {mirrorSignWarning(bank, book) && (
+        <p className="mt-6 text-sm text-red-800 bg-red-50 border border-red-300 rounded-lg px-4 py-3">
+          ⚠️ These two files appear to use <strong>opposite sign conventions</strong> — amounts on one side show
+          up with the opposite sign on the other, so real counterparts will not match. Fix it on the side exported
+          from your accounting system: tick the flip-sign checkbox (single amount column) or swap the answer to
+          the direction question (Debit/Credit columns). Then enter that side&apos;s opening and closing balances
+          as positive numbers too, so the balances follow the same direction as the transactions.
+        </p>
       )}
 
       <button

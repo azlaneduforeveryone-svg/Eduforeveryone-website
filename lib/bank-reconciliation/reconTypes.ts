@@ -78,6 +78,10 @@ export interface ReconType {
   amountDirection: AmountDirectionCopy;
   statement: StatementCopy;
   remarks: RemarkCopy;
+  /** Printed under the final difference check on the statement - explains
+   *  the sign convention for balances when a red check is most likely a
+   *  sign-entry problem (supplier/customer/intercompany only). */
+  balanceSignNote?: string;
   /** Merged over DEFAULT_CONFIG by reconcile() - keys are real
    *  ReconcileConfig keys, checked by the compiler. */
   matching: Partial<ReconcileConfig>;
@@ -137,9 +141,9 @@ export const RECON_TYPES: Record<ReconTypeId, ReconType> = {
     ourSheetName: "AP Ledger",
     compareSheetName: "Statement vs AP Ledger",
     theirBalanceHint:
-      "Balance shown on the supplier's statement of account (the amount they say is outstanding). Enter it as shown, without changing the sign.",
+      "Balance on the supplier's statement (the amount outstanding). Enter it as a POSITIVE number.",
     ourBalanceHint:
-      "Balance of this supplier's account in your payables ledger, as shown in your books.",
+      "Balance of this supplier's account in your payables ledger. Enter the outstanding amount as a POSITIVE number, even if your ledger prints credit balances as negative.",
     amountDirection: {
       questionSuffix:
         "increase the balance owed to this supplier (invoices/charges), or reduce it (payments and credit notes)?",
@@ -168,10 +172,19 @@ export const RECON_TYPES: Record<ReconTypeId, ReconType> = {
       oursPositive: "Invoice in your ledger, not on supplier statement",
       oursNegative: "Payment/credit note in transit (not yet on their statement)",
     },
+    balanceSignNote:
+      "If a check above is red: balances must be entered in the same direction as the mapped transactions - enter outstanding balances as POSITIVE numbers on both sides, even if a ledger prints credit balances as negative.",
     matching: {
       dateToleranceDays: 45,
-      splitDateWindowDays: 60, // one payment settling invoices from the past 1-2 months is normal
-      maxSplitLines: 8,
+      // Wide enough for a payment settling last month's invoices, but not
+      // so wide that Pass 3's subset-sum search can coincidentally combine
+      // unrelated small transactions (fees, rounding) from unrelated weeks
+      // into a false "Split Match (verify)" - confirmed as a real failure
+      // mode on live data at 60 days. 21 days covers the common case
+      // (a payment settling the prior 2-3 weeks of invoices) while keeping
+      // the false-positive risk low.
+      splitDateWindowDays: 21,
+      maxSplitLines: 5, // fewer lines = far fewer accidental-sum coincidences
       referenceMatchIgnoresDate: true,
     },
   },
@@ -186,9 +199,9 @@ export const RECON_TYPES: Record<ReconTypeId, ReconType> = {
     ourSheetName: "AR Ledger",
     compareSheetName: "Statement vs AR Ledger",
     theirBalanceHint:
-      "Balance the customer confirms or shows on their statement of your account. Enter it as shown, without changing the sign.",
+      "Balance the customer confirms or shows on their statement. Enter the amount outstanding as a POSITIVE number.",
     ourBalanceHint:
-      "Balance of this customer's account in your receivables ledger, as shown in your books.",
+      "Balance of this customer's account in your receivables ledger. Enter the outstanding amount as a POSITIVE number.",
     amountDirection: {
       questionSuffix:
         "increase the balance this customer owes (invoices/charges), or reduce it (receipts and credit notes)?",
@@ -217,10 +230,12 @@ export const RECON_TYPES: Record<ReconTypeId, ReconType> = {
       oursPositive: "Invoice in your ledger, not acknowledged by customer",
       oursNegative: "Receipt/credit note in transit (not yet on their statement)",
     },
+    balanceSignNote:
+      "If a check above is red: balances must be entered in the same direction as the mapped transactions - enter outstanding balances as POSITIVE numbers on both sides, even if a ledger prints credit balances as negative.",
     matching: {
       dateToleranceDays: 45,
-      splitDateWindowDays: 60,
-      maxSplitLines: 8,
+      splitDateWindowDays: 21, // see the supplier note - false-positive risk grows sharply with window width
+      maxSplitLines: 5,
       referenceMatchIgnoresDate: true,
     },
   },
@@ -235,9 +250,9 @@ export const RECON_TYPES: Record<ReconTypeId, ReconType> = {
     ourSheetName: "Your Ledger",
     compareSheetName: "Counterparty vs Your Ledger",
     theirBalanceHint:
-      "Opening and closing balance of the intercompany account in the counterparty entity's books.",
+      "Opening and closing balance of the intercompany account in the counterparty's books. Both sides must be entered with the SAME sign: if you agree an amount is outstanding, enter it as a positive number on BOTH sides, even if one ledger prints it as a credit/negative balance.",
     ourBalanceHint:
-      "Opening and closing balance of the intercompany account in your entity's books.",
+      "Opening and closing balance of the intercompany account in your entity's books, entered with the same sign convention as the counterparty side (outstanding balance = positive).",
     amountDirection: {
       questionSuffix: "increase the intercompany account balance, or reduce it?",
       inRadio: "increases balance",
@@ -265,10 +280,12 @@ export const RECON_TYPES: Record<ReconTypeId, ReconType> = {
       oursPositive: "In your ledger, not yet posted by counterparty",
       oursNegative: "Reduction in your ledger, not yet posted by counterparty",
     },
+    balanceSignNote:
+      "If a check above is red: balances must be entered in the same direction as the mapped transactions - enter outstanding balances as POSITIVE numbers on both sides, even if a ledger prints credit balances as negative.",
     matching: {
       dateToleranceDays: 7,
-      splitDateWindowDays: 10,
-      maxSplitLines: 8,
+      splitDateWindowDays: 5, // see the supplier/customer note above - same risk, tighter base window
+      maxSplitLines: 5,
       referenceMatchIgnoresDate: true,
     },
   },

@@ -80,6 +80,12 @@ export interface ReconcileConfig {
    *  evidence than a date window there. Amount-only matches (no shared
    *  reference) still respect the windows. */
   referenceMatchIgnoresDate: boolean;
+  /** A reference appearing on more than this many rows on either side is
+   *  a "weak" reference (a type code like JV/TRF, not a document number)
+   *  and does NOT earn the ignore-the-date-window privilege above -
+   *  generic references at unlimited date distance produce confident
+   *  wrong matches. */
+  weakReferenceRowLimit: number;
 }
 
 export const DEFAULT_CONFIG: ReconcileConfig = {
@@ -91,4 +97,5 @@ export const DEFAULT_CONFIG: ReconcileConfig = {
   maxComboAttempts: 300_000,
   maxComboAttemptsPerAnchor: 20_000,
   referenceMatchIgnoresDate: false, // bank default; overridden per recon type
+  weakReferenceRowLimit: 8,
 };
