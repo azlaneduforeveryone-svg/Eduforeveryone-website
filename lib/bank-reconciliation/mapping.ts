@@ -157,7 +157,18 @@ export function applyMapping(rows: Record<string, unknown>[], mapping: ColumnMap
     } else {
       const inV = parseCell(row[mapping.moneyInCol!]);
       const outV = parseCell(row[mapping.moneyOutCol!]);
-      amount = inV === null || outV === null ? null : inV - outV;
+      // Use MAGNITUDES. A value sitting in a "money in" column means money
+      // in and a value in a "money out" column means money out, regardless
+      // of how the bank signed it. Some banks state the Debit/Out column as
+      // a positive magnitude, others as a negative number (e.g. -9,945 in a
+      // Debit cell). The naive "in - out" formula double-negates the second
+      // case: 0 - (-9945) = +9945, flipping every payment to positive and
+      // breaking all matching. Taking abs() on each side makes both bank
+      // conventions produce the same correct signed amount: in is positive,
+      // out is negative. (A row with a value in BOTH columns is unusual;
+      // net-by-magnitude is still the sensible reading.)
+      amount =
+        inV === null || outV === null ? null : Math.abs(inV) - Math.abs(outV);
     }
 
     if (!date) {

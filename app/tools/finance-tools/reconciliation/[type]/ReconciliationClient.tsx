@@ -8,9 +8,16 @@
 // the selector navigates to the sibling route, which remounts this
 // component - entered balances and uploaded files intentionally reset,
 // since they belong to a specific reconciliation type.
+//
+// PDF handling note: pdfjs cannot run on the server (no DOM / DOMMatrix).
+// So a PDF is parsed ONLY in the browser (in loadFile), and at submit time
+// its parsed rows are rebuilt into an .xlsx blob that is sent to the API in
+// place of the PDF. The server therefore never receives a PDF and never
+// loads pdfjs - it just parses a spreadsheet like any other upload.
 
 import { useState, useCallback, useRef, DragEvent } from "react";
 import Link from "next/link";
+import * as XLSX from "xlsx";
 import { parseUpload } from "../../../../../lib/bank-reconciliation/parseFile";
 import { guessMapping } from "../../../../../lib/bank-reconciliation/mapping";
 import {
@@ -28,6 +35,10 @@ import type { ColumnMapping } from "../../../../../lib/bank-reconciliation/types
 // combined request-body limit (two files + the mapping JSON in one request).
 const MAX_FILE_SIZE_BYTES = 3 * 1024 * 1024;
 const MAX_FILE_SIZE_LABEL = "3 MB";
+// PDFs are converted to a small .xlsx in the browser before submit, so the
+// raw PDF is never sent - it can be larger than the request-body limit.
+const MAX_PDF_SIZE_BYTES = 15 * 1024 * 1024;
+const MAX_PDF_SIZE_LABEL = "15 MB";
 
 // Rows kept in memory per file for date-order inference. A statement with
 // 500 rows and no day above 12 does not exist in practice, so this is
@@ -41,10 +52,20 @@ const DATE_ORDER_OPTIONS: { value: DateOrder; label: string }[] = [
   { value: "YDM", label: "YYYY-DD-MM (year, day, month)" },
 ];
 
+function isPdfName(name: string): boolean {
+  return name.toLowerCase().endsWith(".pdf");
+}
+
 interface FileSlot {
   file: File | null;
+  isPdf: boolean;
+  // For PDFs only: every parsed row + the header order, kept so we can
+  // rebuild an .xlsx blob at submit time. null for Excel/CSV, whose
+  // original File is re-parsed by the server directly.
+  allRows: Record<string, unknown>[] | null;
   headers: string[];
   headerWarning: string | null; // set when row 1 doesn't look like real headers
+  balanceVerified: boolean;      // PDF running-balance self-check passed
   sampleRow: Record<string, unknown> | null;
   sampleRows: Record<string, unknown>[]; // for date-order inference
   dateCol: string;
@@ -62,8 +83,11 @@ interface FileSlot {
 
 const EMPTY_SLOT: FileSlot = {
   file: null,
+  isPdf: false,
+  allRows: null,
   headers: [],
   headerWarning: null,
+  balanceVerified: false,
   sampleRow: null,
   sampleRows: [],
   dateCol: "",
@@ -97,15 +121,25 @@ function headerWarningFor(headers: string[], guess: Partial<ColumnMapping>): str
   return null;
 }
 
-async function loadFile(file: File): Promise<Partial<FileSlot>> {
-  const { headers, rows } = await parseUpload(await file.arrayBuffer(), file.name);
+async function loadFile(file: File): Promise<Partial<FileSlot> & {
+  detectedOpeningBalance?: number;
+  detectedClosingBalance?: number;
+}> {
+  const parsed = await parseUpload(await file.arrayBuffer(), file.name);
+  const { headers, rows } = parsed;
+  const pdf = isPdfName(file.name);
   const guess = guessMapping(headers) as Partial<ColumnMapping> & {
     _debitCreditCandidates?: [string, string];
   };
   return {
     file,
+    isPdf: pdf,
+    allRows: pdf ? rows : null,
     headers,
-    headerWarning: headerWarningFor(headers, guess),
+    headerWarning: pdf && parsed.balanceVerified ? null : headerWarningFor(headers, guess),
+    balanceVerified: !!parsed.balanceVerified,
+    detectedOpeningBalance: parsed.detectedOpeningBalance,
+    detectedClosingBalance: parsed.detectedClosingBalance,
     sampleRow: rows[0] ?? null,
     sampleRows: rows.slice(0, INFERENCE_SAMPLE_ROWS),
     dateCol: guess.dateCol ?? "",
@@ -119,6 +153,24 @@ async function loadFile(file: File): Promise<Partial<FileSlot>> {
     debitCreditCandidates: guess._debitCreditCandidates ?? null,
     debitMeansIn: null,
   };
+}
+
+/** Build the File actually sent to the server. Excel/CSV go as-is. A PDF is
+ * rebuilt from its parsed rows into an .xlsx blob, so the server never sees
+ * a PDF (pdfjs can't run there) and just parses a spreadsheet. */
+function fileForSubmit(slot: FileSlot): File {
+  if (slot.isPdf && slot.allRows) {
+    const ws = XLSX.utils.json_to_sheet(slot.allRows, { header: slot.headers });
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "Statement");
+    const out = XLSX.write(wb, { type: "array", bookType: "xlsx" }) as ArrayBuffer;
+    const blob = new Blob([out], {
+      type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    });
+    const base = (slot.file?.name ?? "statement").replace(/\.pdf$/i, "");
+    return new File([blob], `${base}.xlsx`, { type: blob.type });
+  }
+  return slot.file!;
 }
 
 function inferredOrderFor(slot: FileSlot): InferredOrder | "" {
@@ -345,7 +397,7 @@ function Dropzone({
         <input
           ref={inputRef}
           type="file"
-          accept=".xlsx,.xls,.csv"
+          accept=".xlsx,.xls,.csv,.pdf"
           className="hidden"
           onChange={(e) => {
             const f = e.target.files?.[0];
@@ -364,8 +416,7 @@ function Dropzone({
             <div className="text-2xl mb-1">📄</div>
             <p className="text-sm font-semibold text-gray-700">Drag and drop your file here</p>
             <p className="text-xs text-gray-500 mt-1">
-              or <span className="text-teal-600 font-semibold">choose a file</span> — .xlsx, .xls, or .csv, up to{" "}
-              {MAX_FILE_SIZE_LABEL}
+              or <span className="text-teal-600 font-semibold">choose a file</span> — .xlsx, .xls, .csv, or .pdf
             </p>
           </>
         )}
@@ -408,6 +459,12 @@ function ColumnMappingForm({
   return (
     <div className="mt-3 p-4 rounded-xl border border-gray-100 shadow-sm bg-white">
       <h3 className="font-semibold text-gray-900 mb-3">{label}: confirm columns</h3>
+
+      {slot.isPdf && slot.balanceVerified && (
+        <div className="rounded-lg bg-teal-50 border border-teal-200 p-3 mb-3 text-sm text-teal-800">
+          ✓ Read from PDF and verified against the running balance. Please still confirm the columns below.
+        </div>
+      )}
 
       {slot.headerWarning && (
         <div className="rounded-lg bg-amber-50 border border-amber-300 p-3 mb-3 text-sm text-amber-900">
@@ -572,6 +629,9 @@ export default function ReconciliationClient({ rt }: { rt: ReconType }) {
   const [periodLabel, setPeriodLabel] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // Which balance boxes were auto-filled from a statement (for the "confirm"
+  // hint). Cleared for a field as soon as the user edits it by hand.
+  const [autoFilled, setAutoFilled] = useState<Set<string>>(new Set());
 
   const balancesReady =
     bankOpening !== "" && bankClosing !== "" && bookOpening !== "" && bookClosing !== "" &&
@@ -582,9 +642,12 @@ export default function ReconciliationClient({ rt }: { rt: ReconType }) {
     if (!file) return;
     setError(null);
 
-    if (file.size > MAX_FILE_SIZE_BYTES) {
+    const pdf = isPdfName(file.name);
+    const limit = pdf ? MAX_PDF_SIZE_BYTES : MAX_FILE_SIZE_BYTES;
+    const limitLabel = pdf ? MAX_PDF_SIZE_LABEL : MAX_FILE_SIZE_LABEL;
+    if (file.size > limit) {
       setError(
-        `"${file.name}" is ${formatBytes(file.size)}, which is over the ${MAX_FILE_SIZE_LABEL} limit. ` +
+        `"${file.name}" is ${formatBytes(file.size)}, which is over the ${limitLabel} limit. ` +
           `Try exporting a shorter date range (e.g. one quarter instead of a full year) and upload that instead.`
       );
       return;
@@ -594,10 +657,33 @@ export default function ReconciliationClient({ rt }: { rt: ReconType }) {
     try {
       const patch = await loadFile(file);
       setter({ ...EMPTY_SLOT, ...patch });
+
+      // Prefill balances the parser read and VERIFIED from this statement,
+      // into the matching side's boxes. Marked "auto-filled, confirm" and
+      // fully editable - never silently trusted, since they drive the
+      // tie-out check. Only fills a box that's currently empty, so we don't
+      // overwrite a figure the user already typed.
+      const openStr =
+        patch.detectedOpeningBalance != null ? String(patch.detectedOpeningBalance) : "";
+      const closeStr =
+        patch.detectedClosingBalance != null ? String(patch.detectedClosingBalance) : "";
+      if (openStr || closeStr) {
+        const filled = new Set(autoFilled);
+        if (which === "bank") {
+          if (openStr && bankOpening === "") { setBankOpening(openStr); filled.add("bankOpening"); }
+          if (closeStr && bankClosing === "") { setBankClosing(closeStr); filled.add("bankClosing"); }
+        } else {
+          if (openStr && bookOpening === "") { setBookOpening(openStr); filled.add("bookOpening"); }
+          if (closeStr && bookClosing === "") { setBookClosing(closeStr); filled.add("bookClosing"); }
+        }
+        setAutoFilled(filled);
+      }
     } catch (e) {
+      // parseFile throws friendly messages for scanned or unverifiable PDFs.
+      setter(EMPTY_SLOT);
       setError(e instanceof Error ? e.message : "Could not read that file.");
     }
-  }, []);
+  }, [autoFilled, bankOpening, bankClosing, bookOpening, bookClosing]);
 
   const canSubmit = balancesReady && isReady(bank) && isReady(book) && !busy;
 
@@ -608,8 +694,9 @@ export default function ReconciliationClient({ rt }: { rt: ReconType }) {
     try {
       const form = new FormData();
       form.set("reconType", rt.id);
-      form.set("bankFile", bank.file);
-      form.set("bookFile", book.file);
+      // PDFs are converted to .xlsx here so the server never receives a PDF.
+      form.set("bankFile", fileForSubmit(bank));
+      form.set("bookFile", fileForSubmit(book));
       form.set("bankMapping", JSON.stringify(toColumnMapping(bank)));
       form.set("bookMapping", JSON.stringify(toColumnMapping(book)));
       form.set("periodLabel", periodLabel);
@@ -662,11 +749,13 @@ export default function ReconciliationClient({ rt }: { rt: ReconType }) {
           </li>
           <li>
             <strong>Upload both below.</strong> Accepted formats: <code className="text-xs bg-white border border-gray-200 rounded px-1 py-0.5">.xlsx</code>,{" "}
-            <code className="text-xs bg-white border border-gray-200 rounded px-1 py-0.5">.xls</code>, or{" "}
-            <code className="text-xs bg-white border border-gray-200 rounded px-1 py-0.5">.csv</code>, each up to{" "}
-            {MAX_FILE_SIZE_LABEL}. <strong>The first row of the file must be column headers</strong> (Date,
-            Description, Amount, etc.) — not a title, a blank row, or an opening-balance line. If your export has
-            anything above the actual header row, delete those rows before uploading.
+            <code className="text-xs bg-white border border-gray-200 rounded px-1 py-0.5">.xls</code>,{" "}
+            <code className="text-xs bg-white border border-gray-200 rounded px-1 py-0.5">.csv</code>, or{" "}
+            <code className="text-xs bg-white border border-gray-200 rounded px-1 py-0.5">.pdf</code>. For
+            spreadsheets, <strong>the first row must be the column headers</strong> (Date, Description, Amount,
+            etc.) — not a title, a blank row, or an opening-balance line. PDF bank statements are read
+            automatically and checked against the running balance; if we can&apos;t read one reliably we&apos;ll ask
+            for the Excel or CSV export instead.
           </li>
           <li>
             <strong>Confirm the columns</strong> for each file once it&apos;s uploaded. Most of this gets guessed
@@ -694,22 +783,40 @@ export default function ReconciliationClient({ rt }: { rt: ReconType }) {
             <p className="text-xs text-gray-500 mb-2">{rt.theirBalanceHint}</p>
             <label className="block text-sm text-gray-700 mb-2">
               Opening balance
+              {autoFilled.has("bankOpening") && (
+                <span className="ml-2 text-xs font-medium text-teal-600">auto-filled — please confirm</span>
+              )}
               <input
                 type="number"
                 step="0.01"
                 value={bankOpening}
-                onChange={(e) => setBankOpening(e.target.value)}
-                className="block w-full mt-1 rounded-lg border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
+                onChange={(e) => {
+                  setBankOpening(e.target.value);
+                  if (autoFilled.has("bankOpening"))
+                    setAutoFilled((s) => { const n = new Set(s); n.delete("bankOpening"); return n; });
+                }}
+                className={`block w-full mt-1 rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 ${
+                  autoFilled.has("bankOpening") ? "border-teal-300 bg-teal-50/40" : "border-gray-200"
+                }`}
               />
             </label>
             <label className="block text-sm text-gray-700">
               Closing balance
+              {autoFilled.has("bankClosing") && (
+                <span className="ml-2 text-xs font-medium text-teal-600">auto-filled — please confirm</span>
+              )}
               <input
                 type="number"
                 step="0.01"
                 value={bankClosing}
-                onChange={(e) => setBankClosing(e.target.value)}
-                className="block w-full mt-1 rounded-lg border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
+                onChange={(e) => {
+                  setBankClosing(e.target.value);
+                  if (autoFilled.has("bankClosing"))
+                    setAutoFilled((s) => { const n = new Set(s); n.delete("bankClosing"); return n; });
+                }}
+                className={`block w-full mt-1 rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 ${
+                  autoFilled.has("bankClosing") ? "border-teal-300 bg-teal-50/40" : "border-gray-200"
+                }`}
               />
             </label>
           </div>
@@ -718,26 +825,50 @@ export default function ReconciliationClient({ rt }: { rt: ReconType }) {
             <p className="text-xs text-gray-500 mb-2">{rt.ourBalanceHint}</p>
             <label className="block text-sm text-gray-700 mb-2">
               Opening balance
+              {autoFilled.has("bookOpening") && (
+                <span className="ml-2 text-xs font-medium text-teal-600">auto-filled — please confirm</span>
+              )}
               <input
                 type="number"
                 step="0.01"
                 value={bookOpening}
-                onChange={(e) => setBookOpening(e.target.value)}
-                className="block w-full mt-1 rounded-lg border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
+                onChange={(e) => {
+                  setBookOpening(e.target.value);
+                  if (autoFilled.has("bookOpening"))
+                    setAutoFilled((s) => { const n = new Set(s); n.delete("bookOpening"); return n; });
+                }}
+                className={`block w-full mt-1 rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 ${
+                  autoFilled.has("bookOpening") ? "border-teal-300 bg-teal-50/40" : "border-gray-200"
+                }`}
               />
             </label>
             <label className="block text-sm text-gray-700">
               Closing balance
+              {autoFilled.has("bookClosing") && (
+                <span className="ml-2 text-xs font-medium text-teal-600">auto-filled — please confirm</span>
+              )}
               <input
                 type="number"
                 step="0.01"
                 value={bookClosing}
-                onChange={(e) => setBookClosing(e.target.value)}
-                className="block w-full mt-1 rounded-lg border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
+                onChange={(e) => {
+                  setBookClosing(e.target.value);
+                  if (autoFilled.has("bookClosing"))
+                    setAutoFilled((s) => { const n = new Set(s); n.delete("bookClosing"); return n; });
+                }}
+                className={`block w-full mt-1 rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 ${
+                  autoFilled.has("bookClosing") ? "border-teal-300 bg-teal-50/40" : "border-gray-200"
+                }`}
               />
             </label>
           </div>
         </div>
+        {autoFilled.size > 0 && (
+          <p className="mt-3 text-xs text-teal-700">
+            Balances highlighted above were read from your uploaded statement. Check them against your document
+            before generating — they drive the tie-out check.
+          </p>
+        )}
       </div>
 
       <label className="block text-sm font-semibold text-gray-700 mb-6">
@@ -751,9 +882,10 @@ export default function ReconciliationClient({ rt }: { rt: ReconType }) {
       </label>
 
       <div className="rounded-lg bg-amber-50 border border-amber-300 p-4 mb-4 text-sm text-amber-900">
-        <strong>Before uploading:</strong> the first row of each file must be the column headers (Date,
-        Description, Amount…). Delete any title rows, blank rows, or opening-balance lines above the header
-        row — the opening and closing balances go in the boxes above, not inside the file.
+        <strong>Before uploading a spreadsheet:</strong> the first row of each file must be the column headers
+        (Date, Description, Amount…). Delete any title rows, blank rows, or opening-balance lines above the header
+        row — the opening and closing balances go in the boxes above, not inside the file. (PDF statements are
+        handled automatically.)
       </div>
 
       <div className="grid sm:grid-cols-2 gap-4">
