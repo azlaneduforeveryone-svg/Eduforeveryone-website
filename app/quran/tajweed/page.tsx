@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import TajweedListingPage from "./TajweedListingPage";
 import JsonLd, { breadcrumbLd } from "@/components/JsonLd";
+import { SURAH_META } from "@/lib/quranSurahMeta";
 
 export const metadata: Metadata = {
   title: "Color Coded Tajweed Quran Online — Interactive Rules",
@@ -11,9 +12,19 @@ export const metadata: Metadata = {
     description: "Read the Quran with color-coded Tajweed rules. Click any word to learn the rule. All 114 surahs, free.",
     url: "https://eduforeveryone.com/quran/tajweed",
     siteName: "EduForEveryone",
+    images: [{ url: "/Main_Logo.jpg", width: 800, height: 800, alt: "EduForEveryone" }],
     type: "website",
   },
 };
+
+const LOCAL_SURAHS = SURAH_META.map(s => ({
+  id: s.number,
+  name_simple: s.name,
+  name_arabic: s.arabicName,
+  translated_name: { name: s.name },
+  verses_count: s.ayahs,
+  revelation_place: s.revelation === "Meccan" ? "makkah" : "madinah",
+}));
 
 export default function Page() {
   return (
@@ -23,7 +34,7 @@ export default function Page() {
         { name: "Quran", path: "/quran" },
         { name: "Tajweed Quran", path: "/quran/tajweed" },
       ])} />
-      <TajweedListingPage />
+      <TajweedListingPage localSurahs={LOCAL_SURAHS} />
     </>
   );
 }

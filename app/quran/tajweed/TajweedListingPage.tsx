@@ -35,9 +35,9 @@ interface Surah {
   revelation_place: string;
 }
 
-export default function TajweedListingPage() {
-  const [surahs,     setSurahs]     = useState<Surah[]>([]);
-  const [loading,    setLoading]    = useState(true);
+export default function TajweedListingPage({ localSurahs = [] }: { localSurahs?: Surah[] }) {
+  const [surahs,     setSurahs]     = useState<Surah[]>(localSurahs);
+  const [loading,    setLoading]    = useState(localSurahs.length === 0);
   const [search,     setSearch]     = useState("");
   const [filter,     setFilter]     = useState<"all"|"makkah"|"madinah">("all");
   const [lang,       setLang]       = useState<Lang>("en");
@@ -46,7 +46,7 @@ export default function TajweedListingPage() {
   useEffect(() => {
     fetch("https://api.qurancdn.com/api/qdc/chapters?language=en&per_page=114")
       .then(r => r.json())
-      .then(d => { setSurahs(d.chapters || []); setLoading(false); })
+      .then(d => { if (d.chapters?.length) setSurahs(d.chapters); setLoading(false); })
       .catch(() => setLoading(false));
   }, []);
 
@@ -65,12 +65,6 @@ export default function TajweedListingPage() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
-      {/* Inject Arabic font */}
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
-        .arabic-text { font-family: 'Amiri', var(--font-arabic), 'Noto Naskh Arabic', serif !important; }
-      `}</style>
-
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-sm text-gray-400 mb-6">
         <Link href="/quran" className="hover:text-teal-600">Quran</Link>
