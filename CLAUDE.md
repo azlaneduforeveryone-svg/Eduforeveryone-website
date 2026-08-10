@@ -107,7 +107,6 @@ app/
 │   ├── page.tsx                    # IELTS hub — indigo card layout (same pattern as /courses)
 │   ├── reading/
 │   │   ├── page.tsx                # Server (metadata)
-│   │   ├── ReadingPage.tsx         # Passage listing — links to dynamic routes
 │   │   └── [passageId]/
 │   │       ├── page.tsx            # Server (generateStaticParams + generateMetadata per passage)
 │   │       └── ReadingTest.tsx     # Full exam: 20-min timer, split-pane, no-repeat localStorage rotation
