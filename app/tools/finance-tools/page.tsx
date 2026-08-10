@@ -3,14 +3,14 @@ import Link from "next/link";
 // app/tools/finance-tools/page.tsx
 //
 // Category landing page for finance tools. Add a new entry to TOOLS
-// below each time you ship another one - Bank Reconciliation is first.
+// below each time you ship another one.
 
 const TOOLS = [
   {
-    href: "/tools/finance-tools/bank-reconciliation",
-    title: "Bank Reconciliation",
+    href: "/tools/finance-tools/reconciliation/bank",
+    title: "Reconciliations",
     description:
-      "Upload your bank statement and cash book, get a formula-driven reconciliation statement back as an Excel download.",
+      "Bank, supplier, customer, and intercompany reconciliations. Upload both sides, get a formula-driven reconciliation statement back as an Excel download.",
     icon: "🏦",
   },
   // { href: "/tools/finance-tools/next-tool", title: "...", description: "...", icon: "..." },

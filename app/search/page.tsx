@@ -4,6 +4,7 @@ import SearchPage from "./SearchPage";
 export const metadata: Metadata = {
   title: "Search — EduForEveryone",
   description: "Search all courses, notes, quizzes, tools, games and Islamic content on EduForEveryone.",
+  robots: { index: false, follow: true },
 };
 
 export default function Page() {

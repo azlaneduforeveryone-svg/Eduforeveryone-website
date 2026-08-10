@@ -16,8 +16,20 @@ const amiri = Amiri({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://eduforeveryone.com'),
   title: 'EduForEveryone — Free Education for All',
   description: 'Free, high-quality courses, notes, and quizzes for every student. No fees. No barriers.',
+  alternates: { canonical: './' },
+  openGraph: {
+    siteName: 'EduForEveryone',
+    type: 'website',
+    locale: 'en_US',
+    images: [{ url: '/Main_Logo.jpg', width: 800, height: 800, alt: 'EduForEveryone' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: [{ url: '/Main_Logo.jpg', width: 800, height: 800, alt: 'EduForEveryone' }],
+  },
 };
 
 export default function RootLayout({
@@ -25,6 +37,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const isProduction = process.env.NODE_ENV === 'production';
+
   return (
     <html
       lang="en"
@@ -37,36 +51,27 @@ export default function RootLayout({
           name: "EduForEveryone",
           url: "https://eduforeveryone.com",
           logo: "https://eduforeveryone.com/Main_Logo.jpg",
-        }} />
-        <JsonLd data={{
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          name: "EduForEveryone",
-          url: "https://eduforeveryone.com",
-          potentialAction: {
-            "@type": "SearchAction",
-            target: {
-              "@type": "EntryPoint",
-              urlTemplate: "https://eduforeveryone.com/search?q={search_term_string}",
-            },
-            "query-input": "required name=search_term_string",
-          },
+          sameAs: ["https://facebook.com/eduforeveryone"],
         }} />
         <AuthProvider>
 
-          <Script
-            src="https://www.googletagmanager.com/gtag/js?id=G-F7MCW76675"
-            strategy="afterInteractive"
-          />
+          {isProduction && (
+            <>
+              <Script
+                src="https://www.googletagmanager.com/gtag/js?id=G-F7MCW76675"
+                strategy="afterInteractive"
+              />
 
-          <Script id="google-analytics" strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-F7MCW76675', { page_path: window.location.pathname });
-            `}
-          </Script>
+              <Script id="google-analytics" strategy="afterInteractive">
+                {`
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', 'G-F7MCW76675', { page_path: window.location.pathname });
+                `}
+              </Script>
+            </>
+          )}
 
           <Navbar />
           <main className="flex-1">{children}</main>

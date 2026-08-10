@@ -1,28 +1,12 @@
 import type { ColumnMapping, Txn } from "./types";
+import {
+  inferDateOrder,
+  makeDateParser,
+  parseAmountDetailed,
+  type DateOrder,
+} from "./parsing";
 
-function toDate(val: unknown): Date | null {
-  if (val instanceof Date) return val;
-  if (typeof val === "number") {
-    // Excel serial date
-    const epoch = new Date(Date.UTC(1899, 11, 30));
-    return new Date(epoch.getTime() + val * 86400000);
-  }
-  if (typeof val === "string" && val.trim()) {
-    const d = new Date(val);
-    if (!isNaN(d.getTime())) return d;
-  }
-  return null;
-}
-
-function toNumber(val: unknown): number {
-  if (typeof val === "number") return val;
-  if (typeof val === "string") {
-    const cleaned = val.replace(/,/g, "").replace(/\(([^)]+)\)/, "-$1").trim();
-    const n = parseFloat(cleaned);
-    return isNaN(n) ? 0 : n;
-  }
-  return 0;
-}
+const isBlank = (v: unknown) => v == null || String(v).trim() === "";
 
 /** Heuristic header guesser - suggests a mapping for the UI to pre-fill,
  * the user still confirms/edits it before anything runs.
@@ -40,18 +24,31 @@ function toNumber(val: unknown): number {
  */
 export function guessMapping(headers: string[]): Partial<ColumnMapping> {
   const norm = (h: string) => h.toLowerCase().replace(/[^a-z]/g, "");
-  const find = (...keywords: string[]) =>
-    headers.find((h) => keywords.some((k) => norm(h).includes(k)));
+  // Arabic headers: hamza variants and taa-marbuta normalized so one
+  // keyword matches all common spellings.
+  const normAr = (h: string) => h.replace(/[إأآ]/g, "ا").replace(/ة/g, "ه");
+  const find = (keywords: string[], arKeywords: string[] = []) =>
+    headers.find(
+      (h) =>
+        keywords.some((k) => norm(h).includes(k)) ||
+        arKeywords.some((k) => normAr(h).includes(k))
+    );
 
-  const dateCol = find("date", "txndate", "transactiondate", "valuedate");
-  const descriptionCol = find("description", "narration", "particulars", "details", "memo");
-  const referenceCol = find("reference", "chequeno", "chequenumber", "refno", "transactionid");
-  const balanceCol = find("balance", "runningbalance");
-  const amountCol = find("amount");
-  const debitCol = find("debit");
-  const creditCol = find("credit");
-  const depositCol = find("deposit", "moneyin");
-  const withdrawalCol = find("withdrawal", "moneyout", "payment");
+  const dateCol = find(["date", "txndate", "transactiondate", "valuedate"], ["تاريخ"]);
+  const descriptionCol = find(
+    ["description", "narration", "particulars", "details", "memo"],
+    ["بيان", "وصف", "تفاصيل"]
+  );
+  const referenceCol = find(
+    ["reference", "chequeno", "chequenumber", "refno", "transactionid"],
+    ["مرجع", "شيك", "سند"]
+  );
+  const balanceCol = find(["balance", "runningbalance"], ["رصيد"]);
+  const amountCol = find(["amount"], ["مبلغ", "قيمه"]);
+  const debitCol = find(["debit"], ["مدين"]);
+  const creditCol = find(["credit"], ["دائن"]);
+  const depositCol = find(["deposit", "moneyin"], ["ايداع"]);
+  const withdrawalCol = find(["withdrawal", "moneyout", "payment"], ["سحب", "مسحوب"]);
 
   const guess: Partial<ColumnMapping> = { dateCol, descriptionCol, referenceCol, balanceCol };
   if (amountCol) {
@@ -95,27 +92,104 @@ function isOpeningBalanceRow(description: string): boolean {
   return OPENING_BALANCE_PATTERNS.some((p) => p.test(description));
 }
 
+/** A row that had real content but could not be turned into a transaction.
+ * These MUST be surfaced in the output - a silently dropped row makes the
+ * net-movement tie-out fail with no explanation, or worse, quietly
+ * understates one side. rowNumber is 1-based as the user sees it in Excel
+ * (header row = 1, first data row = 2). */
+export interface UnparsedRow {
+  rowNumber: number;
+  description: string;
+  reason: string;
+}
+
 export interface MappingResult {
   txns: Txn[];
   excludedOpeningBalanceRows: { description: string; amount: number }[];
+  unparsedRows: UnparsedRow[];
 }
 
 export function applyMapping(rows: Record<string, unknown>[], mapping: ColumnMapping): MappingResult {
   const txns: Txn[] = [];
   const excludedOpeningBalanceRows: { description: string; amount: number }[] = [];
+  const unparsedRows: UnparsedRow[] = [];
+
+  // Resolve the date order ONCE per file, never per cell - per-cell
+  // guessing can parse rows of the same file inconsistently. The client
+  // normally resolves this (mapping.dateOrder, from inference or the
+  // user's explicit choice when ambiguous); the server-side inference
+  // here is the fallback for direct API callers. DMY as the last-resort
+  // default matches the dd-mm-yyyy convention of the tool's primary
+  // audience (Saudi/Gulf, UK-style exports).
+  let dateOrder: DateOrder;
+  if (mapping.dateOrder) {
+    dateOrder = mapping.dateOrder;
+  } else {
+    const inferred = inferDateOrder(rows.map((r) => r[mapping.dateCol]));
+    dateOrder = inferred === "AMBIGUOUS" || inferred === "NO_TEXT_DATES" ? "DMY" : inferred;
+  }
+  const toDate = makeDateParser(dateOrder);
+
+  // Parse one amount cell. Blank cells count as 0 (common in In/Out
+  // layouts where only one of the pair is filled); non-blank cells that
+  // fail to parse return null so the row can be reported instead of
+  // silently treated as zero. A DR/CR suffix on a cell is applied as
+  // direction (DR = reduces the balance by default); the existing
+  // flip-sign / direction toggles invert it if a file means the opposite.
+  const parseCell = (cell: unknown): number | null => {
+    if (isBlank(cell)) return 0;
+    const p = parseAmountDetailed(cell);
+    if (p.value === null) return null;
+    if (p.drcr) return (p.drcr === "DR" ? -1 : 1) * Math.abs(p.value);
+    return p.value;
+  };
 
   rows.forEach((row, i) => {
-    const date = toDate(row[mapping.dateCol]);
-    if (!date) return; // skip rows we can't date - usually blank/footer rows
+    const rowNumber = i + 2; // +1 for 1-based, +1 for the header row
+    const description = String(row[mapping.descriptionCol] ?? "");
+    const dateRaw = row[mapping.dateCol];
+    const date = toDate(dateRaw);
 
-    let amount: number;
+    let amount: number | null;
     if (mapping.amountMode === "single") {
-      amount = toNumber(row[mapping.amountCol!]) * (mapping.amountSign ?? 1);
+      const v = parseCell(row[mapping.amountCol!]);
+      amount = v === null ? null : v * (mapping.amountSign ?? 1);
     } else {
-      amount = toNumber(row[mapping.moneyInCol!]) - toNumber(row[mapping.moneyOutCol!]);
+      const inV = parseCell(row[mapping.moneyInCol!]);
+      const outV = parseCell(row[mapping.moneyOutCol!]);
+      // Use MAGNITUDES. A value sitting in a "money in" column means money
+      // in and a value in a "money out" column means money out, regardless
+      // of how the bank signed it. Some banks state the Debit/Out column as
+      // a positive magnitude, others as a negative number (e.g. -9,945 in a
+      // Debit cell). The naive "in - out" formula double-negates the second
+      // case: 0 - (-9945) = +9945, flipping every payment to positive and
+      // breaking all matching. Taking abs() on each side makes both bank
+      // conventions produce the same correct signed amount: in is positive,
+      // out is negative. (A row with a value in BOTH columns is unusual;
+      // net-by-magnitude is still the sensible reading.)
+      amount =
+        inV === null || outV === null ? null : Math.abs(inV) - Math.abs(outV);
     }
 
-    const description = String(row[mapping.descriptionCol] ?? "");
+    if (!date) {
+      // A row with no readable date and zero amount is a blank/footer row -
+      // skip silently, as before. A row with real money on it (or an
+      // unreadable amount) but no readable date is a data problem the
+      // user must see.
+      if (amount === null || amount !== 0) {
+        unparsedRows.push({
+          rowNumber,
+          description,
+          reason: isBlank(dateRaw) ? "missing date" : `unreadable date "${String(dateRaw)}"`,
+        });
+      }
+      return;
+    }
+
+    if (amount === null) {
+      unparsedRows.push({ rowNumber, description, reason: "unreadable amount" });
+      return;
+    }
 
     if (isOpeningBalanceRow(description)) {
       if (amount !== 0) excludedOpeningBalanceRows.push({ description, amount });
@@ -134,5 +208,5 @@ export function applyMapping(rows: Record<string, unknown>[], mapping: ColumnMap
     });
   });
 
-  return { txns, excludedOpeningBalanceRows };
+  return { txns, excludedOpeningBalanceRows, unparsedRows };
 }

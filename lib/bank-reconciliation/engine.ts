@@ -12,8 +12,11 @@ interface Row {
 export function reconcile(
   bookTxns: Txn[],
   bankTxns: Txn[],
-  config: ReconcileConfig = DEFAULT_CONFIG
+  overrides: Partial<ReconcileConfig> = {}
 ): ReconcileResult {
+  // Per-type overrides (reconTypes.ts) merged over the bank-tuned defaults.
+  const config: ReconcileConfig = { ...DEFAULT_CONFIG, ...overrides };
+
   const book: Row[] = bookTxns.map((t) => ({ txn: t, amtC: cents(t.amount) }));
   const bank: Row[] = bankTxns.map((t) => ({ txn: t, amtC: cents(t.amount) }));
 
@@ -21,6 +24,25 @@ export function reconcile(
   const bankOpen = new Set(bank.map((r) => r.txn.id));
   const byIdBook = new Map(book.map((r) => [r.txn.id, r]));
   const byIdBank = new Map(bank.map((r) => [r.txn.id, r]));
+
+  // Reference "strength": a reference repeated across many rows on one
+  // side is a type code (JV, TRF), not a document number, and must not
+  // earn the ignore-the-date-window privilege - see weakReferenceRowLimit.
+  const countRefs = (rows: Row[]) => {
+    const m = new Map<string, number>();
+    for (const r of rows) {
+      const ref = r.txn.reference;
+      if (ref) m.set(ref, (m.get(ref) ?? 0) + 1);
+    }
+    return m;
+  };
+  const bookRefCounts = countRefs(book);
+  const bankRefCounts = countRefs(bank);
+  const strongRef = (ref: string | undefined): boolean =>
+    !!ref &&
+    (bookRefCounts.get(ref) ?? 0) <= config.weakReferenceRowLimit &&
+    (bankRefCounts.get(ref) ?? 0) <= config.weakReferenceRowLimit;
+  const normDesc = (s: string) => s.trim().toLowerCase().replace(/\s+/g, " ");
 
   const status = new Map<
     string,
@@ -63,14 +85,21 @@ export function reconcile(
   // subset-sum search in Pass 3 to happen to find it (it has a line-count
   // cap for performance reasons - this pass doesn't need one, since
   // there's no combinatorial search involved, just a sum).
+  //
+  // referenceMatchIgnoresDate (supplier/customer/intercompany types):
+  // a shared reference is stronger evidence than date proximity in those
+  // reconciliations - invoice date vs posting date routinely differs by
+  // weeks - so the cross-side date window is lifted entirely for this
+  // pass. Candidates are still sorted by date gap, so the closest-dated
+  // pairing wins when one reference appears more than once.
   function groupByRefDate(byId: Map<number, Row>, openSet: Set<number>) {
-    const groups = new Map<string, { rids: number[]; amtC: number; date: Date }>();
+    const groups = new Map<string, { rids: number[]; amtC: number; date: Date; ref: string }>();
     for (const id of openSet) {
       const row = byId.get(id)!;
       const ref = row.txn.reference;
       if (!ref) continue; // never group rows that have no reference to begin with
       const key = `${ref}|${row.txn.date.getTime()}`;
-      const g = groups.get(key) ?? { rids: [], amtC: 0, date: row.txn.date };
+      const g = groups.get(key) ?? { rids: [], amtC: 0, date: row.txn.date, ref };
       g.rids.push(id);
       g.amtC += row.amtC;
       groups.set(key, g);
@@ -80,6 +109,43 @@ export function reconcile(
 
   const bookRefGroups = groupByRefDate(byIdBook, bookOpen);
   const bankRefGroups = groupByRefDate(byIdBank, bankOpen);
+
+  // A ref+date bucket with more than one row is normally one real
+  // operation (see comment below). But a "reference" field is sometimes
+  // a journal/batch number that a real export reuses across UNRELATED
+  // postings entered in the same batch at the identical timestamp -
+  // confirmed against real data, where a 2-row bucket paired one genuine
+  // operation with one unrelated stray posting sharing the batch number,
+  // corrupting the bucket's sum and hiding the real match entirely.
+  //
+  // The fix is intentionally narrow: only 2-3 row buckets get "drop one
+  // row" variants tried alongside the full-bucket sum. Buckets above
+  // that size are usually a genuinely messy reused reference covering
+  // MANY unrelated postings (10+ rows in the same real file) - trying
+  // every drop-one combination there was tested and made things worse,
+  // pulling ~430 previously clean 1:1 matches into oversized, incorrect
+  // "Split Match (verify)" groups by coincidentally summing to the wrong
+  // things before Pass 2 ever got a chance at those rows individually.
+  // Small buckets carry negligible coincidence risk; large ones are left
+  // to Pass 2's precise per-row matching, as before.
+  const DROP_ONE_MAX_BUCKET = 3;
+  function withDropOneVariants(
+    groups: Map<string, { rids: number[]; amtC: number; date: Date; ref: string }>,
+    byId: Map<number, Row>
+  ) {
+    const extra: [string, { rids: number[]; amtC: number; date: Date; ref: string }][] = [];
+    for (const [key, g] of groups) {
+      if (g.rids.length < 2 || g.rids.length > DROP_ONE_MAX_BUCKET) continue;
+      for (let i = 0; i < g.rids.length; i++) {
+        const rids = g.rids.filter((_, idx) => idx !== i);
+        const dropped = byId.get(g.rids[i])!;
+        extra.push([`${key}#drop${i}`, { rids, amtC: g.amtC - dropped.amtC, date: g.date, ref: g.ref }]);
+      }
+    }
+    for (const [k, g] of extra) groups.set(k, g);
+  }
+  withDropOneVariants(bookRefGroups, byIdBook);
+  withDropOneVariants(bankRefGroups, byIdBank);
 
   const bankGroupsByAmt = new Map<number, string[]>();
   for (const [key, g] of bankRefGroups) {
@@ -94,7 +160,13 @@ export function reconcile(
     for (const bankKey of bankGroupsByAmt.get(bg.amtC) ?? []) {
       const bnkg = bankRefGroups.get(bankKey)!;
       const dd = dayDiff(bg.date, bnkg.date);
-      if (dd > config.dateToleranceDays) continue;
+      // Beyond the date window, only a SHARED, strong reference justifies
+      // the pairing - equal sums under different or generic references at
+      // unlimited date distance are coincidence, not evidence. (The
+      // previous version granted the privilege to ANY two ref groups with
+      // equal sums, which let generic references steal same-day matches.)
+      const sharedStrongRef = bg.ref === bnkg.ref && strongRef(bg.ref);
+      if (dd > config.dateToleranceDays && !(config.referenceMatchIgnoresDate && sharedStrongRef)) continue;
       refCandidates.push([dd, bookKey, bankKey]);
     }
   }
@@ -114,6 +186,12 @@ export function reconcile(
   }
 
   // ---------------- Pass 2: exact 1:1, same amount, date proximity, reference tie-break ----------------
+  // With referenceMatchIgnoresDate, a pair sharing a reference is admitted
+  // even outside the date window, and same-reference candidates are
+  // preferred over closer-dated ones - a reference is deliberate, a date
+  // gap is circumstance in AP/AR data. Without the flag, behavior is
+  // exactly the original: date window filter, closest date first,
+  // reference only as tie-break.
   const bankBuckets = new Map<number, number[]>();
   for (const id of bankOpen) {
     const r = byIdBank.get(id)!;
@@ -122,21 +200,32 @@ export function reconcile(
     bankBuckets.set(r.amtC, arr);
   }
 
-  type Cand = [dayGap: number, refMismatch: number, bookId: number, bankId: number];
+  type Cand = [dayGap: number, refMismatch: number, descMismatch: number, bookId: number, bankId: number];
   const candidates: Cand[] = [];
   for (const bookId of bookOpen) {
     const br = byIdBook.get(bookId)!;
     for (const bankId of bankBuckets.get(br.amtC) ?? []) {
       const nr = byIdBank.get(bankId)!;
       const dd = dayDiff(br.txn.date, nr.txn.date);
-      if (dd > config.dateToleranceDays) continue;
-      const sameRef =
-        br.txn.reference && nr.txn.reference && br.txn.reference === nr.txn.reference;
-      candidates.push([dd, sameRef ? 0 : 1, bookId, bankId]);
+      const sameRef = !!(
+        br.txn.reference && nr.txn.reference && br.txn.reference === nr.txn.reference
+      );
+      // The ignore-the-window privilege and the top sort priority both
+      // demand a STRONG shared reference; a generic repeated reference
+      // behaves like no reference at all.
+      const strongSameRef = sameRef && strongRef(br.txn.reference);
+      if (dd > config.dateToleranceDays && !(config.referenceMatchIgnoresDate && strongSameRef)) continue;
+      const refMismatch = (config.referenceMatchIgnoresDate ? strongSameRef : sameRef) ? 0 : 1;
+      const descMismatch = normDesc(br.txn.description) === normDesc(nr.txn.description) ? 0 : 1;
+      candidates.push([dd, refMismatch, descMismatch, bookId, bankId]);
     }
   }
-  candidates.sort((a, b) => a[0] - b[0] || a[1] - b[1]);
-  for (const [dd, , bookId, bankId] of candidates) {
+  candidates.sort((a, b) =>
+    config.referenceMatchIgnoresDate
+      ? a[1] - b[1] || a[0] - b[0] || a[2] - b[2] // strong reference, closest date, same description
+      : a[0] - b[0] || a[1] - b[1] || a[2] - b[2] // original order, description as final tie-break
+  );
+  for (const [dd, , , bookId, bankId] of candidates) {
     if (bookOpen.has(bookId) && bankOpen.has(bankId)) {
       mark([bookId], [bankId], "Matched", dd);
     }

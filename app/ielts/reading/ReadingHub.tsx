@@ -286,7 +286,10 @@ function IELTSReadingTest({
             <p className="text-gray-500 text-sm mt-1">Questions Correct</p>
             <p className="text-gray-400 text-xs">out of {totalQs}</p>
           </div>
-          <div className={`rounded-2xl p-6 text-center shadow-sm border ${score>=Math.ceil(totalQs*0.7)?"bg-emerald-50 border-emerald-200":"score<Math.ceil(totalQs*0.5)?'bg-red-50 border-red-200':'bg-amber-50 border-amber-200'"}`}>
+          <div className={`rounded-2xl p-6 text-center shadow-sm border ${
+            score >= Math.ceil(totalQs * 0.7) ? "bg-emerald-50 border-emerald-200"
+            : score < Math.ceil(totalQs * 0.5) ? "bg-red-50 border-red-200"
+            : "bg-amber-50 border-amber-200"}`}>
             <p className={`text-5xl font-black ${score>=Math.ceil(totalQs*0.7)?"text-emerald-600":score>=Math.ceil(totalQs*0.5)?"text-amber-600":"text-red-600"}`}>{band}</p>
             <p className="text-gray-500 text-sm mt-1">Estimated Band</p>
             <p className="text-gray-400 text-xs">IELTS Academic Reading</p>
