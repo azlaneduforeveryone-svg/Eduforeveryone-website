@@ -19,12 +19,21 @@ const resources = [
     stats: [{label:"Surahs",value:"114"},{label:"Ayahs",value:"6,236"},{label:"Translations",value:"40+"}],
   },
   {
+    href: "/duas",
+    image: null, emoji: "🤲",
+    title: "Duas & Azkar", titleAr: "الأدعية والأذكار",
+    description: "40 Rabbana Duas, Morning & Evening Azkar with real human voice recitations, 8 language translations, digital Tasbeeh counter, and memorization helper.",
+    tags: ["40 Rabbana Duas","Human Voice Audio","8 Languages","Tasbeeh Counter"],
+    badge: "New", badgeColor: "bg-amber-100 text-amber-700", color: "hover:border-amber-300",
+    stats: [{label:"Languages",value:"8"},{label:"Reciters",value:"3+"},{label:"Human Voice",value:"100%"}],
+  },
+  {
     href: "/quiz/islamic-quiz",
     image: "/Islamic_Quiz_Logo.jpeg", emoji: null,
     title: "Islamic Quiz", titleAr: "الاختبار الإسلامي",
     description: "Test your Islamic knowledge across 7 categories in English, Urdu and Hindi. Quran, Hadith, Fiqh, Seerah, History, Pillars of Islam and 99 Names of Allah.",
     tags: ["7 Categories","4 Difficulty Levels","3 Languages"],
-    badge: "New", badgeColor: "bg-green-100 text-green-700", color: "hover:border-green-300",
+    badge: "Popular", badgeColor: "bg-green-100 text-green-700", color: "hover:border-green-300",
     stats: [{label:"Categories",value:"7"},{label:"Languages",value:"3"},{label:"Levels",value:"4"}],
   },
 ];
@@ -32,7 +41,6 @@ const resources = [
 const comingSoon = [
   { emoji:"📜", title:"Hadith",          titleAr:"الحديث الشريف",   desc:"Browse authentic Hadith collections — Bukhari, Muslim, Tirmidhi and more." },
   { emoji:"🌙", title:"Sirat-un-Nabwi",  titleAr:"السيرة النبوية",  desc:"Complete life story of Prophet Muhammad ﷺ in detail." },
-  { emoji:"🤲", title:"Duas & Azkar",    titleAr:"الأدعية والأذكار", desc:"Daily duas, morning & evening azkar with translation and audio." },
   { emoji:"📚", title:"Islamic Books",   titleAr:"الكتب الإسلامية", desc:"Free Islamic books and reading materials for all students." },
 ];
 

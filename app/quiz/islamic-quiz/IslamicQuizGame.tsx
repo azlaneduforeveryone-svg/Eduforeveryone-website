@@ -5,13 +5,14 @@ import { saveQuizScore } from "@/lib/firebaseDB";
 import { getAdminQuizQuestions } from "@/lib/adminDB";
 import AuthModal from "@/components/AuthModal";
 import ShareScore from "@/components/ShareScore";
+import QuizResultShareModal from "@/components/quiz/QuizResultShareModal";
+import { ALL_ISLAMIC_QUESTIONS, Question } from "@/lib/islamicQuizQuestions";
 
 type Lang = "en" | "ur" | "hi";
 type Cat = "all" | "quran" | "hadith" | "fiqh" | "seerah" | "history" | "pillars" | "names" | "tajweed" | "arabic" | "stories" | "tafseer";
 type Diff = "easy" | "medium" | "hard" | "expert";
 
 interface LangData { q: string; opts: string[]; ans: number; }
-interface Question { cat: string; diff: Diff; pts: number; en: LangData; ur: LangData; hi: LangData; arabicAyah?: string; reference?: string; }
 
 const UI = {
   en: { title:"Islamic Quiz", sub:"Test your Islamic knowledge", start:"Start Quiz",
@@ -67,6 +68,38 @@ const QB: Question[] = [
     en:{q:"How many times is the word Quran mentioned in the Quran itself?", opts:["50","58","70","85"], ans:1},
     ur:{q:"قرآن میں لفظ قرآن کتنی بار آیا ہے؟", opts:["50","58","70","85"], ans:1},
     hi:{q:"क़ुरआन में 'क़ुरआन' शब्द कितनी बार आया है?", opts:["50","58","70","85"], ans:1} },
+  { cat:"quran", diff:"easy", pts:10,
+    en:{q:"Which Surah is the longest in the Holy Quran?", opts:["Al-Imran","Al-Baqarah","An-Nisa","Al-Ma'idah"], ans:1},
+    ur:{q:"قرآن پاک میں سب سے لمبی سورت کون سی ہے؟", opts:["آل عمران","البقرۃ","النساء","المائدہ"], ans:1},
+    hi:{q:"पवित्र क़ुरआन की सबसे लंबी सूरत कौन सी है?", opts:["आल-इमरान","अल-बक़रह","अन-निसा","अल-माईदा"], ans:1} },
+  { cat:"quran", diff:"easy", pts:10,
+    en:{q:"Which Surah is the shortest in the Holy Quran?", opts:["Al-Kawthar","Al-Ikhlas","Al-Nas","Al-Falaq"], ans:0},
+    ur:{q:"قرآن پاک میں سب سے چھوٹی سورت کون سی ہے؟", opts:["الکوثر","الاخلاص","الناس","الفلق"], ans:0},
+    hi:{q:"पवित्र क़ुरआन की सबसे छोटी सूरत कौन सी है?", opts:["अल-कोसर","अल-इख़लास","अल-नास","अल-फ़लक़"], ans:0} },
+  { cat:"quran", diff:"medium", pts:20,
+    en:{q:"Which Surah is named after a woman?", opts:["Surah Maryam","Surah Aishah","Surah Khadijah","Surah Fatimah"], ans:0},
+    ur:{q:"کون سی سورت ایک خاتون کے نام پر ہے؟", opts:["سورت مریم","سورت عائشہ","سورت خدیجہ","سورت فاطمہ"], ans:0},
+    hi:{q:"कौन सी सूरत एक महिला के नाम पर है?", opts:["सूरत मरयम","सूरत आइशा","सूरत ख़दीजह","सूरत फ़ातिमह"], ans:0} },
+  { cat:"quran", diff:"medium", pts:20,
+    en:{q:"Reciting which Surah on Friday protects from the Dajjal?", opts:["Al-Kahf","Yasin","Al-Mulk","Ar-Rahman"], ans:0},
+    ur:{q:"جمعہ کے دن کس سورت کی تلاوت دجال سے حفاظت فراہم کرتی ہے؟", opts:["الکہف","یس","الملک","الرحمن"], ans:0},
+    hi:{q:"शुक्रवार को किस सूरत की तिलावत दज्जाल से हिफ़ाज़त करती है?", opts:["अल-कहफ़","यासीन","अल-मुल्क","अर-रहमान"], ans:0} },
+  { cat:"quran", diff:"hard", pts:30,
+    en:{q:"How many Sajdahs (prostrations of recitation) are there in the Quran?", opts:["12","14","15","16"], ans:1},
+    ur:{q:"قرآن پاک میں سجدہ تلاوت کی کل تعداد کتنی ہے؟", opts:["12","14","15","16"], ans:1},
+    hi:{q:"क़ुरआन में कुल कितने सजदे (सजदा-ए-तिलावत) हैं?", opts:["12","14","15","16"], ans:1} },
+  { cat:"stories", diff:"easy", pts:10,
+    en:{q:"Which Prophet was swallowed by a giant fish (whale)?", opts:["Prophet Musa","Prophet Yunus","Prophet Nuh","Prophet Isa"], ans:1},
+    ur:{q:"کس نبی کو مچھلی نے نگل لیا تھا؟", opts:["حضرت موسیٰ","حضرت یونس","حضرت نوح","حضرت عیسیٰ"], ans:1},
+    hi:{q:"किस पैग़म्बर को मछली ने निगल लिया था?", opts:["हज़रत मूसा","हज़रत यूनुस","हज़रत नूह","हज़रत ईसा"], ans:1} },
+  { cat:"stories", diff:"medium", pts:20,
+    en:{q:"Which Prophet was given the title 'Khalilullah' (Friend of Allah)?", opts:["Prophet Adam","Prophet Ibrahim","Prophet Yusuf","Prophet Muhammad"], ans:1},
+    ur:{q:"کس نبی کو خلیل اللہ (اللہ کا دوست) کا لقب دیا گیا؟", opts:["حضرت آدم","حضرت ابراہیم","حضرت یوسف","حضرت محمد"], ans:1},
+    hi:{q:"किस पैग़म्बर को ख़लीलुल्लाह (अल्लाह का दोस्त) का लक़ब मिला?", opts:["हज़रत आदम","हज़रत इब्राहिम","हज़रत यूसुफ़","हज़रत मुहम्मद"], ans:1} },
+  { cat:"stories", diff:"hard", pts:30,
+    en:{q:"Which Prophet spoke while still an infant in the cradle?", opts:["Prophet Isa (Jesus)","Prophet Ismail","Prophet Zakariyya","Prophet Ishaq"], ans:0},
+    ur:{q:"کون سے نبی نے جھولے میں شیر خوارگی کی حالت میں گفتگو کی؟", opts:["حضرت عیسیٰ","حضرت اسماعیل","حضرت زکریا","حضرت اسحاق"], ans:0},
+    hi:{q:"कौन से पैग़म्बर ने पालने में शिशु अवस्था में बात की?", opts:["हज़रत ईसा","हज़रत इस्माईल","हज़रत ज़करिया","हज़रत इसहाक़"], ans:0} },
 
   // ── HADITH ──
   { cat:"hadith", diff:"easy", pts:10,
@@ -114,9 +147,9 @@ const QB: Question[] = [
     ur:{q:"نبی کریم ﷺ کس شہر میں پیدا ہوئے؟", opts:["مدینہ","طائف","مکہ","یروشلم"], ans:2},
     hi:{q:"पैग़म्बर मुहम्मद (सल्ल.) किस शहर में पैदा हुए?", opts:["मदीना","ताइफ़","मक्का","यरूशलम"], ans:2} },
   { cat:"seerah", diff:"easy", pts:10,
-    en:{q:"What was the name of Prophet Muhammad's (SAW) mother?", opts:["Khadijah","Aminah","Fatimah","Maryam"], ans:1},
-    ur:{q:"نبی کریم ﷺ کی والدہ کا نام کیا تھا؟", opts:["خدیجہ","آمنہ","فاطمہ","مریم"], ans:1},
-    hi:{q:"पैग़म्बर मुहम्मद की माँ का नाम क्या था?", opts:["ख़दीजह","आमिनह","फ़ातिमह","मरयम"], ans:1} },
+    en:{q:"What was the name of Prophet Muhammad's (SAW) foster sister who cared for him in Banu Sa'd?", opts:["Anisa","Shayma (bint al-Harith)","Juwayriyah","Safiyyah"], ans:1},
+    ur:{q:"بنو سعد میں نبی کریم ﷺ کی کس رضاعی بہن نے آپ کی دیکھ بھال کی؟", opts:["انیسہ","شیماء بنت الحارث","جویریہ","صفیہ"], ans:1},
+    hi:{q:"बनू साअद में पैग़म्बर की किस दूध-बहन ने आप की देखभाल की?", opts:["अनीसा","शैमा बिन्त अल-हारिस","जुवैरिया","सफ़िय्या"], ans:1} },
   { cat:"seerah", diff:"medium", pts:20,
     en:{q:"At what age did Prophet Muhammad (SAW) receive the first revelation?", opts:["35","40","45","50"], ans:1},
     ur:{q:"نبی کریم ﷺ کو پہلی وحی کتنے سال کی عمر میں آئی؟", opts:["35","40","45","50"], ans:1},
@@ -463,6 +496,233 @@ const QB: Question[] = [
     en:{q:"What is the difference between 'Al-Hakam' (الحكم) and 'Al-Hakim' (الحكيم)?", opts:["Identical","Al-Hakam = The Judge (who rules); Al-Hakim = The All-Wise (possessing wisdom in all things)","Al-Hakim is for dunya; Al-Hakam for akhirah","Al-Hakam is stronger"], ans:1},
     ur:{q:"'الحكم' اور 'الحكيم' میں کیا فرق ہے؟", opts:["دونوں ایک ہیں","الحكم = فیصلہ کرنے والا؛ الحكيم = تمام چیزوں میں حکمت والا","الحكيم دنیا، الحكم آخرت","الحكم زیادہ قوی"], ans:1},
     hi:{q:"'अल-हकम' और 'अल-हकीम' में क्या फ़र्क़ है?", opts:["दोनों एक हैं","अल-हकम = फ़ैसला करने वाला; अल-हकीम = तमाम चीज़ों में हिकमत वाला","अल-हकीम दुनिया, अल-हकम आख़िरत","अल-हकम ज़्यादा क़वी"], ans:1} },
+
+  // ── ADDITIONAL FIQH QUESTIONS ──
+  { cat:"fiqh", diff:"easy", pts:10,
+    en:{q:"What is dry ablution called when clean water is unavailable?", opts:["Wudu","Ghusl","Tayammum","Istinja"], ans:2},
+    ur:{q:"پانی نہ ہونے کی صورت میں مٹی سے طہارت حاصل کرنے کو کیا کہتے ہیں؟", opts:["وضو","غسل","تیمم","استنجا"], ans:2},
+    hi:{q:"पानी न होने की सूरत में मिट्टी से पाकी हासिल करने को क्या कहते हैं?", opts:["वुज़ू","ग़ुस्ल","तयम्मुम","इस्तिंजा"], ans:2} },
+  { cat:"fiqh", diff:"easy", pts:10,
+    en:{q:"Which daily obligatory prayer has NO Sunnah or Nafl after it until sunset?", opts:["Fajr Prayer","Dhuhr Prayer","Asr Prayer","Maghrib Prayer"], ans:2},
+    ur:{q:"کس فرض نماز کے بعد غروب آفتاب تک کوئی سنت یا نفل نماز نہیں پڑھی جاتی؟", opts:["نماز فجر","نماز ظہر","نماز عصر","نماز مغرب"], ans:2},
+    hi:{q:"किस फ़र्ز नमाज़ के बाद सूर्यास्त तक कोई सुन्नत या नफ़्ल नमाज़ नहीं पढ़ी जाती?", opts:["फ़ज्र नमाज़","ज़ुहर नमाज़","अस्र नमाज़","मग़रिब नमाज़"], ans:2} },
+  { cat:"fiqh", diff:"medium", pts:20,
+    en:{q:"What is the obligatory bath required after major ritual impurity called?", opts:["Wudu","Ghusl","Tayammum","Masah"], ans:1},
+    ur:{q:"بڑی ناپاکی دور کرنے کے لیے فرض غسل کو کیا کہتے ہیں؟", opts:["وضو","غسل","تیمم","مسح"], ans:1},
+    hi:{q:"बड़ी नापाकी दूर करने के लिए फ़र्ज़ स्नान को क्या कहते हैं?", opts:["वुज़ू","ग़ुस्ल","तयम्मुम","मसहा"], ans:1} },
+  { cat:"fiqh", diff:"medium", pts:20,
+    en:{q:"If a worshipper makes an unintentional error in Salah, how do they compensate at the end?", opts:["Repeat the entire prayer","Perform Sajdah as-Sahw (prostration of forgetfulness)","Give charity","Ignore it completely"], ans:1},
+    ur:{q:"اگر نماز میں بھولے سے کوئی واجب چھوٹ جائے تو آخر میں کیا کیا جاتا ہے؟", opts:["نماز دوبارہ پڑھنا","سجدہ سہو کرنا","صدقہ دینا","نظر انداز کرنا"], ans:1},
+    hi:{q:"यदि नमाज़ में भूल से कोई वाजिब छूट जाए तो अंत में क्या किया जाता है?", opts:["नमाज़ दोबारा पढ़ना","सजदा-ए-सहव करना","सदाक़ा देना","नज़रअंदाज़ करना"], ans:1} },
+  { cat:"fiqh", diff:"hard", pts:30,
+    en:{q:"What is the minimum travel distance (Safar) that permits shortening obligatory prayers (Qasr)?", opts:["Approx 20 km","Approx 48 miles (77-88 km)","Approx 150 km","Approx 300 km"], ans:1},
+    ur:{q:"نماز قصر کرنے کے لیے شرعی مسافتِ سفر کم از کم کتنی ہے؟", opts:["تقریباً 20 کلومیٹر","تقریباً 48 میل (77 تا 88 کلومیٹر)","تقریباً 150 کلومیٹر","تقریباً 300 کلومیٹر"], ans:1},
+    hi:{q:"नमाज़ क़स्र करने के लिए शरई मुसाफ़त-ए-सफ़र कम से कम कितनी है?", opts:["लगभग 20 किमी","लगभग 48 मील (77 से 88 किमी)","लगभग 150 किमी","लगभग 300 किमी"], ans:1} },
+  { cat:"fiqh", diff:"expert", pts:50,
+    en:{q:"In Islamic jurisprudence, an action that is permissible without reward or sin is termed:", opts:["Wajib","Mundub","Mubah","Makruh"], ans:2},
+    ur:{q:"فقہ میں وہ عمل جس کے کرنے پر نہ ثواب ہو نہ گناہ، اسے کیا کہتے ہیں؟", opts:["واجب","مندوب","مباح","مکروہ"], ans:2},
+    hi:{q:"फ़िक़्ह में वह अमल जिसके करने पर न सवाब हो न गुनाह, उसे क्या कहते हैं?", opts:["वाजिब","मंदूब","मुबाह","मकरूह"], ans:2} },
+
+  // ── TAJWEED QUESTIONS ──
+  { cat:"tajweed", diff:"easy", pts:10,
+    en:{q:"What is the purpose of learning the science of Tajweed?", opts:["To memorize history","To recite the Quran correctly with proper pronunciation and rules","To translate Arabic text","To write calligraphy"], ans:1},
+    ur:{q:"علم تجوید سیکھنے کا بنیادی مقصد کیا ہے؟", opts:["تاریخ یاد کرنا","قرآن پاک کو مخارج اور قواعد کے ساتھ درست پڑھنا","عربی کا ترجمہ کرنا","خطاطی سیکھنا"], ans:1},
+    hi:{q:"तजवीद का मक़सद क्या है?", opts:["इतिहास याद करना","क़ुरआन को सही उच्चारण और नियमों के साथ पढ़ना","अनुवाद करना","सुलेखन"], ans:1} },
+  { cat:"tajweed", diff:"easy", pts:10,
+    en:{q:"How many letters of Qalqalah (echoing sound) are there in Tajweed?", opts:["3 letters","5 letters (قطب جد)","7 letters","10 letters"], ans:1},
+    ur:{q:"علم تجوید میں حروفِ قلقلہ کی کل تعداد کتنی ہے؟", opts:["3 حروف","5 حروف (قطب جد)","7 حروف","10 حروف"], ans:1},
+    hi:{q:"तजवीद में क़लक़ला के कुल कितने अक्षर हैं?", opts:["3 अक्षर","5 अक्षर (क़ुतब जद्दीन - قطب جد)","7 अक्षर","10 अक्षर"], ans:1} },
+  { cat:"tajweed", diff:"medium", pts:20,
+    en:{q:"When Noon Sakinah or Tanween is followed by the letter Ba (ب), which rule applies?", opts:["Izhar","Idgham","Iqlab (changing Noon sound to Meem)","Ikhfa"], ans:2},
+    ur:{q:"نون ساکن یا تنوین کے بعد اگر حرف 'ب' آئے تو کون سا قاعدہ لاگو ہوتا ہے؟", opts:["اظہار","ادغام","اقلاب (نون کو میم سے بدلنا)","اخفاء"], ans:2},
+    hi:{q:"नूने साकिन या तनवीन के बाद यदि 'ब' (ب) आए तो कौन सा नियम लागू होता है?", opts:["इज़हार","इदग़ाम","इक़लाब (नून को मीम में बदलना)","इख़फ़ा"], ans:2} },
+  { cat:"tajweed", diff:"medium", pts:20,
+    en:{q:"What rule applies when Noon Sakinah is followed by throat letters (ء ه ع ح غ خ)?", opts:["Izhar (clear pronunciation without nasalization)","Idgham","Iqlab","Ikhfa"], ans:0},
+    ur:{q:"نون ساکن کے بعد اگر حروفِ حلقی (ء ه ع ح غ خ) آئیں تو کیا ہوتا ہے؟", opts:["اظہار (بغیر غنہ کے صاف پڑھنا)","ادغام","اقلاب","اخفاء"], ans:0},
+    hi:{q:"नूने साकीन के बाद यदि हलक़ी अक्षर (ء ه ع ح غ خ) आएँ तो क्या होता है?", opts:["इज़हार (बिना ग़ुन्ना के साफ़ पढ़ना)","इदग़ाम","इक़लाब","इख़फ़ा"], ans:0} },
+  { cat:"tajweed", diff:"hard", pts:30,
+    en:{q:"What Madd occurs when a Hamzah follows a Madd letter in the SAME word?", opts:["Madd Munfasil","Madd Muttasil (Connected Prolongation)","Madd Arid","Madd Badal"], ans:1},
+    ur:{q:"اگر ایک ہی کلمہ میں حرفِ مدہ کے بعد ہمزہ آئے تو کون سا مد ہوتا ہے؟", opts:["مد منفصل","مد متصل","مد عارض","مد بدل"], ans:1},
+    hi:{q:"यदि एक ही शब्द में मद्द के अक्षर के बाद हमज़ा आए तो कौन सा मद्द होता है?", opts:["मद्द मुनफ़सिल","मद्द मुत्तसिल","मद्द आरिज़","मद्द बदल"], ans:1} },
+  { cat:"tajweed", diff:"expert", pts:50,
+    en:{q:"Which letters form 'Idgham with Ghunnah' (Idgham Bighunnah)?", opts:["یرملون (Yarmaloon)","ينمو (YANMU: ي ن م و)","قطب جد","حروف حلقی"], ans:1},
+    ur:{q:"ادغام با غنہ (ادغام مع الغنہ) کے حروف کون سے ہیں؟", opts:["یرملون","ینمو (ی ن م و)","قطب جد","حروفِ حلقی"], ans:1},
+    hi:{q:"इदग़ाम बा-ग़ुन्ना के कौन से अक्षर हैं?", opts:["यरमलून","यनमू (य न म व - ي ن م و)","क़ुतब जद्दीन","हलक़ी अक्षर"], ans:1} },
+
+  // ── ADDITIONAL 99 NAMES OF ALLAH ──
+  { cat:"names", diff:"easy", pts:10,
+    en:{q:"What does 'Al-Malik' (الملك) mean?", opts:["The Sovereign / Absolute King","The Forgiver","The All-Hearing","The Last"], ans:0},
+    ur:{q:"اللہ تعالی کے نام 'الملك' کا کیا مطلب ہے؟", opts:["حقیقی بادشاہ / حاکمِ مطلق","بخشنے والا","سب سننے والا","آخری"], ans:0},
+    hi:{q:"अल्लाह के नाम 'अल-मलिक' का अर्थ क्या है?", opts:["संप्रभु राजा","क्षमाशील","सर्वश्रवण","अंतिम"], ans:0} },
+  { cat:"names", diff:"easy", pts:10,
+    en:{q:"What does 'As-Salam' (السلام) mean?", opts:["The Creator","The Source of Peace and Perfection","The Judge","The Strong"], ans:1},
+    ur:{q:"'السلام' کا مطلب کیا ہے؟", opts:["پیدا کرنے والا","سلامتی اور نقائص سے پاک ذات","فیصلہ کرنے والا","قوی"], ans:1},
+    hi:{q:"'अस-सलाम' का अर्थ क्या है?", opts:["सृष्टिकर्ता","शांति का स्रोत एवं त्रुटिहीन","न्यायी","शक्तिशाली"], ans:1} },
+  { cat:"names", diff:"medium", pts:20,
+    en:{q:"What does 'Al-Wadud' (الودود) mean?", opts:["The Loving / Full of Affection","The Wrathful","The Powerful","The Hidden"], ans:0},
+    ur:{q:"'الودود' کا مطلب کیا ہے؟", opts:["بہت محبت کرنے والا","غضب ناک","قادر","پوشیدہ"], ans:0},
+    hi:{q:"'अल-वदूद' का अर्थ क्या है?", opts:["अत्यंत प्रेम करने वाला","क्रोधित","शक्तिशाली","छिपा हुआ"], ans:0} },
+  { cat:"names", diff:"medium", pts:20,
+    en:{q:"What does 'Al-Latif' (اللطيف) mean?", opts:["The Subtle, Kind, and Understanding","The King","The First","The Creator"], ans:0},
+    ur:{q:"'اللطيف' کا مطلب کیا ہے؟", opts:["باریک بین، مہربان اور لطیف","بادشاہ","اول","خالق"], ans:0},
+    hi:{q:"'अल-लतीफ़' का अर्थ क्या है?", opts:["सूक्ष्म, कृपालु और दयालु","राजा","प्रथम","सृष्टिकर्ता"], ans:0} },
+  { cat:"names", diff:"hard", pts:30,
+    en:{q:"What does 'Al-Mujib' (المجيب) mean?", opts:["The Creator of heavens","The Answerer of Supplications","The Strict in punishment","The Manifest"], ans:1},
+    ur:{q:"'المجيب' کا مطلب کیا ہے؟", opts:["آسمانوں کا خالق","دعاؤں کو قبول کرنے والا","سخت عذاب دینے والا","ظاہر"], ans:1},
+    hi:{q:"'अल-मुजीब' का अर्थ क्या है?", opts:["आकाश का सृष्टिकर्ता","दुआएं स्वीकार करने वाला","कठोर दंड देने वाला","प्रकट"], ans:1} },
+  { cat:"names", diff:"expert", pts:50,
+    en:{q:"What does 'Al-Warith' (الوارث) mean?", opts:["The Temporary Owner","The Ultimate Inheritor of all creation after all perish","The Guide","The Giver"], ans:1},
+    ur:{q:"'الوارث' کا مطلب کیا ہے؟", opts:["عارضی مالک","سب کچھ فناء ہونے کے بعد کائنات کا حقیقی وارث","رہنما","عطا کرنے والا"], ans:1},
+    hi:{q:"'अल-वारिस' का अर्थ क्या है?", opts:["अस्थाई मालिक","सब नष्ट होने के बाद पूरी सृष्टि का वास्तविक वारिस","मार्गदर्शक","दाता"], ans:1} },
+
+  // ── QURANIC DUAS & TAFSEER ──
+  { cat:"tafseer", diff:"easy", pts:10,
+    en:{q:"What is the meaning of the Quranic Dua 'Rabbi Zidni 'Ilma' (Surah Taha 20:114)?", opts:["My Lord, increase me in wealth","My Lord, increase me in knowledge","My Lord, forgive my sins","My Lord, protect my family"], ans:1},
+    ur:{q:"قرآنی دعا 'رَبِّ زِدْنِي عِلْمًا' کا ترجمہ کیا ہے؟", opts:["اے رب، میرے مال میں اضافہ فرما","اے رب، میرے علم میں اضافہ فرما","اے رب، میرے گناہ معاف فرما","اے رب، میرے گھر والوں کی حفاظت فرما"], ans:1},
+    hi:{q:"क़ुरआनी दुआ 'रब्बि ज़िदनी इल्मा' (20:114) का अर्थ क्या है?", opts:["ऐ रब, मेरे धन में वृद्धि कर","ऐ रब, मेरे ज्ञान में वृद्धि कर","ऐ रब, मेरे गुनाह माफ़ कर","ऐ रब, मेरे परिवार की रक्षा कर"], ans:1} },
+  { cat:"tafseer", diff:"easy", pts:10,
+    en:{q:"Which Dua did Prophet Yunus (AS) recite inside the whale?", opts:["Rabbana atina fid-dunya","La ilaha illa anta subhanaka inni kuntu minadh-dhalimin (Ayat Kareema)","Rabbi-j'alni muqeemas-salat","Hasbunallahu wa ni'mal wakeel"], ans:1},
+    ur:{q:"حضرت یونس علیہ السلام نے مچھلی کے پیٹ میں کون سی دعا مانگی؟", opts:["ربنا آتنا في الدنيا","لا إِلَهَ إِلاَّ أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ (آیت کریمہ)","رب اجعلني مقيم الصلاة","حسبنا الله ونعم الوكيل"], ans:1},
+    hi:{q:"हज़रत यूनुस ने मछली के पेट में कौन सी दुआ मांगी?", opts:["रब्बना आतिना फिद्दुनिया","ला इलाहा इल्ला अंता सुभानका इन्नी कुंतु मिनज़-ज़ालिमीन (आयत-ए-करीमा)","रब्बि-जअल्नी मुक़ीमस-सलात","हस्बुनल्लाहु व निअमल-वकील"], ans:1} },
+  { cat:"tafseer", diff:"medium", pts:20,
+    en:{q:"In Surah Al-Baqarah 2:201, what do believers ask for in 'Rabbana atina fid-dunya hasanatan...'?", opts:["Only worldly riches","Good in this life, good in Hereafter, and protection from Hellfire","Victory in battles","Long life"], ans:1},
+    ur:{q:"سورة البقرہ کی آیت 201 میں مومنین کیا دعا مانگتے ہیں؟", opts:["صرف دنیا کا مال","دنیا کی بھلائی، آخرت کی بھلائی اور جہنم سے نجات","جنگوں میں فتح","لمبی عمر"], ans:1},
+    hi:{q:"सूरह अल-बक़रह 2:201 की दुआ 'रब्बना आतिना फिद्दुनिया...' में क्या मांगा जाता है?", opts:["केवल दुनिया का धन","दुनिया की भलाई, आख़िरत की भलाई और जहन्नुम से हिफ़ाज़त","लड़ाइयों में जीत","लंबी उम्र"], ans:1} },
+  { cat:"tafseer", diff:"medium", pts:20,
+    en:{q:"Which Dua of Prophet Musa (AS) in Surah Al-Qasas 28:24 brought him shelter, job, and marriage?", opts:["Rabbi inni lima anzalta ilayya min khayrin faqeer","Rabbi-shrah li sadri","Rabbana la tuzigh quloobana","Sayyidul Istighfar"], ans:0},
+    ur:{q:"حضرت موسیٰ علیہ السلام کی کون سی دعا پر اللہ نے فوراً چھت، روزگار اور رشتہ دیا؟", opts:["رَبِّ إِنِّي لِمَا أَنزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ","رَبِّ اشْرَحْ لِي صَدْرِي","رَبَّنَا لاَ تُزِغْ قُلُوبَنَا","سید الاستغفار"], ans:0},
+    hi:{q:"हज़रत मूसा (सल्ल.) की किस दुआ (28:24) पर अल्लाह ने तुरंत आश्रय, नौकरी और विवाह दिया?", opts:["रब्बि इन्नी लिमा अंज़ल्ता इलय्या मिन ख़ैरिन फ़क़ीर","रब्बि-शरह ली सदरी","रब्बना ला तुज़िग़ क़ुलूबना","सैय्यिदुल-इस्तिग़फ़ार"], ans:0} },
+  { cat:"tafseer", diff:"hard", pts:30,
+    en:{q:"Which Dua of Prophet Ibrahim (AS) in Surah Ibrahim 14:40 asks Allah to make him and his descendants establishers of prayer?", opts:["Rabbi-j'alni muqeemas-salati wa min dhurriyyati","Rabbana atina","La ilaha illa anta","Rabbi zidni 'ilma"], ans:0},
+    ur:{q:"حضرت ابراہیم علیہ السلام کی کون سی دعا میں اپنے اور اولاد کے لیے نماز کی پابندی کی درخواست کی گئی؟", opts:["رَبِّ اجْعَلْنِي مُقِيمَ الصَّلاَةِ وَمِن ذُرِّيَّتِي","رَبَّنَا آتِنَا","لا إِلَهَ إِلاَّ أَنتَ","رَبِّ زِدْنِي عِلْمًا"], ans:0},
+    hi:{q:"हज़रत इब्राहिम (14:40) की किस दुआ में अपने व औलाद के लिए नमाज़ की पाबंदी मांगी गई?", opts:["रब्बि-जअल्नी मुक़ीमस-सलाति व मिन ज़ुर्रिय्यती","रब्बना आतिना","ला इलाहा इल्ला अंता","रब्बि ज़िदनी इल्मा"], ans:0} },
+  { cat:"tafseer", diff:"expert", pts:50,
+    en:{q:"In Surah Ali 'Imran 3:8, what does 'Rabbana la tuzigh quloobana ba'da idh hadaytana...' ask for?", opts:["Forgiveness of past sins","Steadfastness of hearts upon faith after receiving guidance","Increase in children","Protection from enemies"], ans:1},
+    ur:{q:"سورة آل عمران کی آیت 8 'رَبَّنَا لاَ تُزِغْ قُلُوبَنَا...' کس چیز کی دعا کرتی ہے؟", opts:["پچھلے گناہوں کی معافی","ہدایت ملنے کے بعد دلوں کو ثابت قدم رکھنا","اولاد میں اضافہ","دشمنوں سے حفاظت"], ans:1},
+    hi:{q:"सूरह आल-इमरान 3:8 'रब्बना ला तुज़िग़ क़ुलूबना...' में क्या मांगा जाता है?", opts:["पुराने गुनाहों की माफ़ी","हिदायत मिलने के बाद दिलों का ईमान पर सबात (स्थिरता)","औलाद में वृद्धि","दुश्मनों से रक्षा"], ans:1} },
+
+  // ── 50 ADDITIONAL HIGH QUALITY QUESTIONS ──
+  // 1-10: QURAN & TAFSEER
+  { cat:"quran", diff:"easy", pts:10,
+    en:{q:"Which Surah protects its reciter from the punishment of the grave?", opts:["Al-Mulk","Al-Kahf","Yasin","Al-Waqi'ah"], ans:0},
+    ur:{q:"کون سی سورت اپنے پڑھنے والے کو عذابِ قبر سے محفوظ رکھتی ہے؟", opts:["الملک","الکہف","یس","الواقعہ"], ans:0},
+    hi:{q:"कौन सी सूरत अपने पढ़ने वाले को अज़ाब-ए-क़ब्र से बचाती है?", opts:["अल-मुल्क","अल-कहफ़","यासीन","अल-वाक़िआ"], ans:0} },
+  { cat:"quran", diff:"easy", pts:10,
+    en:{q:"What is another famous name for Surah Al-Fatiha?", opts:["Umm al-Kitab (Mother of the Book)","Al-Burhan","Al-Furqan","Al-Zahrawayn"], ans:0},
+    ur:{q:"سورة الفاتحہ کا ایک اور مشہور نام کیا ہے؟", opts:["ام الکتاب (کتاب کی ماں)","البرہان","الفرقان","الزہراوین"], ans:0},
+    hi:{q:"सूरह अल-फ़ातिहा का दूसरा मशहूर नाम क्या है?", opts:["उम्मुल-किताब","अल-बुर्हान","अल-फ़ुरक़ान","अज़-ज़हरावैन"], ans:0} },
+  { cat:"quran", diff:"medium", pts:20,
+    en:{q:"Over how many years was the Holy Quran revealed to Prophet Muhammad (SAW)?", opts:["10 years","23 years","30 years","40 years"], ans:1},
+    ur:{q:"قرآن پاک نبی کریم ﷺ پر کتنے سال کے عرصے میں نازل ہوا؟", opts:["10 سال","23 سال","30 سال","40 سال"], ans:1},
+    hi:{q:"पवित्र क़ुरआन पैग़म्बर मुहम्मद पर कितने वर्षों में नाज़िल हुआ?", opts:["10 वर्ष","23 वर्ष","30 वर्ष","40 वर्ष"], ans:1} },
+  { cat:"quran", diff:"medium", pts:20,
+    en:{q:"What are the Surahs revealed in Makkah before the Hijrah called?", opts:["Makki Surahs","Madani Surahs","Meccani","Hijri"], ans:0},
+    ur:{q:"ہجرت سے پہلے مکہ میں نازل ہونے والی سورتوں کو کیا کہتے ہیں؟", opts:["مکی سورتیں","مدنی سورتیں","مکانی","ہجری"], ans:0},
+    hi:{q:"हिजरत से पहले मक्का में नाज़िल होने वाली सूरतों को क्या कहते हैं?", opts:["मक्की सूरतें","मदनी सूरतें","मकानी","हिजरी"], ans:0} },
+  { cat:"quran", diff:"hard", pts:30,
+    en:{q:"Which Surah of the Quran is named after the Day of Judgment?", opts:["Al-Qiyamah","Al-Baqarah","Al-Imran","An-Nisa"], ans:0},
+    ur:{q:"قرآن کی کون سی سورت قیامت کے دن کے نام پر ہے؟", opts:["القیامہ","البقرۃ","آل عمران","النساء"], ans:0},
+    hi:{q:"क़ुरआन की कौन सी सूरत क़ियामत के दिन के नाम पर है?", opts:["अल-क़ियामह","अल-बक़रह","आल-इमरान","अन-निसा"], ans:0} },
+  { cat:"quran", diff:"expert", pts:50,
+    en:{q:"Surah Al-Baqarah and Surah Ali 'Imran are together referred to in Hadith as:", opts:["Al-Zahrawayn (The Two Luminous Ones)","Al-Mu'awwidhatayn","Al-Saba' al-Mathani","Al-Hawamim"], ans:0},
+    ur:{q:"سورة البقرہ اور سورة آل عمران کو حدیث میں مل کر کیا کہا گیا ہے؟", opts:["الزہراوین (دو روشن سورتیں)","المعوذتین","السبع المثانی","الحوامیم"], ans:0},
+    hi:{q:"सूरह अल-बक़रह और सूरह आल-इमरान को हदीस में मिलकर क्या कहा गया है?", opts:["अज़-ज़हरावैन (दो रोशन सूरतें)","अल-मुअव्विज़तैन","अल-सबउल-मथानी","अल-हवामीम"], ans:0} },
+
+  // 11-20: HADITH & SUNNAH
+  { cat:"hadith", diff:"easy", pts:10,
+    en:{q:"What does the word 'Hadith' mean literally?", opts:["Saying, news, or report","Book of law","Poetry","Commandment"], ans:0},
+    ur:{q:"لفظ 'حدیث' کا لغوی معنی کیا ہے؟", opts:["بات، خبر یا روایت","قانون کی کتاب","شاعری","حکم"], ans:0},
+    hi:{q:"'हदीस' शब्द का शाब्दिक अर्थ क्या है?", opts:["बात, समाचार या रिवायत","कानून की किताब","कविता","आदेश"], ans:0} },
+  { cat:"hadith", diff:"easy", pts:10,
+    en:{q:"Who compiled the famous 'Forty Hadith' (Arba'een)?", opts:["Imam Nawawi","Imam Ghazali","Imam Ibn Kathir","Imam Shafi'i"], ans:0},
+    ur:{q:"مشہور 'اربعین' (40 احادیث) کا مجموعہ کس نے مرتب کیا؟", opts:["امام نووی","امام غزالی","امام ابن کثیر","امام شافعی"], ans:0},
+    hi:{q:"प्रसिद्ध 'अलीस/अलीसैन' (40 हदीस) का संग्रह किसने संकलित किया?", opts:["इमाम नववी","इमाम ग़ज़ाली","इमाम इब्न कसीर","इमाम शाफ़ई"], ans:0} },
+  { cat:"hadith", diff:"medium", pts:20,
+    en:{q:"What is the chain of narrators in a Hadith called?", opts:["Isnad / Sanad","Matn","Tafseer","Takhrij"], ans:0},
+    ur:{q:"حدیث میں راویوں کے سلسلے کو کیا کہتے ہیں؟", opts:["اسناد / سند","متن","تفسیر","تخریج"], ans:0},
+    hi:{q:"हदीस में रिवायत करने वालों की शृंखला को क्या कहते हैं?", opts:["इसनाद / सनद","मतन","तफ़सीर","तख़रीज"], ans:0} },
+  { cat:"hadith", diff:"medium", pts:20,
+    en:{q:"What is the actual text of the Prophet's saying in a Hadith called?", opts:["Matn","Sanad","Isnad","Rawi"], ans:0},
+    ur:{q:"حدیث میں نبی کریم ﷺ کے اصل الفاظ کو کیا کہتے ہیں؟", opts:["متن","سند","اسناد","راوی"], ans:0},
+    hi:{q:"हदीस में नबी सल्ल. के मूल शब्दों को क्या कहते हैं?", opts:["मतन","सनद","इसनाद","रावी"], ans:0} },
+  { cat:"hadith", diff:"hard", pts:30,
+    en:{q:"Which Hadith collection was compiled by Imam Malik ibn Anas?", opts:["Muwatta Imam Malik","Sahih Muslim","Sunan an-Nasa'i","Sunan Tirmidhi"], ans:0},
+    ur:{q:"امام مالک بن انس نے کون سا کلاسک مجموعہ لکھی؟", opts:["موطا امام مالک","صحیح مسلم","سنن النسائی","سنن الترمذی"], ans:0},
+    hi:{q:"इमाम मालिक इब्न अनस ने कौन सा प्रसिद्ध संग्रह लिखा?", opts:["मुवत्ता इमाम मालिक","सहीह मुस्लिम","सुनन अन-निसाई","सुनन तिर्मिज़ी"], ans:0} },
+  { cat:"hadith", diff:"expert", pts:50,
+    en:{q:"What is a Hadith called where Prophet Muhammad (SAW) quotes Allah directly (outside Quran)?", opts:["Hadith Qudsi","Hadith Mutawatir","Hadith Ahad","Hadith Hasan"], ans:0},
+    ur:{q:"جس حدیث میں نبی کریم ﷺ اللہ تعالی کے ارشاد کو روایت کرتے ہیں (قرآن سے الگ) اسے کیا کہتے ہیں؟", opts:["حدیث قدسی","حدیث متواتر","حدیث آحاد","حدیث حسن"], ans:0},
+    hi:{q:"जिस हदीस में नबी सल्ल. अल्लाह के शब्दों को सीधे रिवायत करते हैं उसे क्या कहते हैं?", opts:["हदीस क़ुदसी","हदीस मुतवातिर","हदीस आहाद","हदीस हसन"], ans:0} },
+
+  // 21-30: SEERAH & COMPANIONS
+  { cat:"seerah", diff:"easy", pts:10,
+    en:{q:"What was the title of Abu Bakr (RA)?", opts:["As-Siddiq (The Truthful)","Al-Farooq","Dhu al-Nurayn","Asadullah"], ans:0},
+    ur:{q:"حضرت ابوبکر صدیق رضی اللہ عنہ کا لقب کیا تھا؟", opts:["الصدیق (سچا)","الفاروق","ذو النورین","اسد اللہ"], ans:0},
+    hi:{q:"हज़रत अबू बक्र (रज़ि.) का लक़ब क्या था?", opts:["अस-सिद्दीक़ (सच्चा)","अल-फ़ारूक़","ज़ुल-नूरैन","असदुल्लाह"], ans:0} },
+  { cat:"seerah", diff:"easy", pts:10,
+    en:{q:"What was the title of Umar ibn al-Khattab (RA)?", opts:["Al-Farooq (The Distinguisher of Truth)","As-Siddiq","Saifullah","Zun-Noorain"], ans:0},
+    ur:{q:"حضرت عمر فاروق رضی اللہ عنہ کا لقب کیا تھا؟", opts:["الفاروق (حق و باطل میں فرق کرنے والا)","الصدیق","سیف اللہ","ذوالنورین"], ans:0},
+    hi:{q:"हज़रत उमर इब्न अल-ख़त्ताब (रज़ि.) का लक़ब क्या था?", opts:["अल-फ़ारूक़ (सत्य व असत्य में अंतर करने वाला)","अस-सिद्दीक़","सैफ़ुल्लाह","ज़ुल-नूरैन"], ans:0} },
+  { cat:"seerah", diff:"medium", pts:20,
+    en:{q:"Why was Uthman ibn Affan (RA) titled 'Dhu al-Nurayn' (Possessor of Two Lights)?", opts:["He married two daughters of Prophet Muhammad (SAW)","He conquered two empires","He memorized two books","He led two migrations"], ans:0},
+    ur:{q:"حضرت عثمان غنی رضی اللہ عنہ کو 'ذو النورین' (دو نوروں والا) کیوں کہا جاتا ہے؟", opts:["نبی اکرم ﷺ کی دو صاحبزادیوں سے نکاح کی وجہ سے","دو سلطنتیں فتح کرنے پر","دو کتابیں یاد کرنے پر","دو ہجرتیں کرنے پر"], ans:0},
+    hi:{q:"हज़रत उस्मान (रज़ि.) को 'ज़ुल-नूरैन' (दो नूरों वाला) क्यों कहा जाता है?", opts:["नबी की दो बेटियों से निकाह के कारण","दो सल्तनतें फ़तह करने पर","दो किताबें याद करने पर","दो हिजरतें करने पर"], ans:0} },
+  { cat:"seerah", diff:"medium", pts:20,
+    en:{q:"What was the title given to Ali ibn Abi Talib (RA)?", opts:["Asadullah (Lion of Allah)","Al-Farooq","As-Siddiq","Saifullah"], ans:0},
+    ur:{q:"حضرت علی بن ابی طالب رضی اللہ عنہ کا لقب کیا تھا؟", opts:["اسد اللہ (اللہ کا شیر)","الفاروق","الصدیق","سیف اللہ"], ans:0},
+    hi:{q:"हज़रत अली इब्न अबी तालिब (रज़ि.) का लक़ब क्या था?", opts:["असदुल्लाह (अल्लाह का शेर)","अल-फ़ारूक़","अस-सिद्दीक़","सैफ़ुल्लाह"], ans:0} },
+  { cat:"seerah", diff:"hard", pts:30,
+    en:{q:"Who was the first official caller to prayer (Mu'adhdhin) in Islam?", opts:["Bilal ibn Rabah (RA)","Abu Hurairah","Zayd ibn Harithah","Abdullah ibn Mas'ud"], ans:0},
+    ur:{q:"اسلام کے پہلے موذن کا نام کیا ہے؟", opts:["حضرت بلال بن رباح رضی اللہ عنہ","ابوہریرہ","زید بن حارثہ","عبداللہ بن مسعود"], ans:0},
+    hi:{q:"इस्लाम के पहले मुअज़्ज़िन का नाम क्या है?", opts:["हज़रत बिआल इब्न रबाह (रज़ि.)","अबू हुरैरह","ज़ैद इब्न हारिसा","अब्दुल्लाह इब्न मसऊद"], ans:0} },
+  { cat:"seerah", diff:"expert", pts:50,
+    en:{q:"Who was the Persian companion who suggested digging the trench in the Battle of Khandaq?", opts:["Salman al-Farsi (RA)","Suhaib ar-Rumi","Habib ibn Zayd","Mus'ab ibn 'Umair"], ans:0},
+    ur:{q:"غزوہ خندق میں خندق کھودنے کا مشورہ کس فارسی صحابی نے دیا تھا؟", opts:["حضرت سلمان فارسی رضی اللہ عنہ","نہیب الرومی","حبیب بن زید","مصعب بن عمیر"], ans:0},
+    hi:{q:"ग़ज़वा-ए-ख़ंदक़ में खाई खोदने का सुझाव किस फ़ारसी सहाबी ने दिया था?", opts:["हज़रत सलमान अल-फ़ारसी (रज़ि.)","सुहैब अर-रूमी","हबीब इब्न ज़ैद","मुसअब इब्न उमैर"], ans:0} },
+
+  // 31-40: PROPHETS & STORIES
+  { cat:"stories", diff:"easy", pts:10,
+    en:{q:"Which Prophet built the Ark to save believers from the great Flood?", opts:["Prophet Nuh (Noah)","Prophet Adam","Prophet Hud","Prophet Salih"], ans:0},
+    ur:{q:"طوفانِ نوح سے ایمانداروں کو بچانے کے لیے کشتی کس نبی نے بنائی؟", opts:["حضرت نوح علیہ السلام","حضرت آدم","حضرت ہود","حضرت صالح"], ans:0},
+    hi:{q:"महान जलप्रलय से ईमान वालों को बचाने के लिए नाव किस पैग़म्बर ने बनाई?", opts:["हज़रत नूह","हज़रत आदम","हज़रत हूद","हज़रत सालेह"], ans:0} },
+  { cat:"stories", diff:"medium", pts:20,
+    en:{q:"Which divine holy scripture was revealed to Prophet Dawud (David)?", opts:["Zabur (Psalms)","Tawrat","Injeel","Quran"], ans:0},
+    ur:{q:"حضرت داؤد علیہ السلام پر کون سی آسمانی کتاب نازل ہوئی؟", opts:["زبور","تورات","انجیل","قرآن"], ans:0},
+    hi:{q:"हज़रत दाऊद पर कौन सी ईश्वरीय किताब नाज़िल हुई?", opts:["ज़बूर","तौरात","इंजील","क़ुरआन"], ans:0} },
+  { cat:"stories", diff:"medium", pts:20,
+    en:{q:"Which divine holy scripture was revealed to Prophet Musa (Moses)?", opts:["Tawrat (Torah)","Zabur","Injeel","Suhuf"], ans:0},
+    ur:{q:"حضرت موسیٰ علیہ السلام پر کون سی آسمانی کتاب نازل ہوئی؟", opts:["تورات","زبور","انجیل","صحف"], ans:0},
+    hi:{q:"हज़रत मूसा पर कौन सी ईश्वरीय किताब नाज़िल हुई?", opts:["तौरात","ज़बूर","इंजील","सहूफ़"], ans:0} },
+  { cat:"stories", diff:"hard", pts:30,
+    en:{q:"Which divine holy scripture was revealed to Prophet Isa (Jesus)?", opts:["Injeel (Gospel)","Tawrat","Zabur","Quran"], ans:0},
+    ur:{q:"حضرت عیسیٰ علیہ السلام پر کون سی آسمانی کتاب نازل ہوئی؟", opts:["انجیل","تورات","زبور","قرآن"], ans:0},
+    hi:{q:"हज़रत ईसा पर कौन सी ईश्वरीय किताब नाज़िल हुई?", opts:["इंजील","तौरात","ज़बूर","क़ुरआन"], ans:0} },
+  { cat:"stories", diff:"expert", pts:50,
+    en:{q:"Which Prophet was sent to the people of Thamud with a miraculous She-Camel?", opts:["Prophet Salih (AS)","Prophet Hud","Prophet Shu'aib","Prophet Ibrahim"], ans:0},
+    ur:{q:"قومِ ثمود کی طرف معجزاتی اونٹنی کے ساتھ کس نبی کو بھیجا گیا؟", opts:["حضرت صالح علیہ السلام","حضرت ہود","حضرت شعیب","حضرت ابراہیم"], ans:0},
+    hi:{q:"समूद कौम की तरफ़ मौजिज़ा-ए-ऊँटनी के साथ किस पैग़म्बर को भेजा गया?", opts:["हज़रत सालेह","हज़रत हूद","हज़रत शुऐब","हज़रत इब्राहिम"], ans:0} },
+
+  // 41-50: PILLARS, FIQH & TAJWEED
+  { cat:"pillars", diff:"easy", pts:10,
+    en:{q:"What is the special night in Ramadan that is better than 1,000 months?", opts:["Laylatul Qadr (Night of Decree)","Laylatul Bara'at","Eid night","Friday night"], ans:0},
+    ur:{q:"رمضان المبارک کی وہ کون سی بابرکت رات ہے جو 1,000 مہینوں سے افضل ہے؟", opts:["لیلة القدر","شبِ برات","عید کی رات","جمعہ کی رات"], ans:0},
+    hi:{q:"रमज़ान की वह कौन सी मुबारक रात है जो 1,000 महीनों से उत्तम है?", opts:["लैलतुल-क़द्र","शब-ए-बरात","ईद की रात","शुक्रवार रात"], ans:0} },
+  { cat:"pillars", diff:"medium", pts:20,
+    en:{q:"Walking 7 times between Safa and Marwah hills during Hajj/Umrah is called:", opts:["Sa'i","Tawaf","Rami","Rukn"], ans:0},
+    ur:{q:"حج اور عمرہ کے دوران صفا اور مروہ کی پہاڑیوں کے درمیان 7 چکر لگانے کو کیا کہتے ہیں؟", opts:["سعی","طواف","رمی","رکن"], ans:0},
+    hi:{q:"हज व उमराह के दौरान सफ़ा व मरवा की पहाड़ियों के बीच 7 चक्कर लगाने को क्या कहते हैं?", opts:["सई","तवाफ़","रमी","रुकन"], ans:0} },
+  { cat:"pillars", diff:"hard", pts:30,
+    en:{q:"Circling the Holy Kaaba 7 times counter-clockwise is known as:", opts:["Tawaf","Sa'i","Ihram","Wuquf"], ans:0},
+    ur:{q:"خانہ کعبہ کے گرد 7 چکر لگانے کو کیا کہتے ہیں؟", opts:["طواف","سعی","احرام","وقوف"], ans:0},
+    hi:{q:"क़ाबा के चारों ओर 7 चक्कर लगाने को क्या कहते हैं?", opts:["तवाफ़","सई","इहराम","वुक़ूफ़"], ans:0} },
+  { cat:"tajweed", diff:"medium", pts:20,
+    en:{q:"When Meem Sakinah is followed by another Meem (م), which Tajweed rule applies?", opts:["Idgham Shafawi (Idgham of Meem)","Ikhfa Shafawi","Izhar Shafawi","Iqlab"], ans:0},
+    ur:{q:"میم ساکن کے بعد اگر دوسری میم (م) آئے تو کون سا تجوید قاعدہ لاگو ہوتا ہے؟", opts:["ادغام شفوی","اخفاء شفوی","اظہار شفوی","اقلاب"], ans:0},
+    hi:{q:"मीम साकिन के बाद यदि दूसरी मीम आए तो कौन सा नियम लागू होता है?", opts:["इदग़ाम शफ़वी","इख़फ़ा शफ़वी","इज़हार शफ़वी","इक़लाब"], ans:0} },
+  { cat:"names", diff:"expert", pts:50,
+    en:{q:"What does 'Al-Fattah' (الفتاح) mean?", opts:["The Opener / The Judge who removes all obstacles","The Creator","The Last","The High"], ans:0},
+    ur:{q:"اللہ تعالی کے مبارک نام 'الفتاح' کا کیا مطلب ہے؟", opts:["مشکلات کھولنے والا / فتاح","خالق","آخر","عالی"], ans:0},
+    hi:{q:"अल्लाह के मुबारक नाम 'अल-फ़त्ताह' का अर्थ क्या है?", opts:["मार्ग खोलने वाला / न्याय करने वाला","सृष्टिकर्ता","अंतिम","उच्च"], ans:0} },
 ];
 
 const TOTAL = 10;
@@ -471,7 +731,7 @@ const DIFF_COLORS: Record<Diff,string> = {
   easy:"bg-green-100 text-green-700", medium:"bg-amber-100 text-amber-700",
   hard:"bg-orange-100 text-orange-700", expert:"bg-red-100 text-red-700",
 };
-const CAT_KEYS: Cat[] = ["all","quran","hadith","fiqh","seerah","history","pillars","names"];
+const CAT_KEYS: Cat[] = ["all","quran","hadith","fiqh","seerah","history","pillars","names","tajweed","stories","tafseer"];
 
 export default function IslamicQuizGame() {
   const [lang,         setLang]         = useState<Lang>("en");
@@ -490,7 +750,8 @@ export default function IslamicQuizGame() {
   const [history,      setHistory]      = useState<boolean[]>([]);
   const [gameOver,     setGameOver]     = useState(false);
   const [started,      setStarted]      = useState(false);
-  const [showAuth,     setShowAuth]     = useState(false);
+  const [showAuth,        setShowAuth]        = useState(false);
+  const [showResultModal, setShowResultModal] = useState(false);
   const [shuffledOpts, setShuffledOpts] = useState<Record<Lang,{opts:string[];ans:number}>>({
     en:{opts:[],ans:0}, ur:{opts:[],ans:0}, hi:{opts:[],ans:0}
   });
@@ -516,8 +777,29 @@ export default function IslamicQuizGame() {
       .catch(() => setFbLoading(false));
   }, []);
 
-  // Combined question bank: Firebase first, then local
-  const ALL_QUESTIONS = [...firebaseQs, ...QB];
+  // Unified Question Bank: Merges Firebase dynamic questions with central 550+ questions bank
+  const ALL_RAW_QUESTIONS = [...firebaseQs, ...ALL_ISLAMIC_QUESTIONS];
+
+  // Automatic Runtime Deduplication Engine: Guarantees 100% unique questions with ZERO repeats
+  const ALL_QUESTIONS = (() => {
+    const seenTexts = new Set<string>();
+    const unique: Question[] = [];
+
+    for (const q of ALL_RAW_QUESTIONS) {
+      if (!q || !q.en || !q.en.q) continue;
+      // Normalize English & Urdu text for exact duplicate detection
+      const normEn = q.en.q.toLowerCase().trim().replace(/[^a-z0-9]/g, "");
+      const normUr = q.ur ? q.ur.q.trim().replace(/\s+/g, "") : "";
+
+      if (!seenTexts.has(normEn) && (!normUr || !seenTexts.has(normUr))) {
+        seenTexts.add(normEn);
+        if (normUr) seenTexts.add(normUr);
+        unique.push(q);
+      }
+    }
+
+    return unique;
+  })();
 
   const clearTimer = () => { if (timerRef.current) clearInterval(timerRef.current); };
 
@@ -553,13 +835,7 @@ export default function IslamicQuizGame() {
     }
   }, [user, selectedCats, diff]);
 
-  const getPool = useCallback((c: Set<Cat>, d: Diff) => {
-    let pool = ALL_QUESTIONS.filter(q => q.diff === d);
-    if (!c.has("all")) pool = pool.filter(q => c.has(q.cat as Cat));
-    if (pool.length === 0) pool = ALL_QUESTIONS.filter(q => q.diff === d);
-    return pool;
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [firebaseQs]);
+
 
   // Time up effect
   useEffect(() => {
@@ -573,7 +849,6 @@ export default function IslamicQuizGame() {
 
   const startGame = useCallback(() => {
     savedRef.current = false; // reset save flag for new game
-    let pool = getPool(selectedCats, diff);
 
     const fisherYates = <T,>(arr: T[]): T[] => {
       const a = [...arr];
@@ -584,30 +859,61 @@ export default function IslamicQuizGame() {
       return a;
     };
 
-    let unseen = pool.filter((_,i) => !seenIdsRef.current.has(i));
-    if (unseen.length < TOTAL) {
-      seenIdsRef.current = new Set();
-      unseen = fisherYates(pool);
-    } else {
-      unseen = fisherYates(unseen);
+    // 1. Filter pool by selected categories
+    let pool = ALL_QUESTIONS;
+    if (!selectedCats.has("all")) {
+      pool = ALL_QUESTIONS.filter(q => selectedCats.has(q.cat as Cat));
+      if (pool.length < 5) pool = ALL_QUESTIONS;
     }
 
-    const selected10 = unseen.slice(0, TOTAL);
-    selected10.forEach((_,i) => seenIdsRef.current.add(pool.indexOf(selected10[i])));
+    // 2. Separate into difficulty tiers and shuffle each tier independently
+    const easyPool = fisherYates(pool.filter(q => q.diff === "easy"));
+    const medPool  = fisherYates(pool.filter(q => q.diff === "medium"));
+    const hardPool = fisherYates(pool.filter(q => q.diff === "hard"));
+    const expPool  = fisherYates(pool.filter(q => q.diff === "expert"));
 
-    const allOpts = selected10.map(q => buildShuffledOpts(q));
+    // 3. Assemble progressive 10-question sequence (Easy -> Medium -> Hard -> Expert)
+    const selected10 = [
+      ...easyPool.slice(0, 2),
+      ...medPool.slice(0, 3),
+      ...hardPool.slice(0, 3),
+      ...expPool.slice(0, 2),
+    ];
+
+    // Fallback if tier pool had fewer questions
+    if (selected10.length < TOTAL) {
+      const unused = fisherYates(pool.filter(q => !selected10.includes(q)));
+      selected10.push(...unused.slice(0, TOTAL - selected10.length));
+    }
+
+    const final10 = selected10.slice(0, TOTAL);
+    const allOpts = final10.map(q => buildShuffledOpts(q));
     optsListRef.current = allOpts;
 
-    setQList(selected10); setQIdx(0); setScore(0); setCorrect(0); setStreak(0);
-    setHistory([]); setGameOver(false); setStarted(true);
+    setQList(final10);
+    setQIdx(0);
+    setScore(0);
+    setCorrect(0);
+    setStreak(0);
+    setHistory([]);
+    setGameOver(false);
+    setStarted(true);
+
+    const firstQ = final10[0];
+    setCurQ(firstQ);
+    setDiff(firstQ.diff);
     setShuffledOpts(allOpts[0]);
-    setCurQ(selected10[0]);
-    setAnswered(false); setSelected(null); setFeedback(null);
-    const t = DIFF_TIME[diff];
-    totalTimeRef.current = t; setTimeLeft(t);
+    setAnswered(false);
+    setSelected(null);
+    setFeedback(null);
+
+    const t = DIFF_TIME[firstQ.diff];
+    totalTimeRef.current = t;
+    setTimeLeft(t);
+
     clearTimer();
     timerRef.current = setInterval(() => setTimeLeft(v => Math.max(0, parseFloat((v-0.1).toFixed(1)))), 100);
-  }, [selectedCats, diff, getPool, buildShuffledOpts]);
+  }, [selectedCats, ALL_QUESTIONS, buildShuffledOpts]);
 
   const handleAnswer = useCallback((idx: number) => {
     if (answered || !curQ) return;
@@ -637,11 +943,18 @@ export default function IslamicQuizGame() {
       setScore(s  => { setCorrect(c => { setStreak(st => { saveScore(s, c, st); return st; }); return c; }); return s; });
       return;
     }
-    setCurQ(qList[ni]);
+    const nextQ = qList[ni];
+    setCurQ(nextQ);
+    setDiff(nextQ.diff); // Automatically update difficulty level for the next question!
     setShuffledOpts(optsListRef.current[ni]);
-    setAnswered(false); setSelected(null); setFeedback(null);
-    const t = DIFF_TIME[diff];
-    totalTimeRef.current = t; setTimeLeft(t);
+    setAnswered(false);
+    setSelected(null);
+    setFeedback(null);
+
+    const t = DIFF_TIME[nextQ.diff];
+    totalTimeRef.current = t;
+    setTimeLeft(t);
+
     clearTimer();
     timerRef.current = setInterval(() => setTimeLeft(v => Math.max(0, parseFloat((v-0.1).toFixed(1)))), 100);
   };
@@ -688,16 +1001,14 @@ export default function IslamicQuizGame() {
         ))}
       </div>
 
-      {/* Difficulty selector */}
-      <div className="grid grid-cols-4 gap-2">
-        {(["easy","medium","hard","expert"] as Diff[]).map(d => (
-          <button key={d} onClick={() => setDiff(d)}
-            className={`py-2 rounded-xl text-xs font-bold border transition-all capitalize
-              ${diff===d?"bg-gray-800 text-white border-gray-900":"bg-white text-gray-500 border-gray-200 hover:border-gray-400"}`}
-            style={{boxShadow:diff===d?"0 3px 0 #111":"0 3px 0 rgba(0,0,0,0.1)"}}>
-            {d}
-          </button>
-        ))}
+      {/* Adaptive Auto-Difficulty Banner */}
+      <div className="bg-gradient-to-r from-teal-50 to-emerald-50 border border-teal-100 rounded-2xl p-3 text-center">
+        <p className="text-xs font-bold text-teal-800 flex items-center justify-center gap-1.5">
+          <span>⚡ Adaptive Automatic Difficulty</span>
+        </p>
+        <p className="text-[11px] text-teal-600 mt-0.5">
+          Questions start at Easy and automatically scale up (Medium ➔ Hard ➔ Expert) as you answer!
+        </p>
       </div>
 
       {/* Stats */}
@@ -771,9 +1082,16 @@ export default function IslamicQuizGame() {
             </div>
           )}
 
-          <button onClick={startGame} className="bg-teal-600 text-white px-8 py-3 rounded-xl font-bold mb-5"
+          <button onClick={startGame} className="bg-teal-600 text-white px-8 py-3 rounded-xl font-bold mb-4"
             style={{boxShadow:"0 4px 0 #0F6E56"}}>
             {u.again}
+          </button>
+
+          <button
+            onClick={() => setShowResultModal(true)}
+            className="w-full bg-amber-500 hover:bg-amber-600 active:scale-95 text-white font-bold py-3.5 px-6 rounded-2xl shadow-md transition-all flex items-center justify-center gap-2 mb-4 border border-amber-600"
+          >
+            <span>🖼️ Share Result Card Image (PNG)</span>
           </button>
 
           <ShareScore
@@ -880,6 +1198,18 @@ export default function IslamicQuizGame() {
 
       {/* Auth Modal */}
       {showAuth && <AuthModal onClose={() => setShowAuth(false)} />}
+
+      {/* Result Certificate Share Modal */}
+      <QuizResultShareModal
+        score={score}
+        totalQuestions={qList.length}
+        correctAnswers={correct}
+        difficulty={diff}
+        categoryLabel={u.cats[Array.from(selectedCats)[0] as Cat] || "Islamic Quiz"}
+        lang={lang}
+        isOpen={showResultModal}
+        onClose={() => setShowResultModal(false)}
+      />
     </div>
   );
 }

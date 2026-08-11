@@ -45,6 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     make("/quran/pdf/15line",           0.7, "monthly"),
     make("/quran/pdf/13line",           0.7, "monthly"),
     make("/islamic-studies",            0.8, "weekly"),
+    make("/duas",                       0.9, "weekly"),
     make("/courses",                    0.9, "weekly"),
     make("/courses/mathematics",        0.8, "weekly"),
     make("/notes",                      0.8, "weekly"),

@@ -2,6 +2,7 @@ import { guessMapping, applyMapping } from "./mapping";
 import { reconcile } from "./engine";
 import { buildReconciliationWorkbook } from "./statement";
 import type { ColumnMapping } from "./types";
+import type { ReconTypeId } from "./reconTypes";
 
 // ---- synthetic Cash Book (the company's own books) ----
 const cashBookRows = [
@@ -76,8 +77,7 @@ const bankSum = bankResult.txns.reduce((s, t) => s + t.amount, 0);
 
 async function main() {
   const wb = await buildReconciliationWorkbook(result.bookTxns, result.bankTxns, {
-    bookLabel: "Cash Book",
-    bankLabel: "Bank Statement",
+    reconType: "bank" as ReconTypeId,
     bankOpeningBalance: BANK_OPENING,
     bankClosingBalance: BANK_OPENING + bankSum,
     bookOpeningBalance: BOOK_OPENING,

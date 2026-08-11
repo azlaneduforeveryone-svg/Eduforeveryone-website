@@ -181,8 +181,10 @@ function writeSideBySideSheet(
   return ws;
 }
 
+import { getReconType, RECON_TYPES, type ReconTypeId } from "./reconTypes";
+
 export interface StatementInputs {
-  reconType: ReconType;
+  reconType: ReconTypeId;
   bankOpeningBalance: number;   // "their" side - user-entered, required
   bankClosingBalance: number;
   bookOpeningBalance: number;   // "our" side - user-entered, required
@@ -199,7 +201,7 @@ export async function buildReconciliationWorkbook(
   bankTxns: MatchedTxn[],
   inputs: StatementInputs
 ): Promise<ExcelJS.Workbook> {
-  const rt = inputs.reconType;
+  const rt = getReconType(inputs.reconType) || RECON_TYPES.bank;
   const wb = new ExcelJS.Workbook();
   wb.creator = "EduForEveryone Reconciliation Tool";
 

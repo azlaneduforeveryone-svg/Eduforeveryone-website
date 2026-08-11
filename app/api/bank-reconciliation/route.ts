@@ -136,7 +136,7 @@ export async function POST(req: NextRequest) {
     const result = reconcile(bookResult.txns, bankResult.txns, reconType.matching);
 
     const wb = await buildReconciliationWorkbook(result.bookTxns, result.bankTxns, {
-      reconType,
+      reconType: reconType.id,
       bankOpeningBalance,
       bankClosingBalance,
       bookOpeningBalance,
