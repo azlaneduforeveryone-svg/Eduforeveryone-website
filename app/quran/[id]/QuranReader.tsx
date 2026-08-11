@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import QuranScriptSelector, { QuranScript, QURAN_SCRIPTS } from "@/components/quran/QuranScriptSelector";
 
 interface Edition {
   identifier: string; language: string; name: string;
@@ -94,25 +95,49 @@ export default function QuranReader({ surahId }: { surahId: number }) {
   const [loadingTrans,    setLoadingTrans]    = useState(false);
   const [audioPlaying,    setAudioPlaying]    = useState<number | null>(null);
   const [showEditions,    setShowEditions]    = useState(false);
+  const [showScripts,     setShowScripts]     = useState(false);
   const [searchEd,        setSearchEd]        = useState("");
   const [bookmark,        setBookmark]        = useState<number | null>(null);
   const [arabicSize,      setArabicSize]      = useState(28);
   const [transSize,       setTransSize]       = useState(14);
   const [darkMode,        setDarkMode]        = useState(false);
   const [playAll,         setPlayAll]         = useState(false);
+  const [scriptStyle,     setScriptStyle]     = useState<QuranScript>("uthmani");
+  const [hifzMode,        setHifzMode]        = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  // ── Load saved script preference ──────────────────────────────────────────
+  useEffect(() => {
+    const savedScript = localStorage.getItem("quran-script-style") as QuranScript;
+    if (savedScript && ["uthmani", "indopak", "maghribi"].includes(savedScript)) {
+      setScriptStyle(savedScript);
+    }
+    const savedHifz = localStorage.getItem("quran-hifz-mode");
+    if (savedHifz === "true") setHifzMode(true);
+  }, []);
+
+  const handleSelectScript = (s: QuranScript) => {
+    setScriptStyle(s);
+    localStorage.setItem("quran-script-style", s);
+  };
+
+  const handleToggleHifzMode = (enabled: boolean) => {
+    setHifzMode(enabled);
+    localStorage.setItem("quran-hifz-mode", String(enabled));
+  };
 
   // ── Load Surah + Editions ─────────────────────────────────────────────────
   useEffect(() => {
     setLoading(true);
+    const edition = scriptStyle === "indopak" ? "quran-indopak" : "quran-uthmani";
     Promise.all([
-      fetch(`https://api.alquran.cloud/v1/surah/${surahId}`).then(r => r.json()),
+      fetch(`https://api.alquran.cloud/v1/surah/${surahId}/${edition}`).then(r => r.json()),
       fetch("https://api.alquran.cloud/v1/edition?format=text&type=translation").then(r => r.json()),
     ]).then(([s, e]) => { setSurah(s.data); setEditions(e.data || []); setLoading(false); })
       .catch(() => setLoading(false));
     const saved = localStorage.getItem(`qb-${surahId}`);
     if (saved) setBookmark(parseInt(saved));
-  }, [surahId]);
+  }, [surahId, scriptStyle]);
 
   // ── Load Translations ──────────────────────────────────────────────────────
   useEffect(() => {
@@ -169,6 +194,17 @@ export default function QuranReader({ surahId }: { surahId: number }) {
     ? "bg-gray-800 border-gray-700 text-gray-100 placeholder-gray-500 focus:ring-teal-500"
     : "bg-white border-gray-200 text-gray-900 placeholder-gray-400 focus:ring-teal-500";
 
+  // ── Script Font Styling ────────────────────────────────────────────────────
+  const fontClass =
+    scriptStyle === "indopak"
+      ? "font-quran-indopak"
+      : scriptStyle === "maghribi"
+      ? "font-quran-maghribi"
+      : "font-quran-uthmani";
+
+  const scriptLineHeight =
+    scriptStyle === "indopak" ? "3.0" : scriptStyle === "maghribi" ? "2.8" : "2.6";
+
   if (loading) return (
     <div className={`${bgPage} min-h-screen`}>
       <div className="max-w-4xl mx-auto px-4 py-8 space-y-4">
@@ -195,8 +231,7 @@ export default function QuranReader({ surahId }: { surahId: number }) {
             <span className="bg-white/20 text-white text-sm font-bold px-3 py-1 rounded-full flex-shrink-0">
               {surah.number}
             </span>
-            <p className="text-5xl font-bold leading-normal"
-              style={{ fontFamily: "var(--font-arabic),'Amiri',serif" }}>
+            <p className={`text-5xl font-bold leading-normal ${fontClass}`}>
               {surah.name}
             </p>
           </div>
@@ -208,8 +243,7 @@ export default function QuranReader({ surahId }: { surahId: number }) {
           </div>
           {/* Bismillah — all Surahs except At-Tawbah (9) */}
           {surah.number !== 9 && (
-            <p className="text-3xl mt-5 pt-5 border-t border-white/20 font-bold"
-              style={{ fontFamily: "var(--font-arabic),'Amiri',serif" }}>
+            <p className={`text-3xl mt-5 pt-5 border-t border-white/20 font-bold ${fontClass}`}>
               بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
             </p>
           )}
@@ -232,6 +266,24 @@ export default function QuranReader({ surahId }: { surahId: number }) {
               </Link>
             )}
           </div>
+
+          {/* Script selection button */}
+          <button
+            onClick={() => setShowScripts(v => !v)}
+            className={`flex items-center gap-1.5 px-3 py-2 border ${border} rounded-xl text-sm font-semibold transition-all ${
+              showScripts ? "bg-teal-600 text-white border-teal-700" : `${sub} hover:border-teal-400`
+            }`}
+          >
+            <span>✒️ Script:</span>
+            <span className="font-bold text-teal-600 dark:text-teal-400">
+              {QURAN_SCRIPTS.find(s => s.id === scriptStyle)?.name.split(" ")[0]}
+            </span>
+            {scriptStyle === "indopak" && hifzMode && (
+              <span className="bg-emerald-600 text-white text-[10px] px-1.5 py-0.5 rounded-full font-bold">
+                15-Line
+              </span>
+            )}
+          </button>
 
           {/* Arabic font size */}
           <div className="flex items-center gap-1.5">
@@ -266,41 +318,70 @@ export default function QuranReader({ surahId }: { surahId: number }) {
           </button>
         </div>
 
-        {/* ── Quick Language Buttons ── */}
-        <div className={`${cardBg} border ${border} rounded-2xl p-4 mb-5`}>
-          <p className={`text-xs font-bold ${sub} uppercase tracking-wider mb-3`}>🌐 Quick Translation</p>
-          <div className="flex flex-wrap gap-2">
-            {[
-              { id:"en.sahih",      label:"🇬🇧 English",  },
-              { id:"ur.jalandhry",  label:"🇵🇰 Urdu",     },
-              { id:"hi.hindi",      label:"🇮🇳 Hindi",    },
-              { id:"fa.ayati",      label:"🇮🇷 Farsi",    },
-            ].map(l => (
-              <button key={l.id} onClick={() => toggleEd(l.id)}
+        {/* ── Script Selection Panel ── */}
+        {showScripts && (
+          <div className="mb-5">
+            <QuranScriptSelector
+              currentScript={scriptStyle}
+              onSelectScript={(s) => {
+                handleSelectScript(s);
+                setShowScripts(false);
+              }}
+              hifzMode={hifzMode}
+              onToggleHifzMode={handleToggleHifzMode}
+              darkMode={darkMode}
+            />
+          </div>
+        )}
+
+        {/* ── Quick Language & Script Toolbar ── */}
+        <div className={`${cardBg} border ${border} rounded-2xl p-4 mb-5 space-y-4`}>
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 pb-3 border-b border-gray-100 dark:border-gray-800">
+            <QuranScriptSelector
+              currentScript={scriptStyle}
+              onSelectScript={handleSelectScript}
+              hifzMode={hifzMode}
+              onToggleHifzMode={handleToggleHifzMode}
+              darkMode={darkMode}
+              compact={true}
+            />
+          </div>
+
+          <div>
+            <p className={`text-xs font-bold ${sub} uppercase tracking-wider mb-2.5`}>🌐 Quick Translation</p>
+            <div className="flex flex-wrap gap-2">
+              {[
+                { id:"en.sahih",      label:"🇬🇧 English",  },
+                { id:"ur.jalandhry",  label:"🇵🇰 Urdu",     },
+                { id:"hi.hindi",      label:"🇮🇳 Hindi",    },
+                { id:"fa.ayati",      label:"🇮🇷 Farsi",    },
+              ].map(l => (
+                <button key={l.id} onClick={() => toggleEd(l.id)}
+                  className={`px-4 py-2 rounded-xl text-sm font-semibold border transition-all
+                    ${selectedEd.includes(l.id)
+                      ? "bg-teal-600 text-white border-teal-700"
+                      : `${darkMode ? "bg-gray-800 border-gray-700 text-gray-300" : "bg-white border-gray-200 text-gray-600"} hover:border-teal-400`}`}>
+                  {l.label}
+                </button>
+              ))}
+              <button onClick={() => setShowEditions(v => !v)}
                 className={`px-4 py-2 rounded-xl text-sm font-semibold border transition-all
-                  ${selectedEd.includes(l.id)
-                    ? "bg-teal-600 text-white border-teal-700"
+                  ${showEditions
+                    ? "bg-gray-800 text-white border-gray-900"
                     : `${darkMode ? "bg-gray-800 border-gray-700 text-gray-300" : "bg-white border-gray-200 text-gray-600"} hover:border-teal-400`}`}>
-                {l.label}
+                🌐 More {selectedEd.filter(e => !["en.sahih","ur.jalandhry","hi.hindi","fa.ayati"].includes(e)).length > 0 &&
+                  <span className="ml-1 bg-teal-600 text-white text-xs px-1.5 py-0.5 rounded-full">
+                    +{selectedEd.filter(e => !["en.sahih","ur.jalandhry","hi.hindi","fa.ayati"].includes(e)).length}
+                  </span>}
               </button>
-            ))}
-            <button onClick={() => setShowEditions(v => !v)}
-              className={`px-4 py-2 rounded-xl text-sm font-semibold border transition-all
-                ${showEditions
-                  ? "bg-gray-800 text-white border-gray-900"
-                  : `${darkMode ? "bg-gray-800 border-gray-700 text-gray-300" : "bg-white border-gray-200 text-gray-600"} hover:border-teal-400`}`}>
-              🌐 More {selectedEd.filter(e => !["en.sahih","ur.jalandhry","hi.hindi","fa.ayati"].includes(e)).length > 0 &&
-                <span className="ml-1 bg-teal-600 text-white text-xs px-1.5 py-0.5 rounded-full">
-                  +{selectedEd.filter(e => !["en.sahih","ur.jalandhry","hi.hindi","fa.ayati"].includes(e)).length}
-                </span>}
-            </button>
-            {selectedEd.length > 0 && (
-              <button onClick={() => setSelectedEd([])}
-                className={`px-4 py-2 rounded-xl text-sm font-semibold border transition-all
-                  ${darkMode ? "bg-red-900/30 border-red-800 text-red-400" : "bg-red-50 border-red-200 text-red-600"} hover:opacity-80`}>
-                ✕ Clear All
-              </button>
-            )}
+              {selectedEd.length > 0 && (
+                <button onClick={() => setSelectedEd([])}
+                  className={`px-4 py-2 rounded-xl text-sm font-semibold border transition-all
+                    ${darkMode ? "bg-red-900/30 border-red-800 text-red-400" : "bg-red-50 border-red-200 text-red-600"} hover:opacity-80`}>
+                  ✕ Clear All
+                </button>
+              )}
+            </div>
           </div>
         </div>
 
@@ -365,6 +446,16 @@ export default function QuranReader({ surahId }: { surahId: number }) {
           </div>
         )}
 
+        {/* ── 15-Line Hifz Mode Indicator Banner ── */}
+        {scriptStyle === "indopak" && hifzMode && (
+          <div className="bg-gradient-to-r from-emerald-600 to-teal-700 text-white rounded-xl p-3 mb-4 text-center flex items-center justify-between px-4 text-xs sm:text-sm font-medium">
+            <span>📖 <strong>15-Line Indo-Pak Hifz Mode Active</strong> (Compact memorization line spacing)</span>
+            <button onClick={() => handleToggleHifzMode(false)} className="underline font-semibold hover:opacity-80">
+              Switch to Normal
+            </button>
+          </div>
+        )}
+
         {/* ── Ayahs ── */}
         <div className="space-y-4">
           {surah.ayahs.map(ayah => {
@@ -374,7 +465,9 @@ export default function QuranReader({ surahId }: { surahId: number }) {
 
             return (
               <div key={ayah.numberInSurah} id={`ayah-${ayah.number}`}
-                className={`${cardBg} border ${audioPlaying === ayah.number ? "border-teal-400" : border} rounded-2xl p-5 transition-all`}>
+                className={`${cardBg} border ${audioPlaying === ayah.number ? "border-teal-400" : border} rounded-2xl p-5 transition-all ${
+                  scriptStyle === "indopak" && hifzMode ? "hifz-compact-container rounded-xl" : ""
+                }`}>
 
                 {/* Ayah controls row */}
                 <div className="flex justify-between items-center mb-4">
@@ -397,8 +490,8 @@ export default function QuranReader({ surahId }: { surahId: number }) {
                 </div>
 
                 {/* Arabic text */}
-                <p className="text-right mb-4"
-                  style={{ fontFamily:"var(--font-arabic),'Amiri',serif", fontSize:`${arabicSize}px`, direction:"rtl", lineHeight:"2.6", color: darkMode?"#f0fdf4":"#111827" }}>
+                <p className={`text-right mb-4 ${fontClass}`}
+                  style={{ fontSize:`${arabicSize}px`, direction:"rtl", lineHeight: scriptLineHeight, color: darkMode?"#f0fdf4":"#111827" }}>
                   {displayText}
                 </p>
 

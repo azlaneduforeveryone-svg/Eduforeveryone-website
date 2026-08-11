@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import QuranScriptSelector, { QuranScript, QURAN_SCRIPTS } from "@/components/quran/QuranScriptSelector";
 
 // ── Tajweed Rules Map ─────────────────────────────────────────────────────────
 const TAJWEED_RULES: Record<string, { color: string; name: string; nameAr: string; desc: { en: string; ur: string; hi: string } }> = {
@@ -61,8 +62,30 @@ export default function TajweedQuranReader({ surahId }: { surahId: number }) {
   const [popup,      setPopup]      = useState<RulePopup | null>(null);
   const [audioPlaying, setAudioPlaying] = useState<number | null>(null);
   const [ruleLang,   setRuleLang]   = useState<ReaderLang>("en");
+  const [scriptStyle, setScriptStyle] = useState<QuranScript>("uthmani");
+  const [hifzMode,   setHifzMode]   = useState(false);
+  const [showScripts, setShowScripts] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const AUDIO_CDN = "https://cdn.islamic.network/quran/audio/128/ar.alafasy";
+
+  useEffect(() => {
+    const savedScript = localStorage.getItem("quran-script-style") as QuranScript;
+    if (savedScript && ["uthmani", "indopak", "maghribi"].includes(savedScript)) {
+      setScriptStyle(savedScript);
+    }
+    const savedHifz = localStorage.getItem("quran-hifz-mode");
+    if (savedHifz === "true") setHifzMode(true);
+  }, []);
+
+  const handleSelectScript = (s: QuranScript) => {
+    setScriptStyle(s);
+    localStorage.setItem("quran-script-style", s);
+  };
+
+  const handleToggleHifzMode = (enabled: boolean) => {
+    setHifzMode(enabled);
+    localStorage.setItem("quran-hifz-mode", String(enabled));
+  };
 
   useEffect(() => {
     setLoading(true); setSurah(null); setAyahs([]);
@@ -114,6 +137,16 @@ export default function TajweedQuranReader({ surahId }: { surahId: number }) {
     return globalNum + ayah.verse_number;
   };
 
+  const fontClass =
+    scriptStyle === "indopak"
+      ? "font-quran-indopak"
+      : scriptStyle === "maghribi"
+      ? "font-quran-maghribi"
+      : "font-quran-uthmani";
+
+  const scriptLineHeight =
+    scriptStyle === "indopak" ? "3.0" : scriptStyle === "maghribi" ? "2.8" : "2.6";
+
   if (loading) return (
     <div className={`${bg} flex items-center justify-center`}>
       <div className="text-center">
@@ -144,9 +177,8 @@ export default function TajweedQuranReader({ surahId }: { surahId: number }) {
         <div className="bg-gradient-to-b from-amber-500 to-orange-600 text-white rounded-2xl p-6 sm:p-8 text-center mb-5">
           <div className="flex justify-center items-center gap-3 mb-3 flex-wrap">
             <span className="bg-white/20 text-white text-sm font-bold px-3 py-1 rounded-full flex-shrink-0">{surahId}</span>
-            <p className="text-amber-100 font-bold"
-               style={{ fontFamily:"'Amiri', var(--font-arabic), 'Noto Naskh Arabic', serif",
-                        fontSize:"clamp(26px, 5vw, 44px)", lineHeight:"2.2", direction:"rtl" }}>
+            <p className={`text-amber-100 font-bold ${fontClass}`}
+               style={{ fontSize:"clamp(26px, 5vw, 44px)", lineHeight:"2.2", direction:"rtl" }}>
               {surah.name_arabic}
             </p>
           </div>
@@ -185,6 +217,27 @@ export default function TajweedQuranReader({ surahId }: { surahId: number }) {
             {surahId > 1 && <Link href={`/quran/tajweed/${surahId-1}`} className={`px-3 py-2 rounded-xl border ${darkMode?"border-gray-700 text-gray-300":"border-gray-200 text-gray-600"} text-sm font-semibold hover:border-amber-400`}>← Prev</Link>}
             {surahId < 114 && <Link href={`/quran/tajweed/${surahId+1}`} className={`px-3 py-2 rounded-xl border ${darkMode?"border-gray-700 text-gray-300":"border-gray-200 text-gray-600"} text-sm font-semibold hover:border-amber-400`}>Next →</Link>}
           </div>
+
+          {/* Script selection button */}
+          <button
+            onClick={(e) => { e.stopPropagation(); setShowScripts(v => !v); }}
+            className={`flex items-center gap-1.5 px-3 py-2 border rounded-xl text-sm font-semibold transition-all ${
+              showScripts
+                ? "bg-amber-500 text-white border-amber-600"
+                : `${darkMode ? "border-gray-700 text-gray-300" : "border-gray-200 text-gray-600"} hover:border-amber-400`
+            }`}
+          >
+            <span>✒️ Script:</span>
+            <span className="font-bold text-amber-600 dark:text-amber-400">
+              {QURAN_SCRIPTS.find(s => s.id === scriptStyle)?.name.split(" ")[0]}
+            </span>
+            {scriptStyle === "indopak" && hifzMode && (
+              <span className="bg-emerald-600 text-white text-[10px] px-1.5 py-0.5 rounded-full font-bold">
+                15-Line
+              </span>
+            )}
+          </button>
+
           {/* Font size */}
           <div className="flex items-center gap-1.5">
             <span className={`text-xs ${sub}`}>Size:</span>
@@ -202,6 +255,34 @@ export default function TajweedQuranReader({ surahId }: { surahId: number }) {
           </button>
         </div>
 
+        {/* ── Script Selection Panel ── */}
+        {showScripts && (
+          <div className="mb-5" onClick={(e) => e.stopPropagation()}>
+            <QuranScriptSelector
+              currentScript={scriptStyle}
+              onSelectScript={(s) => {
+                handleSelectScript(s);
+                setShowScripts(false);
+              }}
+              hifzMode={hifzMode}
+              onToggleHifzMode={handleToggleHifzMode}
+              darkMode={darkMode}
+            />
+          </div>
+        )}
+
+        {/* Script Toolbar Compact Pills */}
+        <div className={`${card} border rounded-2xl p-4 mb-5 flex justify-between items-center`} onClick={(e) => e.stopPropagation()}>
+          <QuranScriptSelector
+            currentScript={scriptStyle}
+            onSelectScript={handleSelectScript}
+            hifzMode={hifzMode}
+            onToggleHifzMode={handleToggleHifzMode}
+            darkMode={darkMode}
+            compact={true}
+          />
+        </div>
+
         {/* Hint */}
         <div className={`${darkMode?"bg-amber-900/20 border-amber-800":"bg-amber-50 border-amber-100"} border rounded-xl px-4 py-2.5 mb-5 flex items-center gap-2`}>
           <span>👆</span>
@@ -209,6 +290,16 @@ export default function TajweedQuranReader({ surahId }: { surahId: number }) {
             <strong>Tap any coloured word</strong> to see which Tajweed rule applies and its explanation.
           </p>
         </div>
+
+        {/* ── 15-Line Hifz Mode Indicator Banner ── */}
+        {scriptStyle === "indopak" && hifzMode && (
+          <div className="bg-gradient-to-r from-emerald-600 to-amber-600 text-white rounded-xl p-3 mb-4 text-center flex items-center justify-between px-4 text-xs sm:text-sm font-medium">
+            <span>📖 <strong>15-Line Indo-Pak Hifz Mode Active</strong> (Compact memorization line spacing)</span>
+            <button onClick={() => handleToggleHifzMode(false)} className="underline font-semibold hover:opacity-80">
+              Switch to Normal
+            </button>
+          </div>
+        )}
 
         {/* Colour Guide Panel */}
         {showGuide && (
@@ -237,7 +328,9 @@ export default function TajweedQuranReader({ surahId }: { surahId: number }) {
           {ayahs.map(ayah => {
             const globalNum = getGlobalAyahNum(ayah);
             return (
-              <div key={ayah.verse_number} className={`${card} border rounded-2xl p-5 transition-all`}>
+              <div key={ayah.verse_number} className={`${card} border rounded-2xl p-5 transition-all ${
+                scriptStyle === "indopak" && hifzMode ? "hifz-compact-container rounded-xl" : ""
+              }`}>
                 <div className="flex justify-between items-center mb-4">
                   <div className="w-9 h-9 bg-amber-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
                     {ayah.verse_number}
@@ -253,8 +346,8 @@ export default function TajweedQuranReader({ surahId }: { surahId: number }) {
                 </div>
                 {/* Tajweed Arabic text */}
                 <div
-                  className="text-right leading-loose"
-                  style={{ fontFamily:"'Amiri', var(--font-arabic), 'Noto Naskh Arabic', serif", fontSize:`${fontSize}px`, direction:"rtl", lineHeight:"2.8", color: darkMode?"#f0fdf4":"#111827" }}
+                  className={`text-right leading-loose ${fontClass}`}
+                  style={{ fontSize:`${fontSize}px`, direction:"rtl", lineHeight: scriptLineHeight, color: darkMode?"#f0fdf4":"#111827" }}
                   dangerouslySetInnerHTML={{ __html: ayah.text_uthmani_tajweed }}
                 />
               </div>

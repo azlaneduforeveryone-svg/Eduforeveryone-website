@@ -15,9 +15,26 @@ body {
 }
 /* Add this to your existing globals.css file */
 
+@import url('https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Noto+Naskh+Arabic:wght@400;600;700&family=Scheherazade+New:wght@400;600;700&display=swap');
+
 /* Arabic font class for Quranic text */
 .font-arabic {
-  font-family: var(--font-arabic), 'Amiri', 'Traditional Arabic', 'Arabic Typesetting', serif;
+  font-family: 'Amiri Quran', var(--font-arabic), 'Amiri', 'Scheherazade New', serif;
+}
+
+/* Quran Script Font Styles */
+.font-quran-uthmani {
+  font-family: 'Amiri Quran', var(--font-uthmani), var(--font-arabic), 'Amiri', 'Scheherazade New', serif;
+}
+
+.font-quran-indopak {
+  font-family: 'Scheherazade New', var(--font-indopak), 'Noto Naskh Arabic', 'Amiri Quran', 'PDMS Saleem Quran', serif;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.font-quran-maghribi {
+  font-family: var(--font-maghribi), 'Lateef', 'Scheherazade New', 'Amiri Quran', serif;
 }
 
 /* Quran ayah text */
@@ -26,6 +43,16 @@ body {
   line-height: 2.8;
   direction: rtl;
   text-align: right;
+}
+
+/* 15-Line Hifz Memorization Compact Container */
+.hifz-compact-container {
+  font-size: 1.15rem;
+  line-height: 2.9;
+  letter-spacing: 0.03em;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid #0d9488;
+  background-color: rgba(13, 148, 136, 0.03);
 }
 
 /* RTL translation text (Urdu, Arabic) */
