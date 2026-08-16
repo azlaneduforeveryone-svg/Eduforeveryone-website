@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { academicTask1Pool } from "@/lib/ielts-writing-data";
-import { TASK1_MODEL_ANSWERS, getModelAnswerBySlug } from "@/lib/ielts-writing-model-answers";
+import { academicTask1Pool } from "@/lib/ielts/writingData";
+import { TASK1_MODEL_ANSWERS, getModelAnswerBySlug } from "@/lib/ielts/ielts-writing-model-answers";
 import Task1Figure from "@/components/ielts/Task1Figure";
 import JsonLd, { breadcrumbLd } from "@/components/JsonLd";
 

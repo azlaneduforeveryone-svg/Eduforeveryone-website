@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { task2Pool } from "@/lib/ielts-writing-data";
-import { TASK2_MODEL_ANSWERS, getTask2ModelAnswerBySlug } from "@/lib/ielts-task2-model-answers";
+import { task2Pool } from "@/lib/ielts/writingData";
+import { TASK2_MODEL_ANSWERS, getTask2ModelAnswerBySlug } from "@/lib/ielts/ielts-task2-model-answers";
 import JsonLd, { breadcrumbLd } from "@/components/JsonLd";
 
 export function generateStaticParams() {

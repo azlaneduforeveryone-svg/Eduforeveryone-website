@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
-import { SPEAKING_TOPICS as TOPICS, type SpeakingTopic as Topic } from "@/lib/ielts-speaking-data";
+import { SPEAKING_TOPICS as TOPICS, type SpeakingTopic as Topic } from "@/lib/ielts/ielts-speaking-data";
 import { useAuth } from "@/contexts/AuthContext";
 import { saveIeltsResult } from "@/lib/firebaseDB";
 

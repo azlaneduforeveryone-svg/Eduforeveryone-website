@@ -221,7 +221,7 @@ export interface IeltsResult {
   raw?: number;
   total?: number;
   testId?: string;
-  source: "practice" | "full-mock";
+  source: "practice" | "simulation" | "full-mock";
   mockId?: string;
 }
 

@@ -2,7 +2,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
-import { SpeakingTopic, PART2_SPEAK_SECONDS } from "@/lib/ielts-speaking-data";
+import { SpeakingTopic, PART2_SPEAK_SECONDS } from "@/lib/ielts/ielts-speaking-data";
 
 interface Props {
   test: SpeakingTopic;

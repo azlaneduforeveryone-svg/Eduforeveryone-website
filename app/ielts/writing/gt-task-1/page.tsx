@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { GT_TASK1_MODEL_ANSWERS } from "@/lib/ielts-gt-task1-model-answers";
+import { GT_TASK1_MODEL_ANSWERS } from "@/lib/ielts/ielts-gt-task1-model-answers";
 import JsonLd, { breadcrumbLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {

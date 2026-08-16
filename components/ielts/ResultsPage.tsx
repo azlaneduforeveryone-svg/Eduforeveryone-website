@@ -1,5 +1,5 @@
 "use client";
-import { IELTSFormat, overallBand } from "@/lib/ielts-types";
+import { IELTSFormat, overallBand } from "@/lib/ielts/ielts-types";
 import ShareScore from "@/components/ielts/ShareScore";
 
 interface Props {

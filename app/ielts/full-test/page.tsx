@@ -1,13 +1,12 @@
 "use client";
 import { useState, useMemo, useEffect, useRef } from "react";
-import { IELTSFormat, overallBand } from "@/lib/ielts-types";
+import { IELTSFormat, overallBand } from "@/lib/ielts/ielts-types";
 import { useAuth } from "@/contexts/AuthContext";
 import { saveIeltsResult } from "@/lib/firebaseDB";
-import { getMockListeningTest } from "@/lib/ielts-listening-bank";
-import { getAcademicReadingTest } from "@/lib/ielts-reading-academic-data";
-import { getGTReadingTest } from "@/lib/ielts-reading-gt-data";
-import { getAcademicWritingTest, getGTWritingTest } from "@/lib/ielts-writing-data";
-import { getSpeakingTest } from "@/lib/ielts-speaking-data";
+import { getMockListeningTest } from "@/lib/ielts/listeningData";
+import { getAcademicReadingTest, getGTReadingTest } from "@/lib/ielts/readingData";
+import { getAcademicWritingTest, getGTWritingTest } from "@/lib/ielts/writingData";
+import { getSpeakingTest } from "@/lib/ielts/ielts-speaking-data";
 import ListeningSection from "@/components/ielts/ListeningSection";
 import ReadingSection from "@/components/ielts/ReadingSection";
 import WritingSection from "@/components/ielts/WritingSection";
@@ -68,7 +67,7 @@ export default function FullTestPage() {
   const transferRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   // Initialise test data once format is chosen
-  const listeningTest = useMemo(() => getMockListeningTest() as unknown as import("@/lib/ielts-types").ListeningTest, []);
+  const listeningTest = useMemo(() => getMockListeningTest() as unknown as import("@/lib/ielts/ielts-types").ListeningTest, []);
   const academicReadingTest = useMemo(() => getAcademicReadingTest(), []);
   const gtReadingTest = useMemo(() => getGTReadingTest(), []);
   const academicWritingTest = useMemo(() => getAcademicWritingTest(), []);

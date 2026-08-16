@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { PASSAGES } from "@/lib/ielts-reading-academic-data";
+import { PASSAGES } from "@/lib/ielts/readingData";
 import ReadingTest from "./ReadingTest";
 import JsonLd, { breadcrumbLd } from "@/components/JsonLd";
 

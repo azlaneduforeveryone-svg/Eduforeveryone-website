@@ -1,6 +1,6 @@
 "use client";
 import { useState, useRef, useEffect, useCallback } from "react";
-import { ListeningTest, ListeningSection as LSType, rawToBand } from "@/lib/ielts-types";
+import { ListeningTest, ListeningSection as LSType, rawToBand } from "@/lib/ielts/ielts-types";
 
 interface Props {
   test: ListeningTest;

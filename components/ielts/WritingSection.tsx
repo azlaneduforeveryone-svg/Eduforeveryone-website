@@ -1,8 +1,8 @@
 // components/ielts/WritingSection.tsx
 "use client";
 import { useState, useMemo } from "react";
-import { WritingTest, IELTSFormat } from "@/lib/ielts-types";
-import { academicT1ApiType, gtT1ApiType, task2ApiType } from "@/lib/ielts-writing-data";
+import { WritingTest, IELTSFormat } from "@/lib/ielts/ielts-types";
+import { academicT1ApiType, gtT1ApiType, task2ApiType } from "@/lib/ielts/writingData";
 import Task1Figure from "@/components/ielts/Task1Figure";
 
 interface Props {

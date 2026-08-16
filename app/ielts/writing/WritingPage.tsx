@@ -2,7 +2,7 @@
 "use client";
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import Link from "next/link";
-import { IELTSFormat, Task1Figure as Task1FigureData } from "@/lib/ielts-types";
+import { IELTSFormat, Task1Figure as Task1FigureData } from "@/lib/ielts/ielts-types";
 import { useAuth } from "@/contexts/AuthContext";
 import { saveIeltsResult } from "@/lib/firebaseDB";
 import {
@@ -12,11 +12,11 @@ import {
   academicT1ApiType,
   gtT1ApiType,
   task2ApiType,
-} from "@/lib/ielts-writing-data";
+} from "@/lib/ielts/writingData";
 import Task1Figure from "@/components/ielts/Task1Figure";
-import { getModelAnswerById } from "@/lib/ielts-writing-model-answers";
-import { getGtModelAnswerById } from "@/lib/ielts-gt-task1-model-answers";
-import { getTask2ModelAnswerById } from "@/lib/ielts-task2-model-answers";
+import { getModelAnswerById } from "@/lib/ielts/ielts-writing-model-answers";
+import { getGtModelAnswerById } from "@/lib/ielts/ielts-gt-task1-model-answers";
+import { getTask2ModelAnswerById } from "@/lib/ielts/ielts-task2-model-answers";
 
 interface IELTSResult {
   overall: number;

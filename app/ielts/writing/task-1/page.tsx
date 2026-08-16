@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { TASK1_MODEL_ANSWERS } from "@/lib/ielts-writing-model-answers";
+import { TASK1_MODEL_ANSWERS } from "@/lib/ielts/ielts-writing-model-answers";
 import JsonLd, { breadcrumbLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {

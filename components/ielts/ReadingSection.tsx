@@ -6,7 +6,7 @@ import {
   ReadingQuestion,
   IELTSFormat,
   rawToBand,
-} from "@/lib/ielts-types";
+} from "@/lib/ielts/ielts-types";
 
 interface Props {
   test: AcademicReadingTest | GTReadingTest;

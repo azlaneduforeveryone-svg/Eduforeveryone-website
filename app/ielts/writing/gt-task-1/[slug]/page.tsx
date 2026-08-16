@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { gtTask1Pool } from "@/lib/ielts-writing-data";
-import { GT_TASK1_MODEL_ANSWERS, getGtModelAnswerBySlug } from "@/lib/ielts-gt-task1-model-answers";
+import { gtTask1Pool } from "@/lib/ielts/writingData";
+import { GT_TASK1_MODEL_ANSWERS, getGtModelAnswerBySlug } from "@/lib/ielts/ielts-gt-task1-model-answers";
 import JsonLd, { breadcrumbLd } from "@/components/JsonLd";
 
 export function generateStaticParams() {

@@ -1,6 +1,6 @@
 // components/ielts/Task1Figure.tsx
 "use client";
-import { Task1Figure as Figure } from "@/lib/ielts-types";
+import { Task1Figure as Figure } from "@/lib/ielts/ielts-types";
 
 // Zero-dependency renderer for IELTS Academic Task 1 visuals.
 // Hand-rolled SVG (no chart library) so it works in the existing Next 14 build

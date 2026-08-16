@@ -1,10 +1,10 @@
 import type { MetadataRoute } from "next";
 import { MATH_TOPICS } from "@/lib/mathTopics";
-import { PASSAGES } from "@/lib/ielts-reading-academic-data";
+import { PASSAGES } from "@/lib/ielts/readingData";
 import { SURAH_META } from "@/lib/quranSurahMeta";
-import { TASK1_MODEL_ANSWERS } from "@/lib/ielts-writing-model-answers";
-import { GT_TASK1_MODEL_ANSWERS } from "@/lib/ielts-gt-task1-model-answers";
-import { TASK2_MODEL_ANSWERS } from "@/lib/ielts-task2-model-answers";
+import { TASK1_MODEL_ANSWERS } from "@/lib/ielts/ielts-writing-model-answers";
+import { GT_TASK1_MODEL_ANSWERS } from "@/lib/ielts/ielts-gt-task1-model-answers";
+import { TASK2_MODEL_ANSWERS } from "@/lib/ielts/ielts-task2-model-answers";
 import { getAllCourses, getAllNotes, getAllQuizzes } from "@/lib/data";
 
 type Freq = "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";

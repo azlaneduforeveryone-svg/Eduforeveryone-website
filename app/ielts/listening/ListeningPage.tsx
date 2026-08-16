@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import Link from "next/link";
 import { getAdminIELTSListening } from "@/lib/adminDB";
-import { getPracticeSections } from "@/lib/ielts-listening-bank";
+import { getPracticeSections } from "@/lib/ielts/listeningData";
 import { useAuth } from "@/contexts/AuthContext";
 import { saveIeltsResult } from "@/lib/firebaseDB";
 import ShareScore from "@/components/ielts/ShareScore";
