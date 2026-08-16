@@ -94,6 +94,10 @@ export const DUAS_DATABASE: DuaItem[] = [
     surahInfo: { surah: 2, ayah: 201 },
     repeatTarget: 1,
     source: "Surah Al-Baqarah (2:201)",
+    grading: "quran",
+    sourceRefs: [
+      { collection: "Surah Al-Baqarah", number: "2:201" }
+    ],
     benefit: {
       en: "One of the most comprehensive supplications recited by Prophet Muhammad ﷺ for goodness in this world and protection from hellfire.",
       ur: "نبی کریم ﷺ کی سب سے زیادہ مانگی جانے والی جامع دعا جو دنیا کی تمام برکات اور آخرت کی نجات کو شامل ہے۔"
@@ -132,6 +136,10 @@ export const DUAS_DATABASE: DuaItem[] = [
     surahInfo: { surah: 3, ayah: 8 },
     repeatTarget: 1,
     source: "Surah Ali 'Imran (3:8)",
+    grading: "quran",
+    sourceRefs: [
+      { collection: "Surah Ali 'Imran", number: "3:8" }
+    ],
     benefit: {
       en: "Essential Dua for asking Allah to keep our hearts steadfast upon guidance and bestow His divine mercy.",
       ur: "دلوں کو ہدایت پر ثابت قدم رکھنے اور اللہ تعالی کی خصوصی رحمت حاصل کرنے کی بہترین دعا۔"
@@ -170,6 +178,10 @@ export const DUAS_DATABASE: DuaItem[] = [
     surahInfo: { surah: 25, ayah: 74 },
     repeatTarget: 1,
     source: "Surah Al-Furqan (25:74)",
+    grading: "quran",
+    sourceRefs: [
+      { collection: "Surah Al-Furqan", number: "25:74" }
+    ],
     benefit: {
       en: "Recited for peace in marriage, pious children, and becoming a role model for the righteous.",
       ur: "گھریلو سکون، نیک اولاد کی تربیت اور پرہیزگاروں کا رہنما بننے کی بابرکت دعا۔"
@@ -208,6 +220,10 @@ export const DUAS_DATABASE: DuaItem[] = [
     surahInfo: { surah: 14, ayah: 41 },
     repeatTarget: 1,
     source: "Surah Ibrahim (14:41)",
+    grading: "quran",
+    sourceRefs: [
+      { collection: "Surah Ibrahim", number: "14:41" }
+    ],
     benefit: {
       en: "Supplication of Prophet Ibrahim (AS) asking forgiveness for oneself, parents, and all believers on the Day of Judgment.",
       ur: "حضرت ابراہیم علیہ السلام کی دعا جو اپنے لیے، والدین کے لیے اور قیامت کے دن تمام ایمانداروں کے لیے مغفرت طلب کرتی ہے۔"
@@ -245,6 +261,10 @@ export const DUAS_DATABASE: DuaItem[] = [
     transliteration: "Allahumma anta Rabbi la ilaha illa anta, khalaqtani wa ana 'abduka, wa ana 'ala 'ahdika wa wa'dika mastata'tu, a'udhu bika min sharri ma sana'tu, aboo'u laka bini'matika 'alayya, wa aboo'u bidhanbi faghfir li fa-innahu la yaghfirudh-dhunooba illa anta",
     repeatTarget: 1,
     source: "Sahih al-Bukhari",
+    grading: "sahih",
+    sourceRefs: [
+      { collection: "Sahih al-Bukhari", number: "6306" }
+    ],
     benefit: {
       en: "Prophet Muhammad ﷺ said: Whoever recites this in the morning or evening with firm faith and dies that day will enter Paradise.",
       ur: "نبی اکرم ﷺ نے فرمایا: جو شخص یقین کے ساتھ صبح یا شام یہ دعا پڑھے اور اسی دن فوت ہو جائے تو وہ جنتی ہے۔"
@@ -283,6 +303,10 @@ export const DUAS_DATABASE: DuaItem[] = [
     surahInfo: { surah: 21, ayah: 87 },
     repeatTarget: 1,
     source: "Surah Al-Anbiya (21:87)",
+    grading: "quran",
+    sourceRefs: [
+      { collection: "Surah Al-Anbiya", number: "21:87" }
+    ],
     benefit: {
       en: "Prophet Muhammad ﷺ said: No Muslim supplicates with this Dua during distress except that Allah relieves their hardship.",
       ur: "نبی اکرم ﷺ نے فرمایا: کوئی بھی مسلمان کسی مشکل میں یہ دعا مانگے تو اللہ تعالی اس کی تکلیف دور فرما دیتا ہے۔"
@@ -321,6 +345,10 @@ export const DUAS_DATABASE: DuaItem[] = [
     surahInfo: { surah: 28, ayah: 24 },
     repeatTarget: 1,
     source: "Surah Al-Qasas (28:24)",
+    grading: "quran",
+    sourceRefs: [
+      { collection: "Surah Al-Qasas", number: "28:24" }
+    ],
     benefit: {
       en: "Prophet Musa (AS) recited this when destitute. Allah immediately provided him shelter, employment, and marriage.",
       ur: "حضرت موسیٰ علیہ السلام نے انتہائی لاچاری کی حالت میں یہ دعا مانگی اور اللہ نے فوراً چھت، روزگار اور رشتہ کا انتظام فرمایا۔"
@@ -361,6 +389,10 @@ export const DUAS_DATABASE: DuaItem[] = [
     audioEndTime: 16.5,   // Stop right after "ilma"
     repeatTarget: 3,
     source: "Surah Ta-Ha (20:114)",
+    grading: "quran",
+    sourceRefs: [
+      { collection: "Surah Ta-Ha", number: "20:114" }
+    ],
     benefit: {
       en: "Direct command from Allah to Prophet Muhammad ﷺ to pray for increase in beneficial knowledge.",
       ur: "اللہ تعالیٰ کا اپنے نبی ﷺ کو دیا گیا حکم کہ علم میں اضافے کی دعا مانگیں۔ طلباء کے لیے بہترین دعا۔"
@@ -399,6 +431,10 @@ export const DUAS_DATABASE: DuaItem[] = [
     surahInfo: { surah: 2, ayah: 255 },
     repeatTarget: 1,
     source: "Surah Al-Baqarah (2:255)",
+    grading: "quran",
+    sourceRefs: [
+      { collection: "Surah Al-Baqarah", number: "2:255" }
+    ],
     benefit: {
       en: "The greatest verse in the Quran. Reciting it in the morning protects from Satan until evening, and after obligatory prayer guarantees Paradise.",
       ur: "قرآن پاک کی سب سے عظمیٰ آیت۔ صبح پڑھنے سے شام تک شیطان سے حفاظت اور فرض نماز کے بعد پڑھنے سے جنت کی بشارت ملتی ہے۔"
@@ -436,6 +472,11 @@ export const DUAS_DATABASE: DuaItem[] = [
     transliteration: "Subhan-Allahi wa bihamdihi",
     repeatTarget: 100,
     source: "Sahih Muslim & Sahih al-Bukhari",
+    grading: "sahih",
+    sourceRefs: [
+      { collection: "Sahih al-Bukhari", number: "6405" },
+      { collection: "Sahih Muslim", number: "2691" }
+    ],
     benefit: {
       en: "Reciting 100 times daily wipes away sins even if they were like the foam of the sea.",
       ur: "روزانہ 100 بار پڑھنے سے تمام گناہ معاف کر دیے جاتے ہیں خواہ سمندر کی جھاگ کے برابر ہی کیوں نہ ہوں۔"
@@ -473,6 +514,11 @@ export const DUAS_DATABASE: DuaItem[] = [
     transliteration: "Bismillahi alladhi la yadurru ma'asmihi shay'un fil-ardi wa la fis-sama'i wa Huwas-Sami'ul-'Aleem",
     repeatTarget: 3,
     source: "Sunan Abi Dawud & Jami` at-Tirmidhi",
+    grading: "sahih",
+    sourceRefs: [
+      { collection: "Sunan Abi Dawud", number: "5088" },
+      { collection: "Jami' at-Tirmidhi", number: "3388" }
+    ],
     benefit: {
       en: "Recited 3 times in morning and evening; no sudden affliction or harm will touch the reciter.",
       ur: "صبح و شام 3، 3 بار پڑھنے سے زمین و آسمان کی کوئی چیز نقصان نہیں پہنچا سکتی۔"
@@ -510,6 +556,10 @@ export const DUAS_DATABASE: DuaItem[] = [
     transliteration: "SubhanAllah (33x), Alhamdulillah (33x), Allahu Akbar (34x)",
     repeatTarget: 100,
     source: "Sahih al-Bukhari & Sahih Muslim",
+    grading: "sahih",
+    sourceRefs: [
+      { collection: "Sahih Muslim", number: "595" }
+    ],
     benefit: {
       en: "Gifted by Prophet Muhammad ﷺ to Lady Fatimah (RA) for strength, spiritual peace, and forgiveness.",
       ur: "نبی کریم ﷺ کا سیدہ فاطمہ رضی اللہ عنہا کو تحفہ، جو تھکاوٹ دور کرتا ہے اور گناہوں کی معافی کا ذریعہ ہے۔"
@@ -547,6 +597,10 @@ export const DUAS_DATABASE: DuaItem[] = [
     transliteration: "Bismika Allahumma amootu wa ahya",
     repeatTarget: 1,
     source: "Sahih al-Bukhari",
+    grading: "sahih",
+    sourceRefs: [
+      { collection: "Sahih al-Bukhari", number: "6324" }
+    ],
     benefit: {
       en: "Entrusting your soul and life to Allah before sleeping.",
       ur: "سونے سے پہلے اپنی روح اور زندگی کو اللہ کے سپرد کرنے کی دعا۔"
@@ -584,6 +638,10 @@ export const DUAS_DATABASE: DuaItem[] = [
     transliteration: "Alhamdu lillahil-ladhi ahyana ba'da ma amatana wa ilaihin-nushoor",
     repeatTarget: 1,
     source: "Sahih al-Bukhari",
+    grading: "sahih",
+    sourceRefs: [
+      { collection: "Sahih al-Bukhari", number: "6312" }
+    ],
     benefit: {
       en: "Expressing gratitude to Allah for returning our soul after sleep.",
       ur: "نیند کے بعد نئی زندگی عطا کرنے پر اللہ تعالیٰ کا شکر ادا کرنا۔"

@@ -68,6 +68,16 @@ function validateDuas() {
         }
       }
     }
+
+    // grading check
+    if (!item.grading) {
+      errors.push(`Missing grading in id '${item.id}'.`);
+    }
+
+    // sourceRefs check
+    if (!item.sourceRefs || item.sourceRefs.length === 0) {
+      errors.push(`Missing or empty sourceRefs in id '${item.id}'.`);
+    }
   }
 
   if (errors.length > 0) {
