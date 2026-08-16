@@ -56,6 +56,18 @@ function validateDuas() {
         errors.push(`Bengali codepoint detected outside 'bn' in '${lang}' translation for id '${item.id}'.`);
       }
     }
+
+    // All 8 translationStatus keys present and equal to "unreviewed"
+    if (!item.translationStatus) {
+      errors.push(`Missing translationStatus in id '${item.id}'.`);
+    } else {
+      for (const lang of REQUIRED_LANGUAGES) {
+        const st = item.translationStatus[lang];
+        if (st !== "unreviewed") {
+          errors.push(`Invalid translationStatus '${st}' for language '${lang}' in id '${item.id}'. Must be 'unreviewed'.`);
+        }
+      }
+    }
   }
 
   if (errors.length > 0) {

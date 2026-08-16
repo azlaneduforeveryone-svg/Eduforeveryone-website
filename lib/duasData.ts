@@ -52,6 +52,15 @@ export interface MultiLangTranslation {
   id: string;
 }
 
+export type HadithGrading = "quran" | "sahih" | "hasan";
+
+export type TranslationStatus = "reviewed" | "unreviewed";
+
+export interface SourceRef {
+  collection: string;
+  number: string;
+}
+
 export interface DuaItem {
   id: string;
   category: "rabbana" | "morning" | "evening" | "daily" | "salah" | "forgiveness" | "protection";
@@ -66,6 +75,9 @@ export interface DuaItem {
   benefit: { en: string; ur: string };
   source: string;
   translations: MultiLangTranslation;
+  grading?: HadithGrading;
+  sourceRefs?: SourceRef[];
+  translationStatus?: Partial<Record<LanguageCode, TranslationStatus>>;
 }
 
 export const DUAS_DATABASE: DuaItem[] = [
@@ -95,6 +107,16 @@ export const DUAS_DATABASE: DuaItem[] = [
       fr: "Seigneur! Accorde-nous belle part ici-bas et belle part dans l'au-delà, et protège-nous du châtiment du Feu.",
       bn: "হে আমাদের প্রতিপালক! আমাদের দুনিয়াতেও কল্যাণ দিন এবং আখেরাতেও কল্যাণ দিন এবং আমাদের জাহান্নামের আজাব থেকে রক্ষা করুন।",
       id: "Ya Tuhan kami, berilah kami kebaikan di dunia dan kebaikan di akhirat dan peliharalah kami dari siksa neraka."
+    },
+    translationStatus: {
+      en: "unreviewed",
+      ur: "unreviewed",
+      hi: "unreviewed",
+      tr: "unreviewed",
+      es: "unreviewed",
+      fr: "unreviewed",
+      bn: "unreviewed",
+      id: "unreviewed"
     }
   },
   {
@@ -123,6 +145,16 @@ export const DUAS_DATABASE: DuaItem[] = [
       fr: "Seigneur! Ne fais pas dévier nos cœurs après que Tu nous as guidés et accorde-nous Ta miséricorde. C'est Toi le Grand Dispensateur.",
       bn: "হে আমাদের প্রতিপালক! সরল পথ দেখানোর পর আমাদের অন্তরকে সত্যচ্যুত করবেন না এবং আপনার নিকট থেকে আমাদের ওপর রহমত বর্ষণ করুন।",
       id: "Ya Tuhan kami, janganlah Engkau jadikan hati kami condong kepada kesesatan sesudah Engkau beri petunjuk kepada kami, dan karuniakanlah kepada kami rahmat dari sisi-Mu."
+    },
+    translationStatus: {
+      en: "unreviewed",
+      ur: "unreviewed",
+      hi: "unreviewed",
+      tr: "unreviewed",
+      es: "unreviewed",
+      fr: "unreviewed",
+      bn: "unreviewed",
+      id: "unreviewed"
     }
   },
   {
@@ -151,6 +183,16 @@ export const DUAS_DATABASE: DuaItem[] = [
       fr: "Seigneur! Accorde-nous en nos épouses et nos descendants la joie des yeux, et fais de nous un guide pour les pieux.",
       bn: "হে আমাদের প্রতিপালক! আমাদের স্ত্রী ও সন্তানদের আমাদের জন্য নয়নপ্রীতি কর এবং আমাদের মুত্তাকিদের জন্য অনুসরণযোগ্য কর।",
       id: "Ya Tuhan kami, anugerahkanlah kepada kami istri-istri kami dan keturunan kami sebagai penyenang hati (kami), dan jadikanlah kami imam bagi orang-orang yang bertakwa."
+    },
+    translationStatus: {
+      en: "unreviewed",
+      ur: "unreviewed",
+      hi: "unreviewed",
+      tr: "unreviewed",
+      es: "unreviewed",
+      fr: "unreviewed",
+      bn: "unreviewed",
+      id: "unreviewed"
     }
   },
   {
@@ -179,6 +221,16 @@ export const DUAS_DATABASE: DuaItem[] = [
       fr: "Seigneur! Pardonne-moi, ainsi qu'à mes parents et aux croyants, le jour où le compte sera établi.",
       bn: "হে আমাদের প্রতিপালক! যেদিন হিসাব অনুষ্ঠিত হবে, সেদিন আমাকে, আমার পিতামাতাকে এবং সকল মুমিনকে ক্ষমা করুন।",
       id: "Ya Tuhan kami, ampunilah aku, kedua orang tuaku, dan sekalian orang-orang mukmin pada hari terjadinya hisab."
+    },
+    translationStatus: {
+      en: "unreviewed",
+      ur: "unreviewed",
+      hi: "unreviewed",
+      tr: "unreviewed",
+      es: "unreviewed",
+      fr: "unreviewed",
+      bn: "unreviewed",
+      id: "unreviewed"
     }
   },
   {
@@ -206,6 +258,16 @@ export const DUAS_DATABASE: DuaItem[] = [
       fr: "Ô Allah! Tu es mon Seigneur, il n'y a de divinité que Toi. C'est Toi qui m'as créé et je suis Ton serviteur. Je suis fidèle à Ton engagement et à Ta promesse autant que je le puis. Je cherche protection auprès de Toi contre le mal de ce que j'ai fait. Je reconnais Tes bienfaits sur moi et je reconnais mon péché. Pardonne-moi donc, car nul autre que Toi ne pardonne les péchés.",
       bn: "হে আল্লাহ! আপনি আমার প্রতিপালক, আপনি ছাড়া অন্য কোনো উপাস্য নেই। আপনি আমাকে সৃষ্টি করেছেন এবং আমি আপনার বান্দা। আমি সাধ্যমতো আপনার অঙ্গীকার ও প্রতিশ্রুতির ওপর কায়েম আছি। আমি আমার কৃতকর্মের অনিষ্ট থেকে আপনার কাছে আশ্রয় চাই। আমার ওপর আপনার নিয়ামত স্বীকার করছি এবং আমার গুনাহের স্বীকৃতি দিচ্ছি। অতএব আমাকে ক্ষমা করুন, কারণ আপনি ছাড়া গুনাহ ক্ষমা করার কেউ নেই।",
       id: "Ya Allah, Engkau adalah Tuhanku, tidak ada Tuhan selain Engkau. Engkau yang menciptakan aku dan aku adalah hamba-Mu. Aku memegang teguh janji-Mu sesuai kemampuanku. Aku berlindung kepada-Mu dari kejahatan perbuatanku. Aku mengakui nikmat-Mu kepadaku dan aku mengakui dosaku, maka ampunilah aku. Sesungguhnya tidak ada yang mengampuni dosa selain Engkau."
+    },
+    translationStatus: {
+      en: "unreviewed",
+      ur: "unreviewed",
+      hi: "unreviewed",
+      tr: "unreviewed",
+      es: "unreviewed",
+      fr: "unreviewed",
+      bn: "unreviewed",
+      id: "unreviewed"
     }
   },
   {
@@ -234,6 +296,16 @@ export const DUAS_DATABASE: DuaItem[] = [
       fr: "Il n'y a pas de divinité à part Toi! Pureté à Toi! J'ai été vraiment du nombre des injustes.",
       bn: "আপনি ব্যতীত কোন ইলাহ নেই; আপনি পবিত্র! নিশ্চয়ই আমি অপরাধীদের অন্তর্ভুক্ত ছিলাম।",
       id: "Tidak ada Tuhan selain Engkau. Maha Suci Engkau, sesungguhnya aku adalah termasuk orang-orang yang zalim."
+    },
+    translationStatus: {
+      en: "unreviewed",
+      ur: "unreviewed",
+      hi: "unreviewed",
+      tr: "unreviewed",
+      es: "unreviewed",
+      fr: "unreviewed",
+      bn: "unreviewed",
+      id: "unreviewed"
     }
   },
   {
@@ -262,6 +334,16 @@ export const DUAS_DATABASE: DuaItem[] = [
       fr: "Seigneur, j'ai grand besoin de n'importe quel bien que Tu feras descendre vers moi.",
       bn: "হে আমার প্রতিপালক! আপনি আমার প্রতি যে কল্যাণই অবতীর্ণ করবেন, আমি তার মুখাপেক্ষী।",
       id: "Ya Tuhanku sesungguhnya aku sangat memerlukan sesuatu kebaikan yang Engkau turunkan kepadaku."
+    },
+    translationStatus: {
+      en: "unreviewed",
+      ur: "unreviewed",
+      hi: "unreviewed",
+      tr: "unreviewed",
+      es: "unreviewed",
+      fr: "unreviewed",
+      bn: "unreviewed",
+      id: "unreviewed"
     }
   },
   {
@@ -292,6 +374,16 @@ export const DUAS_DATABASE: DuaItem[] = [
       fr: "Seigneur! Accrois mes connaissances.",
       bn: "হে আমার প্রতিপালক! আমার জ্ঞান বৃদ্ধি করে দিন।",
       id: "Ya Tuhanku, tambahkanlah kepadaku ilmu pengetahuan."
+    },
+    translationStatus: {
+      en: "unreviewed",
+      ur: "unreviewed",
+      hi: "unreviewed",
+      tr: "unreviewed",
+      es: "unreviewed",
+      fr: "unreviewed",
+      bn: "unreviewed",
+      id: "unreviewed"
     }
   },
   {
@@ -320,6 +412,16 @@ export const DUAS_DATABASE: DuaItem[] = [
       fr: "Allah! Point de divinité à part Lui, le Vivant, Celui qui subsiste par Lui-même...",
       bn: "আল্লাহ্‌! তিনি ছাড়া অন্য কোন ইলাহ নেই, তিনি চিরঞ্জীব, সবকিছুর ধারক...",
       id: "Allah, tidak ada Tuhan (yang berhak disembah) melainkan Dia Yang Hidup kekal lagi terus menerus mengurus (makhluk-Nya)..."
+    },
+    translationStatus: {
+      en: "unreviewed",
+      ur: "unreviewed",
+      hi: "unreviewed",
+      tr: "unreviewed",
+      es: "unreviewed",
+      fr: "unreviewed",
+      bn: "unreviewed",
+      id: "unreviewed"
     }
   },
   {
@@ -347,6 +449,16 @@ export const DUAS_DATABASE: DuaItem[] = [
       fr: "Gloire et louange à Allah.",
       bn: "আল্লাহর পবিত্রতা ঘোষণা করছি এবং তাঁর প্রশংসাগান করছি।",
       id: "Maha Suci Allah dan segala puji bagi-Nya."
+    },
+    translationStatus: {
+      en: "unreviewed",
+      ur: "unreviewed",
+      hi: "unreviewed",
+      tr: "unreviewed",
+      es: "unreviewed",
+      fr: "unreviewed",
+      bn: "unreviewed",
+      id: "unreviewed"
     }
   },
   {
@@ -374,6 +486,16 @@ export const DUAS_DATABASE: DuaItem[] = [
       fr: "Au nom d'Allah, avec le nom duquel rien ne peut nuire sur la terre ni dans le ciel, et Il est l'Audient, l'Omniscient.",
       bn: "আল্লাহর নামে, যাঁর নামের বরকতে আসমান ও যমীনের কোনো কিছুই ক্ষতি করতে পারে না, আর তিনি সর্বশ্রোতা, সর্বজ্ঞ।",
       id: "Dengan nama Allah yang bila disebut, segala sesuatu di bumi dan di langit tidak akan berbahaya, Dialah Yang Maha Mendengar lagi Maha Mengetahui."
+    },
+    translationStatus: {
+      en: "unreviewed",
+      ur: "unreviewed",
+      hi: "unreviewed",
+      tr: "unreviewed",
+      es: "unreviewed",
+      fr: "unreviewed",
+      bn: "unreviewed",
+      id: "unreviewed"
     }
   },
   {
@@ -401,6 +523,16 @@ export const DUAS_DATABASE: DuaItem[] = [
       fr: "Gloire à Allah (33x), Louange à Allah (33x), Allah est le Plus Grand (34x). Total: 100.",
       bn: "আল্লাহ পবিত্র (৩৩ বার), সকল প্রশংসা আল্লাহর (৩৩ বার), আল্লাহ সর্বশ্রেষ্ঠ (৩৪ বার)। মোট ১০০ বার।",
       id: "Maha Suci Allah (33x), Segala puji bagi Allah (33x), Allah Maha Besar (34x). Total: 100."
+    },
+    translationStatus: {
+      en: "unreviewed",
+      ur: "unreviewed",
+      hi: "unreviewed",
+      tr: "unreviewed",
+      es: "unreviewed",
+      fr: "unreviewed",
+      bn: "unreviewed",
+      id: "unreviewed"
     }
   },
   {
@@ -428,6 +560,16 @@ export const DUAS_DATABASE: DuaItem[] = [
       fr: "En Ton nom, ô Allah, je meurs et je vis.",
       bn: "হে আল্লাহ! আপনার নাম নিয়ে আমি মৃত্যুবরণ করছি (ঘুমাচ্ছি) এবং জীবিত হচ্ছি (জাগ্রত হচ্ছি)।",
       id: "Dengan nama-Mu ya Allah, aku mati dan aku hidup."
+    },
+    translationStatus: {
+      en: "unreviewed",
+      ur: "unreviewed",
+      hi: "unreviewed",
+      tr: "unreviewed",
+      es: "unreviewed",
+      fr: "unreviewed",
+      bn: "unreviewed",
+      id: "unreviewed"
     }
   },
   {
@@ -455,6 +597,16 @@ export const DUAS_DATABASE: DuaItem[] = [
       fr: "Louange à Allah qui nous a rendus à la vie après nous avoir fait mourir, et c'est vers Lui qu'est la résurrection.",
       bn: "সমস্ত প্রশংসা আল্লাহর জন্য, যিনি আমাদের মৃত্যুর (ঘুমের) পর জীবিত করলেন এবং তাঁর দিকেই আমাদের ফিরে যেতে হবে।",
       id: "Segala puji bagi Allah yang telah menghidupkan kami sesudah mematikan kami dan hanya kepada-Nya kami dikembalikan."
+    },
+    translationStatus: {
+      en: "unreviewed",
+      ur: "unreviewed",
+      hi: "unreviewed",
+      tr: "unreviewed",
+      es: "unreviewed",
+      fr: "unreviewed",
+      bn: "unreviewed",
+      id: "unreviewed"
     }
   }
 ];
