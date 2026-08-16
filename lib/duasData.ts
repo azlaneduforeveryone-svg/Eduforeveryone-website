@@ -32,7 +32,7 @@ export const DUA_CATEGORIES: CategoryInfo[] = [
   { id: "all", titleEn: "All Duas", titleUr: "تمام ادعیہ", titleAr: "جميع الأدعية", icon: "✨" },
   { id: "rabbana", titleEn: "40 Rabbana Duas", titleUr: "40 ربنا دعائیں", titleAr: "٤٠ دعاء ربنا", icon: "🤲" },
   { id: "morning", titleEn: "Morning Azkar", titleUr: "صبح کے اذكار", titleAr: "أذكار الصباح", icon: "🌅" },
-  { id: "evening", titleEn: "Evening Azkar", titleUr: "شام کے اذكار", titleAr: "أذكار المساء", icon: "<ctrl42>" },
+  { id: "evening", titleEn: "Evening Azkar", titleUr: "شام کے اذكار", titleAr: "أذكار المساء", icon: "🌙" },
   { id: "daily", titleEn: "Daily Life Duas", titleUr: "روزمرہ کی دعائیں", titleAr: "أدعية الحياة اليومية", icon: "☀️" },
   { id: "salah", titleEn: "After Salah Azkar", titleUr: "نماز کے بعد اذكار", titleAr: "أذكار بعد الصلاة", icon: "🕌" },
   { id: "forgiveness", titleEn: "Seeking Forgiveness", titleUr: "استغفار و توبہ", titleAr: "الاستغفار والتوبة", icon: "🌿" },
@@ -178,7 +178,7 @@ export const DUAS_DATABASE: DuaItem[] = [
       es: "¡Señor nuestro! Perdóname a mí, a mis padres y a los creyentes el Día en que se establezca la rendición de cuentas.",
       fr: "Seigneur! Pardonne-moi, ainsi qu'à mes parents et aux croyants, le jour où le compte sera établi.",
       bn: "হে আমাদের প্রতিপালক! যেদিন হিসাব অনুষ্ঠিত হবে, সেদিন আমাকে, আমার পিতামাতাকে এবং সকল মুমিনকে ক্ষমা করুন।",
-      id: "Ya Tuhan kami, beri ampunsalah aku dan kedua ibu bapakku dan sekalian orang-orang mu'min pada hari terjadinya hisab."
+      id: "Ya Tuhan kami, ampunilah aku, kedua orang tuaku, dan sekalian orang-orang mukmin pada hari terjadinya hisab."
     }
   },
   {
@@ -451,7 +451,7 @@ export const DUAS_DATABASE: DuaItem[] = [
       ur: "تمام تعریفیں اللہ کے لیے ہیں جس نے ہمیں مارنے کے بعد زندہ کیا اور اسی کی طرف لوٹ کر جانا ہے۔",
       hi: "तमाम तारीफें अल्लाह के लिए हैं जिसने हमें सुलाने के बाद जगाया और उसी की तरफ लौट कर जाना है।",
       tr: "Bizi öldürdükten sonra dirilten Allah'a hamdolsun. Dönüş ancak O'nadır.",
-      es: "Alabado sea Allah Que nos dio la vida بعد de habernos hecho morir, y a Él es la resurrección.",
+      es: "Alabado sea Allah, Quien nos dio la vida después de habernos hecho morir, y a Él es la resurrección.",
       fr: "Louange à Allah qui nous a rendus à la vie après nous avoir fait mourir, et c'est vers Lui qu'est la résurrection.",
       bn: "সমস্ত প্রশংসা আল্লাহর জন্য, যিনি আমাদের মৃত্যুর (ঘুমের) পর জীবিত করলেন এবং তাঁর দিকেই আমাদের ফিরে যেতে হবে।",
       id: "Segala puji bagi Allah yang telah menghidupkan kami sesudah mematikan kami dan hanya kepada-Nya kami dikembalikan."

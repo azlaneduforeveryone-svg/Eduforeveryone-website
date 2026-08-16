@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "validate": "tsx scripts/validate-gmat.ts",
+    "validate:duas": "tsx scripts/validate-duas.ts",
     "check-links": "blc https://eduforeveryone.com -ro --exclude britishcouncil.org --exclude idp.com"
   },
   "dependencies": {
