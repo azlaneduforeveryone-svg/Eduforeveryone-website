@@ -80,10 +80,10 @@ export default function DuasPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            name: "Duas & Azkar with Human Recitations",
+            name: "Duas & Azkar with Audio Recitations",
             url: "https://eduforeveryone.com/duas",
             description:
-              "Read, listen to human voice recitations, and memorize 40 Rabbana Duas, Morning & Evening Azkar with translations in Urdu, English, Hindi, Turkish, Spanish, French.",
+              "Read, listen to audio recitations, and memorize Rabbana Duas, Morning & Evening Azkar with translations in Urdu, English, Hindi, Turkish, Spanish, French.",
             isPartOf: {
               "@type": "WebSite",
               name: "EduForEveryone",
@@ -118,7 +118,7 @@ export default function DuasPage() {
             وَمَن يُعَظِّمْ شَعَائِرَ اللَّهِ فَإِنَّهَا مِن تَقْوَى الْقُلُوبِ
           </p>
           <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
-            Listen to <strong>100% real human voice recitations</strong> (Sheikh Mishary Alafasy, Sudais & Ghamdi), learn 40 Rabbana Duas & daily Azkar with multi-language translations, digital Tasbeeh counter, and memorization helper.
+            Listen to <strong>Quranic audio recitations</strong> (Sheikh Mishary Alafasy, Sudais & Ghamdi), learn Rabbana Duas & daily Azkar with multi-language translations, digital Tasbeeh counter, and memorization helper.
           </p>
         </div>
 

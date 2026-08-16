@@ -157,30 +157,45 @@ export default function DuaShareModal({ dua, currentLang, isOpen, onClose }: Dua
     drawCornerSymbol(W - (pad + 12), H - (pad + 12));
 
     // 3. Measure & Wrap Text Blocks
+    // 3. Measure & Wrap Text Blocks
     // Source
     const sourceFontSize = 26;
 
-    // Title (wrapped to max width W - 240 to stay within frame margins)
+    // Set horizontal letter and word spacing on canvas for balanced text layout
+    if ("letterSpacing" in ctx) {
+      (ctx as unknown as { letterSpacing: string }).letterSpacing = "1.2px";
+    }
+    if ("wordSpacing" in ctx) {
+      (ctx as unknown as { wordSpacing: string }).wordSpacing = "2px";
+    }
+
+    // Title (wrapped to max width W - 260 to ensure comfortable horizontal side margins)
     const titleFontSize = 28;
     ctx.font = `bold ${titleFontSize}px ${selectedTransFont}`;
-    const titleLines = getWrappedLines(ctx, activeTitle, W - 240);
+    const titleLines = getWrappedLines(ctx, activeTitle, W - 260);
     const titleLineHeight = 42;
 
-    // Arabic text (wrapped)
+    // Arabic text (wrapped with balanced horizontal padding)
+    if ("wordSpacing" in ctx) {
+      (ctx as unknown as { wordSpacing: string }).wordSpacing = "4px";
+    }
     ctx.font = `normal ${arabicFontSize}px ${selectedArabicFont}`;
-    const arabicLines = getWrappedLines(ctx, dua.arabic, W - 200);
+    const arabicLines = getWrappedLines(ctx, dua.arabic, W - 240);
     const arabicLineHeight = arabicFontSize * 1.85; // Generous line height for Arabic diacritics
 
     // Transliteration text
+    if ("wordSpacing" in ctx) {
+      (ctx as unknown as { wordSpacing: string }).wordSpacing = "2px";
+    }
     const transFontSize = Math.max(18, translationFontSize - 4);
     ctx.font = `italic ${transFontSize}px ${selectedTransFont}`;
-    const transLines = getWrappedLines(ctx, `"${dua.transliteration}"`, W - 220);
+    const transLines = getWrappedLines(ctx, `"${dua.transliteration}"`, W - 240);
     const transLineHeight = transFontSize * 1.45;
     const effectiveTransLines = transLines.slice(0, 3);
 
     // Translation text
     ctx.font = `medium ${translationFontSize}px ${selectedTransFont}`;
-    const transTextLines = getWrappedLines(ctx, activeTranslation, W - 220);
+    const transTextLines = getWrappedLines(ctx, activeTranslation, W - 240);
     const transTextLineHeight = translationFontSize * 1.5;
 
     // Defined Gaps (Vertical Spaces between sections)
@@ -215,11 +230,11 @@ export default function DuaShareModal({ dua, currentLang, isOpen, onClose }: Dua
 
     let currentY = startY + sourceFontSize;
 
-    // 4. Draw Header Source
+    // 4. Draw Header Source (with generous icon to text horizontal spacing)
     ctx.fillStyle = selectedFrame.borderGold;
     ctx.font = `bold ${sourceFontSize}px ${selectedTransFont}`;
     ctx.textAlign = "center";
-    ctx.fillText("🤲 " + dua.source, W / 2, currentY);
+    ctx.fillText("🤲   " + dua.source, W / 2, currentY);
 
     // 5. Draw Header Title (Wrapped gracefully)
     currentY += gapSourceToTitle;

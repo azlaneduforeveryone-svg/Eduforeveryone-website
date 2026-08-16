@@ -38,10 +38,11 @@ export default function DuaCard({
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Audio URL generation for Quranic human reciter
+  // Audio is managed specifically for Quranic duas (or entries with custom audio)
+  const hasAudio = Boolean(dua.surahInfo || dua.customAudioUrl);
   const currentAudioUrl = dua.surahInfo
     ? getQuranAudioUrl(dua.surahInfo.surah, dua.surahInfo.ayah, globalReciterId)
-    : dua.customAudioUrl || `https://everyayah.com/data/Alafasy_128kbps/002255.mp3`;
+    : dua.customAudioUrl || "";
 
   useEffect(() => {
     if (audioRef.current) {
@@ -58,7 +59,7 @@ export default function DuaCard({
   }, [dua.id, globalReciterId]);
 
   const togglePlayAudio = () => {
-    if (!audioRef.current) return;
+    if (!audioRef.current || !hasAudio) return;
     if (isPlaying) {
       audioRef.current.pause();
       setIsPlaying(false);
@@ -130,12 +131,23 @@ export default function DuaCard({
       {/* Card Header: Category & Actions */}
       <div>
         <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-wrap">
             <span className="text-xs font-bold px-3 py-1 rounded-full bg-teal-50 text-teal-700 border border-teal-200">
               {dua.source}
             </span>
+            {dua.grading && dua.grading !== "quran" && (
+              <span
+                className={`text-xs font-bold px-2.5 py-1 rounded-full border ${
+                  dua.grading === "sahih"
+                    ? "bg-emerald-50 text-emerald-700 border-emerald-200"
+                    : "bg-amber-50 text-amber-700 border-amber-200"
+                }`}
+              >
+                {dua.grading === "sahih" ? "Sahih" : "Hasan"}
+              </span>
+            )}
             {dua.repeatTarget > 1 && (
-              <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
+              <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
                 Repeat {dua.repeatTarget}x
               </span>
             )}
@@ -263,14 +275,21 @@ export default function DuaCard({
               </button>
             </div>
           ) : (
-            <p
-              className={`text-base text-gray-800 leading-relaxed font-medium ${
-                isRtlLang ? "text-right font-arabic" : "text-left"
-              }`}
-              dir={isRtlLang ? "rtl" : "ltr"}
-            >
-              {activeTranslation}
-            </p>
+            <div>
+              <p
+                className={`text-base text-gray-800 leading-relaxed font-medium ${
+                  isRtlLang ? "text-right font-arabic" : "text-left"
+                }`}
+                dir={isRtlLang ? "rtl" : "ltr"}
+              >
+                {activeTranslation}
+              </p>
+              {dua.translationStatus?.[currentLang] !== "reviewed" && (
+                <p className="text-[11px] text-gray-400 italic mt-1.5 flex items-center gap-1">
+                  <span>ℹ️</span> This translation has not yet been reviewed by a native speaker.
+                </p>
+              )}
+            </div>
           )}
         </div>
 
@@ -286,84 +305,86 @@ export default function DuaCard({
         )}
       </div>
 
-      {/* Card Footer: Human Audio Controls & Tasbeeh Counter */}
+      {/* Card Footer: Audio Controls & Tasbeeh Counter */}
       <div className="pt-4 border-t border-gray-100 space-y-4">
 
-        {/* Audio Player Controls */}
-        <div className="bg-gray-50 rounded-2xl p-3 border border-gray-100 flex flex-wrap items-center justify-between gap-3">
+        {/* Audio Player Controls (Only rendered for Quranic Duas or entries with audio) */}
+        {hasAudio && (
+          <div className="bg-gray-50 rounded-2xl p-3 border border-gray-100 flex flex-wrap items-center justify-between gap-3">
 
-          {/* Left: Play/Pause Button + Human Reciter Indicator */}
-          <div className="flex items-center gap-3">
-            <button
-              onClick={togglePlayAudio}
-              className={`w-11 h-11 rounded-xl flex items-center justify-center font-bold text-white transition-all shadow-sm ${
-                isPlaying
-                  ? "bg-amber-500 hover:bg-amber-600 animate-pulse"
-                  : "bg-teal-600 hover:bg-teal-700"
-              }`}
-              title={isPlaying ? "Pause Recitation" : "Play Human Voice Recitation"}
-            >
-              {isPlaying ? (
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-                </svg>
-              ) : (
-                <svg className="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              )}
-            </button>
-
-            <div>
-              <p className="text-xs font-bold text-gray-900 flex items-center gap-1">
-                🎙️ Real Human Voice
-                {isPlaying && <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping inline-block" />}
-              </p>
-              <select
-                value={globalReciterId}
-                onChange={e => onReciterChange(e.target.value)}
-                className="text-xs bg-white border border-gray-200 rounded-lg px-2 py-1 text-gray-700 font-medium focus:ring-1 focus:ring-teal-500 outline-none"
+            {/* Left: Play/Pause Button + Reciter Indicator */}
+            <div className="flex items-center gap-3">
+              <button
+                onClick={togglePlayAudio}
+                className={`w-11 h-11 rounded-xl flex items-center justify-center font-bold text-white transition-all shadow-sm ${
+                  isPlaying
+                    ? "bg-amber-500 hover:bg-amber-600 animate-pulse"
+                    : "bg-teal-600 hover:bg-teal-700"
+                }`}
+                title={isPlaying ? "Pause Recitation" : "Play Audio Recitation"}
               >
-                {HUMAN_RECITERS.map(r => (
-                  <option key={r.id} value={r.id}>
-                    {r.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
+                {isPlaying ? (
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                  </svg>
+                ) : (
+                  <svg className="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                )}
+              </button>
 
-          {/* Right: Audio Speed & Loop Options */}
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => setIsLooping(v => !v)}
-              className={`p-1.5 rounded-lg text-xs font-bold border transition-all ${
-                isLooping
-                  ? "bg-teal-600 text-white border-teal-600"
-                  : "bg-white text-gray-600 border-gray-200 hover:bg-gray-100"
-              }`}
-              title="Repeat Audio Loop for Memorization"
-            >
-              🔁 Loop
-            </button>
-
-            <div className="flex bg-white rounded-lg border border-gray-200 p-0.5">
-              {[0.75, 1.0, 1.25, 1.5].map(speed => (
-                <button
-                  key={speed}
-                  onClick={() => setPlaybackSpeed(speed)}
-                  className={`px-2 py-0.5 text-[11px] font-bold rounded ${
-                    playbackSpeed === speed
-                      ? "bg-teal-600 text-white"
-                      : "text-gray-500 hover:bg-gray-100"
-                  }`}
+              <div>
+                <p className="text-xs font-bold text-gray-900 flex items-center gap-1">
+                  🎧 Listen Audio
+                  {isPlaying && <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping inline-block" />}
+                </p>
+                <select
+                  value={globalReciterId}
+                  onChange={e => onReciterChange(e.target.value)}
+                  className="text-xs bg-white border border-gray-200 rounded-lg px-2 py-1 text-gray-700 font-medium focus:ring-1 focus:ring-teal-500 outline-none"
                 >
-                  {speed}x
-                </button>
-              ))}
+                  {HUMAN_RECITERS.map(r => (
+                    <option key={r.id} value={r.id}>
+                      {r.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            {/* Right: Audio Speed & Loop Options */}
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => setIsLooping(v => !v)}
+                className={`p-1.5 rounded-lg text-xs font-bold border transition-all ${
+                  isLooping
+                    ? "bg-teal-600 text-white border-teal-600"
+                    : "bg-white text-gray-600 border-gray-200 hover:bg-gray-100"
+                }`}
+                title="Repeat Audio Loop for Memorization"
+              >
+                🔁 Loop
+              </button>
+
+              <div className="flex bg-white rounded-lg border border-gray-200 p-0.5">
+                {[0.75, 1.0, 1.25, 1.5].map(speed => (
+                  <button
+                    key={speed}
+                    onClick={() => setPlaybackSpeed(speed)}
+                    className={`px-2 py-0.5 text-[11px] font-bold rounded ${
+                      playbackSpeed === speed
+                        ? "bg-teal-600 text-white"
+                        : "text-gray-500 hover:bg-gray-100"
+                    }`}
+                  >
+                    {speed}x
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        )}
 
         {/* Digital Counter / Tasbeeh Widget */}
         <div className="flex items-center justify-between bg-teal-50/70 border border-teal-100 rounded-2xl p-3">

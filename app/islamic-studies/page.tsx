@@ -22,10 +22,10 @@ const resources = [
     href: "/duas",
     image: null, emoji: "🤲",
     title: "Duas & Azkar", titleAr: "الأدعية والأذكار",
-    description: "40 Rabbana Duas, Morning & Evening Azkar with real human voice recitations, 8 language translations, digital Tasbeeh counter, and memorization helper.",
-    tags: ["40 Rabbana Duas","Human Voice Audio","8 Languages","Tasbeeh Counter"],
+    description: "Rabbana Duas, Morning & Evening Azkar with audio recitations, 8 language translations, digital Tasbeeh counter, and memorization helper.",
+    tags: ["Rabbana Duas","Audio Recitation","8 Languages","Tasbeeh Counter"],
     badge: "New", badgeColor: "bg-amber-100 text-amber-700", color: "hover:border-amber-300",
-    stats: [{label:"Languages",value:"8"},{label:"Reciters",value:"3+"},{label:"Human Voice",value:"100%"}],
+    stats: [{label:"Languages",value:"8"},{label:"Reciters",value:"3+"},{label:"Audio",value:"Quranic"}],
   },
   {
     href: "/quiz/islamic-quiz",
@@ -68,33 +68,33 @@ export default function IslamicStudiesPage() {
         </div>
 
         {/* Main Resources */}
-        <div className="grid sm:grid-cols-2 gap-6 mb-14">
+        <div className="grid sm:grid-cols-2 gap-6 lg:gap-8 mb-14">
           {resources.map(r => (
             <Link key={r.href} href={r.href}
-              className={`group bg-white border border-gray-200 ${r.color} rounded-2xl p-6 hover:shadow-lg transition-all`}>
+              className={`group bg-white border border-gray-200 ${r.color} rounded-2xl p-6 sm:p-7 hover:shadow-lg transition-all`}>
               <div className="flex items-start justify-between mb-4">
                 {r.image
                   ? <img src={r.image} alt={r.title} className="w-16 h-16 object-contain rounded-xl" />
                   : <span className="text-5xl">{r.emoji}</span>}
-                <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${r.badgeColor}`}>{r.badge}</span>
+                <span className={`text-xs font-bold px-3 py-1 rounded-full ${r.badgeColor}`}>{r.badge}</span>
               </div>
-              <h2 className="text-xl font-bold text-gray-900 group-hover:text-teal-600 transition-colors mb-0.5">{r.title}</h2>
-              <p className="text-gray-400 text-lg mb-3" style={{ fontFamily:"'Amiri',serif" }}>{r.titleAr}</p>
-              <p className="text-gray-500 text-sm leading-relaxed mb-4">{r.description}</p>
-              <div className="grid grid-cols-3 gap-2 mb-4">
+              <h2 className="text-xl font-bold text-gray-900 group-hover:text-teal-600 transition-colors mb-0.5 tracking-wide">{r.title}</h2>
+              <p className="text-gray-400 text-lg mb-3 tracking-wide" style={{ fontFamily:"'Amiri',serif" }}>{r.titleAr}</p>
+              <p className="text-gray-500 text-sm leading-relaxed mb-5">{r.description}</p>
+              <div className="grid grid-cols-3 gap-3 mb-5">
                 {r.stats.map(s => (
-                  <div key={s.label} className="bg-gray-50 rounded-xl p-2.5 text-center border border-gray-100">
+                  <div key={s.label} className="bg-gray-50 rounded-xl p-3 text-center border border-gray-100">
                     <p className="text-lg font-bold text-teal-600">{s.value}</p>
                     <p className="text-xs text-gray-500">{s.label}</p>
                   </div>
                 ))}
               </div>
-              <div className="flex flex-wrap gap-1.5">
+              <div className="flex flex-wrap gap-2">
                 {r.tags.map(tag => (
-                  <span key={tag} className="text-xs px-2 py-0.5 bg-gray-100 text-gray-500 rounded-full">{tag}</span>
+                  <span key={tag} className="text-xs px-2.5 py-1 bg-gray-100 text-gray-600 font-medium rounded-full">{tag}</span>
                 ))}
               </div>
-              <p className="text-teal-600 text-sm font-semibold mt-4 group-hover:translate-x-1 transition-transform inline-block">Open →</p>
+              <p className="text-teal-600 text-sm font-semibold mt-5 group-hover:translate-x-1 transition-transform inline-block">Open →</p>
             </Link>
           ))}
         </div>
