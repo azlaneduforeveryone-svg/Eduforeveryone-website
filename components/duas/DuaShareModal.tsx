@@ -104,6 +104,14 @@ export default function DuaShareModal({ dua, currentLang, isOpen, onClose }: Dua
   useEffect(() => {
     if (!isOpen || !canvasRef.current) return;
     renderCanvasCard();
+
+    if (typeof document !== "undefined" && document.fonts) {
+      document.fonts.ready.then(() => {
+        if (canvasRef.current) {
+          renderCanvasCard();
+        }
+      });
+    }
   }, [isOpen, selectedFrame, arabicFontSize, translationFontSize, selectedArabicFont, selectedTransFont, dua, currentLang]);
 
   const renderCanvasCard = () => {
@@ -148,46 +156,82 @@ export default function DuaShareModal({ dua, currentLang, isOpen, onClose }: Dua
     drawCornerSymbol(pad + 12, H - (pad + 12));
     drawCornerSymbol(W - (pad + 12), H - (pad + 12));
 
-    // 3. Measure & Wrap Text Lines
-    ctx.font = `normal ${arabicFontSize}px ${selectedArabicFont}`;
-    const arabicLines = getWrappedLines(ctx, dua.arabic, W - 180);
-    const arabicLineHeight = arabicFontSize * 1.55;
-    const arabicTotalHeight = arabicLines.length * arabicLineHeight;
+    // 3. Measure & Wrap Text Blocks
+    // Source
+    const sourceFontSize = 26;
 
+    // Title (wrapped to max width W - 240 to stay within frame margins)
+    const titleFontSize = 28;
+    ctx.font = `bold ${titleFontSize}px ${selectedTransFont}`;
+    const titleLines = getWrappedLines(ctx, activeTitle, W - 240);
+    const titleLineHeight = 42;
+
+    // Arabic text (wrapped)
+    ctx.font = `normal ${arabicFontSize}px ${selectedArabicFont}`;
+    const arabicLines = getWrappedLines(ctx, dua.arabic, W - 200);
+    const arabicLineHeight = arabicFontSize * 1.85; // Generous line height for Arabic diacritics
+
+    // Transliteration text
     const transFontSize = Math.max(18, translationFontSize - 4);
     ctx.font = `italic ${transFontSize}px ${selectedTransFont}`;
-    const transLines = getWrappedLines(ctx, `"${dua.transliteration}"`, W - 200);
-    const transLineHeight = transFontSize * 1.4;
-    const transTotalHeight = transLines.length * transLineHeight;
+    const transLines = getWrappedLines(ctx, `"${dua.transliteration}"`, W - 220);
+    const transLineHeight = transFontSize * 1.45;
+    const effectiveTransLines = transLines.slice(0, 3);
 
+    // Translation text
     ctx.font = `medium ${translationFontSize}px ${selectedTransFont}`;
-    const transTextLines = getWrappedLines(ctx, activeTranslation, W - 200);
+    const transTextLines = getWrappedLines(ctx, activeTranslation, W - 220);
     const transTextLineHeight = translationFontSize * 1.5;
-    const translationTotalHeight = transTextLines.length * transTextLineHeight;
 
-    // Header Height = ~100px
-    const headerHeight = 100;
-    const gaps = 75; // gaps between sections
-    const totalContentHeight = headerHeight + arabicTotalHeight + transTotalHeight + translationTotalHeight + gaps;
+    // Defined Gaps (Vertical Spaces between sections)
+    const gapSourceToTitle = 36;
+    const gapTitleToSeparator = 35;
+    const gapSeparatorToArabic = Math.max(75, arabicFontSize * 1.5); // Generous gap preventing diacritics overlap
+    const gapArabicToTrans = Math.max(50, arabicFontSize * 0.4 + transFontSize);
+    const gapTransToTranslation = Math.max(45, transFontSize * 0.4 + translationFontSize);
 
-    // Compute Vertical Center Starting Position
-    const availableHeight = 880; // from y=90 to y=970
-    const startY = 90 + Math.max(15, (availableHeight - totalContentHeight) / 2);
+    // Total content height calculation
+    const titleBlockHeight = (titleLines.length - 1) * titleLineHeight;
+    const arabicBlockHeight = (arabicLines.length - 1) * arabicLineHeight;
+    const transBlockHeight = (effectiveTransLines.length - 1) * transLineHeight;
+    const translationBlockHeight = (transTextLines.length - 1) * transTextLineHeight;
 
-    // Draw Top Header: Source & Title
-    let currentY = startY + 30;
+    const totalHeightFromStart =
+      sourceFontSize +
+      gapSourceToTitle +
+      titleBlockHeight +
+      gapTitleToSeparator +
+      gapSeparatorToArabic +
+      arabicBlockHeight +
+      gapArabicToTrans +
+      transBlockHeight +
+      gapTransToTranslation +
+      translationBlockHeight +
+      translationFontSize * 0.5;
+
+    // Vertical Centering within top frame boundary (y=80) and footer top boundary (y=960)
+    const availableArea = 880; // 960 - 80
+    const startY = 80 + Math.max(10, (availableArea - totalHeightFromStart) / 2);
+
+    let currentY = startY + sourceFontSize;
+
+    // 4. Draw Header Source
     ctx.fillStyle = selectedFrame.borderGold;
-    ctx.font = `bold 30px ${selectedTransFont}`;
+    ctx.font = `bold ${sourceFontSize}px ${selectedTransFont}`;
     ctx.textAlign = "center";
     ctx.fillText("🤲 " + dua.source, W / 2, currentY);
 
-    currentY += 45;
+    // 5. Draw Header Title (Wrapped gracefully)
+    currentY += gapSourceToTitle;
     ctx.fillStyle = selectedFrame.textColor;
-    ctx.font = `bold 32px ${selectedTransFont}`;
-    ctx.fillText(activeTitle, W / 2, currentY);
+    ctx.font = `bold ${titleFontSize}px ${selectedTransFont}`;
+    titleLines.forEach((line, idx) => {
+      ctx.fillText(line, W / 2, currentY + idx * titleLineHeight);
+    });
+    currentY += (titleLines.length - 1) * titleLineHeight;
 
-    // Separator Line
-    currentY += 25;
+    // 6. Separator Line
+    currentY += gapTitleToSeparator;
     ctx.lineWidth = 2;
     ctx.strokeStyle = selectedFrame.borderGold + "88";
     ctx.beginPath();
@@ -195,40 +239,40 @@ export default function DuaShareModal({ dua, currentLang, isOpen, onClose }: Dua
     ctx.lineTo(W / 2 + 160, currentY);
     ctx.stroke();
 
-    // 4. Draw Arabic Text Block (Centered)
-    currentY += 45;
+    // 7. Draw Arabic Text Block (Centered with ample space above top diacritics)
+    currentY += gapSeparatorToArabic;
     ctx.fillStyle = selectedFrame.arabicColor;
     ctx.font = `normal ${arabicFontSize}px ${selectedArabicFont}`;
     ctx.textAlign = "center";
 
-    arabicLines.forEach(line => {
-      ctx.fillText(line, W / 2, currentY);
-      currentY += arabicLineHeight;
+    arabicLines.forEach((line, idx) => {
+      ctx.fillText(line, W / 2, currentY + idx * arabicLineHeight);
     });
+    currentY += (arabicLines.length - 1) * arabicLineHeight;
 
-    // 5. Draw Transliteration Block (Centered)
-    currentY += 15;
+    // 8. Draw Transliteration Block (Centered)
+    currentY += gapArabicToTrans;
     ctx.fillStyle = selectedFrame.transColor;
     ctx.font = `italic ${transFontSize}px ${selectedTransFont}`;
 
-    transLines.slice(0, 3).forEach(line => {
-      ctx.fillText(line, W / 2, currentY);
-      currentY += transLineHeight;
+    effectiveTransLines.forEach((line, idx) => {
+      ctx.fillText(line, W / 2, currentY + idx * transLineHeight);
     });
+    currentY += (effectiveTransLines.length - 1) * transLineHeight;
 
-    // 6. Draw Translation Block (Centered)
-    currentY += 20;
+    // 9. Draw Translation Block (Centered)
+    currentY += gapTransToTranslation;
     ctx.fillStyle = selectedFrame.textColor;
     ctx.font = `medium ${translationFontSize}px ${selectedTransFont}`;
 
     const maxFooterY = H - 140;
     for (let i = 0; i < transTextLines.length; i++) {
-      if (currentY + transTextLineHeight > maxFooterY) break;
-      ctx.fillText(transTextLines[i], W / 2, currentY);
-      currentY += transTextLineHeight;
+      const lineY = currentY + i * transTextLineHeight;
+      if (lineY > maxFooterY) break;
+      ctx.fillText(transTextLines[i], W / 2, lineY);
     }
 
-    // 6. Footer Branding Section (Logo & Website URL)
+    // 10. Footer Branding Section (Logo & Website URL)
     const footerY = H - 110;
     ctx.fillStyle = selectedFrame.footerBg;
     ctx.fillRect(pad + 12, footerY, W - (pad + 12) * 2, 85);
