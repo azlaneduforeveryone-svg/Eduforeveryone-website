@@ -4,9 +4,12 @@ Allow: /
 # Sitemap
 Sitemap: https://eduforeveryone.com/sitemap.xml
 
-# Block Next.js internal paths
+# Allow Next.js static assets & images for proper crawler rendering
+Allow: /_next/static/
+Allow: /_next/image
+
+# Block private / internal paths
 Disallow: /api/
-Disallow: /_next/
 Disallow: /admin/
 
 # Block old WordPress paths (site migrated from WordPress)
