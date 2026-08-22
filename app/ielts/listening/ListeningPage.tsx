@@ -405,6 +405,12 @@ export default function ListeningPage() {
                 <input type="text" value={answers[q.id] ?? ""}
                   onChange={e => !results && setAnswers(a => ({ ...a, [q.id]: e.target.value }))}
                   onKeyDown={e => e.key === "Enter" && !results && submit()}
+                  spellCheck={false}
+                  autoCorrect="off"
+                  autoCapitalize="off"
+                  autoComplete="off"
+                  data-gramm="false"
+                  data-enable-grammarly="false"
                   placeholder="Type your answer…" disabled={!!results}
                   className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-emerald-400 disabled:bg-gray-50 disabled:text-gray-500" />
               ) : (

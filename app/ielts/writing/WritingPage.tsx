@@ -392,6 +392,14 @@ export default function WritingPage() {
           value={text}
           onChange={e => setText(e.target.value)}
           disabled={submitted}
+          spellCheck={false}
+          autoCorrect="off"
+          autoCapitalize="off"
+          autoComplete="off"
+          data-gramm="false"
+          data-gramm_editor="false"
+          data-enable-grammarly="false"
+          data-lt-active="false"
           placeholder={`Write your Task ${selected.task} response here…`}
           className="w-full h-80 border border-gray-200 rounded-2xl p-5 text-sm text-gray-700 leading-relaxed focus:outline-none focus:border-violet-400 resize-none disabled:bg-gray-50 mb-4"
         />

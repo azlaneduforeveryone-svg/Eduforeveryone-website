@@ -130,6 +130,14 @@ export default function SpeakingSection({ test, onComplete }: Props) {
             value={transcript}
             onChange={(e) => setTranscript(e.target.value)}
             rows={5}
+            spellCheck={false}
+            autoCorrect="off"
+            autoCapitalize="off"
+            autoComplete="off"
+            data-gramm="false"
+            data-gramm_editor="false"
+            data-enable-grammarly="false"
+            data-lt-active="false"
             placeholder="Your spoken words appear here. You can also type or correct them before submitting."
             className="w-full border border-gray-300 rounded-lg p-3 text-sm focus:ring-2 focus:ring-blue-400 focus:border-blue-400 outline-none"
           />

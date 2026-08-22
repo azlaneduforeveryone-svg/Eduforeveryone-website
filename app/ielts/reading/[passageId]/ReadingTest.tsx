@@ -439,6 +439,12 @@ export default function ReadingTest({ passage }: Props) {
                     type="text"
                     value={answers[currentQ.id] ?? ""}
                     onChange={e => setAnswers(a => ({ ...a, [currentQ.id]: e.target.value }))}
+                    spellCheck={false}
+                    autoCorrect="off"
+                    autoCapitalize="off"
+                    autoComplete="off"
+                    data-gramm="false"
+                    data-enable-grammarly="false"
                     placeholder="Type your answer…"
                     className="w-full border border-gray-300 rounded-xl px-4 py-2.5 text-sm text-gray-800 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
                   />

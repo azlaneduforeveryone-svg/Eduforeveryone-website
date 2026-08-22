@@ -268,6 +268,12 @@ function QuestionList({
                 type="text"
                 value={answers[q.id] ?? ""}
                 onChange={(e) => setAnswer(q.id, e.target.value)}
+                spellCheck={false}
+                autoCorrect="off"
+                autoCapitalize="off"
+                autoComplete="off"
+                data-gramm="false"
+                data-enable-grammarly="false"
                 placeholder="Your answer"
                 className="w-full max-w-xs border border-gray-300 rounded-lg px-3 py-1.5 text-sm focus:ring-2 focus:ring-blue-400 outline-none"
               />

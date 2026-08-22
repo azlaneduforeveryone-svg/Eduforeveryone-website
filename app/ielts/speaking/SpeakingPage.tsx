@@ -318,6 +318,14 @@ export default function SpeakingPage() {
               value={transcript}
               onChange={(e) => setTranscript(e.target.value)}
               rows={5}
+              spellCheck={false}
+              autoCorrect="off"
+              autoCapitalize="off"
+              autoComplete="off"
+              data-gramm="false"
+              data-gramm_editor="false"
+              data-enable-grammarly="false"
+              data-lt-active="false"
               placeholder="Speak using the button above and your words appear here. If the mic doesn't work on your device, just type your answer instead."
               className="w-full border border-gray-200 rounded-xl p-3 text-sm text-gray-700 leading-relaxed focus:outline-none focus:border-amber-400"
             />

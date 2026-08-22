@@ -163,6 +163,14 @@ export default function WritingSection({ test, format, onComplete }: Props) {
           value={task1Answer}
           onChange={(e) => setTask1Answer(e.target.value)}
           disabled={loading}
+          spellCheck={false}
+          autoCorrect="off"
+          autoCapitalize="off"
+          autoComplete="off"
+          data-gramm="false"
+          data-gramm_editor="false"
+          data-enable-grammarly="false"
+          data-lt-active="false"
           placeholder="Write your Task 1 answer here..."
         />
       </div>
@@ -182,6 +190,14 @@ export default function WritingSection({ test, format, onComplete }: Props) {
           value={task2Answer}
           onChange={(e) => setTask2Answer(e.target.value)}
           disabled={loading}
+          spellCheck={false}
+          autoCorrect="off"
+          autoCapitalize="off"
+          autoComplete="off"
+          data-gramm="false"
+          data-gramm_editor="false"
+          data-enable-grammarly="false"
+          data-lt-active="false"
           placeholder="Write your Task 2 answer here..."
         />
       </div>
