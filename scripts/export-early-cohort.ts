@@ -1,4 +1,6 @@
-import { QUANT_BANK, VERBAL_BANK, DATA_INSIGHTS_BANK } from "../lib/gmat/data";
+import { QUANT_BANK } from "../lib/gmat/quant";
+import { VERBAL_BANK } from "../lib/gmat/verbal";
+import { DATA_INSIGHTS_BANK } from "../lib/gmat/data-insights";
 import type { GmatQuestion } from "../lib/gmat/types";
 import * as fs from "fs";
 import * as path from "path";

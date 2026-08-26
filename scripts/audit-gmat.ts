@@ -4,7 +4,9 @@
 // regression guard against future edits, with 69.01% (49/71) DS coverage.
 // It is not intended as an automated discovery tool for natural language items.
 // -----------------------------------------------------------------------------
-import { QUANT_BANK, VERBAL_BANK, DATA_INSIGHTS_BANK } from "../lib/gmat/data";
+import { QUANT_BANK } from "../lib/gmat/quant";
+import { VERBAL_BANK } from "../lib/gmat/verbal";
+import { DATA_INSIGHTS_BANK } from "../lib/gmat/data-insights";
 import { DS_OPTIONS } from "../lib/gmat/types";
 import type { GmatQuestion, GmatMcq } from "../lib/gmat/types";
 import * as fs from "fs";

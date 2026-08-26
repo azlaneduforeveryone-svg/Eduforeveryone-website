@@ -29,12 +29,9 @@
  * ---------------------------------------------------------------------------
  */
 
-// Adjust this relative path to wherever the script ends up vs. lib/
-import {
-  QUANT_BANK,
-  VERBAL_BANK,
-  DATA_INSIGHTS_BANK,
-} from "../lib/gmat/data";
+import { QUANT_BANK } from "../lib/gmat/quant";
+import { VERBAL_BANK } from "../lib/gmat/verbal";
+import { DATA_INSIGHTS_BANK } from "../lib/gmat/data-insights";
 import { DS_OPTIONS } from "../lib/gmat/types";
 import type { GmatQuestion, GmatSectionBank } from "../lib/gmat/types";
 

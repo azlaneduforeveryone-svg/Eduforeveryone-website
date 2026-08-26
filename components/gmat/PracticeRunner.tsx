@@ -15,7 +15,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import SectionRunner from "./SectionRunner";
 import type { SectionRunResult } from "./SectionRunner";
 import GmatResults from "./GmatResults";
-import { getBank } from "@/lib/gmat/data";
+import { getBank } from "@/lib/gmat/form";
 import { sampleSection, estimateTotal } from "@/lib/gmat/engine";
 import { saveGmatResult } from "@/lib/firebaseDB";
 import type { GmatQuestion, GmatSection } from "@/lib/gmat/types";
