@@ -15,19 +15,18 @@ import { useAuth } from "@/contexts/AuthContext";
 import SectionRunner from "./SectionRunner";
 import type { SectionRunResult } from "./SectionRunner";
 import GmatResults from "./GmatResults";
-import { getBank } from "@/lib/gmat/form";
 import { sampleSection, estimateTotal } from "@/lib/gmat/engine";
 import { saveGmatResult } from "@/lib/firebaseDB";
-import type { GmatQuestion, GmatSection } from "@/lib/gmat/types";
+import type { GmatQuestion, GmatSectionBank } from "@/lib/gmat/types";
 
 const PRACTICE_SIZE = 10;
 const PRACTICE_MINUTES = 22; // ~ real-exam ratio for 10 questions
 
-interface Props { section: GmatSection; }
+interface Props { bank: GmatSectionBank; }
 
-export default function PracticeRunner({ section }: Props) {
+export default function PracticeRunner({ bank }: Props) {
   const { user } = useAuth();
-  const bank = getBank(section);
+  const section = bank.id;
   const [phase, setPhase] = useState<"loading" | "test" | "result">("loading");
   const [questions, setQuestions] = useState<GmatQuestion[]>([]);
   const [result, setResult] = useState<SectionRunResult | null>(null);
