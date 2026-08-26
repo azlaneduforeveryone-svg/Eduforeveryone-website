@@ -8010,16 +8010,16 @@ const DATA_INSIGHTS_ITEMS: GmatSectionBank["items"] = [
     id: "gmat-ds-0004", section: "data-insights", type: "data-sufficiency",
     difficulty: "Medium", topic: "Data Sufficiency · statistics",
     stem: "Is the average (arithmetic mean) of five different integers greater than 20?",
-    statements: ["The smallest of the integers is 19.", "The largest of the integers is 21."],
+    statements: ["The smallest of the integers is 16.", "The largest of the integers is 26."],
     correct: 4,
     optionExplanations: [
-      "Statement (1) alone: with a minimum of 19, the others could be small or large, so the mean could be above or below 20.",
-      "Statement (2) alone: with a maximum of 21, the mean could be below or near 20.",
-      "Even together, the three middle values are unknown, so the mean is not determined.",
-      "Neither alone is sufficient.",
-      "Together: integers are distinct with min 19 and max 21, but the three middle values still vary, so the mean cannot be pinned relative to 20 — insufficient.",
+      "Statement (1) alone: with a minimum of 16, the set could be {16, 17, 18, 19, 20} (mean = 18 ≤ 20) or {16, 30, 31, 32, 33} (mean = 28.4 > 20). Not sufficient.",
+      "Statement (2) alone: with a maximum of 26, the set could be {1, 2, 3, 4, 26} (mean = 7.2 ≤ 20) or {22, 23, 24, 25, 26} (mean = 24 > 20). Not sufficient.",
+      "Even together, the three middle values are not fixed, so the mean is not determined.",
+      "Neither statement alone is sufficient.",
+      "Correct: together, the minimum possible sum for five distinct integers is 16 + 17 + 18 + 19 + 26 = 96 (mean = 19.2 ≤ 20) and the maximum possible sum is 16 + 23 + 24 + 25 + 26 = 114 (mean = 22.8 > 20). Because the mean can be either at most 20 or greater than 20, both statements together are not sufficient.",
     ],
-    explanation: "Knowing only the min (19) and max (21) of five distinct integers leaves the three middle values free, so the average could be above or below 20. Even together the statements are insufficient.",
+    explanation: "With min = 16 and max = 26 for five distinct integers, the minimum possible average is (16 + 17 + 18 + 19 + 26) / 5 = 19.2, and the maximum possible average is (16 + 23 + 24 + 25 + 26) / 5 = 22.8. Because the average can be either at most 20 or greater than 20, both statements together are insufficient.",
   },
   /* ---- Two-Part Analysis (rows shuffle; both indices remap) ---- */
   {
