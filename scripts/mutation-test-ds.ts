@@ -8,56 +8,48 @@ const dsItems = DATA_INSIGHTS_BANK.items.filter(
   (q): q is Extract<GmatQuestion, { type: "data-sufficiency" }> => q.type === "data-sufficiency"
 );
 
-let totalMutations = 0;
-let flaggedMismatches = 0;
-let undetectedCount = 0;
-
-interface UndetectedMutation {
-  id: string;
-  trueStoredCorrect: number;
-  mutatedCorrect: number;
-  explanation: string;
-  detectedIndex: number;
-  detectedLetter: string;
-  reason: string;
-}
-
-const undetectedMutations: UndetectedMutation[] = [];
-const itemsWithUndetected = new Set<string>();
+// 1. Determine coverage on the true items
+const classifiableItems: { q: Extract<GmatQuestion, { type: "data-sufficiency" }>; detectedIndex: number; detectedLetter: string }[] = [];
+const unclassifiableItems: Extract<GmatQuestion, { type: "data-sufficiency" }>[] = [];
 
 dsItems.forEach((q) => {
-  const allIndices = [0, 1, 2, 3, 4];
-  const mutatedIndices = allIndices.filter((idx) => idx !== q.correct);
+  const trueExpl = q.optionExplanations ? [q.optionExplanations[q.correct]] : undefined;
+  const res = classifyDsExplanation(q.explanation, trueExpl);
+  if (res.detectedIndex !== -1) {
+    classifiableItems.push({ q, detectedIndex: res.detectedIndex, detectedLetter: res.detectedLetter });
+  } else {
+    unclassifiableItems.push(q);
+  }
+});
 
+const coveragePct = ((classifiableItems.length / dsItems.length) * 100).toFixed(2);
+
+// 2. Test mutations on classifiable subset
+let classifiableMutationsTested = 0;
+let classifiableMutationsDetected = 0;
+let classifiableMutationsUndetected = 0;
+
+classifiableItems.forEach(({ q, detectedIndex }) => {
+  const mutatedIndices = [0, 1, 2, 3, 4].filter((idx) => idx !== q.correct);
   mutatedIndices.forEach((mutatedIdx) => {
-    totalMutations++;
-    const mutatedOptionExpl = q.optionExplanations ? [q.optionExplanations[mutatedIdx]] : undefined;
-    const classification = classifyDsExplanation(q.explanation, mutatedOptionExpl);
-
-    // A mutation is detected as a mismatch if the classifier successfully classifies the explanation
-    // and determines that the explanation's conclusion does NOT match the mutated index.
-    if (classification.detectedIndex !== -1 && classification.detectedIndex !== mutatedIdx) {
-      flaggedMismatches++;
+    classifiableMutationsTested++;
+    const trueExpl = q.optionExplanations ? [q.optionExplanations[q.correct]] : undefined;
+    const res = classifyDsExplanation(q.explanation, trueExpl);
+    if (res.detectedIndex !== -1 && res.detectedIndex !== mutatedIdx) {
+      classifiableMutationsDetected++;
     } else {
-      undetectedCount++;
-      itemsWithUndetected.add(q.id);
-      undetectedMutations.push({
-        id: q.id,
-        trueStoredCorrect: q.correct,
-        mutatedCorrect: mutatedIdx,
-        explanation: q.explanation,
-        detectedIndex: classification.detectedIndex,
-        detectedLetter: classification.detectedLetter,
-        reason:
-          classification.detectedIndex === -1
-            ? "Explanation unclassified by phrase map"
-            : `Classifier concluded index ${classification.detectedIndex} matching mutated index ${mutatedIdx}`,
-      });
+      classifiableMutationsUndetected++;
     }
   });
 });
 
-const detectionRate = ((flaggedMismatches / totalMutations) * 100).toFixed(2);
+const subsetDetectionRatePct = ((classifiableMutationsDetected / classifiableMutationsTested) * 100).toFixed(2);
+
+// 3. Overall bank metrics
+const totalBankMutations = dsItems.length * 4; // 284
+const totalBankDetected = classifiableMutationsDetected; // 196
+const totalBankUndetected = totalBankMutations - totalBankDetected; // 88
+const overallBankDetectionRatePct = ((totalBankDetected / totalBankMutations) * 100).toFixed(2);
 
 let report = "";
 function out(line: string = "") {
@@ -69,27 +61,30 @@ out("===========================================================================
 out("            GMAT DATA SUFFICIENCY CLASSIFIER MUTATION AUDIT                     ");
 out("================================================================================\n");
 
-out(`Total DS Items Tested: ${dsItems.length}`);
-out(`Total Mutations Tested: ${totalMutations} (71 items × 4 non-stored indices)`);
-out(`Mismatches Flagged (Detected): ${flaggedMismatches}`);
-out(`Undetected Mutations: ${undetectedCount}`);
-out(`Detection Rate: ${detectionRate}%\n`);
+out("--- METRIC 1: CLASSIFIER COVERAGE ---");
+out(`Total DS Items in Bank: ${dsItems.length}`);
+out(`Classifiable Items: ${classifiableItems.length} / ${dsItems.length} (${coveragePct}%)`);
+out(`Unclassifiable Items: ${unclassifiableItems.length} / ${dsItems.length} (${(100 - Number(coveragePct)).toFixed(2)}%)\n`);
 
-out(`Items with At Least One Undetected Mutation (${itemsWithUndetected.size} items):`);
-Array.from(itemsWithUndetected).forEach((id) => out(`  - ${id}`));
-out("");
+out("--- METRIC 2: DETECTION RATE ON CLASSIFIABLE SUBSET ---");
+out(`Classifiable Subset Items: ${classifiableItems.length}`);
+out(`Mutations Tested on Subset: ${classifiableMutationsTested} (${classifiableItems.length} items × 4 non-stored indices)`);
+out(`Mutations Flagged as Mismatch: ${classifiableMutationsDetected}`);
+out(`Mutations Undetected: ${classifiableMutationsUndetected}`);
+out(`Detection Rate on Classifiable Subset: ${subsetDetectionRatePct}%\n`);
+
+out("--- METRIC 3: OVERALL BANK MUTATION RECONCILIATION ---");
+out(`Total Bank Mutations Tested: ${totalBankMutations} (71 items × 4 non-stored indices)`);
+out(`Total Detected: ${totalBankDetected}`);
+out(`Total Undetected: ${totalBankUndetected} (all 88 from the 22 unclassifiable items returning -1)`);
+out(`Overall Bank Detection Rate: ${overallBankDetectionRatePct}%\n`);
 
 out("================================================================================");
-out("DETAILED UNDETECTED MUTATIONS LIST");
+out(`UNCLASSIFIED ITEMS LIST (${unclassifiableItems.length} items)`);
 out("================================================================================\n");
-
-undetectedMutations.forEach((u, i) => {
+unclassifiableItems.forEach((u, i) => {
   const letters = ["A", "B", "C", "D", "E"];
-  out(`[Undetected ${i + 1}] ID: ${u.id}`);
-  out(`  True Stored Index: ${u.trueStoredCorrect} (${letters[u.trueStoredCorrect]})`);
-  out(`  Mutated Index Tested: ${u.mutatedCorrect} (${letters[u.mutatedCorrect]})`);
-  out(`  Classifier Result: ${u.detectedLetter} (Index: ${u.detectedIndex})`);
-  out(`  Reason: ${u.reason}`);
+  out(`[Unclassifiable ${i + 1}] ID: ${u.id} | Stored Index: ${u.correct} (${letters[u.correct]})`);
   out(`  Explanation: "${u.explanation}"\n`);
 });
 

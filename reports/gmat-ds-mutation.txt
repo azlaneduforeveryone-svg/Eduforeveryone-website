@@ -2,516 +2,91 @@
             GMAT DATA SUFFICIENCY CLASSIFIER MUTATION AUDIT                     
 ================================================================================
 
-Total DS Items Tested: 71
-Total Mutations Tested: 284 (71 items × 4 non-stored indices)
-Mismatches Flagged (Detected): 216
-Undetected Mutations: 68
-Detection Rate: 76.06%
+--- METRIC 1: CLASSIFIER COVERAGE ---
+Total DS Items in Bank: 71
+Classifiable Items: 49 / 71 (69.01%)
+Unclassifiable Items: 22 / 71 (30.99%)
 
-Items with At Least One Undetected Mutation (25 items):
-  - gmat-ds-0002
-  - gmat-ds-0005
-  - gmat-ds-0008
-  - gmat-ds-0009
-  - gmat-ds-0011
-  - gmat-ds-0014
-  - gmat-ds-0017
-  - gmat-ds-0018
-  - gmat-ds-0019
-  - gmat-ds-0026
-  - gmat-ds-0027
-  - gmat-ds-0028
-  - gmat-ds-0030
-  - gmat-ds-0031
-  - gmat-ds-0034
-  - gmat-ds-0036
-  - gmat-ds-0037
-  - gmat-ds-0041
-  - gmat-ds-0044
-  - gmat-ds-0047
-  - gmat-ds-0048
-  - gmat-ds-0051
-  - gmat-ds-0064
-  - gmat-ds-0070
-  - gmat-ds-0071
+--- METRIC 2: DETECTION RATE ON CLASSIFIABLE SUBSET ---
+Classifiable Subset Items: 49
+Mutations Tested on Subset: 196 (49 items × 4 non-stored indices)
+Mutations Flagged as Mismatch: 196
+Mutations Undetected: 0
+Detection Rate on Classifiable Subset: 100.00%
+
+--- METRIC 3: OVERALL BANK MUTATION RECONCILIATION ---
+Total Bank Mutations Tested: 284 (71 items × 4 non-stored indices)
+Total Detected: 196
+Total Undetected: 88 (all 88 from the 22 unclassifiable items returning -1)
+Overall Bank Detection Rate: 69.01%
 
 ================================================================================
-DETAILED UNDETECTED MUTATIONS LIST
+UNCLASSIFIED ITEMS LIST (22 items)
 ================================================================================
 
-[Undetected 1] ID: gmat-ds-0002
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 2 (C)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
+[Unclassifiable 1] ID: gmat-ds-0002 | Stored Index: 0 (A)
   Explanation: "(1) Multiples of 6 are always even — sufficient. (2) Multiples of 9 can be odd or even — not sufficient. So statement (1) alone is sufficient."
 
-[Undetected 2] ID: gmat-ds-0002
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 3 (D)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "(1) Multiples of 6 are always even — sufficient. (2) Multiples of 9 can be odd or even — not sufficient. So statement (1) alone is sufficient."
-
-[Undetected 3] ID: gmat-ds-0002
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 4 (E)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "(1) Multiples of 6 are always even — sufficient. (2) Multiples of 9 can be odd or even — not sufficient. So statement (1) alone is sufficient."
-
-[Undetected 4] ID: gmat-ds-0005
-  True Stored Index: 1 (B)
-  Mutated Index Tested: 0 (A)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
+[Unclassifiable 2] ID: gmat-ds-0005 | Stored Index: 1 (B)
   Explanation: "(1) x could be 4, 8, or 12 — not sufficient. (2) 11 ≤ x ≤ 20 is always greater than 10 — sufficient. Statement (2) alone is sufficient."
 
-[Undetected 5] ID: gmat-ds-0005
-  True Stored Index: 1 (B)
-  Mutated Index Tested: 2 (C)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "(1) x could be 4, 8, or 12 — not sufficient. (2) 11 ≤ x ≤ 20 is always greater than 10 — sufficient. Statement (2) alone is sufficient."
-
-[Undetected 6] ID: gmat-ds-0005
-  True Stored Index: 1 (B)
-  Mutated Index Tested: 3 (D)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "(1) x could be 4, 8, or 12 — not sufficient. (2) 11 ≤ x ≤ 20 is always greater than 10 — sufficient. Statement (2) alone is sufficient."
-
-[Undetected 7] ID: gmat-ds-0005
-  True Stored Index: 1 (B)
-  Mutated Index Tested: 4 (E)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "(1) x could be 4, 8, or 12 — not sufficient. (2) 11 ≤ x ≤ 20 is always greater than 10 — sufficient. Statement (2) alone is sufficient."
-
-[Undetected 8] ID: gmat-ds-0008
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 1 (B)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
+[Unclassifiable 3] ID: gmat-ds-0008 | Stored Index: 0 (A)
   Explanation: "(1) p = 18, which is divisible by 3 — sufficient. (2) Even numbers may or may not be divisible by 3 — not sufficient. Statement (1) alone is sufficient."
 
-[Undetected 9] ID: gmat-ds-0008
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 2 (C)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "(1) p = 18, which is divisible by 3 — sufficient. (2) Even numbers may or may not be divisible by 3 — not sufficient. Statement (1) alone is sufficient."
-
-[Undetected 10] ID: gmat-ds-0008
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 3 (D)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "(1) p = 18, which is divisible by 3 — sufficient. (2) Even numbers may or may not be divisible by 3 — not sufficient. Statement (1) alone is sufficient."
-
-[Undetected 11] ID: gmat-ds-0008
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 4 (E)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "(1) p = 18, which is divisible by 3 — sufficient. (2) Even numbers may or may not be divisible by 3 — not sufficient. Statement (1) alone is sufficient."
-
-[Undetected 12] ID: gmat-ds-0009
-  True Stored Index: 2 (C)
-  Mutated Index Tested: 0 (A)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "Area requires both length and width. Neither statement alone is sufficient, but together: area = 10 × 4 = 40."
-
-[Undetected 13] ID: gmat-ds-0009
-  True Stored Index: 2 (C)
-  Mutated Index Tested: 1 (B)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "Area requires both length and width. Neither statement alone is sufficient, but together: area = 10 × 4 = 40."
-
-[Undetected 14] ID: gmat-ds-0009
-  True Stored Index: 2 (C)
-  Mutated Index Tested: 3 (D)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "Area requires both length and width. Neither statement alone is sufficient, but together: area = 10 × 4 = 40."
-
-[Undetected 15] ID: gmat-ds-0011
-  True Stored Index: 2 (C)
-  Mutated Index Tested: 0 (A)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
+[Unclassifiable 4] ID: gmat-ds-0011 | Stored Index: 2 (C)
   Explanation: "Statement (1) alone fails when y < 0. Statement (2) alone gives no info about x. Together: y > 0 and x > y implies x/y > 1."
 
-[Undetected 16] ID: gmat-ds-0011
-  True Stored Index: 2 (C)
-  Mutated Index Tested: 1 (B)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "Statement (1) alone fails when y < 0. Statement (2) alone gives no info about x. Together: y > 0 and x > y implies x/y > 1."
-
-[Undetected 17] ID: gmat-ds-0011
-  True Stored Index: 2 (C)
-  Mutated Index Tested: 3 (D)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "Statement (1) alone fails when y < 0. Statement (2) alone gives no info about x. Together: y > 0 and x > y implies x/y > 1."
-
-[Undetected 18] ID: gmat-ds-0014
-  True Stored Index: 2 (C)
-  Mutated Index Tested: 0 (A)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
+[Unclassifiable 5] ID: gmat-ds-0014 | Stored Index: 2 (C)
   Explanation: "Neither statement alone suffices. Together: divisible by 2 AND 3 → divisible by LCM(2,3)=6."
 
-[Undetected 19] ID: gmat-ds-0014
-  True Stored Index: 2 (C)
-  Mutated Index Tested: 1 (B)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "Neither statement alone suffices. Together: divisible by 2 AND 3 → divisible by LCM(2,3)=6."
-
-[Undetected 20] ID: gmat-ds-0014
-  True Stored Index: 2 (C)
-  Mutated Index Tested: 3 (D)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "Neither statement alone suffices. Together: divisible by 2 AND 3 → divisible by LCM(2,3)=6."
-
-[Undetected 21] ID: gmat-ds-0017
-  True Stored Index: 1 (B)
-  Mutated Index Tested: 2 (C)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
+[Unclassifiable 6] ID: gmat-ds-0017 | Stored Index: 1 (B)
   Explanation: "For 7 values the median is the 4th in order. Statement (2) gives it directly. Statement (1) alone cannot determine the median."
 
-[Undetected 22] ID: gmat-ds-0017
-  True Stored Index: 1 (B)
-  Mutated Index Tested: 3 (D)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "For 7 values the median is the 4th in order. Statement (2) gives it directly. Statement (1) alone cannot determine the median."
-
-[Undetected 23] ID: gmat-ds-0018
-  True Stored Index: 4 (E)
-  Mutated Index Tested: 0 (A)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "x=6, y=4 → 1.5 (not integer). x=12, y=4 → 3 (integer). Both statements together cannot determine the answer. Insufficient."
-
-[Undetected 24] ID: gmat-ds-0018
-  True Stored Index: 4 (E)
-  Mutated Index Tested: 1 (B)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "x=6, y=4 → 1.5 (not integer). x=12, y=4 → 3 (integer). Both statements together cannot determine the answer. Insufficient."
-
-[Undetected 25] ID: gmat-ds-0018
-  True Stored Index: 4 (E)
-  Mutated Index Tested: 2 (C)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "x=6, y=4 → 1.5 (not integer). x=12, y=4 → 3 (integer). Both statements together cannot determine the answer. Insufficient."
-
-[Undetected 26] ID: gmat-ds-0018
-  True Stored Index: 4 (E)
-  Mutated Index Tested: 3 (D)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "x=6, y=4 → 1.5 (not integer). x=12, y=4 → 3 (integer). Both statements together cannot determine the answer. Insufficient."
-
-[Undetected 27] ID: gmat-ds-0019
-  True Stored Index: 1 (B)
-  Mutated Index Tested: 2 (C)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
+[Unclassifiable 7] ID: gmat-ds-0019 | Stored Index: 1 (B)
   Explanation: "(1) x²>0 only tells us x≠0 — not whether x is positive or negative. (2) x³>0 means x must be positive. Statement (2) alone is sufficient."
 
-[Undetected 28] ID: gmat-ds-0019
-  True Stored Index: 1 (B)
-  Mutated Index Tested: 3 (D)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "(1) x²>0 only tells us x≠0 — not whether x is positive or negative. (2) x³>0 means x must be positive. Statement (2) alone is sufficient."
-
-[Undetected 29] ID: gmat-ds-0019
-  True Stored Index: 1 (B)
-  Mutated Index Tested: 4 (E)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "(1) x²>0 only tells us x≠0 — not whether x is positive or negative. (2) x³>0 means x must be positive. Statement (2) alone is sufficient."
-
-[Undetected 30] ID: gmat-ds-0026
-  True Stored Index: 1 (B)
-  Mutated Index Tested: 2 (C)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
+[Unclassifiable 8] ID: gmat-ds-0026 | Stored Index: 1 (B)
   Explanation: "Statement (1) needs total. Statement (2) gives ratio 2:3 → P(red)=2/(2+3)=2/5. Statement (2) alone is sufficient."
 
-[Undetected 31] ID: gmat-ds-0026
-  True Stored Index: 1 (B)
-  Mutated Index Tested: 3 (D)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "Statement (1) needs total. Statement (2) gives ratio 2:3 → P(red)=2/(2+3)=2/5. Statement (2) alone is sufficient."
-
-[Undetected 32] ID: gmat-ds-0027
-  True Stored Index: 2 (C)
-  Mutated Index Tested: 0 (A)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "Range = largest − smallest = 28 − 9 = 19. Neither statement alone suffices; together they do."
-
-[Undetected 33] ID: gmat-ds-0027
-  True Stored Index: 2 (C)
-  Mutated Index Tested: 1 (B)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "Range = largest − smallest = 28 − 9 = 19. Neither statement alone suffices; together they do."
-
-[Undetected 34] ID: gmat-ds-0027
-  True Stored Index: 2 (C)
-  Mutated Index Tested: 3 (D)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "Range = largest − smallest = 28 − 9 = 19. Neither statement alone suffices; together they do."
-
-[Undetected 35] ID: gmat-ds-0028
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 2 (C)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
+[Unclassifiable 9] ID: gmat-ds-0028 | Stored Index: 0 (A)
   Explanation: "x>1 guarantees x²>x (since x×x>x×1). Statement (2) alone fails for 0<x≤1. Statement (1) alone is sufficient."
 
-[Undetected 36] ID: gmat-ds-0028
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 3 (D)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "x>1 guarantees x²>x (since x×x>x×1). Statement (2) alone fails for 0<x≤1. Statement (1) alone is sufficient."
-
-[Undetected 37] ID: gmat-ds-0030
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 2 (C)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
+[Unclassifiable 10] ID: gmat-ds-0030 | Stored Index: 0 (A)
   Explanation: "Exactly two distinct factors is the definition of a prime number. Statement (1) alone is sufficient. Statement (2) alone fails — not all odd numbers are prime."
 
-[Undetected 38] ID: gmat-ds-0030
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 3 (D)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "Exactly two distinct factors is the definition of a prime number. Statement (1) alone is sufficient. Statement (2) alone fails — not all odd numbers are prime."
-
-[Undetected 39] ID: gmat-ds-0031
-  True Stored Index: 1 (B)
-  Mutated Index Tested: 2 (C)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
+[Unclassifiable 11] ID: gmat-ds-0031 | Stored Index: 1 (B)
   Explanation: "a>3 → a≥4 and b>−1 → b≥0 (integers). So a+b≥4+0=4>0. Statement (2) alone is sufficient."
 
-[Undetected 40] ID: gmat-ds-0031
-  True Stored Index: 1 (B)
-  Mutated Index Tested: 3 (D)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "a>3 → a≥4 and b>−1 → b≥0 (integers). So a+b≥4+0=4>0. Statement (2) alone is sufficient."
-
-[Undetected 41] ID: gmat-ds-0031
-  True Stored Index: 1 (B)
-  Mutated Index Tested: 4 (E)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "a>3 → a≥4 and b>−1 → b≥0 (integers). So a+b≥4+0=4>0. Statement (2) alone is sufficient."
-
-[Undetected 42] ID: gmat-ds-0034
-  True Stored Index: 2 (C)
-  Mutated Index Tested: 0 (A)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
+[Unclassifiable 12] ID: gmat-ds-0034 | Stored Index: 2 (C)
   Explanation: "Knowing only one factor is positive does not determine the product's sign. Together: both positive → product positive."
 
-[Undetected 43] ID: gmat-ds-0034
-  True Stored Index: 2 (C)
-  Mutated Index Tested: 1 (B)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "Knowing only one factor is positive does not determine the product's sign. Together: both positive → product positive."
-
-[Undetected 44] ID: gmat-ds-0034
-  True Stored Index: 2 (C)
-  Mutated Index Tested: 3 (D)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "Knowing only one factor is positive does not determine the product's sign. Together: both positive → product positive."
-
-[Undetected 45] ID: gmat-ds-0036
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 2 (C)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
+[Unclassifiable 13] ID: gmat-ds-0036 | Stored Index: 0 (A)
   Explanation: "Total hours = d × 8. Statement (1) gives d=5 → 40 hours. Statement (2) gives worker count which is irrelevant to total hours. Statement (1) alone is sufficient."
 
-[Undetected 46] ID: gmat-ds-0036
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 3 (D)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "Total hours = d × 8. Statement (1) gives d=5 → 40 hours. Statement (2) gives worker count which is irrelevant to total hours. Statement (1) alone is sufficient."
-
-[Undetected 47] ID: gmat-ds-0037
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 2 (C)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
+[Unclassifiable 14] ID: gmat-ds-0037 | Stored Index: 0 (A)
   Explanation: "Average = sum/count. Statement (1) gives sum=95; average=19. Statement (2) alone leaves the fifth number unknown. Statement (1) alone is sufficient."
 
-[Undetected 48] ID: gmat-ds-0037
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 3 (D)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "Average = sum/count. Statement (1) gives sum=95; average=19. Statement (2) alone leaves the fifth number unknown. Statement (1) alone is sufficient."
-
-[Undetected 49] ID: gmat-ds-0041
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 2 (C)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
+[Unclassifiable 15] ID: gmat-ds-0041 | Stored Index: 0 (A)
   Explanation: "Right triangle with legs 10 and 8: area=(1/2)×10×8=40. Statement (1) alone is sufficient. Perimeter alone cannot determine area."
 
-[Undetected 50] ID: gmat-ds-0041
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 3 (D)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "Right triangle with legs 10 and 8: area=(1/2)×10×8=40. Statement (1) alone is sufficient. Perimeter alone cannot determine area."
-
-[Undetected 51] ID: gmat-ds-0041
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 4 (E)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "Right triangle with legs 10 and 8: area=(1/2)×10×8=40. Statement (1) alone is sufficient. Perimeter alone cannot determine area."
-
-[Undetected 52] ID: gmat-ds-0044
-  True Stored Index: 2 (C)
-  Mutated Index Tested: 0 (A)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
+[Unclassifiable 16] ID: gmat-ds-0044 | Stored Index: 2 (C)
   Explanation: "Even + even = even. Neither statement alone fixes both parities; together they do."
 
-[Undetected 53] ID: gmat-ds-0044
-  True Stored Index: 2 (C)
-  Mutated Index Tested: 1 (B)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "Even + even = even. Neither statement alone fixes both parities; together they do."
-
-[Undetected 54] ID: gmat-ds-0044
-  True Stored Index: 2 (C)
-  Mutated Index Tested: 3 (D)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "Even + even = even. Neither statement alone fixes both parities; together they do."
-
-[Undetected 55] ID: gmat-ds-0047
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 2 (C)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
+[Unclassifiable 17] ID: gmat-ds-0047 | Stored Index: 0 (A)
   Explanation: "Statement (1): 6 × 4 = 24 students exactly. Statement (2) alone gives only a range. Statement (1) alone is sufficient."
 
-[Undetected 56] ID: gmat-ds-0047
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 3 (D)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "Statement (1): 6 × 4 = 24 students exactly. Statement (2) alone gives only a range. Statement (1) alone is sufficient."
-
-[Undetected 57] ID: gmat-ds-0048
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 2 (C)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
+[Unclassifiable 18] ID: gmat-ds-0048 | Stored Index: 0 (A)
   Explanation: "An integer has an odd number of factors exactly when it is a perfect square (factors pair up except the square root). Statement (1) alone is sufficient."
 
-[Undetected 58] ID: gmat-ds-0048
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 3 (D)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "An integer has an odd number of factors exactly when it is a perfect square (factors pair up except the square root). Statement (1) alone is sufficient."
-
-[Undetected 59] ID: gmat-ds-0048
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 4 (E)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "An integer has an odd number of factors exactly when it is a perfect square (factors pair up except the square root). Statement (1) alone is sufficient."
-
-[Undetected 60] ID: gmat-ds-0051
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 2 (C)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
+[Unclassifiable 19] ID: gmat-ds-0051 | Stored Index: 0 (A)
   Explanation: "Statement (1): hypotenuse = √(9²+12²) = √225 = 15. Statement (2) gives only the product of the legs (108), which many pairs satisfy. Statement (1) alone is sufficient."
 
-[Undetected 61] ID: gmat-ds-0051
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 3 (D)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "Statement (1): hypotenuse = √(9²+12²) = √225 = 15. Statement (2) gives only the product of the legs (108), which many pairs satisfy. Statement (1) alone is sufficient."
-
-[Undetected 62] ID: gmat-ds-0064
-  True Stored Index: 2 (C)
-  Mutated Index Tested: 0 (A)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
+[Unclassifiable 20] ID: gmat-ds-0064 | Stored Index: 2 (C)
   Explanation: "Negative × positive = negative. Neither statement alone fixes both signs; together they do."
 
-[Undetected 63] ID: gmat-ds-0064
-  True Stored Index: 2 (C)
-  Mutated Index Tested: 1 (B)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "Negative × positive = negative. Neither statement alone fixes both signs; together they do."
-
-[Undetected 64] ID: gmat-ds-0064
-  True Stored Index: 2 (C)
-  Mutated Index Tested: 3 (D)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "Negative × positive = negative. Neither statement alone fixes both signs; together they do."
-
-[Undetected 65] ID: gmat-ds-0070
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 2 (C)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
+[Unclassifiable 21] ID: gmat-ds-0070 | Stored Index: 0 (A)
   Explanation: "Statement (1): garden area = 12 × 8 = 96 m². Statement (2) about the path is irrelevant to the garden's area. Statement (1) alone is sufficient."
 
-[Undetected 66] ID: gmat-ds-0070
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 3 (D)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "Statement (1): garden area = 12 × 8 = 96 m². Statement (2) about the path is irrelevant to the garden's area. Statement (1) alone is sufficient."
-
-[Undetected 67] ID: gmat-ds-0071
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 2 (C)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
-  Explanation: "Statement (1): average = 45 ÷ 3 = 15. Statement (2) alone allows different sets with different averages. Statement (1) alone is sufficient."
-
-[Undetected 68] ID: gmat-ds-0071
-  True Stored Index: 0 (A)
-  Mutated Index Tested: 3 (D)
-  Classifier Result: UNCLASSIFIED (Index: -1)
-  Reason: Explanation unclassified by phrase map
+[Unclassifiable 22] ID: gmat-ds-0071 | Stored Index: 0 (A)
   Explanation: "Statement (1): average = 45 ÷ 3 = 15. Statement (2) alone allows different sets with different averages. Statement (1) alone is sufficient."
 

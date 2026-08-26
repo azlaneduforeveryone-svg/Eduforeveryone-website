@@ -1,0 +1,1144 @@
+================================================================================
+                 EARLY AUTHORING COHORT ITEMS FOR MANUAL REVIEW                
+================================================================================
+
+Total Target Items: 39
+
+--------------------------------------------------------------------------------
+ITEM 1 / 39: [gmat-ps-0001]
+Section: quant | Type: problem-solving | Difficulty: Easy
+Topic: Arithmetic · rates
+--------------------------------------------------------------------------------
+STEM:
+A train travels 240 miles in 4 hours. Travelling at the same constant speed, how far will it travel in 7 hours?
+
+OPTIONS:
+  [0]   360 miles
+  [1]   400 miles
+  [2] ✓ (CORRECT) 420 miles
+  [3]   480 miles
+  [4]   560 miles
+
+STORED CORRECT INDEX: [2] "420 miles"
+
+OPTION EXPLANATIONS:
+  [0] This uses 6 hours, not 7 (60 × 6).
+  [1] This multiplies the speed by an incorrect factor.
+  [2] Speed = 240 ÷ 4 = 60 mph, so 60 × 7 = 420 miles.
+  [3] This uses 8 hours (60 × 8).
+  [4] This doubles the original distance instead of scaling to 7 hours.
+
+EXPLANATION:
+Find the constant speed first: 240 ÷ 4 = 60 mph. Then distance = speed × time = 60 × 7 = 420 miles.
+
+--------------------------------------------------------------------------------
+ITEM 2 / 39: [gmat-ps-0002]
+Section: quant | Type: problem-solving | Difficulty: Easy
+Topic: Arithmetic · percents
+--------------------------------------------------------------------------------
+STEM:
+After a 20% discount, a shirt sells for $80. What was its original price?
+
+OPTIONS:
+  [0]   $96
+  [1] ✓ (CORRECT) $100
+  [2]   $104
+  [3]   $120
+  [4]   $160
+
+STORED CORRECT INDEX: [1] "$100"
+
+OPTION EXPLANATIONS:
+  [0] This adds 20% to $80, but $80 is already the discounted price.
+  [1] $80 is 80% of the original, so original = 80 ÷ 0.80 = $100.
+  [2] This applies an incorrect percentage adjustment.
+  [3] This treats $80 as a 33% discount result.
+  [4] This doubles the price rather than reversing a 20% cut.
+
+EXPLANATION:
+A 20% discount leaves 80% of the original price. So 0.80 × original = 80, giving original = 80 ÷ 0.80 = $100.
+
+--------------------------------------------------------------------------------
+ITEM 3 / 39: [gmat-ps-0003]
+Section: quant | Type: problem-solving | Difficulty: Easy
+Topic: Algebra · linear equations
+--------------------------------------------------------------------------------
+STEM:
+If 3x + 7 = 22, what is the value of x?
+
+OPTIONS:
+  [0]   3
+  [1] ✓ (CORRECT) 5
+  [2]   7
+  [3]   9
+  [4]   15
+
+STORED CORRECT INDEX: [1] "5"
+
+OPTION EXPLANATIONS:
+  [0] This forgets to subtract 7 before dividing.
+  [1] 3x = 22 − 7 = 15, so x = 15 ÷ 3 = 5.
+  [2] This divides 22 by 3 incorrectly.
+  [3] This adds 7 instead of subtracting it.
+  [4] This is 3x, not x.
+
+EXPLANATION:
+Subtract 7 from both sides: 3x = 15. Divide by 3: x = 5.
+
+--------------------------------------------------------------------------------
+ITEM 4 / 39: [gmat-ps-0004]
+Section: quant | Type: problem-solving | Difficulty: Medium
+Topic: Arithmetic · ratios
+--------------------------------------------------------------------------------
+STEM:
+Two numbers are in the ratio 2 : 3 and their sum is 40. What is the larger number?
+
+OPTIONS:
+  [0]   16
+  [1]   20
+  [2] ✓ (CORRECT) 24
+  [3]   26
+  [4]   28
+
+STORED CORRECT INDEX: [2] "24"
+
+OPTION EXPLANATIONS:
+  [0] This is the smaller number (2 parts).
+  [1] This splits 40 evenly instead of by the ratio.
+  [2] Total parts = 5; each part = 40 ÷ 5 = 8; larger = 3 × 8 = 24.
+  [3] This adds an extra part incorrectly.
+  [4] This uses a 2 : 5 split rather than 2 : 3.
+
+EXPLANATION:
+The ratio 2 : 3 has 5 parts. Each part = 40 ÷ 5 = 8. The larger number is 3 × 8 = 24.
+
+--------------------------------------------------------------------------------
+ITEM 5 / 39: [gmat-ps-0005]
+Section: quant | Type: problem-solving | Difficulty: Medium
+Topic: Statistics · averages
+--------------------------------------------------------------------------------
+STEM:
+The average of 5 numbers is 18. If one number, 30, is removed, what is the average of the remaining 4 numbers?
+
+OPTIONS:
+  [0]   12
+  [1]   13.5
+  [2] ✓ (CORRECT) 15
+  [3]   16
+  [4]   18
+
+STORED CORRECT INDEX: [2] "15"
+
+OPTION EXPLANATIONS:
+  [0] This subtracts too much from the running total.
+  [1] This divides an incorrect remaining sum.
+  [2] Sum of 5 = 90; remove 30 → 60; average of 4 = 60 ÷ 4 = 15.
+  [3] This forgets to remove the value fully.
+  [4] The average must change once a number above the mean is removed.
+
+EXPLANATION:
+Total of 5 numbers = 5 × 18 = 90. Removing 30 leaves 60 across 4 numbers, so the new average is 60 ÷ 4 = 15.
+
+--------------------------------------------------------------------------------
+ITEM 6 / 39: [gmat-ps-0006]
+Section: quant | Type: problem-solving | Difficulty: Hard
+Topic: Arithmetic · work rates
+--------------------------------------------------------------------------------
+STEM:
+Machine A completes a job in 6 hours and Machine B completes the same job in 12 hours. Working together, how long do they take?
+
+OPTIONS:
+  [0]   3 hours
+  [1] ✓ (CORRECT) 4 hours
+  [2]   4.5 hours
+  [3]   8 hours
+  [4]   9 hours
+
+STORED CORRECT INDEX: [1] "4 hours"
+
+OPTION EXPLANATIONS:
+  [0] This halves the faster machine's time without combining rates.
+  [1] Combined rate = 1/6 + 1/12 = 1/4 job per hour, so time = 4 hours.
+  [2] This averages the rates incorrectly.
+  [3] This averages the two times (6 and 12) — rates must be added, not times.
+  [4] This is closer to summing the times than combining rates.
+
+EXPLANATION:
+Add rates: 1/6 + 1/12 = 2/12 + 1/12 = 3/12 = 1/4 of the job per hour. Time = 1 ÷ (1/4) = 4 hours.
+
+--------------------------------------------------------------------------------
+ITEM 7 / 39: [gmat-ps-0007]
+Section: quant | Type: problem-solving | Difficulty: Easy
+Topic: Arithmetic · exponents
+--------------------------------------------------------------------------------
+STEM:
+What is the value of 2^5 × 2^3?
+
+OPTIONS:
+  [0]   64
+  [1]   128
+  [2] ✓ (CORRECT) 256
+  [3]   512
+  [4]   1024
+
+STORED CORRECT INDEX: [2] "256"
+
+OPTION EXPLANATIONS:
+  [0] This is 2^6.
+  [1] This is 2^7.
+  [2] Same base: add exponents → 2^(5+3) = 2^8 = 256.
+  [3] This is 2^9.
+  [4] This is 2^10.
+
+EXPLANATION:
+When multiplying powers of the same base, add the exponents: 2^5 × 2^3 = 2^8 = 256.
+
+--------------------------------------------------------------------------------
+ITEM 8 / 39: [gmat-ps-0008]
+Section: quant | Type: problem-solving | Difficulty: Easy
+Topic: Geometry · area
+--------------------------------------------------------------------------------
+STEM:
+A rectangle has length 12 and width 5. What is its area?
+
+OPTIONS:
+  [0]   17
+  [1]   34
+  [2]   48
+  [3] ✓ (CORRECT) 60
+  [4]   120
+
+STORED CORRECT INDEX: [3] "60"
+
+OPTION EXPLANATIONS:
+  [0] This is the sum of length and width.
+  [1] This is the perimeter (2 × (12 + 5)).
+  [2] This uses an incorrect width.
+  [3] Area = length × width = 12 × 5 = 60.
+  [4] This doubles the area.
+
+EXPLANATION:
+Area of a rectangle = length × width = 12 × 5 = 60.
+
+--------------------------------------------------------------------------------
+ITEM 9 / 39: [gmat-ps-0009]
+Section: quant | Type: problem-solving | Difficulty: Medium
+Topic: Probability
+--------------------------------------------------------------------------------
+STEM:
+A bag holds 3 red and 2 blue marbles. If one marble is drawn at random, what is the probability it is red?
+
+OPTIONS:
+  [0]   1/5
+  [1]   2/5
+  [2]   1/2
+  [3] ✓ (CORRECT) 3/5
+  [4]   2/3
+
+STORED CORRECT INDEX: [3] "3/5"
+
+OPTION EXPLANATIONS:
+  [0] This is the probability of a single specific marble.
+  [1] This is the probability of drawing blue.
+  [2] This assumes equal counts of each colour.
+  [3] Favourable ÷ total = 3 red ÷ 5 marbles = 3/5.
+  [4] This uses an incorrect total of 3 instead of 5.
+
+EXPLANATION:
+Probability = favourable outcomes ÷ total outcomes = 3 ÷ (3 + 2) = 3/5.
+
+--------------------------------------------------------------------------------
+ITEM 10 / 39: [gmat-ps-0010]
+Section: quant | Type: problem-solving | Difficulty: Medium
+Topic: Number properties · primes
+--------------------------------------------------------------------------------
+STEM:
+What is the smallest prime number greater than 50?
+
+OPTIONS:
+  [0]   51
+  [1]   52
+  [2] ✓ (CORRECT) 53
+  [3]   55
+  [4]   57
+
+STORED CORRECT INDEX: [2] "53"
+
+OPTION EXPLANATIONS:
+  [0] 51 = 3 × 17, not prime.
+  [1] 52 is even, not prime.
+  [2] 53 has no divisors other than 1 and itself — it is prime.
+  [3] 55 = 5 × 11, not prime.
+  [4] 57 = 3 × 19, not prime.
+
+EXPLANATION:
+Check each candidate above 50: 51 = 3 × 17, 52 is even, 53 is prime. So 53 is the smallest prime greater than 50.
+
+--------------------------------------------------------------------------------
+ITEM 11 / 39: [gmat-ps-0011]
+Section: quant | Type: problem-solving | Difficulty: Medium
+Topic: Arithmetic · percent change
+--------------------------------------------------------------------------------
+STEM:
+A quantity increases from 50 to 65. What is the percent increase?
+
+OPTIONS:
+  [0]   15%
+  [1]   23%
+  [2]   25%
+  [3] ✓ (CORRECT) 30%
+  [4]   35%
+
+STORED CORRECT INDEX: [3] "30%"
+
+OPTION EXPLANATIONS:
+  [0] This is the raw increase, not the percent.
+  [1] This divides by the new value instead of the original.
+  [2] This rounds incorrectly.
+  [3] Increase = 15; percent = 15 ÷ 50 = 0.30 = 30%.
+  [4] This overstates the change.
+
+EXPLANATION:
+Percent increase = (new − old) ÷ old = (65 − 50) ÷ 50 = 15 ÷ 50 = 30%.
+
+--------------------------------------------------------------------------------
+ITEM 12 / 39: [gmat-ps-0012]
+Section: quant | Type: problem-solving | Difficulty: Easy
+Topic: Arithmetic · rates
+--------------------------------------------------------------------------------
+STEM:
+A car travels at a constant 60 miles per hour. How long does it take to travel 150 miles?
+
+OPTIONS:
+  [0]   2 hours
+  [1]   2.25 hours
+  [2] ✓ (CORRECT) 2.5 hours
+  [3]   2.75 hours
+  [4]   3 hours
+
+STORED CORRECT INDEX: [2] "2.5 hours"
+
+OPTION EXPLANATIONS:
+  [0] This uses 120 miles.
+  [1] This is an incorrect division.
+  [2] Time = distance ÷ speed = 150 ÷ 60 = 2.5 hours.
+  [3] This rounds incorrectly.
+  [4] This uses 180 miles.
+
+EXPLANATION:
+Time = distance ÷ speed = 150 ÷ 60 = 2.5 hours.
+
+--------------------------------------------------------------------------------
+ITEM 13 / 39: [gmat-ps-0013]
+Section: quant | Type: problem-solving | Difficulty: Medium
+Topic: Arithmetic · fractions
+--------------------------------------------------------------------------------
+STEM:
+What is 3/4 + 1/6?
+
+OPTIONS:
+  [0]   4/10
+  [1]   5/6
+  [2] ✓ (CORRECT) 11/12
+  [3]   1
+  [4]   13/12
+
+STORED CORRECT INDEX: [2] "11/12"
+
+OPTION EXPLANATIONS:
+  [0] This adds numerators and denominators directly — not valid.
+  [1] This uses an incorrect common denominator.
+  [2] Common denominator 12: 9/12 + 2/12 = 11/12.
+  [3] This rounds up incorrectly.
+  [4] This overshoots; the sum is less than 1.
+
+EXPLANATION:
+Use a common denominator of 12: 3/4 = 9/12 and 1/6 = 2/12. Sum = 11/12.
+
+--------------------------------------------------------------------------------
+ITEM 14 / 39: [gmat-ps-0014]
+Section: quant | Type: problem-solving | Difficulty: Hard
+Topic: Algebra · simultaneous equations
+--------------------------------------------------------------------------------
+STEM:
+If 2x + y = 11 and x − y = 1, what is the value of x?
+
+OPTIONS:
+  [0]   3
+  [1] ✓ (CORRECT) 4
+  [2]   5
+  [3]   6
+  [4]   7
+
+STORED CORRECT INDEX: [1] "4"
+
+OPTION EXPLANATIONS:
+  [0] This solves for y, not x.
+  [1] Add the equations: 3x = 12, so x = 4.
+  [2] This adds incorrectly.
+  [3] This mis-substitutes the second equation.
+  [4] This uses the wrong sum of the equations.
+
+EXPLANATION:
+Add the two equations: (2x + y) + (x − y) = 11 + 1 → 3x = 12 → x = 4.
+
+--------------------------------------------------------------------------------
+ITEM 15 / 39: [gmat-ps-0015]
+Section: quant | Type: problem-solving | Difficulty: Easy
+Topic: Arithmetic · simple interest
+--------------------------------------------------------------------------------
+STEM:
+What is the simple interest on $1,000 at 5% per year for 3 years?
+
+OPTIONS:
+  [0]   $50
+  [1]   $100
+  [2] ✓ (CORRECT) $150
+  [3]   $300
+  [4]   $1,150
+
+STORED CORRECT INDEX: [2] "$150"
+
+OPTION EXPLANATIONS:
+  [0] This is one year of interest.
+  [1] This is two years of interest.
+  [2] Interest = principal × rate × time = 1000 × 0.05 × 3 = $150.
+  [3] This uses a 10% rate.
+  [4] This is principal plus interest, not the interest alone.
+
+EXPLANATION:
+Simple interest = P × r × t = 1000 × 0.05 × 3 = $150.
+
+--------------------------------------------------------------------------------
+ITEM 16 / 39: [gmat-ps-0016]
+Section: quant | Type: problem-solving | Difficulty: Hard
+Topic: Sequences · arithmetic
+--------------------------------------------------------------------------------
+STEM:
+In the arithmetic sequence 3, 7, 11, 15, …, what is the 10th term?
+
+OPTIONS:
+  [0]   36
+  [1] ✓ (CORRECT) 39
+  [2]   40
+  [3]   43
+  [4]   47
+
+STORED CORRECT INDEX: [1] "39"
+
+OPTION EXPLANATIONS:
+  [0] This uses 9 as the common difference's multiplier but the wrong first term.
+  [1] Term = a + (n−1)d = 3 + 9 × 4 = 39.
+  [2] This adds one extra difference.
+  [3] This uses n = 11.
+  [4] This overshoots by two terms.
+
+EXPLANATION:
+First term a = 3, common difference d = 4. The nth term = a + (n − 1)d = 3 + (10 − 1) × 4 = 3 + 36 = 39.
+
+--------------------------------------------------------------------------------
+ITEM 17 / 39: [gmat-ps-0017]
+Section: quant | Type: problem-solving | Difficulty: Medium
+Topic: Geometry · circles
+--------------------------------------------------------------------------------
+STEM:
+A circle has radius 7. Using π ≈ 22/7, what is its area?
+
+OPTIONS:
+  [0]   44
+  [1]   77
+  [2]   132
+  [3] ✓ (CORRECT) 154
+  [4]   308
+
+STORED CORRECT INDEX: [3] "154"
+
+OPTION EXPLANATIONS:
+  [0] This is roughly the circumference, not the area.
+  [1] This halves the area.
+  [2] This uses radius rather than radius squared incompletely.
+  [3] Area = πr² = (22/7) × 49 = 154.
+  [4] This doubles the correct area.
+
+EXPLANATION:
+Area = πr² = (22/7) × 7² = (22/7) × 49 = 22 × 7 = 154.
+
+--------------------------------------------------------------------------------
+ITEM 18 / 39: [gmat-ps-0018]
+Section: quant | Type: problem-solving | Difficulty: Medium
+Topic: Arithmetic · mixtures
+--------------------------------------------------------------------------------
+STEM:
+A 40-litre solution is 25% acid. How many litres of acid does it contain?
+
+OPTIONS:
+  [0]   8
+  [1] ✓ (CORRECT) 10
+  [2]   12
+  [3]   15
+  [4]   20
+
+STORED CORRECT INDEX: [1] "10"
+
+OPTION EXPLANATIONS:
+  [0] This uses 20% instead of 25%.
+  [1] Acid = 25% of 40 = 0.25 × 40 = 10 litres.
+  [2] This uses 30%.
+  [3] This uses an incorrect base volume.
+  [4] This uses 50%.
+
+EXPLANATION:
+Amount of acid = 25% × 40 = 0.25 × 40 = 10 litres.
+
+--------------------------------------------------------------------------------
+ITEM 19 / 39: [gmat-cr-0001]
+Section: verbal | Type: critical-reasoning | Difficulty: Medium
+Topic: Critical Reasoning · weaken
+--------------------------------------------------------------------------------
+PASSAGE:
+After the city installed protected bike lanes on Main Street, the number of reported cycling accidents on that street fell by 40% over the following year. The transport department concluded that protected bike lanes make cycling safer.
+
+STEM:
+Which of the following, if true, most weakens the department's conclusion?
+
+OPTIONS:
+  [0] ✓ (CORRECT) Many cyclists, fearing the construction, simply stopped riding on Main Street during that year.
+  [1]   Protected bike lanes were also installed on two other streets in the same city.
+  [2]   The city spent more on the bike lanes than it had originally budgeted.
+  [3]   Cycling accidents in neighbouring towns rose slightly during the same period.
+  [4]   Most cyclists surveyed said they preferred riding in protected lanes.
+
+STORED CORRECT INDEX: [0] "Many cyclists, fearing the construction, simply stopped riding on Main Street during that year."
+
+OPTION EXPLANATIONS:
+  [0] If far fewer cyclists used Main Street, the drop in accidents could reflect lower ridership, not greater safety — directly undermining the causal claim.
+  [1] More lanes elsewhere does not address whether the lanes caused the safety improvement.
+  [2] Cost is irrelevant to the safety conclusion.
+  [3] Accidents elsewhere do not explain the Main Street drop.
+  [4] Preference is not the same as a measurable safety effect.
+
+EXPLANATION:
+The conclusion assumes the lanes caused safer cycling. If ridership fell sharply, fewer accidents may simply reflect fewer cyclists — an alternative cause that weakens the argument.
+
+--------------------------------------------------------------------------------
+ITEM 20 / 39: [gmat-cr-0002]
+Section: verbal | Type: critical-reasoning | Difficulty: Medium
+Topic: Critical Reasoning · assumption
+--------------------------------------------------------------------------------
+PASSAGE:
+A publisher plans to increase profits by raising the price of its flagship magazine by 15%. It expects total revenue to rise as a result.
+
+STEM:
+The publisher's plan relies on which of the following assumptions?
+
+OPTIONS:
+  [0]   The magazine's production costs will fall next year.
+  [1] ✓ (CORRECT) The number of subscribers will not drop enough to offset the higher price.
+  [2]   Competing magazines will also raise their prices.
+  [3]   Readers prefer print magazines to digital ones.
+  [4]   The magazine will win an industry award.
+
+STORED CORRECT INDEX: [1] "The number of subscribers will not drop enough to offset the higher price."
+
+OPTION EXPLANATIONS:
+  [0] Lower costs would affect profit but the claim here is about revenue from the price rise.
+  [1] Revenue = price × quantity. The plan only works if the quantity sold does not fall enough to cancel the price gain — this is the necessary assumption.
+  [2] Competitors' pricing is not required for this plan to succeed.
+  [3] Format preference is irrelevant to the revenue calculation.
+  [4] An award is unrelated to the revenue projection.
+
+EXPLANATION:
+Raising price increases revenue only if the resulting drop in quantity sold is small enough. The plan assumes subscriber losses will not offset the higher per-unit price.
+
+--------------------------------------------------------------------------------
+ITEM 21 / 39: [gmat-cr-0003]
+Section: verbal | Type: critical-reasoning | Difficulty: Hard
+Topic: Critical Reasoning · strengthen
+--------------------------------------------------------------------------------
+PASSAGE:
+A nutritionist argues that a new breakfast cereal improves concentration, citing a study in which students who ate the cereal scored higher on a midday focus test than those who skipped breakfast entirely.
+
+STEM:
+Which of the following, if true, most strengthens the nutritionist's argument?
+
+OPTIONS:
+  [0]   The students who ate the cereal also reported enjoying its taste.
+  [1]   Students who ate a different breakfast scored no higher than those who skipped breakfast.
+  [2] ✓ (CORRECT) Students who ate the cereal scored higher than students who ate a calorie-matched alternative breakfast.
+  [3]   The cereal is fortified with several vitamins.
+  [4]   The focus test was administered by trained staff.
+
+STORED CORRECT INDEX: [2] "Students who ate the cereal scored higher than students who ate a calorie-matched alternative breakfast."
+
+OPTION EXPLANATIONS:
+  [0] Enjoyment does not establish a concentration benefit.
+  [1] This actually undercuts the cereal's special role by suggesting any breakfast — or none — yields similar results.
+  [2] Comparing the cereal to an equivalent breakfast isolates the cereal itself as the cause, ruling out 'just eating something' — this strengthens the claim.
+  [3] Fortification is suggestive but does not show a measured concentration effect.
+  [4] Test administration quality does not bear on the cereal's effect.
+
+EXPLANATION:
+The original study only compared the cereal to skipping breakfast. Showing the cereal beats a calorie-matched breakfast isolates the cereal as the cause, strengthening the conclusion.
+
+--------------------------------------------------------------------------------
+ITEM 22 / 39: [gmat-cr-0004]
+Section: verbal | Type: critical-reasoning | Difficulty: Medium
+Topic: Critical Reasoning · inference
+--------------------------------------------------------------------------------
+PASSAGE:
+Every employee who completed the advanced training received a certification. No employee in the logistics department completed the advanced training.
+
+STEM:
+Which of the following must be true?
+
+OPTIONS:
+  [0] ✓ (CORRECT) No employee in the logistics department is certified.
+  [1]   Some logistics employees completed a different training.
+  [2]   All certified employees work outside logistics.
+  [3]   The advanced training is required for promotion.
+  [4]   Logistics employees are less skilled than others.
+
+STORED CORRECT INDEX: [0] "No employee in the logistics department is certified."
+
+OPTION EXPLANATIONS:
+  [0] Certification here comes only via the advanced training, which no logistics employee completed — so none of them obtained it this way. Within the stated facts, none are certified.
+  [1] Nothing is stated about other trainings.
+  [2] Certified employees could exist in any department that did the training; the statement does not say all are outside logistics.
+  [3] Promotion requirements are never mentioned.
+  [4] Skill comparisons are not supported by the premises.
+
+EXPLANATION:
+The only stated route to certification is the advanced training, and no logistics employee completed it. Therefore, based solely on these facts, no logistics employee is certified.
+
+--------------------------------------------------------------------------------
+ITEM 23 / 39: [gmat-cr-0005]
+Section: verbal | Type: critical-reasoning | Difficulty: Hard
+Topic: Critical Reasoning · flaw
+--------------------------------------------------------------------------------
+PASSAGE:
+A columnist writes: 'The best-selling car in the country last year was also the most frequently stolen. Clearly, this model has a security defect that thieves exploit.'
+
+STEM:
+The columnist's reasoning is most vulnerable to the criticism that it
+
+OPTIONS:
+  [0]   relies on a survey with too few respondents.
+  [1] ✓ (CORRECT) fails to consider that the most common car would naturally be stolen most often simply because there are more of them.
+  [2]   assumes that car thieves act rationally.
+  [3]   draws a conclusion about the future from past data.
+  [4]   confuses the cost of the car with its popularity.
+
+STORED CORRECT INDEX: [1] "fails to consider that the most common car would naturally be stolen most often simply because there are more of them."
+
+OPTION EXPLANATIONS:
+  [0] No survey is involved in the argument.
+  [1] Because the model is the most common on the road, it is the largest target pool — high theft counts may reflect sheer numbers, not a defect. The columnist overlooks this base-rate effect.
+  [2] The rationality of thieves is not the gap in the argument.
+  [3] The argument is about a defect, not a future prediction.
+  [4] Cost is never mentioned.
+
+EXPLANATION:
+The argument ignores base rates: the most common car is the most available target, so it may be stolen most often simply due to numbers, not a security defect.
+
+--------------------------------------------------------------------------------
+ITEM 24 / 39: [gmat-cr-0006]
+Section: verbal | Type: critical-reasoning | Difficulty: Easy
+Topic: Critical Reasoning · weaken
+--------------------------------------------------------------------------------
+PASSAGE:
+A café owner noticed that sales of hot chocolate are highest in December. She concludes that cold weather causes people to crave hot chocolate.
+
+STEM:
+Which of the following, if true, most weakens this conclusion?
+
+OPTIONS:
+  [0]   Hot chocolate is also available in summer.
+  [1] ✓ (CORRECT) December sales are driven largely by a seasonal holiday promotion offering hot chocolate at half price.
+  [2]   The café sells more coffee than hot chocolate overall.
+  [3]   Some customers add marshmallows to their hot chocolate.
+  [4]   The café is located in a cold climate.
+
+STORED CORRECT INDEX: [1] "December sales are driven largely by a seasonal holiday promotion offering hot chocolate at half price."
+
+OPTION EXPLANATIONS:
+  [0] Year-round availability does not explain the December spike.
+  [1] If a half-price promotion drives December sales, price — not cold weather — may be the real cause, weakening the weather explanation.
+  [2] Relative coffee sales are irrelevant to the hot-chocolate claim.
+  [3] Toppings have no bearing on the cause of demand.
+  [4] A cold climate is consistent with, not a challenge to, the conclusion.
+
+EXPLANATION:
+A confounding cause — the half-price holiday promotion — offers an alternative explanation for the December spike, weakening the claim that cold weather is the driver.
+
+--------------------------------------------------------------------------------
+ITEM 25 / 39: [gmat-cr-0007]
+Section: verbal | Type: critical-reasoning | Difficulty: Medium
+Topic: Critical Reasoning · assumption
+--------------------------------------------------------------------------------
+PASSAGE:
+A school plans to improve test scores by extending the school day by one hour. Administrators are confident this will raise average scores.
+
+STEM:
+The plan depends on the assumption that
+
+OPTIONS:
+  [0]   teachers will be paid more for the longer day.
+  [1] ✓ (CORRECT) the additional hour will be used in ways that actually improve learning.
+  [2]   students prefer longer school days.
+  [3]   the school has enough classrooms.
+  [4]   parents will approve of the change.
+
+STORED CORRECT INDEX: [1] "the additional hour will be used in ways that actually improve learning."
+
+OPTION EXPLANATIONS:
+  [0] Teacher pay does not determine whether scores rise.
+  [1] Extra time only helps if it is spent productively; without effective use, more hours need not raise scores. This is the necessary link.
+  [2] Student preference is not required for scores to improve.
+  [3] Classroom capacity is a logistical detail, not the core assumption.
+  [4] Parental approval does not affect the causal claim about scores.
+
+EXPLANATION:
+Adding time only raises scores if that time is used effectively for learning. The plan assumes the extra hour will be spent in a way that improves outcomes.
+
+--------------------------------------------------------------------------------
+ITEM 26 / 39: [gmat-cr-0008]
+Section: verbal | Type: critical-reasoning | Difficulty: Hard
+Topic: Critical Reasoning · evaluate
+--------------------------------------------------------------------------------
+PASSAGE:
+A manufacturer claims its new lightbulb lasts longer than the leading brand because, in lab tests, it burned for more hours before failing.
+
+STEM:
+Which of the following would be most useful to know in evaluating the manufacturer's claim?
+
+OPTIONS:
+  [0] ✓ (CORRECT) Whether the lab tests used the same on/off cycling that consumers typically subject bulbs to.
+  [1]   How much the new bulb costs at retail.
+  [2]   Whether the manufacturer advertises on television.
+  [3]   What colour of light the new bulb produces.
+  [4]   How many employees the manufacturer has.
+
+STORED CORRECT INDEX: [0] "Whether the lab tests used the same on/off cycling that consumers typically subject bulbs to."
+
+OPTION EXPLANATIONS:
+  [0] Bulb lifespan depends heavily on usage patterns; if the lab tests did not mirror real-world on/off cycling, the longer burn time may not translate to real longevity. This is decisive for evaluation.
+  [1] Price is irrelevant to a longevity comparison.
+  [2] Advertising channel has no bearing on lifespan.
+  [3] Light colour does not affect the longevity claim.
+  [4] Workforce size is unrelated to product performance.
+
+EXPLANATION:
+Whether the test conditions reflect typical consumer use (especially on/off cycling) determines whether the lab result supports the real-world longevity claim.
+
+--------------------------------------------------------------------------------
+ITEM 27 / 39: [gmat-cr-0009]
+Section: verbal | Type: critical-reasoning | Difficulty: Medium
+Topic: Critical Reasoning · strengthen
+--------------------------------------------------------------------------------
+PASSAGE:
+A city replaced the timed traffic signals at a busy intersection with a roundabout. In the year that followed, the number of injury-causing collisions there dropped sharply. Officials credit the roundabout for the improvement.
+
+STEM:
+Which of the following, if true, most strengthens the officials' explanation?
+
+OPTIONS:
+  [0] ✓ (CORRECT) Traffic volume through the intersection remained roughly the same before and after the change.
+  [1]   The roundabout was more expensive to build than new signals would have been.
+  [2]   Drivers reported that the roundabout was confusing at first.
+  [3]   A nearby intersection that kept its signals saw no change in collisions.
+  [4]   The city plans to build more roundabouts elsewhere.
+
+STORED CORRECT INDEX: [0] "Traffic volume through the intersection remained roughly the same before and after the change."
+
+OPTION EXPLANATIONS:
+  [0] If traffic volume was unchanged, the drop in collisions cannot be explained away by fewer cars using the intersection — this supports the roundabout as the cause.
+  [1] Cost has no bearing on whether the roundabout reduced collisions.
+  [2] Initial confusion would, if anything, weaken the claim.
+  [3] An unchanged nearby intersection is a weak control but does not directly rule out a volume drop at the changed intersection.
+  [4] Future plans do not strengthen the causal claim about the existing change.
+
+EXPLANATION:
+A key alternative explanation is that fewer cars used the intersection. Confirming that traffic volume held steady removes that alternative, strengthening the claim that the roundabout caused the safety gain.
+
+--------------------------------------------------------------------------------
+ITEM 28 / 39: [gmat-cr-0010]
+Section: verbal | Type: critical-reasoning | Difficulty: Hard
+Topic: Critical Reasoning · paradox
+--------------------------------------------------------------------------------
+PASSAGE:
+A bookstore moved its most popular titles from the front of the store to the back. Surprisingly, total sales of all books rose in the following month, even though sales of those popular titles themselves stayed about the same.
+
+STEM:
+Which of the following best explains the rise in total sales?
+
+OPTIONS:
+  [0]   The popular titles were already selling at their maximum possible rate.
+  [1] ✓ (CORRECT) To reach the popular titles at the back, customers now walk past many other books and often buy some of them.
+  [2]   The store reduced the price of its popular titles.
+  [3]   Fewer customers visited the store that month.
+  [4]   The store hired additional staff for the month.
+
+STORED CORRECT INDEX: [1] "To reach the popular titles at the back, customers now walk past many other books and often buy some of them."
+
+OPTION EXPLANATIONS:
+  [0] This explains why popular-title sales were flat but not why total sales rose.
+  [1] Routing customers past other books exposes them to additional titles they then buy, raising total sales while popular-title sales stay flat — this resolves the paradox.
+  [2] A price cut would tend to change popular-title sales, which stayed the same.
+  [3] Fewer customers would tend to lower, not raise, total sales.
+  [4] More staff does not by itself explain higher total sales.
+
+EXPLANATION:
+Placing popular titles at the back forces customers to pass other books on the way, prompting extra purchases. That lifts total sales even though the popular titles' own sales are unchanged.
+
+--------------------------------------------------------------------------------
+ITEM 29 / 39: [gmat-cr-0011]
+Section: verbal | Type: critical-reasoning | Difficulty: Medium
+Topic: Critical Reasoning · assumption
+--------------------------------------------------------------------------------
+PASSAGE:
+A software firm will let employees work from home permanently, reasoning that eliminating commutes will make employees more productive.
+
+STEM:
+The firm's reasoning depends on assuming that
+
+OPTIONS:
+  [0]   employees currently spend a long time commuting.
+  [1] ✓ (CORRECT) time and energy saved from commuting will translate into work output rather than being absorbed by other activities.
+  [2]   the firm will save money on office space.
+  [3]   all employees prefer working from home.
+  [4]   competitors are also adopting remote work.
+
+STORED CORRECT INDEX: [1] "time and energy saved from commuting will translate into work output rather than being absorbed by other activities."
+
+OPTION EXPLANATIONS:
+  [0] Even a long commute does not guarantee a productivity gain; this is not the necessary link.
+  [1] The plan only works if the freed-up time and energy actually become work output instead of leisure or chores — the essential assumption.
+  [2] Office-space savings are a separate benefit, not the productivity claim.
+  [3] Employee preference is not required for productivity to rise.
+  [4] Competitor behaviour is irrelevant to this firm's productivity reasoning.
+
+EXPLANATION:
+Removing commutes raises productivity only if the saved time and energy convert into work rather than being spent elsewhere. The argument assumes that conversion happens.
+
+--------------------------------------------------------------------------------
+ITEM 30 / 39: [gmat-rc-0001]
+Section: verbal | Type: reading-comprehension | Difficulty: Medium
+Topic: Reading Comprehension · social science
+--------------------------------------------------------------------------------
+PASSAGE:
+For much of the twentieth century, economists treated the household as a single decision-making unit, as though a family shared one set of preferences. Beginning in the 1980s, however, a number of researchers challenged this 'unitary' model. They argued that households are better understood as arenas of negotiation, in which members with distinct preferences bargain over how resources are allocated.
+
+Evidence for this 'collective' view came from studies of how income affected spending. When income controlled by women rose relative to income controlled by men, spending patterns shifted — for instance, toward children's health and education. Under a strict unitary model, the source of a household's income should not affect how it is spent, since the household supposedly pools everything and spends according to shared priorities. The observed shifts therefore undermined the unitary assumption.
+
+Critics of the collective model concede that it fits the data better but note that it is harder to apply, since it requires information about each member's preferences and bargaining power — information that is often unavailable. The debate thus illustrates a recurring tension in economics between models that are tractable and models that are realistic.
+
+SUB-QUESTIONS (3 questions):
+
+  Sub-question 1 [gmat-rc-0001-q1]:
+  Stem: The primary purpose of the passage is to
+  Options:
+    [0] ✓ (CORRECT) describe a shift in how economists model household decision-making and the trade-off it reveals.
+    [1]   prove that the unitary model of the household is entirely without merit.
+    [2]   argue that women should control household income.
+    [3]   trace the history of economics from the nineteenth century to the present.
+    [4]   recommend a specific policy for improving children's health.
+  Stored Correct: [0] "describe a shift in how economists model household decision-making and the trade-off it reveals."
+  Option Explanations:
+    [0] The passage presents the move from the unitary to the collective model and ends on the tractability-vs-realism trade-off — an accurate statement of purpose.
+    [1] The passage says the collective model fits better but does not declare the unitary model worthless; it notes the unitary model's tractability.
+    [2] The passage uses income-control findings as evidence, not as a policy recommendation about who should control income.
+    [3] The passage focuses on a specific debate since the 1980s, not a sweeping history.
+    [4] No health policy is recommended.
+  Explanation: The passage explains the move from the unitary to the collective model and closes by framing the broader tractability-versus-realism trade-off — that is its main purpose.
+
+  Sub-question 2 [gmat-rc-0001-q2]:
+  Stem: According to the passage, the finding that spending shifted when women's relative income rose is significant because it
+  Options:
+    [0]   confirmed that households pool all income.
+    [1] ✓ (CORRECT) contradicted a prediction of the unitary model.
+    [2]   showed that men and women have identical preferences.
+    [3]   proved that the collective model is easy to apply.
+    [4]   demonstrated that income has no effect on spending.
+  Stored Correct: [1] "contradicted a prediction of the unitary model."
+  Option Explanations:
+    [0] The finding undercut pooling, not confirmed it.
+    [1] The unitary model predicts the income source should not affect spending; the observed shift contradicted that prediction.
+    [2] The shift implies differing, not identical, preferences.
+    [3] The passage says the collective model is harder, not easier, to apply.
+    [4] Income clearly did affect spending, which is the opposite of this option.
+  Explanation: Under the unitary model, who earns the income should not change spending. The observed shift contradicted that prediction, supporting the collective view.
+
+  Sub-question 3 [gmat-rc-0001-q3]:
+  Stem: The passage suggests that critics of the collective model object to it primarily on the grounds that it
+  Options:
+    [0]   fits the empirical data poorly.
+    [1] ✓ (CORRECT) requires information that is frequently unavailable.
+    [2]   ignores the role of income entirely.
+    [3]   was developed before the 1980s.
+    [4]   applies only to households without children.
+  Stored Correct: [1] "requires information that is frequently unavailable."
+  Option Explanations:
+    [0] Critics concede it fits the data better, so this is contradicted.
+    [1] The passage states the model needs data on each member's preferences and bargaining power, which is often unavailable — the critics' main objection.
+    [2] The model centres on income control, so it does not ignore income.
+    [3] The collective model emerged in the 1980s, and timing is not the objection.
+    [4] No such restriction to childless households is mentioned.
+  Explanation: Critics accept the collective model's better fit but object that it demands detailed information on members' preferences and bargaining power, which is often unavailable.
+
+--------------------------------------------------------------------------------
+ITEM 31 / 39: [gmat-rc-0002]
+Section: verbal | Type: reading-comprehension | Difficulty: Hard
+Topic: Reading Comprehension · science
+--------------------------------------------------------------------------------
+PASSAGE:
+Coral reefs occupy less than one percent of the ocean floor, yet they support roughly a quarter of all marine species. This disproportionate richness has long puzzled ecologists, because the waters surrounding many reefs are strikingly low in the dissolved nutrients that usually fuel biological productivity. The apparent paradox — abundant life in nutrient-poor water — is sometimes called 'Darwin's paradox,' after the naturalist who first remarked on it.
+
+The leading resolution centres on efficiency rather than supply. Reef organisms recycle nutrients with unusual thoroughness: waste produced by one organism is rapidly absorbed by another, so the same atoms of nitrogen and phosphorus cycle through the community many times before being lost. Symbiotic relationships are central to this thrift. Reef-building corals, for example, host photosynthetic algae within their tissues; the algae supply the coral with energy, and the coral supplies the algae with nutrients and shelter.
+
+This tight coupling, however, is also a vulnerability. When water temperatures rise even slightly above the normal maximum, corals expel their algae — a process known as bleaching — and lose their principal energy source. If the stress is brief, corals may recover; if it is prolonged, they die. Because the entire reef economy rests on this partnership, the loss of the algae can cascade through the community, dismantling in months an ecosystem that took millennia to assemble.
+
+SUB-QUESTIONS (3 questions):
+
+  Sub-question 1 [gmat-rc-0002-q1]:
+  Stem: The passage indicates that 'Darwin's paradox' refers to the puzzle of
+  Options:
+    [0]   why coral reefs occupy so little of the ocean floor.
+    [1] ✓ (CORRECT) how abundant life can flourish in nutrient-poor waters.
+    [2]   why corals expel their algae when temperatures rise.
+    [3]   how marine species evolved from land animals.
+    [4]   why reefs take millennia to assemble.
+  Stored Correct: [1] "how abundant life can flourish in nutrient-poor waters."
+  Option Explanations:
+    [0] The small area is context, not the paradox itself.
+    [1] The passage defines the paradox as abundant life in nutrient-poor water — exactly this option.
+    [2] Bleaching is discussed later and is not the paradox named after Darwin.
+    [3] The passage makes no claim about marine species evolving from land animals.
+    [4] Assembly time is mentioned at the end, not as the paradox.
+  Explanation: The passage explicitly names the paradox as the coexistence of abundant life with nutrient-poor surrounding waters.
+
+  Sub-question 2 [gmat-rc-0002-q2]:
+  Stem: According to the passage, reefs sustain such rich life primarily because they
+  Options:
+    [0]   receive a steady supply of dissolved nutrients.
+    [1] ✓ (CORRECT) recycle nutrients with unusual efficiency.
+    [2]   occupy warm, shallow waters.
+    [3]   are protected from temperature change.
+    [4]   contain few competing species.
+  Stored Correct: [1] "recycle nutrients with unusual efficiency."
+  Option Explanations:
+    [0] The passage stresses that surrounding waters are nutrient-poor, so steady supply is not the answer.
+    [1] The passage attributes the richness to thorough nutrient recycling — 'efficiency rather than supply.'
+    [2] Warm shallow water is not given as the cause of the richness.
+    [3] The passage shows reefs are highly sensitive to temperature, not protected from it.
+    [4] High species richness contradicts 'few competing species.'
+  Explanation: The passage resolves the paradox through efficiency: reef organisms recycle nitrogen and phosphorus many times, sustaining life despite low external supply.
+
+  Sub-question 3 [gmat-rc-0002-q3]:
+  Stem: The passage suggests that the coral–algae symbiosis is best described as
+  Options:
+    [0] ✓ (CORRECT) beneficial but also a source of vulnerability.
+    [1]   harmful to the coral but helpful to the algae.
+    [2]   irrelevant to the reef's productivity.
+    [3]   a recent development in reef ecosystems.
+    [4]   unaffected by changes in water temperature.
+  Stored Correct: [0] "beneficial but also a source of vulnerability."
+  Option Explanations:
+    [0] The passage calls the partnership central to the reef's thrift yet a vulnerability under heat stress — both at once.
+    [1] The relationship benefits the coral (energy) as well as the algae, so it is not one-sided harm.
+    [2] The symbiosis is described as central to productivity, not irrelevant.
+    [3] The passage gives no timeline suggesting it is recent.
+    [4] Temperature rises trigger bleaching, so the symbiosis is clearly temperature-sensitive.
+  Explanation: The passage frames the symbiosis as the engine of the reef's nutrient efficiency yet also its key weakness, since heat-driven bleaching can collapse the whole system.
+
+--------------------------------------------------------------------------------
+ITEM 32 / 39: [gmat-ds-0001]
+Section: data-insights | Type: data-sufficiency | Difficulty: Medium
+Topic: Data Sufficiency · algebra
+--------------------------------------------------------------------------------
+STEM:
+What is the value of the integer x?
+
+STATEMENTS:
+  (1) x is a prime number between 10 and 20.
+  (2) x + 2 is a multiple of 13.
+
+STORED CORRECT INDEX: [2] (C)
+
+OPTION EXPLANATIONS:
+  [0] (A): Statement (1) alone leaves x as 11, 13, 17, or 19 — not unique.
+  [1] (B): Statement (2) alone gives x + 2 ∈ {13, 26, …}, so x could be 11, 24, … — not unique.
+  [2] (C): Together: x is prime in (10,20) and x + 2 is a multiple of 13, so x + 2 = 13 → x = 11, which is prime. Unique.
+  [3] (D): Neither statement alone is sufficient, so 'each alone' is wrong.
+  [4] (E): Together they pin down x = 11, so they are sufficient.
+
+EXPLANATION:
+(1) alone: primes 11, 13, 17, 19 — not unique. (2) alone: x = 11, 24, … — not unique. Together: x + 2 = 13 gives x = 11, which is prime and in range. Both together are sufficient; neither alone is.
+
+--------------------------------------------------------------------------------
+ITEM 33 / 39: [gmat-ds-0002]
+Section: data-insights | Type: data-sufficiency | Difficulty: Easy
+Topic: Data Sufficiency · arithmetic
+--------------------------------------------------------------------------------
+STEM:
+Is the integer n even?
+
+STATEMENTS:
+  (1) n is divisible by 6.
+  (2) n is divisible by 9.
+
+STORED CORRECT INDEX: [0] (A)
+
+OPTION EXPLANATIONS:
+  [0] (A): Statement (1): any multiple of 6 is divisible by 2, so n is even — sufficient alone.
+  [1] (B): Statement (2): multiples of 9 can be odd (9, 27) or even (18), so not sufficient alone.
+  [2] (C): Statement (1) already suffices, so 'both together' is not the best answer.
+  [3] (D): Only (1) is sufficient, not each alone.
+  [4] (E): (1) is sufficient, so the pair is not insufficient.
+
+EXPLANATION:
+(1) Multiples of 6 are always even — sufficient. (2) Multiples of 9 can be odd or even — not sufficient. So statement (1) alone is sufficient.
+
+--------------------------------------------------------------------------------
+ITEM 34 / 39: [gmat-ds-0003]
+Section: data-insights | Type: data-sufficiency | Difficulty: Hard
+Topic: Data Sufficiency · word problem
+--------------------------------------------------------------------------------
+STEM:
+A store sold pens and notebooks. How many pens were sold?
+
+STATEMENTS:
+  (1) The store sold 30 items in total.
+  (2) Each notebook sold for $4 and each pen for $1, and total sales were $75.
+
+STORED CORRECT INDEX: [2] (C)
+
+OPTION EXPLANATIONS:
+  [0] (A): Statement (1) alone gives pens + notebooks = 30 — many solutions.
+  [1] (B): Statement (2) alone gives 4N + P = 75 — many solutions.
+  [2] (C): Together: P + N = 30 and 4N + P = 75 → 3N = 45 → N = 15, P = 15. Unique.
+  [3] (D): Neither alone works, so 'each alone' is wrong.
+  [4] (E): Together they solve uniquely, so they are sufficient.
+
+EXPLANATION:
+(1): P + N = 30. (2): 4N + P = 75. Each alone is underdetermined. Subtracting gives 3N = 45, so N = 15 and P = 15. Together sufficient; neither alone.
+
+--------------------------------------------------------------------------------
+ITEM 35 / 39: [gmat-ds-0004]
+Section: data-insights | Type: data-sufficiency | Difficulty: Medium
+Topic: Data Sufficiency · statistics
+--------------------------------------------------------------------------------
+STEM:
+Is the average (arithmetic mean) of five different integers greater than 20?
+
+STATEMENTS:
+  (1) The smallest of the integers is 16.
+  (2) The largest of the integers is 26.
+
+STORED CORRECT INDEX: [4] (E)
+
+OPTION EXPLANATIONS:
+  [0] (A): Statement (1) alone: with a minimum of 16, the set could be {16, 17, 18, 19, 20} (mean = 18 ≤ 20) or {16, 30, 31, 32, 33} (mean = 28.4 > 20). Not sufficient.
+  [1] (B): Statement (2) alone: with a maximum of 26, the set could be {1, 2, 3, 4, 26} (mean = 7.2 ≤ 20) or {22, 23, 24, 25, 26} (mean = 24 > 20). Not sufficient.
+  [2] (C): Even together, the three middle values are not fixed, so the mean is not determined.
+  [3] (D): Neither statement alone is sufficient.
+  [4] (E): Correct: together, the minimum possible sum for five distinct integers is 16 + 17 + 18 + 19 + 26 = 96 (mean = 19.2 ≤ 20) and the maximum possible sum is 16 + 23 + 24 + 25 + 26 = 114 (mean = 22.8 > 20). Because the mean can be either at most 20 or greater than 20, both statements together are not sufficient.
+
+EXPLANATION:
+With min = 16 and max = 26 for five distinct integers, the minimum possible average is (16 + 17 + 18 + 19 + 26) / 5 = 19.2, and the maximum possible average is (16 + 23 + 24 + 25 + 26) / 5 = 22.8. Because the average can be either at most 20 or greater than 20, both statements together are insufficient.
+
+--------------------------------------------------------------------------------
+ITEM 36 / 39: [gmat-ds-0005]
+Section: data-insights | Type: data-sufficiency | Difficulty: Medium
+Topic: Data Sufficiency · algebra
+--------------------------------------------------------------------------------
+STEM:
+Is the integer x greater than 10?
+
+STATEMENTS:
+  (1) x is a multiple of 4.
+  (2) x is between 11 and 20, inclusive.
+
+STORED CORRECT INDEX: [1] (B)
+
+OPTION EXPLANATIONS:
+  [0] (A): Statement (1) alone: x could be 4, 8, or 12 — not always > 10.
+  [1] (B): Statement (2) alone: 11 ≤ x ≤ 20 means x is always greater than 10 — sufficient.
+  [2] (C): Statement (2) already suffices alone, so 'both together' is not the best answer.
+  [3] (D): Only (2) is sufficient, not each alone.
+  [4] (E): (2) is sufficient, so the pair is not insufficient.
+
+EXPLANATION:
+(1) x could be 4, 8, or 12 — not sufficient. (2) 11 ≤ x ≤ 20 is always greater than 10 — sufficient. Statement (2) alone is sufficient.
+
+--------------------------------------------------------------------------------
+ITEM 37 / 39: [gmat-ds-0006]
+Section: data-insights | Type: data-sufficiency | Difficulty: Hard
+Topic: Data Sufficiency · number properties
+--------------------------------------------------------------------------------
+STEM:
+Is the positive integer n even?
+
+STATEMENTS:
+  (1) n² is even.
+  (2) 3n is even.
+
+STORED CORRECT INDEX: [3] (D)
+
+OPTION EXPLANATIONS:
+  [0] (A): Statement (1) alone is sufficient, but so is (2), so this is not the best answer.
+  [1] (B): Statement (2) alone is sufficient, but so is (1), so this is not the best answer.
+  [2] (C): Each statement alone already suffices, so 'both together' is not needed.
+  [3] (D): Correct: (1) n² even → n even; (2) 3n even with 3 odd → n even. EACH alone is sufficient.
+  [4] (E): Each statement alone is sufficient, so the pair is not insufficient.
+
+EXPLANATION:
+(1) If n² is even, n is even — sufficient. (2) 3n even and 3 is odd → n must be even — sufficient. EACH statement alone is sufficient.
+
+--------------------------------------------------------------------------------
+ITEM 38 / 39: [gmat-ds-0007]
+Section: data-insights | Type: data-sufficiency | Difficulty: Easy
+Topic: Data Sufficiency · arithmetic
+--------------------------------------------------------------------------------
+STEM:
+What is the value of x + y?
+
+STATEMENTS:
+  (1) x = 8.
+  (2) y = 5.
+
+STORED CORRECT INDEX: [2] (C)
+
+OPTION EXPLANATIONS:
+  [0] (A): Statement (1) alone gives x but not y — cannot determine x + y.
+  [1] (B): Statement (2) alone gives y but not x — cannot determine x + y.
+  [2] (C): Together: x + y = 8 + 5 = 13. Sufficient.
+  [3] (D): Neither alone is sufficient.
+  [4] (E): Together they are sufficient, so this option is wrong.
+
+EXPLANATION:
+(1) alone: x = 8 but y unknown. (2) alone: y = 5 but x unknown. Together: x + y = 13. Both statements together are sufficient; neither alone is.
+
+--------------------------------------------------------------------------------
+ITEM 39 / 39: [gmat-ds-0008]
+Section: data-insights | Type: data-sufficiency | Difficulty: Easy
+Topic: Data Sufficiency · arithmetic
+--------------------------------------------------------------------------------
+STEM:
+Is integer p divisible by 3?
+
+STATEMENTS:
+  (1) p = 18.
+  (2) p is an even number.
+
+STORED CORRECT INDEX: [0] (A)
+
+OPTION EXPLANATIONS:
+  [0] (A): Correct: p = 18 = 3 × 6, so p is divisible by 3 — sufficient alone.
+  [1] (B): Even numbers can be divisible by 3 (e.g. 6) or not (e.g. 4) — not sufficient alone.
+  [2] (C): Statement (1) alone suffices, so 'both together' is not the best answer.
+  [3] (D): Only (1) is sufficient, not each alone.
+  [4] (E): (1) is sufficient, so together they are not insufficient.
+
+EXPLANATION:
+(1) p = 18, which is divisible by 3 — sufficient. (2) Even numbers may or may not be divisible by 3 — not sufficient. Statement (1) alone is sufficient.
+
