@@ -8460,7 +8460,7 @@ const DATA_INSIGHTS_ITEMS: GmatSectionBank["items"] = [
   sources: [
     {
       title: "Memo",
-      body: "The marketing team has a Q3 budget of $120,000. Planned spend: digital advertising $50,000; events $40,000; content creation $20,000. Any unplanned spend requires director approval. Savings from one category may be reallocated to another without approval.",
+      body: "The marketing team has a Q3 budget of $120,000. Planned spend: digital advertising $50,000; events $40,000; content creation $30,000. Any unplanned spend requires director approval. Savings from one category may be reallocated to another without approval.",
     },
     {
       title: "Update",
@@ -8480,20 +8480,20 @@ const DATA_INSIGHTS_ITEMS: GmatSectionBank["items"] = [
         "The spend cannot proceed under any circumstances.",
       ],
       correct: 1,
-      explanation: "The $10,000 digital saving can be reallocated without approval. The remaining $5,000 exceeds the budget and is unplanned, requiring director approval for that portion only.",
+      explanation: "Planned spend is $50,000 (digital) + $40,000 (events) + $30,000 (content) = $120,000. The $10,000 digital saving can be reallocated to events without approval. The remaining $5,000 exceeds planned funds and is unplanned, requiring director approval for that portion only.",
     },
     {
-        id: "gmat-msr-0003-q2",
-        kind: "yn",
-        stem: "Indicate whether each statement is supported by the two sources.",
-        statements: [
-          { text: "The team can reallocate the $10,000 digital saving to events without approval.", correct: true },
-          { text: "If the director approves the full additional $15,000, total Q3 spend will exceed the original $120,000 budget.", correct: true },
-          { text: "Any increase to the content creation budget requires director approval.", correct: true },
-        ],
-        answerLabels: ["Supported", "Not supported"],
-        explanation: "Savings reallocation needs no approval — supported. With $10k reallocated and $5k director-approved extra: total = $120k + $5k = $125k, exceeding budget — supported. Any spend beyond planned amounts is unplanned and needs director approval — supported.",
-      },
+      id: "gmat-msr-0003-q2",
+      kind: "yn",
+      stem: "Indicate whether each statement is supported by the two sources.",
+      statements: [
+        { text: "The team can reallocate the $10,000 digital saving to events without approval.", correct: true },
+        { text: "If the director approves the full additional $15,000, total Q3 spend will exceed the original $120,000 budget.", correct: true },
+        { text: "Increasing content creation spending above $30,000 would require director approval even if savings were available elsewhere in the budget.", correct: false },
+      ],
+      answerLabels: ["Supported", "Not supported"],
+      explanation: "Savings reallocation needs no approval — supported. With the $10k digital saving reallocated and $5k director-approved extra: total spend = $40k (digital) + $55k (events) + $30k (content) = $125k, exceeding the $120k budget — supported. The memo permits savings from one category to be reallocated to another without approval, so content creation could be increased using the $10k digital saving with no director involvement — not supported.",
+    },
   ],
 },
 // ---- Batch 13 — Data Insights (gmat-ds-0012 to gmat-ds-0021, gmat-ta-0006 to gmat-ta-0008, gmat-gi-0004 to gmat-gi-0005, gmat-tp-0007 to gmat-tp-0008, gmat-msr-0004) ----
