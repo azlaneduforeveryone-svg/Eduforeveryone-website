@@ -1,4 +1,4 @@
-// lib/gmat-engine.ts
+// lib/gmat/engine.ts
 // ---------------------------------------------------------------------------
 // Pure logic for the GMAT module. NO React here. Components import from this
 // so practice + full-mock share one source of truth (no hardcoded questions).
@@ -16,7 +16,7 @@ import type {
   GmatDifficulty,
   GmatSectionScore,
   GmatSection,
-} from "./gmat-types";
+} from "./types";
 
 /* ---------------------------- Fisher–Yates -------------------------------- */
 export function shuffle<T>(input: readonly T[]): T[] {

@@ -1,8 +1,8 @@
-// lib/gmat-data.ts
+// lib/gmat/data.ts
 // ---------------------------------------------------------------------------
 // GMAT Focus Edition — static question banks (NO database; git-versioned).
 // Mirrors lib/ielts-reading-academic-data.ts: content lives in TypeScript and
-// is consumed through lib/gmat-engine.ts. Components must NEVER hardcode items.
+// is consumed through lib/gmat/engine.ts. Components must NEVER hardcode items.
 //
 // All questions are ORIGINAL — they do not reproduce GMAC's copyrighted items.
 // Every item carries a real `explanation`; MCQ items populate
@@ -16,7 +16,7 @@ import type {
   GmatForm,
   GmatSectionBank,
   GmatSection,
-} from "./gmat-types";
+} from "./types";
 
 /* ======================================================================= */
 /*  QUANTITATIVE REASONING  —  Problem Solving                              */

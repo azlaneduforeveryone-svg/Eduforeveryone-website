@@ -9,7 +9,7 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { getLocalGmat, getGmatSessions } from "@/lib/firebaseDB";
-import type { GmatSessionResult } from "@/lib/gmat-types";
+import type { GmatSessionResult } from "@/lib/gmat/types";
 
 const SECTION_TITLE: Record<string, string> = {
   quant: "Quant",

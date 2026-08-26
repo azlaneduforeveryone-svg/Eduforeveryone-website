@@ -15,10 +15,10 @@ import { useAuth } from "@/contexts/AuthContext";
 import SectionRunner from "./SectionRunner";
 import type { SectionRunResult } from "./SectionRunner";
 import GmatResults from "./GmatResults";
-import { getBank } from "@/lib/gmat-data";
-import { sampleSection, estimateTotal } from "@/lib/gmat-engine";
+import { getBank } from "@/lib/gmat/data";
+import { sampleSection, estimateTotal } from "@/lib/gmat/engine";
 import { saveGmatResult } from "@/lib/firebaseDB";
-import type { GmatQuestion, GmatSection } from "@/lib/gmat-types";
+import type { GmatQuestion, GmatSection } from "@/lib/gmat/types";
 
 const PRACTICE_SIZE = 10;
 const PRACTICE_MINUTES = 22; // ~ real-exam ratio for 10 questions

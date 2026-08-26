@@ -5,7 +5,7 @@ import {
   serverTimestamp, where, writeBatch, addDoc,
 } from "firebase/firestore";
 import { db } from "./firebase";
-import type { GmatSessionResult } from "./gmat-types";
+import type { GmatSessionResult } from "./gmat/types";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 export interface UserProfile {
