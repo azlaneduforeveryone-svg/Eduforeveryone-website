@@ -7,19 +7,80 @@ CHECK 1: Explanation Contradictions & Style Audit
 ================================================================================
 
 --- 1.1 CONTRADICTIONS (Defects) ---
-Total Contradiction Defects Found: 1
+Total Contradiction Defects Found: 0
 
-[Contradiction Hit 1] ID: gmat-ps-0220 (Type: problem-solving, Stored correct: 2)
-  Issue: Option explanation at non-correct index [3] claims 'Correct'
-  Detail: Option [3]: "100/80 is the unsimplified form — 5/4 is correct simplified."
+✅ Zero contradiction defects found across all items (Rule 2 + Generalised Rule 3 + RC Rule 2).
 
 --- 1.2 UNCLASSIFIED DATA SUFFICIENCY ITEMS ---
 Total Data Sufficiency Items: 71
-Classified: 70 / 71
-Unclassified Count: 1
+Classified: 49 / 71
+Unclassified Count: 22
 
-[Unclassified 1] ID: gmat-ds-0008 | Stored Index: 0 (A)
+[Unclassified 1] ID: gmat-ds-0002 | Stored Index: 0 (A)
+  Explanation: "(1) Multiples of 6 are always even — sufficient. (2) Multiples of 9 can be odd or even — not sufficient. So statement (1) alone is sufficient."
+
+[Unclassified 2] ID: gmat-ds-0005 | Stored Index: 1 (B)
+  Explanation: "(1) x could be 4, 8, or 12 — not sufficient. (2) 11 ≤ x ≤ 20 is always greater than 10 — sufficient. Statement (2) alone is sufficient."
+
+[Unclassified 3] ID: gmat-ds-0008 | Stored Index: 0 (A)
   Explanation: "(1) p = 18, which is divisible by 3 — sufficient. (2) Even numbers may or may not be divisible by 3 — not sufficient. Statement (1) alone is sufficient."
+
+[Unclassified 4] ID: gmat-ds-0011 | Stored Index: 2 (C)
+  Explanation: "Statement (1) alone fails when y < 0. Statement (2) alone gives no info about x. Together: y > 0 and x > y implies x/y > 1."
+
+[Unclassified 5] ID: gmat-ds-0014 | Stored Index: 2 (C)
+  Explanation: "Neither statement alone suffices. Together: divisible by 2 AND 3 → divisible by LCM(2,3)=6."
+
+[Unclassified 6] ID: gmat-ds-0017 | Stored Index: 1 (B)
+  Explanation: "For 7 values the median is the 4th in order. Statement (2) gives it directly. Statement (1) alone cannot determine the median."
+
+[Unclassified 7] ID: gmat-ds-0019 | Stored Index: 1 (B)
+  Explanation: "(1) x²>0 only tells us x≠0 — not whether x is positive or negative. (2) x³>0 means x must be positive. Statement (2) alone is sufficient."
+
+[Unclassified 8] ID: gmat-ds-0026 | Stored Index: 1 (B)
+  Explanation: "Statement (1) needs total. Statement (2) gives ratio 2:3 → P(red)=2/(2+3)=2/5. Statement (2) alone is sufficient."
+
+[Unclassified 9] ID: gmat-ds-0028 | Stored Index: 0 (A)
+  Explanation: "x>1 guarantees x²>x (since x×x>x×1). Statement (2) alone fails for 0<x≤1. Statement (1) alone is sufficient."
+
+[Unclassified 10] ID: gmat-ds-0030 | Stored Index: 0 (A)
+  Explanation: "Exactly two distinct factors is the definition of a prime number. Statement (1) alone is sufficient. Statement (2) alone fails — not all odd numbers are prime."
+
+[Unclassified 11] ID: gmat-ds-0031 | Stored Index: 1 (B)
+  Explanation: "a>3 → a≥4 and b>−1 → b≥0 (integers). So a+b≥4+0=4>0. Statement (2) alone is sufficient."
+
+[Unclassified 12] ID: gmat-ds-0034 | Stored Index: 2 (C)
+  Explanation: "Knowing only one factor is positive does not determine the product's sign. Together: both positive → product positive."
+
+[Unclassified 13] ID: gmat-ds-0036 | Stored Index: 0 (A)
+  Explanation: "Total hours = d × 8. Statement (1) gives d=5 → 40 hours. Statement (2) gives worker count which is irrelevant to total hours. Statement (1) alone is sufficient."
+
+[Unclassified 14] ID: gmat-ds-0037 | Stored Index: 0 (A)
+  Explanation: "Average = sum/count. Statement (1) gives sum=95; average=19. Statement (2) alone leaves the fifth number unknown. Statement (1) alone is sufficient."
+
+[Unclassified 15] ID: gmat-ds-0041 | Stored Index: 0 (A)
+  Explanation: "Right triangle with legs 10 and 8: area=(1/2)×10×8=40. Statement (1) alone is sufficient. Perimeter alone cannot determine area."
+
+[Unclassified 16] ID: gmat-ds-0044 | Stored Index: 2 (C)
+  Explanation: "Even + even = even. Neither statement alone fixes both parities; together they do."
+
+[Unclassified 17] ID: gmat-ds-0047 | Stored Index: 0 (A)
+  Explanation: "Statement (1): 6 × 4 = 24 students exactly. Statement (2) alone gives only a range. Statement (1) alone is sufficient."
+
+[Unclassified 18] ID: gmat-ds-0048 | Stored Index: 0 (A)
+  Explanation: "An integer has an odd number of factors exactly when it is a perfect square (factors pair up except the square root). Statement (1) alone is sufficient."
+
+[Unclassified 19] ID: gmat-ds-0051 | Stored Index: 0 (A)
+  Explanation: "Statement (1): hypotenuse = √(9²+12²) = √225 = 15. Statement (2) gives only the product of the legs (108), which many pairs satisfy. Statement (1) alone is sufficient."
+
+[Unclassified 20] ID: gmat-ds-0064 | Stored Index: 2 (C)
+  Explanation: "Negative × positive = negative. Neither statement alone fixes both signs; together they do."
+
+[Unclassified 21] ID: gmat-ds-0070 | Stored Index: 0 (A)
+  Explanation: "Statement (1): garden area = 12 × 8 = 96 m². Statement (2) about the path is irrelevant to the garden's area. Statement (1) alone is sufficient."
+
+[Unclassified 22] ID: gmat-ds-0071 | Stored Index: 0 (A)
+  Explanation: "Statement (1): average = 45 ÷ 3 = 15. Statement (2) alone allows different sets with different averages. Statement (1) alone is sufficient."
 
 --- 1.3 STYLE (House Style Variance: Option explanations lacking 'correct' keyword) ---
 Standard MCQ & DS Style Variance Count: 34

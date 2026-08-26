@@ -116,7 +116,8 @@ allItems.forEach((q) => {
 
     // CONTRADICTION RULE 3: Data Sufficiency conclusion classification across all 71 DS items
     if (q.type === "data-sufficiency") {
-      const classification = classifyDsExplanation(q.explanation, q.optionExplanations);
+      const correctOptionExpl = q.optionExplanations ? [q.optionExplanations[q.correct]] : undefined;
+      const classification = classifyDsExplanation(q.explanation, correctOptionExpl);
       if (classification.detectedIndex === -1) {
         unclassifiedDsItems.push({ id: q.id, stored: q.correct, explanation: q.explanation });
       } else if (classification.detectedIndex !== q.correct) {
