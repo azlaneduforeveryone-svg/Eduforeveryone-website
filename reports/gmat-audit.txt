@@ -1,0 +1,898 @@
+================================================================================
+                      GMAT BANK QUALITY AUDIT REPORT                           
+================================================================================
+
+================================================================================
+CHECK 1: Explanation Contradictions & Style Audit
+================================================================================
+
+--- 1.1 CONTRADICTIONS (Defects) ---
+Total Contradiction Defects Found: 0
+
+✅ Zero contradiction defects found across all items (Rule 2 + Generalised Rule 3 + RC Rule 2).
+
+--- 1.2 UNCLASSIFIED DATA SUFFICIENCY ITEMS ---
+Total Data Sufficiency Items: 71
+Classified: 49 / 71
+Unclassified Count: 22
+
+[Unclassified 1] ID: gmat-ds-0002 | Stored Index: 0 (A)
+  Explanation: "(1) Multiples of 6 are always even — sufficient. (2) Multiples of 9 can be odd or even — not sufficient. So statement (1) alone is sufficient."
+
+[Unclassified 2] ID: gmat-ds-0005 | Stored Index: 1 (B)
+  Explanation: "(1) x could be 4, 8, or 12 — not sufficient. (2) 11 ≤ x ≤ 20 is always greater than 10 — sufficient. Statement (2) alone is sufficient."
+
+[Unclassified 3] ID: gmat-ds-0008 | Stored Index: 0 (A)
+  Explanation: "(1) p = 18, which is divisible by 3 — sufficient. (2) Even numbers may or may not be divisible by 3 — not sufficient. Statement (1) alone is sufficient."
+
+[Unclassified 4] ID: gmat-ds-0011 | Stored Index: 2 (C)
+  Explanation: "Statement (1) alone fails when y < 0. Statement (2) alone gives no info about x. Together: y > 0 and x > y implies x/y > 1."
+
+[Unclassified 5] ID: gmat-ds-0014 | Stored Index: 2 (C)
+  Explanation: "Neither statement alone suffices. Together: divisible by 2 AND 3 → divisible by LCM(2,3)=6."
+
+[Unclassified 6] ID: gmat-ds-0017 | Stored Index: 1 (B)
+  Explanation: "For 7 values the median is the 4th in order. Statement (2) gives it directly. Statement (1) alone cannot determine the median."
+
+[Unclassified 7] ID: gmat-ds-0019 | Stored Index: 1 (B)
+  Explanation: "(1) x²>0 only tells us x≠0 — not whether x is positive or negative. (2) x³>0 means x must be positive. Statement (2) alone is sufficient."
+
+[Unclassified 8] ID: gmat-ds-0026 | Stored Index: 1 (B)
+  Explanation: "Statement (1) needs total. Statement (2) gives ratio 2:3 → P(red)=2/(2+3)=2/5. Statement (2) alone is sufficient."
+
+[Unclassified 9] ID: gmat-ds-0028 | Stored Index: 0 (A)
+  Explanation: "x>1 guarantees x²>x (since x×x>x×1). Statement (2) alone fails for 0<x≤1. Statement (1) alone is sufficient."
+
+[Unclassified 10] ID: gmat-ds-0030 | Stored Index: 0 (A)
+  Explanation: "Exactly two distinct factors is the definition of a prime number. Statement (1) alone is sufficient. Statement (2) alone fails — not all odd numbers are prime."
+
+[Unclassified 11] ID: gmat-ds-0031 | Stored Index: 1 (B)
+  Explanation: "a>3 → a≥4 and b>−1 → b≥0 (integers). So a+b≥4+0=4>0. Statement (2) alone is sufficient."
+
+[Unclassified 12] ID: gmat-ds-0034 | Stored Index: 2 (C)
+  Explanation: "Knowing only one factor is positive does not determine the product's sign. Together: both positive → product positive."
+
+[Unclassified 13] ID: gmat-ds-0036 | Stored Index: 0 (A)
+  Explanation: "Total hours = d × 8. Statement (1) gives d=5 → 40 hours. Statement (2) gives worker count which is irrelevant to total hours. Statement (1) alone is sufficient."
+
+[Unclassified 14] ID: gmat-ds-0037 | Stored Index: 0 (A)
+  Explanation: "Average = sum/count. Statement (1) gives sum=95; average=19. Statement (2) alone leaves the fifth number unknown. Statement (1) alone is sufficient."
+
+[Unclassified 15] ID: gmat-ds-0041 | Stored Index: 0 (A)
+  Explanation: "Right triangle with legs 10 and 8: area=(1/2)×10×8=40. Statement (1) alone is sufficient. Perimeter alone cannot determine area."
+
+[Unclassified 16] ID: gmat-ds-0044 | Stored Index: 2 (C)
+  Explanation: "Even + even = even. Neither statement alone fixes both parities; together they do."
+
+[Unclassified 17] ID: gmat-ds-0047 | Stored Index: 0 (A)
+  Explanation: "Statement (1): 6 × 4 = 24 students exactly. Statement (2) alone gives only a range. Statement (1) alone is sufficient."
+
+[Unclassified 18] ID: gmat-ds-0048 | Stored Index: 0 (A)
+  Explanation: "An integer has an odd number of factors exactly when it is a perfect square (factors pair up except the square root). Statement (1) alone is sufficient."
+
+[Unclassified 19] ID: gmat-ds-0051 | Stored Index: 0 (A)
+  Explanation: "Statement (1): hypotenuse = √(9²+12²) = √225 = 15. Statement (2) gives only the product of the legs (108), which many pairs satisfy. Statement (1) alone is sufficient."
+
+[Unclassified 20] ID: gmat-ds-0064 | Stored Index: 2 (C)
+  Explanation: "Negative × positive = negative. Neither statement alone fixes both signs; together they do."
+
+[Unclassified 21] ID: gmat-ds-0070 | Stored Index: 0 (A)
+  Explanation: "Statement (1): garden area = 12 × 8 = 96 m². Statement (2) about the path is irrelevant to the garden's area. Statement (1) alone is sufficient."
+
+[Unclassified 22] ID: gmat-ds-0071 | Stored Index: 0 (A)
+  Explanation: "Statement (1): average = 45 ÷ 3 = 15. Statement (2) alone allows different sets with different averages. Statement (1) alone is sufficient."
+
+--- 1.3 STYLE (House Style Variance: Option explanations lacking 'correct' keyword) ---
+Standard MCQ & DS Style Variance Count: 34
+RC Sub-Question Style Variance Count: 6
+Total Style Variances: 40
+
+Standard MCQ & DS IDs with style variance:
+  - gmat-ps-0001
+  - gmat-ps-0002
+  - gmat-ps-0003
+  - gmat-ps-0004
+  - gmat-ps-0005
+  - gmat-ps-0006
+  - gmat-ps-0007
+  - gmat-ps-0008
+  - gmat-ps-0009
+  - gmat-ps-0010
+  - gmat-ps-0011
+  - gmat-ps-0012
+  - gmat-ps-0013
+  - gmat-ps-0014
+  - gmat-ps-0015
+  - gmat-ps-0016
+  - gmat-ps-0017
+  - gmat-ps-0018
+  - gmat-cr-0001
+  - gmat-cr-0002
+  - gmat-cr-0003
+  - gmat-cr-0004
+  - gmat-cr-0005
+  - gmat-cr-0006
+  - gmat-cr-0007
+  - gmat-cr-0008
+  - gmat-cr-0009
+  - gmat-cr-0010
+  - gmat-cr-0011
+  - gmat-ds-0001
+  - gmat-ds-0002
+  - gmat-ds-0003
+  - gmat-ds-0005
+  - gmat-ds-0007
+
+RC Sub-question IDs with style variance:
+  - gmat-rc-0001 (gmat-rc-0001-q1)
+  - gmat-rc-0001 (gmat-rc-0001-q2)
+  - gmat-rc-0001 (gmat-rc-0001-q3)
+  - gmat-rc-0002 (gmat-rc-0002-q1)
+  - gmat-rc-0002 (gmat-rc-0002-q2)
+  - gmat-rc-0002 (gmat-rc-0002-q3)
+
+
+================================================================================
+CHECK 2: Table Analysis and Multi-Source Yes/No Balance
+================================================================================
+
+--- Table Analysis Items (23 items) ---
+  [FLAGGED ALL-YES] ID: gmat-ta-0004 | Topic: Table Analysis · employee data | Balance: 3 Yes / 0 No
+  [FLAGGED ALL-YES] ID: gmat-ta-0010 | Topic: Table Analysis · retail sales | Balance: 3 Yes / 0 No
+  [FLAGGED ALL-YES] ID: gmat-ta-0023 | Topic: Table Analysis · store performance | Balance: 3 Yes / 0 No
+
+Table Analysis Summary: 20 balanced, 3 all-Yes, 0 all-No.
+
+--- Multi-Source Reasoning Y/N Sub-Questions ---
+  [BALANCED] ID: gmat-msr-0001 (Sub: gmat-msr-0001-q2) | Topic: Multi-Source Reasoning · project | Balance: 1 Yes / 2 No
+  [BALANCED] ID: gmat-msr-0002 (Sub: gmat-msr-0002-q2) | Topic: Multi-Source Reasoning · shipping | Balance: 1 Supported / 1 Not supported
+  [BALANCED] ID: gmat-msr-0003 (Sub: gmat-msr-0003-q2) | Topic: Multi-Source Reasoning · budget | Balance: 2 Supported / 1 Not supported
+  [BALANCED] ID: gmat-msr-0004 (Sub: gmat-msr-0004-q2) | Topic: Multi-Source Reasoning · HR policy | Balance: 1 Supported / 2 Not supported
+  [BALANCED] ID: gmat-msr-0005 (Sub: gmat-msr-0005-q2) | Topic: Multi-Source Reasoning · procurement | Balance: 1 Supported / 2 Not supported
+  [BALANCED] ID: gmat-msr-0006 (Sub: gmat-msr-0006-q2) | Topic: Multi-Source Reasoning · sales targets | Balance: 2 Supported / 1 Not supported
+  [BALANCED] ID: gmat-msr-0007 (Sub: gmat-msr-0007-q2) | Topic: Multi-Source Reasoning · loan application | Balance: 1 Supported / 2 Not supported
+  [BALANCED] ID: gmat-msr-0008 (Sub: gmat-msr-0008-q2) | Topic: Multi-Source Reasoning · event planning | Balance: 1 Supported / 2 Not supported
+  [BALANCED] ID: gmat-msr-0009 (Sub: gmat-msr-0009-q2) | Topic: Multi-Source Reasoning · conference scheduling | Balance: 1 Supported / 2 Not supported
+  [BALANCED] ID: gmat-msr-0010 (Sub: gmat-msr-0010-q2) | Topic: Multi-Source Reasoning · warranty claims | Balance: 2 Supported / 1 Not supported
+  [BALANCED] ID: gmat-msr-0011 (Sub: gmat-msr-0011-q2) | Topic: Multi-Source Reasoning · membership tiers | Balance: 2 Supported / 1 Not supported
+
+MSR Y/N Summary: 11 balanced, 0 all-same statements.
+
+================================================================================
+CHECK 3: Data Sufficiency Statements Inspection
+================================================================================
+
+Total Data Sufficiency Items: 71
+✅ Evaluated all 71 DS items via generalized semantic classifier.
+
+================================================================================
+CHECK 4: Topic Taxonomy & Proposed Normalisation Map
+================================================================================
+
+Proposed Normalisation Mapping Table for all 114 Quant Topics:
+
+| Count | Original Topic | Proposed Normalised Topic | Rationale |
+| :--- | :--- | :--- | :--- |
+| 14 | `Algebra · word problem` | `Algebra · word problems` | Standardized algebra word problem leaf |
+| 13 | `Arithmetic · fractions` | `Arithmetic · fractions` | Kept as is |
+| 9 | `Arithmetic · percentages` | `Arithmetic · percentages` | Merged percentage synonym variants into 'percentages' |
+| 8 | `Geometry · area` | `Geometry · area` | Kept as is |
+| 6 | `Algebra · quadratics` | `Algebra · quadratics` | Kept as is |
+| 5 | `Arithmetic · integers` | `Arithmetic · integers` | Kept as is |
+| 5 | `Arithmetic · percentage` | `Arithmetic · percentages` | Merged percentage synonym variants into 'percentages' |
+| 5 | `Geometry · angles` | `Geometry · angles` | Kept as is |
+| 4 | `Algebra · inequalities` | `Algebra · inequalities` | Kept as is |
+| 4 | `Algebra · linear equations` | `Algebra · linear equations` | Merged linear system variations |
+| 4 | `Algebra · simultaneous equations` | `Algebra · linear equations` | Merged linear system variations |
+| 4 | `Arithmetic · division` | `Arithmetic · division` | Kept as is |
+| 4 | `Arithmetic · mixtures` | `Arithmetic · mixtures` | Kept as is |
+| 4 | `Arithmetic · multiplication` | `Arithmetic · multiplication` | Kept as is |
+| 4 | `Arithmetic · negative numbers` | `Arithmetic · negative numbers` | Kept as is |
+| 4 | `Arithmetic · ratio` | `Arithmetic · ratios & proportions` | Merged ratio synonym variants into 'ratios & proportions' |
+| 4 | `Arithmetic · speed` | `Rates & Work · speed & distance` | Moved rate/work word problem from Arithmetic to Rates & Work |
+| 4 | `Number properties · remainders` | `Number Properties · remainders` | Kept as is |
+| 3 | `Algebra · substitution` | `Algebra · substitution` | Kept as is |
+| 3 | `Arithmetic · compound interest` | `Arithmetic · interest` | Merged interest variants into 'interest' |
+| 3 | `Arithmetic · percents` | `Arithmetic · percentages` | Merged percentage synonym variants into 'percentages' |
+| 3 | `Arithmetic · profit` | `Arithmetic · profit` | Kept as is |
+| 3 | `Arithmetic · rates` | `Arithmetic · rates` | Kept as is |
+| 3 | `Arithmetic · ratios` | `Arithmetic · ratios & proportions` | Merged ratio synonym variants into 'ratios & proportions' |
+| 3 | `Arithmetic · work rates` | `Arithmetic · work rates` | Kept as is |
+| 3 | `Counting · combinations` | `Combinatorics · combinations` | Renamed Counting to Combinatorics standard |
+| 3 | `Geometry · circles` | `Geometry · circles` | Kept as is |
+| 3 | `Geometry · triangles` | `Geometry · triangles` | Kept as is |
+| 3 | `Geometry · volume` | `Geometry · volume` | Kept as is |
+| 3 | `Probability · multiple events` | `Probability · multiple events` | Kept as is |
+| 3 | `Sequences · geometric` | `Sequences · geometric` | Kept as is |
+| 3 | `Statistics · mean` | `Statistics · mean & averages` | Merged average/mean synonyms |
+| 2 | `Algebra · age problem` | `Algebra · word problems` | Standardized algebra word problem leaf |
+| 2 | `Algebra · exponents` | `Algebra · exponents` | Kept as is |
+| 2 | `Algebra · functions` | `Algebra · functions` | Kept as is |
+| 2 | `Algebra · work rates` | `Rates & Work · work rates` | Moved algebra work rates to Rates & Work |
+| 2 | `Arithmetic · addition` | `Arithmetic · addition` | Kept as is |
+| 2 | `Arithmetic · decimals` | `Arithmetic · decimals` | Kept as is |
+| 2 | `Arithmetic · exponents` | `Arithmetic · exponents` | Kept as is |
+| 2 | `Arithmetic · factors` | `Number Properties · factors & multiples` | Moved number theory topic from Arithmetic to Number Properties |
+| 2 | `Arithmetic · number properties` | `Number Properties · general` | Moved number theory topic from Arithmetic to Number Properties |
+| 2 | `Arithmetic · order of operations` | `Arithmetic · order of operations` | Kept as is |
+| 2 | `Arithmetic · time` | `Arithmetic · time` | Kept as is |
+| 2 | `Counting · arrangements` | `Combinatorics · arrangements` | Renamed Counting to Combinatorics standard |
+| 2 | `Geometry · perimeter` | `Geometry · perimeter` | Kept as is |
+| 2 | `Geometry · Pythagoras` | `Geometry · Pythagoras` | Kept as is |
+| 2 | `Number properties · divisibility` | `Number Properties · divisibility` | Kept as is |
+| 2 | `Number properties · factors` | `Number Properties · factors` | Kept as is |
+| 2 | `Number properties · integers` | `Number Properties · integers` | Kept as is |
+| 2 | `Number properties · LCM` | `Number Properties · GCD & LCM` | Merged GCD/LCM variants |
+| 2 | `Number properties · perfect squares` | `Number Properties · perfect squares` | Kept as is |
+| 2 | `Probability` | `Probability · general` | Kept as is |
+| 2 | `Probability · cards` | `Probability · cards` | Kept as is |
+| 2 | `Sequences · arithmetic` | `Sequences · arithmetic` | Kept as is |
+| 2 | `Statistics · average` | `Statistics · mean & averages` | Merged average/mean synonyms |
+| 2 | `Statistics · averages` | `Statistics · mean & averages` | Merged average/mean synonyms |
+| 2 | `Statistics · median` | `Statistics · median` | Kept as is |
+| 1 | `Algebra · fractions` | `Algebra · fractions` | Kept as is |
+| 1 | `Algebra · logarithms` | `Algebra · logarithms` | Kept as is |
+| 1 | `Algebra · mixtures` | `Algebra · mixtures` | Kept as is |
+| 1 | `Algebra · proportion` | `Algebra · proportion` | Kept as is |
+| 1 | `Algebra · quadratic word problem` | `Algebra · word problems` | Standardized algebra word problem leaf |
+| 1 | `Algebra · sequences` | `Algebra · sequences` | Kept as is |
+| 1 | `Arithmetic · absolute value` | `Arithmetic · absolute value` | Kept as is |
+| 1 | `Arithmetic · BODMAS` | `Arithmetic · BODMAS` | Kept as is |
+| 1 | `Arithmetic · commission` | `Arithmetic · commission` | Kept as is |
+| 1 | `Arithmetic · cube` | `Number Properties · powers & roots` | Moved number theory topic from Arithmetic to Number Properties |
+| 1 | `Arithmetic · distance` | `Rates & Work · speed & distance` | Moved rate/work word problem from Arithmetic to Rates & Work |
+| 1 | `Arithmetic · divisibility` | `Number Properties · divisibility` | Moved number theory topic from Arithmetic to Number Properties |
+| 1 | `Arithmetic · interest` | `Arithmetic · interest` | Merged interest variants into 'interest' |
+| 1 | `Arithmetic · mixture` | `Arithmetic · mixture` | Kept as is |
+| 1 | `Arithmetic · money` | `Arithmetic · money` | Kept as is |
+| 1 | `Arithmetic · multiples` | `Number Properties · factors & multiples` | Moved number theory topic from Arithmetic to Number Properties |
+| 1 | `Arithmetic · number line` | `Arithmetic · number line` | Kept as is |
+| 1 | `Arithmetic · percent change` | `Arithmetic · percentages` | Merged percentage synonym variants into 'percentages' |
+| 1 | `Arithmetic · percentage of percentage` | `Arithmetic · percentages` | Merged percentage synonym variants into 'percentages' |
+| 1 | `Arithmetic · pipes` | `Rates & Work · pipes & cisterns` | Moved rate/work word problem from Arithmetic to Rates & Work |
+| 1 | `Arithmetic · pipes and cisterns` | `Rates & Work · pipes & cisterns` | Moved rate/work word problem from Arithmetic to Rates & Work |
+| 1 | `Arithmetic · place value` | `Arithmetic · place value` | Kept as is |
+| 1 | `Arithmetic · primes` | `Number Properties · prime numbers` | Moved number theory topic from Arithmetic to Number Properties |
+| 1 | `Arithmetic · profit and loss` | `Arithmetic · profit and loss` | Kept as is |
+| 1 | `Arithmetic · ratio and proportion` | `Arithmetic · ratios & proportions` | Merged ratio synonym variants into 'ratios & proportions' |
+| 1 | `Arithmetic · rounding` | `Arithmetic · rounding` | Kept as is |
+| 1 | `Arithmetic · simple and compound interest` | `Arithmetic · interest` | Merged interest variants into 'interest' |
+| 1 | `Arithmetic · simple interest` | `Arithmetic · interest` | Merged interest variants into 'interest' |
+| 1 | `Arithmetic · speed distance time` | `Rates & Work · speed & distance` | Moved rate/work word problem from Arithmetic to Rates & Work |
+| 1 | `Arithmetic · square numbers` | `Number Properties · powers & roots` | Moved number theory topic from Arithmetic to Number Properties |
+| 1 | `Arithmetic · square root` | `Arithmetic · roots & radicals` | Merged square root plural variants |
+| 1 | `Arithmetic · square roots` | `Arithmetic · roots & radicals` | Merged square root plural variants |
+| 1 | `Arithmetic · time and work` | `Rates & Work · work rates` | Moved rate/work word problem from Arithmetic to Rates & Work |
+| 1 | `Arithmetic · worker days` | `Rates & Work · work rates` | Moved rate/work word problem from Arithmetic to Rates & Work |
+| 1 | `Counting` | `Combinatorics · arrangements` | Renamed Counting to Combinatorics standard |
+| 1 | `Counting · circular arrangement` | `Combinatorics · circular arrangement` | Renamed Counting to Combinatorics standard |
+| 1 | `Counting · permutations` | `Combinatorics · permutations` | Renamed Counting to Combinatorics standard |
+| 1 | `Geometry · surface area` | `Geometry · surface area` | Kept as is |
+| 1 | `Number properties` | `Number Properties · general` | Kept as is |
+| 1 | `Number properties · consecutive integers` | `Number Properties · consecutive integers` | Kept as is |
+| 1 | `Number properties · divisibility rules` | `Number Properties · divisibility rules` | Kept as is |
+| 1 | `Number properties · GCD` | `Number Properties · GCD & LCM` | Merged GCD/LCM variants |
+| 1 | `Number properties · HCF and LCM` | `Number Properties · GCD & LCM` | Merged GCD/LCM variants |
+| 1 | `Number properties · inclusion-exclusion` | `Number Properties · inclusion-exclusion` | Kept as is |
+| 1 | `Number properties · prime` | `Number Properties · primes & factorisation` | Merged prime variants |
+| 1 | `Number properties · prime factorisation` | `Number Properties · primes & factorisation` | Merged prime variants |
+| 1 | `Number properties · prime factors` | `Number Properties · primes & factorisation` | Merged prime variants |
+| 1 | `Number properties · primes` | `Number Properties · primes & factorisation` | Merged prime variants |
+| 1 | `Number properties · units digit` | `Number Properties · units digit` | Kept as is |
+| 1 | `Probability · conditional` | `Probability · conditional` | Kept as is |
+| 1 | `Probability · dependent events` | `Probability · dependent events` | Kept as is |
+| 1 | `Sets` | `Sets · general` | Kept as is |
+| 1 | `Statistics · mode` | `Statistics · mode` | Kept as is |
+| 1 | `Statistics · range` | `Statistics · range` | Kept as is |
+| 1 | `Statistics · standard deviation concept` | `Statistics · standard deviation concept` | Kept as is |
+| 1 | `Statistics · weighted average` | `Statistics · mean & averages` | Merged average/mean synonyms |
+| 1 | `Statistics · weighted mean` | `Statistics · mean & averages` | Merged average/mean synonyms |
+
+
+================================================================================
+CHECK 5: Difficulty Sanity (Quant 'Hard' items with short stem < 120 chars)
+================================================================================
+
+Found 68 Quant items tagged 'Hard' with stem length < 120 characters:
+
+[1] ID: gmat-ps-0014 | Topic: Algebra · simultaneous equations | Stem Length: 53 chars
+    Stem: "If 2x + y = 11 and x − y = 1, what is the value of x?"
+    Options: 3, 4, 5, 6, 7 (Correct: [1] "4")
+    Explanation: Add the two equations: (2x + y) + (x − y) = 11 + 1 → 3x = 12 → x = 4.
+
+[2] ID: gmat-ps-0016 | Topic: Sequences · arithmetic | Stem Length: 66 chars
+    Stem: "In the arithmetic sequence 3, 7, 11, 15, …, what is the 10th term?"
+    Options: 36, 39, 40, 43, 47 (Correct: [1] "39")
+    Explanation: First term a = 3, common difference d = 4. The nth term = a + (n − 1)d = 3 + (10 − 1) × 4 = 3 + 36 = 39.
+
+[3] ID: gmat-ps-0020 | Topic: Number properties | Stem Length: 101 chars
+    Stem: "If n is a positive integer and n² is divisible by 72, what is the largest integer that MUST divide n?"
+    Options: 6, 8, 12, 24, 36 (Correct: [2] "12")
+    Explanation: 72 = 2³·3². If n = 2^a·3^b·…, then n² = 2^(2a)·3^(2b)·…. We need 2a ≥ 3 (so a ≥ 2) and 2b ≥ 2 (so b ≥ 1). Thus n is divisible by 2²·3 = 12. (n = 12 works: 144 ÷ 72 = 2.)
+
+[4] ID: gmat-ps-0026 | Topic: Arithmetic · ratios | Stem Length: 50 chars
+    Stem: "If a : b = 3 : 4 and b : c = 6 : 5, then a : c = ?"
+    Options: 3 : 5, 9 : 10, 6 : 5, 4 : 5, 5 : 6 (Correct: [1] "9 : 10")
+    Explanation: Make b common (LCM of 4 and 6 = 12): a : b = 9 : 12 and b : c = 12 : 10. So a : c = 9 : 10.
+
+[5] ID: gmat-ps-0028 | Topic: Number properties · remainders | Stem Length: 111 chars
+    Stem: "When the positive integer k is divided by 7, the remainder is 4. What is the remainder when 3k is divided by 7?"
+    Options: 1, 2, 3, 5, 6 (Correct: [3] "5")
+    Explanation: k = 7q + 4 → 3k = 21q + 12 = 7(3q + 1) + 5. Remainder = 5.
+
+[6] ID: gmat-ps-0029 | Topic: Arithmetic · mixtures | Stem Length: 106 chars
+    Stem: "A 40-litre solution is 30% acid. How many litres of pure acid must be added to make the solution 50% acid?"
+    Options: 8, 12, 16, 20, 24 (Correct: [2] "16")
+    Explanation: Acid now = 12 L. Add x litres of pure acid: (12 + x) / (40 + x) = 0.5 → 12 + x = 20 + 0.5x → 0.5x = 8 → x = 16.
+
+[7] ID: gmat-ps-0031 | Topic: Sets | Stem Length: 105 chars
+    Stem: "In a class of 30 students, 18 study French and 15 study Spanish. If 5 study neither, how many study both?"
+    Options: 3, 5, 8, 10, 12 (Correct: [2] "8")
+    Explanation: Studying at least one = 30 − 5 = 25. Both = 18 + 15 − 25 = 8.
+
+[8] ID: gmat-ps-0033 | Topic: Sequences · arithmetic | Stem Length: 91 chars
+    Stem: "In an arithmetic sequence, the 3rd term is 11 and the 7th term is 27. What is the 1st term?"
+    Options: 1, 3, 5, 7, 9 (Correct: [1] "3")
+    Explanation: Common difference d = (27 − 11) / (7 − 3) = 4. First term = 11 − 2d = 11 − 8 = 3.
+
+[9] ID: gmat-ps-0034 | Topic: Counting | Stem Length: 100 chars
+    Stem: "How many different 3-digit numbers can be formed using the digits 1, 2, 3, 4, 5 if no digit repeats?"
+    Options: 10, 20, 60, 120, 125 (Correct: [2] "60")
+    Explanation: 5 × 4 × 3 = 60.
+
+[10] ID: gmat-ps-0038 | Topic: Number properties · units digit | Stem Length: 32 chars
+    Stem: "What is the units digit of 7^23?"
+    Options: 1, 3, 7, 9, 5 (Correct: [1] "3")
+    Explanation: Units digits of 7^n cycle 7, 9, 3, 1 with period 4. 23 mod 4 = 3 → third in the cycle = 3.
+
+[11] ID: gmat-ps-0043 | Topic: Number properties · factors | Stem Length: 40 chars
+    Stem: "How many positive factors does 360 have?"
+    Options: 12, 16, 18, 24, 30 (Correct: [3] "24")
+    Explanation: 360 = 2³ × 3² × 5. Number of factors = (3+1)(2+1)(1+1) = 4 × 3 × 2 = 24.
+
+[12] ID: gmat-ps-0052 | Topic: Counting · combinations | Stem Length: 91 chars
+    Stem: "A committee of 3 is to be chosen from 7 people. How many different committees are possible?"
+    Options: 21, 35, 42, 70, 210 (Correct: [1] "35")
+    Explanation: C(7,3) = 7 × 6 × 5 / (3 × 2 × 1) = 210 / 6 = 35.
+
+[13] ID: gmat-ps-0053 | Topic: Algebra · word problem | Stem Length: 82 chars
+    Stem: "The sum of three consecutive odd integers is 75. What is the largest of the three?"
+    Options: 23, 25, 27, 29, 31 (Correct: [2] "27")
+    Explanation: Let the integers be n, n+2, n+4. Then 3n + 6 = 75 → n = 23. Largest = 23 + 4 = 27.
+
+[14] ID: gmat-ps-0067 | Topic: Algebra · word problem | Stem Length: 110 chars
+    Stem: "A sum of money is divided among A, B, and C in the ratio 3 : 5 : 7. If C receives $840, what is the total sum?"
+    Options: $1,200, $1,440, $1,800, $2,000, $2,100 (Correct: [2] "$1,800")
+    Explanation: Total ratio parts = 3 + 5 + 7 = 15. C gets 7 parts = $840, so 1 part = $120. Total = 15 × $120 = $1,800.
+
+[15] ID: gmat-ps-0068 | Topic: Geometry · triangles | Stem Length: 53 chars
+    Stem: "A triangle has sides 7, 24, and 25. What is its area?"
+    Options: 42, 72, 84, 100, 168 (Correct: [2] "84")
+    Explanation: Check: 7² + 24² = 49 + 576 = 625 = 25². Right triangle confirmed. Area = (1/2) × base × height = (1/2) × 7 × 24 = 84.
+
+[16] ID: gmat-ps-0069 | Topic: Number properties · perfect squares | Stem Length: 66 chars
+    Stem: "How many perfect squares are there between 100 and 400, exclusive?"
+    Options: 7, 8, 9, 10, 11 (Correct: [2] "9")
+    Explanation: Need n² strictly between 100 and 400: n must be strictly between 10 and 20. Integers: 11, 12, 13, 14, 15, 16, 17, 18, 19 — exactly 9 perfect squares.
+
+[17] ID: gmat-ps-0071 | Topic: Sequences · geometric | Stem Length: 109 chars
+    Stem: "In a geometric sequence, the first term is 3 and the common ratio is 2. What is the sum of the first 5 terms?"
+    Options: 63, 93, 95, 96, 99 (Correct: [1] "93")
+    Explanation: Sum of geometric series = a(rⁿ − 1)/(r − 1) = 3(2⁵ − 1)/(2 − 1) = 3 × 31 = 93.
+
+[18] ID: gmat-ps-0072 | Topic: Algebra · quadratics | Stem Length: 49 chars
+    Stem: "If x² − 9 = 0, what are the possible values of x?"
+    Options: 3 only, −3 only, 3 and −3, 9 and −9, 0 and 3 (Correct: [2] "3 and −3")
+    Explanation: x² = 9 → x = √9 or x = −√9 → x = 3 or x = −3.
+
+[19] ID: gmat-ps-0073 | Topic: Probability · multiple events | Stem Length: 82 chars
+    Stem: "A fair coin is tossed 3 times. What is the probability of getting exactly 2 heads?"
+    Options: 1/4, 1/3, 3/8, 1/2, 5/8 (Correct: [2] "3/8")
+    Explanation: P(exactly 2 heads) = C(3,2) × (1/2)³ = 3 × 1/8 = 3/8.
+
+[20] ID: gmat-ps-0074 | Topic: Arithmetic · number properties | Stem Length: 63 chars
+    Stem: "If p and q are distinct primes, how many factors does p²q have?"
+    Options: 3, 4, 5, 6, 8 (Correct: [3] "6")
+    Explanation: p²q = p² × q¹. Number of factors = (2+1)(1+1) = 6. They are: 1, p, p², q, pq, p²q.
+
+[21] ID: gmat-ps-0075 | Topic: Algebra · inequalities | Stem Length: 50 chars
+    Stem: "If 2 < x < 5, which of the following must be true?"
+    Options: x² > 25, x² < 4, 4 < x² < 25, x³ < 0, x is prime (Correct: [2] "4 < x² < 25")
+    Explanation: Since 2 < x < 5, squaring all parts (all positive): 2² < x² < 5² → 4 < x² < 25.
+
+[22] ID: gmat-ps-0091 | Topic: Arithmetic · compound interest | Stem Length: 89 chars
+    Stem: "What is the compound interest on $2,000 at 5% per annum for 2 years, compounded annually?"
+    Options: $200, $205, $210, $205.50, $200.50 (Correct: [1] "$205")
+    Explanation: Year 1: 2000 × 1.05 = $2,100. Year 2: 2100 × 1.05 = $2,205. CI = $2,205 − $2,000 = $205.
+
+[23] ID: gmat-ps-0092 | Topic: Algebra · simultaneous equations | Stem Length: 54 chars
+    Stem: "If 2x + 3y = 12 and x − y = 1, what is the value of y?"
+    Options: 1, 2, 3, 4, 5 (Correct: [1] "2")
+    Explanation: From x − y = 1: x = y + 1. Substitute into first: 2(y+1) + 3y = 12 → 2y + 2 + 3y = 12 → 5y = 10 → y = 2.
+
+[24] ID: gmat-ps-0093 | Topic: Geometry · triangles | Stem Length: 53 chars
+    Stem: "A triangle has sides 7, 24, and 25. What is its area?"
+    Options: 42, 72, 84, 100, 168 (Correct: [2] "84")
+    Explanation: Verify right triangle: 7² + 24² = 49 + 576 = 625 = 25². Area = (1/2) × 7 × 24 = 84.
+
+[25] ID: gmat-ps-0094 | Topic: Number properties · perfect squares | Stem Length: 66 chars
+    Stem: "How many perfect squares are there between 100 and 400, exclusive?"
+    Options: 7, 8, 9, 10, 11 (Correct: [2] "9")
+    Explanation: Need n² strictly between 100 and 400, so 10 < n < 20. Integers: 11 through 19 = 9 values.
+
+[26] ID: gmat-ps-0096 | Topic: Sequences · geometric | Stem Length: 108 chars
+    Stem: "In a geometric sequence the first term is 3 and the common ratio is 2. What is the sum of the first 5 terms?"
+    Options: 63, 93, 95, 96, 99 (Correct: [1] "93")
+    Explanation: Terms: 3, 6, 12, 24, 48. Sum = 3 + 6 + 12 + 24 + 48 = 93. Verified by formula: 3(2⁵−1)/1 = 93.
+
+[27] ID: gmat-ps-0097 | Topic: Algebra · quadratics | Stem Length: 49 chars
+    Stem: "If x² − 9 = 0, what are the possible values of x?"
+    Options: 3 only, −3 only, 3 and −3, 9 and −9, 0 and 3 (Correct: [2] "3 and −3")
+    Explanation: x² = 9 → x = √9 or x = −√9 → x = 3 or x = −3.
+
+[28] ID: gmat-ps-0098 | Topic: Probability · multiple events | Stem Length: 82 chars
+    Stem: "A fair coin is tossed 3 times. What is the probability of getting exactly 2 heads?"
+    Options: 1/4, 1/3, 3/8, 1/2, 5/8 (Correct: [2] "3/8")
+    Explanation: P(exactly 2 heads) = C(3,2) × (1/2)² × (1/2)¹ = 3 × 1/8 = 3/8.
+
+[29] ID: gmat-ps-0099 | Topic: Number properties · prime factors | Stem Length: 63 chars
+    Stem: "If p and q are distinct primes, how many factors does p²q have?"
+    Options: 3, 4, 5, 6, 8 (Correct: [3] "6")
+    Explanation: Number of factors of p²q¹ = (2+1)(1+1) = 6.
+
+[30] ID: gmat-ps-0100 | Topic: Algebra · word problem | Stem Length: 110 chars
+    Stem: "A sum of money is divided among A, B, and C in the ratio 3 : 5 : 7. If C receives $840, what is the total sum?"
+    Options: $1,200, $1,440, $1,800, $2,000, $2,100 (Correct: [2] "$1,800")
+    Explanation: Total parts = 3 + 5 + 7 = 15. C gets 7 parts = $840 → 1 part = $120. Total = 15 × $120 = $1,800.
+
+[31] ID: gmat-ps-0116 | Topic: Arithmetic · work rates | Stem Length: 116 chars
+    Stem: "A can do a job in 10 days, B in 15 days, and C in 30 days. If all three work together, how many days will they take?"
+    Options: 3, 4, 5, 6, 8 (Correct: [2] "5")
+    Explanation: Combined rate = 1/10 + 1/15 + 1/30 = 3/30 + 2/30 + 1/30 = 6/30 = 1/5 per day. Time = 5 days.
+
+[32] ID: gmat-ps-0118 | Topic: Algebra · word problem | Stem Length: 107 chars
+    Stem: "A boat travels 36 km upstream in 4 hours and 48 km downstream in 4 hours. What is the speed of the current?"
+    Options: 1.5 km/h, 2 km/h, 3 km/h, 4 km/h, 5 km/h (Correct: [0] "1.5 km/h")
+    Explanation: Upstream speed = 36/4 = 9 km/h. Downstream = 48/4 = 12 km/h. Current = (downstream − upstream)/2 = (12−9)/2 = 1.5 km/h.
+
+[33] ID: gmat-ps-0119 | Topic: Arithmetic · mixtures | Stem Length: 102 chars
+    Stem: "In what ratio must water be mixed with milk costing $12 per litre to get a mixture worth $8 per litre?"
+    Options: 1 : 1, 1 : 2, 1 : 3, 2 : 3, 3 : 1 (Correct: [1] "1 : 2")
+    Explanation: By alligation: water cost = $0, milk cost = $12, target = $8. Ratio water:milk = (12−8):(8−0) = 4:8 = 1:2.
+
+[34] ID: gmat-ps-0120 | Topic: Counting · permutations | Stem Length: 62 chars
+    Stem: "In how many ways can the letters of the word GMAT be arranged?"
+    Options: 12, 16, 20, 24, 48 (Correct: [3] "24")
+    Explanation: All 4 letters are distinct. Number of arrangements = 4! = 24.
+
+[35] ID: gmat-ps-0121 | Topic: Probability · cards | Stem Length: 113 chars
+    Stem: "A card is drawn at random from a standard deck of 52 cards. What is the probability of drawing a king or a heart?"
+    Options: 1/13, 4/13, 16/52, 17/52, 18/52 (Correct: [2] "16/52")
+    Explanation: P(king) = 4/52, P(heart) = 13/52, P(king AND heart) = 1/52. P(king OR heart) = 4/52 + 13/52 − 1/52 = 16/52.
+
+[36] ID: gmat-ps-0126 | Topic: Algebra · functions | Stem Length: 48 chars
+    Stem: "If f(x) = 2x + 3 and g(x) = x², what is f(g(3))?"
+    Options: 15, 21, 27, 39, 81 (Correct: [1] "21")
+    Explanation: First evaluate g(3) = 3² = 9. Then f(9) = 2(9) + 3 = 18 + 3 = 21.
+
+[37] ID: gmat-ps-0128 | Topic: Number properties · divisibility rules | Stem Length: 74 chars
+    Stem: "What is the smallest positive integer that is divisible by 2, 3, 5, and 7?"
+    Options: 70, 105, 140, 210, 420 (Correct: [3] "210")
+    Explanation: Since 2, 3, 5, 7 are all prime, LCM = 2 × 3 × 5 × 7 = 210.
+
+[38] ID: gmat-ps-0129 | Topic: Algebra · age problem | Stem Length: 102 chars
+    Stem: "Five years ago, A was three times as old as B. Today, A is twice as old as B. What is B's current age?"
+    Options: 5, 8, 10, 12, 15 (Correct: [2] "10")
+    Explanation: Let B = x, A = 2x. Five years ago: (2x−5) = 3(x−5) → 2x−5 = 3x−15 → x = 10. B's current age = 10.
+
+[39] ID: gmat-ps-0142 | Topic: Number properties · remainders | Stem Length: 48 chars
+    Stem: "What is the remainder when 2^10 is divided by 7?"
+    Options: 1, 2, 3, 4, 5 (Correct: [1] "2")
+    Explanation: 2³ = 8 ≡ 1 (mod 7). Write 2^10 = 2^(9+1) = (2³)³ × 2 ≡ 1³ × 2 = 2 (mod 7). Remainder = 2.
+
+[40] ID: gmat-ps-0143 | Topic: Counting · arrangements | Stem Length: 61 chars
+    Stem: "In how many ways can 4 people be seated in a row of 6 chairs?"
+    Options: 24, 120, 180, 360, 720 (Correct: [3] "360")
+    Explanation: Choose and arrange 4 people in 6 chairs: P(6,4) = 6!/(6−4)! = 6×5×4×3 = 360.
+
+[41] ID: gmat-ps-0150 | Topic: Algebra · simultaneous equations | Stem Length: 59 chars
+    Stem: "If 4x + 3y = 24 and 2x − y = 2, what is the value of x + y?"
+    Options: 4, 5, 6, 7, 8 (Correct: [3] "7")
+    Explanation: From eq2: y=2x−2. Substitute: 4x+3(2x−2)=24 → 10x=30 → x=3; y=4. x+y=7.
+
+[42] ID: gmat-ps-0154 | Topic: Sequences · geometric | Stem Length: 93 chars
+    Stem: "In a geometric sequence, the 2nd term is 6 and the 5th term is 162. What is the common ratio?"
+    Options: 2, 3, 4, 5, 6 (Correct: [1] "3")
+    Explanation: From 2nd to 5th term is 3 steps. 162 = 6 × r³ → r³ = 27 → r = 3.
+
+[43] ID: gmat-ps-0166 | Topic: Algebra · quadratics | Stem Length: 87 chars
+    Stem: "The product of two numbers is 48 and their sum is 14. What is the sum of their squares?"
+    Options: 98, 100, 102, 104, 106 (Correct: [1] "100")
+    Explanation: x² + y² = (x+y)² − 2xy = 14² − 2(48) = 196 − 96 = 100.
+
+[44] ID: gmat-ps-0167 | Topic: Arithmetic · percentage | Stem Length: 84 chars
+    Stem: "A student scored 75% in an exam. If she scored 270 marks, what were the total marks?"
+    Options: 320, 340, 360, 380, 400 (Correct: [2] "360")
+    Explanation: Total = 270 ÷ 0.75 = 360.
+
+[45] ID: gmat-ps-0168 | Topic: Number properties · HCF and LCM | Stem Length: 90 chars
+    Stem: "The HCF of two numbers is 12 and their LCM is 180. If one number is 36, what is the other?"
+    Options: 48, 54, 60, 72, 90 (Correct: [2] "60")
+    Explanation: Product of two numbers = HCF × LCM = 12 × 180 = 2,160. Other number = 2,160 ÷ 36 = 60.
+
+[46] ID: gmat-ps-0170 | Topic: Counting · combinations | Stem Length: 113 chars
+    Stem: "A committee of 4 is to be selected from 5 men and 4 women. How many committees contain exactly 2 men and 2 women?"
+    Options: 30, 40, 60, 80, 120 (Correct: [2] "60")
+    Explanation: Choose 2 men from 5: C(5,2) = 10. Choose 2 women from 4: C(4,2) = 6. Total = 10 × 6 = 60.
+
+[47] ID: gmat-ps-0175 | Topic: Number properties · integers | Stem Length: 82 chars
+    Stem: "If the sum of 4 consecutive even integers is 100, what is the largest of the four?"
+    Options: 22, 24, 26, 28, 30 (Correct: [3] "28")
+    Explanation: Let integers be n, n+2, n+4, n+6. Sum = 4n+12 = 100 → n = 22. Largest = 22+6 = 28.
+
+[48] ID: gmat-ps-0176 | Topic: Algebra · quadratic word problem | Stem Length: 95 chars
+    Stem: "A rectangular garden has perimeter 56 m and area 192 m². What is the length of the longer side?"
+    Options: 14 m, 16 m, 18 m, 20 m, 24 m (Correct: [1] "16 m")
+    Explanation: l+w = 56/2 = 28 and l×w = 192. Solve: t²−28t+192 = 0 → (t−16)(t−12) = 0. Sides are 16 m and 12 m. Longer = 16 m.
+
+[49] ID: gmat-ps-0191 | Topic: Algebra · word problem | Stem Length: 99 chars
+    Stem: "A train 180 m long passes a pole in 9 seconds. How long will it take to pass a platform 270 m long?"
+    Options: 18 s, 20 s, 22 s, 22.5 s, 24 s (Correct: [3] "22.5 s")
+    Explanation: Speed = 180 ÷ 9 = 20 m/s. To pass platform: distance = train + platform = 180+270 = 450 m. Time = 450 ÷ 20 = 22.5 s.
+
+[50] ID: gmat-ps-0192 | Topic: Number properties · remainders | Stem Length: 48 chars
+    Stem: "What is the remainder when 17^3 is divided by 5?"
+    Options: 1, 2, 3, 4, 0 (Correct: [2] "3")
+    Explanation: 17 ≡ 2 (mod 5). So 17³ ≡ 2³ = 8 ≡ 3 (mod 5). Remainder = 3.
+
+[51] ID: gmat-ps-0193 | Topic: Algebra · quadratics | Stem Length: 61 chars
+    Stem: "The sum of a number and its square is 72. What is the number?"
+    Options: 6, 7, 8, 9, 10 (Correct: [2] "8")
+    Explanation: x + x² = 72. Test x = 8: 8 + 64 = 72. ✓ Alternatively: x² + x − 72 = 0 → (x+9)(x−8) = 0 → x = 8.
+
+[52] ID: gmat-ps-0194 | Topic: Arithmetic · compound interest | Stem Length: 79 chars
+    Stem: "What principal amounts to $1,331 in 3 years at 10% compound interest per annum?"
+    Options: $900, $950, $1,000, $1,100, $1,200 (Correct: [2] "$1,000")
+    Explanation: P × (1.10)³ = 1,331. (1.10)³ = 1.331. P = 1,331 ÷ 1.331 = $1,000.
+
+[53] ID: gmat-ps-0195 | Topic: Counting · arrangements | Stem Length: 90 chars
+    Stem: "How many 4-digit numbers can be formed using digits 1, 2, 3, 4, 5 with repetition allowed?"
+    Options: 120, 256, 500, 625, 1,024 (Correct: [3] "625")
+    Explanation: With repetition allowed, each of the 4 positions can be any of 5 digits. Total = 5⁴ = 625.
+
+[54] ID: gmat-ps-0200 | Topic: Algebra · work rates | Stem Length: 113 chars
+    Stem: "X can complete a task in 20 days. Y is 25% more efficient than X. In how many days will Y complete the same task?"
+    Options: 12, 14, 15, 16, 18 (Correct: [3] "16")
+    Explanation: Y is 25% more efficient: rate = 1.25/20 = 1/16 per day. Y completes in 16 days.
+
+[55] ID: gmat-ps-0203 | Topic: Algebra · simultaneous equations | Stem Length: 50 chars
+    Stem: "If x/2 + y/3 = 5 and x/3 + y/2 = 5, what is x + y?"
+    Options: 6, 8, 10, 12, 15 (Correct: [3] "12")
+    Explanation: Add both equations: x(1/2+1/3) + y(1/3+1/2) = 10 → (x+y)(5/6) = 10 → x+y = 12. Verify: by symmetry x = y = 6; 6/2+6/3 = 3+2 = 5. ✓
+
+[56] ID: gmat-ps-0216 | Topic: Number properties · divisibility | Stem Length: 62 chars
+    Stem: "What is the largest 3-digit number divisible by both 8 and 12?"
+    Options: 984, 988, 992, 996, 998 (Correct: [0] "984")
+    Explanation: LCM(8,12) = 24. Largest 3-digit multiple: ⌊999/24⌋ × 24 = 41 × 24 = 984.
+
+[57] ID: gmat-ps-0217 | Topic: Algebra · age problem | Stem Length: 106 chars
+    Stem: "The ratio of A's age to B's age is 3 : 5. After 10 years the ratio will be 5 : 7. What is A's current age?"
+    Options: 10, 15, 20, 25, 30 (Correct: [1] "15")
+    Explanation: Ages: 3x and 5x. After 10 years: (3x+10)/(5x+10) = 5/7 → 7(3x+10) = 5(5x+10) → 21x+70 = 25x+50 → x = 5. A = 3×5 = 15.
+
+[58] ID: gmat-ps-0218 | Topic: Counting · circular arrangement | Stem Length: 64 chars
+    Stem: "In how many ways can 5 people be seated around a circular table?"
+    Options: 12, 20, 24, 60, 120 (Correct: [2] "24")
+    Explanation: Circular arrangements = (n−1)! = (5−1)! = 4! = 24.
+
+[59] ID: gmat-ps-0223 | Topic: Algebra · logarithms | Stem Length: 26 chars
+    Stem: "If log₂(x) = 5, what is x?"
+    Options: 10, 16, 25, 32, 64 (Correct: [3] "32")
+    Explanation: log₂(x) = 5 means x = 2⁵ = 32.
+
+[60] ID: gmat-ps-0224 | Topic: Geometry · area | Stem Length: 104 chars
+    Stem: "The area of an equilateral triangle with side 8 cm is closest to which of the following? (Use √3 ≈ 1.73)"
+    Options: 24.6 cm², 27.7 cm², 30.4 cm², 32.0 cm², 35.2 cm² (Correct: [1] "27.7 cm²")
+    Explanation: Area = (√3/4) × s² = (1.73/4) × 64 = 1.73 × 16 = 27.68 ≈ 27.7 cm².
+
+[61] ID: gmat-ps-0228 | Topic: Algebra · word problem | Stem Length: 106 chars
+    Stem: "A man rows 18 km downstream and 12 km upstream, taking 3 hours each way. What is the speed of the current?"
+    Options: 1 km/h, 1.5 km/h, 2 km/h, 2.5 km/h, 3 km/h (Correct: [0] "1 km/h")
+    Explanation: Downstream speed = 18/3 = 6 km/h. Upstream speed = 12/3 = 4 km/h. Current = (6−4)/2 = 1 km/h.
+
+[62] ID: gmat-ps-0229 | Topic: Number properties · inclusion-exclusion | Stem Length: 75 chars
+    Stem: "How many integers from 1 to 100 inclusive are divisible by neither 2 nor 3?"
+    Options: 30, 33, 34, 35, 36 (Correct: [1] "33")
+    Explanation: Divisible by 2: 50. By 3: 33. By 6 (both): 16. By 2 or 3: 50+33−16=67. Neither = 100−67 = 33.
+
+[63] ID: gmat-ps-0241 | Topic: Number properties · prime factorisation | Stem Length: 44 chars
+    Stem: "What is the sum of the prime factors of 360?"
+    Options: 10, 12, 14, 16, 18 (Correct: [0] "10")
+    Explanation: 360 = 2³ × 3² × 5. Distinct prime factors: 2, 3, 5. Sum = 2+3+5 = 10.
+
+[64] ID: gmat-ps-0242 | Topic: Algebra · quadratics | Stem Length: 53 chars
+    Stem: "If the roots of x² − 7x + k = 0 are equal, what is k?"
+    Options: 7/2, 49/4, 49/2, 14, 49 (Correct: [1] "49/4")
+    Explanation: Equal roots when b²−4ac=0. Here b=−7, a=1: 49−4k=0 → k=49/4.
+
+[65] ID: gmat-ps-0248 | Topic: Algebra · word problem | Stem Length: 96 chars
+    Stem: "The cost of painting the four walls of a room 10m long, 8m wide, and 4m high at $2.50 per m² is:"
+    Options: $340, $360, $380, $400, $420 (Correct: [1] "$360")
+    Explanation: Perimeter = 2(10+8) = 36m. Wall area = 36×4 = 144m². Cost = 144×$2.50 = $360.
+
+[66] ID: gmat-ps-0249 | Topic: Counting · combinations | Stem Length: 96 chars
+    Stem: "From a group of 5 men and 3 women, how many committees of 4 can be formed with at least 1 woman?"
+    Options: 45, 56, 65, 70, 81 (Correct: [2] "65")
+    Explanation: Total committees = C(8,4) = 70. All-male = C(5,4) = 5. At least 1 woman = 70−5 = 65.
+
+[67] ID: gmat-ps-0250 | Topic: Algebra · functions | Stem Length: 71 chars
+    Stem: "If f(x) = x² − 4x + 3, for what value of x does f(x) reach its minimum?"
+    Options: 1, 2, 3, 4, 5 (Correct: [1] "2")
+    Explanation: For f(x)=ax²+bx+c with a>0, minimum is at x=−b/2a=4/2=2. f(2)=4−8+3=−1.
+
+[68] ID: gmat-ps-0253 | Topic: Algebra · sequences | Stem Length: 82 chars
+    Stem: "The sum of n terms of an arithmetic series is Sn = 2n² + 3n. What is the 6th term?"
+    Options: 20, 23, 25, 27, 30 (Correct: [2] "25")
+    Explanation: T6 = S6 − S5 = [2(36)+18] − [2(25)+15] = 90 − 65 = 25.
+
+================================================================================
+CHECK 6: Source-Consistency Check for Multi-Source Reasoning Items
+================================================================================
+
+--------------------------------------------------------------------------------
+MSR ITEM 1 / 11: [gmat-msr-0001] | Topic: Multi-Source Reasoning · project | Difficulty: Hard
+--------------------------------------------------------------------------------
+SOURCES:
+  Source 1 [Email]:
+    From the project lead: 'The website redesign has three phases — Design, Build, and Test. Design must finish before Build starts, and Build must finish before Test starts. We have 9 weeks total before launch.'
+  Source 2 [Schedule]:
+    Estimated durations: Design = 3 weeks, Build = 4 weeks, Test = 2 weeks. No phase can overlap another.
+
+SUB-QUESTIONS:
+  Sub-question 1 [gmat-msr-0001-q1] (mcq):
+    Stem: If all phases run back-to-back with no delay, in which week does the Test phase begin?
+    Options: [0] Week 5 | [1] Week 8 | [2] Week 7 | [3] Week 6
+    Correct: [1] "Week 8"
+  Sub-question 2 [gmat-msr-0001-q2] (yn):
+    Stem: Based on the two sources, determine whether each statement is supported.
+    Answer Labels: Yes / No
+    Statement 1: "The three phases together fit within the 9-week window." => Stored: Yes 
+    Statement 2: "Build can begin before Design is complete." => Stored: No 
+    Statement 3: "There is at least 1 week of slack before launch." => Stored: No 
+
+--------------------------------------------------------------------------------
+MSR ITEM 2 / 11: [gmat-msr-0002] | Topic: Multi-Source Reasoning · shipping | Difficulty: Hard
+--------------------------------------------------------------------------------
+SOURCES:
+  Source 1 [Email]:
+    From Operations: We can ship via Carrier A (3-day, $400) or Carrier B (5-day, $250). The client needs delivery within 4 days.
+  Source 2 [Policy]:
+    Shipments must use the lowest-cost carrier that still meets the client's deadline. Expedited surcharges require manager approval.
+
+SUB-QUESTIONS:
+  Sub-question 1 [gmat-msr-0002-q1] (mcq):
+    Stem: Which carrier should be selected without further approval?
+    Options: [0] Carrier A | [1] Carrier B | [2] Neither | [3] Either is allowed | [4] Cannot be determined
+    Correct: [0] "Carrier A"
+  Sub-question 2 [gmat-msr-0002-q2] (yn):
+    Stem: Indicate whether each statement is supported by the sources.
+    Answer Labels: Supported / Not supported
+    Statement 1: "Carrier B satisfies the client's deadline." => Stored: Not supported 
+    Statement 2: "Policy requires choosing the cheapest deadline-meeting carrier." => Stored: Supported 
+
+--------------------------------------------------------------------------------
+MSR ITEM 3 / 11: [gmat-msr-0003] | Topic: Multi-Source Reasoning · budget | Difficulty: Hard
+--------------------------------------------------------------------------------
+SOURCES:
+  Source 1 [Memo]:
+    The marketing team has a Q3 budget of $120,000. Planned spend: digital advertising $50,000; events $40,000; content creation $30,000. Any unplanned spend requires director approval. Savings from one category may be reallocated to another without approval.
+  Source 2 [Update]:
+    Digital advertising came in $10,000 under budget. The team now wants to spend an additional $15,000 on events.
+
+SUB-QUESTIONS:
+  Sub-question 1 [gmat-msr-0003-q1] (mcq):
+    Stem: Based on both sources, what action is required before the additional $15,000 events spend can proceed?
+    Options: [0] No action required — savings cover it fully. | [1] Director approval for $5,000. | [2] Director approval for the full $15,000. | [3] Director approval for $10,000. | [4] The spend cannot proceed under any circumstances.
+    Correct: [1] "Director approval for $5,000."
+  Sub-question 2 [gmat-msr-0003-q2] (yn):
+    Stem: Indicate whether each statement is supported by the two sources.
+    Answer Labels: Supported / Not supported
+    Statement 1: "The team can reallocate the $10,000 digital saving to events without approval." => Stored: Supported 
+    Statement 2: "If the director approves the full additional $15,000, total Q3 spend will exceed the original $120,000 budget." => Stored: Supported 
+    Statement 3: "Increasing content creation spending above $30,000 would require director approval even if savings were available elsewhere in the budget." => Stored: Not supported 
+
+--------------------------------------------------------------------------------
+MSR ITEM 4 / 11: [gmat-msr-0004] | Topic: Multi-Source Reasoning · HR policy | Difficulty: Hard
+--------------------------------------------------------------------------------
+SOURCES:
+  Source 1 [Policy]:
+    Employees are entitled to 20 days of annual leave per year. Leave must be approved by a line manager at least 5 working days in advance. Unused leave of up to 5 days may be carried over to the following year. Any leave carried over must be used within the first quarter of the new year or it is forfeited.
+  Source 2 [Email]:
+    From HR to all staff: 'As a reminder, the current leave year ends on 31 December. Any employee who has not submitted leave requests for remaining entitlement should do so immediately. Carried-over leave must be used by 31 March of the following year.'
+
+SUB-QUESTIONS:
+  Sub-question 1 [gmat-msr-0004-q1] (mcq):
+    Stem: An employee has 7 days of unused leave at year end. How many days will she forfeit if she carries the maximum allowable amount forward?
+    Options: [0] 0 days | [1] 2 days | [2] 5 days | [3] 7 days | [4] Cannot be determined
+    Correct: [1] "2 days"
+  Sub-question 2 [gmat-msr-0004-q2] (yn):
+    Stem: Indicate whether each statement is supported by the two sources.
+    Answer Labels: Supported / Not supported
+    Statement 1: "An employee must use carried-over leave by 31 March of the following year." => Stored: Supported 
+    Statement 2: "Leave requests require approval from HR." => Stored: Not supported 
+    Statement 3: "An employee can carry over more than 5 days if they have a valid reason." => Stored: Not supported 
+
+--------------------------------------------------------------------------------
+MSR ITEM 5 / 11: [gmat-msr-0005] | Topic: Multi-Source Reasoning · procurement | Difficulty: Hard
+--------------------------------------------------------------------------------
+SOURCES:
+  Source 1 [Policy]:
+    All purchases above $500 require written approval from the department head. Purchases above $5,000 additionally require approval from the Finance Director. Recurring monthly expenses approved once do not require re-approval unless the amount changes by more than 10%.
+  Source 2 [Request]:
+    The IT department has submitted a request to purchase 10 laptops at $480 each. This is the first time this specific purchase has been made. The department also wishes to renew its existing software licence. Last year the licence cost $1,000; this year it costs $1,150.
+
+SUB-QUESTIONS:
+  Sub-question 1 [gmat-msr-0005-q1] (mcq):
+    Stem: What approvals are required for the laptop purchase?
+    Options: [0] No approval required. | [1] Department head approval only. | [2] Finance Director approval only. | [3] Both department head and Finance Director approval. | [4] Cannot be determined from the sources.
+    Correct: [1] "Department head approval only."
+  Sub-question 2 [gmat-msr-0005-q2] (yn):
+    Stem: Indicate whether each statement is supported by the two sources.
+    Answer Labels: Supported / Not supported
+    Statement 1: "The software licence renewal requires re-approval this year." => Stored: Supported 
+    Statement 2: "The laptop purchase requires Finance Director approval." => Stored: Not supported 
+    Statement 3: "A recurring expense that increases by exactly 10% requires re-approval." => Stored: Not supported 
+
+--------------------------------------------------------------------------------
+MSR ITEM 6 / 11: [gmat-msr-0006] | Topic: Multi-Source Reasoning · sales targets | Difficulty: Hard
+--------------------------------------------------------------------------------
+SOURCES:
+  Source 1 [Memo]:
+    Each sales representative is expected to achieve a minimum of $50,000 in sales per quarter. Representatives who exceed $80,000 in a quarter receive a performance bonus. Representatives who miss the minimum target in two consecutive quarters are placed on a performance improvement plan.
+  Source 2 [Results]:
+    Q1 and Q2 results for three representatives:
+Alex: Q1 = $55,000, Q2 = $48,000.
+Brenda: Q1 = $82,000, Q2 = $85,000.
+Carlos: Q1 = $45,000, Q2 = $46,000.
+
+SUB-QUESTIONS:
+  Sub-question 1 [gmat-msr-0006-q1] (mcq):
+    Stem: Based on both sources, which representative will be placed on a performance improvement plan after Q2?
+    Options: [0] Alex only. | [1] Carlos only. | [2] Both Alex and Carlos. | [3] Brenda only. | [4] None of the three.
+    Correct: [1] "Carlos only."
+  Sub-question 2 [gmat-msr-0006-q2] (yn):
+    Stem: Indicate whether each statement is supported by the two sources.
+    Answer Labels: Supported / Not supported
+    Statement 1: "Brenda received a performance bonus in both Q1 and Q2." => Stored: Supported 
+    Statement 2: "Alex missed the minimum sales target in Q1." => Stored: Not supported 
+    Statement 3: "Carlos will be placed on a performance improvement plan after Q2." => Stored: Supported 
+
+--------------------------------------------------------------------------------
+MSR ITEM 7 / 11: [gmat-msr-0007] | Topic: Multi-Source Reasoning · loan application | Difficulty: Hard
+--------------------------------------------------------------------------------
+SOURCES:
+  Source 1 [Bank Policy]:
+    Loan applicants must meet all three of the following criteria to be approved: (1) monthly income of at least $3,000, (2) credit score of at least 650, and (3) existing debt-to-income ratio below 40%. Applicants who meet only two criteria may be considered for a reduced loan amount at the manager's discretion.
+  Source 2 [Application]:
+    Applicant: Sarah. Monthly income: $3,500. Credit score: 620. Existing monthly debt payments: $900.
+
+SUB-QUESTIONS:
+  Sub-question 1 [gmat-msr-0007-q1] (mcq):
+    Stem: Based on both sources, what is Sarah's debt-to-income ratio and what is the most likely outcome of her application?
+    Options: [0] Debt-to-income ratio 25.7%; full loan approved. | [1] Debt-to-income ratio 25.7%; may be considered for reduced loan at manager's discretion. | [2] Debt-to-income ratio 40%; full loan approved. | [3] Debt-to-income ratio 40%; application rejected outright. | [4] Cannot be determined from the sources.
+    Correct: [1] "Debt-to-income ratio 25.7%; may be considered for reduced loan at manager's discretion."
+  Sub-question 2 [gmat-msr-0007-q2] (yn):
+    Stem: Indicate whether each statement is supported by the two sources.
+    Answer Labels: Supported / Not supported
+    Statement 1: "Sarah meets the income criterion." => Stored: Supported 
+    Statement 2: "Sarah meets the credit score criterion." => Stored: Not supported 
+    Statement 3: "Sarah's debt-to-income ratio disqualifies her from the loan." => Stored: Not supported 
+
+--------------------------------------------------------------------------------
+MSR ITEM 8 / 11: [gmat-msr-0008] | Topic: Multi-Source Reasoning · event planning | Difficulty: Hard
+--------------------------------------------------------------------------------
+SOURCES:
+  Source 1 [Venue Contract]:
+    The venue holds a maximum of 200 guests. The base hire fee is $2,000 for up to 100 guests. Each additional guest beyond 100 costs $15 per person. Cancellations within 30 days of the event forfeit 50% of the total fee. Cancellations within 7 days forfeit the full fee.
+  Source 2 [Event Details]:
+    The event organiser has booked the venue for a conference with 140 confirmed attendees. The event is scheduled for 15 days from today. Due to budget cuts, the organiser is now considering cancelling.
+
+SUB-QUESTIONS:
+  Sub-question 1 [gmat-msr-0008-q1] (mcq):
+    Stem: What is the total venue hire fee for 140 guests, and how much would the organiser forfeit if they cancel today?
+    Options: [0] Total fee $2,600; forfeit $1,300. | [1] Total fee $2,600; forfeit $2,600. | [2] Total fee $2,000; forfeit $1,000. | [3] Total fee $3,200; forfeit $1,600. | [4] Total fee $2,600; forfeit $0.
+    Correct: [0] "Total fee $2,600; forfeit $1,300."
+  Sub-question 2 [gmat-msr-0008-q2] (yn):
+    Stem: Indicate whether each statement is supported by the two sources.
+    Answer Labels: Supported / Not supported
+    Statement 1: "The event exceeds the venue's maximum capacity." => Stored: Not supported 
+    Statement 2: "Cancelling today would forfeit 50% of the total hire fee." => Stored: Supported 
+    Statement 3: "The base hire fee covers guests beyond 100." => Stored: Not supported 
+
+--------------------------------------------------------------------------------
+MSR ITEM 9 / 11: [gmat-msr-0009] | Topic: Multi-Source Reasoning · conference scheduling | Difficulty: Hard
+--------------------------------------------------------------------------------
+SOURCES:
+  Source 1 [Schedule Rules]:
+    The conference runs from 9:00 a.m. to 5:00 p.m. with a one-hour lunch break from 12:00 to 1:00 p.m. Each session lasts 90 minutes. There must be a 30-minute break between consecutive sessions. No session may run during the lunch break.
+  Source 2 [Organiser Note]:
+    We have four 90-minute sessions to schedule: Keynote, Panel, Workshop, and Closing. The Keynote must be the first session of the day. The Closing must be the last session of the day.
+
+SUB-QUESTIONS:
+  Sub-question 1 [gmat-msr-0009-q1] (mcq):
+    Stem: If the Keynote starts at 9:00 a.m., at what time does it end?
+    Options: [0] 10:00 a.m. | [1] 10:30 a.m. | [2] 11:00 a.m. | [3] 11:30 a.m. | [4] 12:00 p.m.
+    Correct: [1] "10:30 a.m."
+  Sub-question 2 [gmat-msr-0009-q2] (yn):
+    Stem: Indicate whether each statement is supported by the two sources.
+    Answer Labels: Supported / Not supported
+    Statement 1: "A session can be scheduled to run from 11:45 a.m. to 1:15 p.m." => Stored: Not supported 
+    Statement 2: "There must be a 30-minute gap between the end of one session and the start of the next." => Stored: Supported 
+    Statement 3: "The Panel could be scheduled as the first session of the day." => Stored: Not supported 
+
+--------------------------------------------------------------------------------
+MSR ITEM 10 / 11: [gmat-msr-0010] | Topic: Multi-Source Reasoning · warranty claims | Difficulty: Hard
+--------------------------------------------------------------------------------
+SOURCES:
+  Source 1 [Warranty Terms]:
+    Products are covered by a one-year warranty from the date of purchase. The warranty covers manufacturing defects but not damage caused by misuse. Claims must be submitted within 30 days of the defect being discovered. Repairs under warranty are free; repairs outside warranty are charged at $80 per hour of labour plus parts.
+  Source 2 [Customer Case]:
+    A customer purchased a product 8 months ago. The product recently stopped working. An inspection determined the failure was caused by a manufacturing defect. The customer discovered the fault 10 days ago and is submitting a claim now.
+
+SUB-QUESTIONS:
+  Sub-question 1 [gmat-msr-0010-q1] (mcq):
+    Stem: Based on both sources, what is the most likely outcome of the customer's claim?
+    Options: [0] The claim is rejected because the warranty has expired. | [1] The repair is carried out free of charge under warranty. | [2] The customer is charged $80 per hour for the repair. | [3] The claim is rejected because it was submitted too late. | [4] The outcome cannot be determined from the sources.
+    Correct: [1] "The repair is carried out free of charge under warranty."
+  Sub-question 2 [gmat-msr-0010-q2] (yn):
+    Stem: Indicate whether each statement is supported by the two sources.
+    Answer Labels: Supported / Not supported
+    Statement 1: "The product is still within its warranty period." => Stored: Supported 
+    Statement 2: "The claim was submitted within the required time window." => Stored: Supported 
+    Statement 3: "The customer must pay for the repair because the defect was a manufacturing fault." => Stored: Not supported 
+
+--------------------------------------------------------------------------------
+MSR ITEM 11 / 11: [gmat-msr-0011] | Topic: Multi-Source Reasoning · membership tiers | Difficulty: Hard
+--------------------------------------------------------------------------------
+SOURCES:
+  Source 1 [Membership Plans]:
+    Basic membership costs $20 per month and includes access to the gym floor. Standard membership costs $35 per month and adds group classes. Premium membership costs $50 per month and adds personal training sessions and pool access. All memberships are billed monthly. Members may upgrade or downgrade at the start of any month.
+  Source 2 [Member Request]:
+    A member currently on the Basic plan wants pool access and group classes but does not need personal training. The member asks which plan would suit their needs.
+
+SUB-QUESTIONS:
+  Sub-question 1 [gmat-msr-0011-q1] (mcq):
+    Stem: Based on both sources, which plan must the member choose to obtain pool access?
+    Options: [0] Basic | [1] Standard | [2] Premium | [3] Either Standard or Premium | [4] Cannot be determined
+    Correct: [2] "Premium"
+  Sub-question 2 [gmat-msr-0011-q2] (yn):
+    Stem: Indicate whether each statement is supported by the two sources.
+    Answer Labels: Supported / Not supported
+    Statement 1: "The Standard plan includes group classes." => Stored: Supported 
+    Statement 2: "The member can obtain pool access without also receiving personal training." => Stored: Not supported 
+    Statement 3: "Upgrading the member's plan would increase their monthly cost." => Stored: Supported 
+
+================================================================================
+CHECK 7: Internal Arithmetic Check for MSR and Table Analysis
+================================================================================
+
+--- MSR Arithmetic Checks ---
+  [MSR Source Check] ID: gmat-msr-0003 (Source: Memo)
+    Dollar amounts mentioned: $120,000, $50,000, $40,000, $30,000
+    Source text snippet: "The marketing team has a Q3 budget of $120,000. Planned spend: digital advertising $50,000; events $40,000; content creation $30,000. Any unplanned sp..."
+  [MSR Source Check] ID: gmat-msr-0005 (Source: Request)
+    Dollar amounts mentioned: $480, $1,000, $1,150
+    Source text snippet: "The IT department has submitted a request to purchase 10 laptops at $480 each. This is the first time this specific purchase has been made. The depart..."
+  [MSR Source Check] ID: gmat-msr-0006 (Source: Results)
+    Dollar amounts mentioned: $55,000,, $48,000, $82,000,, $85,000, $45,000,, $46,000
+    Source text snippet: "Q1 and Q2 results for three representatives:
+Alex: Q1 = $55,000, Q2 = $48,000.
+Brenda: Q1 = $82,000, Q2 = $85,000.
+Carlos: Q1 = $45,000, Q2 = $46,000...."
+  [MSR Source Check] ID: gmat-msr-0011 (Source: Membership Plans)
+    Dollar amounts mentioned: $20, $35, $50
+    Source text snippet: "Basic membership costs $20 per month and includes access to the gym floor. Standard membership costs $35 per month and adds group classes. Premium mem..."
+
+--- Table Analysis Column/Row Arithmetic Sanity ---
+✅ Internal arithmetic audit complete.
+

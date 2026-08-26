@@ -10,7 +10,7 @@
 import Link from "next/link";
 import QuestionRenderer from "./QuestionRenderer";
 import type { GmatAnswer } from "./QuestionRenderer";
-import type { GmatQuestion, GmatSectionScore } from "@/lib/gmat-types";
+import type { GmatQuestion, GmatSectionScore } from "@/lib/gmat/types";
 
 export interface SectionResultBlock {
   score: GmatSectionScore;

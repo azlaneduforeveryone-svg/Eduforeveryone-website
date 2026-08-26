@@ -15,10 +15,10 @@ import { useAuth } from "@/contexts/AuthContext";
 import SectionRunner from "@/components/gmat/SectionRunner";
 import type { SectionRunResult } from "@/components/gmat/SectionRunner";
 import GmatResults from "@/components/gmat/GmatResults";
-import { GMAT_FORM, getBank } from "@/lib/gmat-data";
-import { buildFullMock, estimateTotal } from "@/lib/gmat-engine";
+import { GMAT_FORM, getBank } from "@/lib/gmat/form";
+import { buildFullMock, estimateTotal } from "@/lib/gmat/engine";
 import { saveGmatResult } from "@/lib/firebaseDB";
-import type { GmatQuestion, GmatSection } from "@/lib/gmat-types";
+import type { GmatQuestion, GmatSection } from "@/lib/gmat/types";
 
 type Phase = "start" | "section" | "break" | "result";
 

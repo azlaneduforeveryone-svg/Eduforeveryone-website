@@ -2,7 +2,7 @@
 /**
  * validate-gmat.ts
  * ---------------------------------------------------------------------------
- * Structural validator for the GMAT question bank (lib/gmat-data.ts).
+ * Structural validator for the GMAT question bank (lib/gmat/data.ts).
  *
  * USAGE:
  *   npx tsx scripts/validate-gmat.ts
@@ -29,14 +29,11 @@
  * ---------------------------------------------------------------------------
  */
 
-// Adjust this relative path to wherever the script ends up vs. lib/
-import {
-  QUANT_BANK,
-  VERBAL_BANK,
-  DATA_INSIGHTS_BANK,
-} from "../lib/gmat-data";
-import { DS_OPTIONS } from "../lib/gmat-types";
-import type { GmatQuestion, GmatSectionBank } from "../lib/gmat-types";
+import { QUANT_BANK } from "../lib/gmat/quant";
+import { VERBAL_BANK } from "../lib/gmat/verbal";
+import { DATA_INSIGHTS_BANK } from "../lib/gmat/data-insights";
+import { DS_OPTIONS } from "../lib/gmat/types";
+import type { GmatQuestion, GmatSectionBank } from "../lib/gmat/types";
 
 type Issue = { id: string; level: "ERROR" | "WARN"; msg: string };
 

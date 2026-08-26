@@ -1,0 +1,43 @@
+================================================================================
+             GMAT DATA SUFFICIENCY CLASSIFIER COVERAGE NOTE                     
+================================================================================
+
+1. CLASSIFIER COVERAGE
+- Total Data Sufficiency items in bank: 71
+- Classifiable items: 49 / 71 (69.01%)
+- Unclassifiable items: 22 / 71 (30.99%)
+
+2. UNCLASSIFIED ITEMS LIST (22 items)
+The following 22 DS items cannot be classified by the regex phrase map because
+their explanations use phrasing that does not conform to the rigid patterns:
+  - gmat-ds-0002
+  - gmat-ds-0005
+  - gmat-ds-0008
+  - gmat-ds-0011
+  - gmat-ds-0014
+  - gmat-ds-0017
+  - gmat-ds-0019
+  - gmat-ds-0026
+  - gmat-ds-0028
+  - gmat-ds-0030
+  - gmat-ds-0031
+  - gmat-ds-0034
+  - gmat-ds-0036
+  - gmat-ds-0037
+  - gmat-ds-0041
+  - gmat-ds-0044
+  - gmat-ds-0047
+  - gmat-ds-0048
+  - gmat-ds-0051
+  - gmat-ds-0064
+  - gmat-ds-0070
+  - gmat-ds-0071
+
+3. MUTATION TESTING LIMITATION
+No valid mutation test exists for this classifier design. The classifier evaluates
+only the explanation text (which is static). Mutating a stored index in memory does
+not alter the explanation text, making automated mutation testing a tautology rather
+than an empirical measurement.
+
+This check is retained strictly as a regression guard on future edits to existing
+classifiable items, not as an automated bug discovery tool.

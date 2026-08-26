@@ -1,8 +1,8 @@
-// lib/gmat-types.ts
+// lib/gmat/types.ts
 // ---------------------------------------------------------------------------
 // GMAT Focus Edition — type definitions.
 // Mirrors the convention of lib/ielts-types.ts: a discriminated union of
-// question shapes, consumed by static banks in lib/gmat-data.ts.
+// question shapes, consumed by static banks in lib/gmat/data.ts.
 //
 // Static-bank architecture (same as IELTS): content lives in TypeScript,
 // is git-versioned, and is CDN-cached. No database for the question bank.

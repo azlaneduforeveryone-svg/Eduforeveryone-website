@@ -16,8 +16,8 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import QuestionRenderer, { gradeFull, isAnswered, unitCount } from "./QuestionRenderer";
 import type { GmatAnswer } from "./QuestionRenderer";
 import DataInsightsCalculator from "./DataInsightsCalculator";   // ← added import for Data Insights Calculator
-import { scoreSection } from "@/lib/gmat-engine";
-import type { GmatQuestion, GmatSection, GmatSectionScore } from "@/lib/gmat-types";
+import { scoreSection } from "@/lib/gmat/engine";
+import type { GmatQuestion, GmatSection, GmatSectionScore } from "@/lib/gmat/types";
 
 export interface SectionRunResult {
   score: GmatSectionScore;

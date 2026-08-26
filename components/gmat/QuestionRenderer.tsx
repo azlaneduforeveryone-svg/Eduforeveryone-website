@@ -2,7 +2,7 @@
 // components/gmat/QuestionRenderer.tsx
 // ---------------------------------------------------------------------------
 // One renderer per GMAT question type. NO question literals live here — every
-// item is passed in (already type-aware-shuffled by lib/gmat-engine.ts).
+// item is passed in (already type-aware-shuffled by lib/gmat/engine.ts).
 //
 // Also exports pure grading/answered helpers that the SectionRunner and
 // GmatResults share, so grading logic is defined once. RC and MSR grade at the
@@ -12,8 +12,8 @@
 // ---------------------------------------------------------------------------
 
 import { useState } from "react";
-import { DS_OPTIONS } from "@/lib/gmat-types";
-import type { GmatQuestion, GmatDifficulty } from "@/lib/gmat-types";
+import { DS_OPTIONS } from "@/lib/gmat/types";
+import type { GmatQuestion, GmatDifficulty } from "@/lib/gmat/types";
 
 const LETTERS = ["A", "B", "C", "D", "E"] as const;
 

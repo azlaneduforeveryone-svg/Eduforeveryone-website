@@ -1,0 +1,188 @@
+================================================================================
+          TASK K: HOW THE GMAT BANK REACHES THE CLIENT (BUNDLE & PWA AUDIT)     
+================================================================================
+
+--------------------------------------------------------------------------------
+1. IMPORTS & "use client" DIRECTIVES ACROSS GMAT ROUTES AND COMPONENTS
+--------------------------------------------------------------------------------
+
+A. Route Pages (app/gmat/*):
+  • app/gmat/page.tsx:
+      - Directives: Server Component (NO "use client")
+      - Imports: GmatHub, JsonLd, Metadata
+      - GMAT Data Imports: NONE
+  • app/gmat/quant/page.tsx:
+      - Directives: Server Component (NO "use client")
+      - Imports: QuantPractice, JsonLd, Metadata
+      - GMAT Data Imports: NONE
+  • app/gmat/quant/QuantPractice.tsx:
+      - Directives: "use client" (Line 1)
+      - Imports: PracticeRunner
+      - GMAT Data Imports: NONE
+  • app/gmat/verbal/page.tsx:
+      - Directives: Server Component (NO "use client")
+      - Imports: VerbalPractice, JsonLd, Metadata
+      - GMAT Data Imports: NONE
+  • app/gmat/verbal/VerbalPractice.tsx:
+      - Directives: "use client" (Line 1)
+      - Imports: PracticeRunner
+      - GMAT Data Imports: NONE
+  • app/gmat/data-insights/page.tsx:
+      - Directives: Server Component (NO "use client")
+      - Imports: DataInsightsPractice, JsonLd, Metadata
+      - GMAT Data Imports: NONE
+  • app/gmat/data-insights/DataInsightsPractice.tsx:
+      - Directives: "use client" (Line 1)
+      - Imports: PracticeRunner
+      - GMAT Data Imports: NONE
+  • app/gmat/full-test/page.tsx:
+      - Directives: Server Component (NO "use client")
+      - Imports: GmatFullMock, JsonLd, Metadata
+      - GMAT Data Imports: NONE
+  • app/gmat/full-test/GmatFullMock.tsx:
+      - Directives: "use client" (Line 1)
+      - Imports:
+          import { GMAT_FORM, getBank } from "@/lib/gmat/data";
+          import { buildFullMock, estimateTotal } from "@/lib/gmat/engine";
+          import SectionRunner from "@/components/gmat/SectionRunner";
+          import GmatResults from "@/components/gmat/GmatResults";
+          import { saveGmatResult } from "@/lib/firebaseDB";
+          import { useAuth } from "@/contexts/AuthContext";
+
+B. Rendered Components (components/gmat/*):
+  • components/gmat/PracticeRunner.tsx:
+      - Directives: "use client" (Line 1)
+      - Imports:
+          import { getBank } from "@/lib/gmat/data";
+          import { sampleSection, estimateTotal } from "@/lib/gmat/engine";
+          import SectionRunner from "./SectionRunner";
+          import GmatResults from "./GmatResults";
+          import { saveGmatResult } from "@/lib/firebaseDB";
+          import { useAuth } from "@/contexts/AuthContext";
+  • components/gmat/SectionRunner.tsx:
+      - Directives: "use client" (Line 1)
+      - Imports:
+          import { scoreSection } from "@/lib/gmat/engine";
+          import QuestionRenderer from "./QuestionRenderer";
+          import DataInsightsCalculator from "./DataInsightsCalculator";
+      - GMAT Data Imports: NONE
+  • components/gmat/QuestionRenderer.tsx:
+      - Directives: "use client" (Line 1)
+      - Imports:
+          import { DS_OPTIONS } from "@/lib/gmat/types";
+      - GMAT Data Imports: NONE
+  • components/gmat/GmatResults.tsx:
+      - Directives: "use client" (Line 1)
+      - Imports:
+          import QuestionRenderer from "./QuestionRenderer";
+      - GMAT Data Imports: NONE
+  • components/gmat/PerformancePanel.tsx (rendered by GmatHub):
+      - Directives: "use client" (Line 1)
+      - Imports:
+          import { useAuth } from "@/contexts/AuthContext";
+          import { getLocalGmat, getGmatSessions } from "@/lib/firebaseDB";
+      - GMAT Data Imports: NONE
+
+Summary of Bank Imports:
+  - QUANT_BANK, VERBAL_BANK, DATA_INSIGHTS_BANK are NOT imported directly by any route.
+  - getBank and GMAT_FORM are imported from "@/lib/gmat/data" by:
+      1. app/gmat/full-test/GmatFullMock.tsx ("use client")
+      2. components/gmat/PracticeRunner.tsx ("use client")
+  - Because PracticeRunner is a client component, importing getBank causes Webpack/Turbopack
+    to bundle the ENTIRE lib/gmat/data.ts (all 535 items across all 3 sections) into the client JS chunk
+    for /gmat/quant, /gmat/verbal, and /gmat/data-insights equally (~360 kB First Load JS).
+
+--------------------------------------------------------------------------------
+2. WHERE sampleSection IS CALLED: SERVER OR CLIENT
+--------------------------------------------------------------------------------
+
+sampleSection is called 100% on the CLIENT.
+  • In single section practice (components/gmat/PracticeRunner.tsx, line 36):
+      const start = useCallback(() => {
+        setQuestions(sampleSection(bank, PRACTICE_SIZE));
+        setResult(null);
+        setPhase("test");
+      }, [bank]);
+      useEffect(() => { start(); }, [start]);
+  • In full mock test (app/gmat/full-test/GmatFullMock.tsx, line 47):
+      const begin = useCallback(() => {
+        setMock(buildFullMock(GMAT_FORM.sections)); // buildFullMock calls sampleSection internally
+        ...
+      }, []);
+
+No server-side rendering or API calls are involved in generating question sets. The entire question
+selection, randomization, and shuffling happens in the user's browser runtime.
+
+--------------------------------------------------------------------------------
+3. WHY /gmat IS 221 kB WHILE /about IS 94 kB
+--------------------------------------------------------------------------------
+
+The 127 kB size difference is caused by the Firebase Client SDK (Firestore + Auth).
+
+Breakdown:
+  • /about (94.4 kB First Load JS):
+      - Consists solely of static server-rendered HTML/React markup.
+      - Uses only the shared base Next.js framework runtime (87.4 kB) + ~7 kB page chunk.
+      - Zero client hooks, zero AuthContext, zero Firebase imports.
+
+  • /gmat (221 kB First Load JS):
+      - Renders app/gmat/GmatHub.tsx ("use client").
+      - GmatHub imports components/gmat/PerformancePanel.tsx ("use client").
+      - PerformancePanel imports:
+          1. useAuth from "@/contexts/AuthContext"
+          2. getLocalGmat, getGmatSessions from "@/lib/firebaseDB"
+      - lib/firebaseDB.ts imports the Firebase Firestore Client SDK:
+          import { doc, setDoc, getDoc, updateDoc, collection, query, orderBy,
+                   limit, getDocs, increment, serverTimestamp, where, writeBatch,
+                   addDoc } from "firebase/firestore";
+          import { db } from "./firebase";
+      - The Firebase Firestore and Auth client bundle adds ~127 kB of JavaScript.
+      - /gmat does NOT import lib/gmat/data.ts (which is why /gmat is 221 kB, not 360 kB).
+
+Responsible import:
+  `import { getGmatSessions } from "@/lib/firebaseDB";` and `import { useAuth } from "@/contexts/AuthContext";`
+  inside `components/gmat/PerformancePanel.tsx` (rendered by `app/gmat/GmatHub.tsx`).
+
+--------------------------------------------------------------------------------
+4. SERVICE WORKER & OFFLINE CAPABILITY ANALYSIS
+--------------------------------------------------------------------------------
+
+Service Worker File: public/sw.js (191 lines, 6,144 bytes)
+Registered by: components/pwa/ServiceWorkerRegistrar.tsx (injected into app/layout.tsx)
+
+Service Worker Caching Configuration:
+  • Precache list (PRECACHE_URLS):
+      const PRECACHE_URLS = [OFFLINE_URL, '/icons/icon-192.png', '/Main_Logo.jpg'];
+      const OFFLINE_URL = '/offline';
+      - Note: No GMAT routes (/gmat, /gmat/quant, etc.) or static build chunks are precached on install.
+
+  • Navigation Strategy (request.mode === 'navigate'):
+      - Network-first: Attempts fetch(request) first.
+      - On successful network response, puts a clone into the RUNTIME cache (capped at RUNTIME_MAX = 60).
+      - If network fetch fails (e.g. offline):
+          return cached || (await caches.match(OFFLINE_URL));
+
+  • Static Chunks Strategy (url.pathname.startsWith('/_next/static/')):
+      - Cache-first: Matches existing cache; on first fetch puts into PRECACHE.
+
+Does GMAT Practice Currently Work Offline?
+  1. COLD START (User opens browser offline with no prior cache):
+     → DOES NOT WORK. Navigating to https://eduforeveryone.com/gmat/quant will fail the network request,
+       find no cached HTML, and display the fallback /offline page.
+
+  2. WARM SESSION (User opened /gmat/quant or /gmat/full-test while online, then disconnects):
+     → WORKS 100% OFFLINE. Because:
+       a. The HTML page was stored in the RUNTIME cache during the online visit.
+       b. All JavaScript chunks (containing the entire static bank and engine) were cached cache-first.
+       c. Question sampling (sampleSection), timer, scoring, and explanations run client-side in JS.
+       d. Test attempt results are written to localStorage ("gmat_history") via getLocalGmat()/saveGmatResult(),
+          with Firestore sync failing gracefully in the background without breaking the UI.
+
+Architecture Implication:
+  • If question selection were converted to an API Route Handler (e.g. POST /api/gmat/sample),
+    it would hit NEVER_CACHE = [/^\/api\//] in public/sw.js.
+    This would completely disable warm offline practice unless an offline client-side queue/fallback
+    is explicitly implemented.
+  • Keeping the static banks on the client (or splitting lib/gmat/data.ts into quant.ts, verbal.ts,
+    data-insights.ts) preserves full warm offline capability while dropping each practice route's
+    First Load JS from 360 kB down significantly by eliminating cross-section bank bloat.
