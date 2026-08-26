@@ -3343,7 +3343,7 @@ const QUANT_ITEMS: GmatSectionBank["items"] = [
     "1/2 miscomputes the numerator.",
     "4/5 ignores the second fraction.",
     "Correct: (4×25)/(5×16) = 100/80 = 5/4.",
-    "100/80 is the unsimplified form — 5/4 is correct simplified.",
+    "100/80 is the unsimplified form of the answer.",
     "5/16 divides instead of multiplies.",
   ],
   explanation: "(4/5) × (25/16) = 100/80 = 5/4.",
