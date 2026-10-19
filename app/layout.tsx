@@ -1,3 +1,11 @@
+/**
+ * NOTE ON ADVERTISING / ADSENSE:
+ * If Google AdSense or any ad script is ever added to this project, it MUST be loaded
+ * only on non-Islamic routes. All Islamic sections (/quran, /duas, /islamic-studies,
+ * /quiz/islamic-quiz) must remain strictly 100% ad-free. UI badges or notices do not block ads;
+ * the ad script itself must not be injected or executed on those pathnames.
+ */
+
 import type { Metadata, Viewport } from 'next';
 import { DM_Sans, Playfair_Display, Amiri, Lateef, Scheherazade_New, Noto_Naskh_Arabic } from 'next/font/google';
 import './globals.css';

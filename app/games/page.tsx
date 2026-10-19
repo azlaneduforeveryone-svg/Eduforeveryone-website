@@ -1,19 +1,36 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { isQuranWordsLive } from "@/lib/games/quran-words";
+
 export const metadata: Metadata = {
   title: "Free Educational Games for Students | EduForEveryone",
-  description: "Free educational games — Math Puzzle, WordWise word puzzle, and Quiz Battle. Learn while having fun. No sign-up required.",
+  description: "Free educational games — Math Puzzle, WordWise word puzzle, Quiz Battle, and Word Upgrade. Learn while having fun. No sign-up required.",
   alternates: { canonical: "https://eduforeveryone.com/games" },
 };
 
-const games = [
+const baseGames = [
   { href:"/games/math-puzzle", emoji:"🧮", title:"Math Puzzle", description:"Solve arithmetic, algebra and sequences against the clock. 4 difficulty levels.", tags:["Math","Arithmetic","Algebra"], badge:"Popular" },
   { href:"/games/word-puzzle", emoji:"🔤", title:"WordWise", description:"Guess the hidden education word in 6 tries. Math, Science and English words!", tags:["English","Vocabulary","Wordle"], badge:"New" },
   { href:"/games/quiz-battle", emoji:"🧠", title:"Quiz Battle", description:"10 questions, 3 lives, powerups and streak bonuses across 4 subjects.", tags:["All Subjects","Trivia","Quiz"], badge:"New" },
+  { href:"/ielts/word-upgrade", emoji:"⚡", title:"Word Upgrade", description:"Upgrade basic vocabulary to natural Band 7+ IELTS Lexical Resource words across 40 academic contexts.", tags:["IELTS","Vocabulary","English"], badge:"New" },
 ];
 
+const quranWordsGameCard = {
+  href: "/islamic-studies/quran-words",
+  emoji: "📖",
+  title: "Quran Word Meanings",
+  description: "Learn high-frequency words from the Holy Quran with authentic Surah and Ayah references.",
+  tags: ["Quran","Arabic","Islamic Studies"],
+  badge: "New",
+};
+
 export default function GamesPage() {
+  const displayedGames = [
+    ...baseGames,
+    ...(isQuranWordsLive() ? [quranWordsGameCard] : []),
+  ];
+
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
       <div className="mb-10">
@@ -22,7 +39,7 @@ export default function GamesPage() {
         <p className="text-gray-500">Learn while having fun. Free games that make studying addictive. No sign-up. No cost.</p>
       </div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {games.map(game => (
+        {displayedGames.map(game => (
           <Link key={game.href} href={game.href}
             className="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-teal-200 hover:shadow-md transition-all">
             <div className="flex items-start justify-between mb-4">

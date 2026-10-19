@@ -1,6 +1,7 @@
 import ShareScore from "@/components/ShareScore";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { isQuranWordsLive } from "@/lib/games/quran-words";
 
 export const metadata: Metadata = {
   title: "Islamic Studies — Quran, Islamic Quiz in 3 Languages",
@@ -38,6 +39,16 @@ const resources = [
   },
 ];
 
+const quranWordsResource = {
+  href: "/islamic-studies/quran-words",
+  image: null, emoji: "📖",
+  title: "Quran Word Meanings", titleAr: "معاني كلمات القرآن",
+  description: "Learn high-frequency words from the Holy Quran, their English meanings, and original Surah and Ayah references.",
+  tags: ["Vocabulary","Surah References","Word Meanings"],
+  badge: "New", badgeColor: "bg-teal-100 text-teal-700", color: "hover:border-teal-300",
+  stats: [{label:"Words",value:"30+"},{label:"Ad-Free",value:"100%"},{label:"References",value:"Quranic"}],
+};
+
 const comingSoon = [
   { emoji:"📜", title:"Hadith",          titleAr:"الحديث الشريف",   desc:"Browse authentic Hadith collections — Bukhari, Muslim, Tirmidhi and more." },
   { emoji:"🌙", title:"Sirat-un-Nabwi",  titleAr:"السيرة النبوية",  desc:"Complete life story of Prophet Muhammad ﷺ in detail." },
@@ -45,6 +56,11 @@ const comingSoon = [
 ];
 
 export default function IslamicStudiesPage() {
+  const displayedResources = [
+    ...resources,
+    ...(isQuranWordsLive() ? [quranWordsResource] : []),
+  ];
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -69,7 +85,7 @@ export default function IslamicStudiesPage() {
 
         {/* Main Resources */}
         <div className="grid sm:grid-cols-2 gap-6 lg:gap-8 mb-14">
-          {resources.map(r => (
+          {displayedResources.map(r => (
             <Link key={r.href} href={r.href}
               className={`group bg-white border border-gray-200 ${r.color} rounded-2xl p-6 sm:p-7 hover:shadow-lg transition-all`}>
               <div className="flex items-start justify-between mb-4">

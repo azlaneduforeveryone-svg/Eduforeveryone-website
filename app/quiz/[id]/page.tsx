@@ -1,6 +1,6 @@
 import { getQuizById, getAllQuizzes } from '@/lib/data';
 import { notFound } from 'next/navigation';
-import QuizEngine from './QuizEngine';
+import QuizEngine from '@/components/quiz/QuizEngine';
 
 export async function generateStaticParams() {
   return getAllQuizzes().map((q) => ({ id: q.id }));

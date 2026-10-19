@@ -6,6 +6,7 @@ import { TASK1_MODEL_ANSWERS } from "@/lib/ielts/ielts-writing-model-answers";
 import { GT_TASK1_MODEL_ANSWERS } from "@/lib/ielts/ielts-gt-task1-model-answers";
 import { TASK2_MODEL_ANSWERS } from "@/lib/ielts/ielts-task2-model-answers";
 import { getAllCourses, getAllNotes, getAllQuizzes } from "@/lib/data";
+import { isQuranWordsLive } from "@/lib/games/quran-words";
 
 type Freq = "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
 
@@ -23,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     make("",                            1.0, "weekly"),
     make("/ielts",                      0.9, "weekly"),
+    make("/ielts/word-upgrade",         0.8, "weekly"),
     make("/ielts/reading",              0.8, "weekly"),
     make("/ielts/listening",            0.8, "weekly"),
     make("/ielts/writing",              0.8, "weekly"),
@@ -45,6 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     make("/quran/pdf/15line",           0.7, "monthly"),
     make("/quran/pdf/13line",           0.7, "monthly"),
     make("/islamic-studies",            0.8, "weekly"),
+    ...(isQuranWordsLive() ? [make("/islamic-studies/quran-words", 0.8, "weekly")] : []),
     make("/duas",                       0.9, "weekly"),
     make("/courses",                    0.9, "weekly"),
     make("/courses/mathematics",        0.8, "weekly"),

@@ -1,0 +1,31 @@
+id,word,transliteration,meaning,surah_number,surah_name,ayah_number,reviewed,check
+qw-01,رَبّ,Rabb,"Lord, Sustainer, Cherisher",1,Al-Fatihah,2,false,PASS
+qw-02,رَحْمَٰن,Rahman,"The Entirely Merciful, Most Gracious",1,Al-Fatihah,1,false,PASS
+qw-03,يَوْم,Yawm,"Day, Period, Era",1,Al-Fatihah,4,false,PASS
+qw-04,كِتَاب,Kitab,"Book, Scripture, Decree",2,Al-Baqarah,2,false,PASS
+qw-05,هُدًى,Huda,"Guidance, Clear Direction",2,Al-Baqarah,2,false,PASS
+qw-06,قَلْب,Qalb,"Heart, Mind, Inner Self",50,Qaf,37,false,PASS
+qw-07,نَاس,Nas,"Mankind, People, Humanity",2,Al-Baqarah,21,false,PASS
+qw-08,أَرْض,Ard,"Earth, Land, Ground",2,Al-Baqarah,22,false,PASS
+qw-09,سَمَاء,Sama',"Sky, Heaven, Firmament",2,Al-Baqarah,22,false,PASS
+qw-10,مَاء,Ma',"Water, Rain",2,Al-Baqarah,22,false,PASS
+qw-11,عِلْم,'Ilm,"Knowledge, Wisdom, Science",2,Al-Baqarah,32,false,PASS
+qw-12,حَقّ,Haqq,"Truth, Reality, Right",2,Al-Baqarah,42,false,PASS
+qw-13,صَلَاة,Salah,"Prayer, Worship, Connection",2,Al-Baqarah,43,false,PASS
+qw-14,صَبْر,Sabr,"Patience, Perseverance, Constancy",2,Al-Baqarah,45,false,PASS
+qw-15,نَفْس,Nafs,"Soul, Self, Person",2,Al-Baqarah,48,false,PASS
+qw-16,نُور,Nur,"Light, Illumination, Radiance",2,Al-Baqarah,257,false,PASS
+qw-17,لَيْل,Layl,"Night, Evening",3,Aal-E-Imran,27,false,PASS
+qw-18,نَهَار,Nahar,"Day, Daylight",3,Aal-E-Imran,27,false,PASS
+qw-19,شَمْس,Shams,Sun,6,Al-An'am,78,false,PASS
+qw-20,قَمَر,Qamar,Moon,6,Al-An'am,77,false,PASS
+qw-21,شَهِيد,Shahid,"Witness, Observer",4,An-Nisa,33,false,PASS
+qw-22,جَنَّة,Jannah,"Garden, Paradise",2,Al-Baqarah,35,false,PASS
+qw-23,نَار,Nar,"Fire, Hellfire",2,Al-Baqarah,24,false,PASS
+qw-24,عِبَاد,'Ibad,"Servants, Devoted Worshippers",2,Al-Baqarah,186,false,PASS
+qw-25,خَيْر,Khayr,"Good, Goodness, Better",2,Al-Baqarah,110,false,PASS
+qw-26,شَرّ,Sharr,"Evil, Harm, Badness",113,Al-Falaq,2,false,PASS
+qw-27,صِرَاط,Sirat,"Path, Way, Highway",1,Al-Fatihah,6,false,PASS
+qw-28,بَصِير,Basir,"All-Seeing, Ever-Watchful",2,Al-Baqarah,96,false,PASS
+qw-29,سَمِيع,Sami',All-Hearing,2,Al-Baqarah,127,false,PASS
+qw-30,عَلِيم,'Alim,"All-Knowing, Omniscient",2,Al-Baqarah,29,false,PASS
