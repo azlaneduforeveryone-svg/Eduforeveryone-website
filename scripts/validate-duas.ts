@@ -1,4 +1,6 @@
 import { DUAS_DATABASE, DUA_CATEGORIES, LanguageCode } from "../lib/duasData";
+import { execSync } from "child_process";
+import ts from "typescript";
 
 const REQUIRED_LANGUAGES: LanguageCode[] = ["en", "ur", "hi", "tr", "es", "fr", "bn", "id"];
 
@@ -27,11 +29,27 @@ function validateDuas() {
       errors.push(`Invalid arabic text in id '${item.id}'.`);
     }
 
-    // All eight LanguageCode keys present and non-empty
+    // All eight LanguageCode keys present and non-empty + safety checks
     for (const lang of REQUIRED_LANGUAGES) {
       const val = item.translations[lang];
       if (!val || val.trim().length === 0) {
         errors.push(`Missing or empty translation for language '${lang}' in id '${item.id}'.`);
+        continue;
+      }
+
+      // Safety check: identical to dua title
+      if (val === item.title.en || val === item.title.ur || val === item.title.ar) {
+        errors.push(`Translation for language '${lang}' in id '${item.id}' is identical to the dua title: "${val}"`);
+      }
+
+      // Safety check: shorter than 20 characters
+      if (val.trim().length < 20) {
+        errors.push(`Translation for language '${lang}' in id '${item.id}' is shorter than 20 characters (${val.trim().length}): "${val}"`);
+      }
+
+      // Safety check: contains "..."
+      if (val.includes("...")) {
+        errors.push(`Translation for language '${lang}' in id '${item.id}' contains '...': "${val}"`);
       }
     }
 
@@ -57,15 +75,36 @@ function validateDuas() {
       }
     }
 
-    // All 8 translationStatus keys present: "en" and "ur" must be "reviewed", other languages "unreviewed"
+    // All 8 translationStatus keys present and check status values:
+    // - en & ur must be "reviewed"
+    // - Quranic duas for 6 languages must be "published" with translator name
+    // - Hadith duas for 6 languages must be "unreviewed"
     if (!item.translationStatus) {
       errors.push(`Missing translationStatus in id '${item.id}'.`);
     } else {
+      const isQuranic = item.grading === "quran";
       for (const lang of REQUIRED_LANGUAGES) {
         const st = item.translationStatus[lang];
-        const expected = (lang === "en" || lang === "ur") ? "reviewed" : "unreviewed";
-        if (st !== expected) {
-          errors.push(`Invalid translationStatus '${st}' for language '${lang}' in id '${item.id}'. Must be '${expected}'.`);
+        if (!st || !["reviewed", "published", "unreviewed"].includes(st)) {
+          errors.push(`Invalid translationStatus '${st}' for language '${lang}' in id '${item.id}'.`);
+          continue;
+        }
+
+        if (lang === "en" || lang === "ur") {
+          if (st !== "reviewed") {
+            errors.push(`Status for '${lang}' in id '${item.id}' must be 'reviewed', got '${st}'.`);
+          }
+        } else if (isQuranic) {
+          if (st !== "published") {
+            errors.push(`Status for Quranic dua '${item.id}' language '${lang}' must be 'published', got '${st}'.`);
+          }
+          if (!item.translators || !item.translators[lang] || item.translators[lang]!.trim().length === 0) {
+            errors.push(`Missing translator name for published language '${lang}' in id '${item.id}'.`);
+          }
+        } else {
+          if (st !== "unreviewed") {
+            errors.push(`Status for hadith dua '${item.id}' language '${lang}' must be 'unreviewed', got '${st}'.`);
+          }
         }
       }
     }
@@ -79,6 +118,63 @@ function validateDuas() {
     if (!item.sourceRefs || item.sourceRefs.length === 0) {
       errors.push(`Missing or empty sourceRefs in id '${item.id}'.`);
     }
+  }
+ 
+  // Baseline check: ensure no ur or en translation differs from commit 1dbe073 without a status change
+  try {
+    const raw = execSync("git show 1dbe073:lib/duasData.ts", { encoding: "utf8", maxBuffer: 10 * 1024 * 1024 });
+    const oldSource = ts.createSourceFile("old.ts", raw, ts.ScriptTarget.Latest, true);
+    const baseline: Record<string, { en: string; ur: string }> = {};
+
+    function visitOld(node: ts.Node) {
+      if (ts.isVariableDeclaration(node) && node.name.getText(oldSource) === "DUAS_DATABASE") {
+        if (node.initializer && ts.isArrayLiteralExpression(node.initializer)) {
+          for (const elem of node.initializer.elements) {
+            if (ts.isObjectLiteralExpression(elem)) {
+              let id = "";
+              let en = "";
+              let ur = "";
+              for (const prop of elem.properties) {
+                if (ts.isPropertyAssignment(prop)) {
+                  const name = prop.name.getText(oldSource);
+                  if (name === "id" && ts.isStringLiteral(prop.initializer)) {
+                    id = prop.initializer.text;
+                  } else if (name === "translations" && ts.isObjectLiteralExpression(prop.initializer)) {
+                    for (const tprop of prop.initializer.properties) {
+                      if (ts.isPropertyAssignment(tprop)) {
+                        const tname = tprop.name.getText(oldSource);
+                        if (tname === "en" && ts.isStringLiteral(tprop.initializer)) {
+                          en = tprop.initializer.text;
+                        } else if (tname === "ur" && ts.isStringLiteral(tprop.initializer)) {
+                          ur = tprop.initializer.text;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              if (id) baseline[id] = { en, ur };
+            }
+          }
+        }
+      }
+      ts.forEachChild(node, visitOld);
+    }
+    visitOld(oldSource);
+
+    for (const item of DUAS_DATABASE) {
+      const b = baseline[item.id];
+      if (b) {
+        if (item.translations.en !== b.en && item.translationStatus?.en === "reviewed") {
+          errors.push(`English translation for id '${item.id}' differs from commit 1dbe073 without a status change.`);
+        }
+        if (item.translations.ur !== b.ur && item.translationStatus?.ur === "reviewed") {
+          errors.push(`Urdu translation for id '${item.id}' differs from commit 1dbe073 without a status change.`);
+        }
+      }
+    }
+  } catch (e) {
+    console.warn("Could not load commit 1dbe073 baseline for comparison:", (e as Error).message);
   }
 
   if (errors.length > 0) {

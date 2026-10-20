@@ -54,7 +54,7 @@ export interface MultiLangTranslation {
 
 export type HadithGrading = "quran" | "sahih" | "hasan";
 
-export type TranslationStatus = "reviewed" | "unreviewed";
+export type TranslationStatus = "reviewed" | "published" | "unreviewed";
 
 export interface SourceRef {
   collection: string;
@@ -78,6 +78,7 @@ export interface DuaItem {
   grading?: HadithGrading;
   sourceRefs?: SourceRef[];
   translationStatus?: Partial<Record<LanguageCode, TranslationStatus>>;
+  translators?: Partial<Record<LanguageCode, string>>;
 }
 
 /**
@@ -89,6 +90,15 @@ export interface DuaItem {
  * - Bengali (bn): Taisirul Quran / Tawheed Publication (Quran.com resource 161)
  * - Indonesian (id): King Fahad Quran Complex / Kemenag (Quran.com resource 134)
  */
+export const PUBLISHED_QURAN_TRANSLATORS: Record<string, string> = {
+  hi: "Maulana Azizul Haque al-Umari",
+  tr: "Diyanet İşleri",
+  es: "Sheikh Isa Garcia",
+  fr: "Muhammad Hamidullah",
+  bn: "Taisirul Quran",
+  id: "King Fahad Quran Complex",
+};
+
 export const DUAS_DATABASE: DuaItem[] = [
   {
     id: "rabbana-1",
@@ -114,7 +124,7 @@ export const DUAS_DATABASE: DuaItem[] = [
     translations: {
       en: "Our Lord! Give us in this world that which is good and in the Hereafter that which is good, and save us from the torment of the Fire.",
       ur: "اے ہمارے پروردگار! ہمیں دنیا میں بھی بھلائی عطا فرما اور آخرت میں بھی بھلائی دے اور ہمیں آگ کے عذاب سے بچا۔",
-      hi: "ऐ हमारे पालनहार! हमें दुनिया में भलाई तथा आख़िरत में भी भलाई दे और हमें आग के अज़ाब से बचा।",
+      hi: "ऐ हमारे पालनहार! हमें दुनिया में भलाई तथा आख़िरत में भी भलाई दे और हमें आग کے अज़ाब से बचा।",
       tr: "Rabbimiz! Bize dünyada iyiyi, ahirette de iyiyi ver, bizi ateşin azabından koru.",
       es: "¡Señor nuestro! Danos bienestar en esta vida y en la otra, y presérvanos del tormento del Fuego.",
       fr: "Seigneur ! Accorde nous belle part ici-bas, et belle part aussi dans l’au-delà; et protège-nous du châtiment du Feu !",
@@ -124,12 +134,20 @@ export const DUAS_DATABASE: DuaItem[] = [
     translationStatus: {
       en: "reviewed",
       ur: "reviewed",
-      hi: "unreviewed",
-      tr: "unreviewed",
-      es: "unreviewed",
-      fr: "unreviewed",
-      bn: "unreviewed",
-      id: "unreviewed"
+      hi: "published",
+      tr: "published",
+      es: "published",
+      fr: "published",
+      bn: "published",
+      id: "published"
+    },
+    translators: {
+      hi: "Maulana Azizul Haque al-Umari",
+      tr: "Diyanet İşleri",
+      es: "Sheikh Isa Garcia",
+      fr: "Muhammad Hamidullah",
+      bn: "Taisirul Quran",
+      id: "King Fahad Quran Complex"
     }
   },
   {
@@ -166,12 +184,20 @@ export const DUAS_DATABASE: DuaItem[] = [
     translationStatus: {
       en: "reviewed",
       ur: "reviewed",
-      hi: "unreviewed",
-      tr: "unreviewed",
-      es: "unreviewed",
-      fr: "unreviewed",
-      bn: "unreviewed",
-      id: "unreviewed"
+      hi: "published",
+      tr: "published",
+      es: "published",
+      fr: "published",
+      bn: "published",
+      id: "published"
+    },
+    translators: {
+      hi: "Maulana Azizul Haque al-Umari",
+      tr: "Diyanet İşleri",
+      es: "Sheikh Isa Garcia",
+      fr: "Muhammad Hamidullah",
+      bn: "Taisirul Quran",
+      id: "King Fahad Quran Complex"
     }
   },
   {
@@ -208,12 +234,20 @@ export const DUAS_DATABASE: DuaItem[] = [
     translationStatus: {
       en: "reviewed",
       ur: "reviewed",
-      hi: "unreviewed",
-      tr: "unreviewed",
-      es: "unreviewed",
-      fr: "unreviewed",
-      bn: "unreviewed",
-      id: "unreviewed"
+      hi: "published",
+      tr: "published",
+      es: "published",
+      fr: "published",
+      bn: "published",
+      id: "published"
+    },
+    translators: {
+      hi: "Maulana Azizul Haque al-Umari",
+      tr: "Diyanet İşleri",
+      es: "Sheikh Isa Garcia",
+      fr: "Muhammad Hamidullah",
+      bn: "Taisirul Quran",
+      id: "King Fahad Quran Complex"
     }
   },
   {
@@ -250,12 +284,20 @@ export const DUAS_DATABASE: DuaItem[] = [
     translationStatus: {
       en: "reviewed",
       ur: "reviewed",
-      hi: "unreviewed",
-      tr: "unreviewed",
-      es: "unreviewed",
-      fr: "unreviewed",
-      bn: "unreviewed",
-      id: "unreviewed"
+      hi: "published",
+      tr: "published",
+      es: "published",
+      fr: "published",
+      bn: "published",
+      id: "published"
+    },
+    translators: {
+      hi: "Maulana Azizul Haque al-Umari",
+      tr: "Diyanet İşleri",
+      es: "Sheikh Isa Garcia",
+      fr: "Muhammad Hamidullah",
+      bn: "Taisirul Quran",
+      id: "King Fahad Quran Complex"
     }
   },
   {
@@ -333,12 +375,20 @@ export const DUAS_DATABASE: DuaItem[] = [
     translationStatus: {
       en: "reviewed",
       ur: "reviewed",
-      hi: "unreviewed",
-      tr: "unreviewed",
-      es: "unreviewed",
-      fr: "unreviewed",
-      bn: "unreviewed",
-      id: "unreviewed"
+      hi: "published",
+      tr: "published",
+      es: "published",
+      fr: "published",
+      bn: "published",
+      id: "published"
+    },
+    translators: {
+      hi: "Maulana Azizul Haque al-Umari",
+      tr: "Diyanet İşleri",
+      es: "Sheikh Isa Garcia",
+      fr: "Muhammad Hamidullah",
+      bn: "Taisirul Quran",
+      id: "King Fahad Quran Complex"
     }
   },
   {
@@ -375,12 +425,20 @@ export const DUAS_DATABASE: DuaItem[] = [
     translationStatus: {
       en: "reviewed",
       ur: "reviewed",
-      hi: "unreviewed",
-      tr: "unreviewed",
-      es: "unreviewed",
-      fr: "unreviewed",
-      bn: "unreviewed",
-      id: "unreviewed"
+      hi: "published",
+      tr: "published",
+      es: "published",
+      fr: "published",
+      bn: "published",
+      id: "published"
+    },
+    translators: {
+      hi: "Maulana Azizul Haque al-Umari",
+      tr: "Diyanet İşleri",
+      es: "Sheikh Isa Garcia",
+      fr: "Muhammad Hamidullah",
+      bn: "Taisirul Quran",
+      id: "King Fahad Quran Complex"
     }
   },
   {
@@ -419,12 +477,20 @@ export const DUAS_DATABASE: DuaItem[] = [
     translationStatus: {
       en: "reviewed",
       ur: "reviewed",
-      hi: "unreviewed",
-      tr: "unreviewed",
-      es: "unreviewed",
-      fr: "unreviewed",
-      bn: "unreviewed",
-      id: "unreviewed"
+      hi: "published",
+      tr: "published",
+      es: "published",
+      fr: "published",
+      bn: "published",
+      id: "published"
+    },
+    translators: {
+      hi: "Maulana Azizul Haque al-Umari",
+      tr: "Diyanet İşleri",
+      es: "Sheikh Isa Garcia",
+      fr: "Muhammad Hamidullah",
+      bn: "Taisirul Quran",
+      id: "King Fahad Quran Complex"
     }
   },
   {
@@ -461,12 +527,20 @@ export const DUAS_DATABASE: DuaItem[] = [
     translationStatus: {
       en: "reviewed",
       ur: "reviewed",
-      hi: "unreviewed",
-      tr: "unreviewed",
-      es: "unreviewed",
-      fr: "unreviewed",
-      bn: "unreviewed",
-      id: "unreviewed"
+      hi: "published",
+      tr: "published",
+      es: "published",
+      fr: "published",
+      bn: "published",
+      id: "published"
+    },
+    translators: {
+      hi: "Maulana Azizul Haque al-Umari",
+      tr: "Diyanet İşleri",
+      es: "Sheikh Isa Garcia",
+      fr: "Muhammad Hamidullah",
+      bn: "Taisirul Quran",
+      id: "King Fahad Quran Complex"
     }
   },
   {
@@ -1429,12 +1503,20 @@ export const DUAS_DATABASE: DuaItem[] = [
     translationStatus: {
       en: "reviewed",
       ur: "reviewed",
-      hi: "unreviewed",
-      tr: "unreviewed",
-      es: "unreviewed",
-      fr: "unreviewed",
-      bn: "unreviewed",
-      id: "unreviewed"
+      hi: "published",
+      tr: "published",
+      es: "published",
+      fr: "published",
+      bn: "published",
+      id: "published"
+    },
+    translators: {
+      hi: "Maulana Azizul Haque al-Umari",
+      tr: "Diyanet İşleri",
+      es: "Sheikh Isa Garcia",
+      fr: "Muhammad Hamidullah",
+      bn: "Taisirul Quran",
+      id: "King Fahad Quran Complex"
     }
   },
   {
@@ -1471,12 +1553,20 @@ export const DUAS_DATABASE: DuaItem[] = [
     translationStatus: {
       en: "reviewed",
       ur: "reviewed",
-      hi: "unreviewed",
-      tr: "unreviewed",
-      es: "unreviewed",
-      fr: "unreviewed",
-      bn: "unreviewed",
-      id: "unreviewed"
+      hi: "published",
+      tr: "published",
+      es: "published",
+      fr: "published",
+      bn: "published",
+      id: "published"
+    },
+    translators: {
+      hi: "Maulana Azizul Haque al-Umari",
+      tr: "Diyanet İşleri",
+      es: "Sheikh Isa Garcia",
+      fr: "Muhammad Hamidullah",
+      bn: "Taisirul Quran",
+      id: "King Fahad Quran Complex"
     }
   },
   {
@@ -1513,12 +1603,20 @@ export const DUAS_DATABASE: DuaItem[] = [
     translationStatus: {
       en: "reviewed",
       ur: "reviewed",
-      hi: "unreviewed",
-      tr: "unreviewed",
-      es: "unreviewed",
-      fr: "unreviewed",
-      bn: "unreviewed",
-      id: "unreviewed"
+      hi: "published",
+      tr: "published",
+      es: "published",
+      fr: "published",
+      bn: "published",
+      id: "published"
+    },
+    translators: {
+      hi: "Maulana Azizul Haque al-Umari",
+      tr: "Diyanet İşleri",
+      es: "Sheikh Isa Garcia",
+      fr: "Muhammad Hamidullah",
+      bn: "Taisirul Quran",
+      id: "King Fahad Quran Complex"
     }
   },
   {
@@ -1545,7 +1643,7 @@ export const DUAS_DATABASE: DuaItem[] = [
     translations: {
       en: "Our Lord, You did not create this in vain. Glory be to You, so protect us from the punishment of the Fire.",
       ur: "اے ہمارے رب! تو نے یہ سب بے مقصد پیدا نہیں کیا، تو پاک ہے، پس ہمیں آگ کے عذاب سے بچا۔",
-      hi: "ऐ हमारे पालनहार! तूने यह सब कुछ बेकार नहीं रचा है। अतः हमें आग के अज़ाब से बचा ले।",
+      hi: "ऐ हमारे पालनहार! तूने यह सब कुछ बेकार नहीं रचा है। अतः हमें आग کے अज़ाब से बचा ले।",
       tr: "Rabbimiz! Sen bunu boşuna yaratmadın, Sen münezzehsin. Bizi ateşin azabından koru.",
       es: "¡Señor nuestro! No has creado todo esto sin un sentido. ¡Glorificado seas! Presérvanos del castigo del Fuego.",
       fr: "Notre Seigneur! Tu n’as pas créé cela en vain. Gloire à Toi! Épargne-nous du châtiment du Feu.",
@@ -1555,12 +1653,20 @@ export const DUAS_DATABASE: DuaItem[] = [
     translationStatus: {
       en: "reviewed",
       ur: "reviewed",
-      hi: "unreviewed",
-      tr: "unreviewed",
-      es: "unreviewed",
-      fr: "unreviewed",
-      bn: "unreviewed",
-      id: "unreviewed"
+      hi: "published",
+      tr: "published",
+      es: "published",
+      fr: "published",
+      bn: "published",
+      id: "published"
+    },
+    translators: {
+      hi: "Maulana Azizul Haque al-Umari",
+      tr: "Diyanet İşleri",
+      es: "Sheikh Isa Garcia",
+      fr: "Muhammad Hamidullah",
+      bn: "Taisirul Quran",
+      id: "King Fahad Quran Complex"
     }
   },
 

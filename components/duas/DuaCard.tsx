@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { DuaItem, LanguageCode } from "@/lib/duasData";
+import { DuaItem, LanguageCode, SUPPORTED_LANGUAGES, PUBLISHED_QURAN_TRANSLATORS, TranslationStatus } from "@/lib/duasData";
 import { HUMAN_RECITERS, getQuranAudioUrl } from "@/lib/quranAudio";
 import DuaShareModal from "./DuaShareModal";
 
@@ -104,19 +104,25 @@ export default function DuaCard({
     }
   };
 
+  const currentStatus: TranslationStatus = (dua.translationStatus?.[currentLang] as TranslationStatus) || "unreviewed";
+  const isUnreviewed = currentStatus === "unreviewed";
+  const displayedTranslation = isUnreviewed
+    ? dua.translations.en
+    : (dua.translations[currentLang] || dua.translations.en || dua.translations.ur || "");
+  const displayedDirection = (isUnreviewed || currentLang !== "ur") ? "ltr" : "rtl";
+  const translatorName = dua.translators?.[currentLang] || PUBLISHED_QURAN_TRANSLATORS[currentLang] || "";
+  const currentLangObj = SUPPORTED_LANGUAGES.find(l => l.code === currentLang);
+  const langName = currentLangObj?.name || currentLang;
+
   const handleCopyText = () => {
-    const textToCopy = `${dua.title.en} (${dua.source})\n\nArabic:\n${dua.arabic}\n\nTransliteration:\n${dua.transliteration}\n\nTranslation:\n${dua.translations[currentLang] || dua.translations.en}`;
+    const textToCopy = `${dua.title.en} (${dua.source})\n\nArabic:\n${dua.arabic}\n\nTransliteration:\n${dua.transliteration}\n\nTranslation:\n${displayedTranslation}`;
     navigator.clipboard.writeText(textToCopy);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const activeTranslation = dua.translations[currentLang] || dua.translations.en || dua.translations.ur || "";
   const isArabicHidden = hifzHideArabic && !revealArabic;
   const isTranslationHidden = hifzHideTranslation && !revealTranslation;
-
-  // Language direction helper
-  const isRtlLang = currentLang === "ur";
 
   return (
     <div className="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-200 p-5 sm:p-7 flex flex-col justify-between relative">
@@ -278,15 +284,20 @@ export default function DuaCard({
             <div>
               <p
                 className={`text-base text-gray-800 leading-relaxed font-medium ${
-                  isRtlLang ? "text-right font-arabic" : "text-left"
+                  displayedDirection === "rtl" ? "text-right font-arabic" : "text-left"
                 }`}
-                dir={isRtlLang ? "rtl" : "ltr"}
+                dir={displayedDirection}
               >
-                {activeTranslation}
+                {displayedTranslation}
               </p>
-              {dua.translationStatus?.[currentLang] !== "reviewed" && (
-                <p className="text-[11px] text-gray-400 italic mt-1.5 flex items-center gap-1">
-                  <span>ℹ️</span> This translation has not yet been reviewed by a native speaker.
+              {currentStatus === "published" && translatorName && (
+                <p className="text-xs text-gray-500 mt-1.5 flex items-center gap-1">
+                  <span>Translation:</span> {translatorName}
+                </p>
+              )}
+              {currentStatus === "unreviewed" && (
+                <p className="text-xs text-amber-700 font-medium mt-1.5 flex items-center gap-1">
+                  <span>⏳</span> {langName} translation coming soon
                 </p>
               )}
             </div>

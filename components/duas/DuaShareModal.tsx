@@ -132,7 +132,11 @@ export default function DuaShareModal({ dua, currentLang, isOpen, onClose }: Dua
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const logoImageRef = useRef<HTMLImageElement | null>(null);
 
-  const activeTranslation = dua.translations[currentLang] || dua.translations.en || dua.translations.ur || "";
+  const currentStatus = dua.translationStatus?.[currentLang] || "unreviewed";
+  const isUnreviewed = currentStatus === "unreviewed";
+  const activeTranslation = isUnreviewed
+    ? dua.translations.en
+    : (dua.translations[currentLang] || dua.translations.en || dua.translations.ur || "");
   const activeTitle = currentLang === "ur" ? dua.title.ur : dua.title.en;
 
   const showToast = (msg: string) => {
