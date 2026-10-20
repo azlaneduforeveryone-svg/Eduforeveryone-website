@@ -112,13 +112,14 @@ export const DUAS_DATABASE: DuaItem[] = [
     transliteration: "Rabbana atina fid-dunya hasanatan wa fil-akhirati hasanatan wa qina 'adhaban-nar",
     surahInfo: { surah: 2, ayah: 201 },
     repeatTarget: 1,
-    source: "Surah Al-Baqarah (2:201)",
+    source: "Surah Al-Baqarah (2:201); Sahih al-Bukhari 6389",
     grading: "quran",
     sourceRefs: [
-      { collection: "Surah Al-Baqarah", number: "2:201" }
+      { collection: "Surah Al-Baqarah", number: "2:201" },
+      { collection: "Sahih al-Bukhari", number: "6389" }
     ],
     benefit: {
-      en: "One of the most comprehensive supplications recited by Prophet Muhammad ﷺ for goodness in this world and protection from hellfire.",
+      en: "The supplication the Prophet ﷺ made most often (Sahih al-Bukhari 6389), asking for good in this world and the next and protection from the Fire.",
       ur: "نبی کریم ﷺ کی سب سے زیادہ مانگی جانے والی جامع دعا جو دنیا کی تمام برکات اور آخرت کی نجات کو شامل ہے۔"
     },
     translations: {
@@ -353,10 +354,11 @@ export const DUAS_DATABASE: DuaItem[] = [
     transliteration: "La ilaha illa anta subhanaka inni kuntu minadh-dhalimeen",
     surahInfo: { surah: 21, ayah: 87 },
     repeatTarget: 1,
-    source: "Surah Al-Anbiya (21:87)",
+    source: "Surah Al-Anbiya (21:87); Jami' at-Tirmidhi 3505",
     grading: "quran",
     sourceRefs: [
-      { collection: "Surah Al-Anbiya", number: "21:87" }
+      { collection: "Surah Al-Anbiya", number: "21:87" },
+      { collection: "Jami' at-Tirmidhi", number: "3505" }
     ],
     benefit: {
       en: "Prophet Muhammad ﷺ said: No Muslim supplicates with this Dua during distress except that Allah relieves their hardship.",
@@ -409,8 +411,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       { collection: "Surah Al-Qasas", number: "28:24" }
     ],
     benefit: {
-      en: "Prophet Musa (AS) recited this when destitute. Allah immediately provided him shelter, employment, and marriage.",
-      ur: "حضرت موسیٰ علیہ السلام نے انتہائی لاچاری کی حالت میں یہ دعا مانگی اور اللہ نے فوراً چھت، روزگار اور رشتہ کا انتظام فرمایا۔"
+      en: "Prophet Musa (AS) recited this when destitute. Allah provided him shelter, employment, and marriage (28:25-27).",
+      ur: "حضرت موسیٰ علیہ السلام نے انتہائی لاچاری کی حالت میں یہ دعا مانگی اور اللہ نے چھت، روزگار اور رشتہ کا انتظام فرمایا (28:25-27)۔"
     },
     translations: {
       en: "My Lord, indeed I am, for whatever good You would send down to me, in need.",
@@ -505,14 +507,16 @@ export const DUAS_DATABASE: DuaItem[] = [
     transliteration: "Allahu la ilaha illa Huwal-Hayyul-Qayyoom. La ta'khudhuhu sinatuw-wa la nawm. Lahu ma fis-samawati wa ma fil-ard. Man dhal-ladhi yashfa'u 'indahu illa bi-idhnih. Ya'lamu ma bayna aydeehim wa ma khalfahum, wa la yuheetoona bi-shay'im-min 'ilmihi illa bima sha'. Wasi'a kursiyyuhus-samawati wal-ard, wa la ya'ooduhu hifdhuhuma, wa Huwal-'Aliyyul-'Adheem.",
     surahInfo: { surah: 2, ayah: 255 },
     repeatTarget: 1,
-    source: "Surah Al-Baqarah (2:255)",
+    source: "Surah Al-Baqarah (2:255); Sahih Muslim 810; Sahih al-Bukhari 2311",
     grading: "quran",
     sourceRefs: [
-      { collection: "Surah Al-Baqarah", number: "2:255" }
+      { collection: "Surah Al-Baqarah", number: "2:255" },
+      { collection: "Sahih Muslim", number: "810" },
+      { collection: "Sahih al-Bukhari", number: "2311" }
     ],
     benefit: {
-      en: "The greatest verse in the Quran. Reciting it in the morning protects from Satan until evening, and after obligatory prayer guarantees Paradise.",
-      ur: "قرآن پاک کی سب سے عظمیٰ آیت۔ صبح پڑھنے سے شام تک شیطان سے حفاظت اور فرض نماز کے بعد پڑھنے سے جنت کی بشارت ملتی ہے۔"
+      en: "The greatest verse in the Quran (Sahih Muslim 810). Whoever recites it before sleeping has a guardian from Allah through the night, and Shaytan cannot come near him until morning (Sahih al-Bukhari 2311).",
+      ur: "قرآن پاک کی سب سے عظیم آیت (صحیح مسلم 810)۔ جو سونے سے پہلے اسے پڑھے، رات بھر اللہ کی طرف سے اس کا ایک نگہبان رہتا ہے اور صبح تک شیطان اس کے قریب نہیں آتا (صحیح بخاری 2311)۔"
     },
     translations: {
       en: "Allah! There is no deity except Him, the Ever-Living, the Sustainer of all existence. Neither drowsiness overtakes Him nor sleep. To Him belongs whatever is in the heavens and whatever is on the earth. Who is it that can intercede with Him except by His permission? He knows what is before them and what is behind them, and they encompass nothing of His knowledge except what He wills. His Kursi extends over the heavens and the earth, and preserving them does not tire Him. And He is the Most High, the Most Great.",
@@ -629,23 +633,24 @@ export const DUAS_DATABASE: DuaItem[] = [
   },
   {
     id: "tasbeeh-fatima",
-    category: "salah",
+    category: "evening",
     title: {
-      en: "Tasbeeh of Fatimah (After Every Salah)",
-      ur: "تسبیح فاطمی (ہر نماز کے بعد)",
-      ar: "تسبيح فاطمة الزهراء (بعد كل صلاة)"
+      en: "Tasbeeh of Fatimah (Before Sleep)",
+      ur: "تسبیح فاطمی (سونے سے پہلے)",
+      ar: "تسبيح فاطمة الزهراء (عند النوم)"
     },
     arabic: "سُبْحَانَ اللَّهِ (٣٣) ، اَلْحَمْدُ لِلَّهِ (٣٣) ، اَللَّهُ أَكْبَرُ (٣٤)",
     transliteration: "SubhanAllah (33x), Alhamdulillah (33x), Allahu Akbar (34x)",
     repeatTarget: 100,
-    source: "Sahih al-Bukhari & Sahih Muslim",
+    source: "Sahih al-Bukhari 3113; Sahih Muslim 2727",
     grading: "sahih",
     sourceRefs: [
-      { collection: "Sahih Muslim", number: "595" }
+      { collection: "Sahih al-Bukhari", number: "3113" },
+      { collection: "Sahih Muslim", number: "2727" }
     ],
     benefit: {
-      en: "Gifted by Prophet Muhammad ﷺ to Lady Fatimah (RA) for strength, spiritual peace, and forgiveness.",
-      ur: "نبی کریم ﷺ کا سیدہ فاطمہ رضی اللہ عنہا کو تحفہ، جو تھکاوٹ دور کرتا ہے اور گناہوں کی معافی کا ذریعہ ہے۔"
+      en: "When Sayyidah Fatimah (RA) asked for a servant, the Prophet ﷺ taught her and Ali (RA) to say this at bedtime, and said it was better for them than a servant.",
+      ur: "جب سیدہ فاطمہ رضی اللہ عنہا نے خادم مانگا تو نبی ﷺ نے انہیں اور حضرت علی رضی اللہ عنہ کو سوتے وقت یہ پڑھنے کی تعلیم دی اور فرمایا کہ یہ تمہارے لیے خادم سے بہتر ہے۔"
     },
     translations: {
       en: "Glory be to Allah (33x), Praise be to Allah (33x), Allah is the Greatest (34x). Total: 100.",
@@ -1531,10 +1536,11 @@ export const DUAS_DATABASE: DuaItem[] = [
     transliteration: "Rabbana la tu'akhidhna in naseena aw akhta'na, Rabbana wa la tahmil 'alayna isran kama hamaltahu 'alal-ladheena min qablina, Rabbana wa la tuhammilna ma la taqata lana bihi, wa'fu 'anna waghfir lana warhamna, Anta Mawlana fansurna 'alal-qawmil-kafireen",
     surahInfo: { surah: 2, ayah: 286 },
     repeatTarget: 1,
-    source: "Surah Al-Baqarah (2:286)",
+    source: "Surah Al-Baqarah (2:286); Sahih Muslim 126",
     grading: "quran",
     sourceRefs: [
-      { collection: "Surah Al-Baqarah", number: "2:286" }
+      { collection: "Surah Al-Baqarah", number: "2:286" },
+      { collection: "Sahih Muslim", number: "126" }
     ],
     benefit: {
       en: "The closing verse of Surah Al-Baqarah. It was reported that after each request Allah responded that it had been granted. Recited widely at the end of the night and after prayer.",
