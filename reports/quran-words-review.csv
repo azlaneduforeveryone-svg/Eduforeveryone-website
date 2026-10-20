@@ -1,6 +1,6 @@
 id,word,transliteration,meaning,options,surah_number,surah_name,ayah_number,reviewed,check
 qw-01,رَبّ,Rabb,"Lord, Sustainer, Cherisher","Lord, Sustainer, Cherisher | Messenger, Prophet | Scholar, Teacher | Servant, Worshipper",1,Al-Fatihah,2,false,PASS
-qw-02,رَحْمَٰن,Rahman,"The Entirely Merciful, Most Gracious","The Entirely Merciful, Most Gracious | A Distant Journey | A High Mountain | A Flowing Spring",1,Al-Fatihah,1,false,PASS
+qw-02,رَحْمَٰن,Rahman,"The Entirely Merciful, Most Gracious","The Entirely Merciful, Most Gracious | Patience | Guidance | Heart",1,Al-Fatihah,1,false,PASS
 qw-03,يَوْم,Yawm,"Day, Period, Era","Day, Period, Era | Night, Darkness | Month, Season | Year, Age",1,Al-Fatihah,4,false,PASS
 qw-04,كِتَاب,Kitab,"Book, Scripture, Decree","Book, Scripture, Decree | Pen, Reed | Speech, Dialogue | Paper, Scroll",2,Al-Baqarah,2,false,PASS
 qw-05,هُدًى,Huda,"Guidance, Clear Direction","Guidance, Clear Direction | Wealth, Provision | Victory, Triumph | Warning, Admonition",2,Al-Baqarah,2,false,PASS
@@ -26,6 +26,6 @@ qw-24,عِبَاد,'Ibad,"Servants, Devoted Worshippers","Servants, Devoted Wors
 qw-25,خَيْر,Khayr,"Good, Goodness, Better","Good, Goodness, Better | Evil, Calamity | Loss, Deprivation | Fear, Doubt",2,Al-Baqarah,110,false,PASS
 qw-26,شَرّ,Sharr,"Evil, Harm, Badness","Evil, Harm, Badness | Good, Grace | Honor, Dignity | Truth, Right",113,Al-Falaq,2,false,PASS
 qw-27,صِرَاط,Sirat,"Path, Way","Path, Way | Wall, Barrier | River, Stream | Door, Gate",1,Al-Fatihah,6,false,PASS
-qw-28,بَصِير,Basir,All-Seeing,All-Seeing | Deep Valley | Swift Wind | Clear Spring,2,Al-Baqarah,96,false,PASS
-qw-29,سَمِيع,Sami',All-Hearing,All-Hearing | Firm Rock | Green Tree | Gentle Rain,2,Al-Baqarah,127,false,PASS
-qw-30,عَلِيم,'Alim,"All-Knowing, Omniscient","All-Knowing, Omniscient | Open Field | Shaded Cloud | Silent Desert",2,Al-Baqarah,29,false,PASS
+qw-28,بَصِير,Basir,All-Seeing,All-Seeing | Night | Path | Water,2,Al-Baqarah,96,false,PASS
+qw-29,سَمِيع,Sami',All-Hearing,All-Hearing | Earth | Book | Daytime,2,Al-Baqarah,127,false,PASS
+qw-30,عَلِيم,'Alim,"All-Knowing, Omniscient","All-Knowing, Omniscient | Soul | Sun | Moon",2,Al-Baqarah,29,false,PASS
