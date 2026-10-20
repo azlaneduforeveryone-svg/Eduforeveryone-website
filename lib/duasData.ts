@@ -440,8 +440,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       ur: "قرآن پاک کی سب سے عظمیٰ آیت۔ صبح پڑھنے سے شام تک شیطان سے حفاظت اور فرض نماز کے بعد پڑھنے سے جنت کی بشارت ملتی ہے۔"
     },
     translations: {
-      en: "Allah! There is no deity except Him, the Ever-Living, the Sustainer of [all] existence. Neither drowsiness overtakes Him nor sleep...",
-      ur: "اللہ! اس کے سوا کوئی معبود نہیں۔ وہ زندہ اور سب کو قائم رکھنے والا ہے۔ نہ اس کو اونگھ آتی ہے نہ نیند...",
+      en: "Allah! There is no deity except Him, the Ever-Living, the Sustainer of all existence. Neither drowsiness overtakes Him nor sleep. To Him belongs whatever is in the heavens and whatever is on the earth. Who is it that can intercede with Him except by His permission? He knows what is before them and what is behind them, and they encompass nothing of His knowledge except what He wills. His Kursi extends over the heavens and the earth, and preserving them does not tire Him. And He is the Most High, the Most Great.",
+      ur: "اللہ! اس کے سوا کوئی معبود نہیں۔ وہ زندہ اور سب کو قائم رکھنے والا ہے۔ نہ اس کو اونگھ آتی ہے نہ نیند۔ جو کچھ آسمانوں میں ہے اور جو کچھ زمین میں ہے سب اسی کا ہے۔ کون ہے جو اس کی اجازت کے بغیر اس کے پاس سفارش کر سکے؟ وہ جانتا ہے جو کچھ لوگوں کے سامنے ہے اور جو کچھ ان کے پیچھے ہے، اور لوگ اس کے علم میں سے کسی چیز کا احاطہ نہیں کر سکتے سوائے اس کے جتنا وہ چاہے۔ اس کی کرسی آسمانوں اور زمین پر چھائی ہوئی ہے، اور ان دونوں کی حفاظت اسے نہیں تھکاتی، اور وہی بلند مرتبہ، عظمت والا ہے۔",
       hi: "अल्लाह! उसके सिवा कोई माबूद नहीं, वह जिंदा और सब को संभालने वाला है। न उसे ऊंघ आती है न नींद...",
       tr: "Allah, O'ndan başka ilah yoktur. O, diridir, her şeyi var eden ve yönetendir...",
       es: "¡Allah! No hay más dios que Él, el Viviente, el Sustentador de toda la creación...",
@@ -715,7 +715,7 @@ export const DUAS_DATABASE: DuaItem[] = [
     category: "evening",
     title: {
       en: "By You We Enter the Evening",
-      ur: "تیرے ہی نام سے ہم نے شام کی",
+      ur: "تیری ہی توفیق سے ہم نے شام کی",
       ar: "اللهم بك أمسينا"
     },
     arabic: "اللَّهُمَّ بِكَ أَمْسَيْنَا، وَبِكَ أَصْبَحْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ الْمَصِيرُ",
@@ -733,7 +733,7 @@ export const DUAS_DATABASE: DuaItem[] = [
     },
     translations: {
       en: "O Allah, by You we enter the evening and by You we enter the morning, by You we live and by You we die, and to You is the final return.",
-      ur: "اے اللہ! تیرے ہی نام سے ہم نے شام کی اور تیرے ہی نام سے صبح کی، تیرے ہی حکم سے ہم جیتے ہیں اور تیرے ہی حکم سے مرتے ہیں، اور تیری ہی طرف لوٹ کر جانا ہے۔",
+      ur: "اے اللہ! تیری ہی توفیق سے ہم نے شام کی اور تیری ہی توفیق سے صبح کی، تیرے ہی حکم سے ہم جیتے ہیں اور تیرے ہی حکم سے مرتے ہیں، اور تیری ہی طرف لوٹ کر جانا ہے۔",
       hi: "ऐ अल्लाह! तेरे ही नाम से हमने शाम की और तेरे ही नाम से सुबह की, तेरे ही हुक्म से हम जीते हैं और तेरे ही हुक्म से मरते हैं, और तेरी ही तरफ़ लौटना है।",
       tr: "Allah'ım! Seninle akşama erdik, Seninle sabaha erdik, Seninle yaşar, Seninle ölürüz ve dönüş ancak Sanadır.",
       es: "Oh Allah, por Ti llegamos a la tarde y por Ti llegamos a la mañana, por Ti vivimos y por Ti morimos, y hacia Ti es el retorno final.",
@@ -882,7 +882,7 @@ export const DUAS_DATABASE: DuaItem[] = [
     category: "morning",
     title: {
       en: "By You We Enter the Morning",
-      ur: "تیرے ہی نام سے ہم نے صبح کی",
+      ur: "تیری ہی توفیق سے ہم نے صبح کی",
       ar: "اللهم بك أصبحنا"
     },
     arabic: "اللَّهُمَّ بِكَ أَصْبَحْنَا، وَبِكَ أَمْسَيْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ النُّشُورُ",
@@ -900,7 +900,7 @@ export const DUAS_DATABASE: DuaItem[] = [
     },
     translations: {
       en: "O Allah, by You we enter the morning and by You we enter the evening, by You we live and by You we die, and to You is the resurrection.",
-      ur: "اے اللہ! تیرے ہی نام سے ہم نے صبح کی اور تیرے ہی نام سے شام کی، تیرے ہی حکم سے ہم جیتے ہیں اور تیرے ہی حکم سے مرتے ہیں، اور تیری ہی طرف دوبارہ اٹھایا جانا ہے۔",
+      ur: "اے اللہ! تیری ہی توفیق سے ہم نے صبح کی اور تیری ہی توفیق سے شام کی، تیرے ہی حکم سے ہم جیتے ہیں اور تیرے ہی حکم سے مرتے ہیں، اور تیری ہی طرف دوبارہ اٹھایا جانا ہے۔",
       hi: "ऐ अल्लाह! तेरे ही नाम से हमने सुबह की और तेरे ही नाम से शाम की, तेरे ही हुक्म से हम जीते हैं और तेरे ही हुक्म से मरते हैं، और तेरी ही तरफ़ दोबारा उठाया जाना है।",
       tr: "Allah'ım! Seninle sabaha erdik, Seninle akşama erdik, Seninle yaşar, Seninle ölürüz ve diriliş ancak Sanadır.",
       es: "Oh Allah, por Ti llegamos a la mañana y por Ti llegamos a la tarde, por Ti vivimos y por Ti morimos, y hacia Ti es la resurrección.",
@@ -1323,7 +1323,7 @@ export const DUAS_DATABASE: DuaItem[] = [
     },
     translations: {
       en: "My Lord, forgive me and accept my repentance. Indeed You are the Ever Accepting of repentance, the Most Merciful.",
-      ur: "اے ہمارے رب! مجھے بخش دے اور میری توبہ قبول فرما، بے شک تو ہی بہت توبہ قبول کرنے والا، نہایت رحم کرنے والا ہے۔",
+      ur: "اے میرے رب! مجھے بخش دے اور میری توبہ قبول فرما، بے شک تو ہی بہت توبہ قبول کرنے والا، نہایت رحم کرنے والا ہے۔",
       hi: "ऐ मेरे रब! मुझे बख़्श दे और मेरी तौबा क़ुबूल फ़रमा, बेशक तू ही बहुत तौबा क़ुबूल करने वाला, निहायत रहम करने वाला है।",
       tr: "Rabbim! Beni bağışla ve tövbemi kabul et. Şüphesiz Sen tövbeleri çokça kabul eden, çok merhametli olansın.",
       es: "Señor mío, perdóname y acepta mi arrepentimiento. En verdad, Tú eres el que acepta el arrepentimiento, el Misericordiosísimo.",
