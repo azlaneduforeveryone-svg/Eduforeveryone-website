@@ -38,7 +38,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 1,
     surahName: "Al-Fatihah",
     ayahNumber: 2,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-02",
@@ -51,7 +51,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 1,
     surahName: "Al-Fatihah",
     ayahNumber: 1,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-03",
@@ -64,7 +64,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 1,
     surahName: "Al-Fatihah",
     ayahNumber: 4,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-04",
@@ -77,7 +77,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 2,
     surahName: "Al-Baqarah",
     ayahNumber: 2,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-05",
@@ -90,7 +90,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 2,
     surahName: "Al-Baqarah",
     ayahNumber: 2,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-06",
@@ -103,7 +103,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 50,
     surahName: "Qaf",
     ayahNumber: 37,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-07",
@@ -116,7 +116,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 2,
     surahName: "Al-Baqarah",
     ayahNumber: 21,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-08",
@@ -129,7 +129,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 2,
     surahName: "Al-Baqarah",
     ayahNumber: 22,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-09",
@@ -142,7 +142,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 2,
     surahName: "Al-Baqarah",
     ayahNumber: 22,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-10",
@@ -155,7 +155,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 2,
     surahName: "Al-Baqarah",
     ayahNumber: 22,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-11",
@@ -168,7 +168,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 2,
     surahName: "Al-Baqarah",
     ayahNumber: 32,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-12",
@@ -181,7 +181,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 2,
     surahName: "Al-Baqarah",
     ayahNumber: 42,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-13",
@@ -194,7 +194,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 2,
     surahName: "Al-Baqarah",
     ayahNumber: 43,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-14",
@@ -207,20 +207,20 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 2,
     surahName: "Al-Baqarah",
     ayahNumber: 45,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-15",
     arabic: "نَفْس",
     transliteration: "Nafs",
     question: "نَفْس",
-    options: ["Soul, Self, Person", "Body, Physique", "Spirit, Wind", "Shadow, Reflection"],
+    options: ["Soul, Self, Person", "Body, Physique", "Wealth, Property", "Shadow, Reflection"],
     correct: 0,
     explanation: "'Nafs' denotes the individual soul, self, or inner human conscience.",
     surahNumber: 2,
     surahName: "Al-Baqarah",
     ayahNumber: 48,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-16",
@@ -233,7 +233,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 2,
     surahName: "Al-Baqarah",
     ayahNumber: 257,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-17",
@@ -246,7 +246,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 3,
     surahName: "Aal-E-Imran",
     ayahNumber: 27,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-18",
@@ -259,7 +259,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 3,
     surahName: "Aal-E-Imran",
     ayahNumber: 27,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-19",
@@ -272,7 +272,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 6,
     surahName: "Al-An'am",
     ayahNumber: 78,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-20",
@@ -285,7 +285,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 6,
     surahName: "Al-An'am",
     ayahNumber: 77,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-21",
@@ -298,7 +298,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 4,
     surahName: "An-Nisa",
     ayahNumber: 33,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-22",
@@ -311,7 +311,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 2,
     surahName: "Al-Baqarah",
     ayahNumber: 35,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-23",
@@ -324,7 +324,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 2,
     surahName: "Al-Baqarah",
     ayahNumber: 24,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-24",
@@ -337,7 +337,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 2,
     surahName: "Al-Baqarah",
     ayahNumber: 186,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-25",
@@ -350,7 +350,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 2,
     surahName: "Al-Baqarah",
     ayahNumber: 110,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-26",
@@ -363,7 +363,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 113,
     surahName: "Al-Falaq",
     ayahNumber: 2,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-27",
@@ -376,7 +376,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 1,
     surahName: "Al-Fatihah",
     ayahNumber: 6,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-28",
@@ -389,7 +389,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 2,
     surahName: "Al-Baqarah",
     ayahNumber: 96,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-29",
@@ -402,7 +402,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 2,
     surahName: "Al-Baqarah",
     ayahNumber: 127,
-    reviewed: false,
+    reviewed: true,
   },
   {
     id: "qw-30",
@@ -415,7 +415,7 @@ export const QURAN_WORDS: QuranWordItem[] = [
     surahNumber: 2,
     surahName: "Al-Baqarah",
     ayahNumber: 29,
-    reviewed: false,
+    reviewed: true,
   },
 ];
 

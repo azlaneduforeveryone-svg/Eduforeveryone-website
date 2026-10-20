@@ -1,31 +1,31 @@
 id,word,transliteration,meaning,options,surah_number,surah_name,ayah_number,reviewed,check
-qw-01,رَبّ,Rabb,"Lord, Sustainer, Cherisher","Lord, Sustainer, Cherisher | Messenger, Prophet | Scholar, Teacher | Servant, Worshipper",1,Al-Fatihah,2,false,PASS
-qw-02,رَحْمَٰن,Rahman,"The Entirely Merciful, Most Gracious","The Entirely Merciful, Most Gracious | Patience | Guidance | Heart",1,Al-Fatihah,1,false,PASS
-qw-03,يَوْم,Yawm,"Day, Period, Era","Day, Period, Era | Night, Darkness | Month, Season | Year, Age",1,Al-Fatihah,4,false,PASS
-qw-04,كِتَاب,Kitab,"Book, Scripture, Decree","Book, Scripture, Decree | Pen, Reed | Speech, Dialogue | Paper, Scroll",2,Al-Baqarah,2,false,PASS
-qw-05,هُدًى,Huda,"Guidance, Clear Direction","Guidance, Clear Direction | Wealth, Provision | Victory, Triumph | Warning, Admonition",2,Al-Baqarah,2,false,PASS
-qw-06,قَلْب,Qalb,"Heart, Mind, Inner Self","Heart, Mind, Inner Self | Eye, Vision | Hand, Strength | Tongue, Speech",50,Qaf,37,false,PASS
-qw-07,نَاس,Nas,"Mankind, People, Humanity","Mankind, People, Humanity | Angels, Hosts | Jinn, Spirits | Creatures, Beasts",2,Al-Baqarah,21,false,PASS
-qw-08,أَرْض,Ard,"Earth, Land, Ground","Earth, Land, Ground | Mountain, Peak | Sea, Ocean | Sky, Firmament",2,Al-Baqarah,22,false,PASS
-qw-09,سَمَاء,Sama',"Sky, Heaven, Firmament","Sky, Heaven, Firmament | Earth, Soil | Cloud, Vapor | Star, Constellation",2,Al-Baqarah,22,false,PASS
-qw-10,مَاء,Ma',"Water, Rain","Water, Rain | Fire, Heat | Wind, Breeze | Dust, Clay",2,Al-Baqarah,22,false,PASS
-qw-11,عِلْم,'Ilm,Knowledge,"Knowledge | Doubt, Guess | Ignorance, Folly | Fear, Awe",2,Al-Baqarah,32,false,PASS
-qw-12,حَقّ,Haqq,"Truth, Reality, Right","Truth, Reality, Right | Falsehood, Illusion | Secret, Mystery | Custom, Tradition",2,Al-Baqarah,42,false,PASS
-qw-13,صَلَاة,Salah,Prayer,"Prayer | Fasting, Abstinence | Charity, Almsgiving | Pilgrimage, Journey",2,Al-Baqarah,43,false,PASS
-qw-14,صَبْر,Sabr,"Patience, Perseverance, Constancy","Patience, Perseverance, Constancy | Anger, Wrath | Haste, Rush | Grief, Sorrow",2,Al-Baqarah,45,false,PASS
-qw-15,نَفْس,Nafs,"Soul, Self, Person","Soul, Self, Person | Body, Physique | Spirit, Wind | Shadow, Reflection",2,Al-Baqarah,48,false,PASS
-qw-16,نُور,Nur,"Light, Illumination, Radiance","Light, Illumination, Radiance | Darkness, Shadow | Flame, Fire | Smoke, Mist",2,Al-Baqarah,257,false,PASS
-qw-17,لَيْل,Layl,Night,"Night | Morning, Dawn | Noon, Midday | Afternoon, Sunset",3,Aal-E-Imran,27,false,PASS
-qw-18,نَهَار,Nahar,Daytime,"Daytime | Darkness, Night | Storm, Tempest | Dusk, Twilight",3,Aal-E-Imran,27,false,PASS
-qw-19,شَمْس,Shams,Sun,Sun | Moon | Planet | Meteor,6,Al-An'am,78,false,PASS
-qw-20,قَمَر,Qamar,Moon,Moon | Sun | Cloud | Star,6,Al-An'am,77,false,PASS
-qw-21,شَهِيد,Shahid,"Witness, Observer","Witness, Observer | Traveler, Passenger | Writer, Scribe | Speaker, Orator",4,An-Nisa,33,false,PASS
-qw-22,جَنَّة,Jannah,"Garden, Paradise","Garden, Paradise | Valley, Ravine | Mountain, Fortress | Desert, Wilderness",2,Al-Baqarah,35,false,PASS
-qw-23,نَار,Nar,"Fire, Hellfire","Fire, Hellfire | Water, River | Wind, Gale | Cold, Frost",2,Al-Baqarah,24,false,PASS
-qw-24,عِبَاد,'Ibad,"Servants, Devoted Worshippers","Servants, Devoted Worshippers | Masters, Leaders | Travelers, Strangers | Scholars, Teachers",2,Al-Baqarah,186,false,PASS
-qw-25,خَيْر,Khayr,"Good, Goodness, Better","Good, Goodness, Better | Evil, Calamity | Loss, Deprivation | Fear, Doubt",2,Al-Baqarah,110,false,PASS
-qw-26,شَرّ,Sharr,"Evil, Harm, Badness","Evil, Harm, Badness | Good, Grace | Honor, Dignity | Truth, Right",113,Al-Falaq,2,false,PASS
-qw-27,صِرَاط,Sirat,"Path, Way","Path, Way | Wall, Barrier | River, Stream | Door, Gate",1,Al-Fatihah,6,false,PASS
-qw-28,بَصِير,Basir,All-Seeing,All-Seeing | Night | Path | Water,2,Al-Baqarah,96,false,PASS
-qw-29,سَمِيع,Sami',All-Hearing,All-Hearing | Earth | Book | Daytime,2,Al-Baqarah,127,false,PASS
-qw-30,عَلِيم,'Alim,"All-Knowing, Omniscient","All-Knowing, Omniscient | Soul | Sun | Moon",2,Al-Baqarah,29,false,PASS
+qw-01,رَبّ,Rabb,"Lord, Sustainer, Cherisher","Lord, Sustainer, Cherisher | Messenger, Prophet | Scholar, Teacher | Servant, Worshipper",1,Al-Fatihah,2,true,PASS
+qw-02,رَحْمَٰن,Rahman,"The Entirely Merciful, Most Gracious","The Entirely Merciful, Most Gracious | Patience | Guidance | Heart",1,Al-Fatihah,1,true,PASS
+qw-03,يَوْم,Yawm,"Day, Period, Era","Day, Period, Era | Night, Darkness | Month, Season | Year, Age",1,Al-Fatihah,4,true,PASS
+qw-04,كِتَاب,Kitab,"Book, Scripture, Decree","Book, Scripture, Decree | Pen, Reed | Speech, Dialogue | Paper, Scroll",2,Al-Baqarah,2,true,PASS
+qw-05,هُدًى,Huda,"Guidance, Clear Direction","Guidance, Clear Direction | Wealth, Provision | Victory, Triumph | Warning, Admonition",2,Al-Baqarah,2,true,PASS
+qw-06,قَلْب,Qalb,"Heart, Mind, Inner Self","Heart, Mind, Inner Self | Eye, Vision | Hand, Strength | Tongue, Speech",50,Qaf,37,true,PASS
+qw-07,نَاس,Nas,"Mankind, People, Humanity","Mankind, People, Humanity | Angels, Hosts | Jinn, Spirits | Creatures, Beasts",2,Al-Baqarah,21,true,PASS
+qw-08,أَرْض,Ard,"Earth, Land, Ground","Earth, Land, Ground | Mountain, Peak | Sea, Ocean | Sky, Firmament",2,Al-Baqarah,22,true,PASS
+qw-09,سَمَاء,Sama',"Sky, Heaven, Firmament","Sky, Heaven, Firmament | Earth, Soil | Cloud, Vapor | Star, Constellation",2,Al-Baqarah,22,true,PASS
+qw-10,مَاء,Ma',"Water, Rain","Water, Rain | Fire, Heat | Wind, Breeze | Dust, Clay",2,Al-Baqarah,22,true,PASS
+qw-11,عِلْم,'Ilm,Knowledge,"Knowledge | Doubt, Guess | Ignorance, Folly | Fear, Awe",2,Al-Baqarah,32,true,PASS
+qw-12,حَقّ,Haqq,"Truth, Reality, Right","Truth, Reality, Right | Falsehood, Illusion | Secret, Mystery | Custom, Tradition",2,Al-Baqarah,42,true,PASS
+qw-13,صَلَاة,Salah,Prayer,"Prayer | Fasting, Abstinence | Charity, Almsgiving | Pilgrimage, Journey",2,Al-Baqarah,43,true,PASS
+qw-14,صَبْر,Sabr,"Patience, Perseverance, Constancy","Patience, Perseverance, Constancy | Anger, Wrath | Haste, Rush | Grief, Sorrow",2,Al-Baqarah,45,true,PASS
+qw-15,نَفْس,Nafs,"Soul, Self, Person","Soul, Self, Person | Body, Physique | Wealth, Property | Shadow, Reflection",2,Al-Baqarah,48,true,PASS
+qw-16,نُور,Nur,"Light, Illumination, Radiance","Light, Illumination, Radiance | Darkness, Shadow | Flame, Fire | Smoke, Mist",2,Al-Baqarah,257,true,PASS
+qw-17,لَيْل,Layl,Night,"Night | Morning, Dawn | Noon, Midday | Afternoon, Sunset",3,Aal-E-Imran,27,true,PASS
+qw-18,نَهَار,Nahar,Daytime,"Daytime | Darkness, Night | Storm, Tempest | Dusk, Twilight",3,Aal-E-Imran,27,true,PASS
+qw-19,شَمْس,Shams,Sun,Sun | Moon | Planet | Meteor,6,Al-An'am,78,true,PASS
+qw-20,قَمَر,Qamar,Moon,Moon | Sun | Cloud | Star,6,Al-An'am,77,true,PASS
+qw-21,شَهِيد,Shahid,"Witness, Observer","Witness, Observer | Traveler, Passenger | Writer, Scribe | Speaker, Orator",4,An-Nisa,33,true,PASS
+qw-22,جَنَّة,Jannah,"Garden, Paradise","Garden, Paradise | Valley, Ravine | Mountain, Fortress | Desert, Wilderness",2,Al-Baqarah,35,true,PASS
+qw-23,نَار,Nar,"Fire, Hellfire","Fire, Hellfire | Water, River | Wind, Gale | Cold, Frost",2,Al-Baqarah,24,true,PASS
+qw-24,عِبَاد,'Ibad,"Servants, Devoted Worshippers","Servants, Devoted Worshippers | Masters, Leaders | Travelers, Strangers | Scholars, Teachers",2,Al-Baqarah,186,true,PASS
+qw-25,خَيْر,Khayr,"Good, Goodness, Better","Good, Goodness, Better | Evil, Calamity | Loss, Deprivation | Fear, Doubt",2,Al-Baqarah,110,true,PASS
+qw-26,شَرّ,Sharr,"Evil, Harm, Badness","Evil, Harm, Badness | Good, Grace | Honor, Dignity | Truth, Right",113,Al-Falaq,2,true,PASS
+qw-27,صِرَاط,Sirat,"Path, Way","Path, Way | Wall, Barrier | River, Stream | Door, Gate",1,Al-Fatihah,6,true,PASS
+qw-28,بَصِير,Basir,All-Seeing,All-Seeing | Night | Path | Water,2,Al-Baqarah,96,true,PASS
+qw-29,سَمِيع,Sami',All-Hearing,All-Hearing | Earth | Book | Daytime,2,Al-Baqarah,127,true,PASS
+qw-30,عَلِيم,'Alim,"All-Knowing, Omniscient","All-Knowing, Omniscient | Soul | Sun | Moon",2,Al-Baqarah,29,true,PASS
