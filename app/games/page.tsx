@@ -5,7 +5,7 @@ import { isQuranWordsLive } from "@/lib/games/quran-words";
 
 export const metadata: Metadata = {
   title: "Free Educational Games for Students | EduForEveryone",
-  description: "Free educational games — Math Puzzle, WordWise word puzzle, Quiz Battle, and Word Upgrade. Learn while having fun. No sign-up required.",
+  description: "Free educational games — Math Puzzle, WordWise, Quiz Battle, Word Upgrade, and Phrase Upgrade. Learn while having fun. No sign-up required.",
   alternates: { canonical: "https://eduforeveryone.com/games" },
 };
 
@@ -13,7 +13,8 @@ const baseGames = [
   { href:"/games/math-puzzle", emoji:"🧮", title:"Math Puzzle", description:"Solve arithmetic, algebra and sequences against the clock. 4 difficulty levels.", tags:["Math","Arithmetic","Algebra"], badge:"Popular" },
   { href:"/games/word-puzzle", emoji:"🔤", title:"WordWise", description:"Guess the hidden education word in 6 tries. Math, Science and English words!", tags:["English","Vocabulary","Wordle"], badge:"New" },
   { href:"/games/quiz-battle", emoji:"🧠", title:"Quiz Battle", description:"10 questions, 3 lives, powerups and streak bonuses across 4 subjects.", tags:["All Subjects","Trivia","Quiz"], badge:"New" },
-  { href:"/ielts/word-upgrade", emoji:"⚡", title:"Word Upgrade", description:"Upgrade basic vocabulary to natural Band 7+ IELTS Lexical Resource words across 40 academic contexts.", tags:["IELTS","Vocabulary","English"], badge:"New" },
+  { href:"/ielts/word-upgrade", emoji:"⚡", title:"Word Upgrade", description:"Upgrade basic vocabulary to natural Band 7+ IELTS Lexical Resource words across 120 academic contexts.", tags:["IELTS","Vocabulary","English"], badge:"New" },
+  { href:"/ielts/phrase-upgrade", emoji:"🎯", title:"Phrase Upgrade", description:"Avoid memorised clichés and master natural IELTS phrases for Writing Task 1, Task 2, and Speaking.", tags:["IELTS","Fluency","Cohesion"], badge:"New" },
 ];
 
 const quranWordsGameCard = {

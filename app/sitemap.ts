@@ -25,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     make("",                            1.0, "weekly"),
     make("/ielts",                      0.9, "weekly"),
     make("/ielts/word-upgrade",         0.8, "weekly"),
+    make("/ielts/phrase-upgrade",       0.8, "weekly"),
     make("/ielts/reading",              0.8, "weekly"),
     make("/ielts/listening",            0.8, "weekly"),
     make("/ielts/writing",              0.8, "weekly"),

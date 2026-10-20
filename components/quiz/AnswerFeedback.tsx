@@ -10,6 +10,9 @@ interface AnswerFeedbackProps {
   explanation: string;
   streak: number;
   config?: EncouragementConfig;
+  gameName?: string;
+  itemId?: string;
+  questionText?: string;
 }
 
 export default function AnswerFeedback({
@@ -17,6 +20,9 @@ export default function AnswerFeedback({
   explanation,
   streak,
   config,
+  gameName,
+  itemId,
+  questionText,
 }: AnswerFeedbackProps) {
   // Select a deterministic or random message from the provided list
   const randomWrongMsg = useMemo(() => {
@@ -28,6 +34,15 @@ export default function AnswerFeedback({
   }, [config]);
 
   const isQuranStyle = config?.style === "geometric";
+
+  const mailtoUrl = useMemo(() => {
+    if (!itemId) return "";
+    const subject = `Question report: ${gameName || "Quiz"} ${itemId}`.trim();
+    const body = questionText || "";
+    return `mailto:azlaneduforeveryone@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+  }, [gameName, itemId, questionText]);
 
   return (
     <div className="mb-6 space-y-3">
@@ -63,6 +78,18 @@ export default function AnswerFeedback({
         <p className="text-sm leading-relaxed text-gray-700 mt-1">
           {explanation}
         </p>
+
+        {/* Small Unobtrusive Report a Problem Link */}
+        {mailtoUrl && (
+          <div className="mt-2 pt-1 border-t border-gray-200/50 flex justify-end">
+            <a
+              href={mailtoUrl}
+              className="text-[11px] text-gray-400 hover:text-gray-600 underline transition-colors"
+            >
+              Report a problem with this question
+            </a>
+          </div>
+        )}
       </div>
 
       {/* Encouragement Notice for Mistakes (Never covers or delays button) */}

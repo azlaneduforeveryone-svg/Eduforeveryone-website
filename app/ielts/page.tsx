@@ -150,6 +150,7 @@ const STUDY_PLANS = [
 // TODO: build band score calculator — would be a good future feature (was a dead /ielts self-link, removed June 2026)
 const FREE_TOOLS = [
   { icon: "⚡", title: "Word Upgrade (Vocabulary)",    desc: "Train Lexical Resource by upgrading basic words to Band 7+ alternatives", href: "/ielts/word-upgrade" },
+  { icon: "🎯", title: "Phrase Upgrade (Cohesion & Fluency)", desc: "Replace overused clichés with natural, examiner-approved phrases", href: "/ielts/phrase-upgrade" },
   { icon: "🖋️", title: "Band 8+ Model Essays",         desc: "Analysed Task 1 & Task 2 frameworks with commentary", href: "/ielts/writing" },
   { icon: "🗣️", title: "Latest Speaking Cue Cards",    desc: "Updated weekly with trending exam prompts",           href: "/ielts/speaking" },
   { icon: "🎧", title: "Listening Practice Audio",      desc: "Native speaker recordings across 4 sections",        href: "/ielts/listening" },

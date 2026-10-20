@@ -6,11 +6,29 @@ export type WordUpgradeDomain =
   | "technology"
   | "health"
   | "work"
-  | "cities";
+  | "cities"
+  | "crime"
+  | "government"
+  | "media"
+  | "travel"
+  | "travel-and-tourism"
+  | "society"
+  | "family-and-society"
+  | "economy";
 
 export interface WordUpgradeItem extends QuizQuestion {
   domain: WordUpgradeDomain;
   targetWord: string;
+}
+
+export type PhraseUpgradeCategory =
+  | "writing-task-1"
+  | "writing-task-2"
+  | "speaking";
+
+export interface PhraseUpgradeItem extends QuizQuestion {
+  category: PhraseUpgradeCategory;
+  targetPhrase?: string;
 }
 
 export interface QuranWordItem extends QuizQuestion {

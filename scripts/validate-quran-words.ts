@@ -62,12 +62,20 @@ interface ValidationResult {
   word: string;
   transliteration: string;
   meaning: string;
+  options: string[];
   surahNumber: number;
   surahName: string;
   ayahNumber: number;
   reference: string;
   reviewed: boolean;
   check: "PASS" | "FAIL";
+}
+
+function escapeCsv(val: string): string {
+  if (val.includes(",") || val.includes('"') || val.includes("\n") || val.includes("\r")) {
+    return `"${val.replace(/"/g, '""')}"`;
+  }
+  return val;
 }
 
 async function fetchVerse(surah: number, ayah: number): Promise<string> {
@@ -104,6 +112,7 @@ async function main() {
         word: item.arabic,
         transliteration: item.transliteration,
         meaning: item.options[item.correct],
+        options: item.options,
         surahNumber: item.surahNumber,
         surahName: item.surahName,
         ayahNumber: item.ayahNumber,
@@ -119,6 +128,7 @@ async function main() {
         word: item.arabic,
         transliteration: item.transliteration,
         meaning: item.options[item.correct],
+        options: item.options,
         surahNumber: item.surahNumber,
         surahName: item.surahName,
         ayahNumber: item.ayahNumber,
@@ -152,12 +162,13 @@ async function main() {
   const passCount = results.filter((r) => r.check === "PASS").length;
   console.log(`Summary: ${passCount}/${results.length} PASSED\n`);
 
-  // Update reports/quran-words-review.csv with the 'check' column
+  // Update reports/quran-words-review.csv with the 'check' column and 'options' column
   const csvPath = path.resolve(__dirname, "../reports/quran-words-review.csv");
-  const csvHeader = "id,word,transliteration,meaning,surah_number,surah_name,ayah_number,reviewed,check";
+  const csvHeader = "id,word,transliteration,meaning,options,surah_number,surah_name,ayah_number,reviewed,check";
   const csvRows = results.map((r) => {
-    const escapedMeaning = r.meaning.includes(",") ? `"${r.meaning}"` : r.meaning;
-    return `${r.id},${r.word},${r.transliteration},${escapedMeaning},${r.surahNumber},${r.surahName},${r.ayahNumber},${r.reviewed},${r.check}`;
+    const escapedMeaning = escapeCsv(r.meaning);
+    const escapedOptions = escapeCsv(r.options.join(" | "));
+    return `${r.id},${r.word},${r.transliteration},${escapedMeaning},${escapedOptions},${r.surahNumber},${r.surahName},${r.ayahNumber},${r.reviewed},${r.check}`;
   });
   const csvContent = [csvHeader, ...csvRows, ""].join("\n");
   fs.writeFileSync(csvPath, csvContent, "utf8");

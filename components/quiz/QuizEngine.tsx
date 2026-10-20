@@ -483,6 +483,9 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
             explanation={currentItem.explanation}
             streak={streak}
             config={encouragementConfig}
+            gameName={gameName}
+            itemId={currentItem.original.id}
+            questionText={currentItem.questionText}
           />
         )}
 

@@ -4,12 +4,12 @@ import WordUpgradeClient from "./WordUpgradeClient";
 export const metadata: Metadata = {
   title: "Word Upgrade — IELTS Band 7+ Vocabulary Game | EduForEveryone",
   description:
-    "Train your IELTS Lexical Resource. Replace basic words with natural, high-band academic vocabulary across 40 exam-focused contexts. 100% free.",
+    "Train your IELTS Lexical Resource. Replace basic words with natural, high-band academic vocabulary across 120 exam-focused contexts. 100% free.",
   alternates: { canonical: "https://eduforeveryone.com/ielts/word-upgrade" },
   openGraph: {
     title: "Word Upgrade — IELTS Vocabulary Practice | EduForEveryone",
     description:
-      "Boost your IELTS Lexical Resource score with targeted Band 7+ vocabulary upgrades.",
+      "Boost your IELTS Lexical Resource score with targeted Band 7+ vocabulary upgrades across 120 academic questions.",
     url: "https://eduforeveryone.com/ielts/word-upgrade",
     siteName: "EduForEveryone",
     type: "website",
