@@ -1,5 +1,23 @@
+import type { Metadata } from 'next';
 import { getAllQuizzes } from '@/lib/data';
 import Card from '@/components/Card';
+
+export const metadata: Metadata = {
+  title: 'Interactive Practice Quizzes — Test Your Knowledge | EduForEveryone',
+  description:
+    'Test your knowledge with free interactive quizzes across multiple subjects, difficulty levels, and topics. Track your score and learn instantly.',
+  alternates: {
+    canonical: 'https://eduforeveryone.com/quiz',
+  },
+  openGraph: {
+    title: 'Interactive Practice Quizzes | EduForEveryone',
+    description:
+      'Test your knowledge with free interactive quizzes across multiple subjects and difficulty levels.',
+    url: 'https://eduforeveryone.com/quiz',
+    siteName: 'EduForEveryone',
+    type: 'website',
+  },
+};
 
 export default function QuizPage() {
   const quizzes = getAllQuizzes();

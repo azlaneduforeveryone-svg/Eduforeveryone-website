@@ -1,9 +1,33 @@
+import type { Metadata } from 'next';
 import { getCourseById, getAllCourses } from '@/lib/data';
 import { notFound } from 'next/navigation';
 import LessonViewer from './LessonViewer';
 
 export async function generateStaticParams() {
   return getAllCourses().map((c) => ({ id: c.id }));
+}
+
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  const course = getCourseById(params.id);
+  if (!course) {
+    return {
+      title: 'Course Not Found | EduForEveryone',
+    };
+  }
+  return {
+    title: `${course.title} — Free Online Course | EduForEveryone`,
+    description: course.description,
+    alternates: {
+      canonical: `https://eduforeveryone.com/courses/${params.id}`,
+    },
+    openGraph: {
+      title: `${course.title} | EduForEveryone`,
+      description: course.description,
+      url: `https://eduforeveryone.com/courses/${params.id}`,
+      siteName: 'EduForEveryone',
+      type: 'article',
+    },
+  };
 }
 
 export default function CourseDetailPage({ params }: { params: { id: string } }) {

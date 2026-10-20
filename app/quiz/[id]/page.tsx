@@ -1,9 +1,33 @@
+import type { Metadata } from 'next';
 import { getQuizById, getAllQuizzes } from '@/lib/data';
 import { notFound } from 'next/navigation';
 import QuizEngine from '@/components/quiz/QuizEngine';
 
 export async function generateStaticParams() {
   return getAllQuizzes().map((q) => ({ id: q.id }));
+}
+
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  const quiz = getQuizById(params.id);
+  if (!quiz) {
+    return {
+      title: 'Quiz Not Found | EduForEveryone',
+    };
+  }
+  return {
+    title: `${quiz.title} — Free Quiz (${quiz.difficulty}) | EduForEveryone`,
+    description: `${quiz.description} Test your understanding with ${quiz.questionCount} interactive questions on ${quiz.subject}.`,
+    alternates: {
+      canonical: `https://eduforeveryone.com/quiz/${params.id}`,
+    },
+    openGraph: {
+      title: `${quiz.title} | EduForEveryone`,
+      description: quiz.description,
+      url: `https://eduforeveryone.com/quiz/${params.id}`,
+      siteName: 'EduForEveryone',
+      type: 'website',
+    },
+  };
 }
 
 export default function QuizDetailPage({ params }: { params: { id: string } }) {

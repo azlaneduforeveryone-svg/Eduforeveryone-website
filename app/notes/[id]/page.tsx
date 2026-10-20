@@ -1,8 +1,32 @@
+import type { Metadata } from 'next';
 import { getNoteById, getAllNotes } from '@/lib/data';
 import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
   return getAllNotes().map((n) => ({ id: n.id }));
+}
+
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  const note = getNoteById(params.id);
+  if (!note) {
+    return {
+      title: 'Study Note Not Found | EduForEveryone',
+    };
+  }
+  return {
+    title: `${note.title} — Study Notes | EduForEveryone`,
+    description: `${note.title} study notes for ${note.subject}. Read time: ${note.readTime}. Free revision notes on EduForEveryone.`,
+    alternates: {
+      canonical: `https://eduforeveryone.com/notes/${params.id}`,
+    },
+    openGraph: {
+      title: `${note.title} — Study Notes | EduForEveryone`,
+      description: `${note.title} study notes for ${note.subject}. Free revision notes on EduForEveryone.`,
+      url: `https://eduforeveryone.com/notes/${params.id}`,
+      siteName: 'EduForEveryone',
+      type: 'article',
+    },
+  };
 }
 
 export default function NoteDetailPage({ params }: { params: { id: string } }) {

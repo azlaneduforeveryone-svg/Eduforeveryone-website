@@ -1,9 +1,27 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 // app/tools/finance-tools/page.tsx
 //
 // Category landing page for finance tools. Add a new entry to TOOLS
 // below each time you ship another one.
+
+export const metadata: Metadata = {
+  title: "Free Finance & Accounting Tools — Reconciliations & Utilities | EduForEveryone",
+  description:
+    "Free finance and accounting tools including bank reconciliation, supplier statements, and business financial utilities with formula-driven Excel downloads.",
+  alternates: {
+    canonical: "https://eduforeveryone.com/tools/finance-tools",
+  },
+  openGraph: {
+    title: "Free Finance & Accounting Tools | EduForEveryone",
+    description:
+      "Free finance and accounting utilities including bank reconciliation with Excel downloads. No signup required.",
+    url: "https://eduforeveryone.com/tools/finance-tools",
+    siteName: "EduForEveryone",
+    type: "website",
+  },
+};
 
 const TOOLS = [
   {
