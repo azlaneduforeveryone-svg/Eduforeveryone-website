@@ -14,7 +14,7 @@
   "dependencies": {
     "exceljs": "^4.4.0",
     "firebase": "^12.14.0",
-    "next": "^14.2.5",
+    "next": "^14.2.35",
     "papaparse": "^5.5.4",
     "pdfjs-dist": "^6.2.108",
     "react": "^18",
@@ -32,7 +32,7 @@
     "autoprefixer": "^10.0.1",
     "broken-link-checker": "^0.7.8",
     "eslint": "^8",
-    "eslint-config-next": "14.2.5",
+    "eslint-config-next": "14.2.35",
     "playwright": "^1.62.1",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
