@@ -57,14 +57,15 @@ function validateDuas() {
       }
     }
 
-    // All 8 translationStatus keys present and equal to "unreviewed"
+    // All 8 translationStatus keys present: "en" and "ur" must be "reviewed", other languages "unreviewed"
     if (!item.translationStatus) {
       errors.push(`Missing translationStatus in id '${item.id}'.`);
     } else {
       for (const lang of REQUIRED_LANGUAGES) {
         const st = item.translationStatus[lang];
-        if (st !== "unreviewed") {
-          errors.push(`Invalid translationStatus '${st}' for language '${lang}' in id '${item.id}'. Must be 'unreviewed'.`);
+        const expected = (lang === "en" || lang === "ur") ? "reviewed" : "unreviewed";
+        if (st !== expected) {
+          errors.push(`Invalid translationStatus '${st}' for language '${lang}' in id '${item.id}'. Must be '${expected}'.`);
         }
       }
     }

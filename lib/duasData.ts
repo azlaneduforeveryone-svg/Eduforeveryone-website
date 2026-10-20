@@ -113,8 +113,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Ya Tuhan kami, berilah kami kebaikan di dunia dan kebaikan di akhirat dan peliharalah kami dari siksa neraka."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -155,8 +155,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Ya Tuhan kami, janganlah Engkau jadikan hati kami condong kepada kesesatan sesudah Engkau beri petunjuk kepada kami, dan karuniakanlah kepada kami rahmat dari sisi-Mu."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -197,8 +197,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Ya Tuhan kami, anugerahkanlah kepada kami istri-istri kami dan keturunan kami sebagai penyenang hati (kami), dan jadikanlah kami imam bagi orang-orang yang bertakwa."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -239,8 +239,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Ya Tuhan kami, ampunilah aku, kedua orang tuaku, dan sekalian orang-orang mukmin pada hari terjadinya hisab."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -280,8 +280,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Ya Allah, Engkau adalah Tuhanku, tidak ada Tuhan selain Engkau. Engkau yang menciptakan aku dan aku adalah hamba-Mu. Aku memegang teguh janji-Mu sesuai kemampuanku. Aku berlindung kepada-Mu dari kejahatan perbuatanku. Aku mengakui nikmat-Mu kepadaku dan aku mengakui dosaku, maka ampunilah aku. Sesungguhnya tidak ada yang mengampuni dosa selain Engkau."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -322,8 +322,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Tidak ada Tuhan selain Engkau. Maha Suci Engkau, sesungguhnya aku adalah termasuk orang-orang yang zalim."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -364,8 +364,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Ya Tuhanku sesungguhnya aku sangat memerlukan sesuatu kebaikan yang Engkau turunkan kepadaku."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -408,8 +408,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Ya Tuhanku, tambahkanlah kepadaku ilmu pengetahuan."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -450,8 +450,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Allah, tidak ada Tuhan (yang berhak disembah) melainkan Dia Yang Hidup kekal lagi terus menerus mengurus (makhluk-Nya)..."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -492,8 +492,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Maha Suci Allah dan segala puji bagi-Nya."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -534,8 +534,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Dengan nama Allah yang bila disebut, segala sesuatu di bumi dan di langit tidak akan berbahaya, Dialah Yang Maha Mendengar lagi Maha Mengetahui."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -575,8 +575,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Maha Suci Allah (33x), Segala puji bagi Allah (33x), Allah Maha Besar (34x). Total: 100."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -616,8 +616,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Dengan nama-Mu ya Allah, aku mati dan aku hidup."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -657,8 +657,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Segala puji bagi Allah yang telah menghidupkan kami sesudah mematikan kami dan hanya kepada-Nya kami dikembalikan."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -700,8 +700,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Kami memasuki waktu sore dan kerajaan hanya milik Allah, dan segala puji bagi Allah. Tidak ada tuhan selain Allah semata, tiada sekutu bagi-Nya. Milik-Nya kerajaan dan bagi-Nya segala puji, dan Dia Mahakuasa atas segala sesuatu. Ya Tuhanku, aku memohon kepada-Mu kebaikan malam ini dan kebaikan sesudahnya, dan aku berlindung kepada-Mu dari keburukan malam ini dan keburukan sesudahnya. Ya Tuhanku, aku berlindung kepada-Mu dari kemalasan dan buruknya usia tua. Ya Tuhanku, aku berlindung kepada-Mu dari siksa neraka dan siksa kubur."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -742,8 +742,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Ya Allah, dengan-Mu kami memasuki waktu sore dan dengan-Mu kami memasuki waktu pagi, dengan-Mu kami hidup dan dengan-Mu kami mati, dan kepada-Mu tempat kembali."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -783,8 +783,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Kami memasuki waktu sore di atas fitrah Islam, di atas kalimat keikhlasan, di atas agama Nabi kami Muhammad shallallahu alaihi wa sallam, dan di atas millah bapak kami Ibrahim yang lurus lagi berserah diri, dan beliau bukanlah termasuk orang-orang musyrik."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -824,8 +824,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Aku berlindung dengan kalimat-kalimat Allah yang sempurna dari keburukan apa yang Dia ciptakan."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -867,8 +867,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Kami memasuki waktu pagi dan kerajaan hanya milik Allah, dan segala puji bagi Allah. Tidak ada tuhan selain Allah semata, tiada sekutu bagi-Nya. Milik-Nya kerajaan dan bagi-Nya segala puji, dan Dia Mahakuasa atas segala sesuatu. Ya Tuhanku, aku memohon kepada-Mu kebaikan hari ini dan kebaikan sesudahnya, dan aku berlindung kepada-Mu dari keburukan hari ini dan keburukan sesudahnya. Ya Tuhanku, aku berlindung kepada-Mu dari kemalasan dan buruknya usia tua. Ya Tuhanku, aku berlindung kepada-Mu dari siksa neraka dan siksa kubur."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -909,8 +909,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Ya Allah, dengan-Mu kami memasuki waktu pagi dan dengan-Mu kami memasuki waktu sore, dengan-Mu kami hidup dan dengan-Mu kami mati, dan kepada-Mu tempat kebangkitan."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -950,8 +950,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Kami memasuki waktu pagi di atas fitrah Islam, di atas kalimat keikhlasan, di atas agama Nabi kami Muhammad shallallahu alaihi wa sallam, dan di atas millah bapak kami Ibrahim yang lurus lagi berserah diri, dan beliau bukanlah termasuk orang-orang musyrik."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -992,8 +992,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Aku rida Allah sebagai Tuhanku, Islam sebagai agamaku, dan Muhammad shallallahu alaihi wa sallam sebagai nabiku."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -1035,8 +1035,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Aku memohon ampun kepada Allah, aku memohon ampun kepada Allah, aku memohon ampun kepada Allah. Ya Allah, Engkau Mahasejahtera dan dari-Mu kesejahteraan. Mahaberkah Engkau, wahai Pemilik Keagungan dan Kemuliaan."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -1077,8 +1077,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Tidak ada tuhan selain Allah semata, tiada sekutu bagi-Nya. Milik-Nya kerajaan dan bagi-Nya segala puji, dan Dia Mahakuasa atas segala sesuatu. Ya Allah, tidak ada yang dapat menahan apa yang Engkau berikan, dan tidak ada yang dapat memberi apa yang Engkau tahan, dan kekayaan seseorang tidak berguna baginya di hadapan-Mu."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -1119,8 +1119,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Ya Allah, tolonglah aku untuk mengingat-Mu, bersyukur kepada-Mu, dan beribadah kepada-Mu dengan baik."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -1163,8 +1163,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Ya Allah, aku memohon kepada-Mu ampunan dan keselamatan di dunia dan akhirat. Ya Allah, aku memohon kepada-Mu ampunan dan keselamatan dalam agamaku, duniaku, keluargaku, dan hartaku. Ya Allah, tutupilah aibku dan tenteramkanlah ketakutanku. Ya Allah, jagalah aku dari depan, dari belakang, dari kananku, dari kiriku, dan dari atasku, dan aku berlindung dengan keagungan-Mu dari dibinasakan secara tiba-tiba dari bawahku."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -1205,8 +1205,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Aku memohon kepada Allah Yang Mahaagung, Tuhan Arasy yang agung, agar menyembuhkanmu."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -1246,8 +1246,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Ya Allah, aku berlindung kepada-Mu dari kegelisahan dan kesedihan, dari kelemahan dan kemalasan, dari kekikiran dan sifat pengecut, dari lilitan utang dan dari tekanan orang-orang."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -1290,8 +1290,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Aku memohon ampun kepada Allah dan aku bertobat kepada-Nya."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -1332,8 +1332,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Ya Tuhanku, ampunilah aku dan terimalah tobatku. Sesungguhnya Engkau Maha Penerima tobat lagi Maha Penyayang."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -1374,8 +1374,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Ya Allah, sesungguhnya aku telah banyak menzalimi diriku sendiri, dan tidak ada yang mengampuni dosa selain Engkau. Maka ampunilah aku dengan ampunan dari sisi-Mu dan rahmatilah aku. Sesungguhnya Engkau Maha Pengampun lagi Maha Penyayang."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -1418,8 +1418,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Ya Tuhan kami, kami telah menzalimi diri kami sendiri, dan jika Engkau tidak mengampuni kami dan memberi rahmat kepada kami, niscaya kami termasuk orang-orang yang rugi."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -1460,8 +1460,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Ya Tuhan kami, janganlah Engkau hukum kami jika kami lupa atau kami bersalah. Ya Tuhan kami, janganlah Engkau bebankan kepada kami beban yang berat sebagaimana Engkau bebankan kepada orang-orang sebelum kami. Ya Tuhan kami, janganlah Engkau pikulkan kepada kami apa yang tak sanggup kami memikulnya. Maafkanlah kami, ampunilah kami, dan rahmatilah kami. Engkaulah Pelindung kami, maka tolonglah kami terhadap kaum yang kafir."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -1502,8 +1502,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Ya Tuhan kami, limpahkanlah kesabaran atas kami, kokohkanlah langkah kami, dan tolonglah kami terhadap kaum yang kafir."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -1544,8 +1544,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Ya Tuhan kami, tiadalah Engkau menciptakan ini dengan sia-sia. Mahasuci Engkau, maka peliharalah kami dari siksa neraka."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -1588,8 +1588,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Dengan nama Allah, aku bertawakal kepada Allah, dan tidak ada daya dan kekuatan kecuali dengan pertolongan Allah."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -1630,8 +1630,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Dengan nama Allah, dan salawat serta salam atas Rasulullah. Ya Allah, bukakanlah untukku pintu-pintu rahmat-Mu."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
@@ -1672,8 +1672,8 @@ export const DUAS_DATABASE: DuaItem[] = [
       id: "Dengan nama Allah, pada awalnya dan pada akhirnya."
     },
     translationStatus: {
-      en: "unreviewed",
-      ur: "unreviewed",
+      en: "reviewed",
+      ur: "reviewed",
       hi: "unreviewed",
       tr: "unreviewed",
       es: "unreviewed",
