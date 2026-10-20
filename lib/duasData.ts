@@ -80,6 +80,15 @@ export interface DuaItem {
   translationStatus?: Partial<Record<LanguageCode, TranslationStatus>>;
 }
 
+/**
+ * Published Quran translators from Quran.com API used for Quranic duas:
+ * - Hindi (hi): Maulana Azizul Haque al-Umari (Quran.com resource 122)
+ * - Turkish (tr): Diyanet İşleri (Quran.com resource 77)
+ * - Spanish (es): Sheikh Isa Garcia (Quran.com resource 83)
+ * - French (fr): Muhammad Hamidullah (Quran.com resource 31)
+ * - Bengali (bn): Taisirul Quran / Tawheed Publication (Quran.com resource 161)
+ * - Indonesian (id): King Fahad Quran Complex / Kemenag (Quran.com resource 134)
+ */
 export const DUAS_DATABASE: DuaItem[] = [
   {
     id: "rabbana-1",
@@ -105,12 +114,12 @@ export const DUAS_DATABASE: DuaItem[] = [
     translations: {
       en: "Our Lord! Give us in this world that which is good and in the Hereafter that which is good, and save us from the torment of the Fire.",
       ur: "اے ہمارے پروردگار! ہمیں دنیا میں بھی بھلائی عطا فرما اور آخرت میں بھی بھلائی دے اور ہمیں آگ کے عذاب سے بچا۔",
-      hi: "ऐ हमारे रब! हमें दुनिया में भी भलाई दे और आख़िरत में भी भलाई दे और हमें आग के अज़ाब से बचा।",
-      tr: "Rabbimiz! Bize dünyada da iyilik ver, ahirette de iyilik ver ve bizi ateş azabından koru.",
-      es: "¡Señor nuestro! Danos en este mundo lo que es bueno y en el Más Allá lo que es bueno, y líbranos del castigo del Fuego.",
-      fr: "Seigneur! Accorde-nous belle part ici-bas et belle part dans l'au-delà, et protège-nous du châtiment du Feu.",
-      bn: "হে আমাদের প্রতিপালক! আমাদের দুনিয়াতেও কল্যাণ দিন এবং আখেরাতেও কল্যাণ দিন এবং আমাদের জাহান্নামের আজাব থেকে রক্ষা করুন।",
-      id: "Ya Tuhan kami, berilah kami kebaikan di dunia dan kebaikan di akhirat dan peliharalah kami dari siksa neraka."
+      hi: "ऐ हमारे पालनहार! हमें दुनिया में भलाई तथा आख़िरत में भी भलाई दे और हमें आग के अज़ाब से बचा।",
+      tr: "Rabbimiz! Bize dünyada iyiyi, ahirette de iyiyi ver, bizi ateşin azabından koru.",
+      es: "¡Señor nuestro! Danos bienestar en esta vida y en la otra, y presérvanos del tormento del Fuego.",
+      fr: "Seigneur ! Accorde nous belle part ici-bas, et belle part aussi dans l’au-delà; et protège-nous du châtiment du Feu !",
+      bn: "হে আমাদের প্রতিপালক! আমাদেরকে দুনিয়াতেও কল্যাণ দাও এবং আখেরাতেও কল্যাণ দাও এবং আমাদেরকে জাহান্নামের আযাব হতে রক্ষা কর।",
+      id: "Ya Tuhan kami, berilah kami kebaikan di dunia dan kebaikan di akhirat, dan peliharalah kami dari siksa neraka."
     },
     translationStatus: {
       en: "reviewed",
@@ -147,12 +156,12 @@ export const DUAS_DATABASE: DuaItem[] = [
     translations: {
       en: "Our Lord! Let not our hearts swerve after Thou hast guided us, and bestow upon us mercy from Thy presence; for Thou art the Bestower.",
       ur: "اے ہمارے رب! ہدایت دینے کے بعد ہمارے دلوں کو ٹیڑھا نہ کر، اور ہمیں اپنے پاس سے رحمت عطا فرما، بے شک تو ہی سب کچھ عطا کرنے والا ہے۔",
-      hi: "ऐ हमारे रब! हिदायत देने के बाद हमारे दिलों को टेढ़ा न कर, और हमें अपने पास से रहमत अता फरमा।",
-      tr: "Rabbimiz! Bizi doğru yola ilettikten sonra kalplerimizi eğriltme. Bize katından bir rahmet bağışla. Şüphesiz sen çok bağışlayansın.",
-      es: "¡Señor nuestro! No hagas que nuestros corazones se desvíen después de habernos guiado, y concédenos tu misericordia. Verdaderamente Tú eres el Otorgante.",
-      fr: "Seigneur! Ne fais pas dévier nos cœurs après que Tu nous as guidés et accorde-nous Ta miséricorde. C'est Toi le Grand Dispensateur.",
-      bn: "হে আমাদের প্রতিপালক! সরল পথ দেখানোর পর আমাদের অন্তরকে সত্যচ্যুত করবেন না এবং আপনার নিকট থেকে আমাদের ওপর রহমত বর্ষণ করুন।",
-      id: "Ya Tuhan kami, janganlah Engkau jadikan hati kami condong kepada kesesatan sesudah Engkau beri petunjuk kepada kami, dan karuniakanlah kepada kami rahmat dari sisi-Mu."
+      hi: "ऐ हमारे पालनहार! हमें हिदायत देने के बाद हमारे दिलों को टेढ़ा न कर, और हमें अपनी ओर से दया प्रदान कर। निःसंदेह तू ही बहुत बड़ा दाता है।",
+      tr: "Rabbimiz! Bizi doğru yola erdirdikten sonra kalblerimizi eğriltme, katından bize rahmet bağışla; şüphesiz Sen sonsuz bağışta bulunansın.",
+      es: "¡Señor nuestro! No permitas que nuestros corazones se desvíen después de habernos guiado. Concédenos Tu misericordia, Tú eres el Dadivoso.",
+      fr: "Seigneur ! Ne laisse pas dévier nos cœurs après que Tu nous aies guidés; et accorde-nous Ta miséricorde. C’est Toi, certes, le Grand Donateur !",
+      bn: "হে আমাদের প্রতিপালক! সৎ পথ প্রদর্শনের পরে তুমি আমাদের অন্তরগুলোকে বক্র করে দিও না, আমাদেরকে তোমার নিকট হতে রহমত প্রদান কর, মূলতঃ তুমিই মহান দাতা।",
+      id: "Ya Tuhan kami, janganlah Engkau jadikan hati kami condong kepada kesesatan sesudah Engkau beri petunjuk kepada kami, dan karuniakanlah kepada kami rahmat dari sisi Engkau; karena sesungguhnya Engkau-lah Maha Pemberi (karunia)."
     },
     translationStatus: {
       en: "reviewed",
@@ -189,12 +198,12 @@ export const DUAS_DATABASE: DuaItem[] = [
     translations: {
       en: "Our Lord! Grant unto us wives and offspring who will be the comfort of our eyes, and give us (the grace) to lead the righteous.",
       ur: "اے ہمارے پروردگار! ہمیں ہماری بیویوں اور ہماری اولاد کی طرف سے آنکھوں کی ٹھنڈک عطا فرما اور ہمیں پرہیزگاروں کا پیشوا بنا۔",
-      hi: "ऐ हमारे रब! हमें हमारी बीवियों और औलाद से आंखों की ठंडक अता फरमा और हमें परहेज़गारों का इमाम बना।",
-      tr: "Rabbimiz! Bize eşlerimizden ve soyumuzdan göz aydınlığı olacak nesiller bağışla ve bizi takva sahiplerine önder kıl.",
-      es: "¡Señor nuestro! Concédenos en nuestras esposas y descendientes la alegría de nuestros ojos, e haz que seamos un modelo para los piadosos.",
-      fr: "Seigneur! Accorde-nous en nos épouses et nos descendants la joie des yeux, et fais de nous un guide pour les pieux.",
-      bn: "হে আমাদের প্রতিপালক! আমাদের স্ত্রী ও সন্তানদের আমাদের জন্য নয়নপ্রীতি কর এবং আমাদের মুত্তাকিদের জন্য অনুসরণযোগ্য কর।",
-      id: "Ya Tuhan kami, anugerahkanlah kepada kami istri-istri kami dan keturunan kami sebagai penyenang hati (kami), dan jadikanlah kami imam bagi orang-orang yang bertakwa."
+      hi: "ऐ हमारे पालनहार! हमें हमारी पत्नियों तथा संतानों से आँखों की ठंडक प्रदान कर और हमें परहेज़गारों का 'इमाम' बना दे।",
+      tr: "Rabbimiz! Bize eşlerimizden ve çocuklarımızdan gözümüzün aydınlığı olacak insanlar ihsan et ve bizi, Allah'a karşı gelmekten sakınanlara önder yap.",
+      es: "¡Señor nuestro! Agrácianos con cónyuges y descendientes que sean un motivo de alegría y tranquilidad para nosotros, y haz que seamos un ejemplo para los que tienen temor [de Dios].",
+      fr: "Notre Seigneur! Donne-nous, en nos épouses et nos descendants, la joie des yeux, et fais de nous un guide pour les pieux !",
+      bn: "হে আমাদের প্রতিপালক! আমাদেরকে এমন স্ত্রী ও সন্তানাদি দান কর যারা আমাদের চোখ জুড়িয়ে দেয় আর আমাদেরকে মুত্তাকীদের নেতা বানিয়ে দাও।",
+      id: "Ya Tuhan kami, anugrahkanlah kepada kami isteri-isteri kami dan keturunan kami sebagai penyenang hati (kami), dan jadikanlah kami imam bagi orang-orang yang bertakwa."
     },
     translationStatus: {
       en: "reviewed",
@@ -231,12 +240,12 @@ export const DUAS_DATABASE: DuaItem[] = [
     translations: {
       en: "Our Lord! Forgive me and my parents, and the believers on the Day when the account is established.",
       ur: "اے ہمارے پروردگار! مجھے، میرے والدین کو اور تمام مومنوں کو اس دن بخش دے جس دن حساب قائم ہوگا۔",
-      hi: "ऐ हमारे रब! मुझे, मेरे माता-पिता को और तमाम मोमिनों को उस दिन बख्श दे जिस दिन हिसाब कायम होगा।",
-      tr: "Rabbimiz! Hesabın görüleceği gün beni, anne-babamı ve müminleri bağışla.",
-      es: "¡Señor nuestro! Perdóname a mí, a mis padres y a los creyentes el Día en que se establezca la rendición de cuentas.",
-      fr: "Seigneur! Pardonne-moi, ainsi qu'à mes parents et aux croyants, le jour où le compte sera établi.",
-      bn: "হে আমাদের প্রতিপালক! যেদিন হিসাব অনুষ্ঠিত হবে, সেদিন আমাকে, আমার পিতামাতাকে এবং সকল মুমিনকে ক্ষমা করুন।",
-      id: "Ya Tuhan kami, ampunilah aku, kedua orang tuaku, dan sekalian orang-orang mukmin pada hari terjadinya hisab."
+      hi: "ऐ हमारे पालनहार! मुझे क्षमा कर दे तथा मेरे माता-पिता को और ईमान वालों को, जिस दिन हिसाब लिया जाएगा।",
+      tr: "Rabbimiz! Hesap görülecek günde, beni, anamı babamı ve inananları bağışla.",
+      es: "¡Señor nuestro! Perdóname, así como a mis padres y a todos los creyentes el Día que se celebre el Juicio [Final].",
+      fr: "Notre Seigneur ! Pardonne-moi, ainsi qu’à mes père et mère et aux croyants, le Jour de la Reddition des Comptes !",
+      bn: "হে আমাদের প্রতিপালক! হিসাব গ্রহণের দিন আমাকে, আমার পিতা-মাতাকে আর মু’মিনদেরকে ক্ষমা করে দিও।",
+      id: "Ya Tuhan kami, beri ampunlah aku dan kedua ibu bapakku dan sekalian orang-orang mukmin pada hari terjadinya hisab (hari kiamat)."
     },
     translationStatus: {
       en: "reviewed",
@@ -314,12 +323,12 @@ export const DUAS_DATABASE: DuaItem[] = [
     translations: {
       en: "There is no deity except You; exalted are You. Indeed, I have been of the wrongdoers.",
       ur: "تیرے سوا کوئی معبود نہیں، تو پاک ہے، بے شک میں ہی ظالموں (زیادتی کرنے والوں) میں سے تھا۔",
-      hi: "तेरे इलावा कोई माबूद नहीं, तू पाक है, बेशक मैं ही ज़ालिमों में से था।",
-      tr: "Senden başka ilah yoktur. Seni tenzih ederim. Şüphesiz ben haksızlık edenlerden oldum.",
-      es: "No hay más dios que Tú, ¡Glorificado seas! Ciertamente he sido de los injustos.",
-      fr: "Il n'y a pas de divinité à part Toi! Pureté à Toi! J'ai été vraiment du nombre des injustes.",
-      bn: "আপনি ব্যতীত কোন ইলাহ নেই; আপনি পবিত্র! নিশ্চয়ই আমি অপরাধীদের অন্তর্ভুক্ত ছিলাম।",
-      id: "Tidak ada Tuhan selain Engkau. Maha Suci Engkau, sesungguhnya aku adalah termasuk orang-orang yang zalim."
+      hi: "तेरे सिवा कोई पूज्य नहीं, तू पवित्र है। निश्चय मैं ही अत्याचारियों में हो गया।",
+      tr: "Senden başka tanrı yoktur, Sen münezzehsin, doğrusu ben haksızlık edenlerdenim.",
+      es: "No hay otra divinidad más que Tú. ¡Glorificado seas! En verdad he sido de los injustos.",
+      fr: "Pas de [véritable] divinité à part Toi ! Gloire à Toi ! J’ai été vraiment du nombre des injustes !",
+      bn: "তুমি ছাড়া সত্যিকারের কোন ইলাহ নেই, তোমারই পবিত্রতা, মহিমা ঘোষণা করছি; বাড়াবাড়ি আমিই করেছি।",
+      id: "Tidak ada Tuhan (yang berhak disembah) selain Engkau. Maha Suci Engkau; sesungguhnya aku adalah termasuk orang-orang yang zalim."
     },
     translationStatus: {
       en: "reviewed",
@@ -356,12 +365,12 @@ export const DUAS_DATABASE: DuaItem[] = [
     translations: {
       en: "My Lord, indeed I am, for whatever good You would send down to me, in need.",
       ur: "اے میرے پروردگار! تو جو بھی بھلائی میری طرف نازل فرمائے، میں اس کا محتاج ہوں۔",
-      hi: "ऐ मेरे रब! तू जो भी भलाई मेरी तरफ नाजिल फरमाए, मैं उसका मोहताज हूं।",
-      tr: "Rabbim! Doğrusu bana indireceğin her hayra muhtacım.",
-      es: "¡Señor mío! Verdaderamente estoy necesitado de cualquier bien que me envíes.",
-      fr: "Seigneur, j'ai grand besoin de n'importe quel bien que Tu feras descendre vers moi.",
-      bn: "হে আমার প্রতিপালক! আপনি আমার প্রতি যে কল্যাণই অবতীর্ণ করবেন, আমি তার মুখাপেক্ষী।",
-      id: "Ya Tuhanku sesungguhnya aku sangat memerlukan sesuatu kebaikan yang Engkau turunkan kepadaku."
+      hi: "ऐ मेरे पालनहार! निःसंदेह मैं, जो भलाई भी तू मुझपर उतार दे, मैं उसका मोहताज हूँ।",
+      tr: "Rabbim! Doğrusu bana indireceğin hayra muhtacım.",
+      es: "¡Señor mío! Realmente necesito cualquier gracia que me concedas.",
+      fr: "Seigneur ! J’ai grand besoin du bien que tu feras descendre vers moi.",
+      bn: "হে আমার পালনকর্তা! তুমি আমার প্রতি যে অনুগ্রহই করবে আমি তো তারই ভিখারী।",
+      id: "Ya Tuhanku, sesungguhnya aku sangat memerlukan sesuatu kebaikan yang Engkau turunkan kepadaku."
     },
     translationStatus: {
       en: "reviewed",
@@ -400,12 +409,12 @@ export const DUAS_DATABASE: DuaItem[] = [
     translations: {
       en: "My Lord, increase me in knowledge.",
       ur: "اے میرے پروردگار! میرے علم میں اضافہ فرما۔",
-      hi: "ऐ मेरे रब! मेरे इल्म में इज़ाफा फरमा।",
+      hi: "ऐ मेरे पालनहार! मुझे ज्ञान में बढ़ा दे।",
       tr: "Rabbim! İlmimi artır.",
-      es: "¡Señor mío! Aumenta mi conocimiento.",
-      fr: "Seigneur! Accrois mes connaissances.",
-      bn: "হে আমার প্রতিপালক! আমার জ্ঞান বৃদ্ধি করে দিন।",
-      id: "Ya Tuhanku, tambahkanlah kepadaku ilmu pengetahuan."
+      es: "¡Señor mío! Acrecienta mi conocimiento.",
+      fr: "Mon Seigneur! Accroît mon savoir !",
+      bn: "হে আমার প্রতিপালক! জ্ঞানে আমায় সমৃদ্ধি দান করুন।",
+      id: "Ya Tuhan-ku, tambahkanlah kepadaku ilmu pengetahuan."
     },
     translationStatus: {
       en: "reviewed",
@@ -442,12 +451,12 @@ export const DUAS_DATABASE: DuaItem[] = [
     translations: {
       en: "Allah! There is no deity except Him, the Ever-Living, the Sustainer of all existence. Neither drowsiness overtakes Him nor sleep. To Him belongs whatever is in the heavens and whatever is on the earth. Who is it that can intercede with Him except by His permission? He knows what is before them and what is behind them, and they encompass nothing of His knowledge except what He wills. His Kursi extends over the heavens and the earth, and preserving them does not tire Him. And He is the Most High, the Most Great.",
       ur: "اللہ! اس کے سوا کوئی معبود نہیں۔ وہ زندہ اور سب کو قائم رکھنے والا ہے۔ نہ اس کو اونگھ آتی ہے نہ نیند۔ جو کچھ آسمانوں میں ہے اور جو کچھ زمین میں ہے سب اسی کا ہے۔ کون ہے جو اس کی اجازت کے بغیر اس کے پاس سفارش کر سکے؟ وہ جانتا ہے جو کچھ لوگوں کے سامنے ہے اور جو کچھ ان کے پیچھے ہے، اور لوگ اس کے علم میں سے کسی چیز کا احاطہ نہیں کر سکتے سوائے اس کے جتنا وہ چاہے۔ اس کی کرسی آسمانوں اور زمین پر چھائی ہوئی ہے، اور ان دونوں کی حفاظت اسے نہیں تھکاتی، اور وہی بلند مرتبہ، عظمت والا ہے۔",
-      hi: "अल्लाह! उसके सिवा कोई माबूद नहीं, वह जिंदा और सब को संभालने वाला है। न उसे ऊंघ आती है न नींद...",
-      tr: "Allah, O'ndan başka ilah yoktur. O, diridir, her şeyi var eden ve yönetendir...",
-      es: "¡Allah! No hay más dios que Él, el Viviente, el Sustentador de toda la creación...",
-      fr: "Allah! Point de divinité à part Lui, le Vivant, Celui qui subsiste par Lui-même...",
-      bn: "আল্লাহ্‌! তিনি ছাড়া অন্য কোন ইলাহ নেই, তিনি চিরঞ্জীব, সবকিছুর ধারক...",
-      id: "Allah, tidak ada Tuhan (yang berhak disembah) melainkan Dia Yang Hidup kekal lagi terus menerus mengurus (makhluk-Nya)..."
+      hi: "अल्लाह (वह है कि) उसके सिवा कोई पूज्य नहीं। (वह) जीवित है, हर चीज़ को सँभालने (क़ायम रखने) वाला है। न उसे कुछ ऊँघ पकड़ती है और न नींद। उसी का है जो कुछ आकाशों में और जो कुछ धरती में है। कौन है, जो उसके पास उसकी अनुमति के बिना अनुशंसा (सिफ़ारिश) करे? वह जानता है जो कुछ उनके सामने और जो कुछ उनके पीछे है। और वे उसके ज्ञान में से किसी चीज़ को (अपने ज्ञान से) नहीं घेर सकते, परंतु जितना वह चाहे। उसकी कुर्सी आकाशों और धरती को व्याप्त है और उन दोनों की रक्षा उसे नहीं थकाती। और वही सबसे ऊँचा, सबसे महान है।",
+      tr: "Allah, O'ndan başka tanrı olmayan, kendisini uyuklama ve uyku tutmayan, diri, her an yaratıklarını gözetip durandır. Göklerde olan ve yerde olan ancak O'nundur. O'nun izni olmadan katında şefaat edecek kimdir? Onların işlediklerini ve işleyeceklerini bilir, dilediğinden başka ilminden hiçbir şeyi kavrayamazlar. Hükümranlığı gökleri ve yeri kaplamıştır, onların gözetilmesi O'na ağır gelmez. O yücedir, büyüktür.",
+      es: "¡Dios! No existe nada ni nadie con derecho a ser adorado excepto Él, el Viviente [Eterno], el Sustentador [y Gobernador de toda la creación]. No Le afectan somnolencia ni sueño. Suyo es cuanto hay en los cielos y la Tierra. ¿Quién podrá interceder ante Él si no es con Su permiso? Conoce el pasado y el futuro [lo manifiesto y lo oculto] y nadie abarca de Su conocimiento salvo lo que Él quiere. El escabel de Su Trono abarca los cielos y la Tierra, y la custodia [y mantenimiento] de ambos no Le agobia. Y Él es el Sublime, el Grandioso.",
+      fr: "Allah! Point de divinité à part Lui, le Vivant, Celui qui subsiste par Lui-même (Al Qayyum). Ni somnolence ni sommeil ne Le saisissent. A Lui appartient tout ce qui est dans les cieux et sur la terre. Qui peut intercéder auprès de Lui sans Sa permission? Il connaît leur passé et leur futur. Et, de Sa science, ils n’embrassent que ce qu’Il veut. Son Trône « Kursîy » déborde les cieux et la terre, dont la garde ne Lui coûte aucune peine. Et Il est le Très-Haut, le Très-Grand.",
+      bn: "আল্লাহ, তিনি ছাড়া সত্যিকারের কোন উপাস্য নেই, তিনি চিরঞ্জীব, সর্বদা রক্ষণাবেক্ষণকারী। তাঁকে তন্দ্রা ও নিদ্রা স্পর্শ করে না। আকাশমন্ডলে ও ভূমন্ডলে যা কিছু আছে, তাঁরই। কে সেই ব্যক্তি যে তাঁর অনুমতি ছাড়া তাঁর নিকট সুপারিশ করে? তিনি লোকদের সমুদয় প্রকাশ্য ও অপ্রকাশ্য অবস্থা জানেন। পক্ষান্তরে মানুষ তাঁর জ্ঞানের কোনকিছুই আয়ত্ত করতে সক্ষম নয়, তিনি যে পরিমাণ ইচ্ছে করেন সেটুকু ছাড়া। তাঁর কুরসী আকাশ ও পৃথিবী পরিবেষ্টন করে আছে এবং এ দু’য়ের রক্ষণাবেক্ষণ তাঁকে ক্লান্ত করে না, তিনি উচ্চ মর্যাদাশীল, মহান।",
+      id: "Allah, tidak ada tuhan (yang berhak disembah) melainkan Dia Yang Hidup kekal lagi terus menerus mengurus (makhluk-Nya), tidak mengantuk dan tidak tidur. Kepunyaan-Nya apa yang di langit dan di bumi. Tiada yang dapat memberi syafaat di sisi Allah tanpa izin-Nya. Allah mengetahui apa-apa yang di hadapan mereka dan di belakang mereka, dan mereka tidak mengetahui apa-apa dari ilmu Allah melainkan apa yang dikehendaki-Nya. Kursi Allah meliputi langit dan bumi. Dan Allah tidak merasa berat memelihara keduanya, dan Allah Maha Tinggi lagi Maha Besar."
     },
     translationStatus: {
       en: "reviewed",
@@ -1410,12 +1419,12 @@ export const DUAS_DATABASE: DuaItem[] = [
     translations: {
       en: "Our Lord, we have wronged ourselves, and if You do not forgive us and have mercy upon us, we will surely be among the losers.",
       ur: "اے ہمارے رب! ہم نے اپنی جانوں پر ظلم کیا، اور اگر تو نے ہمیں نہ بخشا اور ہم پر رحم نہ کیا تو ہم یقیناً نقصان اٹھانے والوں میں سے ہو جائیں گے۔",
-      hi: "ऐ हमारे रब! हमने अपनी जानों पर ज़ुल्म किया, और अगर तूने हमें न बख़्शा और हम पर रहम न किया तो हम यक़ीनन नुक़सान उठाने वालों में से हो जाएँगे।",
-      tr: "Rabbimiz! Biz kendimize zulmettik. Eğer bizi bağışlamaz ve bize merhamet etmezsen, mutlaka hüsrana uğrayanlardan oluruz.",
-      es: "¡Señor nuestro! Hemos sido injustos con nosotros mismos, y si no nos perdonas y tienes misericordia de nosotros, seremos de los perdedores.",
-      fr: "Seigneur! Nous avons été injustes envers nous-mêmes, et si Tu ne nous pardonnes pas et ne nous fais pas miséricorde, nous serons assurément du nombre des perdants.",
-      bn: "হে আমাদের রব! আমরা নিজেদের উপর জুলুম করেছি, আর যদি আপনি আমাদের ক্ষমা না করেন এবং আমাদের প্রতি দয়া না করেন, তবে আমরা অবশ্যই ক্ষতিগ্রস্তদের অন্তর্ভুক্ত হব।",
-      id: "Ya Tuhan kami, kami telah menzalimi diri kami sendiri, dan jika Engkau tidak mengampuni kami dan memberi rahmat kepada kami, niscaya kami termasuk orang-orang yang rugi."
+      hi: "ऐ हमारे पालनहार! हमने अपने आपपर अत्याचार किया है। और यदि तूने हमें क्षमा न किया तथा हमपर दया न की, तो निश्चय हम अवश्य घाटा उठाने वालों में से हो जाएँगे।",
+      tr: "Rabbimiz! Kendimize yazık ettik; bizi bağışlamaz ve bize merhamet etmezsen biz kaybedenlerden oluruz.",
+      es: "¡Señor nuestro! Hemos sido injustos con nosotros mismos; si no nos perdonas y nos tienes misericordia, seremos de los perdidos.",
+      fr: "Ô notre Seigneur ! Nous avons fait du tort à nous-mêmes. Et si Tu ne nous pardonnes pas et ne nous fais pas miséricorde, nous serons très certainement du nombre des perdants.",
+      bn: "হে আমাদের প্রতিপালক! আমরা নিজেদের প্রতি অন্যায় করে ফেলেছি, যদি তুমি আমাদেরকে ক্ষমা না কর আর দয়া না কর তাহলে আমরা অবশ্য অবশ্যই ক্ষতিগ্রস্তদের অন্তর্ভুক্ত হয়ে যাব।",
+      id: "Ya Tuhan kami, kami telah menganiaya diri kami sendiri, dan jika Engkau tidak mengampuni kami dan memberi rahmat kepada kami, niscaya pastilah kami termasuk orang-orang yang merugi."
     },
     translationStatus: {
       en: "reviewed",
@@ -1452,12 +1461,12 @@ export const DUAS_DATABASE: DuaItem[] = [
     translations: {
       en: "Our Lord, do not take us to task if we forget or fall into error. Our Lord, do not lay upon us a burden like that which You laid upon those before us. Our Lord, do not burden us with what we have no strength to bear. Pardon us, forgive us, and have mercy upon us. You are our Protector, so grant us victory over the disbelieving people.",
       ur: "اے ہمارے رب! اگر ہم بھول جائیں یا خطا کر بیٹھیں تو ہماری گرفت نہ فرما۔ اے ہمارے رب! ہم پر ایسا بوجھ نہ ڈال جیسا تو نے ہم سے پہلے لوگوں پر ڈالا تھا۔ اے ہمارے رب! ہم پر وہ بوجھ نہ ڈال جس کی ہم میں طاقت نہیں۔ ہمیں معاف فرما، ہمیں بخش دے، اور ہم پر رحم فرما۔ تو ہی ہمارا مولا ہے، پس کافروں کے مقابلے میں ہماری مدد فرما۔",
-      hi: "ऐ हमारे रब! अगर हम भूल जाएँ या ख़ता कर बैठें तो हमारी पकड़ न फ़रमा। ऐ हमारे रब! हम पर ऐसा बोझ न डाल जैसा तूने हमसे पहले लोगों पर डाला था। ऐ हमारे रब! हम पर वह बोझ न डाल जिसकी हममें ताक़त नहीं। हमें माफ़ फ़रमा، ہمیں بخش دے، اور ہم پر رحم فرما۔ تو ہی ہمارا مولا ہے، پس کافروں کے مقابلے میں ہماری مدد فرما۔",
-      tr: "Rabbimiz! Unutur veya hata edersek bizi sorumlu tutma. Rabbimiz! Bizden öncekilere yüklediğin gibi bize de ağır yük yükleme. Rabbimiz! Gücümüzün yetmeyeceği şeyi bize yükleme. Bizi affet, bizi bağışla ve bize merhamet et. Sen bizim Mevlamızsın, kâfirler topluluğuna karşı bize yardım et.",
-      es: "¡Señor nuestro! No nos tomes en cuenta si olvidamos o erramos. ¡Señor nuestro! No nos impongas una carga como la que impusiste a quienes nos precedieron. ¡Señor nuestro! No nos hagas cargar con lo que no podemos soportar. Perdónanos, absuélvenos y ten misericordia de nosotros. Tú eres nuestro Protector, así que auxílianos frente al pueblo incrédulo.",
-      fr: "Seigneur! Ne nous tiens pas rigueur si nous oublions ou commettons une erreur. Seigneur! Ne nous charge pas d'un fardeau comme celui dont Tu as charged ceux qui nous ont précédés. Seigneur! Ne nous impose pas ce que nous ne pouvons supporter. Efface nos fautes, pardonne-nous et fais-nous miséricorde. Tu es notre Maître, accorde-nous donc la victoire sur le peuple mécréant.",
-      bn: "হে আমাদের রব! আমরা যদি ভুলে যাই বা ভুল করি তবে আমাদের পাকড়াও করবেন না। হে আমাদের রব! আমাদের উপর এমন বোঝা চাপাবেন না যেমন আমাদের পূর্ববর্তীদের উপর চাপিয়েছিলেন। হে আমাদের রব! আমাদের উপর এমন বোঝা চাপাবেন না যা বহনের শক্তি আমাদের নেই। আমাদের মার্জনা করুন, আমাদের ক্ষমা করুন এবং আমাদের প্রতি দয়া করুন। আপনিই আমাদের অভিভাবক, সুতরাং কাফের সম্প্রদায়ের বিরুদ্ধে আমাদের সাহায্য করুন।",
-      id: "Ya Tuhan kami, janganlah Engkau hukum kami jika kami lupa atau kami bersalah. Ya Tuhan kami, janganlah Engkau bebankan kepada kami beban yang berat sebagaimana Engkau bebankan kepada orang-orang sebelum kami. Ya Tuhan kami, janganlah Engkau pikulkan kepada kami apa yang tak sanggup kami memikulnya. Maafkanlah kami, ampunilah kami, dan rahmatilah kami. Engkaulah Pelindung kami, maka tolonglah kami terhadap kaum yang kafir."
+      hi: "ऐ हमारे पालनहार! हमारी पकड़ न कर यदि हम भूल जाएँ या हमसे चूक हो जाए। ऐ हमारे पालनहार! और हमपर कोई भारी बोझ न डाल, जैसे तूने उसे उन लोगों पर डाला जो हमसे पहले थे। ऐ हमारे पालनहार! और हमसे वह चीज़ न उठवा जिस (के उठाने) की हम में शक्ति न हो। तथा हमें माफ़ कर और हमें क्षमा कर दे और हमपर दया कर। तू ही हमारा स्वामी (संरक्षक) है, इसलिए काफ़िरों के मुक़ाबले में हमारी मदद कर।",
+      tr: "Rabbimiz! Eğer unutacak veya yanılacak olursak bizi sorumlu tutma. Rabbimiz bizden öncekilere yüklediğin gibi, bize de ağır yük yükleme. Rabbimiz! Bize gücümüzün yetmeyeceği şeyi taşıtma, bizi affet, bizi bağışla, bize acı. Sen Mevlamızsın, kafirlere karşı bize yardım et.",
+      es: "¡Señor nuestro! No nos castigues si olvidamos o cometemos un error. ¡Señor nuestro! No nos impongas una carga como la que impusiste a quienes nos precedieron. ¡Señor nuestro! No nos impongas algo superior a lo que podamos soportar. Perdónanos, absuélvenos y ten misericordia de nosotros. Tú eres nuestro Protector, concédenos el triunfo sobre los que niegan la verdad.",
+      fr: "Seigneur ! Ne nous châtie pas s’il nous arrive d’oublier ou de commettre une erreur. Seigneur ! Ne nous charge pas d’un fardeau lourd comme Tu as chargé ceux qui vécurent avant nous. Seigneur ! Ne nous impose pas ce que nous ne pouvons supporter, efface nos fautes, pardonne-nous et fais nous miséricorde. Tu es Notre Maître, accorde-nous donc la victoire sur les peuples infidèles.",
+      bn: "হে আমাদের প্রতিপালক! আমরা যদি ভুলে যাই কিংবা ভুল করি, তাহলে আমাদেরকে পাকড়াও করো না, হে আমাদের প্রতিপালক! আমাদের আগের লোকেদের উপর যেমন গুরু-দায়িত্ব অর্পণ করেছিলে, আমাদের উপর তেমন দায়িত্ব অর্পণ করো না; হে আমাদের প্রতিপালক! যে ভার বহনের ক্ষমতা আমাদের নেই, এমন ভার আমাদের উপর চাপিয়ে দিও না, (ভুল-ত্রুটি উপেক্ষা করে) আমাদেরকে রেহাই দাও, আমাদেরকে ক্ষমা কর এবং আমাদের প্রতি দয়া কর; তুমিই আমাদের প্রতিপালক, কাজেই আমাদেরকে কাফিরদের উপর জয়যুক্ত কর।",
+      id: "Ya Tuhan kami, janganlah Engkau hukum kami jika kami lupa atau kami salah. Ya Tuhan kami, janganlah Engkau bebankan kepada kami beban yang berat sebagaimana Engkau bebankan kepada orang-orang sebelum kami. Ya Tuhan kami, janganlah Engkau pikulkan kepada kami apa yang tak sanggup kami memikulnya. Beri maaflah kami, ampunilah kami, dan rahmatilah kami. Engkau-lah Penolong kami, maka tolonglah kami terhadap kaum yang kafir."
     },
     translationStatus: {
       en: "reviewed",
@@ -1494,12 +1503,12 @@ export const DUAS_DATABASE: DuaItem[] = [
     translations: {
       en: "Our Lord, pour patience upon us, make our feet firm, and grant us victory over the disbelieving people.",
       ur: "اے ہمارے رب! ہم پر صبر انڈیل دے، ہمارے قدم جما دے، اور کافروں کے مقابلے میں ہماری مدد فرما۔",
-      hi: "ऐ ہمارے رب! ہم پر سببر انڈیل دے، ہمارے قدم جما دے، اور کافروں کے مقابلے میں ہماری مدد فرما۔",
-      tr: "Rabbimiz! Üzerimize sabır yağdır, ayaklarımızı sabit kıl ve kâfirler topluluğuna karşı bize yardım et.",
-      es: "¡Señor nuestro! Derrama sobre nosotros paciencia, afianza nuestros pies y auxílianos frente al pueblo incrédulo.",
-      fr: "Seigneur! Déverse sur nous la patience, affermis nos pas et accorde-nous la victoire sur le peuple mécréant.",
-      bn: "হে আমাদের রব! আমাদের উপর ধৈর্য ঢেলে দিন, আমাদের পা সুদৃঢ় করুন এবং কাফের সম্প্রদায়ের বিরুদ্ধে আমাদের সাহায্য করুন।",
-      id: "Ya Tuhan kami, limpahkanlah kesabaran atas kami, kokohkanlah langkah kami, dan tolonglah kami terhadap kaum yang kafir."
+      hi: "ऐ हमारे पालनहार! हमपर धैर्य उँडेल दे तथा हमारे पैरों को जमा दे और इन काफ़िरों के विरुद्ध हमारी सहायता कर।",
+      tr: "Rabbimiz! Bize sabır ver, sebatımızı artır, inkar eden millete karşı bize yardım et.",
+      es: "¡Señor nuestro! Danos paciencia, mantennos firmes y concédenos la victoria sobre los que niegan la verdad.",
+      fr: "Seigneur! Déverse sur nous l’endurance, affermis nos pas et donne-nous la victoire sur ce peuple infidèle !",
+      bn: "হে আমাদের প্রতিপালক! আমাদেরকে ধৈর্যধারণের শক্তি দান কর এবং আমাদের পদগুলো দৃঢ় রেখ এবং কাফির দলের উপর আমাদেরকে জয়যুক্ত কর।",
+      id: "Ya Tuhan kami, tuangkanlah kesabaran atas diri kami, dan kokohkanlah pendirian kami dan tolonglah kami terhadap orang-orang kafir."
     },
     translationStatus: {
       en: "reviewed",
@@ -1536,12 +1545,12 @@ export const DUAS_DATABASE: DuaItem[] = [
     translations: {
       en: "Our Lord, You did not create this in vain. Glory be to You, so protect us from the punishment of the Fire.",
       ur: "اے ہمارے رب! تو نے یہ سب بے مقصد پیدا نہیں کیا، تو پاک ہے، پس ہمیں آگ کے عذاب سے بچا۔",
-      hi: "ऐ ہمارے رب! तूने यह सब बेमक़्सद पैदा नहीं किया، तू پاک ہے، पस हमें آگ کے عذاب سے بچا۔",
-      tr: "Rabbimiz! Sen bunu boşuna yaratmadın. Seni tenzih ederiz, bizi ateş azabından koru.",
-      es: "¡Señor nuestro! No has creado esto en vano. ¡Glorificado seas! Presérvanos del castigo del Fuego.",
-      fr: "Seigneur! Tu n'as pas créé cela en vain. Gloire à Toi! Préserve-nous du châtiment du Feu.",
-      bn: "হে আমাদের রব! আপনি এসব অনর্থক সৃষ্টি করেননি। আপনি পবিত্র, সুতরাং আমাদের জাহান্নামের শাস্তি থেকে রক্ষা করুন।",
-      id: "Ya Tuhan kami, tiadalah Engkau menciptakan ini dengan sia-sia. Mahasuci Engkau, maka peliharalah kami dari siksa neraka."
+      hi: "ऐ हमारे पालनहार! तूने यह सब कुछ बेकार नहीं रचा है। अतः हमें आग के अज़ाब से बचा ले।",
+      tr: "Rabbimiz! Sen bunu boşuna yaratmadın, Sen münezzehsin. Bizi ateşin azabından koru.",
+      es: "¡Señor nuestro! No has creado todo esto sin un sentido. ¡Glorificado seas! Presérvanos del castigo del Fuego.",
+      fr: "Notre Seigneur! Tu n’as pas créé cela en vain. Gloire à Toi! Épargne-nous du châtiment du Feu.",
+      bn: "হে আমাদের প্রতিপালক! তুমি এসব অনর্থক সৃষ্টি করনি, তোমার পবিত্রতা বর্ণনা করছি, সুতরাং আমাদেরকে অগ্নির শাস্তি হতে রক্ষা কর।",
+      id: "Ya Tuhan kami, tiadalah Engkau menciptakan ini dengan sia-sia. Maha Suci Engkau, maka peliharalah kami dari siksa neraka."
     },
     translationStatus: {
       en: "reviewed",
