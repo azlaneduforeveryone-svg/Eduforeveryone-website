@@ -200,9 +200,9 @@ export default function QuranPDFViewer({ type }: Props) {
       </div>
 
       <div className="max-w-5xl mx-auto px-4 py-6">
-        <div className={`grid gap-4 ${showTajweed && !is15 ? "lg:grid-cols-3" : ""}`}>
+        <div className={`grid gap-4 min-w-0 ${showTajweed && !is15 ? "lg:grid-cols-3" : ""}`}>
           {/* PDF Viewer */}
-          <div className={showTajweed && !is15 ? "lg:col-span-2" : ""}>
+          <div className={`min-w-0 ${showTajweed && !is15 ? "lg:col-span-2" : ""}`}>
             {/* Publisher credit */}
             <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 mb-4 flex justify-between items-center">
               <div>
@@ -215,7 +215,7 @@ export default function QuranPDFViewer({ type }: Props) {
             </div>
 
             {/* PDF Document */}
-            <div className="bg-white rounded-2xl shadow-md overflow-auto flex justify-center" style={{minHeight:"80vh"}}>
+            <div className="bg-white rounded-2xl shadow-md overflow-auto max-w-full" style={{minHeight:"80vh"}}>
               {error ? (
                 <div className="flex flex-col items-center justify-center p-8 text-center">
                   <p className="text-4xl mb-4">⚠️</p>
@@ -227,7 +227,7 @@ export default function QuranPDFViewer({ type }: Props) {
                   </a>
                 </div>
               ) : (
-                <div className="py-4">
+                <div className="py-4 w-fit min-w-full flex justify-center">
                   {loading && (
                     <div className="flex flex-col items-center justify-center py-20">
                       <div className="w-12 h-12 border-4 border-teal-600 border-t-transparent rounded-full animate-spin mb-4" />
