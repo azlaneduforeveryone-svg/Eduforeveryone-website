@@ -1,11 +1,25 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import JsonLd, { faqLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "About EduForEveryone — Free Education, No Barriers",
   description: "Why EduForEveryone exists: free IELTS practice, the Quran with 40+ translations, and free courses, tools and quizzes — built so no student is held back by cost.",
   alternates: { canonical: "https://eduforeveryone.com/about" },
 };
+
+const faqs = [
+  { q: "Is the IELTS practice really free?", a: "Yes. All Reading, Writing, Listening and Speaking practice is free with no sign-up. AI writing feedback is also free." },
+  { q: "Can I read the Quran with Urdu translation?", a: "Yes — the Quran reader includes 40+ translations including English, Urdu and Hindi, with audio recitation and a color-coded Tajweed mode." },
+  { q: "Is the GMAT practice really free?", a: "Yes. Every GMAT Focus Edition section — Quantitative Reasoning, Verbal Reasoning and Data Insights — plus the full timed mock test is free with no sign-up. Scores shown are estimates, not official GMAT scores." },
+  { q: "Is EduForEveryone really free?", a: "Yes — 100% free forever. No subscriptions, no hidden fees, no sign-up required. Every practice test, quiz, calculator and game on this website is completely free." },
+  { q: "Who is EduForEveryone for?", a: "Everyone — from students preparing for IELTS or the GMAT to anyone reading the Quran or brushing up with our quizzes and tools. Our content is designed to be accessible at every level of learning." },
+  { q: "What can I study here?", a: "Our main areas are IELTS preparation, GMAT Focus Edition practice, and a full Quran reader with translations and Tajweed. We also offer free calculators, quizzes and learning games." },
+  { q: "What games are available?", a: "We have three free games — Math Puzzle (arithmetic and algebra challenges), WordWise (guess hidden education words), and Quiz Battle (answer questions across all subjects with lives and powerups). All completely free!" },
+  { q: "Can I use the calculators for free?", a: "Yes! Our scientific calculator, financial calculator (TVM, NPV, IRR, Bond Pricing), simple calculator and number to words converter are all completely free to use." },
+  { q: "Do I need to create an account?", a: "No account needed. Just visit the website and start learning immediately." },
+  { q: "Will more content be added?", a: "Yes! We are constantly adding new practice tests, quizzes, tools and games. More languages and subjects are coming soon." },
+];
 
 export default function AboutPage() {
   return (
@@ -158,6 +172,24 @@ export default function AboutPage() {
           EduForEveryone is committed to keeping all Quran and Islamic Studies content completely free and ad-free, always.
         </p>
       </div>
+
+      {/* Frequently Asked Questions */}
+      <section className="mt-16">
+        <div className="mb-10 text-center">
+          <p className="text-xs font-semibold uppercase tracking-wider text-teal-600">FAQ</p>
+          <h2 className="mt-1 font-display text-3xl font-semibold text-gray-900">Frequently Asked Questions</h2>
+        </div>
+        <div className="space-y-4">
+          {faqs.map((f, i) => (
+            <div key={i} className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+              <h3 className="font-semibold text-gray-900 text-base">{f.q}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-gray-600">{f.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <JsonLd data={faqLd(faqs)} />
 
     </div>
   );
