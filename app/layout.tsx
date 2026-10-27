@@ -116,10 +116,8 @@ export default function RootLayout({
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
-                  var isPreview = typeof window !== 'undefined' && window.location.hostname.indexOf('vercel.app') !== -1 && window.location.hostname.indexOf('eduforeveryone.com') === -1;
                   gtag('config', 'G-F7MCW76675', {
-                    page_path: window.location.pathname,
-                    debug_mode: isPreview
+                    page_path: window.location.pathname${process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview' ? ',\n                    debug_mode: true' : ''}
                   });
                 `}
               </Script>

@@ -180,7 +180,7 @@ export default function ReadingTest({ passage }: Props) {
       const s = prev.reduce((acc, sq) => acc + (gradeQuestion(sq, answers[sq.id] ?? "") ? 1 : 0), 0);
       setScore(s);
       const estBand = parseFloat(BAND_MAP[s] ?? "4.0");
-      track("ielts_test_complete", { section: "reading", score: estBand });
+      track("ielts_test_complete", { section: "reading", band: estBand });
 
       // Save seen IDs
       const newSeen = [...new Set([...seenRef.current, ...prev.map(q => q.id)])];

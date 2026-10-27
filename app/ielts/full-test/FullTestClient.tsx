@@ -122,7 +122,7 @@ export default function FullTestClient() {
 
   function handleSpeakingComplete(band: number) {
     const overall = overallBand(scores.listening ?? 0, scores.reading ?? 0, scores.writing ?? 0, band);
-    track("ielts_test_complete", { section: "mock", score: overall });
+    track("ielts_test_complete", { section: "mock", band: overall });
     setScores((s) => ({ ...s, speaking: band }));
     saveIeltsResult({ uid: user?.uid, displayName: user?.displayName ?? "", skill: "speaking", band, source: "full-mock", mockId });
     setStage("results");

@@ -197,7 +197,7 @@ export default function SpeakingPage() {
       } else {
         const result = data as IELTSResult;
         setAiResult(result);
-        track("ielts_test_complete", { section: "speaking", score: result.overall });
+        track("ielts_test_complete", { section: "speaking", band: result.overall });
         saveIeltsResult({
           uid: user?.uid,
           displayName: user?.displayName ?? "",

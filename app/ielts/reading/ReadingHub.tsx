@@ -383,7 +383,7 @@ function IELTSReadingTest({
     const bandVal = toBand(Math.round((scoreVal / sessionQs.length) * 40));
 
     // Save to Firebase DB
-    track("ielts_test_complete", { section: "reading", score: bandVal });
+    track("ielts_test_complete", { section: "reading", band: bandVal });
     saveIeltsResult({
       uid: user?.uid,
       displayName: user?.displayName ?? "",

@@ -9,7 +9,7 @@ export type AnalyticsEventMap = {
   };
   ielts_test_complete: {
     section: 'reading' | 'listening' | 'writing' | 'speaking' | 'mock';
-    score: number;
+    band: number;
   };
   ai_feedback_submit: {
     task: 'task1' | 'task2';
@@ -50,10 +50,7 @@ export type AnalyticsEventName = keyof AnalyticsEventMap;
  * Returns true only on Vercel preview environments (never on production or localhost).
  */
 export const isVercelPreview = (): boolean => {
-  if (typeof window === 'undefined') return false;
-  if (process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview') return true;
-  const host = window.location.hostname;
-  return host.endsWith('.vercel.app') && !host.includes('eduforeveryone.com');
+  return process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview';
 };
 
 type GtagFn = (...args: unknown[]) => void;
@@ -99,13 +96,7 @@ export function setAnalyticsUser(uid: string | null): void {
   if (typeof gtag !== 'function') return;
 
   try {
-    if (uid) {
-      gtag('set', { user_id: uid });
-      gtag('config', GA_MEASUREMENT_ID, { user_id: uid });
-    } else {
-      gtag('set', { user_id: null });
-      gtag('config', GA_MEASUREMENT_ID, { user_id: null });
-    }
+    gtag('set', { user_id: uid ?? null });
   } catch {
     // Fail silently
   }

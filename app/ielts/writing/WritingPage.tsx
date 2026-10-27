@@ -244,7 +244,7 @@ export default function WritingPage() {
       } else {
         const result = data as IELTSResult;
         setAiResult(result);
-        track("ielts_test_complete", { section: "writing", score: result.overall });
+        track("ielts_test_complete", { section: "writing", band: result.overall });
         saveIeltsResult({
           uid: user?.uid,
           displayName: user?.displayName ?? "",

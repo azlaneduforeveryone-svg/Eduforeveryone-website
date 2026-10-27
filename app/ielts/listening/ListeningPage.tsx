@@ -315,7 +315,7 @@ export default function ListeningPage() {
     }, 0);
     const band = getBand(score, total);
     setResults({ score, total });
-    track("ielts_test_complete", { section: "listening", score: band });
+    track("ielts_test_complete", { section: "listening", band: band });
     saveIeltsResult({
       uid: user?.uid,
       displayName: user?.displayName ?? "",

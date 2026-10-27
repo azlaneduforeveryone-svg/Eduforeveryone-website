@@ -41,14 +41,18 @@ export default function PracticeRunner({ bank }: Props) {
   }, [bank]);
 
   useEffect(() => {
+    start();
+  }, [start]);
+
+  const handleFirstAnswer = useCallback(() => {
     if (!hasStartedRef.current) {
       hasStartedRef.current = true;
       track("gmat_practice_start", { section: mappedSection });
     }
-    start();
-  }, [start, mappedSection]);
+  }, [mappedSection]);
 
   const handleRetry = useCallback(() => {
+    hasStartedRef.current = true;
     track("gmat_practice_start", { section: mappedSection });
     start();
   }, [start, mappedSection]);
@@ -103,6 +107,7 @@ export default function PracticeRunner({ bank }: Props) {
         minutes={PRACTICE_MINUTES}
         editsAllowed={3}
         onFinish={handleFinish}
+        onFirstAnswer={handleFirstAnswer}
         allowUntimed
       />
     </div>

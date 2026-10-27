@@ -136,14 +136,7 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
     setAnswers(Array(round.length).fill(null));
     setFinished(false);
     setStreak(0);
-
-    // Track GA4 game_start
-    const gameId = getGameId(gameName);
-    if (gameId && !hasStartedRef.current) {
-      hasStartedRef.current = true;
-      track("game_start", { game: gameId });
-    }
-  }, [prepareRound, gameName]);
+  }, [prepareRound]);
 
   const totalCount = activeQuestions.length;
   const currentItem = activeQuestions[current];
@@ -153,6 +146,15 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
   const handleSelect = useCallback(
     (i: number) => {
       if (isAnswered || !currentItem) return;
+
+      if (!hasStartedRef.current) {
+        hasStartedRef.current = true;
+        const gameId = getGameId(gameName);
+        if (gameId) {
+          track("game_start", { game: gameId });
+        }
+      }
+
       setSelected(i);
       const updated = [...answers];
       updated[current] = i;
@@ -164,7 +166,7 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
         setStreak(0);
       }
     },
-    [isAnswered, currentItem, answers, current]
+    [isAnswered, currentItem, answers, current, gameName]
   );
 
   // Advance to next question or complete game
@@ -210,6 +212,7 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
     setAnswers(Array(round.length).fill(null));
     setFinished(false);
     setStreak(0);
+    hasStartedRef.current = true;
 
     const gameId = getGameId(gameName);
     if (gameId) {
