@@ -1,5 +1,6 @@
 "use client";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
+import { track } from "@/lib/analytics";
 
 type HistoryItem = { expr: string; result: string };
 
@@ -9,6 +10,14 @@ export default function SimpleCalculator() {
   const [prev, setPrev] = useState<number | null>(null);
   const [fresh, setFresh] = useState(false);
   const [history, setHistory] = useState<HistoryItem[]>([]);
+  const hasTrackedRef = useRef(false);
+
+  const trackFirstCalc = useCallback(() => {
+    if (!hasTrackedRef.current) {
+      hasTrackedRef.current = true;
+      track("calculator_use", { calculator: "simple" });
+    }
+  }, []);
 
   const addHist = useCallback((expr: string, result: string) => {
     setHistory(h => [{ expr, result }, ...h].slice(0, 25));
@@ -34,6 +43,7 @@ export default function SimpleCalculator() {
       }
       if (type === "eq") {
         if (!op) return v;
+        trackFirstCalc();
         const a = prev!, b = parseFloat(v);
         let r = op === "+" ? a + b : op === "-" ? a - b : op === "*" ? a * b : b === 0 ? NaN : a / b;
         const sym = op === "+" ? `${a}+${b}` : op === "-" ? `${a}−${b}` : op === "*" ? `${a}×${b}` : `${a}÷${b}`;
@@ -42,7 +52,7 @@ export default function SimpleCalculator() {
       }
       return next;
     });
-  }, [op, prev, fresh, addHist]);
+  }, [op, prev, fresh, addHist, trackFirstCalc]);
 
   const btn = (label: string, onClick: () => void, style: string) => (
     <button key={label} onClick={onClick} className={`${style} rounded-xl font-bold transition-all duration-75 active:translate-y-1 select-none`}

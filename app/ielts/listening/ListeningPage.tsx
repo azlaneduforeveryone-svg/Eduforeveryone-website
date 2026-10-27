@@ -6,6 +6,7 @@ import { getPracticeSections } from "@/lib/ielts/listeningData";
 import { useAuth } from "@/contexts/AuthContext";
 import { saveIeltsResult } from "@/lib/firebaseDB";
 import ShareScore from "@/components/ielts/ShareScore";
+import { track } from "@/lib/analytics";
 
 interface ListeningQ {
   id: number; q: string; type: "fill" | "mcq";
@@ -299,6 +300,7 @@ export default function ListeningPage() {
   }, [sessionKey, fbSections]);
 
   function start(s: Section) {
+    track("ielts_test_start", { section: "listening" });
     setActiveSection(s); setAnswers({}); setResults(null);
     setShowTranscript(false); setAudioFinished(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -311,12 +313,14 @@ export default function ListeningPage() {
       const given = (answers[q.id] ?? "").toLowerCase().trim();
       return acc + (given === q.answer.toLowerCase() ? 1 : 0);
     }, 0);
+    const band = getBand(score, total);
     setResults({ score, total });
+    track("ielts_test_complete", { section: "listening", score: band });
     saveIeltsResult({
       uid: user?.uid,
       displayName: user?.displayName ?? "",
       skill: "listening",
-      band: getBand(score, total),
+      band,
       raw: score,
       total,
       testId: activeSection.title,

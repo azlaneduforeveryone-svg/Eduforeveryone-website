@@ -1,5 +1,6 @@
 "use client";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
+import { track } from "@/lib/analytics";
 
 type HistItem = { expr: string; result: string };
 
@@ -14,6 +15,14 @@ export default function ScientificCalculator() {
   const [mem, setMem] = useState(0);
   const [history, setHistory] = useState<HistItem[]>([]);
   const [dark, setDark] = useState(true);
+  const hasTrackedRef = useRef(false);
+
+  const trackFirstCalc = useCallback(() => {
+    if (!hasTrackedRef.current) {
+      hasTrackedRef.current = true;
+      track("calculator_use", { calculator: "scientific" });
+    }
+  }, []);
 
   const d = dark;
   const bg = d ? "bg-gray-950" : "bg-gray-100";
@@ -58,10 +67,11 @@ export default function ScientificCalculator() {
       default: return;
     }
     if (isNaN(r!) || !isFinite(r!)) { setVal("Error"); return; }
+    trackFirstCalc();
     const res = parseFloat(r!.toFixed(10)).toString();
     addH(lbl! + " = " + res, res);
     setVal(res); setFresh(true); setExpr(lbl! + " =");
-  }, [val, is2nd, mem, toAng, frAng, addH]);
+  }, [val, is2nd, mem, toAng, frAng, addH, trackFirstCalc]);
 
   const act = useCallback((type: string, arg?: string) => {
     if (type === "ac")  { setVal("0"); setOp(null); setPrev(null); setFresh(false); setExpr(""); return; }
@@ -81,6 +91,7 @@ export default function ScientificCalculator() {
       }
       if (type === "eq") {
         if (!op) return v;
+        trackFirstCalc();
         const a = prev!, b = parseFloat(v);
         let r = op==="+"?a+b:op==="-"?a-b:op==="*"?a*b:op==="/"?(b===0?NaN:a/b):Math.pow(a,b);
         const sym = `${a}${op==="*"?"×":op==="/"?"÷":op}${b}`;
@@ -89,7 +100,7 @@ export default function ScientificCalculator() {
       }
       return v;
     });
-  }, [op, prev, fresh, addH]);
+  }, [op, prev, fresh, addH, trackFirstCalc]);
 
   const shadow = "0 4px 0 rgba(0,0,0,0.35), 0 4px 8px rgba(0,0,0,0.25)";
   const shadowPress = "0 1px 0 rgba(0,0,0,0.35)";

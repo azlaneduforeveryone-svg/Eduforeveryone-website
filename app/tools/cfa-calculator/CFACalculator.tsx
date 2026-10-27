@@ -1,5 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useState, useCallback, useRef, createContext, useContext } from "react";
+import { track } from "@/lib/analytics";
+
+const CalcContext = createContext<() => void>(() => {});
 
 type Tab = "tvm" | "npv" | "irr" | "bond";
 type Mode = "phy" | "form";
@@ -124,6 +127,7 @@ function HistBox({ history, onClear }: { history: HistItem[]; onClear: () => voi
 
 // ── Physical Calculator Base ──────────────────────────────────────────────────
 function usePhyCalc() {
+  const onCalc = useContext(CalcContext);
   const [v, setV] = useState("0");
   const [op, setOp] = useState<string|null>(null);
   const [pr, setPr] = useState<number|null>(null);
@@ -136,6 +140,7 @@ function usePhyCalc() {
   const doOp = (o: string) => { if(op&&!fr)doEq(o); setPr(parseFloat(v)); setOp(o); setFr(true); };
   const doEq = (nextOp?: string) => {
     if(!op) return;
+    onCalc();
     const a=pr!, b=parseFloat(v);
     let r = op==="+"?a+b:op==="-"?a-b:op==="*"?a*b:b===0?NaN:a/b;
     const res = isNaN(r)?"Error":parseFloat(r.toFixed(8)).toString();
@@ -146,6 +151,7 @@ function usePhyCalc() {
 
 // ── TVM Physical ──────────────────────────────────────────────────────────────
 function TVMPhy() {
+  const onCalc = useContext(CalcContext);
   const { v, setV, setFr, num, dot, sign, del, ac, doOp, doEq } = usePhyCalc();
   const [tvm, setTvm] = useState<Record<TVMKey,number|null>>({N:null,IY:null,PV:null,PMT:null,FV:null});
   const [active, setActive] = useState<TVMKey|null>(null);
@@ -159,6 +165,7 @@ function TVMPhy() {
       (Object.keys(filled) as TVMKey[]).filter(k=>k!==solve).forEach(k=>{ if(filled[k]===null) throw new Error(); });
       const res = solveTVM(solve, filled);
       if(isNaN(res)||!isFinite(res)) throw new Error();
+      onCalc();
       const r = parseFloat(res.toFixed(6));
       setV(r.toString()); setTvm(t=>({...t,[solve]:r})); setActive(solve); setLbl("CPT "+solve+" ="); setFr(true);
       setHist(h=>[{expr:`CPT ${solve} | N=${tvm.N} I/Y=${tvm.IY}% PV=${tvm.PV} PMT=${tvm.PMT} FV=${tvm.FV}`,result:r.toFixed(4)},...h].slice(0,15));
@@ -218,6 +225,7 @@ function TVMPhy() {
 
 // ── TVM Form ──────────────────────────────────────────────────────────────────
 function TVMForm() {
+  const onCalc = useContext(CalcContext);
   const [fields, setFields] = useState<Record<TVMKey,string>>({N:"",IY:"",PV:"",PMT:"",FV:""});
   const [result, setResult] = useState<{key:TVMKey;val:number}|null>(null);
   const [error, setError] = useState("");
@@ -231,6 +239,7 @@ function TVMForm() {
       vals[key]=0;
       const res = solveTVM(key, vals);
       if(isNaN(res)||!isFinite(res)) throw new Error("Invalid inputs");
+      onCalc();
       const r = parseFloat(res.toFixed(6));
       setResult({key,val:r}); setFields(f=>({...f,[key]:r.toString()})); setError("");
       setHist(h=>[{expr:`CPT ${key}`,result:r.toFixed(4)},...h].slice(0,15));
@@ -259,6 +268,7 @@ function TVMForm() {
 
 // ── NPV Form ──────────────────────────────────────────────────────────────────
 function NPVForm() {
+  const onCalc = useContext(CalcContext);
   const [init,setInit]=useState(""); const [flows,setFlows]=useState(""); const [rate,setRate]=useState("");
   const [result,setResult]=useState<number|null>(null); const [error,setError]=useState("");
   const [hist,setHist]=useState<HistItem[]>([]);
@@ -266,7 +276,7 @@ function NPVForm() {
     try{
       const i=parseFloat(init),r=parseFloat(rate),cf=flows.split(",").map(s=>parseFloat(s.trim()));
       if(isNaN(i)||isNaN(r)||cf.some(isNaN)) throw new Error("Check all fields");
-      const npv=solveNPV(i,cf,r); setResult(npv); setError("");
+      const npv=solveNPV(i,cf,r); onCalc(); setResult(npv); setError("");
       setHist(h=>[{expr:`NPV | Init=${i} Rate=${r}%`,result:npv.toFixed(2)},...h].slice(0,15));
     }catch(e:any){setError(e.message);}
   };
@@ -288,6 +298,7 @@ function NPVForm() {
 
 // ── NPV Physical ──────────────────────────────────────────────────────────────
 function NPVPhy() {
+  const onCalc = useContext(CalcContext);
   const [v,setV]=useState("0"); const [step,setStep]=useState(0);
   const [init,setInit]=useState(0); const [flows,setFlows]=useState<number[]>([]); const [rate,setRate]=useState(0);
   const [result,setResult]=useState<number|null>(null); const [status,setStatus]=useState("Step 1: Enter initial investment → ENTER");
@@ -303,7 +314,7 @@ function NPVPhy() {
     const val=parseFloat(v);
     if(step===0){setInit(val);setStep(1);setStatus("Add cash flows → press CF+ then ENTER each one");}
     else if(step===1){setFlows(f=>[...f,val]);setStatus(`CF added: [${[...flows,val].join(", ")}] — add more or switch to RATE%`);}
-    else if(step===2){setRate(val);const npv=solveNPV(init,[...flows],val);setResult(npv);setStatus(`NPV = $${npv.toFixed(2)} ${npv>=0?"✓ ACCEPT":"✗ REJECT"}`);}
+    else if(step===2){setRate(val);const npv=solveNPV(init,[...flows],val);onCalc();setResult(npv);setStatus(`NPV = $${npv.toFixed(2)} ${npv>=0?"✓ ACCEPT":"✗ REJECT"}`);}
     setV("0");
   };
 
@@ -318,7 +329,7 @@ function NPVPhy() {
         {N("INIT",()=>{setStep(0);},"bg-emerald-950 text-emerald-300")}
         {N("CF+",()=>{setStep(1);},"bg-emerald-950 text-emerald-300")}
         {N("RATE%",()=>{setStep(2);},"bg-emerald-950 text-emerald-300")}
-        {N("COMPUTE NPV",()=>{if(flows.length>0){const npv=solveNPV(init,flows,rate);setResult(npv);setStatus(`NPV = $${npv.toFixed(2)} ${npv>=0?"✓ ACCEPT":"✗ REJECT"}`);}},
+        {N("COMPUTE NPV",()=>{if(flows.length>0){const npv=solveNPV(init,flows,rate);onCalc();setResult(npv);setStatus(`NPV = $${npv.toFixed(2)} ${npv>=0?"✓ ACCEPT":"✗ REJECT"}`);}},
           "bg-green-900 text-green-300 font-extrabold col-span-2")}
         {N("RESET",()=>{setV("0");setStep(0);setInit(0);setFlows([]);setRate(0);setResult(null);setStatus("Step 1: Enter initial investment → ENTER");},"bg-red-950 text-red-300")}
       </div>
@@ -339,6 +350,7 @@ function NPVPhy() {
 
 // ── IRR Form ──────────────────────────────────────────────────────────────────
 function IRRForm() {
+  const onCalc = useContext(CalcContext);
   const [init,setInit]=useState(""); const [flows,setFlows]=useState(""); const [hurdle,setHurdle]=useState("");
   const [result,setResult]=useState<number|null>(null); const [error,setError]=useState("");
   const [hist,setHist]=useState<HistItem[]>([]);
@@ -347,6 +359,7 @@ function IRRForm() {
       const i=parseFloat(init),cf=flows.split(",").map(s=>parseFloat(s.trim()));
       if(isNaN(i)||cf.some(isNaN)) throw new Error("Check all fields");
       const irr=solveIRR(i,cf); if(isNaN(irr)) throw new Error("Could not converge");
+      onCalc();
       setResult(irr); setError("");
       setHist(h=>[{expr:`IRR | Init=${i}`,result:irr.toFixed(4)+"%"},...h].slice(0,15));
     }catch(e:any){setError(e.message);}
@@ -370,6 +383,7 @@ function IRRForm() {
 
 // ── IRR Physical ──────────────────────────────────────────────────────────────
 function IRRPhy() {
+  const onCalc = useContext(CalcContext);
   const [v,setV]=useState("0"); const [step,setStep]=useState(0);
   const [init,setInit]=useState(0); const [flows,setFlows]=useState<number[]>([]); const [hurdle,setHurdle]=useState<number|null>(null);
   const [result,setResult]=useState<number|null>(null); const [status,setStatus]=useState("Step 1: Enter initial investment → ENTER");
@@ -385,7 +399,7 @@ function IRRPhy() {
     const val=parseFloat(v);
     if(step===0){setInit(val);setStep(1);setStatus("Add cash flows → CF+ then ENTER each");}
     else if(step===1){setFlows(f=>[...f,val]);setStatus(`CF: [${[...flows,val].join(", ")}]`);}
-    else if(step===2){setHurdle(val);const irr=solveIRR(init,[...flows]);setResult(irr);setStatus(`IRR = ${irr.toFixed(4)}% ${val?irr>=val?"✓ ACCEPT":"✗ REJECT":""}`);}
+    else if(step===2){setHurdle(val);const irr=solveIRR(init,[...flows]);onCalc();setResult(irr);setStatus(`IRR = ${irr.toFixed(4)}% ${val?irr>=val?"✓ ACCEPT":"✗ REJECT":""}`);}
     setV("0");
   };
 
@@ -400,7 +414,7 @@ function IRRPhy() {
         {N("INIT",()=>setStep(0),"bg-emerald-950 text-emerald-300")}
         {N("CF+",()=>setStep(1),"bg-emerald-950 text-emerald-300")}
         {N("HURDLE",()=>setStep(2),"bg-emerald-950 text-emerald-300")}
-        {N("COMPUTE IRR",()=>{const irr=solveIRR(init,flows);setResult(irr);setStatus(`IRR=${irr.toFixed(4)}% ${hurdle!==null?irr>=hurdle?"✓ ACCEPT":"✗ REJECT":""}`);},
+        {N("COMPUTE IRR",()=>{const irr=solveIRR(init,flows);onCalc();setResult(irr);setStatus(`IRR=${irr.toFixed(4)}% ${hurdle!==null?irr>=hurdle?"✓ ACCEPT":"✗ REJECT":""}`);},
           "bg-green-900 text-green-300 font-extrabold col-span-2")}
         {N("RESET",()=>{setV("0");setStep(0);setInit(0);setFlows([]);setHurdle(null);setResult(null);setStatus("Step 1: Enter initial investment → ENTER");},"bg-red-950 text-red-300")}
       </div>
@@ -421,6 +435,7 @@ function IRRPhy() {
 
 // ── Bond Form ─────────────────────────────────────────────────────────────────
 function BondForm() {
+  const onCalc = useContext(CalcContext);
   const [face,setFace]=useState(""); const [cpn,setCpn]=useState(""); const [ytm,setYtm]=useState(""); const [yrs,setYrs]=useState("");
   const [result,setResult]=useState<{price:number;coupon:number;diff:number}|null>(null); const [error,setError]=useState("");
   const [hist,setHist]=useState<HistItem[]>([]);
@@ -429,6 +444,7 @@ function BondForm() {
       const f=parseFloat(face),c=parseFloat(cpn),y=parseFloat(ytm),n=parseFloat(yrs);
       if([f,c,y,n].some(isNaN)) throw new Error("Fill all fields");
       const price=solveBond(f,c,y,n),coupon=f*(c/100),diff=price-f;
+      onCalc();
       setResult({price,coupon,diff}); setError("");
       setHist(h=>[{expr:`Bond FV=${f} CPN=${c}% YTM=${y}% N=${n}yr`,result:`$${price.toFixed(2)}`},...h].slice(0,15));
     }catch(e:any){setError(e.message);}
@@ -450,6 +466,7 @@ function BondForm() {
 
 // ── Bond Physical ─────────────────────────────────────────────────────────────
 function BondPhy() {
+  const onCalc = useContext(CalcContext);
   const [v,setV]=useState("0"); const [step,setStep]=useState(0);
   const [data,setData]=useState({face:0,cpn:0,ytm:0,yrs:0});
   const [result,setResult]=useState<string|null>(null);
@@ -466,7 +483,7 @@ function BondPhy() {
     const val=parseFloat(v);
     setData(d=>({...d,[keys[step]]:val}));
     if(step<3){setStep(s=>s+1);}
-    else{const d2={...data,[keys[step]]:val};const price=solveBond(d2.face,d2.cpn,d2.ytm,d2.yrs);setResult(`Price=$${price.toFixed(2)} Coupon=$${(d2.face*d2.cpn/100).toFixed(2)}/yr`);}
+    else{const d2={...data,[keys[step]]:val};const price=solveBond(d2.face,d2.cpn,d2.ytm,d2.yrs);onCalc();setResult(`Price=$${price.toFixed(2)} Coupon=$${(d2.face*d2.cpn/100).toFixed(2)}/yr`);}
     setV("0");
   };
 
@@ -479,7 +496,7 @@ function BondPhy() {
       </div>
       <div className="grid grid-cols-4 gap-2 mb-2">
         {["FACE","CPN%","YTM%","YRS"].map((lbl,i)=>N(lbl,()=>setStep(i),"bg-emerald-950 text-emerald-300"))}
-        {N("COMPUTE PRICE",()=>{const price=solveBond(data.face,data.cpn,data.ytm,data.yrs);setResult(`Price=$${price.toFixed(2)} | Coupon=$${(data.face*data.cpn/100).toFixed(2)}/yr | ${price>data.face?"Premium":"Discount"}=$${Math.abs(price-data.face).toFixed(2)}`);},
+        {N("COMPUTE PRICE",()=>{const price=solveBond(data.face,data.cpn,data.ytm,data.yrs);onCalc();setResult(`Price=$${price.toFixed(2)} | Coupon=$${(data.face*data.cpn/100).toFixed(2)}/yr | ${price>data.face?"Premium":"Discount"}=$${Math.abs(price-data.face).toFixed(2)}`);},
           "bg-green-900 text-green-300 font-extrabold col-span-3")}
         {N("RESET",()=>{setV("0");setStep(0);setData({face:0,cpn:0,ytm:0,yrs:0});setResult(null);},"bg-red-950 text-red-300")}
       </div>
@@ -502,6 +519,14 @@ function BondPhy() {
 
 // ── Main Component ────────────────────────────────────────────────────────────
 export default function FinancialCalculator() {
+  const hasTrackedRef = useRef(false);
+  const handleCalculate = useCallback(() => {
+    if (!hasTrackedRef.current) {
+      hasTrackedRef.current = true;
+      track("calculator_use", { calculator: "cfa" });
+    }
+  }, []);
+
   const [tab, setTab] = useState<Tab>("tvm");
   const [mode, setMode] = useState<Mode>("phy");
 
@@ -513,33 +538,35 @@ export default function FinancialCalculator() {
   ];
 
   return (
-    <div className="space-y-4">
-      {/* Tab bar */}
-      <div className="grid grid-cols-4 gap-2">
-        {tabs.map(t=>(
-          <button key={t.key} onClick={()=>setTab(t.key)}
-            className={`flex flex-col items-center gap-1 py-2 rounded-xl border text-xs font-bold transition-all
-              ${tab===t.key?"bg-teal-600 text-white border-teal-700":"bg-white text-gray-500 border-gray-200 hover:border-teal-300"}`}
-            style={{boxShadow:tab===t.key?"0 3px 0 #0F6E56":"0 3px 0 rgba(0,0,0,0.1)"}}>
-            <span className="text-base">{t.emoji}</span>{t.label}
-          </button>
-        ))}
-      </div>
+    <CalcContext.Provider value={handleCalculate}>
+      <div className="space-y-4">
+        {/* Tab bar */}
+        <div className="grid grid-cols-4 gap-2">
+          {tabs.map(t=>(
+            <button key={t.key} onClick={()=>setTab(t.key)}
+              className={`flex flex-col items-center gap-1 py-2 rounded-xl border text-xs font-bold transition-all
+                ${tab===t.key?"bg-teal-600 text-white border-teal-700":"bg-white text-gray-500 border-gray-200 hover:border-teal-300"}`}
+              style={{boxShadow:tab===t.key?"0 3px 0 #0F6E56":"0 3px 0 rgba(0,0,0,0.1)"}}>
+              <span className="text-base">{t.emoji}</span>{t.label}
+            </button>
+          ))}
+        </div>
 
-      {/* Mode toggle */}
-      <div className="flex gap-2 bg-gray-100 rounded-xl p-1">
-        {([["phy","🖩 Physical"],["form","📋 Form"]] as [Mode,string][]).map(([m,lbl])=>(
-          <button key={m} onClick={()=>setMode(m)}
-            className={`flex-1 py-2 rounded-lg text-xs font-bold transition-all
-              ${mode===m?"bg-white text-gray-900 shadow":"text-gray-500"}`}>{lbl}</button>
-        ))}
-      </div>
+        {/* Mode toggle */}
+        <div className="flex gap-2 bg-gray-100 rounded-xl p-1">
+          {([["phy","🖩 Physical"],["form","📋 Form"]] as [Mode,string][]).map(([m,lbl])=>(
+            <button key={m} onClick={()=>setMode(m)}
+              className={`flex-1 py-2 rounded-lg text-xs font-bold transition-all
+                ${mode===m?"bg-white text-gray-900 shadow":"text-gray-500"}`}>{lbl}</button>
+          ))}
+        </div>
 
-      {/* Calculator panels */}
-      {tab==="tvm"  && (mode==="phy"?<TVMPhy/>:<TVMForm/>)}
-      {tab==="npv"  && (mode==="phy"?<NPVPhy/>:<NPVForm/>)}
-      {tab==="irr"  && (mode==="phy"?<IRRPhy/>:<IRRForm/>)}
-      {tab==="bond" && (mode==="phy"?<BondPhy/>:<BondForm/>)}
-    </div>
+        {/* Calculator panels */}
+        {tab==="tvm"  && (mode==="phy"?<TVMPhy/>:<TVMForm/>)}
+        {tab==="npv"  && (mode==="phy"?<NPVPhy/>:<NPVForm/>)}
+        {tab==="irr"  && (mode==="phy"?<IRRPhy/>:<IRRForm/>)}
+        {tab==="bond" && (mode==="phy"?<BondPhy/>:<BondForm/>)}
+      </div>
+    </CalcContext.Provider>
   );
 }

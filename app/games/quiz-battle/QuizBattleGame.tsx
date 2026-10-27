@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useCallback, useRef } from "react";
 import ShareScore from "@/components/ShareScore";
+import { track } from "@/lib/analytics";
 
 type Category = "all" | "math" | "science" | "history" | "english";
 type Difficulty = "easy" | "medium" | "hard";
@@ -97,6 +98,7 @@ export default function QuizBattleGame() {
   const clearTimer = () => { if (timerRef.current) clearInterval(timerRef.current); };
 
   const startGame = useCallback((c: Category = cat) => {
+    track("game_start", { game: "quiz_battle" });
     clearTimer();
     const list = shuffle(getPool(c)).slice(0, TOTAL);
     setQList(list); setQIdx(0); setScore(0); setStreak(0); setCorrect(0);

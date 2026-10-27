@@ -6,6 +6,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { saveIeltsResult } from "@/lib/firebaseDB";
 import ShareScore from "@/components/ielts/ShareScore";
 import { PASSAGES, Question, Passage } from "@/lib/ielts/readingData";
+import { track } from "@/lib/analytics";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 interface ReadingQ {
@@ -382,6 +383,7 @@ function IELTSReadingTest({
     const bandVal = toBand(Math.round((scoreVal / sessionQs.length) * 40));
 
     // Save to Firebase DB
+    track("ielts_test_complete", { section: "reading", score: bandVal });
     saveIeltsResult({
       uid: user?.uid,
       displayName: user?.displayName ?? "",
@@ -1319,6 +1321,7 @@ export default function ReadingHub({ localPassages = [] }: { localPassages?: Pas
         timerMinutes={activeTestConfig.timerMinutes}
         onBack={() => setActiveTestConfig(null)}
         onRetry={() => {
+          track("ielts_test_start", { section: "reading" });
           setSessionKey(k => k + 1);
           setActiveTestConfig(null);
           setTimeout(() => {
@@ -1542,6 +1545,7 @@ export default function ReadingHub({ localPassages = [] }: { localPassages?: Pas
           startNum={modalData.startNum}
           onClose={() => setModalData(null)}
           onStart={config => {
+            track("ielts_test_start", { section: "reading" });
             setModalData(null);
             setActiveTestConfig(config);
           }}

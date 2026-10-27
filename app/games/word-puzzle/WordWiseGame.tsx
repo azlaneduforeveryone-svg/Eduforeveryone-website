@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useCallback, useRef } from "react";
 import ShareScore from "@/components/ShareScore";
+import { track } from "@/lib/analytics";
 
 type Category = "all" | "math" | "science" | "english";
 type CellState = "correct" | "present" | "absent" | "revealed";
@@ -1915,10 +1916,14 @@ export default function WordWiseGame(){
   const [shake,setShake]=useState(false);
   const [showHow,setShowHow]=useState(false);
   const inputRef=useRef<HTMLInputElement>(null);
+  const hasTrackedInitialRef=useRef(false);
 
   const word=entry?.w.toUpperCase()??"";
 
-  const newGame=useCallback((cat:Category=category,str:number=streak)=>{
+  const newGame=useCallback((cat:Category=category,str:number=streak,trackAction=false)=>{
+    if(trackAction){
+      track("game_start",{game:"word_puzzle"});
+    }
     const pool=cat==="all"?getAllWords():WORDS[cat]??getAllWords();
     const pick=pool[Math.floor(Math.random()*pool.length)];
     const diff=getDiff(str);
@@ -1933,7 +1938,14 @@ export default function WordWiseGame(){
     setTimeout(()=>inputRef.current?.focus(),100);
   },[category,streak]);
 
-  useEffect(()=>{ newGame("all",0); setShowHow(true); },[]);
+  useEffect(()=>{
+    newGame("all",0);
+    setShowHow(true);
+    if(!hasTrackedInitialRef.current){
+      hasTrackedInitialRef.current=true;
+      track("game_start",{game:"word_puzzle"});
+    }
+  },[]);
 
   const showMsg=(msg:string)=>{setMessage(msg);setTimeout(()=>setMessage(""),2500);};
 
@@ -2026,13 +2038,13 @@ export default function WordWiseGame(){
         {/* Category selector */}
         <div className="flex gap-2 overflow-x-auto pb-1">
           {(["all","math","science","english"] as Category[]).map(cat=>(
-            <button key={cat} onClick={()=>{setCategory(cat);newGame(cat,streak);}}
+            <button key={cat} onClick={()=>{setCategory(cat);newGame(cat,streak,true);}}
               className={`px-3 py-1.5 rounded-full text-xs font-bold border whitespace-nowrap transition-all
                 ${category===cat?"bg-teal-600 text-white border-teal-700":"border-gray-200 text-gray-500 hover:border-teal-300"}`}>
               {cat==="all"?"🌐 All":cat==="math"?"🧮 Math":cat==="science"?"🔬 Science":"📝 English"}
             </button>
           ))}
-          <button onClick={()=>newGame(category,streak)} className="px-3 py-1.5 rounded-full text-xs font-bold border border-gray-200 text-gray-500 hover:border-gray-400 whitespace-nowrap">↻ New</button>
+          <button onClick={()=>newGame(category,streak,true)} className="px-3 py-1.5 rounded-full text-xs font-bold border border-gray-200 text-gray-500 hover:border-gray-400 whitespace-nowrap">↻ New</button>
         </div>
 
         {/* ── ACTIVE INPUT ROW ── */}
@@ -2103,7 +2115,7 @@ export default function WordWiseGame(){
               />
             )}
 
-            <button onClick={()=>newGame(category,gameWon?streak:0)}
+            <button onClick={()=>newGame(category,gameWon?streak:0,true)}
               className={`w-full py-3 rounded-xl font-bold text-base text-white ${gameWon?"bg-teal-600":"bg-gray-700"}`}
               style={{boxShadow:gameWon?"0 4px 0 #0F6E56":"0 4px 0 #333"}}>
               {gameWon?`🎉 Next Word → (${DIFF_INFO[getDiff(streak)].label})`:"🔄 Try Another Word"}

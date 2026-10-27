@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import type { Passage, Question } from "@/lib/ielts/readingData";
+import { track } from "@/lib/analytics";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -143,8 +144,21 @@ export default function ReadingTest({ passage }: Props) {
     setPhase("test");
   }, [passage]);
 
+  const hasStartedRef = useRef(false);
+
   // Init
-  useEffect(() => { startSession(); }, [startSession]);
+  useEffect(() => {
+    if (!hasStartedRef.current) {
+      hasStartedRef.current = true;
+      track("ielts_test_start", { section: "reading" });
+    }
+    startSession();
+  }, [startSession]);
+
+  const handleNextSession = useCallback(() => {
+    track("ielts_test_start", { section: "reading" });
+    startSession();
+  }, [startSession]);
 
   // Timer
   useEffect(() => {
@@ -165,6 +179,8 @@ export default function ReadingTest({ passage }: Props) {
     setSessionQs(prev => {
       const s = prev.reduce((acc, sq) => acc + (gradeQuestion(sq, answers[sq.id] ?? "") ? 1 : 0), 0);
       setScore(s);
+      const estBand = parseFloat(BAND_MAP[s] ?? "4.0");
+      track("ielts_test_complete", { section: "reading", score: estBand });
 
       // Save seen IDs
       const newSeen = [...new Set([...seenRef.current, ...prev.map(q => q.id)])];
@@ -213,7 +229,7 @@ export default function ReadingTest({ passage }: Props) {
           <p className="text-2xl font-bold text-gray-700 mb-1">Estimated Band: {band}</p>
           <p className="text-gray-500 text-sm mb-6">{pct}% correct · 10-question practice session</p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <button onClick={startSession} className="bg-indigo-600 text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-indigo-700 transition-colors">
+            <button onClick={handleNextSession} className="bg-indigo-600 text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-indigo-700 transition-colors">
               🔀 Next 10 Questions
             </button>
             <Link href="/ielts/reading" className="border border-gray-200 text-gray-600 px-6 py-2.5 rounded-xl font-bold text-sm hover:border-indigo-300 hover:text-indigo-600 transition-colors">

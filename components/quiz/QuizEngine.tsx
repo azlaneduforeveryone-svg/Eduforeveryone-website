@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState, useEffect, useCallback, useMemo } from "react";
+import React, { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import type { QuizQuestion } from "@/types";
 import type { EncouragementConfig } from "@/lib/games/types";
 import { useBestScore } from "@/lib/games/useBestScore";
 import AnswerFeedback from "./AnswerFeedback";
 import ShareScore from "@/components/ShareScore";
+import { track } from "@/lib/analytics";
 
 export interface QuizEngineProps<T extends QuizQuestion = QuizQuestion> {
   questions: T[];
@@ -53,6 +54,14 @@ function shuffleArray<K>(array: K[]): K[] {
   return arr;
 }
 
+function getGameId(name?: string): "word_meanings" | "phrase_upgrade" | "word_upgrade" | null {
+  if (!name) return null;
+  if (name.includes("Phrase Upgrade")) return "phrase_upgrade";
+  if (name.includes("Word Upgrade")) return "word_upgrade";
+  if (name.includes("Quran Word")) return "word_meanings";
+  return null;
+}
+
 export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
   questions,
   sampleCount,
@@ -69,6 +78,7 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
 }: QuizEngineProps<T>) {
   // Best score hook (safe localStorage with try/catch)
   const { bestScore, updateBestScore } = useBestScore(storageKey);
+  const hasStartedRef = useRef(false);
 
   // Round preparation: sample questions & optionally shuffle options
   const prepareRound = useCallback((): PreparedQuestion<T>[] => {
@@ -128,15 +138,10 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
     setStreak(0);
 
     // Track GA4 game_start
-    if (
-      gameName &&
-      typeof window !== "undefined" &&
-      typeof (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag === "function" &&
-      process.env.NODE_ENV === "production"
-    ) {
-      (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", "game_start", {
-        game_name: gameName,
-      });
+    const gameId = getGameId(gameName);
+    if (gameId && !hasStartedRef.current) {
+      hasStartedRef.current = true;
+      track("game_start", { game: gameId });
     }
   }, [prepareRound, gameName]);
 
@@ -206,15 +211,9 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
     setFinished(false);
     setStreak(0);
 
-    if (
-      gameName &&
-      typeof window !== "undefined" &&
-      typeof (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag === "function" &&
-      process.env.NODE_ENV === "production"
-    ) {
-      (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", "game_start", {
-        game_name: gameName,
-      });
+    const gameId = getGameId(gameName);
+    if (gameId) {
+      track("game_start", { game: gameId });
     }
   }, [prepareRound, gameName]);
 

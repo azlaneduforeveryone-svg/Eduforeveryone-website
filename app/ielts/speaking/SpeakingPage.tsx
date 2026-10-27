@@ -5,6 +5,7 @@ import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognitio
 import { SPEAKING_TOPICS as TOPICS, type SpeakingTopic as Topic } from "@/lib/ielts/ielts-speaking-data";
 import { useAuth } from "@/contexts/AuthContext";
 import { saveIeltsResult } from "@/lib/firebaseDB";
+import { track } from "@/lib/analytics";
 
 
 // ---------- Helper Functions for Band Score Display ----------
@@ -142,6 +143,7 @@ export default function SpeakingPage() {
   }, [liveTranscript, isRecording]);
 
   const handleStartRecording = () => {
+    track("ielts_test_start", { section: "speaking" });
     resetTranscript();
     setTranscript("");
     setSubmitted(false);
@@ -193,12 +195,14 @@ export default function SpeakingPage() {
       if (!res.ok) {
         setAiError(data.error || "Grading failed. Please try again.");
       } else {
-        setAiResult(data as IELTSResult);
+        const result = data as IELTSResult;
+        setAiResult(result);
+        track("ielts_test_complete", { section: "speaking", score: result.overall });
         saveIeltsResult({
           uid: user?.uid,
           displayName: user?.displayName ?? "",
           skill: "speaking",
-          band: (data as IELTSResult).overall,
+          band: result.overall,
           testId: activeTopic?.id,
           source: "practice",
         });

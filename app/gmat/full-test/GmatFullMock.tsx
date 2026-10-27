@@ -19,6 +19,7 @@ import { GMAT_FORM, getBank } from "@/lib/gmat/form";
 import { buildFullMock, estimateTotal } from "@/lib/gmat/engine";
 import { saveGmatResult } from "@/lib/firebaseDB";
 import type { GmatQuestion, GmatSection } from "@/lib/gmat/types";
+import { track } from "@/lib/analytics";
 
 type Phase = "start" | "section" | "break" | "result";
 
@@ -44,6 +45,7 @@ export default function GmatFullMock() {
   const [estimatedTotal, setEstimatedTotal] = useState<number>(0);
 
   const begin = useCallback(() => {
+    track("gmat_practice_start", { section: "mock" });
     setMock(buildFullMock(GMAT_FORM.sections));
     setResults([]);
     setStep(0);
@@ -59,6 +61,7 @@ export default function GmatFullMock() {
           .map((s) => all.find((x) => x.score.section === s))
           .filter((x): x is SectionRunResult => !!x);
         const total = estimateTotal(ordered.map((x) => x.score.estimatedSectionScore));
+        track("gmat_practice_complete", { section: "mock", score: total });
         setEstimatedTotal(total);
         saveGmatResult(
           {

@@ -17,6 +17,7 @@ import Task1Figure from "@/components/ielts/Task1Figure";
 import { getModelAnswerById } from "@/lib/ielts/ielts-writing-model-answers";
 import { getGtModelAnswerById } from "@/lib/ielts/ielts-gt-task1-model-answers";
 import { getTask2ModelAnswerById } from "@/lib/ielts/ielts-task2-model-answers";
+import { track } from "@/lib/analytics";
 
 interface IELTSResult {
   overall: number;
@@ -205,6 +206,7 @@ export default function WritingPage() {
   }, [PROMPTS]);
 
   function selectPrompt(p: Prompt) {
+    track("ielts_test_start", { section: "writing" });
     setSelected(p);
     setText("");
     setSubmitted(false);
@@ -216,6 +218,7 @@ export default function WritingPage() {
 
   async function handleSubmit() {
     if (!selected) return;
+    track("ai_feedback_submit", { task: selected.task === 1 ? "task1" : "task2" });
     timer.pause();
     setSubmitted(true);
     setAiResult(null);
@@ -239,12 +242,14 @@ export default function WritingPage() {
       if (!res.ok) {
         setAiError(data.error || "Scoring failed. Please try again.");
       } else {
-        setAiResult(data as IELTSResult);
+        const result = data as IELTSResult;
+        setAiResult(result);
+        track("ielts_test_complete", { section: "writing", score: result.overall });
         saveIeltsResult({
           uid: user?.uid,
           displayName: user?.displayName ?? "",
           skill: "writing",
-          band: (data as IELTSResult).overall,
+          band: result.overall,
           testId: selected?.id,
           source: "practice",
         });

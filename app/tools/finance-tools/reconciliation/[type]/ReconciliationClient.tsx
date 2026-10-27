@@ -18,6 +18,7 @@
 import { useState, useCallback, useRef, DragEvent } from "react";
 import Link from "next/link";
 import * as XLSX from "xlsx";
+import { track } from "@/lib/analytics";
 import { parseUpload } from "../../../../../lib/bank-reconciliation/parseFile";
 import { guessMapping } from "../../../../../lib/bank-reconciliation/mapping";
 import {
@@ -640,6 +641,7 @@ export default function ReconciliationClient({ rt }: { rt: ReconType }) {
 
   const handleFile = useCallback(async (which: "bank" | "book", file: File | null) => {
     if (!file) return;
+    track("recon_file_upload", { type: rt.id });
     setError(null);
 
     const pdf = isPdfName(file.name);
@@ -711,6 +713,7 @@ export default function ReconciliationClient({ rt }: { rt: ReconType }) {
         throw new Error(body.error || `Request failed (${res.status})`);
       }
       const blob = await res.blob();
+      track("recon_run_complete", { type: rt.id });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;

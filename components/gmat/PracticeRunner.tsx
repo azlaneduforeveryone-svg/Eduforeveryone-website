@@ -9,7 +9,7 @@
 // contain any question literals.
 // ---------------------------------------------------------------------------
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import { useAuth } from "@/contexts/AuthContext";
 import SectionRunner from "./SectionRunner";
@@ -18,6 +18,7 @@ import GmatResults from "./GmatResults";
 import { sampleSection, estimateTotal } from "@/lib/gmat/engine";
 import { saveGmatResult } from "@/lib/firebaseDB";
 import type { GmatQuestion, GmatSectionBank } from "@/lib/gmat/types";
+import { track } from "@/lib/analytics";
 
 const PRACTICE_SIZE = 10;
 const PRACTICE_MINUTES = 22; // ~ real-exam ratio for 10 questions
@@ -27,9 +28,11 @@ interface Props { bank: GmatSectionBank; }
 export default function PracticeRunner({ bank }: Props) {
   const { user } = useAuth();
   const section = bank.id;
+  const mappedSection = (section === "data-insights" ? "data_insights" : section) as "quant" | "verbal" | "data_insights";
   const [phase, setPhase] = useState<"loading" | "test" | "result">("loading");
   const [questions, setQuestions] = useState<GmatQuestion[]>([]);
   const [result, setResult] = useState<SectionRunResult | null>(null);
+  const hasStartedRef = useRef(false);
 
   const start = useCallback(() => {
     setQuestions(sampleSection(bank, PRACTICE_SIZE));
@@ -37,9 +40,24 @@ export default function PracticeRunner({ bank }: Props) {
     setPhase("test");
   }, [bank]);
 
-  useEffect(() => { start(); }, [start]);
+  useEffect(() => {
+    if (!hasStartedRef.current) {
+      hasStartedRef.current = true;
+      track("gmat_practice_start", { section: mappedSection });
+    }
+    start();
+  }, [start, mappedSection]);
+
+  const handleRetry = useCallback(() => {
+    track("gmat_practice_start", { section: mappedSection });
+    start();
+  }, [start, mappedSection]);
 
   const handleFinish = useCallback((r: SectionRunResult) => {
+    track("gmat_practice_complete", {
+      section: mappedSection,
+      score: r.score.estimatedSectionScore,
+    });
     setResult(r);
     setPhase("result");
     saveGmatResult(
@@ -51,7 +69,7 @@ export default function PracticeRunner({ bank }: Props) {
       },
       user?.uid
     );
-  }, [section, user?.uid]);
+  }, [section, mappedSection, user?.uid]);
 
   if (phase === "loading") {
     return <div className="flex items-center justify-center min-h-[50vh] text-gray-400 text-sm">Loading questions…</div>;
@@ -61,7 +79,7 @@ export default function PracticeRunner({ bank }: Props) {
     return (
       <GmatResults
         results={[result]}
-        onRetry={start}
+        onRetry={handleRetry}
         retryLabel="Next 10 Questions"
         homeHref="/gmat"
         homeLabel="← GMAT Hub"
