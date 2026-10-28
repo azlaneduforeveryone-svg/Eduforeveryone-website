@@ -1,0 +1,69 @@
+Bank Reconciliation Sample Expected Output
+===========================================
+Period: June 2026
+
+1. BALANCES
+-----------
+Bank Statement:
+  Opening Balance: 10,000.00
+  Net Movement: 4,105.00
+  Closing Balance: 14,105.00
+  Check (Opening + Net Movement - Closing): 0.00
+
+Cash Book:
+  Opening Balance: 10,000.00
+  Net Movement: 4,190.00
+  Closing Balance: 14,190.00
+  Check (Opening + Net Movement - Closing): 0.00
+
+2. RECONCILING ITEMS
+--------------------
+1. Outstanding Cheque 1:
+   Date: 2026-06-27
+   Reference: CHQ105
+   Description: Delta Supplies stationery
+   Amount: -420.00
+   Status: Recorded in Cash Book, not yet presented to or cleared by bank
+
+2. Outstanding Cheque 2:
+   Date: 2026-06-28
+   Reference: CHQ106
+   Description: Zenith Hardware equipment
+   Amount: -880.00
+   Status: Recorded in Cash Book, not yet presented to or cleared by bank
+
+3. Deposit in Transit:
+   Date: 2026-06-30
+   Reference: DEP104
+   Description: Weekend cash receipts
+   Amount: +1,500.00
+   Status: Recorded in Cash Book on month-end, not yet credited by bank
+
+4. Bank Charge:
+   Date: 2026-06-30
+   Reference: SC601
+   Description: Monthly account service fee
+   Amount: -45.00
+   Status: Charged by bank on statement, not yet recorded in Cash Book
+
+5. Amount Error:
+   Date: 2026-06-25 (Book) / 2026-06-26 (Bank)
+   Reference: CHQ107
+   Description: Prime Logistics freight
+   Cash Book Amount: -540.00
+   Bank Statement Amount: -450.00
+   Variance: -90.00 (Cash Book overstated payment by 90.00; both sides remain unmatched)
+
+3. RECONCILIATION STATEMENT
+---------------------------
+Balance as per Bank Statement: 14,105.00
+Add: Deposits in transit (recorded in books, not yet on the bank statement): 1,500.00
+Less: Outstanding payments (recorded in books, not yet cleared by the bank): -1,840.00
+Adjusted Bank Balance: 13,765.00
+
+Balance as per Cash Book: 14,190.00
+Add: Bank credits not yet recorded in the books (e.g. interest, direct deposits): 0.00
+Less: Bank charges not yet recorded in the books (e.g. fees, standing orders): -495.00
+Adjusted Cash Book Balance: 13,765.00
+
+Difference (should be zero): 0.00

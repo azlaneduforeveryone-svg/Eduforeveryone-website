@@ -630,9 +630,43 @@ export default function ReconciliationClient({ rt }: { rt: ReconType }) {
   const [periodLabel, setPeriodLabel] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  // Which balance boxes were auto-filled from a statement (for the "confirm"
-  // hint). Cleared for a field as soon as the user edits it by hand.
   const [autoFilled, setAutoFilled] = useState<Set<string>>(new Set());
+  const [loadingSample, setLoadingSample] = useState(false);
+
+  const handleLoadSample = useCallback(async () => {
+    setLoadingSample(true);
+    setError(null);
+    try {
+      const [bankRes, bookRes] = await Promise.all([
+        fetch("/samples/sample-bank-statement.csv"),
+        fetch("/samples/sample-cash-book.csv"),
+      ]);
+      if (!bankRes.ok || !bookRes.ok) {
+        throw new Error("Failed to load sample data files.");
+      }
+      const [bankBlob, bookBlob] = await Promise.all([bankRes.blob(), bookRes.blob()]);
+      const bankFile = new File([bankBlob], "sample-bank-statement.csv", { type: "text/csv" });
+      const bookFile = new File([bookBlob], "sample-cash-book.csv", { type: "text/csv" });
+
+      const [bankPatch, bookPatch] = await Promise.all([
+        loadFile(bankFile),
+        loadFile(bookFile),
+      ]);
+
+      setBank({ ...EMPTY_SLOT, ...bankPatch });
+      setBook({ ...EMPTY_SLOT, ...bookPatch });
+      setBankOpening("10000");
+      setBankClosing("14105");
+      setBookOpening("10000");
+      setBookClosing("14190");
+      setPeriodLabel("June 2026");
+      setAutoFilled(new Set(["bankOpening", "bankClosing", "bookOpening", "bookClosing"]));
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to load sample data.");
+    } finally {
+      setLoadingSample(false);
+    }
+  }, []);
 
   const balancesReady =
     bankOpening !== "" && bankClosing !== "" && bookOpening !== "" && bookClosing !== "" &&
@@ -736,6 +770,25 @@ export default function ReconciliationClient({ rt }: { rt: ReconType }) {
       </p>
 
       <TypeSelector current={rt} />
+
+      {rt.id === "bank" && (
+        <div className="mb-8 flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl border border-teal-200 bg-teal-50/70 shadow-sm">
+          <div>
+            <p className="text-sm font-bold text-teal-950">Want to see a working example first?</p>
+            <p className="text-xs text-teal-800">
+              Load our sample bank statement and cash book (June 2026) with pre-filled balances and reconciling differences.
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={handleLoadSample}
+            disabled={loadingSample || busy}
+            className="px-4 py-2.5 rounded-lg bg-teal-600 text-white text-xs font-semibold hover:bg-teal-700 transition shadow-sm cursor-pointer disabled:opacity-50 whitespace-nowrap"
+          >
+            {loadingSample ? "Loading sample…" : "Try with sample data"}
+          </button>
+        </div>
+      )}
 
       {/* ---------------- How to use this ---------------- */}
       <div className="rounded-xl border border-gray-100 bg-gray-50 p-5 mb-8">
