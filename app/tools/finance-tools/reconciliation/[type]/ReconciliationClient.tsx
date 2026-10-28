@@ -658,7 +658,7 @@ export default function ReconciliationClient({ rt }: { rt: ReconType }) {
       setBankOpening("10000");
       setBankClosing("14105");
       setBookOpening("10000");
-      setBookClosing("14190");
+      setBookClosing("14350");
       setPeriodLabel("June 2026");
       setAutoFilled(new Set(["bankOpening", "bankClosing", "bookOpening", "bookClosing"]));
     } catch (err) {

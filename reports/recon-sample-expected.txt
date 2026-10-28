@@ -12,8 +12,8 @@ Bank Statement:
 
 Cash Book:
   Opening Balance: 10,000.00
-  Net Movement: 4,190.00
-  Closing Balance: 14,190.00
+  Net Movement: 4,350.00
+  Closing Balance: 14,350.00
   Check (Opening + Net Movement - Closing): 0.00
 
 2. RECONCILING ITEMS
@@ -32,6 +32,8 @@ Cash Book:
    Amount: -880.00
    Status: Recorded in Cash Book, not yet presented to or cleared by bank
 
+Total Outstanding Cheques: -1,300.00 (CHQ105 420.00 + CHQ106 880.00)
+
 3. Deposit in Transit:
    Date: 2026-06-30
    Reference: DEP104
@@ -46,24 +48,16 @@ Cash Book:
    Amount: -45.00
    Status: Charged by bank on statement, not yet recorded in Cash Book
 
-5. Amount Error:
-   Date: 2026-06-25 (Book) / 2026-06-26 (Bank)
-   Reference: CHQ107
-   Description: Prime Logistics freight
-   Cash Book Amount: -540.00
-   Bank Statement Amount: -450.00
-   Variance: -90.00 (Cash Book overstated payment by 90.00; both sides remain unmatched)
-
 3. RECONCILIATION STATEMENT
 ---------------------------
 Balance as per Bank Statement: 14,105.00
 Add: Deposits in transit (recorded in books, not yet on the bank statement): 1,500.00
-Less: Outstanding payments (recorded in books, not yet cleared by the bank): -1,840.00
-Adjusted Bank Balance: 13,765.00
+Less: Outstanding payments (recorded in books, not yet cleared by the bank): -1,300.00
+Adjusted Bank Balance: 14,305.00
 
-Balance as per Cash Book: 14,190.00
+Balance as per Cash Book: 14,350.00
 Add: Bank credits not yet recorded in the books (e.g. interest, direct deposits): 0.00
-Less: Bank charges not yet recorded in the books (e.g. fees, standing orders): -495.00
-Adjusted Cash Book Balance: 13,765.00
+Less: Bank charges not yet recorded in the books (e.g. fees, standing orders): -45.00
+Adjusted Cash Book Balance: 14,305.00
 
 Difference (should be zero): 0.00
