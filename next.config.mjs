@@ -7,6 +7,15 @@ const nextConfig = {
       { protocol: "https", hostname: "firebasestorage.googleapis.com" },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/quran/color-reader",
+        destination: "/quran",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
