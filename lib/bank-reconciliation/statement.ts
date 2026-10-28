@@ -8,6 +8,7 @@ const FONT = "Arial";
 const STATUS_FILL: Record<string, string> = {
   Matched: "C6EFCE",
   "Split Match (verify)": "F8CBAD",
+  "Amount mismatch": "FFF2CC",
   Unmatched: "FFC7CE",
 };
 const HEADER_FILL = "305496";
@@ -44,7 +45,12 @@ function addZeroCheckFormatting(ws: ExcelJS.Worksheet, cellRef: string) {
   });
 }
 
-function writeDetailSheet(wb: ExcelJS.Workbook, name: string, txns: MatchedTxn[]) {
+function writeDetailSheet(
+  wb: ExcelJS.Workbook,
+  name: string,
+  txns: MatchedTxn[],
+  side: "bank" | "book"
+) {
   const ws = wb.addWorksheet(name);
   ws.columns = [
     { header: "Date", key: "date", width: 14 },
@@ -54,8 +60,10 @@ function writeDetailSheet(wb: ExcelJS.Workbook, name: string, txns: MatchedTxn[]
     { header: "Match_Status", key: "status", width: 22 },
     { header: "Matched_With", key: "matchedWith", width: 45 },
     { header: "Seq_Code", key: "seqCode", width: 12 },
+    { header: "Remarks", key: "remarks", width: 55 },
   ];
   for (const t of txns) {
+    const remark = t.status === "Amount mismatch" ? remarkFor(t, side) : "";
     const row = ws.addRow({
       date: t.date,
       description: t.description,
@@ -64,17 +72,18 @@ function writeDetailSheet(wb: ExcelJS.Workbook, name: string, txns: MatchedTxn[]
       status: t.status,
       matchedWith: t.matchedWith,
       seqCode: t.seqCode,
+      remarks: remark,
     });
     row.getCell("date").numFmt = "yyyy-mm-dd";
     row.getCell("amount").numFmt = "#,##0.00;(#,##0.00)";
     const fill = STATUS_FILL[t.status] ?? STATUS_FILL["Split Match (verify)"];
-    for (let c = 1; c <= 7; c++) {
+    for (let c = 1; c <= 8; c++) {
       row.getCell(c).fill = { type: "pattern", pattern: "solid", fgColor: { argb: `FF${fill}` } };
       row.getCell(c).font = { name: FONT, size: 10 };
     }
   }
-  styleHeader(ws, 7);
-  ws.autoFilter = { from: "A1", to: "G1" };
+  styleHeader(ws, 8);
+  ws.autoFilter = { from: "A1", to: "H1" };
   return ws;
 }
 
@@ -211,8 +220,8 @@ export async function buildReconciliationWorkbook(
   // detail sheets added after, so the summary tab stays first; formulas
   // below reference them by name, which works regardless of add order
   writeSideBySideSheet(wb, bookTxns, bankTxns, rt);
-  writeDetailSheet(wb, rt.theirSheetName, bankTxns);
-  writeDetailSheet(wb, rt.ourSheetName, bookTxns);
+  writeDetailSheet(wb, rt.theirSheetName, bankTxns, "bank");
+  writeDetailSheet(wb, rt.ourSheetName, bookTxns, "book");
 
   const bold = { name: FONT, bold: true };
   const normal = { name: FONT };
@@ -264,11 +273,17 @@ export async function buildReconciliationWorkbook(
   addZeroCheckFormatting(summary, `B${r}`);
   r += 2;
 
+  const sumUnmatchedFormula = (sheetName: string, signCond: ">0" | "<0") => {
+    const unmatched = `SUMIFS('${sheetName}'!D:D,'${sheetName}'!E:E,"Unmatched",'${sheetName}'!D:D,"${signCond}")`;
+    if (rt.id === "bank") return unmatched;
+    return `${unmatched}+SUMIFS('${sheetName}'!D:D,'${sheetName}'!E:E,"Amount mismatch",'${sheetName}'!D:D,"${signCond}")`;
+  };
+
   summary.getCell(`A${r}`).value = rt.statement.oursOnlyPositive;
   summary.getCell(`A${r}`).font = normal;
   const oursPosRow = r;
   summary.getCell(`B${r}`).value = {
-    formula: `SUMIFS('${rt.ourSheetName}'!D:D,'${rt.ourSheetName}'!E:E,"Unmatched",'${rt.ourSheetName}'!D:D,">0")`,
+    formula: sumUnmatchedFormula(rt.ourSheetName, ">0"),
   };
   summary.getCell(`B${r}`).numFmt = moneyFmt;
   r++;
@@ -277,7 +292,7 @@ export async function buildReconciliationWorkbook(
   summary.getCell(`A${r}`).font = normal;
   const oursNegRow = r;
   summary.getCell(`B${r}`).value = {
-    formula: `SUMIFS('${rt.ourSheetName}'!D:D,'${rt.ourSheetName}'!E:E,"Unmatched",'${rt.ourSheetName}'!D:D,"<0")`,
+    formula: sumUnmatchedFormula(rt.ourSheetName, "<0"),
   };
   summary.getCell(`B${r}`).numFmt = moneyFmt;
   r++;
@@ -331,7 +346,7 @@ export async function buildReconciliationWorkbook(
   summary.getCell(`A${r}`).font = normal;
   const theirsPosRow = r;
   summary.getCell(`B${r}`).value = {
-    formula: `SUMIFS('${rt.theirSheetName}'!D:D,'${rt.theirSheetName}'!E:E,"Unmatched",'${rt.theirSheetName}'!D:D,">0")`,
+    formula: sumUnmatchedFormula(rt.theirSheetName, ">0"),
   };
   summary.getCell(`B${r}`).numFmt = moneyFmt;
   r++;
@@ -340,16 +355,32 @@ export async function buildReconciliationWorkbook(
   summary.getCell(`A${r}`).font = normal;
   const theirsNegRow = r;
   summary.getCell(`B${r}`).value = {
-    formula: `SUMIFS('${rt.theirSheetName}'!D:D,'${rt.theirSheetName}'!E:E,"Unmatched",'${rt.theirSheetName}'!D:D,"<0")`,
+    formula: sumUnmatchedFormula(rt.theirSheetName, "<0"),
   };
   summary.getCell(`B${r}`).numFmt = moneyFmt;
   r++;
+
+  let bookErrorRow = 0;
+  if (rt.id === "bank") {
+    summary.getCell(`A${r}`).value =
+      "Add/Less: Errors in cash book (amount recorded differs from bank)";
+    summary.getCell(`A${r}`).font = normal;
+    bookErrorRow = r;
+    summary.getCell(`B${r}`).value = {
+      formula: `SUMIF('${rt.compareSheetName}'!F:F,"MM-*",'${rt.compareSheetName}'!E:E)`,
+    };
+    summary.getCell(`B${r}`).numFmt = moneyFmt;
+    r++;
+  }
 
   summary.getCell(`A${r}`).value = rt.statement.adjustedOurs;
   summary.getCell(`A${r}`).font = bold;
   const adjBookRow = r;
   summary.getCell(`B${r}`).value = {
-    formula: `B${bookBalRow}+B${theirsPosRow}+B${theirsNegRow}`,
+    formula:
+      rt.id === "bank"
+        ? `B${bookBalRow}+B${theirsPosRow}+B${theirsNegRow}+B${bookErrorRow}`
+        : `B${bookBalRow}+B${theirsPosRow}+B${theirsNegRow}`,
   };
   summary.getCell(`B${r}`).font = bold;
   summary.getCell(`B${r}`).numFmt = moneyFmt;
@@ -369,12 +400,16 @@ export async function buildReconciliationWorkbook(
     summary.getCell(`A${r}`).font = NOTE_FONT;
     r += 1;
   }
-  r += 1;
-
-  summary.getCell(`A${r}`).value =
-    "Split Match (verify) items count as reconciled above but are worth a manual look - see the detail sheets.";
-  summary.getCell(`A${r}`).font = NOTE_FONT;
-  r += 1;
+  const hasSplitMatch =
+    bankTxns.some((t) => t.status === "Split Match (verify)") ||
+    bookTxns.some((t) => t.status === "Split Match (verify)");
+  if (hasSplitMatch) {
+    r += 1;
+    summary.getCell(`A${r}`).value =
+      "Split Match (verify) items count as reconciled above but are worth a manual look - see the detail sheets.";
+    summary.getCell(`A${r}`).font = NOTE_FONT;
+    r += 1;
+  }
 
   const excludedNotes: string[] = [];
   for (const row of inputs.excludedBankOpeningBalanceRows ?? []) {
