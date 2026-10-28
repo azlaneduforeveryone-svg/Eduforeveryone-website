@@ -25,7 +25,6 @@ export default function QuizPage() {
   return (
     <div className="efe-page">
       <PageHeader
-        eyebrow="Interactive Practice"
         title="Quizzes"
         description="Test what you know with our interactive quizzes."
       />

@@ -220,7 +220,6 @@ export default function IELTSPage() {
         {/* ── WHY IELTS ─────────────────────────────────────────────────── */}
         <section>
           <SectionHeader
-            eyebrow="Global Recognition"
             title="Why IELTS Matters"
             description="The International English Language Testing System — the world's most trusted high-stakes English test, recognised by over 12,000 organisations globally."
           />
@@ -261,7 +260,6 @@ export default function IELTSPage() {
         {/* ── TEST YOURSELF ─────────────────────────────────────────────── */}
         <section>
           <SectionHeader
-            eyebrow="Full Simulation"
             title="Take a Full IELTS Mock Test"
             description="Academic or General Training — real exam conditions, instant band estimates."
           />
@@ -325,7 +323,6 @@ export default function IELTSPage() {
         {/* ── EXAM FORMAT (Skill accent on icons & chips only per Plan Change #4) ── */}
         <section>
           <SectionHeader
-            eyebrow="4 Modules"
             title="IELTS Exam Format"
             description="Four modules. Four skills. One complete language assessment."
           />
@@ -356,7 +353,6 @@ export default function IELTSPage() {
         {/* ── BAND SCORES (Semantic band colours preserved per Plan Change #3) ── */}
         <section>
           <SectionHeader
-            eyebrow="Scoring"
             title="The IELTS Band Score System (0–9)"
             description="Scores are reported on a 9-band scale. You receive individual module scores and an overall average."
           />
@@ -396,7 +392,6 @@ export default function IELTSPage() {
         {/* ── MARKING CRITERIA ─────────────────────────────────────────── */}
         <section>
           <SectionHeader
-            eyebrow="Assessment"
             title="How You Are Marked"
             description="Understanding the official criteria is the fastest route to a higher band score."
           />
@@ -461,7 +456,6 @@ export default function IELTSPage() {
         {/* ── EXAM TIMELINE ────────────────────────────────────────────── */}
         <section>
           <SectionHeader
-            eyebrow="Process"
             title="Step-by-Step Exam Timeline"
             description="From registration to results — your proven pathway."
           />
@@ -516,7 +510,6 @@ export default function IELTSPage() {
         {/* ── STRATEGIES ───────────────────────────────────────────────── */}
         <section>
           <SectionHeader
-            eyebrow="Tips & Roadmap"
             title="Expert Preparation Strategies"
             description="Proven tips for every module — from Band 5 to Band 8+."
           />
@@ -563,7 +556,6 @@ export default function IELTSPage() {
         {/* ── FREE TOOLS ───────────────────────────────────────────────── */}
         <section>
           <SectionHeader
-            eyebrow="Resources"
             title="Free Study Companions"
             description="Everything you need to score higher — completely free, no signup required."
           />
@@ -599,7 +591,6 @@ export default function IELTSPage() {
         {/* ── FAQ ──────────────────────────────────────────────────────── */}
         <section>
           <SectionHeader
-            eyebrow="FAQ"
             title="Frequently Asked Questions"
           />
           <div className="space-y-3">

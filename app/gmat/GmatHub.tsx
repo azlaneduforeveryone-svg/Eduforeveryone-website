@@ -70,22 +70,19 @@ export default function GmatHub() {
         {/* Sections */}
         <section>
           <SectionHeader
-            eyebrow="3 Focus Modules"
             title="Practice by Section"
             description="10 fresh questions in 22 minutes each session — the real-exam time-per-question ratio — with no-repeat rotation so you rarely see the same set twice. Sit the full mock below for true section lengths."
           />
           <div className="grid sm:grid-cols-3 gap-5">
             {SECTIONS.map((s) => (
-              <Card key={s.href} href={s.href} className="p-6 justify-between">
-                <div>
-                  <span className="w-12 h-12 rounded-[14px] bg-efe-accent-soft text-efe-accent-ink inline-flex items-center justify-center text-2xl mb-4 group-hover:bg-efe-accent group-hover:text-white transition-colors">
-                    {s.emoji}
-                  </span>
-                  <p className="font-bold text-efe-fg text-lg leading-tight group-hover:text-efe-accent transition-colors">{s.name}</p>
-                  <span className="block text-xs font-bold text-efe-accent-ink mt-1">{s.meta}</span>
-                  <span className="block text-[11px] text-efe-muted mt-0.5">{s.types}</span>
-                  <p className="text-sm text-efe-muted leading-relaxed mt-3">{s.desc}</p>
-                </div>
+              <Card key={s.href} href={s.href} className="p-6">
+                <span className="w-12 h-12 rounded-[14px] bg-efe-accent-soft text-efe-accent-ink inline-flex items-center justify-center text-2xl mb-3 group-hover:bg-efe-accent group-hover:text-white transition-colors">
+                  {s.emoji}
+                </span>
+                <p className="font-bold text-efe-fg text-lg leading-tight group-hover:text-efe-accent transition-colors">{s.name}</p>
+                <span className="text-xs font-bold text-efe-accent-ink mt-1">{s.meta}</span>
+                <span className="text-[11px] text-efe-muted">{s.types}</span>
+                <p className="text-sm text-efe-muted leading-relaxed mt-3 flex-1">{s.desc}</p>
                 <span className="text-xs font-bold text-efe-accent-ink mt-4 group-hover:text-efe-accent group-hover:underline">
                   Practise {s.name.split(" ")[0]} →
                 </span>
@@ -140,7 +137,6 @@ export default function GmatHub() {
         {/* Exam structure */}
         <section>
           <SectionHeader
-            eyebrow="Format"
             title="Exam Structure"
             description="64 questions · 2 hours 15 minutes · total score 205–805."
           />
@@ -166,7 +162,6 @@ export default function GmatHub() {
         {/* Score scale (Semantic band colours preserved per Plan Change #3) */}
         <section>
           <SectionHeader
-            eyebrow="Scoring"
             title="The 205–805 Score Scale"
             description="Indicative ranges only. The real score is adaptive; our practice gives a weighted estimate."
           />
@@ -183,7 +178,6 @@ export default function GmatHub() {
         {/* Performance */}
         <section>
           <SectionHeader
-            eyebrow="Progress"
             title="📊 Your Performance"
             description="Tracked on this device automatically — sign in to back it up. Estimated scores only."
           />
@@ -193,7 +187,6 @@ export default function GmatHub() {
         {/* FAQ */}
         <section>
           <SectionHeader
-            eyebrow="FAQ"
             title="Frequently Asked Questions"
           />
           <div className="space-y-3">

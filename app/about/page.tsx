@@ -86,7 +86,6 @@ export default function AboutPage() {
         {/* What's on the site */}
         <div className="mb-12">
           <SectionHeader
-            eyebrow="Platform Overview"
             title="What's on EduForEveryone"
           />
           <div className="grid sm:grid-cols-2 gap-4">

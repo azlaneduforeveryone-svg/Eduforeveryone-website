@@ -26,7 +26,6 @@ export default function CoursesPage() {
   return (
     <div className="efe-page">
       <PageHeader
-        eyebrow="Free Curriculum"
         title="All Courses"
         description="Browse our complete library of free courses."
       />
@@ -61,7 +60,6 @@ export default function CoursesPage() {
 
         {/* Other Courses */}
         <SectionHeader
-          eyebrow="Subjects"
           title="Other Courses"
           description="Science, English, History and more."
         />

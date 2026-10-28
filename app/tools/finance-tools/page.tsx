@@ -39,11 +39,6 @@ export default function FinanceToolsPage() {
   return (
     <div className="efe-page">
       <PageHeader
-        breadcrumbs={[
-          { label: "Tools", href: "/tools" },
-          { label: "Finance Tools" },
-        ]}
-        eyebrow="Finance & Accounting"
         title="Finance Tools"
         description="Free finance and accounting utilities. No signup required."
       />

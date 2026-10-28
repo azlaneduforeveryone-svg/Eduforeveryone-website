@@ -15,7 +15,6 @@ export default function NotesPage() {
   return (
     <div className="efe-page">
       <PageHeader
-        eyebrow="Revision Library"
         title="Study Notes"
         description="Concise, well-structured notes to support your learning."
       />

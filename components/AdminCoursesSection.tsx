@@ -95,10 +95,11 @@ export default function AdminCoursesSection() {
                 {course.description}
               </p>
             </div>
-            <div className="flex items-center justify-between text-xs text-efe-muted">
-              {course.level && <span>{course.level}</span>}
-              {course.lessons > 0 && <span>{course.lessons} lessons</span>}
-              <span className="text-efe-accent-ink font-semibold group-hover:underline">Start →</span>
+            <div className="flex items-center justify-between">
+              <span className="text-xs text-efe-muted">{course.level}</span>
+              {course.lessons > 0 && (
+                <span className="text-xs text-efe-accent-ink font-semibold">{course.lessons} lessons</span>
+              )}
             </div>
           </Card>
         ))}

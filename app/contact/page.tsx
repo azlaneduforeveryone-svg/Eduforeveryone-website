@@ -56,7 +56,6 @@ export default function ContactPage() {
         {/* What to contact about */}
         <Card className="p-8 mb-12">
           <SectionHeader
-            eyebrow="Topics"
             title="What Can You Contact Us About?"
           />
           <div className="space-y-4">
