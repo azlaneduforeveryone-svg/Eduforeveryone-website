@@ -5,8 +5,8 @@ import {
   GTReadingTest,
   ReadingQuestion,
   IELTSFormat,
-  rawToBand,
 } from "@/lib/ielts/ielts-types";
+import { calculateReadingBand } from "@/lib/ielts/bands";
 
 interface Props {
   test: AcademicReadingTest | GTReadingTest;
@@ -79,7 +79,7 @@ export default function ReadingSection({ test, format, onComplete }: Props) {
     setSubmitted(true);
 
     const correct = res.filter((r) => r.correct).length;
-    onComplete(rawToBand(correct));
+    onComplete(calculateReadingBand(correct, allQs.length));
   }
 
   // ── Academic reading layout ───────────────────────────────

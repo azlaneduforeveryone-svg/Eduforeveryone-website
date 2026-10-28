@@ -1,0 +1,10 @@
+﻿IELTS Academic Reading Band Verification:
+========================================
+0/10 -> scaled: 0/40 -> Band 0
+1/10 -> scaled: 4/40 -> Band 2.5
+5/10 -> scaled: 20/40 -> Band 5.5
+8/10 -> scaled: 32/40 -> Band 7
+10/10 -> scaled: 40/40 -> Band 9
+20/40 -> scaled: 20/40 -> Band 5.5
+30/40 -> scaled: 30/40 -> Band 7
+40/40 -> scaled: 40/40 -> Band 9
