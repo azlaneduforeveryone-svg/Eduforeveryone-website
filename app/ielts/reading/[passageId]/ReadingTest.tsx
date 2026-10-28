@@ -3,6 +3,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import type { Passage, Question } from "@/lib/ielts/readingData";
 import { track } from "@/lib/analytics";
+import { calculateReadingBand } from "@/lib/ielts/bands";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -25,11 +26,6 @@ interface ShuffledQ {
 const LABELS = ["A", "B", "C", "D"] as const;
 const SESSION_SIZE = 10;
 const TIMER_SECONDS = 20 * 60; // 20 minutes
-
-const BAND_MAP: Record<number, string> = {
-  10: "9.0", 9: "8.5", 8: "8.0", 7: "7.5", 6: "7.0",
-  5: "6.5", 4: "6.0", 3: "5.5", 2: "5.0", 1: "4.5", 0: "4.0",
-};
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -179,7 +175,7 @@ export default function ReadingTest({ passage }: Props) {
     setSessionQs(prev => {
       const s = prev.reduce((acc, sq) => acc + (gradeQuestion(sq, answers[sq.id] ?? "") ? 1 : 0), 0);
       setScore(s);
-      const estBand = parseFloat(BAND_MAP[s] ?? "4.0");
+      const estBand = calculateReadingBand(s, prev.length);
       track("ielts_test_complete", { section: "reading", band: estBand });
 
       // Save seen IDs
@@ -195,7 +191,7 @@ export default function ReadingTest({ passage }: Props) {
 
   const answeredCount = Object.keys(answers).length;
   const currentQ = sessionQs[currentIdx];
-  const band = BAND_MAP[score] ?? "4.0";
+  const band = calculateReadingBand(score, sessionQs.length);
 
   // ── Loading ────────────────────────────────────────────────────────────────
   if (phase === "loading") {
@@ -227,6 +223,9 @@ export default function ReadingTest({ passage }: Props) {
             {score} / {sessionQs.length}
           </p>
           <p className="text-2xl font-bold text-gray-700 mb-1">Estimated Band: {band}</p>
+          <p className="text-xs text-gray-500 mb-2">
+            Estimated band, scaled from a single passage. A full 40-question test gives a more reliable band.
+          </p>
           <p className="text-gray-500 text-sm mb-6">{pct}% correct · 10-question practice session</p>
           <div className="flex flex-wrap gap-3 justify-center">
             <button onClick={handleNextSession} className="bg-indigo-600 text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-indigo-700 transition-colors">

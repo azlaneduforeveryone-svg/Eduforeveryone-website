@@ -7,6 +7,7 @@ import { saveIeltsResult } from "@/lib/firebaseDB";
 import ShareScore from "@/components/ielts/ShareScore";
 import { PASSAGES, Question, Passage } from "@/lib/ielts/readingData";
 import { track } from "@/lib/analytics";
+import { calculateReadingBand } from "@/lib/ielts/bands";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 interface ReadingQ {
@@ -29,13 +30,6 @@ const PARA_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const MCQLABELS = ["A","B","C","D"] as const;
 const HEADING_NUMS = ["i","ii","iii","iv","v","vi","vii","viii","ix","x"];
 
-// ── Band Score (Academic Reading) ─────────────────────────────────────────────
-const toBand = (raw: number) => {
-  if(raw>=39)return 9; if(raw>=37)return 8.5; if(raw>=35)return 8;
-  if(raw>=33)return 7.5; if(raw>=30)return 7; if(raw>=27)return 6.5;
-  if(raw>=23)return 6; if(raw>=19)return 5.5; if(raw>=15)return 5;
-  if(raw>=13)return 4.5; if(raw>=10)return 4; return 3.5;
-};
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 const fmt = (s: number) =>
@@ -380,7 +374,7 @@ function IELTSReadingTest({
     if (phase !== "results" || savedRef.current) return;
     savedRef.current = true;
     const scoreVal = sessionQs.filter(sq => grade(answers[sq.id] || "", sq)).length;
-    const bandVal = toBand(Math.round((scoreVal / sessionQs.length) * 40));
+    const bandVal = calculateReadingBand(scoreVal, sessionQs.length);
 
     // Save to Firebase DB
     track("ielts_test_complete", { section: "reading", band: bandVal });
@@ -443,7 +437,7 @@ function IELTSReadingTest({
   };
 
   const score = sessionQs.filter(sq => grade(answers[sq.id] || "", sq)).length;
-  const band = toBand(Math.round((score / totalQs) * 40));
+  const band = calculateReadingBand(score, totalQs);
 
   // Diagnostic calculations by Question Type
   const diagnostics = useMemo(() => {
@@ -585,7 +579,9 @@ function IELTSReadingTest({
                 {band}
               </p>
               <p className="text-gray-500 text-sm mt-1">Estimated Band Score</p>
-              <p className="text-gray-400 text-xs">IELTS Academic Scale</p>
+              <p className="text-gray-400 text-xs mt-0.5">
+                Estimated band, scaled from a single passage. A full 40-question test gives a more reliable band.
+              </p>
             </div>
             <div className="bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm">
               <p className="text-5xl font-black text-gray-700">{Math.round((score / totalQs) * 100)}%</p>
