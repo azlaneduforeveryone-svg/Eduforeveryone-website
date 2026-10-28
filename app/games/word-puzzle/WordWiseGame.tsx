@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useCallback, useRef } from "react";
 import ShareScore from "@/components/ShareScore";
+import { track } from "@/lib/analytics";
 
 type Category = "all" | "math" | "science" | "english";
 type CellState = "correct" | "present" | "absent" | "revealed";
@@ -1915,6 +1916,7 @@ export default function WordWiseGame(){
   const [shake,setShake]=useState(false);
   const [showHow,setShowHow]=useState(false);
   const inputRef=useRef<HTMLInputElement>(null);
+  const hasStartedRef=useRef(false);
 
   const word=entry?.w.toUpperCase()??"";
 
@@ -1933,12 +1935,19 @@ export default function WordWiseGame(){
     setTimeout(()=>inputRef.current?.focus(),100);
   },[category,streak]);
 
-  useEffect(()=>{ newGame("all",0); setShowHow(true); },[]);
+  useEffect(()=>{
+    newGame("all",0);
+    setShowHow(true);
+  },[]);
 
   const showMsg=(msg:string)=>{setMessage(msg);setTimeout(()=>setMessage(""),2500);};
 
   const pressKey=useCallback((key:string)=>{
     if(!entry||gameWon||gameLost) return;
+    if(!hasStartedRef.current){
+      hasStartedRef.current = true;
+      track("game_start",{game:"word_puzzle"});
+    }
     if(key==="⌫"||key==="BACKSPACE"){setCurrent(c=>c.slice(0,-1));return;}
     if(key==="ENTER"){
       if(current.length<word.length){

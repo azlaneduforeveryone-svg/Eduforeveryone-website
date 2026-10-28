@@ -5,9 +5,11 @@ import {
   onAuthStateChanged, signInWithPopup, GoogleAuthProvider,
   signInWithEmailAndPassword, createUserWithEmailAndPassword,
   sendPasswordResetEmail, updateProfile, signOut, User,
+  getAdditionalUserInfo,
 } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
 import { createOrUpdateUser } from '@/lib/firebaseDB';
+import { setAnalyticsUser, track } from '@/lib/analytics';
 
 type AuthContextType = {
   user: User | null;
@@ -31,6 +33,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, async (u) => {
       setUser(u);
+      setAnalyticsUser(u ? u.uid : null);
       if (u) {
         try {
           await createOrUpdateUser({
@@ -45,12 +48,25 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const signInGoogle = async () => {
-    try { setError(null); await signInWithPopup(auth, new GoogleAuthProvider()); }
+    try {
+      setError(null);
+      const cred = await signInWithPopup(auth, new GoogleAuthProvider());
+      const isNew = getAdditionalUserInfo(cred)?.isNewUser;
+      if (isNew) {
+        track('sign_up', { method: 'google' });
+      } else {
+        track('login', { method: 'google' });
+      }
+    }
     catch (err: any) { setError(err?.message ?? 'Google sign-in failed'); }
   };
 
   const signInEmail = async (email: string, password: string) => {
-    try { setError(null); await signInWithEmailAndPassword(auth, email, password); }
+    try {
+      setError(null);
+      await signInWithEmailAndPassword(auth, email, password);
+      track('login', { method: 'email' });
+    }
     catch (err: any) { setError(err?.message ?? 'Sign-in failed'); }
   };
 
@@ -58,6 +74,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     try {
       setError(null);
       const cred = await createUserWithEmailAndPassword(auth, email, password);
+      track('sign_up', { method: 'email' });
       if (name) await updateProfile(cred.user, { displayName: name });
       // ensure the profile doc uses the entered name
       await createOrUpdateUser({

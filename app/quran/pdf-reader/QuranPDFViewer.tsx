@@ -1,9 +1,10 @@
 "use client";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 import Link from "next/link";
+import { track } from "@/lib/analytics";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
@@ -111,6 +112,14 @@ export default function QuranPDFViewer({ type }: Props) {
   const [scale,        setScale]        = useState(1.2);
   const [loading,      setLoading]      = useState(true);
   const [error,        setError]        = useState(false);
+  const hasTrackedRef                   = useRef(false);
+
+  useEffect(() => {
+    if (!hasTrackedRef.current) {
+      hasTrackedRef.current = true;
+      track("quran_pdf_open", { mushaf: is15 ? "15_line" : "13_line" });
+    }
+  }, [is15]);
 
   const onDocumentLoad = useCallback(({ numPages }: { numPages: number }) => {
     setNumPages(numPages); setLoading(false);

@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useCallback, useRef } from "react";
 import ShareScore from "@/components/ShareScore";
+import { track } from "@/lib/analytics";
 
 type Level = "easy" | "medium" | "hard" | "expert";
 type QuestionType = "add" | "sub" | "mul" | "div" | "missing" | "equation" | "sequence" | "power" | "mcq";
@@ -139,6 +140,7 @@ export default function MathPuzzleGame() {
   }, [timeLeft, question, answered, handleResult, started]);
 
   const startGame = useCallback((lv: Level = level) => {
+    track("game_start", { game: "math_puzzle" });
     clearTimer(); setScore(0); setCorrect(0); setStreak(0); setHistory([]);
     setGameOver(false); setStarted(true);
     const q = generateQuestion(lv);

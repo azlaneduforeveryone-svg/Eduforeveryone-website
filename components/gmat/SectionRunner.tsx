@@ -33,6 +33,7 @@ interface Props {
   editsAllowed: number;
   onFinish: (r: SectionRunResult) => void;
   allowUntimed?: boolean; // practice may offer an untimed toggle
+  onFirstAnswer?: () => void;
 }
 
 function fmt(seconds: number) {
@@ -53,7 +54,7 @@ const TYPE_LABEL: Record<GmatQuestion["type"], string> = {
 };
 
 export default function SectionRunner({
-  section, sectionName, questions, minutes, editsAllowed, onFinish, allowUntimed,
+  section, sectionName, questions, minutes, editsAllowed, onFinish, allowUntimed, onFirstAnswer,
 }: Props) {
   const [idx, setIdx] = useState(0);
   const [answers, setAnswers] = useState<Record<string, GmatAnswer>>({});
@@ -66,6 +67,7 @@ export default function SectionRunner({
   const calcAllowed = section === "data-insights";              // ← add  
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const finishedRef = useRef(false);
+  const hasFirstAnswerRef = useRef(false);
 
   const submit = useCallback(() => {
     if (finishedRef.current) return;
@@ -91,6 +93,10 @@ export default function SectionRunner({
   const q = questions[idx];
 
   const handleChange = (newAnswer: GmatAnswer) => {
+    if (!hasFirstAnswerRef.current) {
+      hasFirstAnswerRef.current = true;
+      onFirstAnswer?.();
+    }
     const prev = answers[q.id];
     const wasAnswered = isAnswered(q, prev);
     const changed = JSON.stringify(prev) !== JSON.stringify(newAnswer);

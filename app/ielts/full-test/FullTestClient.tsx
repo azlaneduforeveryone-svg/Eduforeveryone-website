@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useMemo, useEffect, useRef } from "react";
-import { IELTSFormat } from "@/lib/ielts/ielts-types";
+import { IELTSFormat, overallBand } from "@/lib/ielts/ielts-types";
 import { useAuth } from "@/contexts/AuthContext";
 import { saveIeltsResult } from "@/lib/firebaseDB";
+import { track } from "@/lib/analytics";
 import { getMockListeningTest } from "@/lib/ielts/listeningData";
 import { getAcademicReadingTest, getGTReadingTest } from "@/lib/ielts/readingData";
 import { getAcademicWritingTest, getGTWritingTest } from "@/lib/ielts/writingData";
@@ -96,6 +97,7 @@ export default function FullTestClient() {
   }, [stage]);
 
   function handleFormatSelect(f: IELTSFormat) {
+    track("ielts_test_start", { section: "mock" });
     setFormat(f);
     setStage("listening");
   }
@@ -119,6 +121,8 @@ export default function FullTestClient() {
   }
 
   function handleSpeakingComplete(band: number) {
+    const overall = overallBand(scores.listening ?? 0, scores.reading ?? 0, scores.writing ?? 0, band);
+    track("ielts_test_complete", { section: "mock", band: overall });
     setScores((s) => ({ ...s, speaking: band }));
     saveIeltsResult({ uid: user?.uid, displayName: user?.displayName ?? "", skill: "speaking", band, source: "full-mock", mockId });
     setStage("results");

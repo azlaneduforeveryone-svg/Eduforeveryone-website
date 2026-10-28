@@ -116,7 +116,9 @@ export default function RootLayout({
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
-                  gtag('config', 'G-F7MCW76675', { page_path: window.location.pathname });
+                  gtag('config', 'G-F7MCW76675', {
+                    page_path: window.location.pathname${process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview' ? ',\n                    debug_mode: true' : ''}
+                  });
                 `}
               </Script>
             </>
