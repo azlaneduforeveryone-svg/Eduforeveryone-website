@@ -15,6 +15,11 @@ export function remarkFor(txn: MatchedTxn, side: "bank" | "book"): string {
     case "Split Match (verify)":
       return "Split match - part of a multi-line group, verify the grouping";
 
+    case "Amount mismatch": {
+      const diff = Math.abs(txn.amountDiff ?? 0).toFixed(2);
+      return `Amount differs from bank by ${diff}. Check the cash book entry.`;
+    }
+
     case "Unmatched":
       if (side === "book") {
         return txn.amount > 0

@@ -46,13 +46,27 @@ export function reconcile(
 
   const status = new Map<
     string,
-    { status: MatchStatus; groupId: number; seqCode: string; dateDiffDays: number; matchedWith: string }
+    {
+      status: MatchStatus;
+      groupId: number;
+      seqCode: string;
+      dateDiffDays: number;
+      matchedWith: string;
+      amountDiff?: number;
+    }
   >();
   let groupId = 0;
   let matchedSeq = 0;
   let splitSeq = 0;
+  let mismatchSeq = 0;
 
-  const mark = (bookIds: number[], bankIds: number[], st: MatchStatus, dateDiffDays: number) => {
+  const mark = (
+    bookIds: number[],
+    bankIds: number[],
+    st: MatchStatus,
+    dateDiffDays: number,
+    amountDiff?: number
+  ) => {
     groupId += 1;
     let seqCode = "";
     if (st === "Matched") {
@@ -61,15 +75,18 @@ export function reconcile(
     } else if (st === "Split Match (verify)") {
       splitSeq += 1;
       seqCode = `S-${String(splitSeq).padStart(3, "0")}`;
+    } else if (st === "Amount mismatch") {
+      mismatchSeq += 1;
+      seqCode = `MM-${String(mismatchSeq).padStart(3, "0")}`;
     }
     const bookRefs = bookIds.map((id) => byIdBook.get(id)!.txn.description).join("; ");
     const bankRefs = bankIds.map((id) => byIdBank.get(id)!.txn.description).join("; ");
     for (const id of bookIds) {
-      status.set(`book:${id}`, { status: st, groupId, seqCode, dateDiffDays, matchedWith: bankRefs });
+      status.set(`book:${id}`, { status: st, groupId, seqCode, dateDiffDays, matchedWith: bankRefs, amountDiff });
       bookOpen.delete(id);
     }
     for (const id of bankIds) {
-      status.set(`bank:${id}`, { status: st, groupId, seqCode, dateDiffDays, matchedWith: bookRefs });
+      status.set(`bank:${id}`, { status: st, groupId, seqCode, dateDiffDays, matchedWith: bookRefs, amountDiff });
       bankOpen.delete(id);
     }
   };
@@ -287,6 +304,68 @@ export function reconcile(
   trySplit(bookOpen, byIdBook, bankOpen, byIdBank, true);
   trySplit(bankOpen, byIdBank, bookOpen, byIdBook, false);
 
+  // ---------------- Pass 4: same-reference amount mismatch ----------------
+  // Among rows still Unmatched, pair one book row with one bank row when ALL hold:
+  // - the normalised reference is identical and non-empty,
+  // - both amounts have the same sign,
+  // - the dates are within the recon type's date tolerance,
+  // - exactly one candidate exists on each side (if more than one, leave them Unmatched).
+  // Mark both with status "Amount mismatch" and store the difference (bank amount minus book amount).
+  const normRef = (ref?: string) => (ref ?? "").trim().toUpperCase();
+
+  const openBookByRef = new Map<string, number[]>();
+  for (const id of bookOpen) {
+    const ref = normRef(byIdBook.get(id)!.txn.reference);
+    if (!ref) continue;
+    const arr = openBookByRef.get(ref) ?? [];
+    arr.push(id);
+    openBookByRef.set(ref, arr);
+  }
+
+  const openBankByRef = new Map<string, number[]>();
+  for (const id of bankOpen) {
+    const ref = normRef(byIdBank.get(id)!.txn.reference);
+    if (!ref) continue;
+    const arr = openBankByRef.get(ref) ?? [];
+    arr.push(id);
+    openBankByRef.set(ref, arr);
+  }
+
+  for (const [ref, bookIds] of openBookByRef) {
+    const bankIds = openBankByRef.get(ref);
+    if (!bankIds) continue;
+
+    const bookRows = bookIds.map((id) => byIdBook.get(id)!);
+    const bankRows = bankIds.map((id) => byIdBank.get(id)!);
+
+    const bookCandidates = bookRows.filter((b) =>
+      bankRows.some(
+        (k) =>
+          Math.sign(b.amtC) === Math.sign(k.amtC) &&
+          b.amtC !== 0 &&
+          dayDiff(b.txn.date, k.txn.date) <= config.dateToleranceDays
+      )
+    );
+
+    const bankCandidates = bankRows.filter((k) =>
+      bookRows.some(
+        (b) =>
+          Math.sign(b.amtC) === Math.sign(k.amtC) &&
+          k.amtC !== 0 &&
+          dayDiff(b.txn.date, k.txn.date) <= config.dateToleranceDays
+      )
+    );
+
+    if (bookCandidates.length === 1 && bankCandidates.length === 1) {
+      const b = bookCandidates[0];
+      const k = bankCandidates[0];
+      const dd = dayDiff(b.txn.date, k.txn.date);
+      // Difference = bank amount minus book amount
+      const diff = (k.amtC - b.amtC) / 100;
+      mark([b.txn.id], [k.txn.id], "Amount mismatch", dd, diff);
+    }
+  }
+
   // ---------------- write back ----------------
   const finalize = (rows: Row[], prefix: "book" | "bank"): MatchedTxn[] =>
     rows.map((r) => {
@@ -298,6 +377,7 @@ export function reconcile(
         seqCode: s?.seqCode ?? "",
         dateDiffDays: s?.dateDiffDays ?? null,
         matchedWith: s?.matchedWith ?? "",
+        amountDiff: s?.amountDiff,
       };
     });
 

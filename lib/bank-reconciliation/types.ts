@@ -28,14 +28,16 @@ export type MatchStatus =
   | "Matched"
   | "Split Match"
   | "Split Match (verify)"
+  | "Amount mismatch"
   | "Unmatched";
 
 export interface MatchedTxn extends Txn {
   status: MatchStatus;
   matchGroupId: number | null;
-  seqCode: string;            // e.g. "M-001", "S-001" - blank for Unmatched
+  seqCode: string;            // e.g. "M-001", "S-001", "MM-001" - blank for Unmatched
   dateDiffDays: number | null; // days between the two sides for this group, null if Unmatched
   matchedWith: string; // comma-separated reference/description of counterpart(s), for display
+  amountDiff?: number; // bank amount minus book amount (for "Amount mismatch")
 }
 
 export interface ReconcileResult {

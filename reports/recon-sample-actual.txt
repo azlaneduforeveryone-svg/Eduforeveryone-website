@@ -15,7 +15,7 @@ Closing balance: 14,350.00
 Check: opening + net movement vs. closing entered above (should be 0): 0.00
 Add: Bank credits not yet recorded in the books (e.g. interest, direct deposits): 0.00
 Less: Bank charges not yet recorded in the books (e.g. fees, standing orders): -45.00
+Add/Less: Errors in cash book (amount recorded differs from bank): 0.00
 Adjusted Cash Book Balance: 14,305.00
 Difference (should be zero): 0.00
-Split Match (verify) items count as reconciled above but are worth a manual look - see the detail sheets.
-If you encounter any issues or have suggestions for improvement, please contact us at azlaneduforeveryone@gmail.com: If you encounter any issues or have suggestions for improvement, please contact us at azlaneduforeveryone@gmail.com
+If you encounter any issues or have suggestions for improvement, please contact us at azlaneduforeveryone@gmail.com
