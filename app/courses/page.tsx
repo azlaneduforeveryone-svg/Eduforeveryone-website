@@ -3,6 +3,8 @@ import { getAllCourses, getAllSubjects } from '@/lib/data';
 import AdminCoursesSection from "@/components/AdminCoursesSection";
 import CoursesFilter from './CoursesFilter';
 import Link from 'next/link';
+import PageHeader from "@/components/ui/PageHeader";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 export const metadata: Metadata = {
   title: "Free Online Courses — Math, Science, English & History",
@@ -22,42 +24,49 @@ export default function CoursesPage() {
   const subjects = getAllSubjects();
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
-      <div className="mb-10">
-        <h1 className="text-4xl font-bold text-gray-900 mb-3">All Courses</h1>
-        <p className="text-lg text-gray-500">Browse our complete library of free courses.</p>
-      </div>
+    <div className="efe-page">
+      <PageHeader
+        eyebrow="Free Curriculum"
+        title="All Courses"
+        description="Browse our complete library of free courses."
+      />
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+        {/* Admin-uploaded courses from Firebase */}
+        <AdminCoursesSection />
 
-      {/* Admin-uploaded courses from Firebase */}
-      <AdminCoursesSection />
-
-      {/* Mathematics Hub Banner */}
-      <Link href="/courses/mathematics"
-        className="group flex flex-col sm:flex-row items-start sm:items-center gap-5 bg-gradient-to-r from-teal-600 to-teal-700 text-white rounded-2xl p-6 mb-8 hover:from-teal-700 hover:to-teal-800 transition-all">
-        <div className="text-5xl flex-shrink-0">🧮</div>
-        <div className="flex-1">
-          <div className="flex flex-wrap items-center gap-2 mb-1">
-            <span className="text-xs font-bold bg-white/20 px-2.5 py-1 rounded-full">NEW</span>
-            <span className="text-xs text-teal-200">Mathematics · All Levels</span>
+        {/* Mathematics Hub Banner */}
+        <Link
+          href="/courses/mathematics"
+          className="group efe-banner flex flex-col sm:flex-row items-start sm:items-center gap-5 p-6 mb-10 transition-all hover:shadow-lg"
+        >
+          <div className="w-14 h-14 rounded-2xl bg-white/15 border border-white/25 flex items-center justify-center text-3xl flex-shrink-0">
+            🧮
           </div>
-          <h2 className="text-xl font-black mb-1">Complete Mathematics Curriculum</h2>
-          <p className="text-teal-200 text-sm leading-relaxed">
-            20 topics from Elementary to University level — Counting, Algebra, Geometry, Trigonometry, Calculus and more.
-          </p>
-        </div>
-        <div className="flex-shrink-0">
-          <span className="bg-white text-teal-700 px-5 py-2.5 rounded-xl font-bold text-sm group-hover:bg-teal-50 transition-colors whitespace-nowrap">
-            Explore 20 Topics →
-          </span>
-        </div>
-      </Link>
+          <div className="flex-1">
+            <div className="flex flex-wrap items-center gap-2 mb-1.5">
+              <span className="text-xs font-bold bg-efe-gold-soft text-efe-gold px-2.5 py-0.5 rounded-full">NEW</span>
+              <span className="text-xs text-white/80 font-medium">Mathematics · All Levels</span>
+            </div>
+            <h2 className="text-xl font-bold text-white mb-1">Complete Mathematics Curriculum</h2>
+            <p className="text-white/85 text-sm leading-relaxed">
+              20 topics from Elementary to University level — Counting, Algebra, Geometry, Trigonometry, Calculus and more.
+            </p>
+          </div>
+          <div className="flex-shrink-0">
+            <span className="efe-btn efe-btn-on-hero efe-btn-sm whitespace-nowrap">
+              Explore 20 Topics →
+            </span>
+          </div>
+        </Link>
 
-      {/* Other Courses */}
-      <div className="mb-6">
-        <h2 className="text-xl font-bold text-gray-900 mb-1">Other Courses</h2>
-        <p className="text-gray-500 text-sm">Science, English, History and more.</p>
+        {/* Other Courses */}
+        <SectionHeader
+          eyebrow="Subjects"
+          title="Other Courses"
+          description="Science, English, History and more."
+        />
+        <CoursesFilter courses={courses} subjects={subjects} />
       </div>
-      <CoursesFilter courses={courses} subjects={subjects} />
     </div>
   );
 }

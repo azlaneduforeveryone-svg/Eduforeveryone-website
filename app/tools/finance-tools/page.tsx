@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import PageHeader from "@/components/ui/PageHeader";
+import Card from "@/components/ui/Card";
 
 // app/tools/finance-tools/page.tsx
 //
@@ -36,25 +37,29 @@ const TOOLS = [
 
 export default function FinanceToolsPage() {
   return (
-    <main className="max-w-5xl mx-auto px-4 sm:px-6 py-12">
-      <h1 className="text-3xl font-black text-gray-900 mb-2">Finance Tools</h1>
-      <p className="text-gray-600 mb-10">
-        Free finance and accounting utilities. No signup required.
-      </p>
-
-      <div className="grid sm:grid-cols-2 gap-4">
-        {TOOLS.map((t) => (
-          <Link
-            key={t.href}
-            href={t.href}
-            className="block p-5 rounded-xl border border-gray-100 hover:border-teal-200 hover:bg-teal-50 transition-all shadow-sm"
-          >
-            <div className="text-2xl mb-2">{t.icon}</div>
-            <h2 className="font-semibold text-gray-900 mb-1">{t.title}</h2>
-            <p className="text-sm text-gray-600">{t.description}</p>
-          </Link>
-        ))}
+    <div className="efe-page">
+      <PageHeader
+        breadcrumbs={[
+          { label: "Tools", href: "/tools" },
+          { label: "Finance Tools" },
+        ]}
+        eyebrow="Finance & Accounting"
+        title="Finance Tools"
+        description="Free finance and accounting utilities. No signup required."
+      />
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12">
+        <div className="grid sm:grid-cols-2 gap-6">
+          {TOOLS.map((t) => (
+            <Card key={t.href} href={t.href} className="p-6">
+              <div className="w-12 h-12 rounded-[14px] bg-efe-accent-soft text-efe-accent-ink inline-flex items-center justify-center text-2xl mb-4 group-hover:bg-efe-accent group-hover:text-white transition-colors">
+                {t.icon}
+              </div>
+              <h2 className="text-lg font-bold text-efe-fg mb-2 group-hover:text-efe-accent transition-colors">{t.title}</h2>
+              <p className="text-sm text-efe-muted leading-relaxed">{t.description}</p>
+            </Card>
+          ))}
+        </div>
       </div>
-    </main>
+    </div>
   );
 }

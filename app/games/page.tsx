@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-
 import { isQuranWordsLive } from "@/lib/games/quran-words";
+import PageHeader from "@/components/ui/PageHeader";
+import Card from "@/components/ui/Card";
 
 export const metadata: Metadata = {
   title: "Free Educational Games for Students | EduForEveryone",
@@ -33,27 +33,40 @@ export default function GamesPage() {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
-      <div className="mb-10">
-        <p className="text-teal-600 font-semibold text-sm uppercase tracking-wider mb-1">🎮 Games</p>
-        <h1 className="text-4xl font-bold text-gray-900 mb-2">Educational Games</h1>
-        <p className="text-gray-500">Learn while having fun. Free games that make studying addictive. No sign-up. No cost.</p>
-      </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {displayedGames.map(game => (
-          <Link key={game.href} href={game.href}
-            className="group bg-white border border-gray-200 rounded-2xl p-6 hover:border-teal-200 hover:shadow-md transition-all">
-            <div className="flex items-start justify-between mb-4">
-              <span className="text-5xl">{game.emoji}</span>
-              {game.badge && <span className="text-xs font-bold bg-teal-50 text-teal-700 px-2.5 py-1 rounded-full border border-teal-100">{game.badge}</span>}
-            </div>
-            <h2 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-teal-600 transition-colors">{game.title}</h2>
-            <p className="text-gray-500 text-sm leading-relaxed mb-4">{game.description}</p>
-            <div className="flex flex-wrap gap-1.5">
-              {game.tags.map(tag=><span key={tag} className="text-xs px-2 py-0.5 bg-gray-50 text-gray-500 rounded-md border border-gray-100">{tag}</span>)}
-            </div>
-          </Link>
-        ))}
+    <div className="efe-page">
+      <PageHeader
+        eyebrow="🎮 Games"
+        title="Educational Games"
+        description="Learn while having fun. Free games that make studying addictive. No sign-up. No cost."
+      />
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {displayedGames.map(game => (
+            <Card key={game.href} href={game.href} className="p-6 justify-between">
+              <div>
+                <div className="flex items-start justify-between mb-4">
+                  <span className="w-12 h-12 rounded-[14px] bg-efe-accent-soft text-efe-accent-ink inline-flex items-center justify-center text-2xl group-hover:bg-efe-accent group-hover:text-white transition-colors">
+                    {game.emoji}
+                  </span>
+                  {game.badge && (
+                    <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${
+                      game.badge === "New" ? "bg-efe-gold-soft text-efe-gold" : "bg-efe-accent-soft text-efe-accent-ink"
+                    }`}>
+                      {game.badge}
+                    </span>
+                  )}
+                </div>
+                <h2 className="text-lg font-bold text-efe-fg mb-2 group-hover:text-efe-accent transition-colors">{game.title}</h2>
+                <p className="text-efe-muted text-sm leading-relaxed mb-4">{game.description}</p>
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {game.tags.map(tag => (
+                  <span key={tag} className="text-xs px-2 py-0.5 bg-efe-bg text-efe-muted rounded-md border border-efe-line">{tag}</span>
+                ))}
+              </div>
+            </Card>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import JsonLd, { faqLd } from "@/components/JsonLd";
+import PageHeader from "@/components/ui/PageHeader";
+import SectionHeader from "@/components/ui/SectionHeader";
+import Card from "@/components/ui/Card";
+import Button from "@/components/ui/Button";
 
 export const metadata: Metadata = {
   title: "About EduForEveryone — Free Education, No Barriers",
@@ -23,174 +26,172 @@ const faqs = [
 
 export default function AboutPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+    <div className="efe-page">
+      <PageHeader
+        eyebrow="Our Story"
+        title={<>Free Education, <span>No Barriers</span></>}
+        description="We believe quality education is a right, not a privilege. EduForEveryone was built so that no student is ever held back by the price of knowledge."
+      />
 
-      {/* Hero */}
-      <div className="text-center mb-14">
-        <p className="text-teal-600 font-semibold text-sm uppercase tracking-wider mb-3">Our Story</p>
-        <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-          Free Education, <span className="text-teal-600">No Barriers</span>
-        </h1>
-        <p className="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
-          We believe quality education is a right, not a privilege. EduForEveryone was
-          built so that no student is ever held back by the price of knowledge.
-        </p>
-      </div>
-
-      {/* Mission / Why it's free */}
-      <div className="bg-teal-50 border border-teal-100 rounded-2xl p-8 mb-12">
-        <div className="flex items-center gap-3 mb-4">
-          <span className="text-4xl">🎯</span>
-          <h2 className="text-2xl font-bold text-gray-900">Why It&apos;s Free</h2>
-        </div>
-        <p className="text-gray-600 text-base leading-relaxed">
-          Everything on EduForEveryone is <strong>completely free</strong>, with no sign-up
-          required to practise. There are no subscriptions and no paywalls. The site is
-          supported by non-intrusive advertising so that students — especially those in
-          developing countries learning on a mobile phone — can access high-quality
-          preparation without ever paying a fee.
-        </p>
-      </div>
-
-      {/* About / founder bio */}
-      <div className="mb-12">
-        <div className="flex items-center gap-3 mb-4">
-          <span className="text-4xl">👤</span>
-          <h2 className="text-2xl font-bold text-gray-900">About EduForEveryone</h2>
-        </div>
-        <div className="space-y-4 text-gray-600 text-base leading-relaxed">
-          <p>
-            EduForEveryone was founded and built by <strong>Azlan Mahmood</strong>, a member of
-            the Association of Chartered Certified Accountants (ACCA). It is an independent
-            project, developed and maintained by one person rather than a company or institution.
-          </p>
-          <p>
-            The platform exists to address a single problem: access. Quality courses, study
-            materials, and practice platforms are often priced beyond the reach of the students
-            who would benefit from them most. EduForEveryone aims to remove that barrier by
-            providing free, openly accessible learning resources — including standardised-test
-            practice, the Holy Quran with translations, study notes, quizzes, and academic tools
-            — with no sign-up required.
-          </p>
-          <p>
-            This is not a test-preparation company or an accredited educational institution, and
-            it does not claim to be. It is a practical resource designed to give students a place
-            to study, assess their current level, and improve — regardless of their ability to pay.
-          </p>
-          <p>
-            The project is run by a Kashmiri–Pakistani national working in Saudi Arabia, built in
-            personal time out of a belief that access to education should not depend on what a
-            student can afford. Its purpose is straightforward: to make meaningful educational
-            practice available to anyone who needs it.
-          </p>
-        </div>
-      </div>
-
-      {/* What's on the site */}
-      <div className="mb-12">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">What&apos;s on EduForEveryone</h2>
-        <div className="grid sm:grid-cols-2 gap-4">
-          {[
-            { emoji: "📚", title: "IELTS Preparation", description: "Free practice for all four skills — Reading, Writing, Listening and Speaking — with instant scoring and AI writing feedback.", href: "/ielts" },
-            { emoji: "📖", title: "The Holy Quran", description: "Read the Quran with 40+ translations, audio recitation, colour-coded Tajweed and downloadable PDFs — ad-free.", href: "/quran" },
-            { emoji: "🧮", title: "Courses & Tools", description: "A 20-topic Mathematics curriculum plus Science, English and History, with free calculators and study notes.", href: "/courses" },
-            { emoji: "🎮", title: "Quizzes & Games", description: "Trilingual Islamic Quiz, subject quizzes, and learning games like Math Puzzle, WordWise and Quiz Battle.", href: "/games" },
-          ].map((item) => (
-            <Link key={item.title} href={item.href}
-              className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:border-teal-300 hover:shadow-md transition-all group">
-              <span className="text-4xl">{item.emoji}</span>
-              <h3 className="text-lg font-bold text-gray-900 mt-3 mb-2 group-hover:text-teal-600 transition-colors">{item.title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
-            </Link>
-          ))}
-        </div>
-      </div>
-
-      {/* Verifiable stats */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-16">
-        {[
-          { emoji: "🎧", value: "4", label: "IELTS Skills Covered" },
-          { emoji: "📖", value: "114", label: "Quran Surahs" },
-          { emoji: "🧮", value: "20", label: "Maths Topics" },
-          { emoji: "🆓", value: "100%", label: "Free — No Sign-up" },
-        ].map((stat) => (
-          <div key={stat.label} className="bg-white border border-gray-100 rounded-2xl p-5 text-center shadow-sm">
-            <span className="text-3xl">{stat.emoji}</span>
-            <p className="text-2xl font-bold text-gray-900 mt-2">{stat.value}</p>
-            <p className="text-gray-500 text-sm mt-1">{stat.label}</p>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+        {/* Mission / Why it's free */}
+        <div className="bg-efe-accent-soft border border-efe-line rounded-2xl p-8 mb-12">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="text-4xl">🎯</span>
+            <h2 className="text-2xl font-bold text-efe-fg font-display">Why It&apos;s Free</h2>
           </div>
-        ))}
-      </div>
-
-      {/* What's coming */}
-      <div className="bg-gray-900 text-white rounded-2xl p-8 mb-16">
-        <div className="flex items-center gap-3 mb-4">
-          <span className="text-4xl">🚀</span>
-          <h2 className="text-2xl font-bold">What&apos;s Coming Next</h2>
+          <p className="text-efe-muted text-base leading-relaxed">
+            Everything on EduForEveryone is <strong>completely free</strong>, with no sign-up
+            required to practise. There are no subscriptions and no paywalls. The site is
+            supported by non-intrusive advertising so that students — especially those in
+            developing countries learning on a mobile phone — can access high-quality
+            preparation without ever paying a fee.
+          </p>
         </div>
-        <p className="text-gray-300 text-base leading-relaxed mb-6">
-          We are just getting started. The goal is to keep expanding free, high-quality
-          preparation for every learner, in more languages, at every stage of life.
-        </p>
-        <div className="grid sm:grid-cols-3 gap-4">
+
+        {/* About / founder bio */}
+        <Card className="p-8 mb-12">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="text-4xl">👤</span>
+            <h2 className="text-2xl font-bold text-efe-fg font-display">About EduForEveryone</h2>
+          </div>
+          <div className="space-y-4 text-efe-muted text-base leading-relaxed">
+            <p>
+              EduForEveryone was founded and built by <strong className="text-efe-fg">Azlan Mahmood</strong>, a member of
+              the Association of Chartered Certified Accountants (ACCA). It is an independent
+              project, developed and maintained by one person rather than a company or institution.
+            </p>
+            <p>
+              The platform exists to address a single problem: access. Quality courses, study
+              materials, and practice platforms are often priced beyond the reach of the students
+              who would benefit from them most. EduForEveryone aims to remove that barrier by
+              providing free, openly accessible learning resources — including standardised-test
+              practice, the Holy Quran with translations, study notes, quizzes, and academic tools
+              — with no sign-up required.
+            </p>
+            <p>
+              This is not a test-preparation company or an accredited educational institution, and
+              it does not claim to be. It is a practical resource designed to give students a place
+              to study, assess their current level, and improve — regardless of their ability to pay.
+            </p>
+            <p>
+              The project is run by a Kashmiri–Pakistani national working in Saudi Arabia, built in
+              personal time out of a belief that access to education should not depend on what a
+              student can afford. Its purpose is straightforward: to make meaningful educational
+              practice available to anyone who needs it.
+            </p>
+          </div>
+        </Card>
+
+        {/* What's on the site */}
+        <div className="mb-12">
+          <SectionHeader
+            eyebrow="Platform Overview"
+            title="What's on EduForEveryone"
+          />
+          <div className="grid sm:grid-cols-2 gap-4">
+            {[
+              { emoji: "📚", title: "IELTS Preparation", description: "Free practice for all four skills — Reading, Writing, Listening and Speaking — with instant scoring and AI writing feedback.", href: "/ielts" },
+              { emoji: "📖", title: "The Holy Quran", description: "Read the Quran with 40+ translations, audio recitation, colour-coded Tajweed and downloadable PDFs — ad-free.", href: "/quran" },
+              { emoji: "🧮", title: "Courses & Tools", description: "A 20-topic Mathematics curriculum plus Science, English and History, with free calculators and study notes.", href: "/courses" },
+              { emoji: "🎮", title: "Quizzes & Games", description: "Trilingual Islamic Quiz, subject quizzes, and learning games like Math Puzzle, WordWise and Quiz Battle.", href: "/games" },
+            ].map((item) => (
+              <Card key={item.title} href={item.href} className="p-6">
+                <span className="w-12 h-12 rounded-[14px] bg-efe-accent-soft text-efe-accent-ink inline-flex items-center justify-center text-2xl group-hover:bg-efe-accent group-hover:text-white transition-colors">
+                  {item.emoji}
+                </span>
+                <h3 className="text-lg font-bold text-efe-fg mt-4 mb-2 group-hover:text-efe-accent transition-colors">{item.title}</h3>
+                <p className="text-efe-muted text-sm leading-relaxed">{item.description}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Verifiable stats */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-16">
           {[
-            { emoji: "🌐", text: "More languages to reach every corner of the world" },
-            { emoji: "✍️", text: "More IELTS practice tests and writing prompt pages" },
-            { emoji: "📱", text: "A mobile app so learning happens anywhere, anytime" },
-          ].map((item) => (
-            <div key={item.text} className="bg-gray-800 rounded-xl p-4">
-              <span className="text-2xl">{item.emoji}</span>
-              <p className="text-gray-300 text-sm mt-2 leading-relaxed">{item.text}</p>
-            </div>
+            { emoji: "🎧", value: "4", label: "IELTS Skills Covered" },
+            { emoji: "📖", value: "114", label: "Quran Surahs" },
+            { emoji: "🧮", value: "20", label: "Maths Topics" },
+            { emoji: "🆓", value: "100%", label: "Free — No Sign-up" },
+          ].map((stat) => (
+            <Card key={stat.label} className="p-5 text-center">
+              <span className="text-3xl">{stat.emoji}</span>
+              <p className="text-2xl font-bold text-efe-accent-ink mt-2">{stat.value}</p>
+              <p className="text-efe-muted text-sm mt-1">{stat.label}</p>
+            </Card>
           ))}
         </div>
+
+        {/* What's coming */}
+        <div className="efe-banner p-8 mb-16">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="text-4xl">🚀</span>
+            <h2 className="text-2xl font-bold text-white font-display">What&apos;s Coming Next</h2>
+          </div>
+          <p className="text-white/85 text-base leading-relaxed mb-6">
+            We are just getting started. The goal is to keep expanding free, high-quality
+            preparation for every learner, in more languages, at every stage of life.
+          </p>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {[
+              { emoji: "🌐", text: "More languages to reach every corner of the world" },
+              { emoji: "✍️", text: "More IELTS practice tests and writing prompt pages" },
+              { emoji: "📱", text: "A mobile app so learning happens anywhere, anytime" },
+            ].map((item) => (
+              <div key={item.text} className="bg-white/10 border border-white/20 rounded-xl p-4">
+                <span className="text-2xl">{item.emoji}</span>
+                <p className="text-white/90 text-sm mt-2 leading-relaxed">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Contact */}
+        <div className="text-center bg-efe-accent-soft border border-efe-line rounded-2xl p-10">
+          <h2 className="text-2xl font-bold text-efe-fg font-display mb-3">Contact</h2>
+          <p className="text-efe-muted mb-6 max-w-2xl mx-auto leading-relaxed">
+            For enquiries, feedback, or to discuss placing educational resources on the platform,
+            email{" "}
+            <a href="mailto:azlaneduforeveryone@gmail.com" className="text-efe-accent-ink font-semibold hover:underline">
+              azlaneduforeveryone@gmail.com
+            </a>{" "}
+            or visit our{" "}
+            <a href="https://www.facebook.com/profile.php?id=61577745517090" target="_blank" rel="noopener noreferrer" className="text-efe-accent-ink font-semibold hover:underline">
+              Facebook page
+            </a>.
+          </p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <Button href="/ielts" variant="primary">
+              Start IELTS Practice
+            </Button>
+            <Button href="/contact" variant="secondary">
+              Contact Us
+            </Button>
+          </div>
+          <p className="mt-6 text-sm text-efe-muted italic">
+            EduForEveryone is committed to keeping all Quran and Islamic Studies content completely free and ad-free, always.
+          </p>
+        </div>
+
+        {/* Frequently Asked Questions */}
+        <section className="mt-16">
+          <SectionHeader
+            eyebrow="FAQ"
+            title="Frequently Asked Questions"
+          />
+          <div className="space-y-4">
+            {faqs.map((f, i) => (
+              <Card key={i} className="p-6">
+                <h3 className="font-semibold text-efe-fg text-base">{f.q}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-efe-muted">{f.a}</p>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        <JsonLd data={faqLd(faqs)} />
       </div>
-
-      {/* Contact */}
-      <div className="text-center bg-teal-50 border border-teal-100 rounded-2xl p-10">
-        <h2 className="text-2xl font-bold text-gray-900 mb-3">Contact</h2>
-        <p className="text-gray-600 mb-6 max-w-2xl mx-auto leading-relaxed">
-          For enquiries, feedback, or to discuss placing educational resources on the platform,
-          email{" "}
-          <a href="mailto:azlaneduforeveryone@gmail.com" className="text-teal-600 font-semibold hover:underline">
-            azlaneduforeveryone@gmail.com
-          </a>{" "}
-          or visit our{" "}
-          <a href="https://www.facebook.com/profile.php?id=61577745517090" target="_blank" rel="noopener noreferrer" className="text-teal-600 font-semibold hover:underline">
-            Facebook page
-          </a>.
-        </p>
-        <div className="flex flex-wrap gap-3 justify-center">
-          <Link href="/ielts" className="bg-teal-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-teal-700 transition-colors">
-            Start IELTS Practice
-          </Link>
-          <Link href="/contact" className="bg-white text-teal-600 border border-teal-200 px-6 py-3 rounded-xl font-semibold hover:bg-teal-50 transition-colors">
-            Contact Us
-          </Link>
-        </div>
-        <p className="mt-6 text-sm text-gray-500 italic">
-          EduForEveryone is committed to keeping all Quran and Islamic Studies content completely free and ad-free, always.
-        </p>
-      </div>
-
-      {/* Frequently Asked Questions */}
-      <section className="mt-16">
-        <div className="mb-10 text-center">
-          <p className="text-xs font-semibold uppercase tracking-wider text-teal-600">FAQ</p>
-          <h2 className="mt-1 font-display text-3xl font-semibold text-gray-900">Frequently Asked Questions</h2>
-        </div>
-        <div className="space-y-4">
-          {faqs.map((f, i) => (
-            <div key={i} className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-              <h3 className="font-semibold text-gray-900 text-base">{f.q}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-gray-600">{f.a}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <JsonLd data={faqLd(faqs)} />
-
     </div>
   );
 }
