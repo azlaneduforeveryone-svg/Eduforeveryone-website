@@ -34,15 +34,17 @@ export default function NoteDetailPage({ params }: { params: { id: string } }) {
   if (!note) notFound();
 
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
-      <div className="mb-8">
-        <span className="text-xs font-semibold text-teal-600 uppercase tracking-wide">{note.subject}</span>
-        <h1 className="text-4xl font-bold text-gray-900 mt-2 mb-3">{note.title}</h1>
-        <p className="text-gray-500">{note.readTime} read</p>
-      </div>
-      <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
-        <div className="prose max-w-none text-gray-700 leading-relaxed whitespace-pre-wrap">
-          {note.content}
+    <div className="efe-page min-h-screen">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+        <div className="mb-8">
+          <span className="text-xs font-semibold text-efe-accent uppercase tracking-wide">{note.subject}</span>
+          <h1 className="text-4xl font-bold text-efe-fg font-display mt-2 mb-3">{note.title}</h1>
+          <p className="text-efe-muted">{note.readTime} read</p>
+        </div>
+        <div className="efe-card shadow-sm p-8">
+          <div className="prose max-w-none text-efe-fg leading-relaxed whitespace-pre-wrap">
+            {note.content}
+          </div>
         </div>
       </div>
     </div>
