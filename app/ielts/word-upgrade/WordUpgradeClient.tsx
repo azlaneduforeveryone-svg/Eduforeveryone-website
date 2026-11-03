@@ -16,7 +16,7 @@ export default function WordUpgradeClient() {
       <div className="mb-6">
         <Link
           href="/ielts"
-          className="text-xs font-semibold text-teal-600 hover:text-teal-700 flex items-center gap-1 transition-colors"
+          className="text-xs font-semibold text-efe-accent hover:text-efe-accent-ink flex items-center gap-1 transition-colors"
         >
           ← Back to IELTS Hub
         </Link>
@@ -28,14 +28,14 @@ export default function WordUpgradeClient() {
           <span className="text-3xl" aria-hidden="true">
             ⚡
           </span>
-          <span className="text-xs font-bold bg-indigo-100 text-indigo-700 px-2.5 py-1 rounded-full uppercase tracking-wider">
+          <span className="text-xs font-bold bg-efe-accent-soft text-efe-accent px-2.5 py-1 rounded-full uppercase tracking-wider">
             IELTS Vocabulary Training
           </span>
         </div>
-        <h1 className="text-3xl sm:text-4xl font-black text-gray-900 tracking-tight">
+        <h1 className="text-3xl sm:text-4xl font-black text-efe-fg tracking-tight font-display">
           Word Upgrade
         </h1>
-        <p className="text-base text-gray-500 mt-2 leading-relaxed">
+        <p className="text-base text-efe-muted mt-2 leading-relaxed">
           Upgrade basic words to natural Band 7+ academic replacements. Each round gives you 10 random sentences to sharpen your Lexical Resource.
         </p>
       </div>
@@ -65,7 +65,7 @@ export default function WordUpgradeClient() {
       />
 
       {/* Study Tip Footer Note */}
-      <div className="mt-8 bg-gray-50 border border-gray-200 rounded-xl p-4 text-xs text-gray-500 leading-relaxed text-center">
+      <div className="mt-8 bg-efe-bg border border-efe-line rounded-xl p-4 text-xs text-efe-muted leading-relaxed text-center">
         💡 <strong>Examiner Tip:</strong> In IELTS Writing and Speaking, using precise collocations (e.g. <em>&quot;curtail emissions&quot;</em> instead of <em>&quot;cut down emissions&quot;</em>) demonstrates Band 7+ Lexical Resource.
       </div>
     </div>

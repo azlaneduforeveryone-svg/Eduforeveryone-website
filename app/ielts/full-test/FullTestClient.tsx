@@ -137,11 +137,11 @@ export default function FullTestClient() {
   // ── Format selection ───────────────────────────────────────
   if (stage === "format_select") {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
-        <div className="bg-white rounded-3xl shadow-xl p-8 max-w-lg w-full space-y-8">
+      <div className="min-h-screen bg-efe-bg flex items-center justify-center p-4">
+        <div className="bg-efe-surface border border-efe-line rounded-3xl shadow-sm p-8 max-w-lg w-full space-y-8">
           <div className="text-center space-y-2">
-            <h1 className="text-3xl font-black text-gray-900">IELTS Full Test</h1>
-            <p className="text-gray-500 text-sm">
+            <h1 className="text-3xl font-black text-efe-fg font-display">IELTS Full Test</h1>
+            <p className="text-efe-muted text-sm">
               Select your test format to begin. The full test takes approximately 2 hours 45 minutes.
             </p>
           </div>
@@ -172,11 +172,11 @@ export default function FullTestClient() {
     const urgent = transferTime < 120;
     return (
       <div className="min-h-screen bg-amber-50 flex items-center justify-center p-4">
-        <div className="bg-white rounded-3xl shadow-xl p-8 max-w-md w-full text-center space-y-6">
+        <div className="bg-efe-surface border border-efe-line rounded-3xl shadow-sm p-8 max-w-md w-full text-center space-y-6">
           <div>
             <p className="text-xs font-bold text-amber-600 uppercase tracking-widest">Answer Transfer Period</p>
-            <h2 className="text-2xl font-bold text-gray-800 mt-2">10 Minutes</h2>
-            <p className="text-sm text-gray-500 mt-1">
+            <h2 className="text-2xl font-bold text-efe-fg mt-2 font-display">10 Minutes</h2>
+            <p className="text-sm text-efe-muted mt-1">
               In the real exam, use this time to transfer your answers to the answer sheet.
               Here, review your answers before Reading begins automatically.
             </p>
@@ -186,11 +186,11 @@ export default function FullTestClient() {
             {formatTime(transferTime)}
           </div>
 
-          <p className="text-xs text-gray-400">Reading will begin automatically when the timer ends.</p>
+          <p className="text-xs text-efe-muted">Reading will begin automatically when the timer ends.</p>
 
           <button
             onClick={() => { clearInterval(transferRef.current!); setStage("reading"); }}
-            className="w-full py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition"
+            className="w-full py-3 bg-efe-accent text-white rounded-xl font-semibold hover:bg-efe-accent-ink transition"
           >
             Skip to Reading →
           </button>
@@ -202,7 +202,7 @@ export default function FullTestClient() {
   // ── Results ─────────────────────────────────────────────────
   if (stage === "results" && scores.listening && scores.reading && scores.writing && scores.speaking) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-8">
+      <div className="min-h-screen bg-efe-bg py-8">
         <ResultsPage
           scores={{
             listening: scores.listening,
@@ -221,11 +221,11 @@ export default function FullTestClient() {
   const stageIndex = ORDERED_STAGES.indexOf(stage);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-efe-bg">
       {/* Top progress bar */}
-      <div className="sticky top-0 z-10 bg-white border-b shadow-sm px-4 py-3">
+      <div className="sticky top-0 z-10 bg-efe-surface border-b border-efe-line shadow-sm px-4 py-3">
         <div className="max-w-5xl mx-auto flex items-center gap-4">
-          <span className="text-xs font-bold text-gray-400 shrink-0">
+          <span className="text-xs font-bold text-efe-muted shrink-0">
             {format === "academic" ? "Academic" : "General Training"}
           </span>
           <div className="flex items-center gap-1 flex-1">
@@ -237,10 +237,10 @@ export default function FullTestClient() {
                 <div key={s} className="flex items-center gap-1 flex-1">
                   <div
                     className={`flex-1 h-1.5 rounded-full transition-all ${
-                      done ? "bg-green-500" : active ? "bg-blue-500" : "bg-gray-200"
+                      done ? "bg-green-500" : active ? "bg-efe-accent" : "bg-gray-200"
                     }`}
                   />
-                  <span className={`text-xs font-medium shrink-0 ${done ? "text-green-600" : active ? "text-blue-600" : "text-gray-400"}`}>
+                  <span className={`text-xs font-medium shrink-0 ${done ? "text-green-600" : active ? "text-efe-accent" : "text-efe-muted"}`}>
                     {STAGE_LABELS[s]}
                   </span>
                 </div>
@@ -248,7 +248,7 @@ export default function FullTestClient() {
             })}
           </div>
           {scores.listening !== undefined && (
-            <span className="text-xs text-gray-400 shrink-0">
+            <span className="text-xs text-efe-muted shrink-0">
               L: {scores.listening.toFixed(1)}{scores.reading !== undefined ? ` R: ${scores.reading.toFixed(1)}` : ""}
             </span>
           )}
@@ -290,15 +290,15 @@ function FormatCard({
   return (
     <button
       onClick={onClick}
-      className="w-full text-left border-2 border-gray-200 rounded-2xl p-5 hover:border-blue-400 hover:bg-blue-50 transition group"
+      className="w-full text-left border border-efe-line bg-efe-surface rounded-2xl p-5 hover:border-efe-accent hover:bg-efe-accent-soft/40 transition group"
     >
       <div className="flex items-start justify-between">
         <div className="space-y-1">
-          <span className="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-0.5 rounded-full">{badge}</span>
-          <p className="font-bold text-gray-900 text-lg">{title}</p>
-          <p className="text-sm text-gray-500">{desc}</p>
+          <span className="text-xs font-bold text-efe-accent bg-efe-accent-soft px-2 py-0.5 rounded-full">{badge}</span>
+          <p className="font-bold text-efe-fg text-lg font-display">{title}</p>
+          <p className="text-sm text-efe-muted">{desc}</p>
         </div>
-        <span className="text-gray-300 group-hover:text-blue-500 text-2xl ml-4 mt-1">→</span>
+        <span className="text-efe-muted group-hover:text-efe-accent text-2xl ml-4 mt-1">→</span>
       </div>
     </button>
   );
@@ -306,9 +306,9 @@ function FormatCard({
 
 function TestStructureInfo() {
   return (
-    <div className="bg-gray-50 rounded-2xl p-4 space-y-2">
-      <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">Test Structure</p>
-      <div className="space-y-1.5 text-xs text-gray-600">
+    <div className="bg-efe-bg border border-efe-line rounded-2xl p-4 space-y-2">
+      <p className="text-xs font-bold text-efe-muted uppercase tracking-wider">Test Structure</p>
+      <div className="space-y-1.5 text-xs text-efe-muted">
         <div className="flex justify-between"><span>🎧 Listening</span><span>~30 min + 10 min transfer</span></div>
         <div className="flex justify-between"><span>📖 Reading</span><span>60 min</span></div>
         <div className="flex justify-between"><span>✍️ Writing</span><span>60 min</span></div>

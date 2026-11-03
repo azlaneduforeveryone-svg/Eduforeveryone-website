@@ -331,12 +331,12 @@ export default function ListeningPage() {
 
   if (activeSection) return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10">
-      <div className="flex items-center gap-2 text-sm text-gray-400 mb-6">
-        <Link href="/ielts" className="hover:text-emerald-600">IELTS</Link>
+      <div className="flex items-center gap-2 text-sm text-efe-muted mb-6">
+        <Link href="/ielts" className="hover:text-efe-accent">IELTS</Link>
         <span>›</span>
-        <Link href="/ielts/listening" className="hover:text-emerald-600">Listening</Link>
+        <Link href="/ielts/listening" className="hover:text-efe-accent">Listening</Link>
         <span>›</span>
-        <span className="text-gray-700 font-medium">Section {activeSection.num}</span>
+        <span className="text-efe-fg font-medium">Section {activeSection.num}</span>
       </div>
 
       {results && (
@@ -354,11 +354,11 @@ export default function ListeningPage() {
           </p>
           <div className="flex gap-3 justify-center flex-wrap">
             <button onClick={() => setShowTranscript(v => !v)}
-              className="text-sm text-emerald-600 font-semibold border border-emerald-300 px-4 py-2 rounded-xl hover:bg-emerald-50">
+              className="text-sm text-efe-accent font-semibold border border-efe-line px-4 py-2 rounded-xl hover:bg-efe-accent-soft">
               {showTranscript ? "Hide" : "Show"} Transcript
             </button>
             <button onClick={() => { setActiveSection(null); }}
-              className="bg-emerald-600 text-white px-5 py-2 rounded-xl font-bold text-sm hover:bg-emerald-700">
+              className="bg-efe-accent text-white px-5 py-2 rounded-xl font-bold text-sm hover:bg-efe-accent-ink">
               Try Another Section
             </button>
           </div>
@@ -366,10 +366,10 @@ export default function ListeningPage() {
         </div>
       )}
 
-      <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-5 mb-5">
-        <span className="text-xs bg-emerald-100 text-emerald-700 font-bold px-2.5 py-1 rounded-full">{activeSection.title}</span>
-        <h2 className="font-bold text-emerald-900 mt-2 mb-1">{activeSection.title}</h2>
-        <p className="text-emerald-700 text-sm">{activeSection.context}</p>
+      <div className="bg-efe-accent-soft border border-efe-line rounded-2xl p-5 mb-5">
+        <span className="text-xs efe-skill-listening font-bold px-2.5 py-1 rounded-full">{activeSection.title}</span>
+        <h2 className="font-bold text-efe-fg mt-2 mb-1 font-display">{activeSection.title}</h2>
+        <p className="text-efe-muted text-sm">{activeSection.context}</p>
       </div>
 
       {!results && (
@@ -450,8 +450,7 @@ export default function ListeningPage() {
       {!results && (
         <button onClick={submit}
           disabled={Object.keys(answers).length < activeSection.questions.length}
-          className="w-full bg-emerald-600 text-white py-4 rounded-2xl font-bold text-base hover:bg-emerald-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-          style={{ boxShadow: "0 4px 0 #065f46" }}>
+          className="w-full bg-efe-accent text-white py-4 rounded-2xl font-bold text-base hover:bg-efe-accent-ink transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-sm">
           {Object.keys(answers).length < activeSection.questions.length
             ? `Answer all questions (${Object.keys(answers).length}/${activeSection.questions.length} done)`
             : "Submit Answers →"}
@@ -460,7 +459,7 @@ export default function ListeningPage() {
 
       <div className="mt-6 text-center">
         <button onClick={() => { setActiveSection(null); }}
-          className="text-sm text-gray-400 hover:text-gray-600 transition-colors">
+          className="text-sm text-efe-muted hover:text-efe-accent transition-colors">
           ← Back to all sections
         </button>
       </div>
@@ -469,30 +468,30 @@ export default function ListeningPage() {
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10">
-      <div className="flex items-center gap-2 text-sm text-gray-400 mb-6">
-        <Link href="/ielts" className="hover:text-emerald-600">IELTS</Link>
+      <div className="flex items-center gap-2 text-sm text-efe-muted mb-6">
+        <Link href="/ielts" className="hover:text-efe-accent">IELTS</Link>
         <span>›</span>
-        <span className="text-gray-700 font-medium">Listening</span>
+        <span className="text-efe-fg font-medium">Listening</span>
       </div>
 
       <div className="flex items-start gap-4 mb-8">
         <span className="text-5xl">🎧</span>
         <div className="flex-1">
-          <h1 className="text-3xl font-black text-gray-900 mb-1">IELTS Listening Practice</h1>
-          <p className="text-gray-500 text-sm">{ACTIVE_SECTIONS.length} sections · {QUESTIONS_PER_SECTION} questions each · shuffled every attempt · AI-generated audio</p>
+          <h1 className="text-3xl font-black text-efe-fg mb-1 font-display">IELTS Listening Practice</h1>
+          <p className="text-efe-muted text-sm">{ACTIVE_SECTIONS.length} sections · {QUESTIONS_PER_SECTION} questions each · shuffled every attempt · AI-generated audio</p>
         </div>
         <button onClick={() => setSessionKey(k => k + 1)}
-          className="flex-shrink-0 text-xs border border-gray-200 text-gray-500 hover:text-emerald-600 hover:border-emerald-300 px-3 py-2 rounded-xl transition-all">
+          className="flex-shrink-0 text-xs border border-efe-line text-efe-muted hover:text-efe-accent hover:border-efe-accent px-3 py-2 rounded-xl transition-all">
           🔀 New Shuffle
         </button>
       </div>
 
-      <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-5 mb-8">
-        <p className="font-bold text-emerald-800 mb-3">🎙️ How the Audio Works</p>
-        <div className="grid sm:grid-cols-3 gap-3 text-sm text-emerald-700">
-          <div className="flex gap-2"><span className="font-black text-emerald-500">1.</span><span>Pick a section and press "Start Listening"</span></div>
-          <div className="flex gap-2"><span className="font-black text-emerald-500">2.</span><span>45-second reading time before audio begins</span></div>
-          <div className="flex gap-2"><span className="font-black text-emerald-500">3.</span><span>Audio plays automatically — answer as you listen</span></div>
+      <div className="bg-efe-accent-soft border border-efe-line rounded-2xl p-5 mb-8">
+        <p className="font-bold text-efe-accent-ink mb-3">🎙️ How the Audio Works</p>
+        <div className="grid sm:grid-cols-3 gap-3 text-sm text-efe-accent-ink">
+          <div className="flex gap-2"><span className="font-black text-efe-accent">1.</span><span>Pick a section and press "Start Listening"</span></div>
+          <div className="flex gap-2"><span className="font-black text-efe-accent">2.</span><span>45-second reading time before audio begins</span></div>
+          <div className="flex gap-2"><span className="font-black text-efe-accent">3.</span><span>Audio plays automatically — answer as you listen</span></div>
         </div>
       </div>
 
@@ -503,20 +502,20 @@ export default function ListeningPage() {
           { num:3, label:"Educational",  desc:"Discussion between students or a tutor" },
           { num:4, label:"Educational",  desc:"Academic lecture or monologue" },
         ].map(s => (
-          <div key={s.num} className="bg-white border border-emerald-200 rounded-2xl p-4 text-center">
-            <p className="text-2xl font-black text-emerald-600 mb-1">{s.num}</p>
-            <p className="text-xs font-semibold text-gray-700 mb-1">{s.label}</p>
-            <p className="text-xs text-gray-400 leading-tight">{s.desc}</p>
+          <div key={s.num} className="bg-efe-surface border border-efe-line rounded-2xl p-4 text-center shadow-sm">
+            <p className="text-2xl font-black text-[var(--efe-skill-listening-fg)] mb-1">{s.num}</p>
+            <p className="text-xs font-semibold text-efe-fg mb-1">{s.label}</p>
+            <p className="text-xs text-efe-muted leading-tight">{s.desc}</p>
           </div>
         ))}
       </div>
 
-      <h2 className="text-xl font-bold text-gray-900 mb-5">Choose a Section</h2>
+      <h2 className="text-xl font-bold text-efe-fg mb-5 font-display">Choose a Section</h2>
 
       {fbLoading ? (
         <div className="grid sm:grid-cols-2 gap-5">
           {[1,2,3,4].map(i => (
-            <div key={i} className="bg-white border border-gray-200 rounded-2xl p-6 animate-pulse">
+            <div key={i} className="bg-efe-surface border border-efe-line rounded-2xl p-6 animate-pulse">
               <div className="h-4 bg-gray-200 rounded w-1/3 mb-3" />
               <div className="h-3 bg-gray-100 rounded w-2/3 mb-2" />
               <div className="h-3 bg-gray-100 rounded w-1/2 mb-4" />
@@ -527,16 +526,15 @@ export default function ListeningPage() {
       ) : (
         <div className="grid sm:grid-cols-2 gap-5">
           {ACTIVE_SECTIONS.map(s => (
-            <div key={s.num} className="bg-white border border-gray-200 rounded-2xl p-6 hover:border-emerald-300 hover:shadow-md transition-all">
+            <div key={s.num} className="bg-efe-surface border border-efe-line rounded-2xl p-6 hover:border-efe-accent hover:shadow-md transition-all">
               <div className="flex items-start justify-between mb-3">
-                <span className="text-xs bg-emerald-100 text-emerald-700 px-2.5 py-1 rounded-full font-bold">Section {s.num}</span>
-                <span className="text-xs text-gray-400">{s.questions.length} questions</span>
+                <span className="text-xs efe-skill-listening px-2.5 py-1 rounded-full font-bold">Section {s.num}</span>
+                <span className="text-xs text-efe-muted">{s.questions.length} questions</span>
               </div>
-              <p className="font-bold text-gray-900 text-sm mb-1">{s.title.split("—")[1]?.trim() || s.title}</p>
-              <p className="text-gray-500 text-xs mb-4 leading-relaxed">{s.context}</p>
+              <p className="font-bold text-efe-fg text-sm mb-1 font-display">{s.title.split("—")[1]?.trim() || s.title}</p>
+              <p className="text-efe-muted text-xs mb-4 leading-relaxed">{s.context}</p>
               <button onClick={() => start(s)}
-                className="w-full bg-emerald-600 text-white py-2.5 rounded-xl font-bold text-sm hover:bg-emerald-700 transition-all"
-                style={{ boxShadow: "0 3px 0 #065f46" }}>
+                className="w-full bg-efe-accent text-white py-2.5 rounded-xl font-bold text-sm hover:bg-efe-accent-ink transition-all shadow-sm">
                 🎧 Start Section {s.num} →
               </button>
             </div>
@@ -545,7 +543,7 @@ export default function ListeningPage() {
       )}
 
       <div className="mt-8 text-center">
-        <Link href="/ielts" className="inline-block text-emerald-600 text-sm font-semibold hover:underline">
+        <Link href="/ielts" className="inline-block text-efe-accent text-sm font-semibold hover:underline">
           ← Back to IELTS Hub
         </Link>
       </div>

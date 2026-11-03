@@ -4,7 +4,7 @@
 // Import this into app/notes/page.tsx
 
 import { useAdminCollection } from "@/lib/useAdminCollection";
-import Link from "next/link";
+import Card from "@/components/ui/Card";
 
 interface AdminNote {
   id:      string;
@@ -29,14 +29,6 @@ function transformNotes(raw: Record<string, unknown>[]): AdminNote[] {
     .filter(n => n.id && n.title);
 }
 
-const SUBJECT_COLORS: Record<string, string> = {
-  Mathematics: "border-teal-200 bg-teal-50",
-  Science:     "border-green-200 bg-green-50",
-  English:     "border-purple-200 bg-purple-50",
-  History:     "border-red-200 bg-red-50",
-  General:     "border-gray-200 bg-gray-50",
-};
-
 const SUBJECT_ICONS: Record<string, string> = {
   Mathematics: "🧮", Science: "🔬", English: "✏️",
   History: "📜", General: "📄",
@@ -55,10 +47,10 @@ export default function AdminNotesSection() {
     <div className="mb-8">
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {[1,2,3].map(i => (
-          <div key={i} className="border border-gray-200 rounded-2xl p-5 animate-pulse">
-            <div className="h-4 bg-gray-200 rounded w-2/3 mb-3" />
-            <div className="h-3 bg-gray-100 rounded w-full mb-2" />
-            <div className="h-3 bg-gray-100 rounded w-4/5" />
+          <div key={i} className="efe-card p-5 animate-pulse">
+            <div className="h-4 bg-efe-line rounded w-2/3 mb-3" />
+            <div className="h-3 bg-efe-bg rounded w-full mb-2" />
+            <div className="h-3 bg-efe-bg rounded w-4/5" />
           </div>
         ))}
       </div>
@@ -70,35 +62,36 @@ export default function AdminNotesSection() {
   return (
     <div className="mb-10">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-xl font-bold text-gray-900">📥 Recently Added Notes</h2>
-        <span className="text-xs text-gray-400 bg-gray-100 px-3 py-1 rounded-full">
+        <h2 className="text-xl font-bold text-efe-fg">📥 Recently Added Notes</h2>
+        <span className="text-xs text-efe-muted bg-efe-surface border border-efe-line px-3 py-1 rounded-full">
           {notes.length} from admin
         </span>
       </div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {notes.map(note => (
-          <Link key={note.id} href={`/notes/${note.id}`}
-            className={`group border rounded-2xl p-5 hover:shadow-md transition-all ${SUBJECT_COLORS[note.subject] || SUBJECT_COLORS.General}`}>
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-xl">{SUBJECT_ICONS[note.subject] || "📄"}</span>
-              <span className="text-xs font-semibold text-gray-600">{note.subject}</span>
+          <Card key={note.id} href={`/notes/${note.id}`} className="p-5 justify-between">
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xl">{SUBJECT_ICONS[note.subject] || "📄"}</span>
+                <span className="text-xs font-semibold text-efe-accent-ink uppercase tracking-wider">{note.subject}</span>
+              </div>
+              <h3 className="font-bold text-efe-fg text-sm mb-2 group-hover:text-efe-accent transition-colors">
+                {note.title}
+              </h3>
+              <p className="text-efe-muted text-xs leading-relaxed mb-3 line-clamp-3">
+                {note.content.slice(0, 120)}…
+              </p>
             </div>
-            <h3 className="font-bold text-gray-900 text-sm mb-2 group-hover:text-teal-600 transition-colors">
-              {note.title}
-            </h3>
-            <p className="text-gray-600 text-xs leading-relaxed mb-3 line-clamp-3">
-              {note.content.slice(0, 120)}…
-            </p>
             {note.tags.length > 0 && (
               <div className="flex flex-wrap gap-1">
                 {note.tags.slice(0, 3).map(tag => (
-                  <span key={tag} className="text-xs bg-white/70 text-gray-500 px-2 py-0.5 rounded-full border border-white">
+                  <span key={tag} className="text-xs bg-efe-bg text-efe-muted px-2 py-0.5 rounded-full border border-efe-line">
                     #{tag}
                   </span>
                 ))}
               </div>
             )}
-          </Link>
+          </Card>
         ))}
       </div>
     </div>
