@@ -1,6 +1,8 @@
 "use client";
 import { useRef } from "react";
 import Link from "next/link";
+import Card from "@/components/ui/Card";
+import Button from "@/components/ui/Button";
 
 export default function IELTSGuidePage() {
   const printRef = useRef<HTMLDivElement>(null);
@@ -10,7 +12,7 @@ export default function IELTSGuidePage() {
   };
 
   return (
-    <>
+    <div className="efe-page">
       {/* Print styles */}
       <style>{`
         @media print {
@@ -22,18 +24,16 @@ export default function IELTSGuidePage() {
       `}</style>
 
       {/* Top bar */}
-      <div className="no-print bg-white border-b border-gray-200 sticky top-0 z-50">
+      <div className="no-print bg-efe-surface/95 backdrop-blur border-b border-efe-line sticky top-0 z-40">
         <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Link href="/ielts" className="text-sm text-gray-500 hover:text-teal-600">← IELTS Hub</Link>
-            <span className="text-gray-300">|</span>
-            <span className="text-sm font-semibold text-gray-700">IELTS Complete Study Guide</span>
+            <Link href="/ielts" className="text-sm text-efe-muted hover:text-efe-accent-ink">← IELTS Hub</Link>
+            <span className="text-efe-line">|</span>
+            <span className="text-sm font-semibold text-efe-fg">IELTS Complete Study Guide</span>
           </div>
-          <button onClick={handlePrint}
-            className="flex items-center gap-2 bg-teal-600 text-white px-5 py-2 rounded-xl text-sm font-bold hover:bg-teal-700 transition-all"
-            style={{ boxShadow: "0 3px 0 #0F6E56" }}>
+          <Button onClick={handlePrint} variant="primary" size="sm">
             📥 Download / Print PDF
-          </button>
+          </Button>
         </div>
       </div>
 
@@ -41,55 +41,55 @@ export default function IELTSGuidePage() {
       <div ref={printRef} className="print-area max-w-4xl mx-auto px-4 py-8">
 
         {/* Cover */}
-        <div className="bg-gradient-to-br from-teal-700 to-emerald-600 text-white rounded-2xl p-8 mb-8 text-center">
+        <div className="efe-banner p-8 mb-8 text-center">
           <p className="text-5xl mb-4">🎯</p>
-          <h1 className="text-3xl font-black mb-2">IELTS Complete Study Guide</h1>
-          <p className="text-teal-200 text-base mb-4">
+          <h1 className="text-3xl font-bold text-white font-display mb-2">IELTS Complete Study Guide</h1>
+          <p className="text-white/85 text-base mb-4">
             Everything you need to know — from registration to Band 9
           </p>
-          <div className="flex justify-center gap-4 text-sm flex-wrap">
-            <span className="bg-white/10 px-3 py-1 rounded-full">Academic & General Training</span>
-            <span className="bg-white/10 px-3 py-1 rounded-full">All 4 Skills</span>
-            <span className="bg-white/10 px-3 py-1 rounded-full">Band Score System</span>
-            <span className="bg-white/10 px-3 py-1 rounded-full">Free — EduForEveryone.com</span>
+          <div className="flex justify-center gap-3 text-sm flex-wrap">
+            <span className="bg-white/15 border border-white/25 px-3 py-1 rounded-full">Academic & General Training</span>
+            <span className="bg-white/15 border border-white/25 px-3 py-1 rounded-full">All 4 Skills</span>
+            <span className="bg-white/15 border border-white/25 px-3 py-1 rounded-full">Band Score System</span>
+            <span className="bg-white/15 border border-white/25 px-3 py-1 rounded-full">Free — EduForEveryone.com</span>
           </div>
         </div>
 
         {/* Section 1: What is IELTS */}
         <section className="mb-8">
-          <h2 className="text-2xl font-black text-gray-900 border-b-2 border-teal-500 pb-2 mb-5">
+          <h2 className="text-2xl font-bold text-efe-fg font-display border-b-2 border-efe-accent pb-2 mb-5">
             1. What is IELTS?
           </h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            The <strong>International English Language Testing System (IELTS)</strong> is the world's most trusted
+          <p className="text-efe-muted leading-relaxed mb-4">
+            The <strong className="text-efe-fg">International English Language Testing System (IELTS)</strong> is the world&apos;s most trusted
             English language proficiency test, recognised by over 12,000 organisations across 140+ countries
             including universities, employers, and immigration authorities.
           </p>
           <div className="grid sm:grid-cols-2 gap-4">
-            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
-              <p className="font-black text-blue-800 mb-2">📘 Academic IELTS</p>
-              <p className="text-sm text-blue-700">For university admission and professional registration (Medicine, Nursing, Engineering). Tests academic language for higher education.</p>
-            </div>
-            <div className="bg-teal-50 border border-teal-200 rounded-xl p-4">
-              <p className="font-black text-teal-800 mb-2">💼 General Training</p>
-              <p className="text-sm text-teal-700">For immigration (Canada, Australia, UK PR), work visas, and practical training programmes. Tests real-world language skills.</p>
-            </div>
+            <Card className="p-5">
+              <p className="font-bold text-efe-fg mb-2">📘 Academic IELTS</p>
+              <p className="text-sm text-efe-muted">For university admission and professional registration (Medicine, Nursing, Engineering). Tests academic language for higher education.</p>
+            </Card>
+            <Card className="p-5">
+              <p className="font-bold text-efe-fg mb-2">💼 General Training</p>
+              <p className="text-sm text-efe-muted">For immigration (Canada, Australia, UK PR), work visas, and practical training programmes. Tests real-world language skills.</p>
+            </Card>
           </div>
         </section>
 
         {/* Section 2: Exam Format */}
         <section className="mb-8">
-          <h2 className="text-2xl font-black text-gray-900 border-b-2 border-teal-500 pb-2 mb-5">
+          <h2 className="text-2xl font-bold text-efe-fg font-display border-b-2 border-efe-accent pb-2 mb-5">
             2. Exam Format — 4 Modules
           </h2>
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto rounded-2xl border border-efe-line bg-efe-surface">
             <table className="w-full border-collapse text-sm">
               <thead>
-                <tr className="bg-gray-800 text-white">
-                  <th className="px-4 py-3 text-left rounded-tl-xl">Module</th>
+                <tr className="bg-efe-brand text-white">
+                  <th className="px-4 py-3 text-left">Module</th>
                   <th className="px-4 py-3 text-left">Duration</th>
                   <th className="px-4 py-3 text-left">Questions</th>
-                  <th className="px-4 py-3 text-left rounded-tr-xl">Format</th>
+                  <th className="px-4 py-3 text-left">Format</th>
                 </tr>
               </thead>
               <tbody>
@@ -99,11 +99,11 @@ export default function IELTSGuidePage() {
                   ["✍️ Writing",   "60 minutes",               "2 tasks",      "Task 1 (20 min) + Task 2 (40 min) essay"],
                   ["🗣️ Speaking",  "11–14 minutes",            "3 parts",      "Interview: Introduction → Cue Card → Discussion"],
                 ].map(([mod, dur, q, fmt], i) => (
-                  <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                    <td className="px-4 py-3 font-bold border-b border-gray-100">{mod}</td>
-                    <td className="px-4 py-3 border-b border-gray-100">{dur}</td>
-                    <td className="px-4 py-3 border-b border-gray-100">{q}</td>
-                    <td className="px-4 py-3 border-b border-gray-100 text-gray-600">{fmt}</td>
+                  <tr key={i} className={i % 2 === 0 ? "bg-efe-surface" : "bg-efe-bg"}>
+                    <td className="px-4 py-3 font-bold text-efe-fg border-b border-efe-line/60">{mod}</td>
+                    <td className="px-4 py-3 text-efe-fg border-b border-efe-line/60">{dur}</td>
+                    <td className="px-4 py-3 text-efe-fg border-b border-efe-line/60">{q}</td>
+                    <td className="px-4 py-3 border-b border-efe-line/60 text-efe-muted">{fmt}</td>
                   </tr>
                 ))}
               </tbody>
@@ -114,45 +114,47 @@ export default function IELTSGuidePage() {
           </div>
         </section>
 
-        {/* Section 3: Band Score System */}
+        {/* Section 3: Band Score System (semantic band colours preserved) */}
         <section className="mb-8">
-          <h2 className="text-2xl font-black text-gray-900 border-b-2 border-teal-500 pb-2 mb-5">
+          <h2 className="text-2xl font-bold text-efe-fg font-display border-b-2 border-efe-accent pb-2 mb-5">
             3. Band Score System (0–9)
           </h2>
-          <p className="text-gray-700 mb-4 text-sm">
-            Each module is scored 0–9. Your <strong>Overall Band Score</strong> is the average of all 4 modules, rounded to the nearest 0.5.
+          <p className="text-efe-muted mb-4 text-sm">
+            Each module is scored 0–9. Your <strong className="text-efe-fg">Overall Band Score</strong> is the average of all 4 modules, rounded to the nearest 0.5.
           </p>
-          <table className="w-full border-collapse text-sm mb-5">
-            <thead>
-              <tr className="bg-gray-800 text-white">
-                <th className="px-4 py-2 text-left rounded-tl-xl">Band</th>
-                <th className="px-4 py-2 text-left">Level</th>
-                <th className="px-4 py-2 text-left rounded-tr-xl">Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                ["9", "Expert",         "bg-emerald-500", "Full operational command — fluent, accurate in all contexts"],
-                ["8", "Very Good",      "bg-green-500",   "Strong command with only occasional unsystematic errors"],
-                ["7", "Good",           "bg-lime-500",    "Handles complex language well despite occasional mistakes"],
-                ["6", "Competent",      "bg-yellow-400",  "Generally effective; understands complex language in familiar situations"],
-                ["5", "Modest",         "bg-orange-400",  "Partial command; copes with overall meaning but makes many errors"],
-                ["4", "Limited",        "bg-orange-500",  "Basic competence limited to familiar situations"],
-                ["3", "Extremely Ltd",  "bg-red-400",     "Only general meaning in very familiar situations"],
-              ].map(([b, l, c, d]) => (
-                <tr key={b} className="border-b border-gray-100">
-                  <td className="px-4 py-2">
-                    <span className={`${c} text-white font-black text-sm px-2.5 py-1 rounded-lg`}>{b}</span>
-                  </td>
-                  <td className="px-4 py-2 font-bold text-gray-900">{l}</td>
-                  <td className="px-4 py-2 text-gray-600">{d}</td>
+          <div className="overflow-x-auto rounded-2xl border border-efe-line bg-efe-surface mb-5">
+            <table className="w-full border-collapse text-sm">
+              <thead>
+                <tr className="bg-efe-brand text-white">
+                  <th className="px-4 py-2 text-left">Band</th>
+                  <th className="px-4 py-2 text-left">Level</th>
+                  <th className="px-4 py-2 text-left">Description</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {[
+                  ["9", "Expert",         "bg-emerald-500", "Full operational command — fluent, accurate in all contexts"],
+                  ["8", "Very Good",      "bg-green-500",   "Strong command with only occasional unsystematic errors"],
+                  ["7", "Good",           "bg-lime-500",    "Handles complex language well despite occasional mistakes"],
+                  ["6", "Competent",      "bg-yellow-400",  "Generally effective; understands complex language in familiar situations"],
+                  ["5", "Modest",         "bg-orange-400",  "Partial command; copes with overall meaning but makes many errors"],
+                  ["4", "Limited",        "bg-orange-500",  "Basic competence limited to familiar situations"],
+                  ["3", "Extremely Ltd",  "bg-red-400",     "Only general meaning in very familiar situations"],
+                ].map(([b, l, c, d]) => (
+                  <tr key={b} className="border-b border-efe-line/60">
+                    <td className="px-4 py-2">
+                      <span className={`${c} text-white font-black text-sm px-2.5 py-1 rounded-lg`}>{b}</span>
+                    </td>
+                    <td className="px-4 py-2 font-bold text-efe-fg">{l}</td>
+                    <td className="px-4 py-2 text-efe-muted">{d}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
 
           {/* Target scores */}
-          <h3 className="font-black text-gray-900 mb-3">🎯 Target Scores by Destination</h3>
+          <h3 className="font-bold text-efe-fg mb-3">🎯 Target Scores by Destination</h3>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
               ["🇨🇦 Canada (Express Entry / SDS)", "6.5+ overall, min 6.0 per module"],
@@ -160,22 +162,22 @@ export default function IELTSGuidePage() {
               ["🇦🇺 Australia Migration",           "6.0–7.0 depending on visa subclass"],
               ["🏥 Healthcare & Nursing",           "7.0+ in all 4 modules"],
             ].map(([dest, score]) => (
-              <div key={dest} className="bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 flex justify-between items-center">
-                <span className="text-sm font-semibold text-gray-800">{dest}</span>
-                <span className="text-sm font-black text-teal-600 ml-3 text-right">{score}</span>
-              </div>
+              <Card key={dest} className="flex-row px-4 py-3 justify-between items-center">
+                <span className="text-sm font-semibold text-efe-fg">{dest}</span>
+                <span className="text-sm font-bold text-efe-accent-ink ml-3 text-right">{score}</span>
+              </Card>
             ))}
           </div>
         </section>
 
         {/* Section 4: Marking Criteria */}
         <section className="mb-8">
-          <h2 className="text-2xl font-black text-gray-900 border-b-2 border-teal-500 pb-2 mb-5">
+          <h2 className="text-2xl font-bold text-efe-fg font-display border-b-2 border-efe-accent pb-2 mb-5">
             4. Marking Criteria
           </h2>
           <div className="grid sm:grid-cols-2 gap-5">
-            <div>
-              <p className="font-black text-gray-900 mb-3">✍️ Writing (25% each)</p>
+            <Card className="p-5">
+              <p className="font-bold text-efe-fg mb-3">✍️ Writing (25% each)</p>
               <div className="space-y-2">
                 {[
                   ["Task Achievement/Response", "Answer every part of the prompt fully"],
@@ -183,15 +185,15 @@ export default function IELTSGuidePage() {
                   ["Lexical Resource",           "Wide, precise vocabulary without repetition"],
                   ["Grammatical Range & Accuracy","Mix of simple and complex sentences"],
                 ].map(([c, d]) => (
-                  <div key={c} className="flex gap-2 text-sm">
-                    <span className="text-teal-500 font-black mt-0.5 flex-shrink-0">✓</span>
-                    <span><strong>{c}:</strong> {d}</span>
+                  <div key={c} className="flex gap-2 text-sm text-efe-muted">
+                    <span className="text-efe-accent font-black mt-0.5 flex-shrink-0">✓</span>
+                    <span><strong className="text-efe-fg">{c}:</strong> {d}</span>
                   </div>
                 ))}
               </div>
-            </div>
-            <div>
-              <p className="font-black text-gray-900 mb-3">🗣️ Speaking (25% each)</p>
+            </Card>
+            <Card className="p-5">
+              <p className="font-bold text-efe-fg mb-3">🗣️ Speaking (25% each)</p>
               <div className="space-y-2">
                 {[
                   ["Fluency & Coherence",       "Speak smoothly without long pauses"],
@@ -199,19 +201,19 @@ export default function IELTSGuidePage() {
                   ["Lexical Resource",          "Right words and collocations naturally"],
                   ["Grammatical Range & Acc.",  "Variety of tenses and structures"],
                 ].map(([c, d]) => (
-                  <div key={c} className="flex gap-2 text-sm">
-                    <span className="text-teal-500 font-black mt-0.5 flex-shrink-0">✓</span>
-                    <span><strong>{c}:</strong> {d}</span>
+                  <div key={c} className="flex gap-2 text-sm text-efe-muted">
+                    <span className="text-efe-accent font-black mt-0.5 flex-shrink-0">✓</span>
+                    <span><strong className="text-efe-fg">{c}:</strong> {d}</span>
                   </div>
                 ))}
               </div>
-            </div>
+            </Card>
           </div>
         </section>
 
         {/* Section 5: Expert Strategies */}
         <section className="mb-8">
-          <h2 className="text-2xl font-black text-gray-900 border-b-2 border-teal-500 pb-2 mb-5">
+          <h2 className="text-2xl font-bold text-efe-fg font-display border-b-2 border-efe-accent pb-2 mb-5">
             5. Expert Preparation Strategies
           </h2>
           <div className="grid sm:grid-cols-2 gap-5">
@@ -241,70 +243,70 @@ export default function IELTSGuidePage() {
                 "In Part 2 (cue card), use your 1 minute prep time to plan",
               ]},
             ].map(s => (
-              <div key={s.skill} className="bg-gray-50 border border-gray-200 rounded-xl p-4">
-                <p className="font-black text-gray-900 mb-3">{s.icon} {s.skill}</p>
+              <Card key={s.skill} className="p-5">
+                <p className="font-bold text-efe-fg mb-3">{s.icon} {s.skill}</p>
                 <ul className="space-y-2">
                   {s.tips.map((t, i) => (
-                    <li key={i} className="flex gap-2 text-sm text-gray-700">
-                      <span className="text-teal-500 font-bold flex-shrink-0">•</span> {t}
+                    <li key={i} className="flex gap-2 text-sm text-efe-muted">
+                      <span className="text-efe-accent font-bold flex-shrink-0">•</span> {t}
                     </li>
                   ))}
                 </ul>
-              </div>
+              </Card>
             ))}
           </div>
         </section>
 
         {/* Section 6: Study Plans */}
         <section className="mb-8">
-          <h2 className="text-2xl font-black text-gray-900 border-b-2 border-teal-500 pb-2 mb-5">
+          <h2 className="text-2xl font-bold text-efe-fg font-display border-b-2 border-efe-accent pb-2 mb-5">
             6. Study Plans
           </h2>
           <div className="grid sm:grid-cols-3 gap-4">
             {[
-              { days:"30-Day", emoji:"⚡", color:"bg-amber-500", for:"Advanced speakers", plan:[
+              { days:"30-Day", emoji:"⚡", for:"Advanced speakers", plan:[
                 "Week 1: Full diagnostic test + identify weak areas",
                 "Week 2: Intensive Writing Task 2 — 1 essay per day",
                 "Week 3: Reading timed practice + Speaking Part 2 cards",
                 "Week 4: 2 full mock tests + review all errors",
               ]},
-              { days:"60-Day", emoji:"📈", color:"bg-teal-600", for:"Intermediate learners", plan:[
+              { days:"60-Day", emoji:"📈", for:"Intermediate learners", plan:[
                 "Weeks 1–2: Vocabulary building + grammar review",
                 "Weeks 3–4: Listening practice + Reading strategies",
                 "Weeks 5–6: Writing Task 1 & 2 with model essays",
                 "Week 7–8: Full mock tests + Speaking practice daily",
               ]},
-              { days:"90-Day", emoji:"🎯", color:"bg-indigo-600", for:"Beginners (Band 7.5+ target)", plan:[
+              { days:"90-Day", emoji:"🎯", for:"Beginners (Band 7.5+ target)", plan:[
                 "Month 1: English foundations — grammar, vocabulary, accents",
                 "Month 2: Skill-by-skill practice with all question types",
                 "Month 3: Full mock tests, AI writing feedback, speaking recordings",
               ]},
             ].map(p => (
-              <div key={p.days} className="bg-white border border-gray-200 rounded-xl p-4">
-                <div className={`${p.color} text-white font-black text-sm px-3 py-1.5 rounded-full inline-block mb-3`}>
+              <Card key={p.days} className="p-5">
+                <div className="bg-efe-accent-soft text-efe-accent-ink border border-efe-line font-bold text-sm px-3 py-1.5 rounded-full inline-block mb-3 self-start">
                   {p.emoji} {p.days}
                 </div>
-                <p className="text-xs text-gray-500 mb-3">Best for: {p.for}</p>
+                <p className="text-xs text-efe-muted mb-3">Best for: {p.for}</p>
                 <ul className="space-y-2">
                   {p.plan.map((item, i) => (
-                    <li key={i} className="text-xs text-gray-700 flex gap-2">
-                      <span className="font-black text-gray-400 flex-shrink-0">{i+1}.</span> {item}
+                    <li key={i} className="text-xs text-efe-fg flex gap-2">
+                      <span className="font-bold text-efe-accent-ink flex-shrink-0">{i+1}.</span> {item}
                     </li>
                   ))}
                 </ul>
-              </div>
+              </Card>
             ))}
           </div>
         </section>
 
-        {/* Section 7: Quick Reference */}
+        {/* Section 7: Quick Reference (semantic green/red preserved) */}
         <section className="mb-8">
-          <h2 className="text-2xl font-black text-gray-900 border-b-2 border-teal-500 pb-2 mb-5">
-            7. Quick Reference — Do's and Don'ts
+          <h2 className="text-2xl font-bold text-efe-fg font-display border-b-2 border-efe-accent pb-2 mb-5">
+            7. Quick Reference — Do&apos;s and Don&apos;ts
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
             <div className="bg-green-50 border border-green-200 rounded-xl p-4">
-              <p className="font-black text-green-800 mb-3">✅ Do's</p>
+              <p className="font-black text-green-800 mb-3">✅ Do&apos;s</p>
               <ul className="space-y-2 text-sm text-green-700">
                 {[
                   "Read questions BEFORE the audio in Listening",
@@ -317,7 +319,7 @@ export default function IELTSGuidePage() {
               </ul>
             </div>
             <div className="bg-red-50 border border-red-200 rounded-xl p-4">
-              <p className="font-black text-red-800 mb-3">❌ Don'ts</p>
+              <p className="font-black text-red-800 mb-3">❌ Don&apos;ts</p>
               <ul className="space-y-2 text-sm text-red-700">
                 {[
                   "Don't memorise and recite prepared speeches in Speaking",
@@ -334,7 +336,7 @@ export default function IELTSGuidePage() {
 
         {/* Section 8: Official Resources */}
         <section className="mb-8">
-          <h2 className="text-2xl font-black text-gray-900 border-b-2 border-teal-500 pb-2 mb-5">
+          <h2 className="text-2xl font-bold text-efe-fg font-display border-b-2 border-efe-accent pb-2 mb-5">
             8. Official Resources
           </h2>
           <div className="grid sm:grid-cols-2 gap-3">
@@ -344,37 +346,36 @@ export default function IELTSGuidePage() {
               ["📘 IDP IELTS",             "www.idp.com/ielts"],
               ["📚 Cambridge English",     "www.cambridgeenglish.org/ielts"],
             ].map(([n, u]) => (
-              <div key={n} className="bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 flex justify-between items-center">
-                <span className="text-sm font-semibold text-gray-800">{n}</span>
-                <span className="text-xs text-teal-600 font-mono">{u}</span>
-              </div>
+              <Card key={n} className="flex-row px-4 py-3 justify-between items-center">
+                <span className="text-sm font-semibold text-efe-fg">{n}</span>
+                <span className="text-xs text-efe-accent-ink font-mono">{u}</span>
+              </Card>
             ))}
           </div>
         </section>
 
         {/* Footer */}
-        <div className="bg-teal-600 text-white rounded-2xl p-5 text-center">
-          <p className="font-black text-lg mb-1">EduForEveryone.com</p>
-          <p className="text-teal-200 text-sm">Free education for everyone — no fees, no barriers</p>
-          <p className="text-teal-300 text-xs mt-2">Practice at: eduforeveryone.com/ielts</p>
+        <div className="efe-banner p-6 text-center">
+          <p className="font-bold text-lg text-white mb-1">EduForEveryone.com</p>
+          <p className="text-white/85 text-sm">Free education for everyone — no fees, no barriers</p>
+          <p className="text-white/70 text-xs mt-2">Practice at: eduforeveryone.com/ielts</p>
         </div>
       </div>
 
       {/* Bottom CTA - no print */}
       <div className="no-print max-w-4xl mx-auto px-4 pb-12 text-center">
-        <button onClick={handlePrint}
-          className="bg-teal-600 text-white px-8 py-4 rounded-2xl font-black text-lg hover:bg-teal-700 transition-all mr-4"
-          style={{ boxShadow: "0 4px 0 #0F6E56" }}>
-          📥 Save as PDF
-        </button>
-        <Link href="/ielts"
-          className="bg-gray-100 text-gray-700 px-8 py-4 rounded-2xl font-bold text-base hover:bg-gray-200 transition-all inline-block">
-          ← Back to IELTS Hub
-        </Link>
-        <p className="text-xs text-gray-400 mt-4">
+        <div className="flex flex-wrap justify-center gap-4">
+          <Button onClick={handlePrint} variant="primary" size="lg">
+            📥 Save as PDF
+          </Button>
+          <Button href="/ielts" variant="secondary" size="lg">
+            ← Back to IELTS Hub
+          </Button>
+        </div>
+        <p className="text-xs text-efe-muted mt-4">
           In your browser: File → Print → Save as PDF
         </p>
       </div>
-    </>
+    </div>
   );
 }
