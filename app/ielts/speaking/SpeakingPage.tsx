@@ -247,15 +247,15 @@ export default function SpeakingPage() {
     return (
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
         {/* Breadcrumbs */}
-        <div className="flex items-center gap-2 text-sm text-gray-400 mb-6">
-          <Link href="/ielts" className="hover:text-indigo-600 transition-colors">IELTS</Link>
+        <div className="flex items-center gap-2 text-sm text-efe-muted mb-6">
+          <Link href="/ielts" className="hover:text-efe-accent transition-colors">IELTS</Link>
           <span>›</span>
-          <Link href="/ielts/speaking" className="hover:text-indigo-600 transition-colors">Speaking</Link>
+          <Link href="/ielts/speaking" className="hover:text-efe-accent transition-colors">Speaking</Link>
           <span>›</span>
-          <span className="text-gray-600 font-medium">{activeTopic.theme}</span>
+          <span className="text-efe-fg font-medium">{activeTopic.theme}</span>
         </div>
 
-        <h1 className="text-2xl font-bold text-gray-900 mb-6">Topic: {activeTopic.theme}</h1>
+        <h1 className="text-2xl font-bold text-efe-fg mb-6 font-display">Topic: {activeTopic.theme}</h1>
 
         {/* Part Tabs */}
         <div className="flex gap-2 mb-6">
@@ -270,7 +270,7 @@ export default function SpeakingPage() {
                 setIsRecording(false);
               }}
               className={`px-4 py-2 rounded-xl font-bold text-sm transition-colors ${
-                activePart === p ? "bg-amber-600 text-white" : "bg-white border border-gray-200 text-gray-600 hover:border-amber-300"
+                activePart === p ? "bg-efe-accent text-white" : "bg-efe-surface border border-efe-line text-efe-muted hover:border-efe-accent"
               }`}
             >
               Part {p}
@@ -279,9 +279,9 @@ export default function SpeakingPage() {
         </div>
 
         {/* ---------- Recording & AI Grading Section (shown on all parts) ---------- */}
-        <div className="bg-white border border-amber-200 rounded-2xl p-5 mb-6 shadow-sm">
-          <h3 className="font-bold text-amber-800 mb-3">🎙️ Practice & Get AI Feedback</h3>
-          <p className="text-sm text-gray-600 mb-4">
+        <div className="bg-efe-surface border border-efe-line rounded-2xl p-5 mb-6 shadow-sm">
+          <h3 className="font-bold text-efe-fg mb-3 font-display">🎙️ Practice & Get AI Feedback</h3>
+          <p className="text-sm text-efe-muted mb-4">
             Answer the question above. Click record, speak clearly, then submit for AI evaluation.
           </p>
           <div className="flex flex-wrap gap-3 items-center mb-4">
@@ -304,7 +304,7 @@ export default function SpeakingPage() {
               <button
                 onClick={handleSubmit}
                 disabled={aiLoading}
-                className="bg-amber-600 text-white px-5 py-2 rounded-xl font-bold text-sm hover:bg-amber-700 disabled:opacity-50"
+                className="bg-efe-accent text-white px-5 py-2 rounded-xl font-bold text-sm hover:bg-efe-accent-ink disabled:opacity-50"
               >
                 {aiLoading ? "Grading..." : "Submit & Grade"}
               </button>
@@ -472,7 +472,7 @@ export default function SpeakingPage() {
 
         {/* Back button */}
         <div className="mt-8">
-          <button onClick={() => setActiveTopic(null)} className="text-sm text-indigo-600 font-semibold hover:underline">
+          <button onClick={() => setActiveTopic(null)} className="text-sm text-efe-accent font-semibold hover:underline">
             ← Back to Speaking Topics
           </button>
         </div>
@@ -483,18 +483,18 @@ export default function SpeakingPage() {
   // ---------------- Topic Selection Screen (when no topic is selected) ----------------
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10">
-      <div className="flex items-center gap-2 text-sm text-gray-400 mb-6">
-        <Link href="/ielts" className="hover:text-indigo-600 transition-colors">IELTS</Link>
+      <div className="flex items-center gap-2 text-sm text-efe-muted mb-6">
+        <Link href="/ielts" className="hover:text-efe-accent transition-colors">IELTS</Link>
         <span>›</span>
-        <span className="text-gray-600 font-medium">Speaking</span>
+        <span className="text-efe-fg font-medium">Speaking</span>
       </div>
 
       <div className="mb-10">
         <div className="flex items-center gap-3 mb-3">
           <span className="text-4xl">🗣️</span>
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">IELTS Speaking Practice</h1>
-            <p className="text-gray-500 mt-1">Part 1 questions, Part 2 cue cards with timer, and Part 3 academic discussions</p>
+            <h1 className="text-3xl font-bold text-efe-fg font-display">IELTS Speaking Practice</h1>
+            <p className="text-efe-muted mt-1">Part 1 questions, Part 2 cue cards with timer, and Part 3 academic discussions</p>
           </div>
         </div>
       </div>
@@ -506,26 +506,26 @@ export default function SpeakingPage() {
           { part: 2, label: "Long Turn", time: "3–4 min", desc: "Speak for 1–2 minutes about a cue card topic." },
           { part: 3, label: "Discussion", time: "4–5 min", desc: "Abstract questions linked to the Part 2 topic." },
         ].map(p => (
-          <div key={p.part} className="bg-white border border-amber-100 rounded-2xl p-5 text-center">
-            <p className="text-3xl font-black text-amber-600 mb-1">{p.part}</p>
-            <p className="font-bold text-gray-800 text-sm mb-0.5">{p.label}</p>
-            <p className="text-xs text-gray-400 mb-2">{p.time}</p>
-            <p className="text-xs text-gray-500">{p.desc}</p>
+          <div key={p.part} className="bg-efe-surface border border-efe-line rounded-2xl p-5 text-center shadow-sm">
+            <p className="text-3xl font-black text-[var(--efe-skill-speaking-fg)] mb-1">{p.part}</p>
+            <p className="font-bold text-efe-fg text-sm mb-0.5">{p.label}</p>
+            <p className="text-xs text-efe-muted mb-2">{p.time}</p>
+            <p className="text-xs text-efe-muted">{p.desc}</p>
           </div>
         ))}
       </div>
 
-      <h2 className="text-xl font-bold text-gray-900 mb-5">Choose a Topic</h2>
+      <h2 className="text-xl font-bold text-efe-fg mb-5 font-display">Choose a Topic</h2>
       <div className="grid sm:grid-cols-2 gap-5">
         {TOPICS.map(t => (
-          <div key={t.id} className="bg-white border border-gray-200 rounded-2xl p-6 hover:border-amber-300 hover:shadow-md transition-all">
-            <h3 className="text-lg font-bold text-gray-900 mb-2">{t.theme}</h3>
+          <div key={t.id} className="bg-efe-surface border border-efe-line rounded-2xl p-6 hover:border-efe-accent hover:shadow-md transition-all">
+            <h3 className="text-lg font-bold text-efe-fg mb-2 font-display">{t.theme}</h3>
             <div className="space-y-1 mb-4">
-              <p className="text-xs text-gray-500">• Part 1: {t.part1.length} questions</p>
-              <p className="text-xs text-gray-500">• Part 2: Cue card with timer</p>
-              <p className="text-xs text-gray-500">• Part 3: {t.part3.length} discussion questions</p>
+              <p className="text-xs text-efe-muted">• Part 1: {t.part1.length} questions</p>
+              <p className="text-xs text-efe-muted">• Part 2: Cue card with timer</p>
+              <p className="text-xs text-efe-muted">• Part 3: {t.part3.length} discussion questions</p>
             </div>
-            <button onClick={() => openTopic(t)} className="w-full bg-amber-600 text-white py-2.5 rounded-xl font-bold text-sm hover:bg-amber-700 transition-colors">
+            <button onClick={() => openTopic(t)} className="w-full bg-efe-accent text-white py-2.5 rounded-xl font-bold text-sm hover:bg-efe-accent-ink transition-colors">
               Practise {t.theme} →
             </button>
           </div>
@@ -533,8 +533,8 @@ export default function SpeakingPage() {
       </div>
 
       <div className="mt-8 text-center">
-        <p className="text-gray-400 text-sm">More topics coming soon</p>
-        <Link href="/ielts" className="inline-block mt-4 text-indigo-600 text-sm font-semibold hover:underline">← Back to IELTS Hub</Link>
+        <p className="text-efe-muted text-sm">More topics coming soon</p>
+        <Link href="/ielts" className="inline-block mt-4 text-efe-accent text-sm font-semibold hover:underline">← Back to IELTS Hub</Link>
       </div>
     </div>
   );

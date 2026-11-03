@@ -1121,9 +1121,9 @@ function PreTestModal({
 
   return (
     <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-      <div className="bg-white border border-gray-200 rounded-3xl max-w-lg w-full shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200">
+      <div className="bg-efe-surface border border-efe-line rounded-3xl max-w-lg w-full shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200">
         {/* Header */}
-        <div className="bg-gradient-to-r from-indigo-700 to-indigo-800 text-white p-6 relative">
+        <div className="efe-banner rounded-none text-white p-6 relative">
           <button
             onClick={onClose}
             className="absolute top-4 right-4 text-white/70 hover:text-white text-xl font-bold w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10"
@@ -1133,8 +1133,8 @@ function PreTestModal({
           <span className="text-xs font-bold bg-white/20 border border-white/25 px-3 py-1 rounded-full uppercase tracking-wider">
             Passage Configuration
           </span>
-          <h2 className="text-2xl font-black mt-2 leading-tight">{passage.title}</h2>
-          <p className="text-indigo-200 text-xs mt-1">
+          <h2 className="text-2xl font-black mt-2 leading-tight font-display">{passage.title}</h2>
+          <p className="text-white/80 text-xs mt-1">
             {passage.wordCount} words · {sessionQs.length} questions · {passage.level}
           </p>
         </div>
@@ -1142,7 +1142,7 @@ function PreTestModal({
         <div className="p-6 space-y-6">
           {/* Mode Selector */}
           <div>
-            <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">
+            <label className="block text-xs font-bold text-efe-muted uppercase tracking-wider mb-2">
               Choose Test Mode
             </label>
             <div className="grid grid-cols-2 gap-3">
@@ -1151,16 +1151,16 @@ function PreTestModal({
                 onClick={() => setMode("simulation")}
                 className={`p-4 rounded-2xl border text-left transition-all relative ${
                   mode === "simulation"
-                    ? "bg-indigo-50 border-indigo-600 ring-2 ring-indigo-200 text-indigo-900"
-                    : "bg-white border-gray-200 text-gray-700 hover:border-gray-300"
+                    ? "bg-efe-accent-soft border-efe-accent ring-2 ring-efe-accent/20 text-efe-accent-ink"
+                    : "bg-efe-surface border-efe-line text-efe-fg hover:border-efe-accent"
                 }`}
               >
                 <div className="flex items-center justify-between mb-1">
                   <span className="text-xl">⏱</span>
-                  {mode === "simulation" && <span className="w-2.5 h-2.5 rounded-full bg-indigo-600" />}
+                  {mode === "simulation" && <span className="w-2.5 h-2.5 rounded-full bg-efe-accent" />}
                 </div>
                 <p className="font-bold text-sm">Simulation Test</p>
-                <p className="text-xs text-gray-500 mt-1 leading-snug">
+                <p className="text-xs text-efe-muted mt-1 leading-snug">
                   Timed exam conditions. Results and explanations upon completion.
                 </p>
               </button>
@@ -1171,7 +1171,7 @@ function PreTestModal({
                 className={`p-4 rounded-2xl border text-left transition-all relative ${
                   mode === "practice"
                     ? "bg-amber-50 border-amber-600 ring-2 ring-amber-200 text-amber-900"
-                    : "bg-white border-gray-200 text-gray-700 hover:border-gray-300"
+                    : "bg-efe-surface border-efe-line text-efe-fg hover:border-efe-accent"
                 }`}
               >
                 <div className="flex items-center justify-between mb-1">
@@ -1179,7 +1179,7 @@ function PreTestModal({
                   {mode === "practice" && <span className="w-2.5 h-2.5 rounded-full bg-amber-600" />}
                 </div>
                 <p className="font-bold text-sm">Practice Mode</p>
-                <p className="text-xs text-gray-500 mt-1 leading-snug">
+                <p className="text-xs text-efe-muted mt-1 leading-snug">
                   Instant answer checking per question & immediate explanations.
                 </p>
               </button>
@@ -1188,7 +1188,7 @@ function PreTestModal({
 
           {/* Custom Timer Selector */}
           <div>
-            <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">
+            <label className="block text-xs font-bold text-efe-muted uppercase tracking-wider mb-2">
               Timer Setting
             </label>
             <div className="grid grid-cols-4 gap-2">
@@ -1204,8 +1204,8 @@ function PreTestModal({
                   onClick={() => setTimerMinutes(opt.mins)}
                   className={`py-2.5 px-2 rounded-xl text-xs font-bold border transition-all ${
                     timerMinutes === opt.mins
-                      ? "bg-indigo-600 text-white border-indigo-700"
-                      : "bg-white border-gray-200 text-gray-700 hover:border-gray-300"
+                      ? "bg-efe-accent text-white border-efe-accent-ink"
+                      : "bg-efe-surface border-efe-line text-efe-fg hover:border-efe-accent"
                   }`}
                 >
                   {opt.label}
@@ -1218,7 +1218,7 @@ function PreTestModal({
           <div className="pt-2">
             <button
               onClick={() => onStart({ passage, sessionQs, startNum, mode, timerMinutes })}
-              className="w-full bg-indigo-600 text-white py-3.5 rounded-2xl font-black text-sm hover:bg-indigo-700 transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+              className="w-full bg-efe-accent text-white py-3.5 rounded-2xl font-black text-sm hover:bg-efe-accent-ink transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2"
             >
               🚀 Start Reading Test
             </button>
@@ -1231,8 +1231,8 @@ function PreTestModal({
 
 // ── MAIN READING HUB ──────────────────────────────────────────────────────────
 const LEVEL_COLORS: Record<string, string> = {
-  Academic: "bg-indigo-100 text-indigo-700",
-  "General Training": "bg-teal-100 text-teal-700",
+  Academic: "efe-skill-reading",
+  "General Training": "bg-efe-accent-soft text-efe-accent-ink",
   Advanced: "bg-purple-100 text-purple-700",
   Intermediate: "bg-blue-100 text-blue-700",
 };
@@ -1338,12 +1338,12 @@ export default function ReadingHub({ localPassages = [] }: { localPassages?: Pas
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
       {/* Breadcrumb */}
-      <div className="flex items-center gap-2 text-sm text-gray-400 mb-6">
-        <Link href="/ielts" className="hover:text-indigo-600">
+      <div className="flex items-center gap-2 text-sm text-efe-muted mb-6">
+        <Link href="/ielts" className="hover:text-efe-accent">
           IELTS
         </Link>
         <span>›</span>
-        <span className="text-gray-700 font-medium">Reading</span>
+        <span className="text-efe-fg font-medium">Reading</span>
       </div>
 
       {/* Header Title */}
@@ -1351,36 +1351,36 @@ export default function ReadingHub({ localPassages = [] }: { localPassages?: Pas
         <div className="flex items-start gap-4">
           <span className="text-5xl">📖</span>
           <div>
-            <h1 className="text-3xl font-black text-gray-900 mb-1">IELTS Academic Reading</h1>
-            <p className="text-gray-500 text-sm">
+            <h1 className="text-3xl font-black text-efe-fg mb-1 font-display">IELTS Academic Reading</h1>
+            <p className="text-efe-muted text-sm">
               {loading
                 ? "Loading passages…"
                 : `${passages.length} passages · ${QUESTIONS_PER_PASSAGE} questions each · 20 min per passage`}
-              {fromFirebase && <span className="ml-2 text-indigo-600 font-semibold">· from admin panel</span>}
+              {fromFirebase && <span className="ml-2 text-efe-accent font-semibold">· from admin panel</span>}
             </p>
           </div>
         </div>
 
         <button
           onClick={() => setSessionKey(k => k + 1)}
-          className="text-xs border border-gray-200 text-gray-600 hover:text-indigo-600 hover:border-indigo-300 px-3 py-2 rounded-xl transition-all shrink-0 font-bold self-start"
+          className="text-xs border border-efe-line text-efe-muted hover:text-efe-accent hover:border-efe-accent px-3 py-2 rounded-xl transition-all shrink-0 font-bold self-start"
         >
           🔀 Reshuffle Questions
         </button>
       </div>
 
       {/* SEARCH AND FILTER BAR */}
-      <div className="bg-white border border-gray-200 rounded-2xl p-4 mb-6 shadow-sm space-y-3">
+      <div className="bg-efe-surface border border-efe-line rounded-2xl p-4 mb-6 shadow-sm space-y-3">
         <div className="flex flex-col sm:flex-row gap-3">
           {/* Search bar */}
           <div className="relative flex-1">
-            <span className="absolute left-3.5 top-2.5 text-gray-400 text-sm">🔍</span>
+            <span className="absolute left-3.5 top-2.5 text-efe-muted text-sm">🔍</span>
             <input
               type="text"
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
               placeholder="Search reading passages by topic or keyword..."
-              className="w-full pl-9 pr-4 py-2 rounded-xl border border-gray-200 text-sm bg-gray-50 focus:bg-white focus:outline-none focus:border-indigo-500 transition-all"
+              className="w-full pl-9 pr-4 py-2 rounded-xl border border-efe-line text-sm bg-efe-bg focus:bg-efe-surface focus:outline-none focus:border-efe-accent transition-all"
             />
           </div>
 
@@ -1388,7 +1388,7 @@ export default function ReadingHub({ localPassages = [] }: { localPassages?: Pas
           <select
             value={sortBy}
             onChange={e => setSortBy(e.target.value as "default" | "title" | "words")}
-            className="border border-gray-200 rounded-xl px-3 py-2 text-xs font-semibold bg-gray-50 focus:bg-white focus:outline-none focus:border-indigo-500"
+            className="border border-efe-line rounded-xl px-3 py-2 text-xs font-semibold bg-efe-bg focus:bg-efe-surface focus:outline-none focus:border-efe-accent"
           >
             <option value="default">Sort: Default</option>
             <option value="title">Sort: Title (A–Z)</option>
@@ -1397,8 +1397,8 @@ export default function ReadingHub({ localPassages = [] }: { localPassages?: Pas
         </div>
 
         {/* Filter Pills */}
-        <div className="flex flex-wrap gap-2 pt-1 border-t border-gray-100">
-          <span className="text-xs text-gray-400 self-center font-medium mr-1">Filter:</span>
+        <div className="flex flex-wrap gap-2 pt-1 border-t border-efe-line">
+          <span className="text-xs text-efe-muted self-center font-medium mr-1">Filter:</span>
           {[
             { id: "all", label: "All Passages" },
             { id: "Academic", label: "Academic" },
@@ -1411,8 +1411,8 @@ export default function ReadingHub({ localPassages = [] }: { localPassages?: Pas
               onClick={() => setLevelFilter(f.id as typeof levelFilter)}
               className={`text-xs px-3 py-1 rounded-full font-semibold transition-all ${
                 levelFilter === f.id
-                  ? "bg-indigo-600 text-white shadow-sm"
-                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                  ? "bg-efe-accent text-white shadow-sm"
+                  : "bg-efe-bg text-efe-muted hover:bg-efe-accent-soft"
               }`}
             >
               {f.label}
@@ -1422,11 +1422,11 @@ export default function ReadingHub({ localPassages = [] }: { localPassages?: Pas
       </div>
 
       {/* Official format info card */}
-      <div className="bg-indigo-50 border border-indigo-200 rounded-2xl p-5 mb-6">
-        <p className="font-bold text-indigo-800 mb-3 text-sm flex items-center gap-2">
+      <div className="bg-efe-accent-soft border border-efe-line rounded-2xl p-5 mb-6">
+        <p className="font-bold text-efe-accent-ink mb-3 text-sm flex items-center gap-2">
           📋 Official IELTS Computer Test Features
         </p>
-        <div className="grid sm:grid-cols-3 gap-3 text-xs text-indigo-700">
+        <div className="grid sm:grid-cols-3 gap-3 text-xs text-efe-accent-ink">
           <div className="flex gap-2">
             <span>⏱</span>
             <span>Flexible timer settings & Practice vs Simulation mode</span>
@@ -1458,7 +1458,7 @@ export default function ReadingHub({ localPassages = [] }: { localPassages?: Pas
       {loading && (
         <div className="grid sm:grid-cols-2 gap-4">
           {[1, 2, 3].map(i => (
-            <div key={i} className="bg-white border border-gray-200 rounded-2xl p-5 animate-pulse">
+            <div key={i} className="bg-efe-surface border border-efe-line rounded-2xl p-5 animate-pulse">
               <div className="h-4 bg-gray-200 rounded w-1/4 mb-3" />
               <div className="h-5 bg-gray-200 rounded w-3/4 mb-2" />
               <div className="h-3 bg-gray-100 rounded w-full mb-4" />
@@ -1470,16 +1470,16 @@ export default function ReadingHub({ localPassages = [] }: { localPassages?: Pas
 
       {/* Empty State */}
       {!loading && filteredSessionData.length === 0 && (
-        <div className="text-center py-16 text-gray-400 bg-white border border-gray-200 rounded-2xl">
+        <div className="text-center py-16 text-efe-muted bg-efe-surface border border-efe-line rounded-2xl">
           <p className="text-4xl mb-3">📭</p>
-          <p className="font-semibold text-gray-700">No passages match your filter</p>
+          <p className="font-semibold text-efe-fg">No passages match your filter</p>
           <p className="text-sm mt-1">Try clearing your search query or filter settings.</p>
           <button
             onClick={() => {
               setSearchQuery("");
               setLevelFilter("all");
             }}
-            className="mt-4 text-xs bg-indigo-50 text-indigo-600 px-4 py-2 rounded-xl font-bold hover:bg-indigo-100"
+            className="mt-4 text-xs bg-efe-accent-soft text-efe-accent px-4 py-2 rounded-xl font-bold hover:bg-efe-accent-soft/80"
           >
             Reset Filters
           </button>
@@ -1493,13 +1493,13 @@ export default function ReadingHub({ localPassages = [] }: { localPassages?: Pas
           return (
             <div
               key={passage.id}
-              className="bg-white border border-gray-200 rounded-2xl p-5 hover:border-indigo-300 hover:shadow-md transition-all flex flex-col justify-between"
+              className="bg-efe-surface border border-efe-line rounded-2xl p-5 hover:border-efe-accent hover:shadow-md transition-all flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
                   <span
                     className={`text-xs font-semibold px-2.5 py-1 rounded-full ${
-                      LEVEL_COLORS[passage.level] || "bg-gray-100 text-gray-600"
+                      LEVEL_COLORS[passage.level] || "bg-efe-bg text-efe-muted"
                     }`}
                   >
                     {passage.level}
@@ -1509,22 +1509,22 @@ export default function ReadingHub({ localPassages = [] }: { localPassages?: Pas
                       ✓ Band {hist.band}
                     </span>
                   ) : (
-                    <span className="text-xs text-gray-400">
+                    <span className="text-xs text-efe-muted">
                       Q{startNum}–Q{startNum + sessionQs.length - 1}
                     </span>
                   )}
                 </div>
 
-                <h3 className="font-bold text-gray-900 text-sm mb-1">{passage.title}</h3>
-                <p className="text-gray-500 text-xs mb-1">{passage.tag}</p>
-                <p className="text-gray-400 text-xs mb-4">
+                <h3 className="font-bold text-efe-fg text-sm mb-1 font-display">{passage.title}</h3>
+                <p className="text-efe-muted text-xs mb-1">{passage.tag}</p>
+                <p className="text-efe-muted text-xs mb-4">
                   {passage.wordCount} words · {sessionQs.length} questions · ~15-20 min
                 </p>
               </div>
 
               <button
                 onClick={() => setModalData({ passage, sessionQs, startNum })}
-                className="w-full bg-indigo-600 text-white py-2.5 rounded-xl font-bold text-sm hover:bg-indigo-700 transition-all flex items-center justify-center gap-1"
+                className="w-full bg-efe-accent text-white py-2.5 rounded-xl font-bold text-sm hover:bg-efe-accent-ink transition-all flex items-center justify-center gap-1"
               >
                 Choose Mode & Start →
               </button>
@@ -1549,7 +1549,7 @@ export default function ReadingHub({ localPassages = [] }: { localPassages?: Pas
       )}
 
       <div className="mt-8 text-center">
-        <Link href="/ielts" className="text-indigo-600 text-sm font-semibold hover:underline">
+        <Link href="/ielts" className="text-efe-accent text-sm font-semibold hover:underline">
           ← Back to IELTS Hub
         </Link>
       </div>

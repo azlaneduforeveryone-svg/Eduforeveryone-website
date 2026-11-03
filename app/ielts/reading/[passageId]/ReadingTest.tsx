@@ -209,12 +209,12 @@ export default function ReadingTest({ passage }: Props) {
     return (
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
         {/* Breadcrumb */}
-        <div className="flex items-center gap-2 text-sm text-gray-400 mb-6">
-          <Link href="/ielts" className="hover:text-indigo-600 transition-colors">IELTS</Link>
+        <div className="flex items-center gap-2 text-sm text-efe-muted mb-6">
+          <Link href="/ielts" className="hover:text-efe-accent transition-colors">IELTS</Link>
           <span>›</span>
-          <Link href="/ielts/reading" className="hover:text-indigo-600 transition-colors">Reading</Link>
+          <Link href="/ielts/reading" className="hover:text-efe-accent transition-colors">Reading</Link>
           <span>›</span>
-          <span className="text-gray-700 font-medium truncate">{passage.title}</span>
+          <span className="text-efe-fg font-medium truncate">{passage.title}</span>
         </div>
 
         {/* Score card */}
@@ -228,18 +228,18 @@ export default function ReadingTest({ passage }: Props) {
           </p>
           <p className="text-gray-500 text-sm mb-6">{pct}% correct · 10-question practice session</p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <button onClick={handleNextSession} className="bg-indigo-600 text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-indigo-700 transition-colors">
+            <button onClick={handleNextSession} className="bg-efe-accent text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-efe-accent-ink transition-colors">
               🔀 Next 10 Questions
             </button>
-            <Link href="/ielts/reading" className="border border-gray-200 text-gray-600 px-6 py-2.5 rounded-xl font-bold text-sm hover:border-indigo-300 hover:text-indigo-600 transition-colors">
+            <Link href="/ielts/reading" className="border border-efe-line text-efe-muted px-6 py-2.5 rounded-xl font-bold text-sm hover:border-efe-accent hover:text-efe-accent transition-colors">
               ← All Passages
             </Link>
           </div>
         </div>
 
         {/* Passage */}
-        <div className="bg-white border border-gray-200 rounded-2xl p-6 mb-6 shadow-sm">
-          <h2 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Reading Passage — {passage.title}</h2>
+        <div className="bg-efe-surface border border-efe-line rounded-2xl p-6 mb-6 shadow-sm">
+          <h2 className="text-xs font-bold text-efe-muted uppercase tracking-widest mb-4">Reading Passage — {passage.title}</h2>
           {passage.text.split("\n\n").map((para, i) => (
             <p key={i} className="text-gray-700 leading-[1.85] mb-4 last:mb-0 text-[0.95rem]">{para}</p>
           ))}
@@ -287,24 +287,24 @@ export default function ReadingTest({ passage }: Props) {
   const urgent = timeLeft <= 120;
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-efe-bg">
       {/* Top bar */}
-      <div className="sticky top-0 z-30 bg-white border-b border-gray-200 shadow-sm">
+      <div className="sticky top-0 z-30 bg-efe-surface border-b border-efe-line shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-3 flex-wrap">
-          <div className="flex items-center gap-2 text-sm text-gray-500 min-w-0">
-            <Link href="/ielts/reading" className="hover:text-indigo-600 transition-colors shrink-0">Reading</Link>
+          <div className="flex items-center gap-2 text-sm text-efe-muted min-w-0">
+            <Link href="/ielts/reading" className="hover:text-efe-accent transition-colors shrink-0">Reading</Link>
             <span>›</span>
-            <span className="font-medium text-gray-700 truncate max-w-[160px] sm:max-w-xs">{passage.title}</span>
+            <span className="font-medium text-efe-fg truncate max-w-[160px] sm:max-w-xs">{passage.title}</span>
           </div>
           <div className="flex items-center gap-4">
-            <span className="text-xs text-gray-400">{answeredCount}/{sessionQs.length} answered</span>
-            <span className={`font-mono font-bold text-sm px-3 py-1 rounded-lg ${urgent ? "bg-red-100 text-red-700 animate-pulse" : "bg-indigo-50 text-indigo-700"}`}>
+            <span className="text-xs text-efe-muted">{answeredCount}/{sessionQs.length} answered</span>
+            <span className={`font-mono font-bold text-sm px-3 py-1 rounded-lg ${urgent ? "bg-red-100 text-red-700 animate-pulse" : "bg-efe-accent-soft text-efe-accent"}`}>
               ⏱ {fmt(timeLeft)}
             </span>
             <button
               onClick={() => handleSubmit(false)}
               disabled={answeredCount === 0}
-              className="bg-indigo-600 text-white px-4 py-1.5 rounded-lg font-bold text-xs hover:bg-indigo-700 transition-colors disabled:opacity-40"
+              className="bg-efe-accent text-white px-4 py-1.5 rounded-lg font-bold text-xs hover:bg-efe-accent-ink transition-colors disabled:opacity-40"
             >
               Submit
             </button>
@@ -313,7 +313,7 @@ export default function ReadingTest({ passage }: Props) {
 
         {/* Progress bar */}
         <div className="h-1 bg-gray-100">
-          <div className="h-full bg-indigo-500 transition-all" style={{ width: `${(answeredCount / sessionQs.length) * 100}%` }} />
+          <div className="h-full bg-efe-accent transition-all" style={{ width: `${(answeredCount / sessionQs.length) * 100}%` }} />
         </div>
       </div>
 
@@ -324,19 +324,19 @@ export default function ReadingTest({ passage }: Props) {
           {/* Mobile toggle */}
           <button
             onClick={() => setPassageOpen(v => !v)}
-            className="lg:hidden w-full flex items-center justify-between bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm font-semibold text-gray-700 mb-3"
+            className="lg:hidden w-full flex items-center justify-between bg-efe-surface border border-efe-line rounded-xl px-4 py-3 text-sm font-semibold text-efe-fg mb-3"
           >
             <span>📄 {passageOpen ? "Hide" : "Show"} Reading Passage</span>
             <span>{passageOpen ? "▲" : "▼"}</span>
           </button>
 
-          <div className={`bg-white border border-gray-200 rounded-2xl p-6 shadow-sm ${passageOpen ? "block" : "hidden lg:block"} lg:sticky lg:top-[72px] lg:max-h-[calc(100vh-100px)] lg:overflow-y-auto`}>
+          <div className={`bg-efe-surface border border-efe-line rounded-2xl p-6 shadow-sm ${passageOpen ? "block" : "hidden lg:block"} lg:sticky lg:top-[72px] lg:max-h-[calc(100vh-100px)] lg:overflow-y-auto`}>
             <div className="flex flex-wrap items-center gap-2 mb-4">
-              <span className="text-xs bg-indigo-100 text-indigo-700 px-2.5 py-1 rounded-full font-medium">{passage.tag}</span>
-              <span className="text-xs bg-gray-100 text-gray-500 px-2.5 py-1 rounded-full">{passage.level}</span>
-              <span className="text-xs bg-gray-100 text-gray-500 px-2.5 py-1 rounded-full">~{passage.wordCount} words</span>
+              <span className="text-xs efe-skill-reading px-2.5 py-1 rounded-full font-medium">{passage.tag}</span>
+              <span className="text-xs bg-efe-bg text-efe-muted px-2.5 py-1 rounded-full">{passage.level}</span>
+              <span className="text-xs bg-efe-bg text-efe-muted px-2.5 py-1 rounded-full">~{passage.wordCount} words</span>
             </div>
-            <h1 className="text-xl font-bold text-gray-900 mb-5">{passage.title}</h1>
+            <h1 className="text-xl font-bold text-efe-fg mb-5 font-display">{passage.title}</h1>
             {passage.text.split("\n\n").map((para, i) => (
               <p key={i} className="text-gray-700 leading-[1.9] mb-4 last:mb-0 text-[0.94rem]">{para}</p>
             ))}
@@ -347,8 +347,8 @@ export default function ReadingTest({ passage }: Props) {
         <div className="lg:w-[45%] flex flex-col gap-4">
 
           {/* Navigation dots */}
-          <div className="bg-white border border-gray-200 rounded-xl p-4">
-            <p className="text-xs text-gray-400 mb-2 font-medium">QUESTION NAVIGATION</p>
+          <div className="bg-efe-surface border border-efe-line rounded-xl p-4">
+            <p className="text-xs text-efe-muted mb-2 font-medium">QUESTION NAVIGATION</p>
             <div className="flex flex-wrap gap-2">
               {sessionQs.map((q, i) => {
                 const answered = answers[q.id] !== undefined;
@@ -359,10 +359,10 @@ export default function ReadingTest({ passage }: Props) {
                     onClick={() => setCurrentIdx(i)}
                     className={`w-9 h-9 rounded-lg text-xs font-bold transition-all border ${
                       isCurrent
-                        ? "bg-indigo-600 text-white border-indigo-600"
+                        ? "bg-efe-accent text-white border-efe-accent"
                         : answered
-                        ? "bg-indigo-100 text-indigo-700 border-indigo-200"
-                        : "bg-gray-50 text-gray-400 border-gray-200 hover:border-indigo-300"
+                        ? "bg-efe-accent-soft text-efe-accent border-efe-accent"
+                        : "bg-efe-bg text-efe-muted border-efe-line hover:border-efe-accent"
                     }`}
                   >
                     {i + 1}
@@ -374,7 +374,7 @@ export default function ReadingTest({ passage }: Props) {
 
           {/* Current question */}
           {currentQ && (
-            <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+            <div className="bg-efe-surface border border-efe-line rounded-2xl p-5 shadow-sm">
               <div className="flex items-center justify-between mb-1">
                 <span className="text-xs text-gray-400 font-medium">
                   Question {currentIdx + 1} of {sessionQs.length}
@@ -467,18 +467,18 @@ export default function ReadingTest({ passage }: Props) {
               )}
 
               {/* Navigation buttons */}
-              <div className="flex items-center justify-between mt-5 pt-4 border-t border-gray-100">
+              <div className="flex items-center justify-between mt-5 pt-4 border-t border-efe-line">
                 <button
                   onClick={() => setCurrentIdx(i => Math.max(0, i - 1))}
                   disabled={currentIdx === 0}
-                  className="text-sm text-gray-500 font-medium hover:text-indigo-600 transition-colors disabled:opacity-30"
+                  className="text-sm text-efe-muted font-medium hover:text-efe-accent transition-colors disabled:opacity-30"
                 >
                   ← Previous
                 </button>
                 {currentIdx < sessionQs.length - 1 ? (
                   <button
                     onClick={() => setCurrentIdx(i => i + 1)}
-                    className="bg-indigo-600 text-white px-5 py-2 rounded-xl font-bold text-sm hover:bg-indigo-700 transition-colors"
+                    className="bg-efe-accent text-white px-5 py-2 rounded-xl font-bold text-sm hover:bg-efe-accent-ink transition-colors"
                   >
                     Next →
                   </button>
@@ -495,7 +495,7 @@ export default function ReadingTest({ passage }: Props) {
           )}
 
           {/* Tip box */}
-          <div className="bg-indigo-50 border border-indigo-100 rounded-xl p-4 text-xs text-indigo-700">
+          <div className="bg-efe-accent-soft border border-efe-line rounded-xl p-4 text-xs text-efe-accent-ink">
             <strong>💡 Tip:</strong> Your progress is saved automatically. Completed questions cycle to a new set on your next visit so you see fresh questions every session.
           </div>
         </div>

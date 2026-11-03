@@ -292,20 +292,20 @@ export default function WritingPage() {
     const timerWarning = timer.remaining < 300 && timer.state === "running";
     return (
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
-        <div className="flex items-center gap-2 text-sm text-gray-400 mb-6">
-          <Link href="/ielts" className="hover:text-indigo-600 transition-colors">IELTS</Link>
+        <div className="flex items-center gap-2 text-sm text-efe-muted mb-6">
+          <Link href="/ielts" className="hover:text-efe-accent transition-colors">IELTS</Link>
           <span>›</span>
-          <Link href="/ielts/writing" className="hover:text-indigo-600 transition-colors">Writing</Link>
+          <Link href="/ielts/writing" className="hover:text-efe-accent transition-colors">Writing</Link>
           <span>›</span>
-          <span className="text-gray-600 font-medium">Task {selected.task}</span>
+          <span className="text-efe-fg font-medium">Task {selected.task}</span>
         </div>
 
         {submitted && aiLoading && (
-          <div className="bg-violet-50 border border-violet-200 rounded-2xl p-8 mb-8 flex flex-col items-center gap-3 text-center">
-            <div className="w-9 h-9 border-4 border-violet-200 border-t-violet-600 rounded-full animate-spin" />
-            <p className="font-semibold text-violet-800">Scoring your response…</p>
+          <div className="bg-efe-accent-soft border border-efe-line rounded-2xl p-8 mb-8 flex flex-col items-center gap-3 text-center">
+            <div className="w-9 h-9 border-4 border-efe-line border-t-efe-accent rounded-full animate-spin" />
+            <p className="font-semibold text-efe-accent-ink">Scoring your response…</p>
             {/* Changed from "Gemini" to generic AI */}
-            <p className="text-violet-500 text-sm">AI is evaluating your essay against IELTS band descriptors</p>
+            <p className="text-efe-muted text-sm">AI is evaluating your essay against IELTS band descriptors</p>
           </div>
         )}
 
@@ -314,9 +314,9 @@ export default function WritingPage() {
             <p className="font-bold text-red-800 mb-1">⚠ Scoring failed</p>
             <p className="text-red-700 text-sm mb-4">{aiError}</p>
             <div className="flex flex-wrap gap-3">
-              <button onClick={handleSubmit} className="bg-violet-600 text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-violet-700 transition-colors">Retry</button>
+              <button onClick={handleSubmit} className="bg-efe-accent text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-efe-accent-ink transition-colors">Retry</button>
               <button onClick={() => { setSubmitted(false); setAiError(null); }} className="border border-red-200 text-red-700 px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-red-50 transition-colors">Edit Response</button>
-              <button onClick={handleBack} className="border border-gray-200 text-gray-600 px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-gray-50 transition-colors">Try Another Prompt</button>
+              <button onClick={handleBack} className="border border-efe-line text-efe-muted px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-efe-bg transition-colors">Try Another Prompt</button>
             </div>
           </div>
         )}
@@ -350,20 +350,20 @@ export default function WritingPage() {
               <p className="text-sm text-indigo-900 font-medium leading-relaxed">{aiResult.top_fix}</p>
             </div>
             <div className="flex flex-wrap gap-3">
-              <button onClick={() => { setSubmitted(false); setAiResult(null); }} className="bg-violet-600 text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-violet-700 transition-colors">Edit &amp; Resubmit</button>
-              <button onClick={handleBack} className="border border-violet-300 text-violet-700 px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-violet-50 transition-colors">Try Another Prompt</button>
+              <button onClick={() => { setSubmitted(false); setAiResult(null); }} className="bg-efe-accent text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-efe-accent-ink transition-colors">Edit &amp; Resubmit</button>
+              <button onClick={handleBack} className="border border-efe-line text-efe-accent px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-efe-accent-soft transition-colors">Try Another Prompt</button>
             </div>
           </div>
         )}
 
-        <div className="bg-white border border-gray-200 rounded-2xl p-6 mb-6">
+        <div className="bg-efe-surface border border-efe-line rounded-2xl p-6 mb-6 shadow-sm">
           <div className="flex flex-wrap items-center gap-2 mb-3">
-            <span className="text-xs bg-violet-100 text-violet-700 px-2.5 py-1 rounded-full font-bold">Task {selected.task}</span>
-            <span className="text-xs bg-gray-100 text-gray-500 px-2.5 py-1 rounded-full">{selected.timeMin} min · {selected.minWords}+ words</span>
+            <span className="text-xs efe-skill-writing px-2.5 py-1 rounded-full font-bold">Task {selected.task}</span>
+            <span className="text-xs bg-efe-bg text-efe-muted px-2.5 py-1 rounded-full">{selected.timeMin} min · {selected.minWords}+ words</span>
           </div>
-          <h2 className="font-bold text-gray-900 mb-3">{selected.title}</h2>
-          <div className="bg-gray-50 rounded-xl p-4">
-            <p className="text-gray-700 text-sm leading-relaxed whitespace-pre-line">{selected.prompt}</p>
+          <h2 className="font-bold text-efe-fg mb-3 font-display">{selected.title}</h2>
+          <div className="bg-efe-bg rounded-xl p-4">
+            <p className="text-efe-fg text-sm leading-relaxed whitespace-pre-line">{selected.prompt}</p>
           </div>
           {selected.figure && (
             <div className="mt-4">
@@ -372,24 +372,24 @@ export default function WritingPage() {
           )}
         </div>
 
-        <div className="bg-violet-50 border border-violet-100 rounded-xl p-4 mb-6">
-          <h3 className="font-semibold text-violet-800 text-sm mb-2">Task {selected.task} Tips</h3>
-          <ul className="space-y-1">{selected.tips.map((t, i) => <li key={i} className="text-xs text-violet-700">• {t}</li>)}</ul>
+        <div className="bg-efe-accent-soft border border-efe-line rounded-xl p-4 mb-6">
+          <h3 className="font-semibold text-efe-accent-ink text-sm mb-2">Task {selected.task} Tips</h3>
+          <ul className="space-y-1">{selected.tips.map((t, i) => <li key={i} className="text-xs text-efe-accent-ink">• {t}</li>)}</ul>
         </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-3 bg-white border border-gray-200 rounded-2xl px-5 py-3 mb-4">
+        <div className="flex flex-wrap items-center justify-between gap-3 bg-efe-surface border border-efe-line rounded-2xl px-5 py-3 mb-4">
           <div className="flex items-center gap-4">
-            <div className={`text-2xl font-black font-mono ${timerWarning ? "text-red-600 animate-pulse" : "text-gray-900"}`}>{timer.display}</div>
+            <div className={`text-2xl font-black font-mono ${timerWarning ? "text-red-600 animate-pulse" : "text-efe-fg"}`}>{timer.display}</div>
             <div className="flex gap-2">
-              {timer.state === "idle" && <button onClick={timer.start} className="bg-violet-600 text-white px-4 py-1.5 rounded-lg text-xs font-bold hover:bg-violet-700">Start Timer</button>}
+              {timer.state === "idle" && <button onClick={timer.start} className="bg-efe-accent text-white px-4 py-1.5 rounded-lg text-xs font-bold hover:bg-efe-accent-ink">Start Timer</button>}
               {timer.state === "running" && <button onClick={timer.pause} className="bg-gray-200 text-gray-700 px-4 py-1.5 rounded-lg text-xs font-bold hover:bg-gray-300">Pause</button>}
-              {timer.state === "paused" && <button onClick={timer.resume} className="bg-violet-600 text-white px-4 py-1.5 rounded-lg text-xs font-bold hover:bg-violet-700">Resume</button>}
+              {timer.state === "paused" && <button onClick={timer.resume} className="bg-efe-accent text-white px-4 py-1.5 rounded-lg text-xs font-bold hover:bg-efe-accent-ink">Resume</button>}
               {timer.state === "finished" && <span className="text-red-600 text-xs font-bold">Time up!</span>}
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <div className="text-sm font-semibold text-gray-700">{wordCount} <span className="text-gray-400 font-normal">/ {selected.minWords} words</span></div>
-            <div className="w-24 h-2 bg-gray-100 rounded-full overflow-hidden"><div className="h-full bg-violet-500 rounded-full transition-all" style={{ width: `${pctDone * 100}%` }} /></div>
+            <div className="text-sm font-semibold text-efe-fg">{wordCount} <span className="text-efe-muted font-normal">/ {selected.minWords} words</span></div>
+            <div className="w-24 h-2 bg-gray-100 rounded-full overflow-hidden"><div className="h-full bg-efe-accent rounded-full transition-all" style={{ width: `${pctDone * 100}%` }} /></div>
           </div>
         </div>
 
@@ -413,7 +413,7 @@ export default function WritingPage() {
           <button
             onClick={handleSubmit}
             disabled={wordCount < selected.minWords}
-            className="w-full bg-violet-600 text-white py-3.5 rounded-xl font-bold text-sm hover:bg-violet-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+            className="w-full bg-efe-accent text-white py-3.5 rounded-xl font-bold text-sm hover:bg-efe-accent-ink transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
             {wordCount < selected.minWords ? `Write at least ${selected.minWords} words (${selected.minWords - wordCount} more needed)` : "Submit Response →"}
           </button>
         )}
@@ -423,58 +423,58 @@ export default function WritingPage() {
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10">
-      <div className="flex items-center gap-2 text-sm text-gray-400 mb-6">
-        <Link href="/ielts" className="hover:text-indigo-600 transition-colors">IELTS</Link>
+      <div className="flex items-center gap-2 text-sm text-efe-muted mb-6">
+        <Link href="/ielts" className="hover:text-efe-accent transition-colors">IELTS</Link>
         <span>›</span>
-        <span className="text-gray-600 font-medium">Writing</span>
+        <span className="text-efe-fg font-medium">Writing</span>
       </div>
 
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-3">
           <span className="text-4xl">✍️</span>
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">IELTS Writing Practice</h1>
-            <p className="text-gray-500 mt-1">Timed Task 1 and Task 2 practice with word counter</p>
+            <h1 className="text-3xl font-bold text-efe-fg font-display">IELTS Writing Practice</h1>
+            <p className="text-efe-muted mt-1">Timed Task 1 and Task 2 practice with word counter</p>
           </div>
         </div>
       </div>
 
       <div className="grid sm:grid-cols-2 gap-4 mb-8">
         {[
-          { task: 1, time: "20 minutes", words: "150+ words", desc: format === "academic" ? "Describe a graph, chart, table, map or process. No personal opinion required." : "Write a letter (formal, semi-formal or informal) responding to a given situation.", color: "bg-blue-50 border-blue-200" },
-          { task: 2, time: "40 minutes", words: "250+ words", desc: "Write an essay responding to a point of view, argument or problem.", color: "bg-violet-50 border-violet-200" },
+          { task: 1, time: "20 minutes", words: "150+ words", desc: format === "academic" ? "Describe a graph, chart, table, map or process. No personal opinion required." : "Write a letter (formal, semi-formal or informal) responding to a given situation." },
+          { task: 2, time: "40 minutes", words: "250+ words", desc: "Write an essay responding to a point of view, argument or problem." },
         ].map(t => (
-          <div key={t.task} className={`border rounded-2xl p-5 ${t.color}`}>
-            <p className="font-black text-2xl text-gray-800 mb-1">Task {t.task}</p>
-            <p className="text-sm text-gray-600 mb-1">{t.time} · {t.words}</p>
-            <p className="text-sm text-gray-500">{t.desc}</p>
+          <div key={t.task} className="bg-efe-surface border border-efe-line rounded-2xl p-5 shadow-sm">
+            <p className="font-black text-2xl text-efe-fg mb-1 font-display">Task {t.task}</p>
+            <p className="text-sm text-efe-muted mb-1">{t.time} · {t.words}</p>
+            <p className="text-sm text-efe-muted">{t.desc}</p>
           </div>
         ))}
       </div>
 
       <div className="flex gap-2 mb-4">
-        <button onClick={() => { setFormat("academic"); setTab(1); setSelected(null); }} className={`px-4 py-2 rounded-xl font-bold text-xs transition-colors ${format === "academic" ? "bg-indigo-600 text-white" : "bg-white border border-gray-200 text-gray-600 hover:border-indigo-300"}`}>Academic</button>
-        <button onClick={() => { setFormat("general"); setTab(1); setSelected(null); }} className={`px-4 py-2 rounded-xl font-bold text-xs transition-colors ${format === "general" ? "bg-indigo-600 text-white" : "bg-white border border-gray-200 text-gray-600 hover:border-indigo-300"}`}>General Training</button>
+        <button onClick={() => { setFormat("academic"); setTab(1); setSelected(null); }} className={`px-4 py-2 rounded-xl font-bold text-xs transition-colors ${format === "academic" ? "bg-efe-accent text-white" : "bg-efe-surface border border-efe-line text-efe-muted hover:border-efe-accent"}`}>Academic</button>
+        <button onClick={() => { setFormat("general"); setTab(1); setSelected(null); }} className={`px-4 py-2 rounded-xl font-bold text-xs transition-colors ${format === "general" ? "bg-efe-accent text-white" : "bg-efe-surface border border-efe-line text-efe-muted hover:border-efe-accent"}`}>General Training</button>
       </div>
       <div className="flex gap-2 mb-6">
-        <button onClick={() => setTab(1)} className={`px-5 py-2.5 rounded-xl font-bold text-sm transition-colors ${tab === 1 ? "bg-violet-600 text-white" : "bg-white border border-gray-200 text-gray-600 hover:border-violet-300"}`}>{format === "academic" ? "Task 1 — Graph / Chart" : "Task 1 — Letter"}</button>
-        <button onClick={() => setTab(2)} className={`px-5 py-2.5 rounded-xl font-bold text-sm transition-colors ${tab === 2 ? "bg-violet-600 text-white" : "bg-white border border-gray-200 text-gray-600 hover:border-violet-300"}`}>Task 2 — Essay</button>
+        <button onClick={() => setTab(1)} className={`px-5 py-2.5 rounded-xl font-bold text-sm transition-colors ${tab === 1 ? "bg-efe-accent text-white" : "bg-efe-surface border border-efe-line text-efe-muted hover:border-efe-accent"}`}>{format === "academic" ? "Task 1 — Graph / Chart" : "Task 1 — Letter"}</button>
+        <button onClick={() => setTab(2)} className={`px-5 py-2.5 rounded-xl font-bold text-sm transition-colors ${tab === 2 ? "bg-efe-accent text-white" : "bg-efe-surface border border-efe-line text-efe-muted hover:border-efe-accent"}`}>Task 2 — Essay</button>
       </div>
 
       <div className="grid sm:grid-cols-2 gap-5">
         {shown.map(p => (
-          <div key={p.id} className="bg-white border border-gray-200 rounded-2xl p-6 hover:border-violet-300 hover:shadow-md transition-all">
+          <div key={p.id} className="bg-efe-surface border border-efe-line rounded-2xl p-6 hover:border-efe-accent hover:shadow-md transition-all">
             <div className="flex items-start justify-between mb-3">
-              <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${p.task === 1 ? "bg-blue-50 text-blue-700" : "bg-violet-50 text-violet-700"}`}>Task {p.task}</span>
-              <span className="text-xs text-gray-400">{p.timeMin} min · {p.minWords}+ words</span>
+              <span className="text-xs font-bold px-2.5 py-1 rounded-full efe-skill-writing">Task {p.task}</span>
+              <span className="text-xs text-efe-muted">{p.timeMin} min · {p.minWords}+ words</span>
             </div>
-            <h3 className="font-bold text-gray-900 mb-2">{p.title}</h3>
-            <p className="text-gray-500 text-xs leading-relaxed mb-5 line-clamp-3">{p.prompt.slice(0, 150)}…</p>
-            <button onClick={() => selectPrompt(p)} className="w-full bg-violet-600 text-white py-2.5 rounded-xl font-bold text-sm hover:bg-violet-700 transition-colors">Start Writing →</button>
+            <h3 className="font-bold text-efe-fg mb-2 font-display">{p.title}</h3>
+            <p className="text-efe-muted text-xs leading-relaxed mb-5 line-clamp-3">{p.prompt.slice(0, 150)}…</p>
+            <button onClick={() => selectPrompt(p)} className="w-full bg-efe-accent text-white py-2.5 rounded-xl font-bold text-sm hover:bg-efe-accent-ink transition-colors">Start Writing →</button>
             {promptPageHref(p) && (
               <Link
                 href={promptPageHref(p)!}
-                className="block w-full text-center mt-2 text-violet-600 text-xs font-semibold hover:underline"
+                className="block w-full text-center mt-2 text-efe-accent text-xs font-semibold hover:underline"
               >
                 View prompt &amp; sample Band 8 answer →
               </Link>
@@ -484,7 +484,7 @@ export default function WritingPage() {
       </div>
 
       <div className="mt-8 text-center">
-        <Link href="/ielts" className="inline-block text-indigo-600 text-sm font-semibold hover:underline">← Back to IELTS Hub</Link>
+        <Link href="/ielts" className="inline-block text-efe-accent text-sm font-semibold hover:underline">← Back to IELTS Hub</Link>
       </div>
     </div>
   );

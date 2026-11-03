@@ -94,10 +94,10 @@ export default function PracticeRunner({ bank }: Props) {
   return (
     <div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-4">
-        <div className="flex items-center gap-2 text-sm text-gray-400">
-          <Link href="/gmat" className="hover:text-emerald-600 transition-colors">GMAT</Link>
+        <div className="flex items-center gap-2 text-sm text-efe-muted">
+          <Link href="/gmat" className="hover:text-efe-accent transition-colors">GMAT</Link>
           <span>›</span>
-          <span className="text-gray-700 font-medium">{bank.name} — Practice</span>
+          <span className="text-efe-fg font-medium">{bank.name} — Practice</span>
         </div>
       </div>
       <SectionRunner

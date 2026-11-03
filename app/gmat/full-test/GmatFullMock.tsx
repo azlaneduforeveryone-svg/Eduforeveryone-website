@@ -84,15 +84,15 @@ export default function GmatFullMock() {
   if (phase === "start") {
     return (
       <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10">
-        <div className="flex items-center gap-2 text-sm text-gray-400 mb-6">
-          <Link href="/gmat" className="hover:text-emerald-600 transition-colors">GMAT</Link>
+        <div className="flex items-center gap-2 text-sm text-efe-muted mb-6">
+          <Link href="/gmat" className="hover:text-efe-accent transition-colors">GMAT</Link>
           <span>›</span>
-          <span className="text-gray-700 font-medium">Full Mock Test</span>
+          <span className="text-efe-fg font-medium">Full Mock Test</span>
         </div>
 
-        <div className="bg-gradient-to-br from-emerald-700 to-teal-700 text-white rounded-2xl p-7 mb-6">
-          <h1 className="text-2xl font-black mb-2">📋 GMAT Focus — Full Mock</h1>
-          <p className="text-emerald-100 text-sm leading-relaxed">
+        <div className="efe-banner text-white rounded-2xl p-7 mb-6">
+          <h1 className="text-2xl font-black mb-2 font-display">📋 GMAT Focus — Full Mock</h1>
+          <p className="text-white/85 text-sm leading-relaxed">
             Three sections, each with its own 45-minute timer. Choose your section order below —
             just like the real exam. You may take an optional break between sections; the clock does
             not run during a break.
@@ -106,14 +106,14 @@ export default function GmatFullMock() {
           </p>
         </div>
 
-        <h2 className="font-bold text-gray-900 mb-3">Choose your section order</h2>
+        <h2 className="font-bold text-efe-fg mb-3 font-display">Choose your section order</h2>
         <div className="space-y-2 mb-6">
           {PRESET_ORDERS.map((p) => {
             const active = JSON.stringify(p.order) === JSON.stringify(order);
             return (
               <button key={p.label} onClick={() => setOrder(p.order)}
                 className={`w-full text-left px-4 py-3 rounded-xl border text-sm font-semibold transition-all ${
-                  active ? "bg-emerald-100 border-emerald-400 text-emerald-800" : "bg-white border-gray-200 text-gray-700 hover:border-emerald-300"
+                  active ? "bg-efe-accent-soft border-efe-accent text-efe-accent-ink" : "bg-efe-surface border-efe-line text-efe-fg hover:border-efe-accent"
                 }`}>
                 {active ? "✓ " : ""}{p.label}
               </button>
@@ -123,19 +123,18 @@ export default function GmatFullMock() {
 
         <div className="grid sm:grid-cols-3 gap-3 mb-8">
           {order.map((s, i) => (
-            <div key={s} className="bg-white border border-gray-200 rounded-2xl p-4">
-              <p className="text-xs text-gray-400 font-bold mb-1">SECTION {i + 1}</p>
+            <div key={s} className="bg-efe-surface border border-efe-line rounded-2xl p-4 shadow-sm">
+              <p className="text-xs text-efe-muted font-bold mb-1">SECTION {i + 1}</p>
               <p className="text-2xl mb-1">{SECTION_META[s].emoji}</p>
-              <p className="font-bold text-gray-900 text-sm">{SECTION_META[s].name}</p>
-              <p className="text-xs text-gray-500 mt-1">{SECTION_META[s].desc}</p>
-              <p className="text-[11px] text-gray-400 mt-1">{getBank(s).items.length} questions in this attempt</p>
+              <p className="font-bold text-efe-fg text-sm">{SECTION_META[s].name}</p>
+              <p className="text-xs text-efe-muted mt-1">{SECTION_META[s].desc}</p>
+              <p className="text-[11px] text-efe-muted mt-1">{getBank(s).items.length} questions in this attempt</p>
             </div>
           ))}
         </div>
 
         <button onClick={begin}
-          className="w-full bg-emerald-600 text-white py-4 rounded-xl font-black hover:bg-emerald-700 transition-colors"
-          style={{ boxShadow: "0 4px 0 #047857" }}>
+          className="w-full bg-efe-accent text-white py-4 rounded-xl font-black hover:bg-efe-accent-ink transition-colors shadow-sm">
           Start Full Mock →
         </button>
       </div>
@@ -149,22 +148,21 @@ export default function GmatFullMock() {
     return (
       <div className="max-w-2xl mx-auto px-4 sm:px-6 py-16 text-center">
         <p className="text-5xl mb-4">✅</p>
-        <h1 className="text-2xl font-black text-gray-900 mb-2">{SECTION_META[justDone].name} complete</h1>
-        <p className="text-gray-500 text-sm mb-1">
+        <h1 className="text-2xl font-black text-efe-fg mb-2 font-display">{SECTION_META[justDone].name} complete</h1>
+        <p className="text-efe-muted text-sm mb-1">
           Section {step + 1} of {order.length} done. Take an optional break — your timer is paused.
         </p>
-        <p className="text-gray-400 text-xs mb-8">The break clock does not count against your next section's 45 minutes.</p>
+        <p className="text-efe-muted text-xs mb-8">The break clock does not count against your next section's 45 minutes.</p>
 
-        <div className="bg-white border border-gray-200 rounded-2xl p-6 mb-6">
-          <p className="text-xs text-gray-400 font-bold mb-1">UP NEXT</p>
+        <div className="bg-efe-surface border border-efe-line rounded-2xl p-6 mb-6 shadow-sm">
+          <p className="text-xs text-efe-muted font-bold mb-1">UP NEXT</p>
           <p className="text-3xl mb-1">{SECTION_META[next].emoji}</p>
-          <p className="font-bold text-gray-900">{SECTION_META[next].name}</p>
-          <p className="text-xs text-gray-500 mt-1">{SECTION_META[next].desc}</p>
+          <p className="font-bold text-efe-fg">{SECTION_META[next].name}</p>
+          <p className="text-xs text-efe-muted mt-1">{SECTION_META[next].desc}</p>
         </div>
 
         <button onClick={() => { setStep((s) => s + 1); setPhase("section"); }}
-          className="bg-emerald-600 text-white px-8 py-3.5 rounded-xl font-black hover:bg-emerald-700 transition-colors"
-          style={{ boxShadow: "0 4px 0 #047857" }}>
+          className="bg-efe-accent text-white px-8 py-3.5 rounded-xl font-black hover:bg-efe-accent-ink transition-colors shadow-sm">
           Start {SECTION_META[next].name} →
         </button>
       </div>
