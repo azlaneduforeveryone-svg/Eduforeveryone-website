@@ -47,8 +47,16 @@ body {
   font-family: var(--font-quran-uthmani), serif;
 }
 
+.font-quran-indopak-nastaleeq {
+  /* Only for the QuranWBW IndoPak text (data/quran/indopak). This font draws
+     that text's own ayah ornaments and will not render other Quran text. */
+  font-family: var(--font-quran-indopak-nastaleeq), serif;
+  font-weight: 400;
+}
+
 .font-quran-uthmani,
 .font-quran-indopak,
+.font-quran-indopak-nastaleeq,
 .font-quran-maghribi {
   letter-spacing: normal;
   word-spacing: normal;

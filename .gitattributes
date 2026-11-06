@@ -1,2 +1,3 @@
 # Tanzil Quran text must stay byte-identical (no CRLF conversion on Windows)
 data/quran/** -text
+*.woff2 binary

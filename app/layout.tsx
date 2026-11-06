@@ -8,6 +8,7 @@
 
 import type { Metadata, Viewport } from 'next';
 import { DM_Sans, Playfair_Display, Amiri, Amiri_Quran, Lateef, Scheherazade_New, Noto_Naskh_Arabic } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -37,6 +38,15 @@ const amiriQuran = Amiri_Quran({
   subsets: ['arabic'],
   weight: '400',
   variable: '--font-quran-uthmani',
+  display: 'block',
+  preload: false,
+});
+// IndoPak Nastaleeq text only renders correctly with its own font (it uses
+// private-use characters for ayah ornaments). Used by the Quran reader only.
+// Font by QuranWBW.com; see scripts/quran-indopak-data.ts for terms.
+const indopakNastaleeq = localFont({
+  src: '../data/quran/fonts/alquran-indopak-by-quranwbw-v2.100.woff2',
+  variable: '--font-quran-indopak-nastaleeq',
   display: 'block',
   preload: false,
 });
@@ -106,7 +116,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${playfair.variable} ${amiri.variable} ${notoNaskh.variable} ${lateef.variable} ${scheherazade.variable} ${amiriQuran.variable}`}
+      className={`${dmSans.variable} ${playfair.variable} ${amiri.variable} ${notoNaskh.variable} ${lateef.variable} ${scheherazade.variable} ${amiriQuran.variable} ${indopakNastaleeq.variable}`}
     >
       <body className="font-body bg-gray-50 min-h-screen flex flex-col text-gray-900 antialiased">
         <JsonLd data={{
