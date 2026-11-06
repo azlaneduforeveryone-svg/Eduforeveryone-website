@@ -41,6 +41,12 @@ body {
   font-weight: 400;
 }
 
+/* The name of Allah is always drawn in Amiri Quran, which shows the small
+   (dagger) alif over the lam. Text is unchanged; only the font differs. */
+.quran-allah {
+  font-family: var(--font-quran-uthmani), serif;
+}
+
 .font-quran-uthmani,
 .font-quran-indopak,
 .font-quran-maghribi {
