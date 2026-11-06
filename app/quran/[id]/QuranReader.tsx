@@ -2,13 +2,15 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import QuranScriptSelector, { QuranScript, QURAN_SCRIPTS } from "@/components/quran/QuranScriptSelector";
+import type { LocalSurah } from "@/lib/quranLocalServer";
+import { withoutLeadingBismillah, isAllahWord, BISMILLAH } from "@/lib/quranLocal";
 
 interface Edition {
   identifier: string; language: string; name: string;
   englishName: string; format: string; type: string; direction: string;
 }
 interface Ayah {
-  number: number; text: string; numberInSurah: number; juz: number; page: number;
+  number: number; text: string; numberInSurah: number; juz: number; page?: number;
 }
 interface SurahData {
   number: number; name: string; englishName: string;
@@ -37,61 +39,22 @@ const LANG_NAMES: Record<string, { name: string; flag: string }> = {
 };
 const getLang = (code: string) => LANG_NAMES[code] ?? { name: code.toUpperCase(), flag: "🌐" };
 
-// ── Strip Bismillah from Ayah 1 text ─────────────────────────────────────────
-// Removes all diacritics then checks if text starts with Bismillah
-function stripBismillah(text: string): string {
-  // Remove Arabic diacritics (tashkeel)
-  const removeDiacritics = (s: string) =>
-    s.replace(/[\u064B-\u065F\u0670\u0671\u06D6-\u06DC\u06DF-\u06E4\u06E7\u06E8\u06EA-\u06ED]/g, "")
-     .replace(/\u0627\u0644/g, "ال")  // normalize alef
-     .trim();
-
-  const normalized = removeDiacritics(text);
-  // Bismillah without diacritics — multiple possible forms
-  const bismillahPatterns = [
-    "بسم الله الرحمن الرحيم",
-    "بسم اللّه الرّحمن الرّحيم",
-    "بسم اللہ الرحمن الرحیم",
-  ];
-
-  for (const pattern of bismillahPatterns) {
-    if (normalized.startsWith(pattern)) {
-      // Count original chars to skip (including diacritics)
-      let skip = 0, matched = 0;
-      while (matched < pattern.length && skip < text.length) {
-        const ch = removeDiacritics(text[skip]);
-        if (ch.length > 0) matched += ch.length;
-        skip++;
-      }
-      // Also skip any trailing space/diacritics
-      while (skip < text.length && (text[skip] === " " || text[skip] === "\u00A0")) skip++;
-      const result = text.slice(skip).trim();
-      if (result.length > 0) return result;
-    }
-  }
-
-  // Fallback: if text starts with ب and contains الرحيم in first 80 chars, strip up to and including it
-  if (text.trimStart().startsWith("ب") || text.trimStart().startsWith("بِ") || text.trimStart().startsWith("بِسۡ")) {
-    // Find end of Bismillah by looking for الرحيم followed by space
-    const idx = text.search(/ر[\u064B-\u065F]*ح[\u064B-\u065F]*[يی][\u064B-\u065F]*م[\u064B-\u065F]*/);
-    if (idx !== -1 && idx < 80) {
-      // Find end of that word
-      let end = idx;
-      while (end < text.length && text[end] !== " " && text[end] !== "\u00A0") end++;
-      const result = text.slice(end).trim();
-      if (result.length > 5) return result;
-    }
-  }
-
-  return text;
+// ── Arabic display ───────────────────────────────────────────────────────────
+// Draw each word of the name of Allah in Amiri Quran so the small (dagger)
+// alif shows in every script. Only the font changes; the characters are the
+// exact Tanzil text, so copying still gives the original.
+function renderArabic(text: string) {
+  return text.split(/( )/).map((w, i) =>
+    isAllahWord(w) ? <span key={i} className="quran-allah">{w}</span> : w
+  );
 }
 
-export default function QuranReader({ surahId }: { surahId: number }) {
-  const [surah,           setSurah]           = useState<SurahData | null>(null);
+export default function QuranReader({ surahId, initialSurah }: { surahId: number; initialSurah: LocalSurah }) {
+  // Arabic text is self-hosted (Tanzil Uthmani v1.1), loaded at build time.
+  const surah: SurahData = initialSurah;
   const [editions,        setEditions]        = useState<Edition[]>([]);
   const [selectedEd,      setSelectedEd]      = useState<string[]>([]);
   const [translations,    setTranslations]    = useState<Record<string, Ayah[]>>({});
-  const [loading,         setLoading]         = useState(true);
   const [loadingTrans,    setLoadingTrans]    = useState(false);
   const [audioPlaying,    setAudioPlaying]    = useState<number | null>(null);
   const [showEditions,    setShowEditions]    = useState(false);
@@ -126,18 +89,18 @@ export default function QuranReader({ surahId }: { surahId: number }) {
     localStorage.setItem("quran-hifz-mode", String(enabled));
   };
 
-  // ── Load Surah + Editions ─────────────────────────────────────────────────
+  // ── Load translation list (Arabic text is already local) ────────────────
   useEffect(() => {
-    setLoading(true);
-    const edition = scriptStyle === "indopak" ? "quran-indopak" : "quran-uthmani";
-    Promise.all([
-      fetch(`https://api.alquran.cloud/v1/surah/${surahId}/${edition}`).then(r => r.json()),
-      fetch("https://api.alquran.cloud/v1/edition?format=text&type=translation").then(r => r.json()),
-    ]).then(([s, e]) => { setSurah(s.data); setEditions(e.data || []); setLoading(false); })
-      .catch(() => setLoading(false));
+    fetch("https://api.alquran.cloud/v1/edition?format=text&type=translation")
+      .then(r => r.json())
+      .then(e => setEditions(e.data || []))
+      .catch(() => setEditions([]));
+  }, []);
+
+  useEffect(() => {
     const saved = localStorage.getItem(`qb-${surahId}`);
     if (saved) setBookmark(parseInt(saved));
-  }, [surahId, scriptStyle]);
+  }, [surahId]);
 
   // ── Load Translations ──────────────────────────────────────────────────────
   useEffect(() => {
@@ -205,14 +168,6 @@ export default function QuranReader({ surahId }: { surahId: number }) {
   const scriptLineHeight =
     scriptStyle === "indopak" ? "3.0" : scriptStyle === "maghribi" ? "2.8" : "2.6";
 
-  if (loading) return (
-    <div className={`${bgPage} min-h-screen`}>
-      <div className="max-w-4xl mx-auto px-4 py-8 space-y-4">
-        {Array(5).fill(0).map((_, i) => <div key={i} className="h-32 rounded-2xl animate-pulse bg-gray-200" />)}
-      </div>
-    </div>
-  );
-  if (!surah) return <div className="text-center py-20 text-gray-500">Surah not found</div>;
 
   return (
     <div className={`${bgPage} min-h-screen`}>
@@ -243,8 +198,8 @@ export default function QuranReader({ surahId }: { surahId: number }) {
           </div>
           {/* Bismillah — all Surahs except At-Tawbah (9) */}
           {surah.number !== 9 && (
-            <p className={`text-3xl mt-5 pt-5 border-t border-white/20 font-bold ${fontClass}`}>
-              بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+            <p className={`text-3xl mt-5 pt-5 border-t border-white/20 ${fontClass}`} style={{ direction: "rtl" }}>
+              {renderArabic(BISMILLAH)}
             </p>
           )}
         </div>
@@ -460,8 +415,7 @@ export default function QuranReader({ surahId }: { surahId: number }) {
         <div className="space-y-4">
           {surah.ayahs.map(ayah => {
             // Strip Bismillah from Ayah 1 for all Surahs except Al-Fatiha (1) and At-Tawbah (9)
-            const shouldStrip = surah.number !== 1 && surah.number !== 9 && ayah.numberInSurah === 1;
-            const displayText = shouldStrip ? stripBismillah(ayah.text) : ayah.text;
+            const displayText = withoutLeadingBismillah(surah.number, ayah.numberInSurah, ayah.text);
 
             return (
               <div key={ayah.numberInSurah} id={`ayah-${ayah.number}`}
@@ -492,7 +446,7 @@ export default function QuranReader({ surahId }: { surahId: number }) {
                 {/* Arabic text */}
                 <p className={`text-right mb-4 ${fontClass}`}
                   style={{ fontSize:`${arabicSize}px`, direction:"rtl", lineHeight: scriptLineHeight, color: darkMode?"#f0fdf4":"#111827" }}>
-                  {displayText}
+                  {renderArabic(displayText)}
                 </p>
 
                 {/* Translations */}
@@ -535,6 +489,12 @@ export default function QuranReader({ surahId }: { surahId: number }) {
             ? <Link href={`/quran/${surah.number + 1}`} className={`px-5 py-3 ${bg} border ${border} rounded-xl font-semibold ${sub} hover:border-teal-400`}>Next →</Link>
             : <div />}
         </div>
+
+        {/* ── Source credit (required by the Tanzil terms of use) ── */}
+        <p className={`text-xs ${sub} text-center mt-8`}>
+          Quran text: <a href="https://tanzil.net" target="_blank" rel="noopener noreferrer" className="underline hover:text-teal-600">Tanzil Project</a> (Uthmani, v1.1).
+          Translations and audio: <a href="https://alquran.cloud" target="_blank" rel="noopener noreferrer" className="underline hover:text-teal-600">AlQuran Cloud</a>.
+        </p>
       </div>
     </div>
   );

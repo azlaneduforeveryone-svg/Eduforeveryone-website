@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import QuranReader from "./QuranReader";
 import { getSurahMeta } from "@/lib/quranSurahMeta";
+import { loadLocalSurah } from "@/lib/quranLocalServer";
 import JsonLd, { breadcrumbLd } from "@/components/JsonLd";
 
 interface Props { params: { id: string } }
@@ -39,7 +40,7 @@ export default function Page({ params }: Props) {
         { name: "Quran", path: "/quran" },
         { name: s ? `Surah ${s.name}` : `Surah ${id}`, path: `/quran/${id}` },
       ])} />
-      <QuranReader surahId={id} />
+      <QuranReader surahId={id} initialSurah={loadLocalSurah(id)} />
     </>
   );
 }
