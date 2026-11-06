@@ -3,8 +3,7 @@ import { useState, useEffect, useRef, Fragment } from "react";
 import Link from "next/link";
 import QuranScriptSelector, { QuranScript, QURAN_SCRIPTS } from "@/components/quran/QuranScriptSelector";
 import type { TajweedPageSurah } from "@/lib/quranTajweedServer";
-import { TAJWEED_RULE_IDS, type TajweedRuleId, type TajweedWord, type WbwSurah, type WbwWord } from "@/lib/quranTajweed";
-import { withoutLeadingBismillah, isAllahWord } from "@/lib/quranLocal";
+import { TAJWEED_RULE_IDS, type TajweedRuleId, type TajweedRun, type TajweedWord, type WbwSurah, type WbwWord } from "@/lib/quranTajweed";
 
 // ── Tajweed Rules Map ─────────────────────────────────────────────────────────
 // Keys are the rule names in the QUL tajweed data (lib/quranTajweed.ts).
@@ -54,11 +53,11 @@ interface RulePopup {
   y: number;
 }
 
-/** One word of QPC Hafs text with its tajweed colours. The letters are never changed. */
-function TajweedWordView({ word }: { word: TajweedWord }) {
+/** Coloured runs of Quran text. The letters are never changed. */
+function TajweedRunsView({ runs }: { runs: TajweedRun[] }) {
   return (
     <>
-      {word.r.map((run, i) => {
+      {runs.map((run, i) => {
         if (run.length === 1) return <Fragment key={i}>{run[0]}</Fragment>;
         const rule = TAJWEED_RULE_IDS[run[1]];
         return <span key={i} className={`tj-${rule}`} data-rule={rule}>{run[0]}</span>;
@@ -73,12 +72,9 @@ function needsSpace(prev: string, next: string): boolean {
   return !/^[\[(/]$/.test(prev) && !/^[\]),.!?:/]$/.test(next);
 }
 
-// IndoPak view (Tanzil text in Scheherazade): draw the name of Allah in Amiri
-// Quran so the small alif shows. Font only; text unchanged. Same as the Reader.
-function renderIndoPak(text: string) {
-  return text.split(/( )/).map((w, i) =>
-    isAllahWord(w) ? <span key={i} className="quran-allah">{w}</span> : w
-  );
+/** One word of QPC Hafs text with its tajweed colours. */
+function TajweedWordView({ word }: { word: TajweedWord }) {
+  return <TajweedRunsView runs={word.r} />;
 }
 
 export default function TajweedQuranReader({ surahId, initialSurah }: { surahId: number; initialSurah: TajweedPageSurah }) {
@@ -304,18 +300,17 @@ export default function TajweedQuranReader({ surahId, initialSurah }: { surahId:
         </div>
 
         {/* Hint */}
-        {isUthmani ? (
-          <div className={`${darkMode?"bg-amber-900/20 border-amber-800":"bg-amber-50 border-amber-100"} border rounded-xl px-4 py-2.5 mb-5 flex items-center gap-2`}>
+        <div className={`${darkMode?"bg-amber-900/20 border-amber-800":"bg-amber-50 border-amber-100"} border rounded-xl px-4 py-2.5 mb-5 flex items-center gap-2`}>
             <span>👆</span>
             <p className={`text-sm ${darkMode?"text-amber-300":"text-amber-700"}`}>
               <strong>Tap any coloured letter</strong> to see which Tajweed rule applies and its explanation.
             </p>
           </div>
-        ) : (
+        {!isUthmani && showWbw && (
           <div className={`${darkMode?"bg-amber-900/20 border-amber-800":"bg-amber-50 border-amber-100"} border rounded-xl px-4 py-2.5 mb-5 flex flex-wrap items-center justify-between gap-2`}
                onClick={(e) => e.stopPropagation()}>
             <p className={`text-sm ${darkMode?"text-amber-300":"text-amber-700"}`}>
-              Tajweed colours and word by word English are available in the <strong>Uthmani</strong> script only.
+              Word by word English is available in the <strong>Uthmani</strong> script only.
             </p>
             <button onClick={() => handleSelectScript("uthmani")}
               className="px-3 py-1.5 rounded-lg bg-amber-500 text-white text-xs font-bold hover:bg-amber-600">
@@ -377,14 +372,8 @@ export default function TajweedQuranReader({ surahId, initialSurah }: { surahId:
                 scriptStyle === "indopak" && hifzMode ? "hifz-compact-container rounded-xl" : ""
               }`}>
                 <div className="flex justify-between items-center mb-4">
-                  {isUthmani ? (
-                    // The ornament at the end of the ayah already shows its number.
-                    <span className="sr-only">Ayah {ayah.numberInSurah}</span>
-                  ) : (
-                    <div className="w-9 h-9 bg-amber-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
-                      {ayah.numberInSurah}
-                    </div>
-                  )}
+                  {/* The ornament at the end of the ayah already shows its number. */}
+                  <span className="sr-only">Ayah {ayah.numberInSurah}</span>
                   <div className="flex items-center gap-2">
                     <button onClick={e => { e.stopPropagation(); playAudio(ayah.number); }}
                       className={`w-9 h-9 rounded-xl border text-sm flex items-center justify-center transition-all
@@ -396,10 +385,10 @@ export default function TajweedQuranReader({ surahId, initialSurah }: { surahId:
                 </div>
 
                 {!isUthmani ? (
-                  // IndoPak: Tanzil text, same as the Quran Reader. No tajweed colours.
+                  // Indo-Pak: QUL Indo-Pak Nastaleeq text, same as the Quran Reader, with tajweed colours.
                   <p className={`text-right ${fontClass}`}
                      style={{ fontSize:`${fontSize}px`, direction:"rtl", lineHeight: scriptLineHeight, color: arabicColor }}>
-                    {renderIndoPak(withoutLeadingBismillah(surah.number, ayah.numberInSurah, ayah.text))}
+                    <TajweedRunsView runs={ayah.indopak} />
                   </p>
                 ) : showWbw && wbw && wbw.surah === surahId ? (
                   // Word by word: each Arabic word with its English underneath.
@@ -459,7 +448,7 @@ export default function TajweedQuranReader({ surahId, initialSurah }: { surahId:
         <p className={`text-xs ${sub} text-center mt-8`}>
           Uthmani text and font: <a href="https://qurancomplex.gov.sa" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-600">King Fahd Glorious Quran Printing Complex</a> (QPC Hafs).
           Tajweed rules and word by word English (Tarteel AI): <a href="https://qul.tarteel.ai" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-600">Quranic Universal Library</a>.
-          IndoPak view text: <a href="https://tanzil.net" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-600">Tanzil Project</a>.
+          Indo-Pak text: QUL Indo-Pak Nastaleeq; font: AlQuran IndoPak by <a href="https://quranwbw.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-600">QuranWBW</a>.
           Audio: <a href="https://alquran.cloud" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-600">AlQuran Cloud</a>.
         </p>
       </div>
