@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import QuizEngine from "@/components/quiz/QuizEngine";
 import {
@@ -13,15 +13,40 @@ interface QuranWordsClientProps {
   isLive: boolean;
   isDev: boolean;
   words: QuranWordItem[];
+  /** Words with Urdu meanings (QUL), used when Urdu is chosen. */
+  urduWords: QuranWordItem[];
   totalWordCount: number;
 }
+
+type MeaningLang = "en" | "ur";
+const LANG_KEY = "quran_words_lang";
+const QPC_FONT = "var(--font-quran-qpc-hafs), var(--font-arabic), serif";
+const URDU_FONT = "var(--font-indopak), 'Noto Naskh Arabic', serif";
 
 export default function QuranWordsClient({
   isLive,
   isDev,
   words,
+  urduWords,
   totalWordCount,
 }: QuranWordsClientProps) {
+  const [lang, setLang] = useState<MeaningLang>("en");
+  useEffect(() => {
+    try { if (localStorage.getItem(LANG_KEY) === "ur") setLang("ur"); } catch { /* storage unavailable */ }
+  }, []);
+  const chooseLang = (l: MeaningLang) => {
+    setLang(l);
+    try { localStorage.setItem(LANG_KEY, l); } catch { /* storage unavailable */ }
+  };
+  // Urdu: the QUL words, with Urdu options and explanation.
+  const questions = useMemo(
+    () => lang === "ur"
+      ? urduWords.filter(w => w.optionsUr).map(w => ({ ...w, options: w.optionsUr!, explanation: w.explanationUr ?? w.explanation }))
+      : words,
+    [lang, words, urduWords]
+  );
+  const urduCount = questions.length;
+
   return (
     <div className="efe-page">
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
@@ -56,7 +81,7 @@ export default function QuranWordsClient({
           معاني كلمات القرآن الكريم
         </p>
         <p className="text-base text-efe-muted mt-2 leading-relaxed">
-          Discover the meanings of high-frequency words in the Holy Quran along with their original Surah and Ayah references.
+          Learn the meanings of the most frequent words in the Holy Quran, in English or Urdu, with the Surah and Ayah where each word first appears.
         </p>
       </div>
 
@@ -138,29 +163,59 @@ export default function QuranWordsClient({
         </div>
       ) : (
         /* Live Game Engine: Activated in production and development when 10+ items are reviewed */
+        <>
+        {/* Meaning language */}
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
+          <div className="inline-flex rounded-xl border border-efe-line bg-efe-surface p-1" role="group" aria-label="Meaning language">
+            {(["en", "ur"] as MeaningLang[]).map(l => (
+              <button key={l} type="button" onClick={() => chooseLang(l)} aria-pressed={lang === l}
+                className={`px-4 py-1.5 rounded-lg text-sm font-bold transition-colors ${lang === l ? "bg-efe-accent text-white" : "text-efe-muted hover:text-efe-fg"}`}
+                style={l === "ur" ? { fontFamily: URDU_FONT } : undefined}>
+                {l === "en" ? "English" : "اردو"}
+              </button>
+            ))}
+          </div>
+          <span className="text-xs text-efe-muted">
+            {lang === "en" ? `${words.length} words` : `${urduCount} words with Urdu meanings`}
+          </span>
+        </div>
         <QuizEngine<QuranWordItem>
-          questions={words}
+          key={lang}
+          questions={questions}
           sampleCount={10}
           shuffleOptions={true}
           showScoreCounter={true}
           enableKeyboard={true}
-          storageKey="quran_words_best_score"
+          storageKey={lang === "ur" ? "quran_words_best_score_ur" : "quran_words_best_score"}
           gameName="Quran Word Meanings"
           gameEmoji="📖"
           gameUrl="/islamic-studies/quran-words"
           isArabicQuestion={true}
+          questionFontFamily={QPC_FONT}
+          optionsDir={lang === "ur" ? "rtl" : "ltr"}
+          optionFontFamily={lang === "ur" ? URDU_FONT : undefined}
           encouragementConfig={QURAN_WORDS_ENCOURAGEMENT}
           renderQuestionDetail={(item) => (
             <div className="flex flex-wrap items-center justify-between gap-2 bg-efe-bg border border-efe-line rounded-xl p-3 text-xs">
-              <span className="text-efe-muted font-medium">
-                Transliteration: <strong className="font-semibold text-efe-fg">{item.transliteration}</strong>
-              </span>
+              {item.transliteration ? (
+                <span className="text-efe-muted font-medium">
+                  Transliteration: <strong className="font-semibold text-efe-fg">{item.transliteration}</strong>
+                </span>
+              ) : (
+                <span className="text-efe-muted font-medium">Choose the meaning of this word</span>
+              )}
               <span className="text-efe-accent-ink font-semibold bg-efe-accent-soft px-2 py-0.5 rounded border border-efe-line">
                 Surah {item.surahName} ({item.surahNumber}:{item.ayahNumber})
               </span>
             </div>
           )}
         />
+        <p className="mt-6 text-xs text-efe-muted text-center">
+          Word meanings: hand-written list, plus the most frequent Quran words with English (Tarteel AI) and Urdu word-by-word meanings from the{" "}
+          <a href="https://qul.tarteel.ai" target="_blank" rel="noopener noreferrer" className="underline">Quranic Universal Library</a>.
+          Arabic: KFGQPC QPC Hafs.
+        </p>
+        </>
       )}
 
       {/* Ad-Free Commitment Notice */}

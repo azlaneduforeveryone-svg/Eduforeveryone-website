@@ -32,6 +32,12 @@ export interface QuizEngineProps<T extends QuizQuestion = QuizQuestion> {
   renderQuestionDetail?: (q: T) => React.ReactNode;
   /** Encouragement and celebration message configuration */
   encouragementConfig?: EncouragementConfig;
+  /** Font for an Arabic question (default: the site's Arabic font) */
+  questionFontFamily?: string;
+  /** Text direction of the answer options, e.g. "rtl" for Urdu (default "ltr") */
+  optionsDir?: "ltr" | "rtl";
+  /** Font for the answer options (default: the page font) */
+  optionFontFamily?: string;
 }
 
 interface PreparedQuestion<T extends QuizQuestion> {
@@ -75,6 +81,9 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
   isArabicQuestion = false,
   renderQuestionDetail,
   encouragementConfig,
+  questionFontFamily,
+  optionsDir = "ltr",
+  optionFontFamily,
 }: QuizEngineProps<T>) {
   // Best score hook (safe localStorage with try/catch)
   const { bestScore, updateBestScore } = useBestScore(storageKey);
@@ -329,16 +338,16 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
                     {userAns !== null && (
                       <p className="text-red-700 flex items-center gap-1.5 font-medium">
                         <span>❌ Your answer:</span>
-                        <span>{q.options[userAns]}</span>
+                        <span dir="auto">{q.options[userAns]}</span>
                       </p>
                     )}
                     <p className="text-green-800 flex items-center gap-1.5 font-bold">
                       <span>✓ Correct replacement:</span>
-                      <span>{q.options[q.correct]}</span>
+                      <span dir="auto">{q.options[q.correct]}</span>
                     </p>
                   </div>
                   {q.explanation && (
-                    <p className="text-xs text-gray-600 mt-2 pt-2 border-t border-red-100">
+                    <p dir="auto" className="text-xs text-gray-600 mt-2 pt-2 border-t border-red-100">
                       💡 {q.explanation}
                     </p>
                   )}
@@ -419,7 +428,7 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
             isArabicQuestion
               ? {
                   direction: "rtl",
-                  fontFamily: "var(--font-arabic), 'Amiri', serif",
+                  fontFamily: questionFontFamily ?? "var(--font-arabic), 'Amiri', serif",
                   lineHeight: "2.2",
                 }
               : undefined
@@ -453,13 +462,14 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
                 key={i}
                 onClick={() => handleSelect(i)}
                 disabled={isAnswered}
-                className={`w-full text-left p-4 rounded-xl border-2 transition-all font-medium flex items-center justify-between ${style}`}
+                dir={optionsDir}
+                className={`w-full ${optionsDir === "rtl" ? "text-right" : "text-left"} p-4 rounded-xl border-2 transition-all font-medium flex items-center justify-between ${style}`}
               >
                 <div className="flex items-center gap-3">
-                  <span className="font-mono font-bold text-sm text-efe-muted w-5">
+                  <span dir="ltr" className="font-mono font-bold text-sm text-efe-muted w-5">
                     {String.fromCharCode(65 + i)}.
                   </span>
-                  <span className="text-base">{opt}</span>
+                  <span className="text-base" style={optionFontFamily ? { fontFamily: optionFontFamily, lineHeight: 1.9 } : undefined}>{opt}</span>
                 </div>
 
                 {isAnswered && (

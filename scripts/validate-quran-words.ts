@@ -110,7 +110,7 @@ async function main() {
       results.push({
         id: item.id,
         word: item.arabic,
-        transliteration: item.transliteration,
+        transliteration: item.transliteration ?? "",
         meaning: item.options[item.correct],
         options: item.options,
         surahNumber: item.surahNumber,
@@ -126,7 +126,7 @@ async function main() {
       results.push({
         id: item.id,
         word: item.arabic,
-        transliteration: item.transliteration,
+        transliteration: item.transliteration ?? "",
         meaning: item.options[item.correct],
         options: item.options,
         surahNumber: item.surahNumber,

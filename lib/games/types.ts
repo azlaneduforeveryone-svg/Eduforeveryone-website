@@ -33,11 +33,17 @@ export interface PhraseUpgradeItem extends QuizQuestion {
 
 export interface QuranWordItem extends QuizQuestion {
   arabic: string;
-  transliteration: string;
+  /** Hand-written words only. */
+  transliteration?: string;
   surahNumber: number;
   surahName: string;
   ayahNumber: number;
   reviewed: boolean;
+  /** Urdu answer options and explanation (QUL words only); same order as options. */
+  optionsUr?: string[];
+  explanationUr?: string;
+  /** "hand" = hand-written list, "qul" = built from QUL word-by-word data. */
+  source?: "hand" | "qul";
 }
 
 export interface EncouragementConfig {
