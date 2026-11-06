@@ -10,10 +10,10 @@ export default function LessonViewer({ lessons }: { lessons: Lesson[] }) {
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
       {/* Lesson content */}
       <div className="lg:col-span-2">
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-          <div className="p-6 border-b border-gray-100">
-            <h2 className="text-xl font-bold text-gray-900">{lesson.title}</h2>
-            <p className="text-sm text-gray-400 mt-1">{lesson.duration} · {lesson.type}</p>
+        <div className="efe-card shadow-sm overflow-hidden">
+          <div className="p-6 border-b border-efe-line">
+            <h2 className="text-xl font-bold text-efe-fg font-display">{lesson.title}</h2>
+            <p className="text-sm text-efe-muted mt-1">{lesson.duration} · {lesson.type}</p>
           </div>
           <div className="p-6">
             {lesson.type === 'video' && lesson.youtubeId ? (
@@ -27,7 +27,7 @@ export default function LessonViewer({ lessons }: { lessons: Lesson[] }) {
                 />
               </div>
             ) : (
-              <div className="prose max-w-none text-gray-700 leading-relaxed whitespace-pre-wrap">
+              <div className="prose max-w-none text-efe-fg leading-relaxed whitespace-pre-wrap">
                 {lesson.content}
               </div>
             )}
@@ -36,7 +36,7 @@ export default function LessonViewer({ lessons }: { lessons: Lesson[] }) {
       </div>
       {/* Sidebar */}
       <div>
-        <h3 className="font-bold text-gray-900 mb-4">Lessons</h3>
+        <h3 className="font-bold text-efe-fg font-display mb-4">Lessons</h3>
         <div className="space-y-2">
           {lessons.map((l, i) => (
             <button
@@ -44,15 +44,15 @@ export default function LessonViewer({ lessons }: { lessons: Lesson[] }) {
               onClick={() => setActive(i)}
               className={`w-full text-left p-4 rounded-xl border transition-all ${
                 i === active
-                  ? 'bg-teal-50 border-teal-200 text-teal-700'
-                  : 'bg-white border-gray-100 text-gray-600 hover:border-teal-100 hover:bg-teal-50/50'
+                  ? 'bg-efe-accent-soft border-efe-accent text-efe-accent-ink'
+                  : 'bg-efe-surface border-efe-line text-efe-muted hover:border-efe-accent hover:bg-efe-accent-soft/50'
               }`}
             >
               <div className="flex items-center gap-3">
                 <span className="text-lg">{l.type === 'video' ? '▶' : '📄'}</span>
                 <div>
                   <p className="font-semibold text-sm">{l.title}</p>
-                  <p className="text-xs text-gray-400 mt-0.5">{l.duration}</p>
+                  <p className="text-xs text-efe-muted mt-0.5">{l.duration}</p>
                 </div>
               </div>
             </button>

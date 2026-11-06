@@ -26,11 +26,12 @@ export default function Page() {
         provider:{"@type":"Organization",name:"EduForEveryone",url:"https://eduforeveryone.com"},
       })}} />
 
+      <div className="efe-page">
       <div className="max-w-6xl mx-auto px-4 py-8">
-        <nav className="flex items-center gap-2 text-sm text-gray-400 mb-6">
-          <a href="/games" className="hover:text-gray-600 transition-colors">Games</a>
+        <nav className="flex items-center gap-2 text-sm text-efe-muted mb-6">
+          <a href="/games" className="hover:text-efe-accent transition-colors">Games</a>
           <span>/</span>
-          <span className="text-gray-700 font-medium">Quiz Battle</span>
+          <span className="text-efe-fg font-medium">Quiz Battle</span>
         </nav>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -40,11 +41,11 @@ export default function Page() {
             <div className="flex items-center gap-3 mb-5">
               <span className="text-4xl">🧠</span>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">Quiz Battle</h1>
-                <p className="text-gray-500 text-sm">10 questions · 3 lives · Powerups · Streaks</p>
+                <h1 className="text-2xl font-bold text-efe-fg font-display">Quiz Battle</h1>
+                <p className="text-efe-muted text-sm">10 questions · 3 lives · Powerups · Streaks</p>
               </div>
             </div>
-            <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+            <div className="efe-card p-5 shadow-sm">
               <QuizBattleGame />
             </div>
           </div>
@@ -53,9 +54,9 @@ export default function Page() {
           <div className="space-y-5">
 
             {/* How to Play */}
-            <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
-              <h2 className="font-bold text-gray-900 text-base mb-4">🎮 How to Play</h2>
-              <p className="text-gray-500 text-sm leading-relaxed mb-4">
+            <div className="efe-card p-5 shadow-sm">
+              <h2 className="font-bold text-efe-fg text-base mb-4 font-display">🎮 How to Play</h2>
+              <p className="text-efe-muted text-sm leading-relaxed mb-4">
                 Answer <strong>10 questions</strong> across subjects. You have <strong>3 lives</strong> — wrong answers or timeouts cost a life. Use powerups wisely!
               </p>
               <div className="space-y-2.5">
@@ -68,8 +69,8 @@ export default function Page() {
                   <div key={t} className="flex gap-3">
                     <span className="text-lg flex-shrink-0">{e}</span>
                     <div>
-                      <p className="font-semibold text-gray-900 text-sm">{t}</p>
-                      <p className="text-gray-500 text-xs leading-relaxed">{d}</p>
+                      <p className="font-semibold text-efe-fg text-sm">{t}</p>
+                      <p className="text-efe-muted text-xs leading-relaxed">{d}</p>
                     </div>
                   </div>
                 ))}
@@ -77,29 +78,29 @@ export default function Page() {
             </div>
 
             {/* Powerups */}
-            <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
-              <h2 className="font-bold text-gray-900 text-base mb-4">⚡ Powerups</h2>
+            <div className="efe-card p-5 shadow-sm">
+              <h2 className="font-bold text-efe-fg text-base mb-4 font-display">⚡ Powerups</h2>
               <div className="space-y-3">
                 {[
                   { emoji:"🎯", title:"50/50",    desc:"Removes 2 wrong answers — one per game" },
                   { emoji:"⏭️", title:"Skip",     desc:"Skip a hard question without losing a life" },
                   { emoji:"⏰", title:"+10 Seconds", desc:"Add 10 seconds to the current question" },
                 ].map(p => (
-                  <div key={p.title} className="flex gap-3 p-3 bg-gray-50 rounded-xl border border-gray-100">
+                  <div key={p.title} className="flex gap-3 p-3 bg-efe-bg rounded-xl border border-efe-line">
                     <span className="text-2xl">{p.emoji}</span>
                     <div>
-                      <p className="font-bold text-gray-900 text-sm">{p.title}</p>
-                      <p className="text-gray-500 text-xs leading-relaxed">{p.desc}</p>
+                      <p className="font-bold text-efe-fg text-sm">{p.title}</p>
+                      <p className="text-efe-muted text-xs leading-relaxed">{p.desc}</p>
                     </div>
                   </div>
                 ))}
-                <p className="text-xs text-gray-400 italic">Each powerup can only be used once per game!</p>
+                <p className="text-xs text-efe-muted italic">Each powerup can only be used once per game!</p>
               </div>
             </div>
 
             {/* Subjects */}
-            <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
-              <h2 className="font-bold text-gray-900 text-base mb-4">📚 Subjects Covered</h2>
+            <div className="efe-card p-5 shadow-sm">
+              <h2 className="font-bold text-efe-fg text-base mb-4 font-display">📚 Subjects Covered</h2>
               <div className="grid grid-cols-2 gap-3">
                 {[
                   { emoji:"🧮", sub:"Mathematics", count:"12 questions" },
@@ -107,28 +108,28 @@ export default function Page() {
                   { emoji:"🌍", sub:"History",     count:"10 questions" },
                   { emoji:"📝", sub:"English",     count:"10 questions" },
                 ].map(s => (
-                  <div key={s.sub} className="bg-gray-50 rounded-xl p-3 border border-gray-100 text-center">
+                  <div key={s.sub} className="bg-efe-bg rounded-xl p-3 border border-efe-line text-center">
                     <span className="text-2xl">{s.emoji}</span>
-                    <p className="font-bold text-gray-900 text-xs mt-1">{s.sub}</p>
-                    <p className="text-gray-400 text-xs">{s.count}</p>
+                    <p className="font-bold text-efe-fg text-xs mt-1">{s.sub}</p>
+                    <p className="text-efe-muted text-xs">{s.count}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Difficulty */}
-            <div className="bg-indigo-50 border border-indigo-100 rounded-2xl p-5">
-              <h2 className="font-bold text-indigo-900 text-base mb-3">🎯 Question Difficulty</h2>
+            <div className="bg-efe-accent-soft border border-efe-line rounded-2xl p-5">
+              <h2 className="font-bold text-efe-fg text-base mb-3 font-display">🎯 Question Difficulty</h2>
               <div className="space-y-2">
                 {[
                   ["🟢","Easy",   "10 pts — basic concepts"],
                   ["🟡","Medium", "20 pts — intermediate level"],
                   ["🔴","Hard",   "30 pts — advanced knowledge"],
                 ].map(([e,l,d]) => (
-                  <div key={l} className="flex items-center gap-2 text-sm text-indigo-800">
+                  <div key={l} className="flex items-center gap-2 text-sm text-efe-accent-ink">
                     <span>{e}</span>
                     <strong>{l}</strong>
-                    <span className="text-indigo-600 text-xs">— {d}</span>
+                    <span className="text-efe-accent text-xs">— {d}</span>
                   </div>
                 ))}
               </div>
@@ -136,6 +137,7 @@ export default function Page() {
 
           </div>
         </div>
+      </div>
       </div>
     </>
   );

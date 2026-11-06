@@ -30,22 +30,23 @@ export default function Page() {
         offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
         provider: { "@type": "Organization", name: "EduForEveryone", url: "https://eduforeveryone.com" },
       })}} />
+      <div className="efe-page">
       <div className="max-w-sm mx-auto px-4 py-8">
-        <nav className="flex items-center gap-2 text-sm text-gray-400 mb-4">
-          <a href="/tools" className="hover:text-gray-600">Tools</a><span>/</span>
-          <span className="text-gray-700 font-medium">Scientific Calculator</span>
+        <nav className="flex items-center gap-2 text-sm text-efe-muted mb-4">
+          <a href="/tools" className="hover:text-efe-accent">Tools</a><span>/</span>
+          <span className="text-efe-fg font-medium">Scientific Calculator</span>
         </nav>
         <CalcNav />
         <div className="flex items-center gap-3 mb-4">
           <span className="text-4xl">🔬</span>
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">Scientific Calculator</h1>
-            <p className="text-gray-500 text-sm">Trig, logs, powers, memory & more</p>
+            <h1 className="text-2xl font-bold text-efe-fg font-display">Scientific Calculator</h1>
+            <p className="text-efe-muted text-sm">Trig, logs, powers, memory & more</p>
           </div>
         </div>
         <ScientificCalculator />
         <div className="mt-8 space-y-3">
-          <h2 className="font-bold text-gray-900 text-lg">Functions Available</h2>
+          <h2 className="font-bold text-efe-fg font-display text-lg">Functions Available</h2>
           {[
             ["Trigonometry", "sin, cos, tan and their inverses (sin⁻¹, cos⁻¹, tan⁻¹) via 2ND key"],
             ["Angle Modes", "Degrees (DEG), Radians (RAD), Gradians (GRAD)"],
@@ -54,12 +55,13 @@ export default function Page() {
             ["Other", "n! (factorial), |x| (absolute), 1/x, %, π, e"],
             ["Memory", "M+ (store), M- (subtract), MR (recall), MC (clear)"],
           ].map(([k, v]) => (
-            <div key={k} className="flex gap-3 bg-gray-50 rounded-xl p-3">
-              <span className="font-bold text-teal-700 text-sm w-28 shrink-0">{k}</span>
-              <span className="text-gray-600 text-sm">{v}</span>
+            <div key={k} className="flex gap-3 efe-card p-3">
+              <span className="font-bold text-efe-accent-ink text-sm w-28 shrink-0">{k}</span>
+              <span className="text-efe-muted text-sm">{v}</span>
             </div>
           ))}
         </div>
+      </div>
       </div>
     </>
   );

@@ -332,11 +332,7 @@ function TypeSelector({ current }: { current: ReconType }) {
         <Link
           key={t.id}
           href={`/tools/finance-tools/reconciliation/${t.id}`}
-          className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
-            t.id === current.id
-              ? "bg-teal-600 text-white"
-              : "bg-gray-100 text-gray-700 hover:bg-teal-50 hover:text-teal-700"
-          }`}
+          className={`efe-chip ${t.id === current.id ? "efe-chip-active" : ""}`}
         >
           {t.displayName.replace(" Reconciliation", "")}
         </Link>
@@ -372,8 +368,8 @@ function Dropzone({
 
   return (
     <div>
-      <label className="block text-sm font-semibold text-gray-900 mb-1">{label}</label>
-      <p className="text-xs text-gray-500 mb-2">{hint}</p>
+      <label className="block text-sm font-semibold text-efe-fg mb-1">{label}</label>
+      <p className="text-xs text-efe-muted mb-2">{hint}</p>
       <div
         onDragOver={(e) => {
           e.preventDefault();
@@ -392,7 +388,7 @@ function Dropzone({
             ? "border-teal-500 bg-teal-50"
             : file
             ? "border-teal-200 bg-teal-50/40"
-            : "border-gray-200 bg-gray-50 hover:border-teal-300 hover:bg-teal-50/40"
+            : "border-efe-line bg-efe-surface hover:border-efe-accent hover:bg-efe-accent-soft/40"
         }`}
       >
         <input
@@ -409,15 +405,15 @@ function Dropzone({
         {file ? (
           <>
             <div className="text-2xl mb-1">✅</div>
-            <p className="text-sm font-semibold text-gray-800">{file.name}</p>
-            <p className="text-xs text-gray-500 mt-0.5">{formatBytes(file.size)} — click or drop to replace</p>
+            <p className="text-sm font-semibold text-efe-fg">{file.name}</p>
+            <p className="text-xs text-efe-muted mt-0.5">{formatBytes(file.size)} — click or drop to replace</p>
           </>
         ) : (
           <>
             <div className="text-2xl mb-1">📄</div>
-            <p className="text-sm font-semibold text-gray-700">Drag and drop your file here</p>
-            <p className="text-xs text-gray-500 mt-1">
-              or <span className="text-teal-600 font-semibold">choose a file</span> — .xlsx, .xls, .csv, or .pdf
+            <p className="text-sm font-semibold text-efe-fg">Drag and drop your file here</p>
+            <p className="text-xs text-efe-muted mt-1">
+              or <span className="text-efe-accent font-semibold">choose a file</span> — .xlsx, .xls, .csv, or .pdf
             </p>
           </>
         )}
@@ -454,12 +450,12 @@ function ColumnMappingForm({
   );
 
   const selectClass =
-    "block w-full mt-1 rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500";
-  const labelClass = "block text-sm font-semibold text-gray-700 mb-3";
+    "block w-full mt-1 rounded-lg border border-efe-line px-3 py-2 text-sm text-efe-fg bg-efe-surface focus:outline-none focus:ring-2 focus:ring-efe-accent focus:border-efe-accent";
+  const labelClass = "block text-sm font-semibold text-efe-fg mb-3";
 
   return (
-    <div className="mt-3 p-4 rounded-xl border border-gray-100 shadow-sm bg-white">
-      <h3 className="font-semibold text-gray-900 mb-3">{label}: confirm columns</h3>
+    <div className="mt-3 p-4 efe-card shadow-sm">
+      <h3 className="font-semibold text-efe-fg mb-3">{label}: confirm columns</h3>
 
       {slot.isPdf && slot.balanceVerified && (
         <div className="rounded-lg bg-teal-50 border border-teal-200 p-3 mb-3 text-sm text-teal-800">
@@ -762,9 +758,10 @@ export default function ReconciliationClient({ rt }: { rt: ReconType }) {
   };
 
   return (
-    <main className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
-      <h1 className="text-3xl font-black text-gray-900 mb-2">{rt.displayName}</h1>
-      <p className="text-gray-600 mb-6">
+    <main className="efe-page">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+      <h1 className="text-3xl font-black text-efe-fg font-display mb-2">{rt.displayName}</h1>
+      <p className="text-efe-muted mb-6">
         Upload your {rt.theirLabel.toLowerCase()} and your {rt.ourLabel.toLowerCase()}. Nothing is stored —
         files are processed in memory and the result comes back as a download.
       </p>
@@ -772,10 +769,10 @@ export default function ReconciliationClient({ rt }: { rt: ReconType }) {
       <TypeSelector current={rt} />
 
       {rt.id === "bank" && (
-        <div className="mb-8 flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl border border-teal-200 bg-teal-50/70 shadow-sm">
+        <div className="mb-8 flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl border border-efe-line bg-efe-accent-soft/70 shadow-sm">
           <div>
-            <p className="text-sm font-bold text-teal-950">Want to see a working example first?</p>
-            <p className="text-xs text-teal-800">
+            <p className="text-sm font-bold text-efe-fg">Want to see a working example first?</p>
+            <p className="text-xs text-efe-accent-ink">
               Load our sample bank statement and cash book (June 2026) with pre-filled balances and reconciling differences.
             </p>
           </div>
@@ -783,7 +780,7 @@ export default function ReconciliationClient({ rt }: { rt: ReconType }) {
             type="button"
             onClick={handleLoadSample}
             disabled={loadingSample || busy}
-            className="px-4 py-2.5 rounded-lg bg-teal-600 text-white text-xs font-semibold hover:bg-teal-700 transition shadow-sm cursor-pointer disabled:opacity-50 whitespace-nowrap"
+            className="efe-btn efe-btn-primary efe-btn-sm disabled:opacity-50 whitespace-nowrap"
           >
             {loadingSample ? "Loading sample…" : "Try with sample data"}
           </button>
@@ -791,34 +788,34 @@ export default function ReconciliationClient({ rt }: { rt: ReconType }) {
       )}
 
       {/* ---------------- How to use this ---------------- */}
-      <div className="rounded-xl border border-gray-100 bg-gray-50 p-5 mb-8">
-        <h2 className="text-sm font-bold text-gray-900 mb-3">How this works</h2>
-        <ol className="text-sm text-gray-700 space-y-2 list-decimal list-inside">
+      <div className="efe-card p-5 mb-8">
+        <h2 className="text-sm font-bold text-efe-fg mb-3">How this works</h2>
+        <ol className="text-sm text-efe-muted space-y-2 list-decimal list-inside">
           <li>
-            <strong>Have both documents open</strong> — your {rt.theirLabel.toLowerCase()} and your{" "}
+            <strong className="text-efe-fg">Have both documents open</strong> — your {rt.theirLabel.toLowerCase()} and your{" "}
             {rt.ourLabel.toLowerCase()}, covering the same date range — and enter the four balance figures below
             exactly as shown on each.
           </li>
           <li>
-            <strong>Export two files</strong> from the same documents: one for each side, from your bank or the
+            <strong className="text-efe-fg">Export two files</strong> from the same documents: one for each side, from your bank or the
             other party&apos;s statement and from your accounting software or spreadsheet.
           </li>
           <li>
-            <strong>Upload both below.</strong> Accepted formats: <code className="text-xs bg-white border border-gray-200 rounded px-1 py-0.5">.xlsx</code>,{" "}
-            <code className="text-xs bg-white border border-gray-200 rounded px-1 py-0.5">.xls</code>,{" "}
-            <code className="text-xs bg-white border border-gray-200 rounded px-1 py-0.5">.csv</code>, or{" "}
-            <code className="text-xs bg-white border border-gray-200 rounded px-1 py-0.5">.pdf</code>. For
-            spreadsheets, <strong>the first row must be the column headers</strong> (Date, Description, Amount,
+            <strong className="text-efe-fg">Upload both below.</strong> Accepted formats: <code className="text-xs bg-efe-bg border border-efe-line rounded px-1 py-0.5">.xlsx</code>,{" "}
+            <code className="text-xs bg-efe-bg border border-efe-line rounded px-1 py-0.5">.xls</code>,{" "}
+            <code className="text-xs bg-efe-bg border border-efe-line rounded px-1 py-0.5">.csv</code>, or{" "}
+            <code className="text-xs bg-efe-bg border border-efe-line rounded px-1 py-0.5">.pdf</code>. For
+            spreadsheets, <strong className="text-efe-fg">the first row must be the column headers</strong> (Date, Description, Amount,
             etc.) — not a title, a blank row, or an opening-balance line. PDF bank statements are read
             automatically and checked against the running balance; if we can&apos;t read one reliably we&apos;ll ask
             for the Excel or CSV export instead.
           </li>
           <li>
-            <strong>Confirm the columns</strong> for each file once it&apos;s uploaded. Most of this gets guessed
+            <strong className="text-efe-fg">Confirm the columns</strong> for each file once it&apos;s uploaded. Most of this gets guessed
             automatically; you just confirm it&apos;s right.
           </li>
           <li>
-            <strong>Click Generate.</strong> You&apos;ll get an Excel file back with a reconciliation statement — including a
+            <strong className="text-efe-fg">Click Generate.</strong> You&apos;ll get an Excel file back with a reconciliation statement — including a
             tie-out check against the opening/closing balances you entered — a side-by-side comparison, and the full
             detail. Nothing is saved on our end.
           </li>
@@ -826,18 +823,18 @@ export default function ReconciliationClient({ rt }: { rt: ReconType }) {
       </div>
 
       {/* ---------------- Balances - collected before the files ---------------- */}
-      <div className="rounded-xl border border-gray-100 bg-white shadow-sm p-5 mb-8">
-        <h2 className="text-sm font-bold text-gray-900 mb-1">Balances</h2>
-        <p className="text-xs text-gray-500 mb-4">
+      <div className="efe-card shadow-sm p-5 mb-8">
+        <h2 className="text-sm font-bold text-efe-fg mb-1">Balances</h2>
+        <p className="text-xs text-efe-muted mb-4">
           Type these in from your actual documents — don&apos;t rely on us guessing them from the files.
           They&apos;re also used to double-check the uploaded transactions actually add up to the closing balance
           on each side.
         </p>
         <div className="grid sm:grid-cols-2 gap-x-6 gap-y-4">
           <div>
-            <p className="text-xs font-semibold text-gray-600 mb-1">{rt.theirLabel}</p>
-            <p className="text-xs text-gray-500 mb-2">{rt.theirBalanceHint}</p>
-            <label className="block text-sm text-gray-700 mb-2">
+            <p className="text-xs font-semibold text-efe-fg mb-1">{rt.theirLabel}</p>
+            <p className="text-xs text-efe-muted mb-2">{rt.theirBalanceHint}</p>
+            <label className="block text-sm text-efe-fg mb-2">
               Opening balance
               {autoFilled.has("bankOpening") && (
                 <span className="ml-2 text-xs font-medium text-teal-600">auto-filled — please confirm</span>
@@ -851,12 +848,12 @@ export default function ReconciliationClient({ rt }: { rt: ReconType }) {
                   if (autoFilled.has("bankOpening"))
                     setAutoFilled((s) => { const n = new Set(s); n.delete("bankOpening"); return n; });
                 }}
-                className={`block w-full mt-1 rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 ${
-                  autoFilled.has("bankOpening") ? "border-teal-300 bg-teal-50/40" : "border-gray-200"
+                className={`block w-full mt-1 rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-efe-accent focus:border-efe-accent ${
+                  autoFilled.has("bankOpening") ? "border-teal-300 bg-teal-50/40" : "border-efe-line bg-efe-surface"
                 }`}
               />
             </label>
-            <label className="block text-sm text-gray-700">
+            <label className="block text-sm text-efe-fg">
               Closing balance
               {autoFilled.has("bankClosing") && (
                 <span className="ml-2 text-xs font-medium text-teal-600">auto-filled — please confirm</span>
@@ -870,16 +867,16 @@ export default function ReconciliationClient({ rt }: { rt: ReconType }) {
                   if (autoFilled.has("bankClosing"))
                     setAutoFilled((s) => { const n = new Set(s); n.delete("bankClosing"); return n; });
                 }}
-                className={`block w-full mt-1 rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 ${
-                  autoFilled.has("bankClosing") ? "border-teal-300 bg-teal-50/40" : "border-gray-200"
+                className={`block w-full mt-1 rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-efe-accent focus:border-efe-accent ${
+                  autoFilled.has("bankClosing") ? "border-teal-300 bg-teal-50/40" : "border-efe-line bg-efe-surface"
                 }`}
               />
             </label>
           </div>
           <div>
-            <p className="text-xs font-semibold text-gray-600 mb-1">{rt.ourLabel}</p>
-            <p className="text-xs text-gray-500 mb-2">{rt.ourBalanceHint}</p>
-            <label className="block text-sm text-gray-700 mb-2">
+            <p className="text-xs font-semibold text-efe-fg mb-1">{rt.ourLabel}</p>
+            <p className="text-xs text-efe-muted mb-2">{rt.ourBalanceHint}</p>
+            <label className="block text-sm text-efe-fg mb-2">
               Opening balance
               {autoFilled.has("bookOpening") && (
                 <span className="ml-2 text-xs font-medium text-teal-600">auto-filled — please confirm</span>
@@ -893,12 +890,12 @@ export default function ReconciliationClient({ rt }: { rt: ReconType }) {
                   if (autoFilled.has("bookOpening"))
                     setAutoFilled((s) => { const n = new Set(s); n.delete("bookOpening"); return n; });
                 }}
-                className={`block w-full mt-1 rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 ${
-                  autoFilled.has("bookOpening") ? "border-teal-300 bg-teal-50/40" : "border-gray-200"
+                className={`block w-full mt-1 rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-efe-accent focus:border-efe-accent ${
+                  autoFilled.has("bookOpening") ? "border-teal-300 bg-teal-50/40" : "border-efe-line bg-efe-surface"
                 }`}
               />
             </label>
-            <label className="block text-sm text-gray-700">
+            <label className="block text-sm text-efe-fg">
               Closing balance
               {autoFilled.has("bookClosing") && (
                 <span className="ml-2 text-xs font-medium text-teal-600">auto-filled — please confirm</span>
@@ -912,8 +909,8 @@ export default function ReconciliationClient({ rt }: { rt: ReconType }) {
                   if (autoFilled.has("bookClosing"))
                     setAutoFilled((s) => { const n = new Set(s); n.delete("bookClosing"); return n; });
                 }}
-                className={`block w-full mt-1 rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500 ${
-                  autoFilled.has("bookClosing") ? "border-teal-300 bg-teal-50/40" : "border-gray-200"
+                className={`block w-full mt-1 rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-efe-accent focus:border-efe-accent ${
+                  autoFilled.has("bookClosing") ? "border-teal-300 bg-teal-50/40" : "border-efe-line bg-efe-surface"
                 }`}
               />
             </label>
@@ -927,13 +924,13 @@ export default function ReconciliationClient({ rt }: { rt: ReconType }) {
         )}
       </div>
 
-      <label className="block text-sm font-semibold text-gray-700 mb-6">
+      <label className="block text-sm font-semibold text-efe-fg mb-6">
         Period (shown on the statement, e.g. &quot;June 2026&quot;)
         <input
           type="text"
           value={periodLabel}
           onChange={(e) => setPeriodLabel(e.target.value)}
-          className="block w-full mt-1 rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500"
+          className="block w-full mt-1 rounded-lg border border-efe-line px-3 py-2 text-sm text-efe-fg bg-efe-surface focus:outline-none focus:ring-2 focus:ring-efe-accent focus:border-efe-accent"
         />
       </label>
 
@@ -984,15 +981,15 @@ export default function ReconciliationClient({ rt }: { rt: ReconType }) {
         disabled={!canSubmit}
         className={`mt-8 px-6 py-3 rounded-lg text-sm font-semibold transition-all ${
           canSubmit
-            ? "bg-teal-600 text-white hover:bg-teal-700 cursor-pointer"
-            : "bg-gray-100 text-gray-400 cursor-not-allowed"
+            ? "efe-btn efe-btn-primary cursor-pointer"
+            : "bg-efe-surface border border-efe-line text-efe-muted opacity-60 cursor-not-allowed"
         }`}
       >
         {busy ? "Generating…" : "Generate Reconciliation Report"}
       </button>
 
       {!canSubmit && !busy && (
-        <p className="mt-2 text-xs text-gray-500">
+        <p className="mt-2 text-xs text-efe-muted">
           {(() => {
             const theirL = rt.theirLabel.toLowerCase();
             const ourL = rt.ourLabel.toLowerCase();
@@ -1011,16 +1008,17 @@ export default function ReconciliationClient({ rt }: { rt: ReconType }) {
       )}
 
       {/* ---------------- Contact ---------------- */}
-      <p className="mt-12 text-center text-sm text-gray-500">
+      <p className="mt-12 text-center text-sm text-efe-muted">
         Found an issue or have a suggestion? We would love to hear from you at{" "}
         <a
           href="mailto:azlaneduforeveryone@gmail.com"
-          className="font-medium text-teal-600 hover:underline"
+          className="font-medium text-efe-accent hover:underline"
         >
           azlaneduforeveryone@gmail.com
         </a>
         .
       </p>
+      </div>
     </main>
   );
 }

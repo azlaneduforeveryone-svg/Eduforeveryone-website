@@ -98,19 +98,19 @@ function TopicQuiz({ topic }: { topic: MathTopic }) {
 
   return (
     <div className="space-y-5">
-      <p className="text-sm text-gray-500">Answer all {topic.quiz.length} questions then click Submit.</p>
+      <p className="text-sm text-efe-muted">Answer all {topic.quiz.length} questions then click Submit.</p>
       {topic.quiz.map((q, i) => (
-        <div key={i} className="bg-white border border-gray-200 rounded-2xl p-5">
-          <p className="font-bold text-gray-900 mb-4">
-            <span className="text-teal-600 mr-2">Q{i+1}.</span>{q.q}
+        <div key={i} className="efe-card p-5">
+          <p className="font-bold text-efe-fg mb-4">
+            <span className="text-efe-accent mr-2">Q{i+1}.</span>{q.q}
           </p>
           <div className="space-y-2">
             {q.opts.map((opt, j) => (
               <button key={j} onClick={() => handleSelect(i, j)}
                 className={`w-full text-left px-4 py-2.5 rounded-xl border text-sm font-medium transition-all
                   ${answers[i] === j
-                    ? "bg-teal-600 text-white border-teal-700"
-                    : "bg-gray-50 border-gray-200 text-gray-700 hover:border-teal-300 hover:bg-teal-50"}`}>
+                    ? "bg-efe-accent text-white border-efe-accent-ink"
+                    : "bg-efe-bg border-efe-line text-efe-fg hover:border-efe-accent hover:bg-efe-accent-soft"}`}>
                 <span className="font-bold mr-2">{String.fromCharCode(65+j)}.</span>{opt}
               </button>
             ))}
@@ -119,8 +119,7 @@ function TopicQuiz({ topic }: { topic: MathTopic }) {
       ))}
       <button onClick={handleSubmit} disabled={!allAnswered}
         className={`w-full py-3.5 rounded-2xl font-bold text-base transition-all
-          ${allAnswered ? "bg-teal-600 text-white hover:bg-teal-700" : "bg-gray-100 text-gray-400 cursor-not-allowed"}`}
-        style={allAnswered ? { boxShadow: "0 4px 0 #0F6E56" } : {}}>
+          ${allAnswered ? "efe-btn efe-btn-primary" : "bg-efe-bg text-efe-muted border border-efe-line cursor-not-allowed"}`}>
         {allAnswered ? "Submit Quiz →" : `Answer all questions (${Object.keys(answers).length}/${topic.quiz.length})`}
       </button>
     </div>
@@ -134,36 +133,36 @@ function TopicExercises({ topic }: { topic: MathTopic }) {
 
   return (
     <div className="space-y-5">
-      <p className="text-sm text-gray-500 bg-amber-50 border border-amber-100 rounded-xl px-4 py-2.5">
+      <p className="text-sm text-efe-muted bg-amber-50 border border-amber-100 rounded-xl px-4 py-2.5">
         ✏️ Try each problem yourself before revealing the answer. Practice is the key to mastering mathematics!
       </p>
       {topic.exercises.map((ex, i) => (
-        <div key={i} className="bg-white border border-gray-200 rounded-2xl p-5">
+        <div key={i} className="efe-card p-5">
           <div className="flex items-start gap-3 mb-4">
-            <span className="w-8 h-8 bg-teal-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+            <span className="w-8 h-8 bg-efe-accent text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
               {i+1}
             </span>
             <div className="flex-1">
-              <p className="font-bold text-gray-900 mb-2">{ex.problem}</p>
-              <p className="text-xs text-gray-500 bg-gray-50 rounded-lg px-3 py-1.5 inline-block">
+              <p className="font-bold text-efe-fg mb-2">{ex.problem}</p>
+              <p className="text-xs text-efe-muted bg-efe-bg rounded-lg px-3 py-1.5 inline-block">
                 💡 Hint: {ex.hint}
               </p>
             </div>
           </div>
           <button onClick={() => toggleAnswer(i)}
             className={`w-full py-2.5 rounded-xl text-sm font-bold border transition-all
-              ${shown[i] ? "bg-teal-600 text-white border-teal-700" : "bg-white border-gray-200 text-gray-600 hover:border-teal-300"}`}>
+              ${shown[i] ? "bg-efe-accent text-white border-efe-accent-ink" : "bg-efe-surface border-efe-line text-efe-muted hover:border-efe-accent"}`}>
             {shown[i] ? "Hide Answer ↑" : "Show Answer ↓"}
           </button>
           {shown[i] && (
             <div className="mt-3 space-y-2">
-              <div className="bg-teal-50 border border-teal-100 rounded-xl p-3">
-                <p className="text-xs font-bold text-teal-600 uppercase tracking-wider mb-1">Answer</p>
-                <p className="font-bold text-teal-800">{ex.answer}</p>
+              <div className="bg-efe-accent-soft border border-efe-line rounded-xl p-3">
+                <p className="text-xs font-bold text-efe-accent uppercase tracking-wider mb-1">Answer</p>
+                <p className="font-bold text-efe-accent-ink">{ex.answer}</p>
               </div>
-              <div className="bg-gray-50 border border-gray-100 rounded-xl p-3">
-                <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Step-by-step solution</p>
-                <p className="text-sm text-gray-700 leading-relaxed">{ex.solution}</p>
+              <div className="bg-efe-bg border border-efe-line rounded-xl p-3">
+                <p className="text-xs font-bold text-efe-muted uppercase tracking-wider mb-1">Step-by-step solution</p>
+                <p className="text-sm text-efe-fg leading-relaxed">{ex.solution}</p>
               </div>
             </div>
           )}
@@ -220,17 +219,17 @@ export default function MathTopicPage({ topicId }: { topicId: string }) {
   }, [topicId, localTopic]);
 
   if (fbLoading) return (
-    <div className="text-center py-20">
-      <div className="w-10 h-10 border-4 border-teal-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-      <p className="text-gray-500 text-sm">Loading topic…</p>
+    <div className="efe-page min-h-screen text-center py-20">
+      <div className="w-10 h-10 border-4 border-efe-accent border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+      <p className="text-efe-muted text-sm">Loading topic…</p>
     </div>
   );
 
   if (!topic) return (
-    <div className="text-center py-20">
+    <div className="efe-page min-h-screen text-center py-20">
       <p className="text-4xl mb-4">🔍</p>
-      <h1 className="text-2xl font-bold text-gray-900 mb-2">Topic not found</h1>
-      <Link href="/courses/mathematics" className="text-teal-600 hover:underline">← Back to Mathematics</Link>
+      <h1 className="text-2xl font-bold text-efe-fg font-display mb-2">Topic not found</h1>
+      <Link href="/courses/mathematics" className="text-efe-accent hover:underline">← Back to Mathematics</Link>
     </div>
   );
 
@@ -242,191 +241,192 @@ export default function MathTopicPage({ topicId }: { topicId: string }) {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      {/* Breadcrumb */}
-      <nav className="flex items-center gap-2 text-sm text-gray-400 mb-6 flex-wrap">
-        <Link href="/courses" className="hover:text-teal-600">Courses</Link>
-        <span>/</span>
-        <Link href="/courses/mathematics" className="hover:text-teal-600">Mathematics</Link>
-        <span>/</span>
-        <span className="text-gray-700 font-medium">{topic.title}</span>
-      </nav>
+    <div className="efe-page min-h-screen">
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        {/* Breadcrumb */}
+        <nav className="flex items-center gap-2 text-sm text-efe-muted mb-6 flex-wrap">
+          <Link href="/courses" className="hover:text-efe-accent">Courses</Link>
+          <span>/</span>
+          <Link href="/courses/mathematics" className="hover:text-efe-accent">Mathematics</Link>
+          <span>/</span>
+          <span className="text-efe-fg font-medium">{topic.title}</span>
+        </nav>
 
-      {/* Header */}
-      <div className="bg-gradient-to-r from-teal-600 to-teal-700 text-white rounded-2xl p-6 mb-6">
-        <div className="flex items-start gap-4">
-          <span className="text-5xl">{topic.emoji}</span>
-          <div className="flex-1">
-            <div className="flex flex-wrap items-center gap-2 mb-2">
-              <span className={`text-xs font-bold px-2.5 py-1 rounded-full bg-white/20`}>{topic.level}</span>
-              <span className="text-xs text-teal-200">{topic.category}</span>
-            </div>
-            <h1 className="text-2xl font-black mb-1">{topic.title}</h1>
-            <p className="text-teal-200 text-sm">{topic.subtitle}</p>
-          </div>
-        </div>
-        <p className="text-teal-100 text-sm mt-4 leading-relaxed">{topic.description}</p>
-        {/* Key points preview */}
-        <div className="mt-4 flex flex-wrap gap-2">
-          {topic.keyPoints.slice(0,3).map((kp, i) => (
-            <span key={i} className="text-xs bg-white/10 border border-white/20 rounded-full px-3 py-1 text-white">
-              ✓ {kp.length > 40 ? kp.slice(0,40)+"..." : kp}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* Learning path indicator */}
-      <div className="flex items-center gap-2 mb-6 overflow-x-auto pb-1">
-        {tabs.map((tab, i) => (
-          <div key={tab.id} className="flex items-center gap-2 flex-shrink-0">
-            <button onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-bold border transition-all
-                ${activeTab === tab.id
-                  ? "bg-teal-600 text-white border-teal-700"
-                  : "bg-white text-gray-600 border-gray-200 hover:border-teal-300"}`}
-              style={activeTab === tab.id ? { boxShadow: "0 3px 0 #0F6E56" } : {}}>
-              <span>{tab.emoji}</span>
-              <span>{tab.label}</span>
-            </button>
-            {i < tabs.length - 1 && <span className="text-gray-300">→</span>}
-          </div>
-        ))}
-      </div>
-
-      {/* ── EXPLANATION TAB ── */}
-      {activeTab === "explain" && (
-        <div className="space-y-5">
-          {/* Explanation paragraphs */}
-          <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-            <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-              📖 Understanding {topic.title}
-            </h2>
-            <div className="space-y-4">
-              {topic.explanation.map((para, i) => (
-                <p key={i} className="text-gray-700 leading-relaxed">{para}</p>
-              ))}
+        {/* Header */}
+        <div className="efe-banner text-white rounded-2xl p-6 mb-6">
+          <div className="flex items-start gap-4">
+            <span className="text-5xl">{topic.emoji}</span>
+            <div className="flex-1">
+              <div className="flex flex-wrap items-center gap-2 mb-2">
+                <span className={`text-xs font-bold px-2.5 py-1 rounded-full bg-white/20`}>{topic.level}</span>
+                <span className="text-xs text-white/80">{topic.category}</span>
+              </div>
+              <h1 className="text-2xl font-black font-display mb-1">{topic.title}</h1>
+              <p className="text-white/85 text-sm">{topic.subtitle}</p>
             </div>
           </div>
-
-          {/* Key points */}
-          <div className="bg-teal-50 border border-teal-100 rounded-2xl p-5">
-            <h3 className="font-bold text-teal-900 mb-3 flex items-center gap-2">
-              🔑 Key Points to Remember
-            </h3>
-            <ul className="space-y-2">
-              {topic.keyPoints.map((kp, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm text-teal-800">
-                  <span className="text-teal-500 mt-0.5 flex-shrink-0">✓</span>
-                  <span>{kp}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Tags */}
-          <div className="flex flex-wrap gap-2">
-            {topic.tags.map(tag => (
-              <span key={tag} className="text-xs px-2.5 py-1 bg-gray-100 text-gray-500 rounded-full border border-gray-200">
-                #{tag}
+          <p className="text-white/90 text-sm mt-4 leading-relaxed">{topic.description}</p>
+          {/* Key points preview */}
+          <div className="mt-4 flex flex-wrap gap-2">
+            {topic.keyPoints.slice(0,3).map((kp, i) => (
+              <span key={i} className="text-xs bg-white/10 border border-white/20 rounded-full px-3 py-1 text-white">
+                ✓ {kp.length > 40 ? kp.slice(0,40)+"..." : kp}
               </span>
             ))}
           </div>
-
-          {/* Next step CTA */}
-          <div className="bg-indigo-50 border border-indigo-100 rounded-2xl p-4 flex items-center justify-between">
-            <p className="text-sm text-indigo-700 font-semibold">Ready to see worked examples?</p>
-            <button onClick={() => setActiveTab("examples")}
-              className="bg-indigo-600 text-white px-5 py-2 rounded-xl text-sm font-bold hover:bg-indigo-700">
-              See Examples 💡 →
-            </button>
-          </div>
         </div>
-      )}
 
-      {/* ── EXAMPLES TAB ── */}
-      {activeTab === "examples" && (
-        <div className="space-y-5">
-          {topic.examples.map((ex, i) => (
-            <div key={i} className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
-              <div className="bg-indigo-600 text-white px-5 py-3">
-                <p className="text-xs font-bold uppercase tracking-wider opacity-75 mb-0.5">Example {i+1}</p>
-                <p className="font-bold">{ex.title}</p>
-              </div>
-              <div className="p-5 space-y-4">
-                <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
-                  <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Problem</p>
-                  <p className="font-semibold text-gray-900">{ex.problem}</p>
-                </div>
-                <div>
-                  <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Step-by-step Solution</p>
-                  <div className="space-y-2">
-                    {ex.steps.map((step, j) => (
-                      <div key={j} className="flex items-start gap-3">
-                        <span className="w-6 h-6 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
-                          {j+1}
-                        </span>
-                        <p className="text-gray-700 text-sm leading-relaxed">{step}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="bg-teal-50 border border-teal-200 rounded-xl p-3 flex items-center gap-3">
-                  <span className="text-teal-600 text-lg">✅</span>
-                  <div>
-                    <p className="text-xs font-bold text-teal-600 uppercase tracking-wider">Answer</p>
-                    <p className="font-bold text-teal-800">{ex.answer}</p>
-                  </div>
-                </div>
-              </div>
+        {/* Learning path indicator */}
+        <div className="flex items-center gap-2 mb-6 overflow-x-auto pb-1">
+          {tabs.map((tab, i) => (
+            <div key={tab.id} className="flex items-center gap-2 flex-shrink-0">
+              <button onClick={() => setActiveTab(tab.id)}
+                className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-bold border transition-all
+                  ${activeTab === tab.id
+                    ? "bg-efe-accent text-white border-efe-accent-ink"
+                    : "bg-efe-surface text-efe-muted border-efe-line hover:border-efe-accent"}`}>
+                <span>{tab.emoji}</span>
+                <span>{tab.label}</span>
+              </button>
+              {i < tabs.length - 1 && <span className="text-efe-muted">→</span>}
             </div>
           ))}
-          <div className="bg-amber-50 border border-amber-100 rounded-2xl p-4 flex items-center justify-between">
-            <p className="text-sm text-amber-700 font-semibold">Now try it yourself!</p>
-            <button onClick={() => setActiveTab("exercises")}
-              className="bg-amber-500 text-white px-5 py-2 rounded-xl text-sm font-bold hover:bg-amber-600">
-              Practice Exercises ✏️ →
-            </button>
-          </div>
         </div>
-      )}
 
-      {/* ── EXERCISES TAB ── */}
-      {activeTab === "exercises" && (
-        <>
-          <TopicExercises topic={topic} />
-          <div className="mt-5 bg-teal-50 border border-teal-100 rounded-2xl p-4 flex items-center justify-between">
-            <p className="text-sm text-teal-700 font-semibold">Ready to test your knowledge?</p>
-            <button onClick={() => setActiveTab("quiz")}
-              className="bg-teal-600 text-white px-5 py-2 rounded-xl text-sm font-bold hover:bg-teal-700">
-              Take the Quiz 🧠 →
-            </button>
+        {/* ── EXPLANATION TAB ── */}
+        {activeTab === "explain" && (
+          <div className="space-y-5">
+            {/* Explanation paragraphs */}
+            <div className="efe-card p-6 shadow-sm">
+              <h2 className="text-xl font-bold text-efe-fg font-display mb-4 flex items-center gap-2">
+                📖 Understanding {topic.title}
+              </h2>
+              <div className="space-y-4">
+                {topic.explanation.map((para, i) => (
+                  <p key={i} className="text-efe-fg leading-relaxed">{para}</p>
+                ))}
+              </div>
+            </div>
+
+            {/* Key points */}
+            <div className="bg-efe-accent-soft border border-efe-line rounded-2xl p-5">
+              <h3 className="font-bold text-efe-accent-ink font-display mb-3 flex items-center gap-2">
+                🔑 Key Points to Remember
+              </h3>
+              <ul className="space-y-2">
+                {topic.keyPoints.map((kp, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm text-efe-accent-ink">
+                    <span className="text-efe-accent mt-0.5 flex-shrink-0">✓</span>
+                    <span>{kp}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Tags */}
+            <div className="flex flex-wrap gap-2">
+              {topic.tags.map(tag => (
+                <span key={tag} className="text-xs px-2.5 py-1 bg-efe-bg text-efe-muted rounded-full border border-efe-line">
+                  #{tag}
+                </span>
+              ))}
+            </div>
+
+            {/* Next step CTA */}
+            <div className="bg-efe-accent-soft border border-efe-line rounded-2xl p-4 flex items-center justify-between">
+              <p className="text-sm text-efe-accent-ink font-semibold">Ready to see worked examples?</p>
+              <button onClick={() => setActiveTab("examples")}
+                className="efe-btn efe-btn-primary efe-btn-sm">
+                See Examples 💡 →
+              </button>
+            </div>
           </div>
-        </>
-      )}
+        )}
 
-      {/* ── QUIZ TAB ── */}
-      {activeTab === "quiz" && <TopicQuiz topic={topic} />}
-
-      {/* Related topics */}
-      {topic.relatedTopics.length > 0 && (
-        <div className="mt-8 border-t border-gray-100 pt-6">
-          <h3 className="font-bold text-gray-900 mb-4">🔗 Related Topics</h3>
-          <div className="flex flex-wrap gap-3">
-            {topic.relatedTopics.map(id => {
-              const rel = getTopicById(id);
-              if (!rel) return null;
-              return (
-                <Link key={id} href={`/courses/mathematics/${id}`}
-                  className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-teal-300 hover:bg-teal-50 transition-all group">
-                  <span>{rel.emoji}</span>
-                  <span className="text-sm font-semibold text-gray-700 group-hover:text-teal-600">{rel.title}</span>
-                </Link>
-              );
-            })}
+        {/* ── EXAMPLES TAB ── */}
+        {activeTab === "examples" && (
+          <div className="space-y-5">
+            {topic.examples.map((ex, i) => (
+              <div key={i} className="efe-card overflow-hidden shadow-sm">
+                <div className="bg-efe-accent text-white px-5 py-3">
+                  <p className="text-xs font-bold uppercase tracking-wider opacity-75 mb-0.5">Example {i+1}</p>
+                  <p className="font-bold font-display">{ex.title}</p>
+                </div>
+                <div className="p-5 space-y-4">
+                  <div className="bg-efe-bg rounded-xl p-4 border border-efe-line">
+                    <p className="text-xs font-bold text-efe-muted uppercase tracking-wider mb-2">Problem</p>
+                    <p className="font-semibold text-efe-fg">{ex.problem}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-efe-muted uppercase tracking-wider mb-3">Step-by-step Solution</p>
+                    <div className="space-y-2">
+                      {ex.steps.map((step, j) => (
+                        <div key={j} className="flex items-start gap-3">
+                          <span className="w-6 h-6 bg-efe-accent-soft text-efe-accent-ink rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
+                            {j+1}
+                          </span>
+                          <p className="text-efe-fg text-sm leading-relaxed">{step}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="bg-efe-accent-soft border border-efe-line rounded-xl p-3 flex items-center gap-3">
+                    <span className="text-efe-accent text-lg">✅</span>
+                    <div>
+                      <p className="text-xs font-bold text-efe-accent uppercase tracking-wider">Answer</p>
+                      <p className="font-bold text-efe-accent-ink">{ex.answer}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+            <div className="bg-efe-gold-soft border border-efe-line rounded-2xl p-4 flex items-center justify-between">
+              <p className="text-sm text-efe-fg font-semibold">Now try it yourself!</p>
+              <button onClick={() => setActiveTab("exercises")}
+                className="efe-btn efe-btn-primary efe-btn-sm">
+                Practice Exercises ✏️ →
+              </button>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+
+        {/* ── EXERCISES TAB ── */}
+        {activeTab === "exercises" && (
+          <>
+            <TopicExercises topic={topic} />
+            <div className="mt-5 bg-efe-accent-soft border border-efe-line rounded-2xl p-4 flex items-center justify-between">
+              <p className="text-sm text-efe-accent-ink font-semibold">Ready to test your knowledge?</p>
+              <button onClick={() => setActiveTab("quiz")}
+                className="efe-btn efe-btn-primary efe-btn-sm">
+                Take the Quiz 🧠 →
+              </button>
+            </div>
+          </>
+        )}
+
+        {/* ── QUIZ TAB ── */}
+        {activeTab === "quiz" && <TopicQuiz topic={topic} />}
+
+        {/* Related topics */}
+        {topic.relatedTopics.length > 0 && (
+          <div className="mt-8 border-t border-efe-line pt-6">
+            <h3 className="font-bold text-efe-fg font-display mb-4">🔗 Related Topics</h3>
+            <div className="flex flex-wrap gap-3">
+              {topic.relatedTopics.map(id => {
+                const rel = getTopicById(id);
+                if (!rel) return null;
+                return (
+                  <Link key={id} href={`/courses/mathematics/${id}`}
+                    className="flex items-center gap-2 px-4 py-2 bg-efe-surface border border-efe-line rounded-xl hover:border-efe-accent hover:bg-efe-accent-soft transition-all group">
+                    <span>{rel.emoji}</span>
+                    <span className="text-sm font-semibold text-efe-fg group-hover:text-efe-accent">{rel.title}</span>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

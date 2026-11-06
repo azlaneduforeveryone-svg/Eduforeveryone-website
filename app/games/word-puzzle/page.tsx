@@ -26,12 +26,13 @@ export default function Page() {
         provider:{"@type":"Organization",name:"EduForEveryone",url:"https://eduforeveryone.com"},
       })}} />
 
+      <div className="efe-page">
       <div className="max-w-6xl mx-auto px-4 py-8">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-sm text-gray-400 mb-6">
-          <a href="/games" className="hover:text-gray-600 transition-colors">Games</a>
+        <nav className="flex items-center gap-2 text-sm text-efe-muted mb-6">
+          <a href="/games" className="hover:text-efe-accent transition-colors">Games</a>
           <span>/</span>
-          <span className="text-gray-700 font-medium">WordWise</span>
+          <span className="text-efe-fg font-medium">WordWise</span>
         </nav>
 
         {/* Desktop layout: game on left, info on right */}
@@ -42,11 +43,11 @@ export default function Page() {
             <div className="flex items-center gap-3 mb-5">
               <span className="text-4xl">🔤</span>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">WordWise</h1>
-                <p className="text-gray-500 text-sm">Guess the hidden education word in 6 tries</p>
+                <h1 className="text-2xl font-bold text-efe-fg font-display">WordWise</h1>
+                <p className="text-efe-muted text-sm">Guess the hidden education word in 6 tries</p>
               </div>
             </div>
-            <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+            <div className="efe-card p-5 shadow-sm">
               <WordWiseGame />
             </div>
           </div>
@@ -55,9 +56,9 @@ export default function Page() {
           <div className="space-y-5">
 
             {/* How to Play */}
-            <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
-              <h2 className="font-bold text-gray-900 text-base mb-4">🎮 How to Play</h2>
-              <p className="text-gray-500 text-sm leading-relaxed mb-4">
+            <div className="efe-card p-5 shadow-sm">
+              <h2 className="font-bold text-efe-fg text-base mb-4 font-display">🎮 How to Play</h2>
+              <p className="text-efe-muted text-sm leading-relaxed mb-4">
                 Guess the hidden education word in <strong>up to 6 tries</strong>.
                 The hint is always shown to help you think!
               </p>
@@ -71,8 +72,8 @@ export default function Page() {
                   <div key={x.label} className="flex items-center gap-3">
                     <div className={`${x.cls} w-8 h-8 rounded-lg flex-shrink-0`} />
                     <div>
-                      <p className="font-semibold text-gray-900 text-sm">{x.label}</p>
-                      <p className="text-gray-500 text-xs">{x.desc}</p>
+                      <p className="font-semibold text-efe-fg text-sm">{x.label}</p>
+                      <p className="text-efe-muted text-xs">{x.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -80,8 +81,8 @@ export default function Page() {
             </div>
 
             {/* Difficulty Levels */}
-            <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
-              <h2 className="font-bold text-gray-900 text-base mb-4">🔥 Difficulty Levels</h2>
+            <div className="efe-card p-5 shadow-sm">
+              <h2 className="font-bold text-efe-fg text-base mb-4 font-display">🔥 Difficulty Levels</h2>
               <div className="space-y-3">
                 {[
                   { emoji:"🌱", level:"Beginner", color:"bg-green-100 text-green-700",  desc:"3 free letters revealed", streak:"Streak 0+" },
@@ -94,40 +95,40 @@ export default function Page() {
                       <span>{d.emoji}</span>
                       <div>
                         <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${d.color}`}>{d.level}</span>
-                        <p className="text-xs text-gray-500 mt-0.5">{d.desc}</p>
+                        <p className="text-xs text-efe-muted mt-0.5">{d.desc}</p>
                       </div>
                     </div>
-                    <span className="text-xs text-gray-400 font-medium">{d.streak}</span>
+                    <span className="text-xs text-efe-muted font-medium">{d.streak}</span>
                   </div>
                 ))}
               </div>
-              <p className="text-xs text-gray-400 mt-4 italic">
+              <p className="text-xs text-efe-muted mt-4 italic">
                 💡 Hint is always visible — use it to think, not just guess!
               </p>
             </div>
 
             {/* Word Stats */}
-            <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
-              <h2 className="font-bold text-gray-900 text-base mb-4">📚 Word Bank</h2>
+            <div className="efe-card p-5 shadow-sm">
+              <h2 className="font-bold text-efe-fg text-base mb-4 font-display">📚 Word Bank</h2>
               <div className="grid grid-cols-3 gap-3 mb-4">
                 {[["🧮","Math","466"],["🔬","Science","643"],["📝","English","573"]].map(([e,l,n]) => (
-                  <div key={l} className="bg-gray-50 rounded-xl p-3 text-center border border-gray-100">
+                  <div key={l} className="bg-efe-bg rounded-xl p-3 text-center border border-efe-line">
                     <span className="text-xl">{e}</span>
-                    <p className="font-bold text-gray-900 text-sm mt-1">{n}</p>
-                    <p className="text-gray-500 text-xs">{l}</p>
+                    <p className="font-bold text-efe-fg text-sm mt-1">{n}</p>
+                    <p className="text-efe-muted text-xs">{l}</p>
                   </div>
                 ))}
               </div>
-              <div className="bg-teal-50 border border-teal-100 rounded-xl p-3 text-center">
-                <p className="text-2xl font-bold text-teal-600">1,682</p>
-                <p className="text-xs text-teal-600 font-semibold">Total Words (3–15 letters)</p>
+              <div className="bg-efe-accent-soft border border-efe-line rounded-xl p-3 text-center">
+                <p className="text-2xl font-bold text-efe-accent">1,682</p>
+                <p className="text-xs text-efe-accent-ink font-semibold">Total Words (3–15 letters)</p>
               </div>
             </div>
 
             {/* Tips */}
-            <div className="bg-indigo-50 border border-indigo-100 rounded-2xl p-5">
-              <h2 className="font-bold text-indigo-900 text-base mb-3">💡 Tips</h2>
-              <ul className="space-y-2 text-sm text-indigo-800">
+            <div className="bg-efe-accent-soft border border-efe-line rounded-2xl p-5">
+              <h2 className="font-bold text-efe-fg text-base mb-3 font-display">💡 Tips</h2>
+              <ul className="space-y-2 text-sm text-efe-accent-ink">
                 <li>⌨️ Type directly on desktop keyboard</li>
                 <li>📱 Tap the board to open mobile keyboard</li>
                 <li>🔵 Blue letters are free reveals — use them!</li>
@@ -139,6 +140,7 @@ export default function Page() {
 
           </div>
         </div>
+      </div>
       </div>
     </>
   );

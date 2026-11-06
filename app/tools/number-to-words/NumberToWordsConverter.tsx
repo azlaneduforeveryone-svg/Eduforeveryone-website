@@ -197,7 +197,7 @@ export default function NumberToWordsConverter() {
       {/* Inputs */}
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="flex-1">
-          <label className="block text-sm text-gray-500 mb-1.5">Enter a number</label>
+          <label className="block text-sm text-efe-muted mb-1.5">Enter a number</label>
           <input
             type="number"
             value={input}
@@ -205,15 +205,15 @@ export default function NumberToWordsConverter() {
             placeholder="e.g. 1234567"
             min={0}
             max={999999999999}
-            className="w-full border border-gray-200 rounded-xl px-4 py-3 text-xl font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full border border-efe-line rounded-xl px-4 py-3 text-xl font-semibold text-efe-fg bg-efe-surface focus:outline-none focus:ring-2 focus:ring-efe-accent focus:border-transparent"
           />
         </div>
         <div className="sm:w-48">
-          <label className="block text-sm text-gray-500 mb-1.5">Currency (optional)</label>
+          <label className="block text-sm text-efe-muted mb-1.5">Currency (optional)</label>
           <select
             value={currency}
             onChange={(e) => setCurrency(e.target.value)}
-            className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+            className="w-full border border-efe-line rounded-xl px-4 py-3 text-efe-fg focus:outline-none focus:ring-2 focus:ring-efe-accent bg-efe-surface"
           >
             <option value="">None</option>
             <option value="USD">USD — Dollar</option>
@@ -230,17 +230,13 @@ export default function NumberToWordsConverter() {
 
       {/* Language Toggles */}
       <div>
-        <p className="text-sm text-gray-500 mb-2">Select languages</p>
+        <p className="text-sm text-efe-muted mb-2">Select languages</p>
         <div className="flex flex-wrap gap-2">
           {LANGS.map((lang) => (
             <button
               key={lang.id}
               onClick={() => toggleLang(lang.id)}
-              className={`px-3 py-1.5 rounded-full text-sm border transition-all ${
-                activeLangs.has(lang.id)
-                  ? "bg-blue-50 text-blue-700 border-blue-200 font-medium"
-                  : "bg-white text-gray-500 border-gray-200 hover:border-gray-300"
-              }`}
+              className={`efe-chip ${activeLangs.has(lang.id) ? "efe-chip-active" : ""}`}
             >
               {lang.native}
             </button>
@@ -261,24 +257,24 @@ export default function NumberToWordsConverter() {
             return (
               <div
                 key={lang.id}
-                className="bg-gray-50 border border-gray-100 rounded-xl p-4 hover:border-blue-100 transition-colors"
+                className="bg-efe-bg border border-efe-line rounded-xl p-4 hover:border-efe-accent transition-colors"
               >
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
                     <span className="text-lg">{lang.flag}</span>
-                    <span className="text-sm font-semibold text-gray-800">{lang.name}</span>
-                    <span className="text-xs text-gray-400">{lang.native}</span>
+                    <span className="text-sm font-semibold text-efe-fg">{lang.name}</span>
+                    <span className="text-xs text-efe-muted">{lang.native}</span>
                   </div>
                   <button
                     onClick={() => handleCopy(words, lang.id)}
-                    className="text-xs px-3 py-1 rounded-lg border border-gray-200 text-gray-500 hover:bg-white hover:border-gray-300 transition-all"
+                    className="text-xs px-3 py-1 rounded-lg border border-efe-line text-efe-muted hover:bg-efe-surface hover:border-efe-accent hover:text-efe-accent-ink transition-all"
                   >
                     {copied === lang.id ? "✓ Copied" : "Copy"}
                   </button>
                 </div>
                 <p
                   dir={lang.dir}
-                  className={`text-base font-medium text-gray-900 leading-relaxed ${
+                  className={`text-base font-medium text-efe-fg leading-relaxed ${
                     lang.dir === "rtl" ? "text-right" : "text-left"
                   }`}
                   style={lang.dir === "rtl" ? { fontFamily: "serif" } : {}}

@@ -251,7 +251,7 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
   // Handle empty or loading state
   if (totalCount === 0 || !currentItem) {
     return (
-      <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 text-center text-gray-500">
+      <div className="efe-card shadow-sm p-8 text-center text-efe-muted">
         Loading questions...
       </div>
     );
@@ -284,38 +284,38 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
     }
 
     return (
-      <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 sm:p-8 text-center game-end-screen">
+      <div className="efe-card shadow-sm p-6 sm:p-8 text-center game-end-screen">
         {/* Trophy icon / Celebration */}
         <div className="text-6xl mb-3" aria-hidden="true">
           {score === totalCount ? "🏆" : score >= totalCount / 2 ? "🎉" : "📚"}
         </div>
 
-        <h2 className="text-3xl font-black text-gray-900 mb-1">Round Complete!</h2>
-        <p className="text-xl text-gray-600 mb-2">
-          You scored <span className="font-extrabold text-teal-600">{score}/{totalCount}</span>
+        <h2 className="text-3xl font-black text-efe-fg font-display mb-1">Round Complete!</h2>
+        <p className="text-xl text-efe-muted mb-2">
+          You scored <span className="font-extrabold text-efe-accent">{score}/{totalCount}</span>
         </p>
 
         {/* Best Score Pill */}
         {storageKey && (
-          <div className="inline-flex items-center gap-1.5 bg-teal-50 border border-teal-200 text-teal-800 text-xs font-bold px-3 py-1 rounded-full mb-4">
+          <div className="inline-flex items-center gap-1.5 bg-efe-accent-soft border border-efe-line text-efe-accent-ink text-xs font-bold px-3 py-1 rounded-full mb-4">
             <span>⭐ Personal Best:</span>
             <span>{Math.max(bestScore, score)}/{totalCount}</span>
           </div>
         )}
 
         {/* Dynamic Encouragement Feedback */}
-        <p className="text-sm text-gray-500 max-w-md mx-auto mb-8 leading-relaxed">
+        <p className="text-sm text-efe-muted max-w-md mx-auto mb-8 leading-relaxed">
           {scoreMessage}
         </p>
 
         {/* Review Mistakes Section */}
         {wrongQuestions.length > 0 && (
           <div className="text-left mb-8">
-            <div className="flex items-center justify-between mb-3 border-b border-gray-100 pb-2">
-              <h3 className="text-sm font-bold text-gray-800 uppercase tracking-wider">
+            <div className="flex items-center justify-between mb-3 border-b border-efe-line pb-2">
+              <h3 className="text-sm font-bold text-efe-fg uppercase tracking-wider">
                 Review Questions to Practice ({wrongQuestions.length})
               </h3>
-              <span className="text-xs text-gray-400">Correct answers highlighted</span>
+              <span className="text-xs text-efe-muted">Correct answers highlighted</span>
             </div>
 
             <div className="space-y-3">
@@ -352,7 +352,7 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
         <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
           <button
             onClick={handleRestart}
-            className="w-full sm:w-auto bg-teal-600 text-white font-bold px-8 py-3.5 rounded-xl hover:bg-teal-700 active:scale-95 transition-all shadow-sm"
+            className="w-full sm:w-auto efe-btn efe-btn-primary px-8 py-3.5"
           >
             🔄 Play Again
           </button>
@@ -378,31 +378,31 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
   // ACTIVE QUESTION SCREEN
   // ───────────────────────────────────────────────────────────────────────────
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+    <div className="efe-card shadow-sm overflow-hidden">
       {/* Progress Bar */}
-      <div className="h-1.5 bg-gray-100">
+      <div className="h-1.5 bg-efe-bg">
         <div
-          className="h-full bg-teal-500 transition-all duration-300"
+          className="h-full bg-efe-accent transition-all duration-300"
           style={{ width: `${((current + 1) / totalCount) * 100}%` }}
         />
       </div>
 
       <div className="p-6 sm:p-8">
         {/* Top Header: Progress & Optional Score */}
-        <div className="flex justify-between items-center text-xs font-semibold text-gray-400 mb-6">
+        <div className="flex justify-between items-center text-xs font-semibold text-efe-muted mb-6">
           <span>
             Question {current + 1} of {totalCount}
             {showScoreCounter && (
-              <span className="text-teal-700 ml-2 font-bold">
+              <span className="text-efe-accent-ink ml-2 font-bold">
                 • Score: {score}
               </span>
             )}
           </span>
 
           {enableKeyboard && (
-            <span className="hidden sm:inline-block text-[11px] text-gray-400">
-              Keys <kbd className="px-1.5 py-0.5 bg-gray-100 rounded text-gray-600 font-mono">1-4</kbd> to choose,{" "}
-              <kbd className="px-1.5 py-0.5 bg-gray-100 rounded text-gray-600 font-mono">Enter</kbd> for Next
+            <span className="hidden sm:inline-block text-[11px] text-efe-muted">
+              Keys <kbd className="px-1.5 py-0.5 bg-efe-bg border border-efe-line rounded text-efe-fg font-mono">1-4</kbd> to choose,{" "}
+              <kbd className="px-1.5 py-0.5 bg-efe-bg border border-efe-line rounded text-efe-fg font-mono">Enter</kbd> for Next
             </span>
           )}
         </div>
@@ -411,8 +411,8 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
         <h2
           className={
             isArabicQuestion
-              ? "text-3xl font-arabic text-gray-900 mb-4"
-              : "text-xl font-bold text-gray-900 mb-6"
+              ? "text-3xl font-arabic text-efe-fg mb-4"
+              : "text-xl font-bold text-efe-fg mb-6"
           }
           dir={isArabicQuestion ? "rtl" : "ltr"}
           style={
@@ -437,14 +437,14 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
         <div className="space-y-3 mb-6" role="radiogroup">
           {currentItem.options.map((opt, i) => {
             let style =
-              "bg-gray-50 border-gray-200 text-gray-700 hover:border-teal-300 hover:bg-teal-50/50";
+              "bg-efe-bg border-efe-line text-efe-fg hover:border-efe-accent hover:bg-efe-accent-soft/50";
             if (isAnswered) {
               if (i === currentItem.correct) {
                 style = "bg-green-50 border-green-400 text-green-800";
               } else if (i === selected) {
                 style = "bg-red-50 border-red-400 text-red-800";
               } else {
-                style = "bg-gray-50 border-gray-200 text-gray-400 opacity-60";
+                style = "bg-efe-bg border-efe-line text-efe-muted opacity-60";
               }
             }
 
@@ -456,7 +456,7 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
                 className={`w-full text-left p-4 rounded-xl border-2 transition-all font-medium flex items-center justify-between ${style}`}
               >
                 <div className="flex items-center gap-3">
-                  <span className="font-mono font-bold text-sm text-gray-400 w-5">
+                  <span className="font-mono font-bold text-sm text-efe-muted w-5">
                     {String.fromCharCode(65 + i)}.
                   </span>
                   <span className="text-base">{opt}</span>
@@ -495,7 +495,7 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
         <button
           onClick={handleNext}
           disabled={!isAnswered}
-          className="w-full bg-teal-600 text-white font-bold py-3.5 rounded-xl hover:bg-teal-700 active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-sm"
+          className="w-full efe-btn efe-btn-primary py-3.5 disabled:opacity-40 disabled:cursor-not-allowed"
         >
           {current < totalCount - 1 ? "Next Question →" : "See Results →"}
         </button>
