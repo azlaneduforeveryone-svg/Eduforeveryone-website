@@ -19,7 +19,7 @@
  * Bump CACHE_VERSION on any change to this file.
  */
 
-const CACHE_VERSION = 'v1';
+const CACHE_VERSION = 'v2'; // v2: purge caches poisoned by v1 (stale RSC payloads, cached 404s)
 const PRECACHE = `efe-precache-${CACHE_VERSION}`;
 const RUNTIME = `efe-runtime-${CACHE_VERSION}`;
 const MEDIA = `efe-media-${CACHE_VERSION}`;
@@ -102,21 +102,37 @@ self.addEventListener('fetch', (event) => {
   // which cannot satisfy partial content.
   if (request.headers.has('range')) return;
 
+  // Next.js App Router data requests (client-side navigation, prefetch).
+  // These describe the CURRENT build and reference its chunk hashes, so a
+  // cached copy from an older deploy loads JS files that no longer exist.
+  // Never cache them: let the browser go straight to the network.
+  if (
+    sameOrigin &&
+    (request.headers.get('RSC') === '1' ||
+      request.headers.has('Next-Router-State-Tree') ||
+      url.searchParams.has('_rsc'))
+  ) {
+    return;
+  }
+
   // --- HTML navigations: network-first ---------------------------------
   if (request.mode === 'navigate') {
     event.respondWith(
       fetch(request)
         .then((response) => {
-          const copy = response.clone();
-          caches.open(RUNTIME).then((cache) => {
-            cache.put(request, copy);
-            trimCache(RUNTIME, RUNTIME_MAX);
-          });
+          // Only keep good, non-redirected pages for offline use.
+          if (response.ok && !response.redirected) {
+            const copy = response.clone();
+            caches.open(RUNTIME).then((cache) => {
+              cache.put(request, copy);
+              trimCache(RUNTIME, RUNTIME_MAX);
+            });
+          }
           return response;
         })
         .catch(async () => {
           const cached = await caches.match(request);
-          return cached || (await caches.match(OFFLINE_URL));
+          return cached || (await caches.match(OFFLINE_URL)) || Response.error();
         })
     );
     return;
@@ -129,8 +145,12 @@ self.addEventListener('fetch', (event) => {
         (cached) =>
           cached ||
           fetch(request).then((response) => {
-            const copy = response.clone();
-            caches.open(PRECACHE).then((cache) => cache.put(request, copy));
+            // Never cache a 404: a chunk missing during a deploy must not
+            // stay "missing" in this browser forever.
+            if (response.ok) {
+              const copy = response.clone();
+              caches.open(PRECACHE).then((cache) => cache.put(request, copy));
+            }
             return response;
           })
       )
@@ -161,7 +181,7 @@ self.addEventListener('fetch', (event) => {
               }
               return response;
             })
-            .catch(() => cached)
+            .catch(() => Response.error())
       )
     );
     return;
@@ -182,7 +202,7 @@ self.addEventListener('fetch', (event) => {
             }
             return response;
           })
-          .catch(() => cached);
+          .catch(() => cached || Response.error());
         return cached || network;
       })
     );
