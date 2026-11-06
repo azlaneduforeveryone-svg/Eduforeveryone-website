@@ -1,3 +1,5 @@
 # Tanzil Quran text must stay byte-identical (no CRLF conversion on Windows)
 data/quran/** -text
 *.woff2 binary
+# Word-by-word English data is verified byte for byte on every build
+public/quran/wbw-en/** -text

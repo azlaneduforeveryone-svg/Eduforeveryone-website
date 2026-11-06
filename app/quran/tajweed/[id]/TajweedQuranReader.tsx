@@ -1,61 +1,89 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, Fragment } from "react";
 import Link from "next/link";
 import QuranScriptSelector, { QuranScript, QURAN_SCRIPTS } from "@/components/quran/QuranScriptSelector";
+import type { TajweedPageSurah } from "@/lib/quranTajweedServer";
+import { TAJWEED_RULE_IDS, type TajweedRuleId, type TajweedWord, type WbwSurah, type WbwWord } from "@/lib/quranTajweed";
+import { withoutLeadingBismillah, isAllahWord } from "@/lib/quranLocal";
 
 // ── Tajweed Rules Map ─────────────────────────────────────────────────────────
-const TAJWEED_RULES: Record<string, { color: string; name: string; nameAr: string; desc: { en: string; ur: string; hi: string } }> = {
-  ham_wasl:           { color:"#aaaaaa", name:"Hamzat ul Wasl",        nameAr:"همزة الوصل",     desc:{ en:"Silent Hamza — not pronounced when preceded by another word", ur:"ہمزۃ الوصل — پچھلے لفظ کے بعد نہیں پڑھا جاتا", hi:"هमज़त उल-वस्ल — पिछले शब्द के बाद نहीं पढ़ा जाता" }},
-  laam_shamsiyah:     { color:"#aaaaaa", name:"Laam Shamsiyah",        nameAr:"اللام الشمسية",  desc:{ en:"The Laam assimilates into the following sun letter", ur:"لام شمسی حرف میں مدغم ہو جاتی ہے", hi:"लाम शम्सी हर्फ़ में मिल जाती है" }},
-  madda_normal:       { color:"#537FFF", name:"Madd Normal (2 counts)", nameAr:"المد الطبيعي",   desc:{ en:"Natural prolongation of 2 counts on Alif, Waw or Ya", ur:"الف، واو یا یا پر 2 الف کا طبیعی کھینچاؤ", hi:"अलिफ़, واو या या पर 2 मात्रा का स्वाभाविक खिंचाव" }},
-  madda_permissible:  { color:"#4050FF", name:"Madd Ja'iz (2-4-6)",    nameAr:"المد الجائز",    desc:{ en:"Permissible prolongation of 2, 4 or 6 counts before Hamza", ur:"ہمزہ سے پہلے 2، 4 یا 6 الف کا جائز کھینچاؤ", hi:"हम्ज़ा से पहले 2, 4 या 6 मात्राओं का जाइज़ खिंचाव" }},
-  madda_necessary:    { color:"#000EBC", name:"Madd Lazim (6 counts)",  nameAr:"المد اللازم",    desc:{ en:"Necessary prolongation — always 6 counts before Shaddah or Sukoon", ur:"مد لازم — شدہ یا سکون سے پہلے ہمیشہ 6 الف", hi:"मद लाज़िम — शद्दा या सुकून से पहले हमेशा 6 मात्राएँ" }},
-  madda_obligatory:   { color:"#2144C1", name:"Madd Wajib (4-5)",      nameAr:"المد الواجب",    desc:{ en:"Obligatory prolongation of 4-5 counts before Hamza in same word", ur:"ایک لفظ میں ہمزہ سے پہلے 4-5 الف واجب", hi:"एक शब्द में हम्ज़ा से पहले 4-5 मात्राएँ वाजिब" }},
-  qalaqalah:          { color:"#DD0008", name:"Qalqala",               nameAr:"القلقلة",        desc:{ en:"Echoing bounce on ق ط ب ج د when they have Sukoon", ur:"ق ط ب ج د پر سکون ہو تو گونج والا اچھال", hi:"ق ط ب ج د पर सुकून हो तो गूँज वाली उछाल" }},
-  ikhfa_shafawi:      { color:"#D500B7", name:"Ikhfa Shafawi",         nameAr:"الإخفاء الشفوي", desc:{ en:"Meem Sakin followed by Ba — light nasal sound for 2 counts", ur:"میم ساکن کے بعد با — 2 الف ہلکا غنہ", hi:"मीम साकिन के बाद 'ب' — 2 मात्रा हल्की ग़ुन्ना" }},
-  ikhfa:              { color:"#9400A8", name:"Ikhfa",                  nameAr:"الإخفاء",        desc:{ en:"Noon Sakin or Tanween before 15 letters — hidden nasal sound for 2 counts", ur:"نون ساکن یا تنوین 15 حروف سے پہلے — 2 الف غنہ کے ساتھ چھپائی", hi:"نون ساکن یا तन्वीन 15 हर्फ़ों से पहले — 2 मात्रा ग़ुन्ना के साथ" }},
-  idghaam_shafawi:    { color:"#058C00", name:"Idghaam Shafawi",       nameAr:"الإدغام الشفوي", desc:{ en:"Meem Sakin followed by another Meem — merge with ghunna for 2 counts", ur:"میم ساکن کے بعد میم — 2 الف غنہ کے ساتھ مدغم", hi:"मीम साकिन के बाद मीम — 2 मात्रा ग़ुन्ना के साथ मिलना" }},
-  idghaam_ghunnah:    { color:"#209000", name:"Idghaam with Ghunna",   nameAr:"الإدغام بغنة",   desc:{ en:"Noon Sakin or Tanween before ي ن م و — merges with nasal sound", ur:"نون ساکن یا تنوین ي ن م و سے پہلے — غنہ کے ساتھ ادغام", hi:"नून साकिन या तन्वीन ي ن م و से पहले — ग़ुन्ना के साथ इदग़ाम" }},
-  idghaam_wo_ghunnah: { color:"#33B800", name:"Idghaam without Ghunna",nameAr:"الإدغام بلا غنة", desc:{ en:"Noon Sakin or Tanween before ل ر — merges without nasal sound", ur:"نون ساکن یا تنوین ل ر سے پہلے — بغیر غنہ ادغام", hi:"نून ساکن या तन्वीन ل ر से पहले — बिना ग़ुन्ना इदग़ाम" }},
-  iqlab:              { color:"#26BFFD", name:"Iqlab",                  nameAr:"الإقلاب",        desc:{ en:"Noon Sakin or Tanween before Ba — converts to Meem with ghunna", ur:"نون ساکن یا تنوین با سے پہلے — غنہ کے ساتھ میم بنتی ہے", hi:"नून साकिन या तन्वीन 'ب' से पहले — ग़ुन्ना के साथ मीम बन जाती है" }},
-  ghunnah:            { color:"#FF7E1E", name:"Ghunna",                 nameAr:"الغنة",          desc:{ en:"Nasal sound on Noon or Meem with Shaddah for 2 counts", ur:"نون یا میم مشدد پر 2 الف ناک سے آواز", hi:"نून یا مीم मुशद्दद पर 2 मात्रा नाकी आवाज़" }},
+// Keys are the rule names in the QUL tajweed data (lib/quranTajweed.ts).
+const TAJWEED_RULES: Record<TajweedRuleId, { color: string; name: string; nameAr: string; desc: { en: string; ur: string; hi: string } }> = {
+  ham_wasl:                  { color:"#AAAAAA", name:"Hamzat ul Wasl",          nameAr:"همزة الوصل",      desc:{ en:"Silent Hamza, not pronounced when joined to the word before it", ur:"ہمزۃ الوصل، پچھلے لفظ سے ملا کر پڑھیں تو نہیں پڑھا جاتا", hi:"हम्ज़तुल वस्ल, पिछले शब्द से मिलाकर पढ़ें तो नहीं पढ़ा जाता" }},
+  laam_shamsiyah:            { color:"#AAAAAA", name:"Laam Shamsiyah",          nameAr:"اللام الشمسية",   desc:{ en:"The Laam is not pronounced; it merges into the following sun letter", ur:"لام نہیں پڑھا جاتا، اگلے شمسی حرف میں مدغم ہو جاتا ہے", hi:"लाम नहीं पढ़ा जाता, अगले शम्सी हर्फ़ में मिल जाता है" }},
+  slnt:                      { color:"#AAAAAA", name:"Silent Letter",           nameAr:"حرف لا يُنطق",    desc:{ en:"Written in the Mushaf but not pronounced", ur:"مصحف میں لکھا ہے مگر پڑھا نہیں جاتا", hi:"मुसहफ़ में लिखा है पर पढ़ा नहीं जाता" }},
+  madda_normal:              { color:"#537FFF", name:"Madd Tabee'i (2 counts)", nameAr:"المد الطبيعي",    desc:{ en:"Natural prolongation of 2 counts on Alif, Waw or Ya", ur:"الف، واو یا یا پر 2 حرکت کا طبعی کھینچاؤ", hi:"अलिफ़, वाव या या पर 2 हरकत का स्वाभाविक खिंचाव" }},
+  madda_permissible:         { color:"#4050FF", name:"Madd 'Arid (2, 4 or 6)",  nameAr:"المد العارض للسكون", desc:{ en:"When you stop at the end of the ayah, this madd may be held for 2, 4 or 6 counts", ur:"آیت کے آخر میں وقف کریں تو یہ مد 2، 4 یا 6 حرکت تک کھینچ سکتے ہیں", hi:"आयत के आख़िर में रुकें तो यह मद 2, 4 या 6 हरकत तक खींच सकते हैं" }},
+  madda_necessary:           { color:"#000EBC", name:"Madd Lazim (6 counts)",   nameAr:"المد اللازم",     desc:{ en:"Necessary prolongation, always 6 counts, before a Shaddah or Sukoon", ur:"مد لازم، شدہ یا سکون سے پہلے ہمیشہ 6 حرکت", hi:"मद लाज़िम, शद्दा या सुकून से पहले हमेशा 6 हरकत" }},
+  madda_obligatory_mottasel: { color:"#2144C1", name:"Madd Muttasil (4 or 5)",  nameAr:"المد المتصل",     desc:{ en:"A madd letter followed by Hamza in the same word: 4 or 5 counts", ur:"ایک ہی لفظ میں حرف مد کے بعد ہمزہ: 4 یا 5 حرکت", hi:"एक ही शब्द में मद के हर्फ़ के बाद हम्ज़ा: 4 या 5 हरकत" }},
+  madda_obligatory_monfasel: { color:"#2144C1", name:"Madd Munfasil (4 or 5)",  nameAr:"المد المنفصل",    desc:{ en:"A madd letter at the end of a word and Hamza at the start of the next: 4 or 5 counts", ur:"لفظ کے آخر میں حرف مد اور اگلے لفظ کے شروع میں ہمزہ: 4 یا 5 حرکت", hi:"शब्द के आख़िर में मद का हर्फ़ और अगले शब्द के शुरू में हम्ज़ा: 4 या 5 हरकत" }},
+  qalaqah:                   { color:"#DD0008", name:"Qalqala",                 nameAr:"القلقلة",         desc:{ en:"Echoing bounce on ق ط ب ج د when they have Sukoon", ur:"ق ط ب ج د پر سکون ہو تو گونج والا اچھال", hi:"ق ط ب ج د पर सुकून हो तो गूँज वाली उछाल" }},
+  ikhafa:                    { color:"#9400A8", name:"Ikhfa",                   nameAr:"الإخفاء",         desc:{ en:"Noon Sakin or Tanween before 15 letters: hidden nasal sound for 2 counts", ur:"نون ساکن یا تنوین 15 حروف سے پہلے: 2 حرکت غنہ کے ساتھ چھپانا", hi:"नून साकिन या तन्वीन 15 हर्फ़ों से पहले: 2 हरकत ग़ुन्ना के साथ छुपाना" }},
+  ikhafa_shafawi:            { color:"#D500B7", name:"Ikhfa Shafawi",           nameAr:"الإخفاء الشفوي",  desc:{ en:"Meem Sakin followed by Ba: light nasal sound for 2 counts", ur:"میم ساکن کے بعد با: 2 حرکت ہلکا غنہ", hi:"मीम साकिन के बाद बा: 2 हरकत हल्का ग़ुन्ना" }},
+  idgham_ghunnah:            { color:"#209000", name:"Idghaam with Ghunna",     nameAr:"الإدغام بغنة",    desc:{ en:"Noon Sakin or Tanween before ي ن م و: merges with a nasal sound", ur:"نون ساکن یا تنوین ي ن م و سے پہلے: غنہ کے ساتھ ادغام", hi:"नून साकिन या तन्वीन ي ن م و से पहले: ग़ुन्ना के साथ इदग़ाम" }},
+  idgham_wo_ghunnah:         { color:"#33B800", name:"Idghaam without Ghunna",  nameAr:"الإدغام بلا غنة", desc:{ en:"Noon Sakin or Tanween before ل ر: merges without a nasal sound", ur:"نون ساکن یا تنوین ل ر سے پہلے: بغیر غنہ ادغام", hi:"नून साकिन या तन्वीन ل ر से पहले: बिना ग़ुन्ना इदग़ाम" }},
+  idgham_shafawi:            { color:"#058C00", name:"Idghaam Shafawi",         nameAr:"الإدغام الشفوي",  desc:{ en:"Meem Sakin followed by another Meem: merge with ghunna for 2 counts", ur:"میم ساکن کے بعد میم: 2 حرکت غنہ کے ساتھ ادغام", hi:"मीम साकिन के बाद मीम: 2 हरकत ग़ुन्ना के साथ इदग़ाम" }},
+  idgham_mutajanisayn:       { color:"#A1A1A1", name:"Idghaam Mutajanisayn",    nameAr:"إدغام المتجانسين", desc:{ en:"Two letters from the same point of articulation: the first (with Sukoon) merges into the second", ur:"ایک ہی مخرج کے دو حروف: پہلا (ساکن) دوسرے میں مدغم ہوتا ہے", hi:"एक ही मख़रज के दो हर्फ़: पहला (साकिन) दूसरे में मिल जाता है" }},
+  idgham_mutaqaribayn:       { color:"#A1A1A1", name:"Idghaam Mutaqaribayn",    nameAr:"إدغام المتقاربين", desc:{ en:"Two letters with close points of articulation: the first (with Sukoon) merges into the second", ur:"قریب مخرج والے دو حروف: پہلا (ساکن) دوسرے میں مدغم ہوتا ہے", hi:"क़रीबी मख़रज वाले दो हर्फ़: पहला (साकिन) दूसरे में मिल जाता है" }},
+  iqlab:                     { color:"#26BFFD", name:"Iqlab",                   nameAr:"الإقلاب",         desc:{ en:"Noon Sakin or Tanween before Ba: changes to Meem with ghunna", ur:"نون ساکن یا تنوین با سے پہلے: غنہ کے ساتھ میم بن جاتا ہے", hi:"नून साकिन या तन्वीन बा से पहले: ग़ुन्ना के साथ मीम बन जाता है" }},
+  ghunnah:                   { color:"#FF7E1E", name:"Ghunna",                  nameAr:"الغنة",           desc:{ en:"Nasal sound on Noon or Meem with Shaddah for 2 counts", ur:"نون یا میم مشدد پر 2 حرکت ناک سے آواز", hi:"नून या मीम मुशद्दद पर 2 हरकत नाक से आवाज़" }},
 };
 
-// Inject global tajweed CSS
+// Grammar colours of the English word by word (QUL classes).
+const WBW_CLASSES: Record<string, { color: string; dark: string; label: string }> = {
+  n:     { color:"#0f766e", dark:"#5eead4", label:"Noun" },
+  v:     { color:"#be123c", dark:"#fda4af", label:"Verb" },
+  p:     { color:"#4b5563", dark:"#d1d5db", label:"Particle" },
+  pn:    { color:"#7c3aed", dark:"#c4b5fd", label:"Proper noun" },
+  paren: { color:"#9ca3af", dark:"#6b7280", label:"(Added for meaning)" },
+  punc:  { color:"#9ca3af", dark:"#6b7280", label:"" },
+};
+
+// Global tajweed CSS (one class per rule)
 const TAJWEED_CSS = Object.entries(TAJWEED_RULES)
-  .map(([cls, r]) => `tajweed.${cls} { color: ${r.color}; cursor: pointer; text-decoration: underline dotted; text-underline-offset: 4px; }`)
-  .join("\n") + "\ntajweed { display: inline; }";
+  .map(([id, r]) => `.tj-${id} { color: ${r.color}; cursor: pointer; }`)
+  .join("\n");
 
 const ARABIC_FONT_CSS = `@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');`;
 
 type ReaderLang = "en" | "ur" | "hi";
 
-interface Ayah {
-  id: number;
-  verse_number: number;
-  text_uthmani_tajweed: string;
-  juz_number?: number;
-}
-
-interface Surah {
-  id: number;
-  name_arabic: string;
-  name_simple: string;
-  translated_name: { name: string };
-  verses_count: number;
-  revelation_place: string;
-}
-
 interface RulePopup {
-  rule: string;
+  rule: TajweedRuleId;
   x: number;
   y: number;
 }
 
-export default function TajweedQuranReader({ surahId }: { surahId: number }) {
-  const [surah,      setSurah]      = useState<Surah | null>(null);
-  const [ayahs,      setAyahs]      = useState<Ayah[]>([]);
-  const [loading,    setLoading]    = useState(true);
+/** One word of QPC Hafs text with its tajweed colours. The letters are never changed. */
+function TajweedWordView({ word }: { word: TajweedWord }) {
+  return (
+    <>
+      {word.r.map((run, i) => {
+        if (run.length === 1) return <Fragment key={i}>{run[0]}</Fragment>;
+        const rule = TAJWEED_RULE_IDS[run[1]];
+        return <span key={i} className={`tj-${rule}`} data-rule={rule}>{run[0]}</span>;
+      })}
+    </>
+  );
+}
+
+// English pieces are stored separately, punctuation included: "any", "[", "one", "]".
+// No space after an opening bracket or before closing punctuation.
+function needsSpace(prev: string, next: string): boolean {
+  return !/^[\[(/]$/.test(prev) && !/^[\]),.!?:/]$/.test(next);
+}
+
+// IndoPak view (Tanzil text in Scheherazade): draw the name of Allah in Amiri
+// Quran so the small alif shows. Font only; text unchanged. Same as the Reader.
+function renderIndoPak(text: string) {
+  return text.split(/( )/).map((w, i) =>
+    isAllahWord(w) ? <span key={i} className="quran-allah">{w}</span> : w
+  );
+}
+
+export default function TajweedQuranReader({ surahId, initialSurah }: { surahId: number; initialSurah: TajweedPageSurah }) {
+  // Arabic is self-hosted and loaded at build time (KFGQPC QPC Hafs + QUL tajweed rules).
+  const surah = initialSurah;
   const [fontSize,   setFontSize]   = useState(28);
   const [showGuide,  setShowGuide]  = useState(false);
   const [darkMode,   setDarkMode]   = useState(false);
@@ -65,6 +93,9 @@ export default function TajweedQuranReader({ surahId }: { surahId: number }) {
   const [scriptStyle, setScriptStyle] = useState<QuranScript>("uthmani");
   const [hifzMode,   setHifzMode]   = useState(false);
   const [showScripts, setShowScripts] = useState(false);
+  const [showWbw,    setShowWbw]    = useState(false);
+  const [wbw,        setWbw]        = useState<WbwSurah | null>(null);
+  const [wbwState,   setWbwState]   = useState<"idle" | "loading" | "error">("idle");
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const AUDIO_CDN = "https://cdn.islamic.network/quran/audio/128/ar.alafasy";
 
@@ -75,7 +106,20 @@ export default function TajweedQuranReader({ surahId }: { surahId: number }) {
     }
     const savedHifz = localStorage.getItem("quran-hifz-mode");
     if (savedHifz === "true") setHifzMode(true);
+    if (localStorage.getItem("quran-tajweed-wbw") === "true") setShowWbw(true);
   }, []);
+
+  // English word by word is only downloaded when switched on (it is large for long surahs).
+  useEffect(() => {
+    if (!showWbw || (wbw && wbw.surah === surahId)) return;
+    let cancelled = false;
+    setWbwState("loading");
+    fetch(`/quran/wbw-en/${surahId}.json`)
+      .then(r => { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+      .then((d: WbwSurah) => { if (!cancelled) { setWbw(d); setWbwState("idle"); } })
+      .catch(() => { if (!cancelled) setWbwState("error"); });
+    return () => { cancelled = true; };
+  }, [showWbw, surahId, wbw]);
 
   const handleSelectScript = (s: QuranScript) => {
     setScriptStyle(s);
@@ -87,29 +131,21 @@ export default function TajweedQuranReader({ surahId }: { surahId: number }) {
     localStorage.setItem("quran-hifz-mode", String(enabled));
   };
 
-  useEffect(() => {
-    setLoading(true); setSurah(null); setAyahs([]);
-    // Quran.com API — returns proper tajweed HTML
-    Promise.all([
-      fetch(`https://api.qurancdn.com/api/qdc/chapters/${surahId}?language=en`).then(r => r.json()),
-      fetch(`https://api.qurancdn.com/api/qdc/verses/by_chapter/${surahId}?words=false&per_page=286&fields=text_uthmani_tajweed,juz_number&page=1`).then(r => r.json()),
-    ]).then(([chapRes, versesRes]) => {
-      setSurah(chapRes.chapter || null);
-      setAyahs(versesRes.verses || []);
-      setLoading(false);
-    }).catch(() => setLoading(false));
-  }, [surahId]);
+  const toggleWbw = () => {
+    setShowWbw(v => {
+      localStorage.setItem("quran-tajweed-wbw", String(!v));
+      return !v;
+    });
+  };
 
   // Handle click on tajweed-coloured text
   const handleTajweedClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const target = e.target as HTMLElement;
-    const tajweedEl = target.closest("tajweed") as HTMLElement | null;
-    if (tajweedEl) {
+    const ruleEl = target.closest("[data-rule]") as HTMLElement | null;
+    const rule = ruleEl?.dataset.rule as TajweedRuleId | undefined;
+    if (rule && TAJWEED_RULES[rule]) {
       e.stopPropagation(); // prevent bubble clearing the popup
-      const cls = tajweedEl.className.trim();
-      if (TAJWEED_RULES[cls]) {
-        setPopup({ rule: cls, x: e.clientX, y: e.clientY });
-      }
+      setPopup({ rule, x: e.clientX, y: e.clientY });
     } else {
       setPopup(null);
     }
@@ -128,38 +164,19 @@ export default function TajweedQuranReader({ surahId }: { surahId: number }) {
   const text = darkMode ? "text-gray-100" : "text-gray-900";
   const sub  = darkMode ? "text-gray-400" : "text-gray-500";
 
-  // Calculate global ayah number for audio
-  const getGlobalAyahNum = (ayah: Ayah) => {
-    // Simple calculation: sum of all ayahs before this surah + ayah number
-    const SURAH_AYAH_COUNTS = [7,286,200,176,120,165,206,75,129,109,123,111,43,52,99,128,111,110,98,135,112,78,118,64,77,227,93,88,69,60,34,30,73,54,45,83,182,88,75,85,54,53,89,59,37,35,38,29,18,45,60,49,62,55,78,96,29,110,183,8,27,28,28,66,30,20,22,21,52,21,22,20,33,34,27,31,25,22,26,19,25,9,12,21,46,29,29,21,15,36,40,10,8,5,11,7,4,12,9,5,4,20,7,3,6,11,5,4,5,4,5,6,5,5,8,9,3,5,5,8,5,8,8,15,5,12,8,8,51,10,4,10,4,13,28,6];
-    let globalNum = 0;
-    for (let i = 0; i < surahId - 1; i++) globalNum += SURAH_AYAH_COUNTS[i] || 0;
-    return globalNum + ayah.verse_number;
-  };
+  const isUthmani = scriptStyle === "uthmani";
+  const fontClass = isUthmani ? "font-quran-qpc-hafs" : "font-quran-indopak";
+  const scriptLineHeight = isUthmani ? "2.6" : "3.0";
+  const arabicColor = darkMode ? "#f0fdf4" : "#111827";
 
-  const fontClass =
-    scriptStyle === "indopak"
-      ? "font-quran-indopak"
-      : "font-quran-uthmani";
-
-  const scriptLineHeight =
-    scriptStyle === "indopak" ? "3.0" : "2.6";
-
-  if (loading) return (
-    <div className={`${bg} flex items-center justify-center`}>
-      <div className="text-center">
-        <div className="w-12 h-12 border-4 border-amber-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-        <p className="text-gray-500 text-sm">Loading Tajweed Quran...</p>
-      </div>
-    </div>
-  );
-
-  if (!surah) return <div className="text-center py-20 text-gray-500">Could not load Surah. Please try again.</div>;
+  const englishFor = (ayahNum: number, word: TajweedWord): WbwWord[] =>
+    wbw && wbw.surah === surahId ? word.q.map(n => wbw.ayahs[String(ayahNum)]?.[n - 1] ?? null) : [];
 
   return (
     <div className={bg} onClick={() => setPopup(null)}>
       {/* Inject Tajweed CSS + Arabic font */}
-      <style>{ARABIC_FONT_CSS + "\n" + TAJWEED_CSS}</style>
+      {/* Set as raw CSS so server and browser render it identically (no hydration mismatch). */}
+      <style dangerouslySetInnerHTML={{ __html: ARABIC_FONT_CSS + "\n" + TAJWEED_CSS }} />
 
       <div className="max-w-4xl mx-auto px-4 py-8">
         {/* Breadcrumb */}
@@ -168,23 +185,23 @@ export default function TajweedQuranReader({ surahId }: { surahId: number }) {
           <span>/</span>
           <Link href="/quran/tajweed" className="hover:text-amber-600">Tajweed</Link>
           <span>/</span>
-          <span className={text}>{surah.name_simple}</span>
+          <span className={text}>{surah.englishName}</span>
         </nav>
 
         {/* Header */}
         <div className="bg-gradient-to-b from-amber-500 to-orange-600 text-white rounded-2xl p-6 sm:p-8 text-center mb-5">
           <div className="flex justify-center items-center gap-3 mb-3 flex-wrap">
             <span className="bg-white/20 text-white text-sm font-bold px-3 py-1 rounded-full flex-shrink-0">{surahId}</span>
-            <p className={`text-amber-100 font-bold ${fontClass}`}
+            <p className="text-amber-100 font-bold font-quran-qpc-hafs"
                style={{ fontSize:"clamp(26px, 5vw, 44px)", lineHeight:"2.2", direction:"rtl" }}>
-              {surah.name_arabic}
+              {surah.name}
             </p>
           </div>
-          <p className="text-xl sm:text-2xl font-semibold mb-1">{surah.name_simple}</p>
-          <p className="text-orange-200 mb-3">{surah.translated_name?.name}</p>
+          <p className="text-xl sm:text-2xl font-semibold mb-1">{surah.englishName}</p>
+          <p className="text-orange-200 mb-3">{surah.englishNameTranslation}</p>
           <div className="flex justify-center gap-3 text-sm flex-wrap mb-3">
-            <span className="bg-white/10 px-3 py-1 rounded-full">{surah.verses_count} Ayahs</span>
-            <span className="bg-white/10 px-3 py-1 rounded-full capitalize">{surah.revelation_place}</span>
+            <span className="bg-white/10 px-3 py-1 rounded-full">{surah.numberOfAyahs} Ayahs</span>
+            <span className="bg-white/10 px-3 py-1 rounded-full">{surah.revelationType}</span>
             <span className="bg-white/10 px-3 py-1 rounded-full">🎨 Colour Coded Tajweed</span>
           </div>
           {/* Language selector for rule explanations */}
@@ -200,7 +217,7 @@ export default function TajweedQuranReader({ surahId }: { surahId: number }) {
           </div>
           {/* Colour strip */}
           <div className="flex justify-center gap-2 flex-wrap">
-            {Object.values(TAJWEED_RULES).slice(0,7).map(r => (
+            {(["ham_wasl","madda_normal","madda_necessary","qalaqah","ikhafa","idgham_ghunnah","ghunnah"] as TajweedRuleId[]).map(id => TAJWEED_RULES[id]).map(r => (
               <div key={r.name} className="flex items-center gap-1 text-xs text-white/70">
                 <div className="w-2.5 h-2.5 rounded-full" style={{background:r.color}} />
                 <span className="hidden sm:inline">{r.name.split(" ")[0]}</span>
@@ -243,6 +260,11 @@ export default function TajweedQuranReader({ surahId }: { surahId: number }) {
             <span className={`text-xs font-semibold w-6 text-center ${text}`}>{fontSize}</span>
             <button onClick={() => setFontSize(s=>Math.min(52,s+2))} className={`w-7 h-7 rounded-lg border ${darkMode?"border-gray-700":"border-gray-200"} text-sm font-bold ${sub} hover:border-amber-400`}>+</button>
           </div>
+          <button onClick={(e) => { e.stopPropagation(); toggleWbw(); }}
+            aria-pressed={showWbw}
+            className={`px-3 py-2 rounded-xl text-sm font-semibold border transition-all ${showWbw?"bg-amber-500 text-white border-amber-600":`${darkMode?"border-gray-700 text-gray-300":"border-gray-200 text-gray-600"} hover:border-amber-400`}`}>
+            🔤 Word by Word
+          </button>
           <button onClick={() => setShowGuide(v=>!v)}
             className={`px-3 py-2 rounded-xl text-sm font-semibold border transition-all ${showGuide?"bg-amber-500 text-white border-amber-600":`${darkMode?"border-gray-700 text-gray-300":"border-gray-200 text-gray-600"} hover:border-amber-400`}`}>
             🎨 Colour Guide
@@ -282,12 +304,25 @@ export default function TajweedQuranReader({ surahId }: { surahId: number }) {
         </div>
 
         {/* Hint */}
-        <div className={`${darkMode?"bg-amber-900/20 border-amber-800":"bg-amber-50 border-amber-100"} border rounded-xl px-4 py-2.5 mb-5 flex items-center gap-2`}>
-          <span>👆</span>
-          <p className={`text-sm ${darkMode?"text-amber-300":"text-amber-700"}`}>
-            <strong>Tap any coloured word</strong> to see which Tajweed rule applies and its explanation.
-          </p>
-        </div>
+        {isUthmani ? (
+          <div className={`${darkMode?"bg-amber-900/20 border-amber-800":"bg-amber-50 border-amber-100"} border rounded-xl px-4 py-2.5 mb-5 flex items-center gap-2`}>
+            <span>👆</span>
+            <p className={`text-sm ${darkMode?"text-amber-300":"text-amber-700"}`}>
+              <strong>Tap any coloured letter</strong> to see which Tajweed rule applies and its explanation.
+            </p>
+          </div>
+        ) : (
+          <div className={`${darkMode?"bg-amber-900/20 border-amber-800":"bg-amber-50 border-amber-100"} border rounded-xl px-4 py-2.5 mb-5 flex flex-wrap items-center justify-between gap-2`}
+               onClick={(e) => e.stopPropagation()}>
+            <p className={`text-sm ${darkMode?"text-amber-300":"text-amber-700"}`}>
+              Tajweed colours and word by word English are available in the <strong>Uthmani</strong> script only.
+            </p>
+            <button onClick={() => handleSelectScript("uthmani")}
+              className="px-3 py-1.5 rounded-lg bg-amber-500 text-white text-xs font-bold hover:bg-amber-600">
+              Show Uthmani
+            </button>
+          </div>
+        )}
 
         {/* ── 15-Line Hifz Mode Indicator Banner ── */}
         {scriptStyle === "indopak" && hifzMode && (
@@ -321,33 +356,89 @@ export default function TajweedQuranReader({ surahId }: { surahId: number }) {
           </div>
         )}
 
+        {/* Word by word legend and status */}
+        {showWbw && isUthmani && (
+          <div className={`${card} border rounded-2xl px-4 py-3 mb-5 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs`}>
+            <span className={`font-semibold ${text}`}>English word colours:</span>
+            {Object.entries(WBW_CLASSES).filter(([, c]) => c.label).map(([k, c]) => (
+              <span key={k} style={{ color: darkMode ? c.dark : c.color }}>{c.label}</span>
+            ))}
+            {wbwState === "loading" && <span className={sub}>Loading English...</span>}
+            {wbwState === "error" && <span className="text-red-500">Could not load the English. Please try again.</span>}
+          </div>
+        )}
+
         {/* Ayahs */}
         <div className="space-y-4" onClick={handleTajweedClick}>
-          {ayahs.map(ayah => {
-            const globalNum = getGlobalAyahNum(ayah);
+          {surah.ayahs.map(ayah => {
+            const words = ayah.tajweed.words;
             return (
-              <div key={ayah.verse_number} className={`${card} border rounded-2xl p-5 transition-all ${
+              <div key={ayah.numberInSurah} id={`ayah-${ayah.number}`} className={`${card} border rounded-2xl p-5 transition-all ${
                 scriptStyle === "indopak" && hifzMode ? "hifz-compact-container rounded-xl" : ""
               }`}>
                 <div className="flex justify-between items-center mb-4">
-                  <div className="w-9 h-9 bg-amber-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
-                    {ayah.verse_number}
-                  </div>
+                  {isUthmani ? (
+                    // The ornament at the end of the ayah already shows its number.
+                    <span className="sr-only">Ayah {ayah.numberInSurah}</span>
+                  ) : (
+                    <div className="w-9 h-9 bg-amber-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                      {ayah.numberInSurah}
+                    </div>
+                  )}
                   <div className="flex items-center gap-2">
-                    <button onClick={e => { e.stopPropagation(); playAudio(globalNum); }}
+                    <button onClick={e => { e.stopPropagation(); playAudio(ayah.number); }}
                       className={`w-9 h-9 rounded-xl border text-sm flex items-center justify-center transition-all
-                        ${audioPlaying===globalNum?"bg-amber-500 border-amber-600 text-white":`border ${darkMode?"border-gray-700":"border-gray-200"} ${sub} hover:border-amber-400`}`}>
-                      {audioPlaying===globalNum?"⏸":"▶"}
+                        ${audioPlaying===ayah.number?"bg-amber-500 border-amber-600 text-white":`border ${darkMode?"border-gray-700":"border-gray-200"} ${sub} hover:border-amber-400`}`}>
+                      {audioPlaying===ayah.number?"⏸":"▶"}
                     </button>
-                    {ayah.juz_number && <span className={`text-xs ${sub}`}>Juz {ayah.juz_number}</span>}
+                    <span className={`text-xs ${sub}`}>Juz {ayah.juz}</span>
                   </div>
                 </div>
-                {/* Tajweed Arabic text */}
-                <div
-                  className={`text-right leading-loose ${fontClass}`}
-                  style={{ fontSize:`${fontSize}px`, direction:"rtl", lineHeight: scriptLineHeight, color: darkMode?"#f0fdf4":"#111827" }}
-                  dangerouslySetInnerHTML={{ __html: ayah.text_uthmani_tajweed }}
-                />
+
+                {!isUthmani ? (
+                  // IndoPak: Tanzil text, same as the Quran Reader. No tajweed colours.
+                  <p className={`text-right ${fontClass}`}
+                     style={{ fontSize:`${fontSize}px`, direction:"rtl", lineHeight: scriptLineHeight, color: arabicColor }}>
+                    {renderIndoPak(withoutLeadingBismillah(surah.number, ayah.numberInSurah, ayah.text))}
+                  </p>
+                ) : showWbw && wbw && wbw.surah === surahId ? (
+                  // Word by word: each Arabic word with its English underneath.
+                  <div className="flex flex-wrap gap-x-4 gap-y-3" style={{ direction:"rtl" }}>
+                    {words.map((w, i) => (
+                      <div key={i} className="flex flex-col items-center text-center">
+                        <span className={fontClass} style={{ fontSize:`${fontSize}px`, lineHeight: scriptLineHeight, color: arabicColor }}>
+                          <TajweedWordView word={w} />
+                        </span>
+                        {w.q.length > 0 && (
+                          <span className="text-xs leading-snug max-w-[9rem]" style={{ direction:"ltr" }}>
+                            {englishFor(ayah.numberInSurah, w).map((pieces, k) => (
+                              <Fragment key={k}>
+                                {k > 0 && " "}
+                                {pieces?.map(([cls, t], m) => (
+                                  <Fragment key={m}>
+                                    {m > 0 && needsSpace(pieces[m - 1][1], t) && " "}
+                                    <span style={{ color: darkMode ? (WBW_CLASSES[cls]?.dark ?? "#d1d5db") : (WBW_CLASSES[cls]?.color ?? "#4b5563") }}>{t}</span>
+                                  </Fragment>
+                                ))}
+                              </Fragment>
+                            ))}
+                          </span>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  // Uthmani: KFGQPC QPC Hafs text exactly as in the Quran Reader, with tajweed colours.
+                  <p className={`text-right ${fontClass}`}
+                     style={{ fontSize:`${fontSize}px`, direction:"rtl", lineHeight: scriptLineHeight, color: arabicColor }}>
+                    {words.map((w, i) => (
+                      <Fragment key={i}>
+                        <TajweedWordView word={w} />
+                        {i < ayah.tajweed.sep.length ? ayah.tajweed.sep[i] : null}
+                      </Fragment>
+                    ))}
+                  </p>
+                )}
               </div>
             );
           })}
@@ -363,6 +454,14 @@ export default function TajweedQuranReader({ surahId }: { surahId: number }) {
             ? <Link href={`/quran/tajweed/${surahId+1}`} className={`px-5 py-3 ${darkMode?"bg-gray-900 border-gray-800":"bg-white border-gray-200"} border rounded-xl font-semibold ${sub} hover:border-amber-400`}>Next →</Link>
             : <div />}
         </div>
+
+        {/* ── Source credit ── */}
+        <p className={`text-xs ${sub} text-center mt-8`}>
+          Uthmani text and font: <a href="https://qurancomplex.gov.sa" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-600">King Fahd Glorious Quran Printing Complex</a> (QPC Hafs).
+          Tajweed rules and word by word English (Tarteel AI): <a href="https://qul.tarteel.ai" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-600">Quranic Universal Library</a>.
+          IndoPak view text: <a href="https://tanzil.net" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-600">Tanzil Project</a>.
+          Audio: <a href="https://alquran.cloud" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-600">AlQuran Cloud</a>.
+        </p>
       </div>
 
       {/* ── Tajweed Rule Popup ── */}
