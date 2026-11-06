@@ -141,7 +141,7 @@ export default function QuranLandingPage() {
       <div className="mb-12 bg-white border border-gray-200 rounded-3xl p-6 sm:p-8 shadow-sm">
         <div className="text-center max-w-2xl mx-auto mb-8">
           <span className="bg-teal-100 text-teal-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-            ✒️ 3 Calligraphic Font Styles
+            ✒️ 2 Calligraphic Font Styles
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mt-3 mb-2">
             Read in Your Preferred Quran Script
@@ -151,7 +151,7 @@ export default function QuranLandingPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* 1. Uthmani */}
           <div className="border border-gray-200 rounded-2xl p-5 hover:border-teal-400 transition-all flex flex-col justify-between bg-gradient-to-b from-gray-50 to-white">
             <div>
@@ -163,8 +163,8 @@ export default function QuranLandingPage() {
               <p className="text-xs text-gray-500 mb-4">Clean horizontal Naskh font as published by King Fahd Complex.</p>
 
               <div className="bg-white border border-gray-200 rounded-xl p-4 text-center mb-4 shadow-inner">
-                <p className="font-quran-uthmani text-2xl text-gray-900" dir="rtl">
-                  بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ
+                <p className="font-quran-qpc-hafs text-2xl text-gray-900" dir="rtl">
+                  بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ
                 </p>
               </div>
             </div>
@@ -203,29 +203,6 @@ export default function QuranLandingPage() {
             </Link>
           </div>
 
-          {/* 3. Maghribi */}
-          <div className="border border-gray-200 rounded-2xl p-5 hover:border-teal-400 transition-all flex flex-col justify-between bg-gradient-to-b from-gray-50 to-white">
-            <div>
-              <div className="flex justify-between items-center mb-3">
-                <span className="text-xs font-bold text-teal-600 uppercase tracking-wider">North & West Africa</span>
-                <span className="text-[10px] font-bold bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">Warsh Compatible</span>
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-1">Maghribi Script</h3>
-              <p className="text-xs text-gray-500 mb-4">Deeply rounded letterform loops and sweeping terminal strokes from North Africa.</p>
-
-              <div className="bg-white border border-gray-200 rounded-xl p-4 text-center mb-4 shadow-inner">
-                <p className="font-quran-maghribi text-2xl text-gray-900" dir="rtl">
-                  بِسۡمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
-                </p>
-              </div>
-            </div>
-            <Link
-              href="/quran/1"
-              className="w-full text-center py-2.5 bg-teal-600 hover:bg-teal-700 text-white rounded-xl text-xs font-bold transition-colors"
-            >
-              Read in Maghribi →
-            </Link>
-          </div>
         </div>
       </div>
 
