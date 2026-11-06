@@ -2,7 +2,7 @@
 
 import React from "react";
 
-export type QuranScript = "uthmani" | "indopak" | "maghribi";
+export type QuranScript = "uthmani" | "indopak";
 
 export interface ScriptOption {
   id: QuranScript;
@@ -22,9 +22,10 @@ export const QURAN_SCRIPTS: ScriptOption[] = [
     name: "Uthmani / Madani",
     subtitle: "Arab & Global Naskh Style",
     region: "Madinah & Middle East",
-    fontClass: "font-quran-uthmani",
+    fontClass: "font-quran-qpc-hafs",
     description: "Written in a clean, horizontal Naskh baseline. Standard King Fahd Medina orthography.",
-    previewText: "بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ",
+    // QPC Hafs 1:1 without its ayah number, unchanged.
+    previewText: "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ",
     badge: "Global Standard",
     editionId: "quran-uthmani",
   },
@@ -38,17 +39,6 @@ export const QURAN_SCRIPTS: ScriptOption[] = [
     previewText: "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ",
     badge: "15-Line Hifz Standard",
     editionId: "quran-indopak",
-  },
-  {
-    id: "maghribi",
-    name: "Maghribi",
-    subtitle: "North & West African Style",
-    region: "Morocco, Algeria, West Africa",
-    fontClass: "font-quran-maghribi",
-    description: "Deeply rounded loops and sweeping strokes, historically paired with Warsh narration.",
-    previewText: "بِسۡمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
-    badge: "Traditional African",
-    editionId: "quran-uthmani",
   },
 ];
 

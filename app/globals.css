@@ -36,8 +36,9 @@ body {
   font-weight: 400;
 }
 
-.font-quran-maghribi {
-  font-family: var(--font-maghribi), serif;
+.font-quran-qpc-hafs {
+  /* Only for the KFGQPC QPC Hafs text (data/quran/qpc). */
+  font-family: var(--font-quran-qpc-hafs), serif;
   font-weight: 400;
 }
 
@@ -49,7 +50,7 @@ body {
 
 .font-quran-uthmani,
 .font-quran-indopak,
-.font-quran-maghribi {
+.font-quran-qpc-hafs {
   letter-spacing: normal;
   word-spacing: normal;
   font-feature-settings: normal;

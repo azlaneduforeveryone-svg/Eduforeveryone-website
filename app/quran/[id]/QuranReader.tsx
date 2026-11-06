@@ -12,11 +12,6 @@ interface Edition {
 interface Ayah {
   number: number; text: string; numberInSurah: number; juz: number; page?: number;
 }
-interface SurahData {
-  number: number; name: string; englishName: string;
-  englishNameTranslation: string; numberOfAyahs: number;
-  revelationType: string; ayahs: Ayah[];
-}
 
 const AUDIO_CDN = "https://cdn.islamic.network/quran/audio/128/ar.alafasy";
 
@@ -39,10 +34,8 @@ const LANG_NAMES: Record<string, { name: string; flag: string }> = {
 };
 const getLang = (code: string) => LANG_NAMES[code] ?? { name: code.toUpperCase(), flag: "🌐" };
 
-// ── Arabic display ───────────────────────────────────────────────────────────
-// Draw each word of the name of Allah in Amiri Quran so the small (dagger)
-// alif shows in every script. Only the font changes; the characters are the
-// exact Tanzil text, so copying still gives the original.
+// IndoPak view (Tanzil text in Scheherazade): draw each word of the name of
+// Allah in Amiri Quran so the small alif shows. Font only; text unchanged.
 function renderArabic(text: string) {
   return text.split(/( )/).map((w, i) =>
     isAllahWord(w) ? <span key={i} className="quran-allah">{w}</span> : w
@@ -51,7 +44,7 @@ function renderArabic(text: string) {
 
 export default function QuranReader({ surahId, initialSurah }: { surahId: number; initialSurah: LocalSurah }) {
   // Arabic text is self-hosted (Tanzil Uthmani v1.1), loaded at build time.
-  const surah: SurahData = initialSurah;
+  const surah = initialSurah;
   const [editions,        setEditions]        = useState<Edition[]>([]);
   const [selectedEd,      setSelectedEd]      = useState<string[]>([]);
   const [translations,    setTranslations]    = useState<Record<string, Ayah[]>>({});
@@ -72,7 +65,7 @@ export default function QuranReader({ surahId, initialSurah }: { surahId: number
   // ── Load saved script preference ──────────────────────────────────────────
   useEffect(() => {
     const savedScript = localStorage.getItem("quran-script-style") as QuranScript;
-    if (savedScript && ["uthmani", "indopak", "maghribi"].includes(savedScript)) {
+    if (savedScript && ["uthmani", "indopak"].includes(savedScript)) {
       setScriptStyle(savedScript);
     }
     const savedHifz = localStorage.getItem("quran-hifz-mode");
@@ -159,14 +152,12 @@ export default function QuranReader({ surahId, initialSurah }: { surahId: number
 
   // ── Script Font Styling ────────────────────────────────────────────────────
   const fontClass =
-    scriptStyle === "indopak"
-      ? "font-quran-indopak"
-      : scriptStyle === "maghribi"
-      ? "font-quran-maghribi"
-      : "font-quran-uthmani";
+    scriptStyle === "indopak" ? "font-quran-indopak" : "font-quran-qpc-hafs";
+
+  const isUthmani = scriptStyle === "uthmani";
 
   const scriptLineHeight =
-    scriptStyle === "indopak" ? "3.0" : scriptStyle === "maghribi" ? "2.8" : "2.6";
+    scriptStyle === "indopak" ? "3.0" : "2.6";
 
 
   return (
@@ -199,7 +190,7 @@ export default function QuranReader({ surahId, initialSurah }: { surahId: number
           {/* Bismillah — all Surahs except At-Tawbah (9) */}
           {surah.number !== 9 && (
             <p className={`text-3xl mt-5 pt-5 border-t border-white/20 ${fontClass}`} style={{ direction: "rtl" }}>
-              {renderArabic(BISMILLAH)}
+              {isUthmani ? surah.bismillahQpc : renderArabic(BISMILLAH)}
             </p>
           )}
         </div>
@@ -414,8 +405,12 @@ export default function QuranReader({ surahId, initialSurah }: { surahId: number
         {/* ── Ayahs ── */}
         <div className="space-y-4">
           {surah.ayahs.map(ayah => {
-            // Strip Bismillah from Ayah 1 for all Surahs except Al-Fatiha (1) and At-Tawbah (9)
-            const displayText = withoutLeadingBismillah(surah.number, ayah.numberInSurah, ayah.text);
+            // Uthmani: KFGQPC QPC Hafs text, shown exactly as published. It has no
+            // Bismillah joined to ayah 1 and ends with its own ayah number, which
+            // the font draws as the ayah-end ornament.
+            const displayText = isUthmani
+              ? ayah.textQpc
+              : withoutLeadingBismillah(surah.number, ayah.numberInSurah, ayah.text);
 
             return (
               <div key={ayah.numberInSurah} id={`ayah-${ayah.number}`}
@@ -425,9 +420,14 @@ export default function QuranReader({ surahId, initialSurah }: { surahId: number
 
                 {/* Ayah controls row */}
                 <div className="flex justify-between items-center mb-4">
-                  <div className="w-10 h-10 bg-teal-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
-                    {ayah.numberInSurah}
-                  </div>
+                  {isUthmani ? (
+                    // The ornament at the end of the ayah already shows its number.
+                    <span className="sr-only">Ayah {ayah.numberInSurah}</span>
+                  ) : (
+                    <div className="w-10 h-10 bg-teal-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                      {ayah.numberInSurah}
+                    </div>
+                  )}
                   <div className="flex items-center gap-2">
                     <button onClick={() => playAudio(ayah.number)}
                       className={`w-9 h-9 rounded-xl border text-sm flex items-center justify-center transition-all
@@ -446,7 +446,7 @@ export default function QuranReader({ surahId, initialSurah }: { surahId: number
                 {/* Arabic text */}
                 <p className={`text-right mb-4 ${fontClass}`}
                   style={{ fontSize:`${arabicSize}px`, direction:"rtl", lineHeight: scriptLineHeight, color: darkMode?"#f0fdf4":"#111827" }}>
-                  {renderArabic(displayText)}
+                  {isUthmani ? displayText : renderArabic(displayText)}
                 </p>
 
                 {/* Translations */}
@@ -492,7 +492,8 @@ export default function QuranReader({ surahId, initialSurah }: { surahId: number
 
         {/* ── Source credit (required by the Tanzil terms of use) ── */}
         <p className={`text-xs ${sub} text-center mt-8`}>
-          Quran text: <a href="https://tanzil.net" target="_blank" rel="noopener noreferrer" className="underline hover:text-teal-600">Tanzil Project</a> (Uthmani, v1.1).
+          IndoPak view text: <a href="https://tanzil.net" target="_blank" rel="noopener noreferrer" className="underline hover:text-teal-600">Tanzil Project</a> (Uthmani, v1.1).
+          Uthmani text and font: <a href="https://qurancomplex.gov.sa" target="_blank" rel="noopener noreferrer" className="underline hover:text-teal-600">King Fahd Glorious Quran Printing Complex</a> (QPC Hafs), via <a href="https://qul.tarteel.ai" target="_blank" rel="noopener noreferrer" className="underline hover:text-teal-600">QUL</a>.
           Translations and audio: <a href="https://alquran.cloud" target="_blank" rel="noopener noreferrer" className="underline hover:text-teal-600">AlQuran Cloud</a>.
         </p>
       </div>

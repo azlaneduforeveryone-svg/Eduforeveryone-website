@@ -70,7 +70,7 @@ export default function TajweedQuranReader({ surahId }: { surahId: number }) {
 
   useEffect(() => {
     const savedScript = localStorage.getItem("quran-script-style") as QuranScript;
-    if (savedScript && ["uthmani", "indopak", "maghribi"].includes(savedScript)) {
+    if (savedScript && ["uthmani", "indopak"].includes(savedScript)) {
       setScriptStyle(savedScript);
     }
     const savedHifz = localStorage.getItem("quran-hifz-mode");
@@ -140,12 +140,10 @@ export default function TajweedQuranReader({ surahId }: { surahId: number }) {
   const fontClass =
     scriptStyle === "indopak"
       ? "font-quran-indopak"
-      : scriptStyle === "maghribi"
-      ? "font-quran-maghribi"
       : "font-quran-uthmani";
 
   const scriptLineHeight =
-    scriptStyle === "indopak" ? "3.0" : scriptStyle === "maghribi" ? "2.8" : "2.6";
+    scriptStyle === "indopak" ? "3.0" : "2.6";
 
   if (loading) return (
     <div className={`${bg} flex items-center justify-center`}>

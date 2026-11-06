@@ -7,7 +7,8 @@
  */
 
 import type { Metadata, Viewport } from 'next';
-import { DM_Sans, Playfair_Display, Amiri, Amiri_Quran, Lateef, Scheherazade_New, Noto_Naskh_Arabic } from 'next/font/google';
+import { DM_Sans, Playfair_Display, Amiri, Amiri_Quran, Scheherazade_New, Noto_Naskh_Arabic } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -40,10 +41,12 @@ const amiriQuran = Amiri_Quran({
   display: 'block',
   preload: false,
 });
-const lateef = Lateef({
-  subsets: ['arabic'],
-  weight: ['400', '700'],
-  variable: '--font-maghribi',
+// Official KFGQPC Hafs font for the QPC Hafs text (data/quran/qpc). It draws
+// the ayah-end ornaments and the small alif in the name of Allah.
+// KFGQPC licence: free to use and distribute, must not be modified or sold.
+const qpcHafs = localFont({
+  src: '../data/quran/fonts/kfgqpc-hafs-uthmanic-script-v2.2.woff2',
+  variable: '--font-quran-qpc-hafs',
   display: 'block',
   preload: false,
 });
@@ -106,7 +109,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${playfair.variable} ${amiri.variable} ${notoNaskh.variable} ${lateef.variable} ${scheherazade.variable} ${amiriQuran.variable}`}
+      className={`${dmSans.variable} ${playfair.variable} ${amiri.variable} ${notoNaskh.variable} ${scheherazade.variable} ${amiriQuran.variable} ${qpcHafs.variable}`}
     >
       <body className="font-body bg-gray-50 min-h-screen flex flex-col text-gray-900 antialiased">
         <JsonLd data={{
