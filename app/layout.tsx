@@ -7,7 +7,7 @@
  */
 
 import type { Metadata, Viewport } from 'next';
-import { DM_Sans, Playfair_Display, Amiri, Lateef, Scheherazade_New, Noto_Naskh_Arabic } from 'next/font/google';
+import { DM_Sans, Playfair_Display, Amiri, Amiri_Quran, Lateef, Scheherazade_New, Noto_Naskh_Arabic } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -29,15 +29,30 @@ const notoNaskh = Noto_Naskh_Arabic({
   weight: ['400', '600', '700'],
   variable: '--font-indopak',
 });
+// Quran reader fonts: one self-hosted font per script, so every OS and
+// browser shows the same letters. Never fall back to fonts installed on the
+// user's device. display 'block' avoids a flash of a different font while
+// loading; preload false keeps these files off non-Quran pages.
+const amiriQuran = Amiri_Quran({
+  subsets: ['arabic'],
+  weight: '400',
+  variable: '--font-quran-uthmani',
+  display: 'block',
+  preload: false,
+});
 const lateef = Lateef({
   subsets: ['arabic'],
   weight: ['400', '700'],
   variable: '--font-maghribi',
+  display: 'block',
+  preload: false,
 });
 const scheherazade = Scheherazade_New({
   subsets: ['arabic'],
   weight: ['400', '700'],
-  variable: '--font-uthmani',
+  variable: '--font-quran-indopak',
+  display: 'block',
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -91,7 +106,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${playfair.variable} ${amiri.variable} ${notoNaskh.variable} ${lateef.variable} ${scheherazade.variable}`}
+      className={`${dmSans.variable} ${playfair.variable} ${amiri.variable} ${notoNaskh.variable} ${lateef.variable} ${scheherazade.variable} ${amiriQuran.variable}`}
     >
       <body className="font-body bg-gray-50 min-h-screen flex flex-col text-gray-900 antialiased">
         <JsonLd data={{

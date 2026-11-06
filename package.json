@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "tsx scripts/quran-data.ts verify",
     "build": "next build",
+    "quran:build": "tsx scripts/quran-data.ts build",
+    "quran:verify": "tsx scripts/quran-data.ts verify",
     "start": "next start",
     "lint": "next lint",
     "validate": "tsx scripts/validate-gmat.ts",
