@@ -56,12 +56,12 @@ function parseTajweed(markup: string): Ch[] {
 // ── Letter matching ──────────────────────────────────────────────────────────
 // Hamza seats, alif forms and regional letter shapes are unified so both spellings compare.
 const LETTER: Record<string, string> = {
-  "ٱ": "ا", "أ": "ا", "إ": "ا", "آ": "ا", "ٰ": "ا",
-  "ٖ": "ي", "ٗ": "و", // Indo-Pak khari zer / ulta pesh = QUL small ya / small waw
-  "ی": "ي", "ى": "ي", "ے": "ي", "ئ": "ي", "ٮ": "ي", "ۦ": "ي",
-  "ؤ": "و", "ۥ": "و", "ہ": "ه", "ۃ": "ة", "ک": "ك",
+  "\u0671": "\u0627", "\u0623": "\u0627", "\u0625": "\u0627", "\u0622": "\u0627", "\u0670": "\u0627",
+  "\u0656": "\u064A", "\u0657": "\u0648", // Indo-Pak khari zer / ulta pesh = QUL small ya / small waw
+  "\u06CC": "\u064A", "\u0649": "\u064A", "\u06D2": "\u064A", "\u0626": "\u064A", "\u066E": "\u064A", "\u06E6": "\u064A",
+  "\u0624": "\u0648", "\u06E5": "\u0648", "\u06C1": "\u0647", "\u06C3": "\u0629", "\u06A9": "\u0643",
 };
-const DROP = new Set(["ء", "ٔ", "ٕ", "ـ", "ٴ"]);
+const DROP = new Set(["\u0621", "\u0654", "\u0655", "\u0640", "\u0674"]);
 function letterOf(c: string): string | null {
   if (DROP.has(c)) return null;
   const l = LETTER[c] ?? c;
@@ -81,7 +81,7 @@ function units(chars: string[]): Unit[] {
   chars.forEach((c, i) => {
     const l = letterOf(c);
     if (l) { us.push({ l, idx: [i] }); attach = true; }
-    else if (c === " " || c === " ") attach = false;
+    else if (c === " " || c === "\u00A0") attach = false;
     else if (attach && us.length) us[us.length - 1].idx.push(i);
   });
   return us;

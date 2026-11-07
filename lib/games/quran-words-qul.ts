@@ -13,9 +13,9 @@ interface QulWord {
 
 /** Letters only, without ال or a one-letter prefix, to spot the same word in both lists. */
 function core(t: string): string {
-  let s = [...t].filter(c => (c >= "ء" && c <= "ي") || c === "ٱ").join("")
-    .replace(/[ٱأإآ]/g, "ا").replace(/ى/g, "ي");
-  for (const p of ["وال", "فال", "بال", "لل", "ال"])
+  let s = [...t].filter(c => (c >= "\u0621" && c <= "\u064A") || c === "\u0671").join("")
+    .replace(/[\u0671\u0623\u0625\u0622]/g, "\u0627").replace(/\u0649/g, "\u064A");
+  for (const p of ["\u0648\u0627\u0644", "\u0641\u0627\u0644", "\u0628\u0627\u0644", "\u0644\u0644", "\u0627\u0644"])
     if (s.startsWith(p) && s.length - p.length >= 2) { s = s.slice(p.length); break; }
   return s;
 }
@@ -35,7 +35,7 @@ export function loadQulQuranWords(): QuranWordItem[] {
       correct: 0,
       explanation: `This word appears ${w.count} times in the Quran. It first appears in Surah ${name} (${s}:${a}). Meaning from the Quranic Universal Library word-by-word translation.`,
       optionsUr: w.urOptions,
-      explanationUr: `یہ لفظ قرآن میں ${w.count} بار آیا ہے۔ پہلی بار سورۃ ${meta?.arabicName ?? s} (${s}:${a}) میں۔ معنی: قرآنک یونیورسل لائبریری کا لفظی ترجمہ۔`,
+      explanationUr: `\u06CC\u06C1 \u0644\u0641\u0638 \u0642\u0631\u0622\u0646 \u0645\u06CC\u06BA ${w.count} \u0628\u0627\u0631 \u0622\u06CC\u0627 \u06C1\u06D2\u06D4 \u067E\u06C1\u0644\u06CC \u0628\u0627\u0631 \u0633\u0648\u0631\u06C3 ${meta?.arabicName ?? s} (${s}:${a}) \u0645\u06CC\u06BA\u06D4 \u0645\u0639\u0646\u06CC: \u0642\u0631\u0622\u0646\u06A9 \u06CC\u0648\u0646\u06CC\u0648\u0631\u0633\u0644 \u0644\u0627\u0626\u0628\u0631\u06CC\u0631\u06CC \u06A9\u0627 \u0644\u0641\u0638\u06CC \u062A\u0631\u062C\u0645\u06C1\u06D4`,
       surahNumber: s,
       surahName: name,
       ayahNumber: a,

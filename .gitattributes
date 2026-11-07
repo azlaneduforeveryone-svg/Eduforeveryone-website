@@ -3,3 +3,5 @@ data/quran/** -text
 *.woff2 binary
 # Word-by-word English data is verified byte for byte on every build
 public/quran/wbw-en/** -text
+# Quran search data is verified byte for byte on every build
+public/quran/search/** -text

@@ -161,6 +161,7 @@ export default function QuranReader({ surahId, initialSurah }: { surahId: number
           <Link href="/quran" className="hover:text-teal-500">Quran</Link>
           <span>/</span>
           <span className={text}>{surah.englishName}</span>
+          <Link href="/quran/search" className="ml-auto hover:text-teal-500">🔍 Search the Quran</Link>
         </nav>
 
         {/* ── Surah Header ── */}
