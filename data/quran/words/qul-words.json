@@ -1,0 +1,6305 @@
+{
+ "source": "Quranic Universal Library (qul.tarteel.ai): QPC Hafs words (58), English word by word by Tarteel AI (564), Urdu word by word (93).",
+ "words": [
+  {
+   "id": "qul-001",
+   "arabic": "ٱللَّهِ",
+   "count": 2151,
+   "ref": "1:1:2",
+   "kind": "pn",
+   "en": "Allah",
+   "ur": "اللہ",
+   "enOptions": [
+    "Allah",
+    "their Lord",
+    "Oft-Forgiving",
+    "believers"
+   ],
+   "urOptions": [
+    "اللہ",
+    "اپنے رب، ان کے رب",
+    "بخشنے والا، غفور",
+    "ایمان لانے والے"
+   ]
+  },
+  {
+   "id": "qul-002",
+   "arabic": "مِن",
+   "count": 2084,
+   "ref": "2:4:8",
+   "kind": "p",
+   "en": "from, of",
+   "ur": "سے",
+   "enOptions": [
+    "from, of",
+    "with it",
+    "then",
+    "surely in"
+   ],
+   "urOptions": [
+    "سے",
+    "ساتھ اس کے",
+    "پھر",
+    "البتہ میں"
+   ]
+  },
+  {
+   "id": "qul-003",
+   "arabic": "فِى",
+   "count": 1092,
+   "ref": "2:10:1",
+   "kind": "p",
+   "en": "in",
+   "ur": "میں",
+   "enOptions": [
+    "in",
+    "So which",
+    "for him, to him",
+    "of every"
+   ],
+   "urOptions": [
+    "میں",
+    "تو ساتھ کون سی",
+    "اس کے لیے",
+    "ہر"
+   ]
+  },
+  {
+   "id": "qul-004",
+   "arabic": "مَا",
+   "count": 854,
+   "ref": "2:17:8",
+   "kind": "n",
+   "en": "what",
+   "ur": "جو",
+   "enOptions": [
+    "what",
+    "indeed they",
+    "themselves",
+    "how"
+   ],
+   "urOptions": [
+    "جو",
+    "بیشک وہ",
+    "اپنے نفسوں، اپنی جانوں پر",
+    "کس طرح"
+   ]
+  },
+  {
+   "id": "qul-005",
+   "arabic": "ٱلَّذِينَ",
+   "count": 810,
+   "ref": "1:7:2",
+   "kind": "n",
+   "en": "those who",
+   "ur": "وہ لوگ",
+   "enOptions": [
+    "those who",
+    "the Quran",
+    "we",
+    "a punishment"
+   ],
+   "urOptions": [
+    "وہ لوگ",
+    "قرآن",
+    "ہم",
+    "عذاب"
+   ]
+  },
+  {
+   "id": "qul-006",
+   "arabic": "لَا",
+   "count": 748,
+   "ref": "2:2:3",
+   "kind": "p",
+   "en": "not",
+   "ur": "نہیں",
+   "enOptions": [
+    "not",
+    "to me",
+    "as",
+    "for whom"
+   ],
+   "urOptions": [
+    "نہیں",
+    "میری طرف",
+    "جیسا کہ",
+    "واسطے اس کے جو"
+   ]
+  },
+  {
+   "id": "qul-007",
+   "arabic": "إِنَّ",
+   "count": 608,
+   "ref": "2:6:1",
+   "kind": "p",
+   "en": "indeed",
+   "ur": "بیشک",
+   "enOptions": [
+    "indeed",
+    "the All-Knower, the All-Knowing",
+    "but",
+    "surely of"
+   ],
+   "urOptions": [
+    "بیشک",
+    "جاننے والا ہے",
+    "لیکن",
+    "البتہ سے"
+   ]
+  },
+  {
+   "id": "qul-008",
+   "arabic": "إِلَّا",
+   "count": 561,
+   "ref": "2:26:38",
+   "kind": "p",
+   "en": "except",
+   "ur": "مگر",
+   "enOptions": [
+    "except",
+    "and when",
+    "the Last",
+    "to you"
+   ],
+   "urOptions": [
+    "مگر",
+    "اور جب",
+    "آخرت پر",
+    "آپ کی طرف، تیری طرف"
+   ]
+  },
+  {
+   "id": "qul-009",
+   "arabic": "أَن",
+   "count": 531,
+   "ref": "2:26:5",
+   "kind": "p",
+   "en": "that",
+   "ur": "کہ",
+   "enOptions": [
+    "that",
+    "and not",
+    "with them",
+    "for us"
+   ],
+   "urOptions": [
+    "کہ",
+    "اور نہیں",
+    "ان کو",
+    "ہمارے لیے"
+   ]
+  },
+  {
+   "id": "qul-010",
+   "arabic": "قَالَ",
+   "count": 411,
+   "ref": "2:30:2",
+   "kind": "v",
+   "en": "he said",
+   "ur": "کہا",
+   "enOptions": [
+    "he said",
+    "you do",
+    "and We made",
+    "has revealed"
+   ],
+   "urOptions": [
+    "کہا",
+    "تم عمل کرتے ہو",
+    "اور بنایا ہم نے",
+    "نازل کیا"
+   ]
+  },
+  {
+   "id": "qul-011",
+   "arabic": "مَن",
+   "count": 388,
+   "ref": "2:8:3",
+   "kind": "n",
+   "en": "who",
+   "ur": "جو",
+   "enOptions": [
+    "who",
+    "Children",
+    "underneath it, underneath them",
+    "soul"
+   ],
+   "urOptions": [
+    "جو",
+    "بنی",
+    "ان کے نیچے",
+    "شخص، نفس"
+   ]
+  },
+  {
+   "id": "qul-012",
+   "arabic": "لَهُمۡ",
+   "count": 373,
+   "ref": "2:11:3",
+   "kind": "p",
+   "en": "for them, to them",
+   "ur": "ان کے لیے",
+   "enOptions": [
+    "for them, to them",
+    "only",
+    "and not",
+    "verily"
+   ],
+   "urOptions": [
+    "ان کے لیے",
+    "بیشک",
+    "اور نہیں",
+    "تحقیق"
+   ]
+  },
+  {
+   "id": "qul-013",
+   "arabic": "إِن",
+   "count": 357,
+   "ref": "2:23:18",
+   "kind": "p",
+   "en": "if, not",
+   "ur": "اگر",
+   "enOptions": [
+    "if, not",
+    "from it",
+    "indeed",
+    "for you, to you"
+   ],
+   "urOptions": [
+    "اگر",
+    "اس میں سے، اس سے",
+    "بیشک",
+    "تیرے لیے"
+   ]
+  },
+  {
+   "id": "qul-014",
+   "arabic": "عَلَىٰ",
+   "count": 344,
+   "ref": "2:5:2",
+   "kind": "p",
+   "en": "on",
+   "ur": "پر",
+   "enOptions": [
+    "on",
+    "for them, to them",
+    "that not",
+    "the All-Wise"
+   ],
+   "urOptions": [
+    "پر",
+    "ان کے لیے",
+    "کہ نہ",
+    "حکمت والا ہے"
+   ]
+  },
+  {
+   "id": "qul-015",
+   "arabic": "ثُمَّ",
+   "count": 337,
+   "ref": "2:28:7",
+   "kind": "p",
+   "en": "then",
+   "ur": "پھر",
+   "enOptions": [
+    "then",
+    "in Signs",
+    "Do not",
+    "for them, to them"
+   ],
+   "urOptions": [
+    "پھر",
+    "آیات کو",
+    "کیا بھلا نہیں",
+    "ان کے لیے"
+   ]
+  },
+  {
+   "id": "qul-016",
+   "arabic": "لَكُمۡ",
+   "count": 337,
+   "ref": "2:22:3",
+   "kind": "p",
+   "en": "for you",
+   "ur": "تمہارے لیے",
+   "enOptions": [
+    "for you",
+    "indeed",
+    "to",
+    "with them"
+   ],
+   "urOptions": [
+    "تمہارے لیے",
+    "بیشک",
+    "طرف",
+    "ان کو"
+   ]
+  },
+  {
+   "id": "qul-017",
+   "arabic": "كَانَ",
+   "count": 319,
+   "ref": "2:75:6",
+   "kind": "v",
+   "en": "is, was",
+   "ur": "ہے",
+   "enOptions": [
+    "is, was",
+    "has revealed",
+    "she said",
+    "do"
+   ],
+   "urOptions": [
+    "ہے",
+    "نازل کیا",
+    "کہنے لگی",
+    "وہ عمل کرتے"
+   ]
+  },
+  {
+   "id": "qul-018",
+   "arabic": "قُلۡ",
+   "count": 293,
+   "ref": "2:80:8",
+   "kind": "v",
+   "en": "Say",
+   "ur": "کہہ دیجیے",
+   "enOptions": [
+    "Say",
+    "disbelieved",
+    "will you both deny",
+    "wills"
+   ],
+   "urOptions": [
+    "کہہ دیجیے",
+    "جنہوں نے کفر کیا",
+    "تم دونوں جھٹلاؤ گے",
+    "چاہتا، چاہے"
+   ]
+  },
+  {
+   "id": "qul-019",
+   "arabic": "ٱلۡأَرۡضِ",
+   "count": 287,
+   "ref": "2:11:7",
+   "kind": "n",
+   "en": "the earth",
+   "ur": "زمین",
+   "enOptions": [
+    "the earth",
+    "Maryam",
+    "Ibrahim",
+    "the death"
+   ],
+   "urOptions": [
+    "زمین",
+    "مریم",
+    "ابراہیم",
+    "موت"
+   ]
+  },
+  {
+   "id": "qul-020",
+   "arabic": "أَوۡ",
+   "count": 280,
+   "ref": "2:19:1",
+   "kind": "p",
+   "en": "or",
+   "ur": "یا",
+   "enOptions": [
+    "or",
+    "for me",
+    "the truth",
+    "nay"
+   ],
+   "urOptions": [
+    "یا",
+    "میرے لیے",
+    "حق",
+    "بلکہ"
+   ]
+  },
+  {
+   "id": "qul-021",
+   "arabic": "هُوَ",
+   "count": 264,
+   "ref": "2:29:1",
+   "kind": "n",
+   "en": "he",
+   "ur": "وہ",
+   "enOptions": [
+    "he",
+    "for those who, to those who",
+    "Our Signs",
+    "righteous deeds"
+   ],
+   "urOptions": [
+    "وہ",
+    "ان لوگوں کے لیے",
+    "ہماری آیات",
+    "اچھے"
+   ]
+  },
+  {
+   "id": "qul-022",
+   "arabic": "هُمۡ",
+   "count": 260,
+   "ref": "2:4:11",
+   "kind": "n",
+   "en": "they",
+   "ur": "وہ",
+   "enOptions": [
+    "they",
+    "underneath it, underneath them",
+    "verses, signs",
+    "severe"
+   ],
+   "urOptions": [
+    "وہ",
+    "ان کے نیچے",
+    "آیات",
+    "سخت"
+   ]
+  },
+  {
+   "id": "qul-023",
+   "arabic": "بِهِۦ",
+   "count": 257,
+   "ref": "2:22:13",
+   "kind": "p",
+   "en": "with it",
+   "ur": "ساتھ اس کے",
+   "enOptions": [
+    "with it",
+    "and when",
+    "the All-Wise",
+    "Do not, Did not"
+   ],
+   "urOptions": [
+    "ساتھ اس کے",
+    "اور جب",
+    "حکمت والا ہے",
+    "کیا نہیں"
+   ]
+  },
+  {
+   "id": "qul-024",
+   "arabic": "بِمَا",
+   "count": 252,
+   "ref": "2:10:10",
+   "kind": "p",
+   "en": "of what",
+   "ur": "ساتھ اس کے جو",
+   "enOptions": [
+    "of what",
+    "indeed",
+    "not",
+    "for you, to you"
+   ],
+   "urOptions": [
+    "ساتھ اس کے جو",
+    "بیشک",
+    "نہیں",
+    "تیرے لیے"
+   ]
+  },
+  {
+   "id": "qul-025",
+   "arabic": "كُلِّ",
+   "count": 244,
+   "ref": "2:20:23",
+   "kind": "n",
+   "en": "every",
+   "ur": "ہر",
+   "enOptions": [
+    "every",
+    "Israel",
+    "underneath it, underneath them",
+    "promise"
+   ],
+   "urOptions": [
+    "ہر",
+    "اسرائیل",
+    "ان کے نیچے",
+    "وعدہ"
+   ]
+  },
+  {
+   "id": "qul-026",
+   "arabic": "يَوۡمَ",
+   "count": 217,
+   "ref": "1:4:2",
+   "kind": "n",
+   "en": "day",
+   "ur": "دن",
+   "enOptions": [
+    "day",
+    "the punishment",
+    "above what",
+    "the Hour"
+   ],
+   "urOptions": [
+    "دن",
+    "عذاب",
+    "اس سے جو",
+    "قیامت"
+   ]
+  },
+  {
+   "id": "qul-027",
+   "arabic": "لَهُۥ",
+   "count": 216,
+   "ref": "2:102:62",
+   "kind": "p",
+   "en": "for him, to him",
+   "ur": "اس کے لیے",
+   "enOptions": [
+    "for him, to him",
+    "in Signs",
+    "no",
+    "as"
+   ],
+   "urOptions": [
+    "اس کے لیے",
+    "آیات کو",
+    "نہیں",
+    "جیسا کہ"
+   ]
+  },
+  {
+   "id": "qul-028",
+   "arabic": "ٱلَّذِى",
+   "count": 216,
+   "ref": "2:17:3",
+   "kind": "n",
+   "en": "the one who",
+   "ur": "وہ ذات ہے",
+   "enOptions": [
+    "the one who",
+    "after",
+    "the prayer",
+    "thing"
+   ],
+   "urOptions": [
+    "وہ ذات ہے",
+    "بعد",
+    "نماز",
+    "چیز"
+   ]
+  },
+  {
+   "id": "qul-029",
+   "arabic": "عَلَيۡهِمۡ",
+   "count": 214,
+   "ref": "1:7:4",
+   "kind": "n",
+   "en": "to them",
+   "ur": "ان پر",
+   "enOptions": [
+    "to them",
+    "abide forever",
+    "Our Signs",
+    "better, good"
+   ],
+   "urOptions": [
+    "ان پر",
+    "ہمیشہ رہنے والے ہیں",
+    "ہماری آیات",
+    "بہتر"
+   ]
+  },
+  {
+   "id": "qul-030",
+   "arabic": "ءَامَنُواۡ",
+   "count": 212,
+   "ref": "2:9:4",
+   "kind": "v",
+   "en": "believe",
+   "ur": "جو ایمان لائے",
+   "enOptions": [
+    "believe",
+    "was revealed, has been revealed",
+    "you do",
+    "denied"
+   ],
+   "urOptions": [
+    "جو ایمان لائے",
+    "نازل کیا گیا",
+    "تم عمل کرتے ہو",
+    "جنہوں نے جھٹلایا، انہوں نے جھٹلایا"
+   ]
+  },
+  {
+   "id": "qul-031",
+   "arabic": "فِيهَا",
+   "count": 212,
+   "ref": "2:25:33",
+   "kind": "n",
+   "en": "therein, in it",
+   "ur": "اس میں",
+   "enOptions": [
+    "therein, in it",
+    "when",
+    "indeed he",
+    "the earth"
+   ],
+   "urOptions": [
+    "اس میں",
+    "جب",
+    "بیشک وہ",
+    "زمین"
+   ]
+  },
+  {
+   "id": "qul-032",
+   "arabic": "إِلَىٰ",
+   "count": 211,
+   "ref": "2:14:9",
+   "kind": "p",
+   "en": "to",
+   "ur": "طرف",
+   "enOptions": [
+    "to",
+    "as",
+    "the believers",
+    "never"
+   ],
+   "urOptions": [
+    "طرف",
+    "جیسا کہ",
+    "مومنوں",
+    "ہرگز نہیں"
+   ]
+  },
+  {
+   "id": "qul-033",
+   "arabic": "عَن",
+   "count": 210,
+   "ref": "2:48:6",
+   "kind": "p",
+   "en": "from",
+   "ur": "سے",
+   "enOptions": [
+    "from",
+    "and not, and what",
+    "if",
+    "to"
+   ],
+   "urOptions": [
+    "سے",
+    "اور نہیں",
+    "اگر، کاش",
+    "طرف"
+   ]
+  },
+  {
+   "id": "qul-034",
+   "arabic": "كَانُواۡ",
+   "count": 210,
+   "ref": "2:10:11",
+   "kind": "v",
+   "en": "they used to",
+   "ur": "تھے وہ",
+   "enOptions": [
+    "they used to",
+    "believe",
+    "Say",
+    "was revealed, has been revealed"
+   ],
+   "urOptions": [
+    "تھے وہ",
+    "جو ایمان لائے",
+    "کہہ دیجیے",
+    "نازل کیا گیا"
+   ]
+  },
+  {
+   "id": "qul-035",
+   "arabic": "كُنتُمۡ",
+   "count": 188,
+   "ref": "2:23:2",
+   "kind": "v",
+   "en": "you are",
+   "ur": "ہو تم، تھے تم",
+   "enOptions": [
+    "you are",
+    "Say",
+    "is, was",
+    "believed"
+   ],
+   "urOptions": [
+    "ہو تم، تھے تم",
+    "کہہ دیجیے",
+    "ہے",
+    "ایمان لایا، ایمان لائے"
+   ]
+  },
+  {
+   "id": "qul-036",
+   "arabic": "شَىۡءٍ",
+   "count": 187,
+   "ref": "2:20:24",
+   "kind": "n",
+   "en": "thing",
+   "ur": "چیز",
+   "enOptions": [
+    "thing",
+    "the Shaitaan",
+    "between them",
+    "god"
+   ],
+   "urOptions": [
+    "چیز",
+    "شیطان",
+    "ان کے درمیان",
+    "کوئی الہ"
+   ]
+  },
+  {
+   "id": "qul-037",
+   "arabic": "ٱلسَّمَـٰوٰتِ",
+   "count": 182,
+   "ref": "2:33:15",
+   "kind": "n",
+   "en": "the heavens",
+   "ur": "آسمانوں",
+   "enOptions": [
+    "the heavens",
+    "water",
+    "These, this",
+    "righteous"
+   ],
+   "urOptions": [
+    "آسمانوں",
+    "پانی",
+    "یہ",
+    "اچھے"
+   ]
+  },
+  {
+   "id": "qul-038",
+   "arabic": "ٱلنَّاسِ",
+   "count": 182,
+   "ref": "2:8:2",
+   "kind": "n",
+   "en": "the people",
+   "ur": "لوگوں",
+   "enOptions": [
+    "the people",
+    "the rivers",
+    "because they",
+    "a sign"
+   ],
+   "urOptions": [
+    "لوگوں",
+    "نہریں",
+    "بوجہ اس کے کہ بیشک وہ",
+    "ایک نشانی، کوئی نشانی"
+   ]
+  },
+  {
+   "id": "qul-039",
+   "arabic": "قَالُواۡ",
+   "count": 173,
+   "ref": "2:25:19",
+   "kind": "v",
+   "en": "they said",
+   "ur": "انہوں نے کہا",
+   "enOptions": [
+    "they said",
+    "believe",
+    "know",
+    "knows"
+   ],
+   "urOptions": [
+    "انہوں نے کہا",
+    "جو ایمان لائے",
+    "علم رکھتے",
+    "جانتا ہے"
+   ]
+  },
+  {
+   "id": "qul-040",
+   "arabic": "إِذَا",
+   "count": 170,
+   "ref": "2:177:38",
+   "kind": "n",
+   "en": "when",
+   "ur": "جب",
+   "enOptions": [
+    "when",
+    "the former",
+    "a Messenger",
+    "O you"
+   ],
+   "urOptions": [
+    "جب",
+    "پہلوں",
+    "رسول",
+    "اے"
+   ]
+  },
+  {
+   "id": "qul-041",
+   "arabic": "كَفَرُواۡ",
+   "count": 166,
+   "ref": "2:6:3",
+   "kind": "v",
+   "en": "disbelieved",
+   "ur": "جنہوں نے کفر کیا",
+   "enOptions": [
+    "disbelieved",
+    "we believe",
+    "she said",
+    "they used to"
+   ],
+   "urOptions": [
+    "جنہوں نے کفر کیا",
+    "ایمان لائے ہم، ہم ایمان لائے",
+    "کہنے لگی",
+    "تھے وہ"
+   ]
+  },
+  {
+   "id": "qul-042",
+   "arabic": "عَلَيۡكُمۡ",
+   "count": 164,
+   "ref": "2:40:7",
+   "kind": "n",
+   "en": "upon you",
+   "ur": "تم پر",
+   "enOptions": [
+    "upon you",
+    "righteous deeds",
+    "he",
+    "after"
+   ],
+   "urOptions": [
+    "تم پر",
+    "اچھے",
+    "وہ",
+    "بعد"
+   ]
+  },
+  {
+   "id": "qul-043",
+   "arabic": "ٱلۡكِتَـٰبَ",
+   "count": 163,
+   "ref": "2:2:2",
+   "kind": "n",
+   "en": "the book",
+   "ur": "کتاب",
+   "enOptions": [
+    "the book",
+    "than who",
+    "underneath it, underneath them",
+    "a sign"
+   ],
+   "urOptions": [
+    "کتاب",
+    "اس سے جو",
+    "ان کے نیچے",
+    "ایک نشانی، کوئی نشانی"
+   ]
+  },
+  {
+   "id": "qul-044",
+   "arabic": "مِنۡهُمۡ",
+   "count": 153,
+   "ref": "2:75:8",
+   "kind": "p",
+   "en": "among them, of them",
+   "ur": "ان میں سے",
+   "enOptions": [
+    "among them, of them",
+    "as",
+    "for the mankind",
+    "and fear"
+   ],
+   "urOptions": [
+    "ان میں سے",
+    "جیسا کہ",
+    "لوگوں کے لیے",
+    "اور ڈرو"
+   ]
+  },
+  {
+   "id": "qul-045",
+   "arabic": "هَـٰذَا",
+   "count": 153,
+   "ref": "2:25:20",
+   "kind": "n",
+   "en": "this",
+   "ur": "یہ",
+   "enOptions": [
+    "this",
+    "a people",
+    "the good-doers",
+    "with, near"
+   ],
+   "urOptions": [
+    "یہ",
+    "قوم",
+    "احسان کرنے والوں",
+    "پاس، نزدیک"
+   ]
+  },
+  {
+   "id": "qul-046",
+   "arabic": "عَذَابٌ",
+   "count": 150,
+   "ref": "2:7:11",
+   "kind": "n",
+   "en": "a punishment",
+   "ur": "عذاب",
+   "enOptions": [
+    "a punishment",
+    "reward",
+    "a people",
+    "thing"
+   ],
+   "urOptions": [
+    "عذاب",
+    "اجر",
+    "قوم",
+    "چیز"
+   ]
+  },
+  {
+   "id": "qul-047",
+   "arabic": "بَعۡدِ",
+   "count": 147,
+   "ref": "2:27:6",
+   "kind": "n",
+   "en": "after",
+   "ur": "بعد",
+   "enOptions": [
+    "after",
+    "But when, then when",
+    "Children",
+    "O my people"
+   ],
+   "urOptions": [
+    "بعد",
+    "تو جب، پھر جب",
+    "بنی",
+    "اے میری قوم"
+   ]
+  },
+  {
+   "id": "qul-048",
+   "arabic": "يَـٰٓأَيُّهَا",
+   "count": 142,
+   "ref": "2:21:1",
+   "kind": "n",
+   "en": "O you",
+   "ur": "اے",
+   "enOptions": [
+    "O you",
+    "the earth",
+    "Children",
+    "those who"
+   ],
+   "urOptions": [
+    "اے",
+    "زمین",
+    "بنی",
+    "وہ لوگ"
+   ]
+  },
+  {
+   "id": "qul-049",
+   "arabic": "إِنَّهُۥ",
+   "count": 141,
+   "ref": "2:37:8",
+   "kind": "n",
+   "en": "indeed he",
+   "ur": "بیشک وہ",
+   "enOptions": [
+    "indeed he",
+    "verses, signs",
+    "better, best",
+    "Musa"
+   ],
+   "urOptions": [
+    "بیشک وہ",
+    "آیات",
+    "بہتر ہے",
+    "موسیٰ"
+   ]
+  },
+  {
+   "id": "qul-050",
+   "arabic": "بِٱللَّهِ",
+   "count": 139,
+   "ref": "2:8:6",
+   "kind": "p",
+   "en": "in Allah",
+   "ur": "اللہ پر",
+   "enOptions": [
+    "in Allah",
+    "Do not, Did not",
+    "from it",
+    "the truth"
+   ],
+   "urOptions": [
+    "اللہ پر",
+    "کیا نہیں",
+    "اس میں سے، اس سے",
+    "حق"
+   ]
+  },
+  {
+   "id": "qul-051",
+   "arabic": "وَمَآ",
+   "count": 134,
+   "ref": "2:4:6",
+   "kind": "p",
+   "en": "and not, and what",
+   "ur": "اور نہیں",
+   "enOptions": [
+    "and not, and what",
+    "So which",
+    "from it, from him",
+    "verily"
+   ],
+   "urOptions": [
+    "اور نہیں",
+    "تو ساتھ کون سی",
+    "اس سے",
+    "تحقیق"
+   ]
+  },
+  {
+   "id": "qul-052",
+   "arabic": "أُوۡلَـٰٓئِكَ",
+   "count": 132,
+   "ref": "2:5:1",
+   "kind": "n",
+   "en": "those",
+   "ur": "یہی لوگ",
+   "enOptions": [
+    "those",
+    "a time, when",
+    "every",
+    "thus"
+   ],
+   "urOptions": [
+    "یہی لوگ",
+    "ایک وقت، جس وقت",
+    "ہر",
+    "اسی طرح"
+   ]
+  },
+  {
+   "id": "qul-053",
+   "arabic": "وَلَقَدۡ",
+   "count": 129,
+   "ref": "2:65:1",
+   "kind": "p",
+   "en": "And certainly, and verily",
+   "ur": "اور البتہ تحقیق",
+   "enOptions": [
+    "And certainly, and verily",
+    "for the mankind",
+    "only",
+    "from"
+   ],
+   "urOptions": [
+    "اور البتہ تحقیق",
+    "لوگوں کے لیے",
+    "بیشک",
+    "سے"
+   ]
+  },
+  {
+   "id": "qul-054",
+   "arabic": "رَبِّ",
+   "count": 128,
+   "ref": "1:2:3",
+   "kind": "pn",
+   "en": "lord",
+   "ur": "اے میرے رب",
+   "enOptions": [
+    "lord",
+    "true, right",
+    "allies, protectors",
+    "great"
+   ],
+   "urOptions": [
+    "اے میرے رب",
+    "سچا ہے",
+    "دوست",
+    "بڑا"
+   ]
+  },
+  {
+   "id": "qul-055",
+   "arabic": "بَلۡ",
+   "count": 127,
+   "ref": "2:88:4",
+   "kind": "p",
+   "en": "nay",
+   "ur": "بلکہ",
+   "enOptions": [
+    "nay",
+    "from it, from him",
+    "for me",
+    "the All-Mighty"
+   ],
+   "urOptions": [
+    "بلکہ",
+    "اس سے",
+    "میرے لیے",
+    "زبردست ہے"
+   ]
+  },
+  {
+   "id": "qul-056",
+   "arabic": "فِيهِ",
+   "count": 126,
+   "ref": "2:2:5",
+   "kind": "p",
+   "en": "in it",
+   "ur": "اس میں",
+   "enOptions": [
+    "in it",
+    "as",
+    "certainly, Verily",
+    "then"
+   ],
+   "urOptions": [
+    "اس میں",
+    "جیسا کہ",
+    "البتہ تحقیق",
+    "پھر"
+   ]
+  },
+  {
+   "id": "qul-057",
+   "arabic": "قَدۡ",
+   "count": 120,
+   "ref": "2:60:14",
+   "kind": "p",
+   "en": "verily",
+   "ur": "تحقیق",
+   "enOptions": [
+    "verily",
+    "never",
+    "in it",
+    "the truth"
+   ],
+   "urOptions": [
+    "تحقیق",
+    "ہرگز نہیں",
+    "اس میں",
+    "حق"
+   ]
+  },
+  {
+   "id": "qul-058",
+   "arabic": "رَبِّكَ",
+   "count": 119,
+   "ref": "2:147:3",
+   "kind": "pn",
+   "en": "your lord",
+   "ur": "تیرے رب",
+   "enOptions": [
+    "your lord",
+    "Oft-Forgiving",
+    "great",
+    "anyone"
+   ],
+   "urOptions": [
+    "تیرے رب",
+    "بخشنے والا، غفور",
+    "بڑا",
+    "کوئی ایک، کسی ایک"
+   ]
+  },
+  {
+   "id": "qul-059",
+   "arabic": "عِندَ",
+   "count": 118,
+   "ref": "2:54:19",
+   "kind": "n",
+   "en": "with, near",
+   "ur": "پاس، نزدیک",
+   "enOptions": [
+    "with, near",
+    "severe",
+    "water",
+    "the Quran"
+   ],
+   "urOptions": [
+    "پاس، نزدیک",
+    "سخت",
+    "پانی",
+    "قرآن"
+   ]
+  },
+  {
+   "id": "qul-060",
+   "arabic": "خَيۡرٌ",
+   "count": 116,
+   "ref": "2:54:17",
+   "kind": "n",
+   "en": "better, best",
+   "ur": "بہتر ہے",
+   "enOptions": [
+    "better, best",
+    "severe",
+    "righteous",
+    "the Quran"
+   ],
+   "urOptions": [
+    "بہتر ہے",
+    "سخت",
+    "اچھے",
+    "قرآن"
+   ]
+  },
+  {
+   "id": "qul-061",
+   "arabic": "يَشَآءُ",
+   "count": 116,
+   "ref": "2:90:18",
+   "kind": "v",
+   "en": "He wills",
+   "ur": "چاہتا ہے",
+   "enOptions": [
+    "He wills",
+    "came, comes",
+    "We made, We have made",
+    "will you both deny"
+   ],
+   "urOptions": [
+    "چاہتا ہے",
+    "آگیا",
+    "بنایا ہم نے",
+    "تم دونوں جھٹلاؤ گے"
+   ]
+  },
+  {
+   "id": "qul-062",
+   "arabic": "إِنَّا",
+   "count": 115,
+   "ref": "2:14:12",
+   "kind": "n",
+   "en": "indeed we",
+   "ur": "بیشک ہم",
+   "enOptions": [
+    "indeed we",
+    "with you",
+    "the worlds",
+    "the prayer"
+   ],
+   "urOptions": [
+    "بیشک ہم",
+    "تمہارے ساتھ",
+    "العالمین",
+    "نماز"
+   ]
+  },
+  {
+   "id": "qul-063",
+   "arabic": "قَبۡلُ",
+   "count": 115,
+   "ref": "2:25:24",
+   "kind": "n",
+   "en": "before",
+   "ur": "اس سے پہلے",
+   "enOptions": [
+    "before",
+    "those who",
+    "way",
+    "Musa"
+   ],
+   "urOptions": [
+    "اس سے پہلے",
+    "وہ لوگ",
+    "راستے",
+    "موسیٰ"
+   ]
+  },
+  {
+   "id": "qul-064",
+   "arabic": "وَلَوۡ",
+   "count": 111,
+   "ref": "2:20:14",
+   "kind": "p",
+   "en": "and if",
+   "ur": "اور اگر",
+   "enOptions": [
+    "and if",
+    "certainly, Verily",
+    "that",
+    "with them"
+   ],
+   "urOptions": [
+    "اور اگر",
+    "البتہ تحقیق",
+    "کہ",
+    "ان کو"
+   ]
+  },
+  {
+   "id": "qul-065",
+   "arabic": "ٱلدُّنۡيَا",
+   "count": 110,
+   "ref": "2:85:38",
+   "kind": "n",
+   "en": "the world",
+   "ur": "دنیا",
+   "enOptions": [
+    "the world",
+    "abide forever",
+    "indeed you",
+    "god"
+   ],
+   "urOptions": [
+    "دنیا",
+    "ہمیشہ رہنے والے ہیں",
+    "بیشک تو",
+    "کوئی الہ"
+   ]
+  },
+  {
+   "id": "qul-066",
+   "arabic": "ٱلسَّمَآءِ",
+   "count": 109,
+   "ref": "2:19:4",
+   "kind": "n",
+   "en": "the sky, the heaven",
+   "ur": "آسمان",
+   "enOptions": [
+    "the sky, the heaven",
+    "reward",
+    "a warner",
+    "today, this day"
+   ],
+   "urOptions": [
+    "آسمان",
+    "اجر",
+    "ڈرانے والا ہوں",
+    "آج"
+   ]
+  },
+  {
+   "id": "qul-067",
+   "arabic": "ٱلۡحَقُّ",
+   "count": 109,
+   "ref": "2:26:17",
+   "kind": "p",
+   "en": "the truth",
+   "ur": "حق",
+   "enOptions": [
+    "the truth",
+    "for him, to him",
+    "Then will not",
+    "and the day"
+   ],
+   "urOptions": [
+    "حق",
+    "اس کے لیے",
+    "کیا بھلا نہیں",
+    "اور دن کو"
+   ]
+  },
+  {
+   "id": "qul-068",
+   "arabic": "مِنكُمۡ",
+   "count": 107,
+   "ref": "2:65:5",
+   "kind": "n",
+   "en": "among you",
+   "ur": "تم میں سے",
+   "enOptions": [
+    "among you",
+    "Maryam",
+    "he",
+    "the earth"
+   ],
+   "urOptions": [
+    "تم میں سے",
+    "مریم",
+    "وہ",
+    "زمین"
+   ]
+  },
+  {
+   "id": "qul-069",
+   "arabic": "لِلَّهِ",
+   "count": 102,
+   "ref": "1:2:2",
+   "kind": "p",
+   "en": "to Allah, for Allah",
+   "ur": "اللہ کے لیے",
+   "enOptions": [
+    "to Allah, for Allah",
+    "indeed",
+    "and not, and what",
+    "until"
+   ],
+   "urOptions": [
+    "اللہ کے لیے",
+    "بیشک",
+    "اور نہیں",
+    "یہاں تک کہ"
+   ]
+  },
+  {
+   "id": "qul-070",
+   "arabic": "ٱلنَّارِ",
+   "count": 101,
+   "ref": "2:24:7",
+   "kind": "n",
+   "en": "the fire",
+   "ur": "آگ",
+   "enOptions": [
+    "the fire",
+    "for a people",
+    "Our Signs",
+    "These, this"
+   ],
+   "urOptions": [
+    "آگ",
+    "اس قوم کے لیے",
+    "ہماری آیات",
+    "یہ"
+   ]
+  },
+  {
+   "id": "qul-071",
+   "arabic": "حَتَّىٰ",
+   "count": 95,
+   "ref": "2:55:7",
+   "kind": "p",
+   "en": "until",
+   "ur": "یہاں تک کہ",
+   "enOptions": [
+    "until",
+    "for us",
+    "to",
+    "of what"
+   ],
+   "urOptions": [
+    "یہاں تک کہ",
+    "ہمارے لیے",
+    "طرف",
+    "ساتھ اس کے جو"
+   ]
+  },
+  {
+   "id": "qul-072",
+   "arabic": "دُونِ",
+   "count": 91,
+   "ref": "2:23:16",
+   "kind": "n",
+   "en": "besides",
+   "ur": "سوا",
+   "enOptions": [
+    "besides",
+    "you",
+    "without",
+    "Israel"
+   ],
+   "urOptions": [
+    "سوا",
+    "تم",
+    "بغیر",
+    "اسرائیل"
+   ]
+  },
+  {
+   "id": "qul-073",
+   "arabic": "مِنۡهُ",
+   "count": 88,
+   "ref": "2:60:10",
+   "kind": "p",
+   "en": "from it, from him",
+   "ur": "اس سے",
+   "enOptions": [
+    "from it, from him",
+    "Do not",
+    "indeed",
+    "the believers"
+   ],
+   "urOptions": [
+    "اس سے",
+    "کیا بھلا نہیں",
+    "بیشک",
+    "مومنوں"
+   ]
+  },
+  {
+   "id": "qul-074",
+   "arabic": "سَبِيلِ",
+   "count": 87,
+   "ref": "2:154:6",
+   "kind": "n",
+   "en": "way",
+   "ur": "راستے",
+   "enOptions": [
+    "way",
+    "the word",
+    "the night",
+    "Musa"
+   ],
+   "urOptions": [
+    "راستے",
+    "بات",
+    "رات",
+    "موسیٰ"
+   ]
+  },
+  {
+   "id": "qul-075",
+   "arabic": "كَذٰلِكَ",
+   "count": 86,
+   "ref": "2:73:4",
+   "kind": "n",
+   "en": "thus",
+   "ur": "اسی طرح",
+   "enOptions": [
+    "thus",
+    "Nuh",
+    "than who",
+    "one, single"
+   ],
+   "urOptions": [
+    "اسی طرح",
+    "نوح",
+    "اس سے جو",
+    "ایک ہی"
+   ]
+  },
+  {
+   "id": "qul-076",
+   "arabic": "إِنَّمَا",
+   "count": 85,
+   "ref": "2:11:9",
+   "kind": "p",
+   "en": "only",
+   "ur": "بیشک",
+   "enOptions": [
+    "only",
+    "nay",
+    "to, for",
+    "and the day"
+   ],
+   "urOptions": [
+    "بیشک",
+    "بلکہ",
+    "طرف، تک",
+    "اور دن کو"
+   ]
+  },
+  {
+   "id": "qul-077",
+   "arabic": "ٱلۡعَذَابِ",
+   "count": 85,
+   "ref": "2:49:8",
+   "kind": "n",
+   "en": "the punishment",
+   "ur": "عذاب",
+   "enOptions": [
+    "the punishment",
+    "bounty, grace",
+    "who",
+    "thing"
+   ],
+   "urOptions": [
+    "عذاب",
+    "فضل",
+    "جو",
+    "چیز"
+   ]
+  },
+  {
+   "id": "qul-078",
+   "arabic": "تَعۡمَلُونَ",
+   "count": 83,
+   "ref": "2:74:37",
+   "kind": "v",
+   "en": "you do",
+   "ur": "تم عمل کرتے ہو",
+   "enOptions": [
+    "you do",
+    "were given",
+    "guide",
+    "love"
+   ],
+   "urOptions": [
+    "تم عمل کرتے ہو",
+    "جو دیئے گئے",
+    "ہدایت دیتا",
+    "پسند کرتا، محبت رکھتا ہے"
+   ]
+  },
+  {
+   "id": "qul-079",
+   "arabic": "مُّبِينٌ",
+   "count": 83,
+   "ref": "2:168:16",
+   "kind": "n",
+   "en": "clear",
+   "ur": "کھلم کھلا",
+   "enOptions": [
+    "clear",
+    "These, this",
+    "the night",
+    "the people"
+   ],
+   "urOptions": [
+    "کھلم کھلا",
+    "یہ",
+    "رات",
+    "لوگوں"
+   ]
+  },
+  {
+   "id": "qul-080",
+   "arabic": "رَبِّهِمۡ",
+   "count": 82,
+   "ref": "2:5:5",
+   "kind": "pn",
+   "en": "their Lord",
+   "ur": "اپنے رب، ان کے رب",
+   "enOptions": [
+    "their Lord",
+    "the Most Merciful",
+    "allies, protectors",
+    "great"
+   ],
+   "urOptions": [
+    "اپنے رب، ان کے رب",
+    "رحم فرمانے والا ہے",
+    "دوست",
+    "بڑا"
+   ]
+  },
+  {
+   "id": "qul-081",
+   "arabic": "إِنِّى",
+   "count": 81,
+   "ref": "2:30:5",
+   "kind": "n",
+   "en": "Indeed I",
+   "ur": "بیشک میں",
+   "enOptions": [
+    "Indeed I",
+    "Firaun",
+    "the earth",
+    "the knowledge"
+   ],
+   "urOptions": [
+    "بیشک میں",
+    "فرعون",
+    "زمین",
+    "علم"
+   ]
+  },
+  {
+   "id": "qul-082",
+   "arabic": "يَعۡلَمُونَ",
+   "count": 81,
+   "ref": "2:13:19",
+   "kind": "v",
+   "en": "know",
+   "ur": "علم رکھتے",
+   "enOptions": [
+    "know",
+    "we believe",
+    "was",
+    "he said"
+   ],
+   "urOptions": [
+    "علم رکھتے",
+    "ایمان لائے ہم، ہم ایمان لائے",
+    "ہے",
+    "کہا"
+   ]
+  },
+  {
+   "id": "qul-083",
+   "arabic": "فَلَمَّا",
+   "count": 79,
+   "ref": "2:89:17",
+   "kind": "n",
+   "en": "But when, then when",
+   "ur": "تو جب، پھر جب",
+   "enOptions": [
+    "But when, then when",
+    "the Hour",
+    "the disbelievers",
+    "those who"
+   ],
+   "urOptions": [
+    "تو جب، پھر جب",
+    "قیامت",
+    "کافروں",
+    "وہ لوگ"
+   ]
+  },
+  {
+   "id": "qul-084",
+   "arabic": "لَوۡ",
+   "count": 79,
+   "ref": "2:96:11",
+   "kind": "p",
+   "en": "if",
+   "ur": "اگر، کاش",
+   "enOptions": [
+    "if",
+    "nay",
+    "indeed",
+    "to you"
+   ],
+   "urOptions": [
+    "اگر، کاش",
+    "بلکہ",
+    "بیشک",
+    "آپ کی طرف، تیری طرف"
+   ]
+  },
+  {
+   "id": "qul-085",
+   "arabic": "لِلَّذِينَ",
+   "count": 79,
+   "ref": "2:79:2",
+   "kind": "n",
+   "en": "for those who, to those who",
+   "ur": "ان لوگوں کے لیے",
+   "enOptions": [
+    "for those who, to those who",
+    "soul",
+    "upon you",
+    "thus"
+   ],
+   "urOptions": [
+    "ان لوگوں کے لیے",
+    "شخص، نفس",
+    "تم پر",
+    "اسی طرح"
+   ]
+  },
+  {
+   "id": "qul-086",
+   "arabic": "أَلَمۡ",
+   "count": 78,
+   "ref": "2:33:9",
+   "kind": "p",
+   "en": "Do not, Did not",
+   "ur": "کیا نہیں",
+   "enOptions": [
+    "Do not, Did not",
+    "for us",
+    "from",
+    "the believers"
+   ],
+   "urOptions": [
+    "کیا نہیں",
+    "ہمارے لیے",
+    "سے",
+    "مومنوں"
+   ]
+  },
+  {
+   "id": "qul-087",
+   "arabic": "عَلِيمٌ",
+   "count": 78,
+   "ref": "2:29:19",
+   "kind": "pn",
+   "en": "All-Knower, All-Knowing",
+   "ur": "جاننے والا ہے، علم والا ہے",
+   "enOptions": [
+    "All-Knower, All-Knowing",
+    "their Lord",
+    "the Most Gracious",
+    "anyone"
+   ],
+   "urOptions": [
+    "جاننے والا ہے، علم والا ہے",
+    "اپنے رب، ان کے رب",
+    "رحمن",
+    "کوئی ایک، کسی ایک"
+   ]
+  },
+  {
+   "id": "qul-088",
+   "arabic": "ٱلۡمُؤۡمِنِينَ",
+   "count": 78,
+   "ref": "2:223:16",
+   "kind": "p",
+   "en": "the believers",
+   "ur": "مومنوں",
+   "enOptions": [
+    "the believers",
+    "for me",
+    "And certainly, and verily",
+    "never"
+   ],
+   "urOptions": [
+    "مومنوں",
+    "میرے لیے",
+    "اور البتہ تحقیق",
+    "ہرگز نہیں"
+   ]
+  },
+  {
+   "id": "qul-089",
+   "arabic": "إِلَيۡكَ",
+   "count": 77,
+   "ref": "2:4:5",
+   "kind": "p",
+   "en": "to you",
+   "ur": "آپ کی طرف، تیری طرف",
+   "enOptions": [
+    "to you",
+    "Do not, Did not",
+    "surely signs",
+    "for us"
+   ],
+   "urOptions": [
+    "آپ کی طرف، تیری طرف",
+    "کیا نہیں",
+    "البتہ نشانیاں ہیں",
+    "ہمارے لیے"
+   ]
+  },
+  {
+   "id": "qul-090",
+   "arabic": "شَيۡــًٔا",
+   "count": 77,
+   "ref": "2:48:8",
+   "kind": "n",
+   "en": "anything",
+   "ur": "کچھ بھی",
+   "enOptions": [
+    "anything",
+    "the good-doers",
+    "they",
+    "the wrongdoers"
+   ],
+   "urOptions": [
+    "کچھ بھی",
+    "احسان کرنے والوں",
+    "وہ",
+    "ظالموں"
+   ]
+  },
+  {
+   "id": "qul-091",
+   "arabic": "أَنتُمۡ",
+   "count": 76,
+   "ref": "2:85:2",
+   "kind": "n",
+   "en": "you",
+   "ur": "تم",
+   "enOptions": [
+    "you",
+    "the disbelievers",
+    "verses, signs",
+    "before"
+   ],
+   "urOptions": [
+    "تم",
+    "کافروں",
+    "آیات",
+    "اس سے پہلے"
+   ]
+  },
+  {
+   "id": "qul-092",
+   "arabic": "إِلَيۡهِ",
+   "count": 76,
+   "ref": "2:28:12",
+   "kind": "p",
+   "en": "to him",
+   "ur": "اس کی طرف",
+   "enOptions": [
+    "to him",
+    "Do not",
+    "in",
+    "for us"
+   ],
+   "urOptions": [
+    "اس کی طرف",
+    "کیا بھلا نہیں",
+    "میں",
+    "ہمارے لیے"
+   ]
+  },
+  {
+   "id": "qul-093",
+   "arabic": "قَوۡمٌ",
+   "count": 76,
+   "ref": "3:117:14",
+   "kind": "n",
+   "en": "a people",
+   "ur": "قوم",
+   "enOptions": [
+    "a people",
+    "you",
+    "we",
+    "man"
+   ],
+   "urOptions": [
+    "قوم",
+    "تم",
+    "ہم",
+    "انسان"
+   ]
+  },
+  {
+   "id": "qul-094",
+   "arabic": "مِنۡهَا",
+   "count": 76,
+   "ref": "2:25:15",
+   "kind": "p",
+   "en": "from it",
+   "ur": "اس میں سے، اس سے",
+   "enOptions": [
+    "from it",
+    "only",
+    "the great",
+    "is"
+   ],
+   "urOptions": [
+    "اس میں سے، اس سے",
+    "بیشک",
+    "بڑی",
+    "کیا"
+   ]
+  },
+  {
+   "id": "qul-095",
+   "arabic": "رَبِّى",
+   "count": 75,
+   "ref": "2:258:16",
+   "kind": "pn",
+   "en": "my Lord",
+   "ur": "میرا رب",
+   "enOptions": [
+    "my Lord",
+    "All-Wise",
+    "great",
+    "Allah"
+   ],
+   "urOptions": [
+    "میرا رب",
+    "حکمت والا ہے",
+    "بڑا",
+    "اللہ"
+   ]
+  },
+  {
+   "id": "qul-096",
+   "arabic": "عَنۡهُمۡ",
+   "count": 75,
+   "ref": "2:86:9",
+   "kind": "p",
+   "en": "from them",
+   "ur": "ان سے",
+   "enOptions": [
+    "from them",
+    "the truth",
+    "the All-Wise",
+    "to Allah, for Allah"
+   ],
+   "urOptions": [
+    "ان سے",
+    "حق",
+    "حکمت والا ہے",
+    "اللہ کے لیے"
+   ]
+  },
+  {
+   "id": "qul-097",
+   "arabic": "بِٱلۡحَقِّ",
+   "count": 74,
+   "ref": "2:71:20",
+   "kind": "p",
+   "en": "in truth",
+   "ur": "حق کے ساتھ",
+   "enOptions": [
+    "in truth",
+    "to you",
+    "Will not, Unquestionably",
+    "until"
+   ],
+   "urOptions": [
+    "حق کے ساتھ",
+    "آپ کی طرف، تیری طرف",
+    "خبردار، کیا نہیں",
+    "یہاں تک کہ"
+   ]
+  },
+  {
+   "id": "qul-098",
+   "arabic": "إِلَـٰهَ",
+   "count": 72,
+   "ref": "2:163:2",
+   "kind": "n",
+   "en": "god",
+   "ur": "کوئی الہ",
+   "enOptions": [
+    "god",
+    "the signs, the Verses",
+    "the good-doers",
+    "the unseen"
+   ],
+   "urOptions": [
+    "کوئی الہ",
+    "آیات",
+    "احسان کرنے والوں",
+    "غیب"
+   ]
+  },
+  {
+   "id": "qul-099",
+   "arabic": "جَهَنَّمَ",
+   "count": 72,
+   "ref": "2:206:10",
+   "kind": "n",
+   "en": "hell",
+   "ur": "جہنم",
+   "enOptions": [
+    "hell",
+    "bounty, grace",
+    "a reminder, remembrance",
+    "wherever"
+   ],
+   "urOptions": [
+    "جہنم",
+    "فضل",
+    "ذکر",
+    "جہاں"
+   ]
+  },
+  {
+   "id": "qul-100",
+   "arabic": "وَإِذۡ",
+   "count": 72,
+   "ref": "2:30:1",
+   "kind": "p",
+   "en": "and when",
+   "ur": "اور جب",
+   "enOptions": [
+    "and when",
+    "from it",
+    "no",
+    "the great"
+   ],
+   "urOptions": [
+    "اور جب",
+    "اس میں سے، اس سے",
+    "نہیں",
+    "بڑی"
+   ]
+  },
+  {
+   "id": "qul-101",
+   "arabic": "لَكَ",
+   "count": 71,
+   "ref": "2:30:22",
+   "kind": "p",
+   "en": "for you, to you",
+   "ur": "تیرے لیے",
+   "enOptions": [
+    "for you, to you",
+    "from them",
+    "of every",
+    "and when"
+   ],
+   "urOptions": [
+    "تیرے لیے",
+    "ان سے",
+    "ہر",
+    "اور جب"
+   ]
+  },
+  {
+   "id": "qul-102",
+   "arabic": "يَعۡلَمُ",
+   "count": 71,
+   "ref": "2:77:5",
+   "kind": "v",
+   "en": "knows",
+   "ur": "جانتا ہے",
+   "enOptions": [
+    "knows",
+    "believed",
+    "you are",
+    "she said"
+   ],
+   "urOptions": [
+    "جانتا ہے",
+    "ایمان لایا، ایمان لائے",
+    "ہو تم، تھے تم",
+    "کہنے لگی"
+   ]
+  },
+  {
+   "id": "qul-103",
+   "arabic": "ٱلۡأَخِرَةِ",
+   "count": 71,
+   "ref": "2:94:6",
+   "kind": "p",
+   "en": "the hereafter",
+   "ur": "آخرت",
+   "enOptions": [
+    "the hereafter",
+    "surely signs",
+    "not",
+    "from"
+   ],
+   "urOptions": [
+    "آخرت",
+    "البتہ نشانیاں ہیں",
+    "نہیں",
+    "سے"
+   ]
+  },
+  {
+   "id": "qul-104",
+   "arabic": "ٱلۡقِيَـٰمَةِ",
+   "count": 70,
+   "ref": "2:85:40",
+   "kind": "n",
+   "en": "the Resurrection",
+   "ur": "قیامت",
+   "enOptions": [
+    "the Resurrection",
+    "thing",
+    "the Prophet",
+    "the death"
+   ],
+   "urOptions": [
+    "قیامت",
+    "چیز",
+    "نبی (صلی اللہ علیہ وآلہ وسلم)",
+    "موت"
+   ]
+  },
+  {
+   "id": "qul-105",
+   "arabic": "لَنَا",
+   "count": 67,
+   "ref": "2:61:10",
+   "kind": "p",
+   "en": "for us",
+   "ur": "ہمارے لیے",
+   "enOptions": [
+    "for us",
+    "as",
+    "then soon, but soon",
+    "the great"
+   ],
+   "urOptions": [
+    "ہمارے لیے",
+    "جیسا کہ",
+    "تو عنقریب، پس عنقریب",
+    "بڑی"
+   ]
+  },
+  {
+   "id": "qul-106",
+   "arabic": "هَلۡ",
+   "count": 66,
+   "ref": "2:210:1",
+   "kind": "p",
+   "en": "is",
+   "ur": "کیا",
+   "enOptions": [
+    "is",
+    "no",
+    "if",
+    "of what"
+   ],
+   "urOptions": [
+    "کیا",
+    "نہیں",
+    "اگر، کاش",
+    "ساتھ اس کے جو"
+   ]
+  },
+  {
+   "id": "qul-107",
+   "arabic": "فِرۡعَوۡنَ",
+   "count": 65,
+   "ref": "2:49:5",
+   "kind": "n",
+   "en": "Firaun",
+   "ur": "فرعون",
+   "enOptions": [
+    "Firaun",
+    "than who",
+    "you",
+    "Maryam"
+   ],
+   "urOptions": [
+    "فرعون",
+    "اس سے جو",
+    "تم",
+    "مریم"
+   ]
+  },
+  {
+   "id": "qul-108",
+   "arabic": "نَحۡنُ",
+   "count": 65,
+   "ref": "2:11:10",
+   "kind": "n",
+   "en": "we",
+   "ur": "ہم",
+   "enOptions": [
+    "we",
+    "the worlds",
+    "the fire",
+    "upon you"
+   ],
+   "urOptions": [
+    "ہم",
+    "العالمین",
+    "آگ",
+    "تم پر"
+   ]
+  },
+  {
+   "id": "qul-109",
+   "arabic": "مُوسَىٰ",
+   "count": 64,
+   "ref": "2:54:3",
+   "kind": "n",
+   "en": "Musa",
+   "ur": "موسیٰ",
+   "enOptions": [
+    "Musa",
+    "the night",
+    "the Resurrection",
+    "others, some"
+   ],
+   "urOptions": [
+    "موسیٰ",
+    "رات",
+    "قیامت",
+    "بعض"
+   ]
+  },
+  {
+   "id": "qul-110",
+   "arabic": "ٱلظَّـٰلِمِينَ",
+   "count": 64,
+   "ref": "2:35:18",
+   "kind": "n",
+   "en": "the wrongdoers",
+   "ur": "ظالموں",
+   "enOptions": [
+    "the wrongdoers",
+    "the earth",
+    "a sign",
+    "Our Signs"
+   ],
+   "urOptions": [
+    "ظالموں",
+    "زمین",
+    "ایک نشانی، کوئی نشانی",
+    "ہماری آیات"
+   ]
+  },
+  {
+   "id": "qul-111",
+   "arabic": "ٱلۡعَزِيزُ",
+   "count": 64,
+   "ref": "2:129:15",
+   "kind": "p",
+   "en": "the All-Mighty",
+   "ur": "زبردست ہے",
+   "enOptions": [
+    "the All-Mighty",
+    "in what",
+    "not",
+    "to you"
+   ],
+   "urOptions": [
+    "زبردست ہے",
+    "ساتھ اس کے جو",
+    "نہیں",
+    "آپ کی طرف، تیری طرف"
+   ]
+  },
+  {
+   "id": "qul-112",
+   "arabic": "إِنَّهُمۡ",
+   "count": 63,
+   "ref": "2:12:2",
+   "kind": "n",
+   "en": "indeed they",
+   "ur": "بیشک وہ",
+   "enOptions": [
+    "indeed they",
+    "the messenger",
+    "hell",
+    "the heavens"
+   ],
+   "urOptions": [
+    "بیشک وہ",
+    "رسول",
+    "جہنم",
+    "آسمانوں"
+   ]
+  },
+  {
+   "id": "qul-113",
+   "arabic": "لَآ",
+   "count": 63,
+   "ref": "2:163:4",
+   "kind": "p",
+   "en": "no",
+   "ur": "نہیں",
+   "enOptions": [
+    "no",
+    "from it, from him",
+    "until",
+    "So which"
+   ],
+   "urOptions": [
+    "نہیں",
+    "اس سے",
+    "یہاں تک کہ",
+    "تو ساتھ کون سی"
+   ]
+  },
+  {
+   "id": "qul-114",
+   "arabic": "ٱلشَّيۡطَـٰنُ",
+   "count": 63,
+   "ref": "2:36:2",
+   "kind": "n",
+   "en": "the Shaitaan",
+   "ur": "شیطان",
+   "enOptions": [
+    "the Shaitaan",
+    "the sky, the heaven",
+    "abide forever",
+    "those who"
+   ],
+   "urOptions": [
+    "شیطان",
+    "آسمان",
+    "ہمیشہ رہنے والے ہیں",
+    "وہ لوگ"
+   ]
+  },
+  {
+   "id": "qul-115",
+   "arabic": "ٱلۡحَيَوٰةِ",
+   "count": 63,
+   "ref": "2:85:37",
+   "kind": "n",
+   "en": "the life",
+   "ur": "زندگی",
+   "enOptions": [
+    "the life",
+    "Children",
+    "most",
+    "so that they may"
+   ],
+   "urOptions": [
+    "زندگی",
+    "بنی",
+    "اکثر",
+    "شاید کہ وہ، تاکہ وہ"
+   ]
+  },
+  {
+   "id": "qul-116",
+   "arabic": "بَيۡنَ",
+   "count": 62,
+   "ref": "2:66:4",
+   "kind": "n",
+   "en": "between",
+   "ur": "درمیان",
+   "enOptions": [
+    "between",
+    "truthful",
+    "many, much",
+    "those who"
+   ],
+   "urOptions": [
+    "درمیان",
+    "سچے",
+    "بہت زیادہ",
+    "وہ لوگ"
+   ]
+  },
+  {
+   "id": "qul-117",
+   "arabic": "جَنَّـٰتٍ",
+   "count": 62,
+   "ref": "2:25:8",
+   "kind": "n",
+   "en": "gardens",
+   "ur": "باغات",
+   "enOptions": [
+    "gardens",
+    "how",
+    "one, single",
+    "a reminder, remembrance"
+   ],
+   "urOptions": [
+    "باغات",
+    "کس طرح",
+    "ایک ہی",
+    "ذکر"
+   ]
+  },
+  {
+   "id": "qul-118",
+   "arabic": "كَيۡفَ",
+   "count": 62,
+   "ref": "2:28:1",
+   "kind": "n",
+   "en": "how",
+   "ur": "کس طرح",
+   "enOptions": [
+    "how",
+    "without",
+    "Children",
+    "bounty, grace"
+   ],
+   "urOptions": [
+    "کس طرح",
+    "بغیر",
+    "بنی",
+    "فضل"
+   ]
+  },
+  {
+   "id": "qul-119",
+   "arabic": "كُنَّا",
+   "count": 62,
+   "ref": "4:97:11",
+   "kind": "v",
+   "en": "we were, we are",
+   "ur": "تھے ہم",
+   "enOptions": [
+    "we were, we are",
+    "came to them",
+    "he says",
+    "believe"
+   ],
+   "urOptions": [
+    "تھے ہم",
+    "آگیا ان کے پاس",
+    "وہ کہتا ہے",
+    "جو ایمان لائے"
+   ]
+  },
+  {
+   "id": "qul-120",
+   "arabic": "أَصۡحَـٰبُ",
+   "count": 61,
+   "ref": "2:39:6",
+   "kind": "n",
+   "en": "companions",
+   "ur": "والے",
+   "enOptions": [
+    "companions",
+    "before",
+    "the good-doers",
+    "the book"
+   ],
+   "urOptions": [
+    "والے",
+    "اس سے پہلے",
+    "احسان کرنے والوں",
+    "کتاب"
+   ]
+  },
+  {
+   "id": "qul-121",
+   "arabic": "بَعۡضٍ",
+   "count": 61,
+   "ref": "2:76:11",
+   "kind": "n",
+   "en": "others, some",
+   "ur": "بعض",
+   "enOptions": [
+    "others, some",
+    "the sky, the heaven",
+    "these",
+    "the signs, the Verses"
+   ],
+   "urOptions": [
+    "بعض",
+    "آسمان",
+    "یہ لوگ",
+    "آیات"
+   ]
+  },
+  {
+   "id": "qul-122",
+   "arabic": "لِمَن",
+   "count": 61,
+   "ref": "2:154:3",
+   "kind": "p",
+   "en": "for whom",
+   "ur": "واسطے اس کے جو",
+   "enOptions": [
+    "for whom",
+    "that not",
+    "and when",
+    "from them"
+   ],
+   "urOptions": [
+    "واسطے اس کے جو",
+    "کہ نہ",
+    "اور جب",
+    "ان سے"
+   ]
+  },
+  {
+   "id": "qul-123",
+   "arabic": "ٱلصَّـٰلِحَـٰتِ",
+   "count": 61,
+   "ref": "2:25:5",
+   "kind": "n",
+   "en": "righteous deeds",
+   "ur": "اچھے",
+   "enOptions": [
+    "righteous deeds",
+    "between you",
+    "verses, signs",
+    "the matter"
+   ],
+   "urOptions": [
+    "اچھے",
+    "تمہارے درمیان، آپس میں",
+    "آیات",
+    "معاملے"
+   ]
+  },
+  {
+   "id": "qul-124",
+   "arabic": "ٱلۡعَـٰلَمِينَ",
+   "count": 61,
+   "ref": "1:2:4",
+   "kind": "n",
+   "en": "the worlds",
+   "ur": "العالمین",
+   "enOptions": [
+    "the worlds",
+    "others, some",
+    "before",
+    "the earth"
+   ],
+   "urOptions": [
+    "العالمین",
+    "بعض",
+    "اس سے پہلے",
+    "زمین"
+   ]
+  },
+  {
+   "id": "qul-125",
+   "arabic": "رَّحِيمٌ",
+   "count": 59,
+   "ref": "2:143:45",
+   "kind": "pn",
+   "en": "Most Merciful",
+   "ur": "مہربان ہے، رحیم ہے",
+   "enOptions": [
+    "Most Merciful",
+    "your lord",
+    "anyone",
+    "allies, protectors"
+   ],
+   "urOptions": [
+    "مہربان ہے، رحیم ہے",
+    "تیرے رب",
+    "کوئی ایک، کسی ایک",
+    "دوست"
+   ]
+  },
+  {
+   "id": "qul-126",
+   "arabic": "لَعَلَّكُمۡ",
+   "count": 59,
+   "ref": "2:21:10",
+   "kind": "n",
+   "en": "so that you may",
+   "ur": "تاکہ تم",
+   "enOptions": [
+    "so that you may",
+    "a way",
+    "thus",
+    "a people"
+   ],
+   "urOptions": [
+    "تاکہ تم",
+    "راستہ",
+    "اسی طرح",
+    "قوم"
+   ]
+  },
+  {
+   "id": "qul-127",
+   "arabic": "لَن",
+   "count": 59,
+   "ref": "2:55:4",
+   "kind": "p",
+   "en": "never",
+   "ur": "ہرگز نہیں",
+   "enOptions": [
+    "never",
+    "the All-Mighty",
+    "for the mankind",
+    "the great"
+   ],
+   "urOptions": [
+    "ہرگز نہیں",
+    "زبردست ہے",
+    "لوگوں کے لیے",
+    "بڑی"
+   ]
+  },
+  {
+   "id": "qul-128",
+   "arabic": "يَوۡمَئِذٍ",
+   "count": 59,
+   "ref": "3:167:20",
+   "kind": "n",
+   "en": "that day",
+   "ur": "اس دن",
+   "enOptions": [
+    "that day",
+    "who",
+    "man",
+    "the Resurrection"
+   ],
+   "urOptions": [
+    "اس دن",
+    "جو",
+    "انسان",
+    "قیامت"
+   ]
+  },
+  {
+   "id": "qul-129",
+   "arabic": "ٱلَّيۡلِ",
+   "count": 59,
+   "ref": "2:164:7",
+   "kind": "n",
+   "en": "the night",
+   "ur": "رات",
+   "enOptions": [
+    "the night",
+    "the zakah",
+    "Musa",
+    "the earth"
+   ],
+   "urOptions": [
+    "رات",
+    "زکوۃ",
+    "موسیٰ",
+    "زمین"
+   ]
+  },
+  {
+   "id": "qul-130",
+   "arabic": "خَلَقَ",
+   "count": 58,
+   "ref": "2:29:3",
+   "kind": "v",
+   "en": "created",
+   "ur": "پیدا کیا",
+   "enOptions": [
+    "created",
+    "believe",
+    "Say",
+    "and We made"
+   ],
+   "urOptions": [
+    "پیدا کیا",
+    "جو ایمان لائے",
+    "کہہ دیجیے",
+    "اور بنایا ہم نے"
+   ]
+  },
+  {
+   "id": "qul-131",
+   "arabic": "مَعَ",
+   "count": 58,
+   "ref": "2:43:6",
+   "kind": "n",
+   "en": "with",
+   "ur": "ساتھ",
+   "enOptions": [
+    "with",
+    "those",
+    "Musa",
+    "who"
+   ],
+   "urOptions": [
+    "ساتھ",
+    "یہی لوگ",
+    "موسیٰ",
+    "جو"
+   ]
+  },
+  {
+   "id": "qul-132",
+   "arabic": "وَلَـٰكِن",
+   "count": 58,
+   "ref": "2:12:5",
+   "kind": "p",
+   "en": "but",
+   "ur": "لیکن",
+   "enOptions": [
+    "but",
+    "to him, for him",
+    "Then will not",
+    "the All-Knower, the All-Knowing"
+   ],
+   "urOptions": [
+    "لیکن",
+    "اس کے لیے",
+    "کیا بھلا نہیں",
+    "جاننے والا ہے"
+   ]
+  },
+  {
+   "id": "qul-133",
+   "arabic": "ٱلصَّلَوٰةَ",
+   "count": 58,
+   "ref": "2:3:5",
+   "kind": "n",
+   "en": "the prayer",
+   "ur": "نماز",
+   "enOptions": [
+    "the prayer",
+    "Musa",
+    "before you",
+    "besides"
+   ],
+   "urOptions": [
+    "نماز",
+    "موسیٰ",
+    "آپ سے پہلے",
+    "سوا"
+   ]
+  },
+  {
+   "id": "qul-134",
+   "arabic": "ٱلۡإِنسَـٰنَ",
+   "count": 58,
+   "ref": "4:28:7",
+   "kind": "n",
+   "en": "man",
+   "ur": "انسان",
+   "enOptions": [
+    "man",
+    "Firaun",
+    "when",
+    "clear"
+   ],
+   "urOptions": [
+    "انسان",
+    "فرعون",
+    "جب",
+    "کھلم کھلا"
+   ]
+  },
+  {
+   "id": "qul-135",
+   "arabic": "جَآءَ",
+   "count": 57,
+   "ref": "4:43:27",
+   "kind": "v",
+   "en": "came, comes",
+   "ur": "آگیا",
+   "enOptions": [
+    "came, comes",
+    "was revealed, has been revealed",
+    "wills",
+    "do"
+   ],
+   "urOptions": [
+    "آگیا",
+    "نازل کیا گیا",
+    "چاہتا، چاہے",
+    "وہ عمل کرتے"
+   ]
+  },
+  {
+   "id": "qul-136",
+   "arabic": "بَيۡنَهُمۡ",
+   "count": 56,
+   "ref": "2:113:25",
+   "kind": "n",
+   "en": "between them",
+   "ur": "ان کے درمیان",
+   "enOptions": [
+    "between them",
+    "companions",
+    "Nuh",
+    "command"
+   ],
+   "urOptions": [
+    "ان کے درمیان",
+    "والے",
+    "نوح",
+    "حکم"
+   ]
+  },
+  {
+   "id": "qul-137",
+   "arabic": "شَآءَ",
+   "count": 56,
+   "ref": "2:20:15",
+   "kind": "v",
+   "en": "wills",
+   "ur": "چاہتا، چاہے",
+   "enOptions": [
+    "wills",
+    "will you both deny",
+    "made",
+    "was"
+   ],
+   "urOptions": [
+    "چاہتا، چاہے",
+    "تم دونوں جھٹلاؤ گے",
+    "بنایا",
+    "ہے"
+   ]
+  },
+  {
+   "id": "qul-138",
+   "arabic": "يَعۡمَلُونَ",
+   "count": 56,
+   "ref": "2:96:25",
+   "kind": "v",
+   "en": "do",
+   "ur": "وہ عمل کرتے",
+   "enOptions": [
+    "do",
+    "came to them",
+    "it is said",
+    "we were, we are"
+   ],
+   "urOptions": [
+    "وہ عمل کرتے",
+    "آگیا ان کے پاس",
+    "کہا جاتا ہے، کہا گیا",
+    "تھے ہم"
+   ]
+  },
+  {
+   "id": "qul-139",
+   "arabic": "أَعۡلَمُ",
+   "count": 55,
+   "ref": "2:30:25",
+   "kind": "n",
+   "en": "most knowing, knows best",
+   "ur": "زیادہ جانتا ہے",
+   "enOptions": [
+    "most knowing, knows best",
+    "those who",
+    "between you",
+    "O my people"
+   ],
+   "urOptions": [
+    "زیادہ جانتا ہے",
+    "وہ لوگ",
+    "تمہارے درمیان، آپس میں",
+    "اے میری قوم"
+   ]
+  },
+  {
+   "id": "qul-140",
+   "arabic": "قَلِيلاً",
+   "count": 55,
+   "ref": "2:41:16",
+   "kind": "n",
+   "en": "a little",
+   "ur": "تھوڑا سا",
+   "enOptions": [
+    "a little",
+    "therein, in it",
+    "those who",
+    "day"
+   ],
+   "urOptions": [
+    "تھوڑا سا",
+    "اس میں",
+    "وہ لوگ",
+    "دن"
+   ]
+  },
+  {
+   "id": "qul-141",
+   "arabic": "لِى",
+   "count": 55,
+   "ref": "2:152:4",
+   "kind": "p",
+   "en": "for me",
+   "ur": "میرے لیے",
+   "enOptions": [
+    "for me",
+    "from",
+    "And certainly, and verily",
+    "if, not"
+   ],
+   "urOptions": [
+    "میرے لیے",
+    "سے",
+    "اور البتہ تحقیق",
+    "اگر"
+   ]
+  },
+  {
+   "id": "qul-142",
+   "arabic": "إِلَىٰٓ",
+   "count": 54,
+   "ref": "2:85:42",
+   "kind": "p",
+   "en": "to, for",
+   "ur": "طرف، تک",
+   "enOptions": [
+    "to, for",
+    "And certainly, and verily",
+    "indeed",
+    "in it"
+   ],
+   "urOptions": [
+    "طرف، تک",
+    "اور البتہ تحقیق",
+    "بیشک",
+    "اس میں"
+   ]
+  },
+  {
+   "id": "qul-143",
+   "arabic": "لَقَدۡ",
+   "count": 54,
+   "ref": "3:164:1",
+   "kind": "p",
+   "en": "certainly, Verily",
+   "ur": "البتہ تحقیق",
+   "enOptions": [
+    "certainly, Verily",
+    "to him",
+    "But as for, and as for",
+    "Do not"
+   ],
+   "urOptions": [
+    "البتہ تحقیق",
+    "اس کی طرف",
+    "اور رہا، اور رہے",
+    "کیا بھلا نہیں"
+   ]
+  },
+  {
+   "id": "qul-144",
+   "arabic": "وَعَمِلُواۡ",
+   "count": 53,
+   "ref": "2:25:4",
+   "kind": "p",
+   "en": "and do, and did",
+   "ur": "اور انہوں نے عمل کیے",
+   "enOptions": [
+    "and do, and did",
+    "to, for",
+    "except",
+    "in it"
+   ],
+   "urOptions": [
+    "اور انہوں نے عمل کیے",
+    "طرف، تک",
+    "مگر",
+    "اس میں"
+   ]
+  },
+  {
+   "id": "qul-145",
+   "arabic": "غَفُورٌ",
+   "count": 52,
+   "ref": "2:173:24",
+   "kind": "pn",
+   "en": "Oft-Forgiving",
+   "ur": "بخشنے والا، غفور",
+   "enOptions": [
+    "Oft-Forgiving",
+    "Most Merciful",
+    "great",
+    "my Lord"
+   ],
+   "urOptions": [
+    "بخشنے والا، غفور",
+    "مہربان ہے، رحیم ہے",
+    "بڑا",
+    "میرا رب"
+   ]
+  },
+  {
+   "id": "qul-146",
+   "arabic": "ٱلۡكَـٰفِرِينَ",
+   "count": 52,
+   "ref": "2:34:13",
+   "kind": "n",
+   "en": "the disbelievers",
+   "ur": "کافروں",
+   "enOptions": [
+    "the disbelievers",
+    "Ibrahim",
+    "all",
+    "indeed he"
+   ],
+   "urOptions": [
+    "کافروں",
+    "ابراہیم",
+    "سب کے سب",
+    "بیشک وہ"
+   ]
+  },
+  {
+   "id": "qul-147",
+   "arabic": "كُنتَ",
+   "count": 51,
+   "ref": "2:143:17",
+   "kind": "v",
+   "en": "you are, you were",
+   "ur": "ہے تو",
+   "enOptions": [
+    "you are, you were",
+    "We sent",
+    "was revealed, has been revealed",
+    "do"
+   ],
+   "urOptions": [
+    "ہے تو",
+    "بھیجا ہم نے",
+    "نازل کیا گیا",
+    "وہ عمل کرتے"
+   ]
+  },
+  {
+   "id": "qul-148",
+   "arabic": "لِّقَوۡمٍ",
+   "count": 51,
+   "ref": "2:118:23",
+   "kind": "n",
+   "en": "for a people",
+   "ur": "اس قوم کے لیے",
+   "enOptions": [
+    "for a people",
+    "I am",
+    "a path",
+    "besides"
+   ],
+   "urOptions": [
+    "اس قوم کے لیے",
+    "میں",
+    "راستے",
+    "سوا"
+   ]
+  },
+  {
+   "id": "qul-149",
+   "arabic": "لِلنَّاسِ",
+   "count": 51,
+   "ref": "2:83:17",
+   "kind": "p",
+   "en": "for the mankind",
+   "ur": "لوگوں کے لیے",
+   "enOptions": [
+    "for the mankind",
+    "Do not, Did not",
+    "and if",
+    "that"
+   ],
+   "urOptions": [
+    "لوگوں کے لیے",
+    "کیا نہیں",
+    "اور اگر",
+    "کہ"
+   ]
+  },
+  {
+   "id": "qul-150",
+   "arabic": "يَقُولُونَ",
+   "count": 51,
+   "ref": "2:79:7",
+   "kind": "v",
+   "en": "they say",
+   "ur": "وہ کہتے ہیں",
+   "enOptions": [
+    "they say",
+    "made",
+    "believe",
+    "is, was"
+   ],
+   "urOptions": [
+    "وہ کہتے ہیں",
+    "بنایا",
+    "جو ایمان لائے",
+    "ہے"
+   ]
+  },
+  {
+   "id": "qul-151",
+   "arabic": "ٱلۡجَنَّةِ",
+   "count": 51,
+   "ref": "2:35:6",
+   "kind": "n",
+   "en": "Paradise",
+   "ur": "جنت",
+   "enOptions": [
+    "Paradise",
+    "their hearts",
+    "best",
+    "the rivers"
+   ],
+   "urOptions": [
+    "جنت",
+    "ان کے دلوں",
+    "زیادہ اچھا ہے",
+    "نہریں"
+   ]
+  },
+  {
+   "id": "qul-152",
+   "arabic": "إِنَّكَ",
+   "count": 50,
+   "ref": "2:32:9",
+   "kind": "n",
+   "en": "indeed you",
+   "ur": "بیشک تو",
+   "enOptions": [
+    "indeed you",
+    "upon us",
+    "for a people",
+    "who"
+   ],
+   "urOptions": [
+    "بیشک تو",
+    "ہم پر",
+    "اس قوم کے لیے",
+    "جو"
+   ]
+  },
+  {
+   "id": "qul-153",
+   "arabic": "رَسُولٌ",
+   "count": 50,
+   "ref": "2:101:3",
+   "kind": "n",
+   "en": "a Messenger",
+   "ur": "رسول",
+   "enOptions": [
+    "a Messenger",
+    "a warner",
+    "O you",
+    "stronger"
+   ],
+   "urOptions": [
+    "رسول",
+    "ڈرانے والا ہوں",
+    "اے",
+    "زیادہ شدید"
+   ]
+  },
+  {
+   "id": "qul-154",
+   "arabic": "أَلِيمٌ",
+   "count": 49,
+   "ref": "2:104:12",
+   "kind": "n",
+   "en": "painful",
+   "ur": "دردناک",
+   "enOptions": [
+    "painful",
+    "mercy",
+    "the religion",
+    "among you"
+   ],
+   "urOptions": [
+    "دردناک",
+    "رحمت",
+    "دین",
+    "تم میں سے"
+   ]
+  },
+  {
+   "id": "qul-155",
+   "arabic": "أَنَاۡ",
+   "count": 48,
+   "ref": "2:258:21",
+   "kind": "n",
+   "en": "I am",
+   "ur": "میں",
+   "enOptions": [
+    "I am",
+    "who",
+    "the Prophet",
+    "clear"
+   ],
+   "urOptions": [
+    "میں",
+    "جو",
+    "نبی (صلی اللہ علیہ وآلہ وسلم)",
+    "کھلم کھلا"
+   ]
+  },
+  {
+   "id": "qul-156",
+   "arabic": "تَجۡرِى",
+   "count": 48,
+   "ref": "2:25:9",
+   "kind": "v",
+   "en": "flow",
+   "ur": "بہتی ہیں",
+   "enOptions": [
+    "flow",
+    "knows",
+    "We made, We have made",
+    "wills"
+   ],
+   "urOptions": [
+    "بہتی ہیں",
+    "جانتا ہے",
+    "بنایا ہم نے",
+    "چاہتا، چاہے"
+   ]
+  },
+  {
+   "id": "qul-157",
+   "arabic": "جَمِيعًا",
+   "count": 48,
+   "ref": "2:29:8",
+   "kind": "n",
+   "en": "all",
+   "ur": "سب کے سب",
+   "enOptions": [
+    "all",
+    "the people",
+    "between",
+    "gardens"
+   ],
+   "urOptions": [
+    "سب کے سب",
+    "لوگوں",
+    "درمیان",
+    "باغات"
+   ]
+  },
+  {
+   "id": "qul-158",
+   "arabic": "أَنزَلَ",
+   "count": 47,
+   "ref": "2:90:8",
+   "kind": "v",
+   "en": "has revealed",
+   "ur": "نازل کیا",
+   "enOptions": [
+    "has revealed",
+    "made",
+    "is, was",
+    "believed"
+   ],
+   "urOptions": [
+    "نازل کیا",
+    "بنایا",
+    "ہے",
+    "ایمان لایا، ایمان لائے"
+   ]
+  },
+  {
+   "id": "qul-159",
+   "arabic": "أُمَّةٍ",
+   "count": 47,
+   "ref": "2:128:7",
+   "kind": "n",
+   "en": "nation, a community",
+   "ur": "امت",
+   "enOptions": [
+    "nation, a community",
+    "a sign",
+    "better, best",
+    "the sky, the heaven"
+   ],
+   "urOptions": [
+    "امت",
+    "ایک نشانی، کوئی نشانی",
+    "بہتر ہے",
+    "آسمان"
+   ]
+  },
+  {
+   "id": "qul-160",
+   "arabic": "أُنزِلَ",
+   "count": 47,
+   "ref": "2:4:4",
+   "kind": "v",
+   "en": "was revealed, has been revealed",
+   "ur": "نازل کیا گیا",
+   "enOptions": [
+    "was revealed, has been revealed",
+    "we believe",
+    "were given",
+    "came to them"
+   ],
+   "urOptions": [
+    "نازل کیا گیا",
+    "ایمان لائے ہم، ہم ایمان لائے",
+    "جو دیئے گئے",
+    "آگیا ان کے پاس"
+   ]
+  },
+  {
+   "id": "qul-161",
+   "arabic": "عَظِيمٌ",
+   "count": 47,
+   "ref": "2:7:12",
+   "kind": "pn",
+   "en": "great",
+   "ur": "بڑا",
+   "enOptions": [
+    "great",
+    "lord",
+    "believers",
+    "the Most Merciful"
+   ],
+   "urOptions": [
+    "بڑا",
+    "اے میرے رب",
+    "ایمان لانے والے",
+    "رحم فرمانے والا ہے"
+   ]
+  },
+  {
+   "id": "qul-162",
+   "arabic": "هِىَ",
+   "count": 47,
+   "ref": "2:68:8",
+   "kind": "n",
+   "en": "it",
+   "ur": "وہ",
+   "enOptions": [
+    "it",
+    "before",
+    "indeed you",
+    "a punishment"
+   ],
+   "urOptions": [
+    "وہ",
+    "اس سے پہلے",
+    "بیشک تو",
+    "عذاب"
+   ]
+  },
+  {
+   "id": "qul-163",
+   "arabic": "وَلَمۡ",
+   "count": 47,
+   "ref": "2:247:21",
+   "kind": "p",
+   "en": "and not",
+   "ur": "اور نہیں",
+   "enOptions": [
+    "and not",
+    "to me",
+    "with it",
+    "among them, of them"
+   ],
+   "urOptions": [
+    "اور نہیں",
+    "میری طرف",
+    "ساتھ اس کے",
+    "ان میں سے"
+   ]
+  },
+  {
+   "id": "qul-164",
+   "arabic": "ٱلدِّينِ",
+   "count": 47,
+   "ref": "1:4:3",
+   "kind": "n",
+   "en": "the religion",
+   "ur": "دین",
+   "enOptions": [
+    "the religion",
+    "the angels",
+    "because they",
+    "I am"
+   ],
+   "urOptions": [
+    "دین",
+    "فرشتوں، فرشتے",
+    "بوجہ اس کے کہ بیشک وہ",
+    "میں"
+   ]
+  },
+  {
+   "id": "qul-165",
+   "arabic": "عِلۡمٍ",
+   "count": 46,
+   "ref": "2:32:4",
+   "kind": "n",
+   "en": "knowledge",
+   "ur": "علم",
+   "enOptions": [
+    "knowledge",
+    "the death",
+    "the messenger",
+    "Maryam"
+   ],
+   "urOptions": [
+    "علم",
+    "موت",
+    "رسول",
+    "مریم"
+   ]
+  },
+  {
+   "id": "qul-166",
+   "arabic": "كَثِيرًا",
+   "count": 46,
+   "ref": "2:26:31",
+   "kind": "n",
+   "en": "many, much",
+   "ur": "بہت زیادہ",
+   "enOptions": [
+    "many, much",
+    "hell",
+    "the earth",
+    "who"
+   ],
+   "urOptions": [
+    "بہت زیادہ",
+    "جہنم",
+    "زمین",
+    "جو"
+   ]
+  },
+  {
+   "id": "qul-167",
+   "arabic": "ءَايَةً",
+   "count": 45,
+   "ref": "2:106:4",
+   "kind": "n",
+   "en": "a sign",
+   "ur": "ایک نشانی، کوئی نشانی",
+   "enOptions": [
+    "a sign",
+    "companions",
+    "guidance",
+    "the earth"
+   ],
+   "urOptions": [
+    "ایک نشانی، کوئی نشانی",
+    "والے",
+    "ہدایت",
+    "زمین"
+   ]
+  },
+  {
+   "id": "qul-168",
+   "arabic": "أَفَلَا",
+   "count": 45,
+   "ref": "2:44:9",
+   "kind": "p",
+   "en": "Then will not",
+   "ur": "کیا بھلا نہیں",
+   "enOptions": [
+    "Then will not",
+    "in",
+    "verily",
+    "for them, to them"
+   ],
+   "urOptions": [
+    "کیا بھلا نہیں",
+    "میں",
+    "تحقیق",
+    "ان کے لیے"
+   ]
+  },
+  {
+   "id": "qul-169",
+   "arabic": "ٱلرَّحۡمَـٰنُ",
+   "count": 45,
+   "ref": "1:1:3",
+   "kind": "pn",
+   "en": "the Most Gracious",
+   "ur": "رحمن",
+   "enOptions": [
+    "the Most Gracious",
+    "my Lord",
+    "believers",
+    "anyone"
+   ],
+   "urOptions": [
+    "رحمن",
+    "میرا رب",
+    "ایمان لانے والے",
+    "کوئی ایک، کسی ایک"
+   ]
+  },
+  {
+   "id": "qul-170",
+   "arabic": "ٱلرَّسُولَ",
+   "count": 45,
+   "ref": "2:143:10",
+   "kind": "n",
+   "en": "the messenger",
+   "ur": "رسول",
+   "enOptions": [
+    "the messenger",
+    "truthful",
+    "hell",
+    "thing"
+   ],
+   "urOptions": [
+    "رسول",
+    "سچے",
+    "جہنم",
+    "چیز"
+   ]
+  },
+  {
+   "id": "qul-171",
+   "arabic": "ءَايَـٰتِ",
+   "count": 44,
+   "ref": "2:231:23",
+   "kind": "n",
+   "en": "verses, signs",
+   "ur": "آیات",
+   "enOptions": [
+    "verses, signs",
+    "they",
+    "reward",
+    "how"
+   ],
+   "urOptions": [
+    "آیات",
+    "وہ",
+    "اجر",
+    "کس طرح"
+   ]
+  },
+  {
+   "id": "qul-172",
+   "arabic": "أَلَّا",
+   "count": 44,
+   "ref": "2:229:19",
+   "kind": "p",
+   "en": "that not",
+   "ur": "کہ نہ",
+   "enOptions": [
+    "that not",
+    "And certainly, and verily",
+    "no",
+    "from them"
+   ],
+   "urOptions": [
+    "کہ نہ",
+    "اور البتہ تحقیق",
+    "نہیں",
+    "ان سے"
+   ]
+  },
+  {
+   "id": "qul-173",
+   "arabic": "جَعَلَ",
+   "count": 44,
+   "ref": "2:22:2",
+   "kind": "v",
+   "en": "made",
+   "ur": "بنایا",
+   "enOptions": [
+    "made",
+    "was revealed, has been revealed",
+    "will you both deny",
+    "Say"
+   ],
+   "urOptions": [
+    "بنایا",
+    "نازل کیا گیا",
+    "تم دونوں جھٹلاؤ گے",
+    "کہہ دیجیے"
+   ]
+  },
+  {
+   "id": "qul-174",
+   "arabic": "عَمَّا",
+   "count": 44,
+   "ref": "2:74:36",
+   "kind": "n",
+   "en": "above what",
+   "ur": "اس سے جو",
+   "enOptions": [
+    "above what",
+    "Ibrahim",
+    "Indeed I",
+    "thing"
+   ],
+   "urOptions": [
+    "اس سے جو",
+    "ابراہیم",
+    "بیشک میں",
+    "چیز"
+   ]
+  },
+  {
+   "id": "qul-175",
+   "arabic": "كَمَا",
+   "count": 44,
+   "ref": "2:108:6",
+   "kind": "p",
+   "en": "as",
+   "ur": "جیسا کہ",
+   "enOptions": [
+    "as",
+    "to you",
+    "the truth",
+    "and that"
+   ],
+   "urOptions": [
+    "جیسا کہ",
+    "آپ کی طرف، تیری طرف",
+    "حق",
+    "اور بیشک"
+   ]
+  },
+  {
+   "id": "qul-176",
+   "arabic": "كِتَـٰبٌ",
+   "count": 44,
+   "ref": "2:89:3",
+   "kind": "n",
+   "en": "a book",
+   "ur": "کتاب",
+   "enOptions": [
+    "a book",
+    "most",
+    "he",
+    "O you"
+   ],
+   "urOptions": [
+    "کتاب",
+    "اکثر",
+    "وہ",
+    "اے"
+   ]
+  },
+  {
+   "id": "qul-177",
+   "arabic": "إِبۡرٰهِيمَ",
+   "count": 43,
+   "ref": "3:33:7",
+   "kind": "n",
+   "en": "Ibrahim",
+   "ur": "ابراہیم",
+   "enOptions": [
+    "Ibrahim",
+    "you",
+    "righteous",
+    "son"
+   ],
+   "urOptions": [
+    "ابراہیم",
+    "تم",
+    "اچھے",
+    "ابن"
+   ]
+  },
+  {
+   "id": "qul-178",
+   "arabic": "بِمَآ",
+   "count": 43,
+   "ref": "2:4:3",
+   "kind": "p",
+   "en": "in what",
+   "ur": "ساتھ اس کے جو",
+   "enOptions": [
+    "in what",
+    "and when",
+    "indeed",
+    "if, not"
+   ],
+   "urOptions": [
+    "ساتھ اس کے جو",
+    "اور جب",
+    "بیشک",
+    "اگر"
+   ]
+  },
+  {
+   "id": "qul-179",
+   "arabic": "خَـٰلِدِينَ",
+   "count": 43,
+   "ref": "2:162:1",
+   "kind": "n",
+   "en": "abide forever",
+   "ur": "ہمیشہ رہنے والے ہیں",
+   "enOptions": [
+    "abide forever",
+    "favors",
+    "you",
+    "Children"
+   ],
+   "urOptions": [
+    "ہمیشہ رہنے والے ہیں",
+    "نعمتوں",
+    "تم",
+    "بنی"
+   ]
+  },
+  {
+   "id": "qul-180",
+   "arabic": "رَبَّنَا",
+   "count": 43,
+   "ref": "2:127:8",
+   "kind": "pn",
+   "en": "Our Lord",
+   "ur": "اے ہمارے رب",
+   "enOptions": [
+    "Our Lord",
+    "great",
+    "the Most Merciful",
+    "allies, protectors"
+   ],
+   "urOptions": [
+    "اے ہمارے رب",
+    "بڑا",
+    "رحم فرمانے والا ہے",
+    "دوست"
+   ]
+  },
+  {
+   "id": "qul-181",
+   "arabic": "وَأَنَّ",
+   "count": 43,
+   "ref": "2:165:28",
+   "kind": "p",
+   "en": "and that",
+   "ur": "اور بیشک",
+   "enOptions": [
+    "and that",
+    "the All-Mighty",
+    "verily",
+    "or"
+   ],
+   "urOptions": [
+    "اور بیشک",
+    "زبردست ہے",
+    "تحقیق",
+    "یا"
+   ]
+  },
+  {
+   "id": "qul-182",
+   "arabic": "ٱلَّتِى",
+   "count": 43,
+   "ref": "2:24:8",
+   "kind": "n",
+   "en": "which",
+   "ur": "وہ جو",
+   "enOptions": [
+    "which",
+    "Ibrahim",
+    "better, good",
+    "most"
+   ],
+   "urOptions": [
+    "وہ جو",
+    "ابراہیم",
+    "بہتر",
+    "اکثر"
+   ]
+  },
+  {
+   "id": "qul-183",
+   "arabic": "ٱلۡأَنۡهَـٰرُ",
+   "count": 43,
+   "ref": "2:25:12",
+   "kind": "n",
+   "en": "the rivers",
+   "ur": "نہریں",
+   "enOptions": [
+    "the rivers",
+    "indeed we",
+    "the Shaitaan",
+    "the former"
+   ],
+   "urOptions": [
+    "نہریں",
+    "بیشک ہم",
+    "شیطان",
+    "پہلوں"
+   ]
+  },
+  {
+   "id": "qul-184",
+   "arabic": "ٱلۡقُرۡءَانَ",
+   "count": 43,
+   "ref": "2:185:6",
+   "kind": "n",
+   "en": "the Quran",
+   "ur": "قرآن",
+   "enOptions": [
+    "the Quran",
+    "their hearts",
+    "the rivers",
+    "soul"
+   ],
+   "urOptions": [
+    "قرآن",
+    "ان کے دلوں",
+    "نہریں",
+    "شخص، نفس"
+   ]
+  },
+  {
+   "id": "qul-185",
+   "arabic": "إِسۡرٰٓءِيلَ",
+   "count": 42,
+   "ref": "2:40:2",
+   "kind": "n",
+   "en": "Israel",
+   "ur": "اسرائیل",
+   "enOptions": [
+    "Israel",
+    "many, much",
+    "the zakah",
+    "underneath it, underneath them"
+   ],
+   "urOptions": [
+    "اسرائیل",
+    "بہت زیادہ",
+    "زکوۃ",
+    "ان کے نیچے"
+   ]
+  },
+  {
+   "id": "qul-186",
+   "arabic": "قُلُوبِهِمۡ",
+   "count": 42,
+   "ref": "2:7:4",
+   "kind": "n",
+   "en": "their hearts",
+   "ur": "ان کے دلوں",
+   "enOptions": [
+    "their hearts",
+    "which",
+    "besides",
+    "every"
+   ],
+   "urOptions": [
+    "ان کے دلوں",
+    "وہ جو",
+    "سوا",
+    "ہر"
+   ]
+  },
+  {
+   "id": "qul-187",
+   "arabic": "ٱلۡحَكِيمُ",
+   "count": 42,
+   "ref": "2:32:12",
+   "kind": "p",
+   "en": "the All-Wise",
+   "ur": "حکمت والا ہے",
+   "enOptions": [
+    "the All-Wise",
+    "to me",
+    "is",
+    "but"
+   ],
+   "urOptions": [
+    "حکمت والا ہے",
+    "میری طرف",
+    "کیا",
+    "لیکن"
+   ]
+  },
+  {
+   "id": "qul-188",
+   "arabic": "أَرۡسَلۡنَا",
+   "count": 41,
+   "ref": "2:151:2",
+   "kind": "v",
+   "en": "We sent",
+   "ur": "بھیجا ہم نے",
+   "enOptions": [
+    "We sent",
+    "you are",
+    "guide",
+    "he says"
+   ],
+   "urOptions": [
+    "بھیجا ہم نے",
+    "ہو تم، تھے تم",
+    "ہدایت دیتا",
+    "وہ کہتا ہے"
+   ]
+  },
+  {
+   "id": "qul-189",
+   "arabic": "أَنَّهُمۡ",
+   "count": 41,
+   "ref": "2:46:3",
+   "kind": "n",
+   "en": "that they",
+   "ur": "بیشک وہ",
+   "enOptions": [
+    "that they",
+    "upon us",
+    "the earth",
+    "man"
+   ],
+   "urOptions": [
+    "بیشک وہ",
+    "ہم پر",
+    "زمین",
+    "انسان"
+   ]
+  },
+  {
+   "id": "qul-190",
+   "arabic": "بِغَيۡرِ",
+   "count": 41,
+   "ref": "2:61:53",
+   "kind": "n",
+   "en": "without",
+   "ur": "بغیر",
+   "enOptions": [
+    "without",
+    "one, single",
+    "the former",
+    "the way"
+   ],
+   "urOptions": [
+    "بغیر",
+    "ایک ہی",
+    "پہلوں",
+    "راستے"
+   ]
+  },
+  {
+   "id": "qul-191",
+   "arabic": "بِهِمۡ",
+   "count": 41,
+   "ref": "2:15:3",
+   "kind": "p",
+   "en": "with them",
+   "ur": "ان کو",
+   "enOptions": [
+    "with them",
+    "to",
+    "in",
+    "verily"
+   ],
+   "urOptions": [
+    "ان کو",
+    "طرف",
+    "میں",
+    "تحقیق"
+   ]
+  },
+  {
+   "id": "qul-192",
+   "arabic": "بِـَٔـايَـٰتِنَا",
+   "count": 41,
+   "ref": "3:11:8",
+   "kind": "n",
+   "en": "Our Signs",
+   "ur": "ہماری آیات",
+   "enOptions": [
+    "Our Signs",
+    "a path",
+    "man",
+    "with"
+   ],
+   "urOptions": [
+    "ہماری آیات",
+    "راستے",
+    "انسان",
+    "ساتھ"
+   ]
+  },
+  {
+   "id": "qul-193",
+   "arabic": "جَآءَهُم",
+   "count": 41,
+   "ref": "2:89:2",
+   "kind": "v",
+   "en": "came to them",
+   "ur": "آگیا ان کے پاس",
+   "enOptions": [
+    "came to them",
+    "we believe",
+    "He wills",
+    "was revealed, has been revealed"
+   ],
+   "urOptions": [
+    "آگیا ان کے پاس",
+    "ایمان لائے ہم، ہم ایمان لائے",
+    "چاہتا ہے",
+    "نازل کیا گیا"
+   ]
+  },
+  {
+   "id": "qul-194",
+   "arabic": "عَلَيۡنَا",
+   "count": 41,
+   "ref": "2:70:12",
+   "kind": "n",
+   "en": "upon us",
+   "ur": "ہم پر",
+   "enOptions": [
+    "upon us",
+    "the former",
+    "straight",
+    "These, this"
+   ],
+   "urOptions": [
+    "ہم پر",
+    "پہلوں",
+    "سیدھے",
+    "یہ"
+   ]
+  },
+  {
+   "id": "qul-195",
+   "arabic": "لَعَلَّهُمۡ",
+   "count": 41,
+   "ref": "2:186:16",
+   "kind": "n",
+   "en": "so that they may",
+   "ur": "شاید کہ وہ، تاکہ وہ",
+   "enOptions": [
+    "so that they may",
+    "wherever",
+    "a book",
+    "better, good"
+   ],
+   "urOptions": [
+    "شاید کہ وہ، تاکہ وہ",
+    "جہاں",
+    "کتاب",
+    "بہتر"
+   ]
+  },
+  {
+   "id": "qul-196",
+   "arabic": "هَـٰٓؤُلَآءِ",
+   "count": 41,
+   "ref": "2:31:12",
+   "kind": "n",
+   "en": "these",
+   "ur": "یہ لوگ",
+   "enOptions": [
+    "these",
+    "the night",
+    "when",
+    "the former"
+   ],
+   "urOptions": [
+    "یہ لوگ",
+    "رات",
+    "جب",
+    "پہلوں"
+   ]
+  },
+  {
+   "id": "qul-197",
+   "arabic": "ٱلۡيَوۡمَ",
+   "count": 41,
+   "ref": "2:249:40",
+   "kind": "n",
+   "en": "today, this day",
+   "ur": "آج",
+   "enOptions": [
+    "today, this day",
+    "therein, in it",
+    "that they",
+    "the rivers"
+   ],
+   "urOptions": [
+    "آج",
+    "اس میں",
+    "بیشک وہ",
+    "نہریں"
+   ]
+  },
+  {
+   "id": "qul-198",
+   "arabic": "لَهَا",
+   "count": 40,
+   "ref": "2:134:5",
+   "kind": "p",
+   "en": "for it",
+   "ur": "اس کے لیے",
+   "enOptions": [
+    "for it",
+    "the All-Mighty",
+    "and not",
+    "as"
+   ],
+   "urOptions": [
+    "اس کے لیے",
+    "زبردست ہے",
+    "اور نہیں",
+    "جیسا کہ"
+   ]
+  },
+  {
+   "id": "qul-199",
+   "arabic": "نَفۡسٍ",
+   "count": 40,
+   "ref": "2:48:5",
+   "kind": "n",
+   "en": "soul",
+   "ur": "شخص، نفس",
+   "enOptions": [
+    "soul",
+    "the Shaitaan",
+    "the good-doers",
+    "to them"
+   ],
+   "urOptions": [
+    "شخص، نفس",
+    "شیطان",
+    "احسان کرنے والوں",
+    "ان پر"
+   ]
+  },
+  {
+   "id": "qul-200",
+   "arabic": "أَهۡلِ",
+   "count": 39,
+   "ref": "2:105:6",
+   "kind": "n",
+   "en": "people",
+   "ur": "اہل",
+   "enOptions": [
+    "people",
+    "who",
+    "the Hour",
+    "verses, signs"
+   ],
+   "urOptions": [
+    "اہل",
+    "جو",
+    "قیامت",
+    "آیات"
+   ]
+  },
+  {
+   "id": "qul-201",
+   "arabic": "حَكِيمٌ",
+   "count": 39,
+   "ref": "2:209:12",
+   "kind": "pn",
+   "en": "All-Wise",
+   "ur": "حکمت والا ہے",
+   "enOptions": [
+    "All-Wise",
+    "your lord",
+    "allies, protectors",
+    "great"
+   ],
+   "urOptions": [
+    "حکمت والا ہے",
+    "تیرے رب",
+    "دوست",
+    "بڑا"
+   ]
+  },
+  {
+   "id": "qul-202",
+   "arabic": "يَقُولُ",
+   "count": 39,
+   "ref": "2:8:4",
+   "kind": "v",
+   "en": "he says",
+   "ur": "وہ کہتا ہے",
+   "enOptions": [
+    "he says",
+    "you see",
+    "has revealed",
+    "she said"
+   ],
+   "urOptions": [
+    "وہ کہتا ہے",
+    "تم نے دیکھا",
+    "نازل کیا",
+    "کہنے لگی"
+   ]
+  },
+  {
+   "id": "qul-203",
+   "arabic": "يُحِبُّ",
+   "count": 39,
+   "ref": "2:190:12",
+   "kind": "v",
+   "en": "love",
+   "ur": "پسند کرتا، محبت رکھتا ہے",
+   "enOptions": [
+    "love",
+    "flow",
+    "believe",
+    "they used to"
+   ],
+   "urOptions": [
+    "پسند کرتا، محبت رکھتا ہے",
+    "بہتی ہیں",
+    "جو ایمان لائے",
+    "تھے وہ"
+   ]
+  },
+  {
+   "id": "qul-204",
+   "arabic": "وَٱتَّقُواۡ",
+   "count": 38,
+   "ref": "2:48:1",
+   "kind": "p",
+   "en": "and fear",
+   "ur": "اور ڈرو",
+   "enOptions": [
+    "and fear",
+    "for the mankind",
+    "that",
+    "indeed"
+   ],
+   "urOptions": [
+    "اور ڈرو",
+    "لوگوں کے لیے",
+    "کہ",
+    "بیشک"
+   ]
+  },
+  {
+   "id": "qul-205",
+   "arabic": "يَهۡدِى",
+   "count": 38,
+   "ref": "2:142:16",
+   "kind": "v",
+   "en": "guide",
+   "ur": "ہدایت دیتا",
+   "enOptions": [
+    "guide",
+    "has revealed",
+    "Say",
+    "believe"
+   ],
+   "urOptions": [
+    "ہدایت دیتا",
+    "نازل کیا",
+    "کہہ دیجیے",
+    "جو ایمان لائے"
+   ]
+  },
+  {
+   "id": "qul-206",
+   "arabic": "يَـٰقَوۡمِ",
+   "count": 38,
+   "ref": "2:54:5",
+   "kind": "n",
+   "en": "O my people",
+   "ur": "اے میری قوم",
+   "enOptions": [
+    "O my people",
+    "the former",
+    "favors",
+    "reward"
+   ],
+   "urOptions": [
+    "اے میری قوم",
+    "پہلوں",
+    "نعمتوں",
+    "اجر"
+   ]
+  },
+  {
+   "id": "qul-207",
+   "arabic": "ٱلۡمَلَـٰٓئِكَةُ",
+   "count": 38,
+   "ref": "2:31:8",
+   "kind": "n",
+   "en": "the angels",
+   "ur": "فرشتوں، فرشتے",
+   "enOptions": [
+    "the angels",
+    "those",
+    "after",
+    "upon us"
+   ],
+   "urOptions": [
+    "فرشتوں، فرشتے",
+    "یہی لوگ",
+    "بعد",
+    "ہم پر"
+   ]
+  },
+  {
+   "id": "qul-208",
+   "arabic": "خَيۡرًا",
+   "count": 37,
+   "ref": "2:158:20",
+   "kind": "n",
+   "en": "better, good",
+   "ur": "بہتر",
+   "enOptions": [
+    "better, good",
+    "a punishment",
+    "righteous deeds",
+    "indeed you"
+   ],
+   "urOptions": [
+    "بہتر",
+    "عذاب",
+    "اچھے",
+    "بیشک تو"
+   ]
+  },
+  {
+   "id": "qul-209",
+   "arabic": "قَبۡلِهِمۡ",
+   "count": 37,
+   "ref": "2:118:15",
+   "kind": "n",
+   "en": "before them",
+   "ur": "جو ان سے پہلے تھے",
+   "enOptions": [
+    "before them",
+    "evil",
+    "upon you",
+    "ever"
+   ],
+   "urOptions": [
+    "جو ان سے پہلے تھے",
+    "برا، برے",
+    "تم پر",
+    "کبھی بھی، ہمیشہ ہمیشہ"
+   ]
+  },
+  {
+   "id": "qul-210",
+   "arabic": "كَذَّبُواۡ",
+   "count": 37,
+   "ref": "3:11:7",
+   "kind": "v",
+   "en": "denied",
+   "ur": "جنہوں نے جھٹلایا، انہوں نے جھٹلایا",
+   "enOptions": [
+    "denied",
+    "believe",
+    "came, comes",
+    "you are"
+   ],
+   "urOptions": [
+    "جنہوں نے جھٹلایا، انہوں نے جھٹلایا",
+    "جو ایمان لائے",
+    "آگیا",
+    "ہو تم، تھے تم"
+   ]
+  },
+  {
+   "id": "qul-211",
+   "arabic": "أَنفُسَهُمۡ",
+   "count": 36,
+   "ref": "2:9:8",
+   "kind": "n",
+   "en": "themselves",
+   "ur": "اپنے نفسوں، اپنی جانوں پر",
+   "enOptions": [
+    "themselves",
+    "a little",
+    "which",
+    "the people"
+   ],
+   "urOptions": [
+    "اپنے نفسوں، اپنی جانوں پر",
+    "تھوڑا سا",
+    "وہ جو",
+    "لوگوں"
+   ]
+  },
+  {
+   "id": "qul-212",
+   "arabic": "صَـٰلِحًا",
+   "count": 36,
+   "ref": "2:62:14",
+   "kind": "n",
+   "en": "righteous",
+   "ur": "اچھے",
+   "enOptions": [
+    "righteous",
+    "for a people",
+    "I am",
+    "that they"
+   ],
+   "urOptions": [
+    "اچھے",
+    "اس قوم کے لیے",
+    "میں",
+    "بیشک وہ"
+   ]
+  },
+  {
+   "id": "qul-213",
+   "arabic": "قَدِيرٌ",
+   "count": 36,
+   "ref": "2:20:25",
+   "kind": "pn",
+   "en": "All-Powerful",
+   "ur": "قدرت رکھنے والا ہے، قادر ہے",
+   "enOptions": [
+    "All-Powerful",
+    "lord",
+    "Allah",
+    "great"
+   ],
+   "urOptions": [
+    "قدرت رکھنے والا ہے، قادر ہے",
+    "اے میرے رب",
+    "اللہ",
+    "بڑا"
+   ]
+  },
+  {
+   "id": "qul-214",
+   "arabic": "وَجَعَلۡنَا",
+   "count": 36,
+   "ref": "5:13:5",
+   "kind": "v",
+   "en": "and We made",
+   "ur": "اور بنایا ہم نے",
+   "enOptions": [
+    "and We made",
+    "it is said",
+    "believe",
+    "you do"
+   ],
+   "urOptions": [
+    "اور بنایا ہم نے",
+    "کہا جاتا ہے، کہا گیا",
+    "جو ایمان لائے",
+    "تم عمل کرتے ہو"
+   ]
+  },
+  {
+   "id": "qul-215",
+   "arabic": "ٱلۡعَظِيمِ",
+   "count": 36,
+   "ref": "2:105:25",
+   "kind": "p",
+   "en": "the great",
+   "ur": "بڑی",
+   "enOptions": [
+    "the great",
+    "in",
+    "that not",
+    "and the day"
+   ],
+   "urOptions": [
+    "بڑی",
+    "میں",
+    "کہ نہ",
+    "اور دن کو"
+   ]
+  },
+  {
+   "id": "qul-216",
+   "arabic": "أَوَلَمۡ",
+   "count": 35,
+   "ref": "2:260:10",
+   "kind": "p",
+   "en": "Do not",
+   "ur": "کیا بھلا نہیں",
+   "enOptions": [
+    "Do not",
+    "and the day",
+    "only",
+    "for whom"
+   ],
+   "urOptions": [
+    "کیا بھلا نہیں",
+    "اور دن کو",
+    "بیشک",
+    "واسطے اس کے جو"
+   ]
+  },
+  {
+   "id": "qul-217",
+   "arabic": "فَبِأَىِّ",
+   "count": 35,
+   "ref": "7:185:19",
+   "kind": "p",
+   "en": "So which",
+   "ur": "تو ساتھ کون سی",
+   "enOptions": [
+    "So which",
+    "in",
+    "of every",
+    "no"
+   ],
+   "urOptions": [
+    "تو ساتھ کون سی",
+    "میں",
+    "ہر",
+    "نہیں"
+   ]
+  },
+  {
+   "id": "qul-218",
+   "arabic": "ٱلسَّاعَةُ",
+   "count": 35,
+   "ref": "6:31:10",
+   "kind": "n",
+   "en": "the Hour",
+   "ur": "قیامت",
+   "enOptions": [
+    "the Hour",
+    "son",
+    "they",
+    "the earth"
+   ],
+   "urOptions": [
+    "قیامت",
+    "ابن",
+    "وہ",
+    "زمین"
+   ]
+  },
+  {
+   "id": "qul-219",
+   "arabic": "ٱلۡمَوۡتِ",
+   "count": 35,
+   "ref": "2:19:16",
+   "kind": "n",
+   "en": "the death",
+   "ur": "موت",
+   "enOptions": [
+    "the death",
+    "between you",
+    "painful",
+    "who"
+   ],
+   "urOptions": [
+    "موت",
+    "تمہارے درمیان، آپس میں",
+    "دردناک",
+    "جو"
+   ]
+  },
+  {
+   "id": "qul-220",
+   "arabic": "ءَالَآءِ",
+   "count": 34,
+   "ref": "7:69:24",
+   "kind": "n",
+   "en": "favors",
+   "ur": "نعمتوں",
+   "enOptions": [
+    "favors",
+    "abide forever",
+    "day",
+    "indeed he"
+   ],
+   "urOptions": [
+    "نعمتوں",
+    "ہمیشہ رہنے والے ہیں",
+    "دن",
+    "بیشک وہ"
+   ]
+  },
+  {
+   "id": "qul-221",
+   "arabic": "أَمۡرُ",
+   "count": 34,
+   "ref": "4:47:26",
+   "kind": "n",
+   "en": "command",
+   "ur": "حکم",
+   "enOptions": [
+    "command",
+    "the fire",
+    "hell",
+    "god"
+   ],
+   "urOptions": [
+    "حکم",
+    "آگ",
+    "جہنم",
+    "کوئی الہ"
+   ]
+  },
+  {
+   "id": "qul-222",
+   "arabic": "أَوۡلِيَآءَ",
+   "count": 34,
+   "ref": "3:28:5",
+   "kind": "pn",
+   "en": "allies, protectors",
+   "ur": "دوست",
+   "enOptions": [
+    "allies, protectors",
+    "Our Lord",
+    "All-Powerful",
+    "anyone"
+   ],
+   "urOptions": [
+    "دوست",
+    "اے ہمارے رب",
+    "قدرت رکھنے والا ہے، قادر ہے",
+    "کوئی ایک، کسی ایک"
+   ]
+  },
+  {
+   "id": "qul-223",
+   "arabic": "بِكُلِّ",
+   "count": 34,
+   "ref": "2:29:17",
+   "kind": "p",
+   "en": "of every",
+   "ur": "ہر",
+   "enOptions": [
+    "of every",
+    "Do not",
+    "to me",
+    "surely in"
+   ],
+   "urOptions": [
+    "ہر",
+    "کیا بھلا نہیں",
+    "میری طرف",
+    "البتہ میں"
+   ]
+  },
+  {
+   "id": "qul-224",
+   "arabic": "بِـَٔـايَـٰتِ",
+   "count": 34,
+   "ref": "2:61:49",
+   "kind": "p",
+   "en": "in Signs",
+   "ur": "آیات کو",
+   "enOptions": [
+    "in Signs",
+    "of what",
+    "Do not",
+    "to"
+   ],
+   "urOptions": [
+    "آیات کو",
+    "ساتھ اس کے جو",
+    "کیا بھلا نہیں",
+    "طرف"
+   ]
+  },
+  {
+   "id": "qul-225",
+   "arabic": "تَحۡتِهَا",
+   "count": 34,
+   "ref": "2:25:11",
+   "kind": "n",
+   "en": "underneath it, underneath them",
+   "ur": "ان کے نیچے",
+   "enOptions": [
+    "underneath it, underneath them",
+    "above what",
+    "guidance",
+    "the zakah"
+   ],
+   "urOptions": [
+    "ان کے نیچے",
+    "اس سے جو",
+    "ہدایت",
+    "زکوۃ"
+   ]
+  },
+  {
+   "id": "qul-226",
+   "arabic": "حَقَّ",
+   "count": 34,
+   "ref": "2:121:5",
+   "kind": "pn",
+   "en": "true, right",
+   "ur": "سچا ہے",
+   "enOptions": [
+    "true, right",
+    "their Lord",
+    "allies, protectors",
+    "Allah"
+   ],
+   "urOptions": [
+    "سچا ہے",
+    "اپنے رب، ان کے رب",
+    "دوست",
+    "اللہ"
+   ]
+  },
+  {
+   "id": "qul-227",
+   "arabic": "رَبِّهِۦ",
+   "count": 34,
+   "ref": "2:37:4",
+   "kind": "pn",
+   "en": "his Lord",
+   "ur": "اپنے رب",
+   "enOptions": [
+    "his Lord",
+    "allies, protectors",
+    "All-Knower, All-Knowing",
+    "great"
+   ],
+   "urOptions": [
+    "اپنے رب",
+    "دوست",
+    "جاننے والا ہے، علم والا ہے",
+    "بڑا"
+   ]
+  },
+  {
+   "id": "qul-228",
+   "arabic": "رَحۡمَةً",
+   "count": 34,
+   "ref": "3:8:12",
+   "kind": "n",
+   "en": "mercy",
+   "ur": "رحمت",
+   "enOptions": [
+    "mercy",
+    "Ibrahim",
+    "the knowledge",
+    "Our Signs"
+   ],
+   "urOptions": [
+    "رحمت",
+    "ابراہیم",
+    "علم",
+    "ہماری آیات"
+   ]
+  },
+  {
+   "id": "qul-229",
+   "arabic": "قِيلَ",
+   "count": 34,
+   "ref": "2:11:2",
+   "kind": "v",
+   "en": "it is said",
+   "ur": "کہا جاتا ہے، کہا گیا",
+   "enOptions": [
+    "it is said",
+    "were given",
+    "you are",
+    "believed"
+   ],
+   "urOptions": [
+    "کہا جاتا ہے، کہا گیا",
+    "جو دیئے گئے",
+    "ہو تم، تھے تم",
+    "ایمان لایا، ایمان لائے"
+   ]
+  },
+  {
+   "id": "qul-230",
+   "arabic": "ٱلرَّحِيمُ",
+   "count": 34,
+   "ref": "1:1:4",
+   "kind": "pn",
+   "en": "the Most Merciful",
+   "ur": "رحم فرمانے والا ہے",
+   "enOptions": [
+    "the Most Merciful",
+    "their Lord",
+    "allies, protectors",
+    "Allah"
+   ],
+   "urOptions": [
+    "رحم فرمانے والا ہے",
+    "اپنے رب، ان کے رب",
+    "دوست",
+    "اللہ"
+   ]
+  },
+  {
+   "id": "qul-231",
+   "arabic": "شَدِيدُ",
+   "count": 33,
+   "ref": "2:165:30",
+   "kind": "n",
+   "en": "severe",
+   "ur": "سخت",
+   "enOptions": [
+    "severe",
+    "themselves",
+    "their hearts",
+    "the unseen"
+   ],
+   "urOptions": [
+    "سخت",
+    "اپنے نفسوں، اپنی جانوں پر",
+    "ان کے دلوں",
+    "غیب"
+   ]
+  },
+  {
+   "id": "qul-232",
+   "arabic": "لَهُ",
+   "count": 33,
+   "ref": "2:206:3",
+   "kind": "p",
+   "en": "to him, for him",
+   "ur": "اس کے لیے",
+   "enOptions": [
+    "to him, for him",
+    "except",
+    "And certainly, and verily",
+    "to"
+   ],
+   "urOptions": [
+    "اس کے لیے",
+    "مگر",
+    "اور البتہ تحقیق",
+    "طرف"
+   ]
+  },
+  {
+   "id": "qul-233",
+   "arabic": "مَآءً",
+   "count": 33,
+   "ref": "2:22:11",
+   "kind": "n",
+   "en": "water",
+   "ur": "پانی",
+   "enOptions": [
+    "water",
+    "truthful",
+    "Ibrahim",
+    "a path"
+   ],
+   "urOptions": [
+    "پانی",
+    "سچے",
+    "ابراہیم",
+    "راستے"
+   ]
+  },
+  {
+   "id": "qul-234",
+   "arabic": "مُّؤۡمِنِينَ",
+   "count": 33,
+   "ref": "2:91:30",
+   "kind": "pn",
+   "en": "believers",
+   "ur": "ایمان لانے والے",
+   "enOptions": [
+    "believers",
+    "the Most Gracious",
+    "your lord",
+    "All-Knower, All-Knowing"
+   ],
+   "urOptions": [
+    "ایمان لانے والے",
+    "رحمن",
+    "تیرے رب",
+    "جاننے والا ہے، علم والا ہے"
+   ]
+  },
+  {
+   "id": "qul-235",
+   "arabic": "أَجۡرٌ",
+   "count": 32,
+   "ref": "3:136:14",
+   "kind": "n",
+   "en": "reward",
+   "ur": "اجر",
+   "enOptions": [
+    "reward",
+    "abide forever",
+    "we",
+    "Musa"
+   ],
+   "urOptions": [
+    "اجر",
+    "ہمیشہ رہنے والے ہیں",
+    "ہم",
+    "موسیٰ"
+   ]
+  },
+  {
+   "id": "qul-236",
+   "arabic": "أَحۡسَنُ",
+   "count": 32,
+   "ref": "2:138:4",
+   "kind": "n",
+   "en": "best",
+   "ur": "زیادہ اچھا ہے",
+   "enOptions": [
+    "best",
+    "those",
+    "anything",
+    "who"
+   ],
+   "urOptions": [
+    "زیادہ اچھا ہے",
+    "یہی لوگ",
+    "کچھ بھی",
+    "جو"
+   ]
+  },
+  {
+   "id": "qul-237",
+   "arabic": "صِرٰطٍ",
+   "count": 32,
+   "ref": "1:7:1",
+   "kind": "n",
+   "en": "a path",
+   "ur": "راستے",
+   "enOptions": [
+    "a path",
+    "the night",
+    "the world",
+    "hell"
+   ],
+   "urOptions": [
+    "راستے",
+    "رات",
+    "دنیا",
+    "جہنم"
+   ]
+  },
+  {
+   "id": "qul-238",
+   "arabic": "ٱلۡأَمۡرِ",
+   "count": 32,
+   "ref": "2:210:13",
+   "kind": "n",
+   "en": "the matter",
+   "ur": "معاملے",
+   "enOptions": [
+    "the matter",
+    "painful",
+    "day",
+    "the earth"
+   ],
+   "urOptions": [
+    "معاملے",
+    "دردناک",
+    "دن",
+    "زمین"
+   ]
+  },
+  {
+   "id": "qul-239",
+   "arabic": "ٱلۡعَلِيمُ",
+   "count": 32,
+   "ref": "2:32:11",
+   "kind": "p",
+   "en": "the All-Knower, the All-Knowing",
+   "ur": "جاننے والا ہے",
+   "enOptions": [
+    "the All-Knower, the All-Knowing",
+    "that not",
+    "no",
+    "for them, to them"
+   ],
+   "urOptions": [
+    "جاننے والا ہے",
+    "کہ نہ",
+    "نہیں",
+    "ان کے لیے"
+   ]
+  },
+  {
+   "id": "qul-240",
+   "arabic": "ءَامَنَّا",
+   "count": 31,
+   "ref": "2:8:5",
+   "kind": "v",
+   "en": "we believe",
+   "ur": "ایمان لائے ہم، ہم ایمان لائے",
+   "enOptions": [
+    "we believe",
+    "know",
+    "they say",
+    "will you both deny"
+   ],
+   "urOptions": [
+    "ایمان لائے ہم، ہم ایمان لائے",
+    "علم رکھتے",
+    "وہ کہتے ہیں",
+    "تم دونوں جھٹلاؤ گے"
+   ]
+  },
+  {
+   "id": "qul-241",
+   "arabic": "أَكۡثَرَ",
+   "count": 31,
+   "ref": "2:243:25",
+   "kind": "n",
+   "en": "most",
+   "ur": "اکثر",
+   "enOptions": [
+    "most",
+    "nation, a community",
+    "they",
+    "for a people"
+   ],
+   "urOptions": [
+    "اکثر",
+    "امت",
+    "وہ",
+    "اس قوم کے لیے"
+   ]
+  },
+  {
+   "id": "qul-242",
+   "arabic": "أَلَا",
+   "count": 31,
+   "ref": "6:31:23",
+   "kind": "p",
+   "en": "Will not, Unquestionably",
+   "ur": "خبردار، کیا نہیں",
+   "enOptions": [
+    "Will not, Unquestionably",
+    "to me",
+    "in truth",
+    "if"
+   ],
+   "urOptions": [
+    "خبردار، کیا نہیں",
+    "میری طرف",
+    "حق کے ساتھ",
+    "اگر، کاش"
+   ]
+  },
+  {
+   "id": "qul-243",
+   "arabic": "أُوتُواۡ",
+   "count": 31,
+   "ref": "2:101:14",
+   "kind": "v",
+   "en": "were given",
+   "ur": "جو دیئے گئے",
+   "enOptions": [
+    "were given",
+    "you do",
+    "has revealed",
+    "We sent"
+   ],
+   "urOptions": [
+    "جو دیئے گئے",
+    "تم عمل کرتے ہو",
+    "نازل کیا",
+    "بھیجا ہم نے"
+   ]
+  },
+  {
+   "id": "qul-244",
+   "arabic": "بَنِىٓ",
+   "count": 31,
+   "ref": "2:83:4",
+   "kind": "n",
+   "en": "Children",
+   "ur": "بنی",
+   "enOptions": [
+    "Children",
+    "that they",
+    "themselves",
+    "underneath it, underneath them"
+   ],
+   "urOptions": [
+    "بنی",
+    "بیشک وہ",
+    "اپنے نفسوں، اپنی جانوں پر",
+    "ان کے نیچے"
+   ]
+  },
+  {
+   "id": "qul-245",
+   "arabic": "تَرَ",
+   "count": 31,
+   "ref": "2:243:2",
+   "kind": "v",
+   "en": "you see",
+   "ur": "تم نے دیکھا",
+   "enOptions": [
+    "you see",
+    "is, was",
+    "made",
+    "were given"
+   ],
+   "urOptions": [
+    "تم نے دیکھا",
+    "ہے",
+    "بنایا",
+    "جو دیئے گئے"
+   ]
+  },
+  {
+   "id": "qul-246",
+   "arabic": "تُكَذِّبَانِ",
+   "count": 31,
+   "ref": "55:13:4",
+   "kind": "v",
+   "en": "will you both deny",
+   "ur": "تم دونوں جھٹلاؤ گے",
+   "enOptions": [
+    "will you both deny",
+    "flow",
+    "disbelieved",
+    "is, was"
+   ],
+   "urOptions": [
+    "تم دونوں جھٹلاؤ گے",
+    "بہتی ہیں",
+    "جنہوں نے کفر کیا",
+    "ہے"
+   ]
+  },
+  {
+   "id": "qul-247",
+   "arabic": "صَـٰدِقِينَ",
+   "count": 31,
+   "ref": "2:23:20",
+   "kind": "n",
+   "en": "truthful",
+   "ur": "سچے",
+   "enOptions": [
+    "truthful",
+    "Ibrahim",
+    "between you",
+    "abide forever"
+   ],
+   "urOptions": [
+    "سچے",
+    "ابراہیم",
+    "تمہارے درمیان، آپس میں",
+    "ہمیشہ رہنے والے ہیں"
+   ]
+  },
+  {
+   "id": "qul-248",
+   "arabic": "مِمَّن",
+   "count": 31,
+   "ref": "2:114:3",
+   "kind": "n",
+   "en": "than who",
+   "ur": "اس سے جو",
+   "enOptions": [
+    "than who",
+    "the rivers",
+    "the worlds",
+    "with, near"
+   ],
+   "urOptions": [
+    "اس سے جو",
+    "نہریں",
+    "العالمین",
+    "پاس، نزدیک"
+   ]
+  },
+  {
+   "id": "qul-249",
+   "arabic": "ٱلۡأَوَّلِينَ",
+   "count": 31,
+   "ref": "6:25:32",
+   "kind": "n",
+   "en": "the former",
+   "ur": "پہلوں",
+   "enOptions": [
+    "the former",
+    "this",
+    "clear",
+    "O you"
+   ],
+   "urOptions": [
+    "پہلوں",
+    "یہ",
+    "کھلم کھلا",
+    "اے"
+   ]
+  },
+  {
+   "id": "qul-250",
+   "arabic": "ٱلۡأَيَـٰتِ",
+   "count": 31,
+   "ref": "2:118:22",
+   "kind": "n",
+   "en": "the signs, the Verses",
+   "ur": "آیات",
+   "enOptions": [
+    "the signs, the Verses",
+    "among you",
+    "command",
+    "to them"
+   ],
+   "urOptions": [
+    "آیات",
+    "تم میں سے",
+    "حکم",
+    "ان پر"
+   ]
+  },
+  {
+   "id": "qul-251",
+   "arabic": "ٱلنَّبِىُّ",
+   "count": 30,
+   "ref": "3:68:8",
+   "kind": "n",
+   "en": "the Prophet",
+   "ur": "نبی (صلی اللہ علیہ وآلہ وسلم)",
+   "enOptions": [
+    "the Prophet",
+    "Ibrahim",
+    "a people",
+    "upon you"
+   ],
+   "urOptions": [
+    "نبی (صلی اللہ علیہ وآلہ وسلم)",
+    "ابراہیم",
+    "قوم",
+    "تم پر"
+   ]
+  },
+  {
+   "id": "qul-252",
+   "arabic": "ٱلۡمُحۡسِنِينَ",
+   "count": 30,
+   "ref": "2:58:20",
+   "kind": "n",
+   "en": "the good-doers",
+   "ur": "احسان کرنے والوں",
+   "enOptions": [
+    "the good-doers",
+    "the death",
+    "most",
+    "guidance"
+   ],
+   "urOptions": [
+    "احسان کرنے والوں",
+    "موت",
+    "اکثر",
+    "ہدایت"
+   ]
+  },
+  {
+   "id": "qul-253",
+   "arabic": "أَحَدٍ",
+   "count": 29,
+   "ref": "2:102:27",
+   "kind": "pn",
+   "en": "anyone",
+   "ur": "کوئی ایک، کسی ایک",
+   "enOptions": [
+    "anyone",
+    "allies, protectors",
+    "his Lord",
+    "Most Merciful"
+   ],
+   "urOptions": [
+    "کوئی ایک، کسی ایک",
+    "دوست",
+    "اپنے رب",
+    "مہربان ہے، رحیم ہے"
+   ]
+  },
+  {
+   "id": "qul-254",
+   "arabic": "حَيۡثُ",
+   "count": 29,
+   "ref": "2:35:10",
+   "kind": "n",
+   "en": "wherever",
+   "ur": "جہاں",
+   "enOptions": [
+    "wherever",
+    "But when, then when",
+    "who",
+    "the people"
+   ],
+   "urOptions": [
+    "جہاں",
+    "تو جب، پھر جب",
+    "جو",
+    "لوگوں"
+   ]
+  },
+  {
+   "id": "qul-255",
+   "arabic": "قَالَتۡ",
+   "count": 29,
+   "ref": "3:35:2",
+   "kind": "v",
+   "en": "she said",
+   "ur": "کہنے لگی",
+   "enOptions": [
+    "she said",
+    "we were, we are",
+    "knows",
+    "wronged"
+   ],
+   "urOptions": [
+    "کہنے لگی",
+    "تھے ہم",
+    "جانتا ہے",
+    "جنہوں نے ظلم کیا"
+   ]
+  },
+  {
+   "id": "qul-256",
+   "arabic": "لَأَيَـٰتٍ",
+   "count": 29,
+   "ref": "2:164:41",
+   "kind": "p",
+   "en": "surely signs",
+   "ur": "البتہ نشانیاں ہیں",
+   "enOptions": [
+    "surely signs",
+    "But as for, and as for",
+    "So which",
+    "no"
+   ],
+   "urOptions": [
+    "البتہ نشانیاں ہیں",
+    "اور رہا، اور رہے",
+    "تو ساتھ کون سی",
+    "نہیں"
+   ]
+  },
+  {
+   "id": "qul-257",
+   "arabic": "لَفِى",
+   "count": 29,
+   "ref": "2:176:12",
+   "kind": "p",
+   "en": "surely in",
+   "ur": "البتہ میں",
+   "enOptions": [
+    "surely in",
+    "is",
+    "that",
+    "the great"
+   ],
+   "urOptions": [
+    "البتہ میں",
+    "کیا",
+    "کہ",
+    "بڑی"
+   ]
+  },
+  {
+   "id": "qul-258",
+   "arabic": "نُوحٍ",
+   "count": 29,
+   "ref": "4:163:7",
+   "kind": "n",
+   "en": "Nuh",
+   "ur": "نوح",
+   "enOptions": [
+    "Nuh",
+    "Firaun",
+    "who",
+    "therein, in it"
+   ],
+   "urOptions": [
+    "نوح",
+    "فرعون",
+    "جو",
+    "اس میں"
+   ]
+  },
+  {
+   "id": "qul-259",
+   "arabic": "وٰحِدَةً",
+   "count": 29,
+   "ref": "2:213:4",
+   "kind": "n",
+   "en": "one, single",
+   "ur": "ایک ہی",
+   "enOptions": [
+    "one, single",
+    "thing",
+    "most",
+    "Musa"
+   ],
+   "urOptions": [
+    "ایک ہی",
+    "چیز",
+    "اکثر",
+    "موسیٰ"
+   ]
+  },
+  {
+   "id": "qul-260",
+   "arabic": "أَشَدُّ",
+   "count": 28,
+   "ref": "2:74:10",
+   "kind": "n",
+   "en": "stronger",
+   "ur": "زیادہ شدید",
+   "enOptions": [
+    "stronger",
+    "before",
+    "the sky, the heaven",
+    "with you"
+   ],
+   "urOptions": [
+    "زیادہ شدید",
+    "اس سے پہلے",
+    "آسمان",
+    "تمہارے ساتھ"
+   ]
+  },
+  {
+   "id": "qul-261",
+   "arabic": "تِلۡكَ",
+   "count": 28,
+   "ref": "2:111:11",
+   "kind": "n",
+   "en": "These, this",
+   "ur": "یہ",
+   "enOptions": [
+    "These, this",
+    "the sky, the heaven",
+    "before them",
+    "that day"
+   ],
+   "urOptions": [
+    "یہ",
+    "آسمان",
+    "جو ان سے پہلے تھے",
+    "اس دن"
+   ]
+  },
+  {
+   "id": "qul-262",
+   "arabic": "جَعَلۡنَا",
+   "count": 28,
+   "ref": "2:125:2",
+   "kind": "v",
+   "en": "We made, We have made",
+   "ur": "بنایا ہم نے",
+   "enOptions": [
+    "We made, We have made",
+    "he says",
+    "will you both deny",
+    "came, comes"
+   ],
+   "urOptions": [
+    "بنایا ہم نے",
+    "وہ کہتا ہے",
+    "تم دونوں جھٹلاؤ گے",
+    "آگیا"
+   ]
+  },
+  {
+   "id": "qul-263",
+   "arabic": "ظَلَمُواۡ",
+   "count": 28,
+   "ref": "2:59:3",
+   "kind": "v",
+   "en": "wronged",
+   "ur": "جنہوں نے ظلم کیا",
+   "enOptions": [
+    "wronged",
+    "Say",
+    "believe",
+    "knows"
+   ],
+   "urOptions": [
+    "جنہوں نے ظلم کیا",
+    "کہہ دیجیے",
+    "جو ایمان لائے",
+    "جانتا ہے"
+   ]
+  },
+  {
+   "id": "qul-264",
+   "arabic": "قَبۡلِكَ",
+   "count": 28,
+   "ref": "2:4:9",
+   "kind": "n",
+   "en": "before you",
+   "ur": "آپ سے پہلے",
+   "enOptions": [
+    "before you",
+    "water",
+    "the word",
+    "therein, in it"
+   ],
+   "urOptions": [
+    "آپ سے پہلے",
+    "پانی",
+    "بات",
+    "اس میں"
+   ]
+  },
+  {
+   "id": "qul-265",
+   "arabic": "كَانَتۡ",
+   "count": 28,
+   "ref": "2:94:3",
+   "kind": "v",
+   "en": "was",
+   "ur": "ہے",
+   "enOptions": [
+    "was",
+    "wills",
+    "they say",
+    "disbelieved"
+   ],
+   "urOptions": [
+    "ہے",
+    "چاہتا، چاہے",
+    "وہ کہتے ہیں",
+    "جنہوں نے کفر کیا"
+   ]
+  },
+  {
+   "id": "qul-266",
+   "arabic": "لَمِنَ",
+   "count": 28,
+   "ref": "2:130:17",
+   "kind": "p",
+   "en": "surely of",
+   "ur": "البتہ سے",
+   "enOptions": [
+    "surely of",
+    "but",
+    "not",
+    "for every"
+   ],
+   "urOptions": [
+    "البتہ سے",
+    "لیکن",
+    "نہیں",
+    "واسطے ہر"
+   ]
+  },
+  {
+   "id": "qul-267",
+   "arabic": "مَرۡيَمَ",
+   "count": 28,
+   "ref": "2:87:12",
+   "kind": "n",
+   "en": "Maryam",
+   "ur": "مریم",
+   "enOptions": [
+    "Maryam",
+    "righteous",
+    "therein, in it",
+    "most knowing, knows best"
+   ],
+   "urOptions": [
+    "مریم",
+    "اچھے",
+    "اس میں",
+    "زیادہ جانتا ہے"
+   ]
+  },
+  {
+   "id": "qul-268",
+   "arabic": "مِّنَّا",
+   "count": 28,
+   "ref": "2:167:12",
+   "kind": "p",
+   "en": "from us",
+   "ur": "اپنی طرف سے، ہماری طرف سے",
+   "enOptions": [
+    "from us",
+    "for them, to them",
+    "in",
+    "and when"
+   ],
+   "urOptions": [
+    "اپنی طرف سے، ہماری طرف سے",
+    "ان کے لیے",
+    "میں",
+    "اور جب"
+   ]
+  },
+  {
+   "id": "qul-269",
+   "arabic": "نَذِيرٌ",
+   "count": 28,
+   "ref": "5:19:19",
+   "kind": "n",
+   "en": "a warner",
+   "ur": "ڈرانے والا ہوں",
+   "enOptions": [
+    "a warner",
+    "the Hour",
+    "than who",
+    "upon us"
+   ],
+   "urOptions": [
+    "ڈرانے والا ہوں",
+    "قیامت",
+    "اس سے جو",
+    "ہم پر"
+   ]
+  },
+  {
+   "id": "qul-270",
+   "arabic": "ٱبۡنُ",
+   "count": 28,
+   "ref": "2:87:11",
+   "kind": "n",
+   "en": "son",
+   "ur": "ابن",
+   "enOptions": [
+    "son",
+    "the signs, the Verses",
+    "the one who",
+    "upon you"
+   ],
+   "urOptions": [
+    "ابن",
+    "آیات",
+    "وہ ذات ہے",
+    "تم پر"
+   ]
+  },
+  {
+   "id": "qul-271",
+   "arabic": "ٱلۡعِلۡمِ",
+   "count": 28,
+   "ref": "2:120:23",
+   "kind": "n",
+   "en": "the knowledge",
+   "ur": "علم",
+   "enOptions": [
+    "the knowledge",
+    "truthful",
+    "bounty, grace",
+    "with, near"
+   ],
+   "urOptions": [
+    "علم",
+    "سچے",
+    "فضل",
+    "پاس، نزدیک"
+   ]
+  },
+  {
+   "id": "qul-272",
+   "arabic": "ٱلۡغَيۡبِ",
+   "count": 28,
+   "ref": "3:44:4",
+   "kind": "n",
+   "en": "the unseen",
+   "ur": "غیب",
+   "enOptions": [
+    "the unseen",
+    "the heavens",
+    "verses, signs",
+    "the death"
+   ],
+   "urOptions": [
+    "غیب",
+    "آسمانوں",
+    "آیات",
+    "موت"
+   ]
+  },
+  {
+   "id": "qul-273",
+   "arabic": "سَبِيلاً",
+   "count": 27,
+   "ref": "3:97:18",
+   "kind": "n",
+   "en": "a way",
+   "ur": "راستہ",
+   "enOptions": [
+    "a way",
+    "water",
+    "the former",
+    "These, this"
+   ],
+   "urOptions": [
+    "راستہ",
+    "پانی",
+    "پہلوں",
+    "یہ"
+   ]
+  },
+  {
+   "id": "qul-274",
+   "arabic": "عَـٰقِبَةُ",
+   "count": 27,
+   "ref": "3:137:12",
+   "kind": "n",
+   "en": "end",
+   "ur": "انجام",
+   "enOptions": [
+    "end",
+    "among you",
+    "verses, signs",
+    "when"
+   ],
+   "urOptions": [
+    "انجام",
+    "تم میں سے",
+    "آیات",
+    "جب"
+   ]
+  },
+  {
+   "id": "qul-275",
+   "arabic": "لِّكُلِّ",
+   "count": 27,
+   "ref": "4:11:24",
+   "kind": "p",
+   "en": "for every",
+   "ur": "واسطے ہر",
+   "enOptions": [
+    "for every",
+    "until",
+    "but",
+    "the All-Mighty"
+   ],
+   "urOptions": [
+    "واسطے ہر",
+    "یہاں تک کہ",
+    "لیکن",
+    "زبردست ہے"
+   ]
+  },
+  {
+   "id": "qul-276",
+   "arabic": "هُدًى",
+   "count": 27,
+   "ref": "2:2:6",
+   "kind": "n",
+   "en": "guidance",
+   "ur": "ہدایت",
+   "enOptions": [
+    "guidance",
+    "gardens",
+    "hell",
+    "god"
+   ],
+   "urOptions": [
+    "ہدایت",
+    "باغات",
+    "جہنم",
+    "کوئی الہ"
+   ]
+  },
+  {
+   "id": "qul-277",
+   "arabic": "ٱلسَّبِيلِ",
+   "count": 27,
+   "ref": "2:108:18",
+   "kind": "n",
+   "en": "the way",
+   "ur": "راستے",
+   "enOptions": [
+    "the way",
+    "But when, then when",
+    "the former",
+    "the disbelievers"
+   ],
+   "urOptions": [
+    "راستے",
+    "تو جب، پھر جب",
+    "پہلوں",
+    "کافروں"
+   ]
+  },
+  {
+   "id": "qul-278",
+   "arabic": "ٱلۡقَوۡلُ",
+   "count": 27,
+   "ref": "4:148:7",
+   "kind": "n",
+   "en": "the word",
+   "ur": "بات",
+   "enOptions": [
+    "the word",
+    "than who",
+    "with, near",
+    "day"
+   ],
+   "urOptions": [
+    "بات",
+    "اس سے جو",
+    "پاس، نزدیک",
+    "دن"
+   ]
+  },
+  {
+   "id": "qul-279",
+   "arabic": "ءَامَنَ",
+   "count": 26,
+   "ref": "2:13:6",
+   "kind": "v",
+   "en": "believed",
+   "ur": "ایمان لایا، ایمان لائے",
+   "enOptions": [
+    "believed",
+    "we were, we are",
+    "is, was",
+    "made"
+   ],
+   "urOptions": [
+    "ایمان لایا، ایمان لائے",
+    "تھے ہم",
+    "ہے",
+    "بنایا"
+   ]
+  },
+  {
+   "id": "qul-280",
+   "arabic": "أَبَدًا",
+   "count": 26,
+   "ref": "4:57:13",
+   "kind": "n",
+   "en": "ever",
+   "ur": "کبھی بھی، ہمیشہ ہمیشہ",
+   "enOptions": [
+    "ever",
+    "the people",
+    "god",
+    "therein, in it"
+   ],
+   "urOptions": [
+    "کبھی بھی، ہمیشہ ہمیشہ",
+    "لوگوں",
+    "کوئی الہ",
+    "اس میں"
+   ]
+  },
+  {
+   "id": "qul-281",
+   "arabic": "بَيۡنَكُمۡ",
+   "count": 26,
+   "ref": "2:188:4",
+   "kind": "n",
+   "en": "between you",
+   "ur": "تمہارے درمیان، آپس میں",
+   "enOptions": [
+    "between you",
+    "man",
+    "every",
+    "he"
+   ],
+   "urOptions": [
+    "تمہارے درمیان، آپس میں",
+    "انسان",
+    "ہر",
+    "وہ"
+   ]
+  },
+  {
+   "id": "qul-282",
+   "arabic": "بِأَنَّهُمۡ",
+   "count": 26,
+   "ref": "2:61:46",
+   "kind": "n",
+   "en": "because they",
+   "ur": "بوجہ اس کے کہ بیشک وہ",
+   "enOptions": [
+    "because they",
+    "equal",
+    "the religion",
+    "the Resurrection"
+   ],
+   "urOptions": [
+    "بوجہ اس کے کہ بیشک وہ",
+    "برابر ہے",
+    "دین",
+    "قیامت"
+   ]
+  },
+  {
+   "id": "qul-283",
+   "arabic": "حِينٍ",
+   "count": 26,
+   "ref": "2:36:19",
+   "kind": "n",
+   "en": "a time, when",
+   "ur": "ایک وقت، جس وقت",
+   "enOptions": [
+    "a time, when",
+    "because they",
+    "companions",
+    "Firaun"
+   ],
+   "urOptions": [
+    "ایک وقت، جس وقت",
+    "بوجہ اس کے کہ بیشک وہ",
+    "والے",
+    "فرعون"
+   ]
+  },
+  {
+   "id": "qul-284",
+   "arabic": "سُوٓءُ",
+   "count": 26,
+   "ref": "2:49:7",
+   "kind": "n",
+   "en": "evil",
+   "ur": "برا، برے",
+   "enOptions": [
+    "evil",
+    "promise",
+    "without",
+    "soul"
+   ],
+   "urOptions": [
+    "برا، برے",
+    "وعدہ",
+    "بغیر",
+    "شخص، نفس"
+   ]
+  },
+  {
+   "id": "qul-285",
+   "arabic": "فَسَوۡفَ",
+   "count": 26,
+   "ref": "4:30:6",
+   "kind": "p",
+   "en": "then soon, but soon",
+   "ur": "تو عنقریب، پس عنقریب",
+   "enOptions": [
+    "then soon, but soon",
+    "if, not",
+    "for it",
+    "never"
+   ],
+   "urOptions": [
+    "تو عنقریب، پس عنقریب",
+    "اگر",
+    "اس کے لیے",
+    "ہرگز نہیں"
+   ]
+  },
+  {
+   "id": "qul-286",
+   "arabic": "فَضۡلُ",
+   "count": 26,
+   "ref": "2:64:7",
+   "kind": "n",
+   "en": "bounty, grace",
+   "ur": "فضل",
+   "enOptions": [
+    "bounty, grace",
+    "righteous deeds",
+    "for a people",
+    "that they"
+   ],
+   "urOptions": [
+    "فضل",
+    "اچھے",
+    "اس قوم کے لیے",
+    "بیشک وہ"
+   ]
+  },
+  {
+   "id": "qul-287",
+   "arabic": "مَعَكُمۡ",
+   "count": 26,
+   "ref": "2:14:13",
+   "kind": "n",
+   "en": "with you",
+   "ur": "تمہارے ساتھ",
+   "enOptions": [
+    "with you",
+    "wherever",
+    "he",
+    "when"
+   ],
+   "urOptions": [
+    "تمہارے ساتھ",
+    "جہاں",
+    "وہ",
+    "جب"
+   ]
+  },
+  {
+   "id": "qul-288",
+   "arabic": "مُّسۡتَقِيمٍ",
+   "count": 26,
+   "ref": "2:142:21",
+   "kind": "n",
+   "en": "straight",
+   "ur": "سیدھے",
+   "enOptions": [
+    "straight",
+    "their hearts",
+    "O you",
+    "anything"
+   ],
+   "urOptions": [
+    "سیدھے",
+    "ان کے دلوں",
+    "اے",
+    "کچھ بھی"
+   ]
+  },
+  {
+   "id": "qul-289",
+   "arabic": "وَٱلنَّهَارِ",
+   "count": 26,
+   "ref": "2:164:8",
+   "kind": "p",
+   "en": "and the day",
+   "ur": "اور دن کو",
+   "enOptions": [
+    "and the day",
+    "is",
+    "for you, to you",
+    "from it"
+   ],
+   "urOptions": [
+    "اور دن کو",
+    "کیا",
+    "تیرے لیے",
+    "اس میں سے، اس سے"
+   ]
+  },
+  {
+   "id": "qul-290",
+   "arabic": "ٱلزَّكَوٰةَ",
+   "count": 26,
+   "ref": "2:43:4",
+   "kind": "n",
+   "en": "the zakah",
+   "ur": "زکوۃ",
+   "enOptions": [
+    "the zakah",
+    "like",
+    "the good-doers",
+    "because they"
+   ],
+   "urOptions": [
+    "زکوۃ",
+    "مانند",
+    "احسان کرنے والوں",
+    "بوجہ اس کے کہ بیشک وہ"
+   ]
+  },
+  {
+   "id": "qul-291",
+   "arabic": "ٱلۡأَخِرِ",
+   "count": 26,
+   "ref": "2:8:8",
+   "kind": "p",
+   "en": "the Last",
+   "ur": "آخرت پر",
+   "enOptions": [
+    "the Last",
+    "in Signs",
+    "if, not",
+    "until"
+   ],
+   "urOptions": [
+    "آخرت پر",
+    "آیات کو",
+    "اگر",
+    "یہاں تک کہ"
+   ]
+  },
+  {
+   "id": "qul-292",
+   "arabic": "ٱلۡحَمۡدُ",
+   "count": 26,
+   "ref": "1:2:1",
+   "kind": "n",
+   "en": "All praise",
+   "ur": "سب تعریف",
+   "enOptions": [
+    "All praise",
+    "clear",
+    "like",
+    "Our Signs"
+   ],
+   "urOptions": [
+    "سب تعریف",
+    "کھلم کھلا",
+    "مانند",
+    "ہماری آیات"
+   ]
+  },
+  {
+   "id": "qul-293",
+   "arabic": "أَيۡدِيهِمۡ",
+   "count": 25,
+   "ref": "2:79:20",
+   "kind": "n",
+   "en": "their hands, before them",
+   "ur": "ان کے ہاتھوں نے",
+   "enOptions": [
+    "their hands, before them",
+    "many, much",
+    "those who",
+    "knowledge"
+   ],
+   "urOptions": [
+    "ان کے ہاتھوں نے",
+    "بہت زیادہ",
+    "وہ لوگ",
+    "علم"
+   ]
+  },
+  {
+   "id": "qul-294",
+   "arabic": "إِلَىَّ",
+   "count": 25,
+   "ref": "3:55:8",
+   "kind": "p",
+   "en": "to me",
+   "ur": "میری طرف",
+   "enOptions": [
+    "to me",
+    "and not, and what",
+    "is",
+    "that"
+   ],
+   "urOptions": [
+    "میری طرف",
+    "اور نہیں",
+    "کیا",
+    "کہ"
+   ]
+  },
+  {
+   "id": "qul-295",
+   "arabic": "جَآءَكُمۡ",
+   "count": 25,
+   "ref": "2:87:18",
+   "kind": "v",
+   "en": "has come to you",
+   "ur": "آگیا تمہارے پاس",
+   "enOptions": [
+    "has come to you",
+    "Say",
+    "flow",
+    "know"
+   ],
+   "urOptions": [
+    "آگیا تمہارے پاس",
+    "کہہ دیجیے",
+    "بہتی ہیں",
+    "علم رکھتے"
+   ]
+  },
+  {
+   "id": "qul-296",
+   "arabic": "ذِكۡرِ",
+   "count": 25,
+   "ref": "5:91:14",
+   "kind": "n",
+   "en": "a reminder, remembrance",
+   "ur": "ذکر",
+   "enOptions": [
+    "a reminder, remembrance",
+    "the earth",
+    "the Shaitaan",
+    "between you"
+   ],
+   "urOptions": [
+    "ذکر",
+    "زمین",
+    "شیطان",
+    "تمہارے درمیان، آپس میں"
+   ]
+  },
+  {
+   "id": "qul-297",
+   "arabic": "سَوَآءٌ",
+   "count": 25,
+   "ref": "2:6:4",
+   "kind": "n",
+   "en": "equal",
+   "ur": "برابر ہے",
+   "enOptions": [
+    "equal",
+    "the former",
+    "it",
+    "the sky, the heaven"
+   ],
+   "urOptions": [
+    "برابر ہے",
+    "پہلوں",
+    "وہ",
+    "آسمان"
+   ]
+  },
+  {
+   "id": "qul-298",
+   "arabic": "مِثۡلَ",
+   "count": 25,
+   "ref": "2:113:21",
+   "kind": "n",
+   "en": "like",
+   "ur": "مانند",
+   "enOptions": [
+    "like",
+    "the disbelievers",
+    "the heavens",
+    "before"
+   ],
+   "urOptions": [
+    "مانند",
+    "کافروں",
+    "آسمانوں",
+    "اس سے پہلے"
+   ]
+  },
+  {
+   "id": "qul-299",
+   "arabic": "وَأَمَّا",
+   "count": 25,
+   "ref": "2:26:20",
+   "kind": "p",
+   "en": "But as for, and as for",
+   "ur": "اور رہا، اور رہے",
+   "enOptions": [
+    "But as for, and as for",
+    "not",
+    "the All-Knower, the All-Knowing",
+    "the believers"
+   ],
+   "urOptions": [
+    "اور رہا، اور رہے",
+    "نہیں",
+    "جاننے والا ہے",
+    "مومنوں"
+   ]
+  },
+  {
+   "id": "qul-300",
+   "arabic": "وَعۡدَ",
+   "count": 25,
+   "ref": "4:122:14",
+   "kind": "n",
+   "en": "promise",
+   "ur": "وعدہ",
+   "enOptions": [
+    "promise",
+    "between",
+    "the world",
+    "mercy"
+   ],
+   "urOptions": [
+    "وعدہ",
+    "درمیان",
+    "دنیا",
+    "رحمت"
+   ]
+  }
+ ]
+}

@@ -7,7 +7,7 @@
  */
 
 import type { Metadata, Viewport } from 'next';
-import { DM_Sans, Playfair_Display, Amiri, Amiri_Quran, Scheherazade_New, Noto_Naskh_Arabic } from 'next/font/google';
+import { DM_Sans, Playfair_Display, Amiri, Amiri_Quran, Noto_Naskh_Arabic } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
 import Navbar from '@/components/Navbar';
@@ -50,9 +50,11 @@ const qpcHafs = localFont({
   display: 'block',
   preload: false,
 });
-const scheherazade = Scheherazade_New({
-  subsets: ['arabic'],
-  weight: ['400', '700'],
+// "AlQuran IndoPak by QuranWBW" for the QUL Indo-Pak Nastaleeq text (data/quran/indopak).
+// It draws the ayah-end circles and numbers. Its licence says not to distribute it
+// without written notice to QuranWBW (quranwbw@gmail.com).
+const indopakNastaleeq = localFont({
+  src: '../data/quran/fonts/alquran-indopak-quranwbw.woff2',
   variable: '--font-quran-indopak',
   display: 'block',
   preload: false,
@@ -109,7 +111,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${playfair.variable} ${amiri.variable} ${notoNaskh.variable} ${scheherazade.variable} ${amiriQuran.variable} ${qpcHafs.variable}`}
+      className={`${dmSans.variable} ${playfair.variable} ${amiri.variable} ${notoNaskh.variable} ${indopakNastaleeq.variable} ${amiriQuran.variable} ${qpcHafs.variable}`}
     >
       <body className="font-body bg-gray-50 min-h-screen flex flex-col text-gray-900 antialiased">
         <JsonLd data={{

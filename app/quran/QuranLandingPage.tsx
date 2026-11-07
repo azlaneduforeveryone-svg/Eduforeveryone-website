@@ -184,14 +184,14 @@ export default function QuranLandingPage() {
             <div>
               <div className="flex justify-between items-center mb-3">
                 <span className="text-xs font-bold text-emerald-700 uppercase tracking-wider">South Asia</span>
-                <span className="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">Pak-Hint Naskh</span>
+                <span className="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">Pak-Hint Nastaleeq</span>
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-1">Indo-Pak Script</h3>
-              <p className="text-xs text-gray-500 mb-4">Crisp Indo-Pak Naskh script with compact spacing used in Pakistan, India & Bangladesh.</p>
+              <p className="text-xs text-gray-500 mb-4">Indo-Pak Nastaleeq script, as in the Mushafs of Pakistan, India &amp; Bangladesh.</p>
 
               <div className="bg-white border border-emerald-100 rounded-xl p-4 text-center mb-4 shadow-inner">
                 <p className="font-quran-indopak text-2xl text-emerald-950" dir="rtl">
-                  بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ
+                  بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِیْمِ
                 </p>
               </div>
             </div>

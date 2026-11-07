@@ -75,7 +75,7 @@ export default function AnswerFeedback({
         </div>
 
         {/* Educational Explanation */}
-        <p className="text-sm leading-relaxed text-gray-700 mt-1">
+        <p dir="auto" className="text-sm leading-relaxed text-gray-700 mt-1">
           {explanation}
         </p>
 

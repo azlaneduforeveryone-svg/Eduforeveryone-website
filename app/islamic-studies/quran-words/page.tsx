@@ -4,6 +4,7 @@ import {
   getReviewedQuranWords,
   QURAN_WORDS,
 } from "@/lib/games/quran-words";
+import { loadQulQuranWords, mergeQuranWords } from "@/lib/games/quran-words-qul";
 import QuranWordsClient from "./QuranWordsClient";
 
 export function generateMetadata(): Metadata {
@@ -43,18 +44,23 @@ export default function QuranWordsPage() {
   const isDev = process.env.NODE_ENV === "development";
 
   // In production when not live, do not pass or render any unreviewed word data in HTML
+  // English: hand-written words plus the QUL words not already among them.
+  // Urdu: all 300 QUL words (the hand-written words have no Urdu meanings).
+  const qulWords = isLive || isDev ? loadQulQuranWords() : [];
   const words = isLive
-    ? getReviewedQuranWords()
+    ? mergeQuranWords(getReviewedQuranWords(), qulWords)
     : isDev
     ? QURAN_WORDS
     : [];
+  const urduWords = isLive ? qulWords : [];
 
   return (
     <QuranWordsClient
       isLive={isLive}
       isDev={isDev}
       words={words}
-      totalWordCount={QURAN_WORDS.length}
+      urduWords={urduWords}
+      totalWordCount={words.length || QURAN_WORDS.length}
     />
   );
 }

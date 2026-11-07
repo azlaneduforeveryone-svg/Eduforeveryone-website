@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import TajweedQuranReader from "./TajweedQuranReader";
 import { SURAH_META } from "@/lib/quranSurahMeta";
+import { loadTajweedSurah } from "@/lib/quranTajweedServer";
 
 export function generateStaticParams() {
   return SURAH_META.map(s => ({ id: String(s.number) }));
@@ -31,5 +32,7 @@ export function generateMetadata({ params }: { params: { id: string } }): Metada
 }
 
 export default function Page({ params }: { params: { id: string } }) {
-  return <TajweedQuranReader surahId={parseInt(params.id)} />;
+  const id = parseInt(params.id);
+  // Arabic and tajweed colours are self-hosted and read at build time.
+  return <TajweedQuranReader surahId={id} initialSurah={loadTajweedSurah(id)} />;
 }

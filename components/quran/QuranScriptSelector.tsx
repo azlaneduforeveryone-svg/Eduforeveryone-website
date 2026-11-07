@@ -32,11 +32,12 @@ export const QURAN_SCRIPTS: ScriptOption[] = [
   {
     id: "indopak",
     name: "Indo-Pak (Pak-Hint)",
-    subtitle: "South Asian Naskh Script",
+    subtitle: "South Asian Nastaleeq Script",
     region: "Pakistan, India, Bangladesh",
     fontClass: "font-quran-indopak",
-    description: "Crisp South Asian Indo-Pak Naskh script with traditional 15-line memorization (Hifz) formatting.",
-    previewText: "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَـٰنِ ٱلرَّحِیمِ",
+    description: "South Asian Indo-Pak Nastaleeq script, as in Pakistani and Indian Mushafs, with traditional 15-line memorization (Hifz) formatting.",
+    // QUL Indo-Pak Nastaleeq 1:1 without its ayah-end circle, unchanged.
+    previewText: "بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِیْمِ",
     badge: "15-Line Hifz Standard",
     editionId: "quran-indopak",
   },
