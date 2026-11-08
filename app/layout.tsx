@@ -62,6 +62,15 @@ const qpcHafs = localFont({
 // "AlQuran IndoPak by QuranWBW" for the QUL Indo-Pak Nastaleeq text (data/quran/indopak).
 // It draws the ayah-end circles and numbers. Its licence says not to distribute it
 // without written notice to QuranWBW (quranwbw@gmail.com).
+// "QCF_FullSurah_HD_COLOR-v1" (King Fahd Complex): surah names in calligraphy (lib/surahNames.ts).
+// Downloaded only on pages that show a surah name.
+const surahNames = localFont({
+  src: '../data/quran/fonts/qcf-surah-names-v1.woff2',
+  variable: '--font-surah-names',
+  display: 'block',
+  preload: false,
+});
+
 const indopakNastaleeq = localFont({
   src: '../data/quran/fonts/alquran-indopak-quranwbw.woff2',
   variable: '--font-quran-indopak',
@@ -120,7 +129,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${playfair.variable} ${amiri.variable} ${notoNaskh.variable} ${scheherazadeNew.variable} ${indopakNastaleeq.variable} ${amiriQuran.variable} ${qpcHafs.variable}`}
+      className={`${dmSans.variable} ${playfair.variable} ${amiri.variable} ${notoNaskh.variable} ${scheherazadeNew.variable} ${indopakNastaleeq.variable} ${surahNames.variable} ${amiriQuran.variable} ${qpcHafs.variable}`}
     >
       <body className="font-body bg-gray-50 min-h-screen flex flex-col text-gray-900 antialiased">
         <JsonLd data={{

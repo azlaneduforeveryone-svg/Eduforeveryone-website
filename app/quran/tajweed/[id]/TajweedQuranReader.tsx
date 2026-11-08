@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef, Fragment } from "react";
 import Link from "next/link";
+import SurahName from "@/components/quran/SurahName";
 import QuranScriptSelector, { QuranScript, QURAN_SCRIPTS } from "@/components/quran/QuranScriptSelector";
 import type { TajweedPageSurah } from "@/lib/quranTajweedServer";
 import { TAJWEED_RULE_IDS, type TajweedRuleId, type TajweedRun, type TajweedWord, type WbwSurah, type WbwWord } from "@/lib/quranTajweed";
@@ -186,10 +187,7 @@ export default function TajweedQuranReader({ surahId, initialSurah }: { surahId:
         <div className="bg-gradient-to-b from-amber-500 to-orange-600 text-white rounded-2xl p-6 sm:p-8 text-center mb-5">
           <div className="flex justify-center items-center gap-3 mb-3 flex-wrap">
             <span className="bg-white/20 text-white text-sm font-bold px-3 py-1 rounded-full flex-shrink-0">{surahId}</span>
-            <p className="text-amber-100 font-bold font-quran-qpc-hafs"
-               style={{ fontSize:"clamp(26px, 5vw, 44px)", lineHeight:"2.2", direction:"rtl" }}>
-              {surah.name}
-            </p>
+            <SurahName surah={surahId} size={44} white />
           </div>
           <p className="text-xl sm:text-2xl font-semibold mb-1">{surah.englishName}</p>
           <p className="text-orange-200 mb-3">{surah.englishNameTranslation}</p>

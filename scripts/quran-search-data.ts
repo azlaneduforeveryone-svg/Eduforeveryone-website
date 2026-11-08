@@ -28,8 +28,12 @@ const UR_SHA256 = "005f2ad0cdcb0bb18ed1e368c4d622162569e62ca78d17e0434a95f0848f4
 const sha = (p: string) => createHash("sha256").update(readFileSync(p)).digest("hex");
 function fail(msg: string): never { console.error(`quran-search: FAIL: ${msg}`); process.exit(1); }
 
+/** "believe [d]" in the source means "believe(d)": join short bracketed endings to the word. */
+const joinEndings = (html: string) =>
+  html.replace(/<\/span>\s*<span class='punc'>\[<\/span><span class='[a-z]+'>(d|s|es|ed|ies|ing|er|ly)<\/span><span class='punc'>\]<\/span>/g, "$1</span>");
+
 function englishWord(html: string): string {
-  return [...html.matchAll(/<span class='([a-z]+)'>([^<]*)<\/span>/g)]
+  return [...joinEndings(html).matchAll(/<span class='([a-z]+)'>([^<]*)<\/span>/g)]
     .filter(m => m[1] !== "punc").map(m => m[2]).join(" ")
     .replace(/\s+([,.;:!?)\]])/g, "$1").replace(/([([])\s+/g, "$1").trim();
 }

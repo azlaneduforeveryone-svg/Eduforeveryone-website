@@ -50,8 +50,12 @@ function formKey(t: string): string {
   if (k.length > 1 && k[1] === "\u0651") k = k[0] + k.slice(2);
   return k;
 }
+/** "believe [d]" in the source means "believe(d)": join short bracketed endings to the word. */
+const joinEndings = (html: string) =>
+  html.replace(/<\/span>\s*<span class='punc'>\[<\/span><span class='[a-z]+'>(d|s|es|ed|ies|ing|er|ly)<\/span><span class='punc'>\]<\/span>/g, "$1</span>");
+
 function englishOf(html: string): { text: string; cls: string | null } {
-  const pieces = [...html.matchAll(/<span class='([a-z]+)'>([^<]*)<\/span>/g)].map(m => [m[1], m[2]]);
+  const pieces = [...joinEndings(html).matchAll(/<span class='([a-z]+)'>([^<]*)<\/span>/g)].map(m => [m[1], m[2]]);
   const text = pieces.filter(([c]) => c !== "paren" && c !== "punc").map(([, t]) => t).join(" ")
     .replace(/[[\]]/g, "").replace(/\s+/g, " ").trim();
   const counts = new Map<string, number>();

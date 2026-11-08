@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useMemo, useRef, useState, Fragment } from "react";
 import Link from "next/link";
+import SurahName from "@/components/quran/SurahName";
 import { SURAH_META } from "@/lib/quranSurahMeta";
 import { buildWordIndex, matchWords, normFor, guessLang, type SearchLang, type WordIndex } from "@/lib/quranSearch";
 
@@ -181,7 +182,7 @@ export default function QuranSearch() {
                 <Link href={`/quran/${s}#ayah-${g}`} className="text-sm font-bold text-teal-700 hover:underline">
                   {meta.name} {s}:{a}
                 </Link>
-                <span className="text-xs text-gray-400 font-quran-qpc-hafs">{meta.arabicName}</span>
+                <SurahName surah={s} size={20} className="text-gray-500" />
               </div>
               {/* Arabic: QPC Hafs text, unchanged; matched words highlighted in Arabic search */}
               <p className="font-quran-qpc-hafs text-right text-gray-900" dir="rtl" style={{ fontSize: "26px", lineHeight: 2.3 }}>

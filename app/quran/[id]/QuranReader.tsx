@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import SurahName from "@/components/quran/SurahName";
 import QuranScriptSelector, { QuranScript, QURAN_SCRIPTS } from "@/components/quran/QuranScriptSelector";
 import type { LocalSurah } from "@/lib/quranLocalServer";
 
@@ -170,9 +171,7 @@ export default function QuranReader({ surahId, initialSurah }: { surahId: number
             <span className="bg-white/20 text-white text-sm font-bold px-3 py-1 rounded-full flex-shrink-0">
               {surah.number}
             </span>
-            <p className={`text-5xl font-bold leading-normal ${fontClass}`}>
-              {surah.name}
-            </p>
+            <SurahName surah={surah.number} size={44} white />
           </div>
           <p className="text-2xl font-semibold mb-1">{surah.englishName}</p>
           <p className="text-teal-200 mb-4">{surah.englishNameTranslation}</p>
