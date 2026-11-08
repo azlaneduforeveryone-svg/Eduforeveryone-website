@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import SurahName from "@/components/quran/SurahName";
 
 interface Surah {
   number: number;
@@ -84,10 +85,7 @@ export default function QuranPage() {
                     <p className="text-gray-500 text-xs">{s.englishNameTranslation}</p>
                     <p className="text-gray-400 text-xs">{s.numberOfAyahs} Ayahs · {s.revelationType}</p>
                   </div>
-                  <p className="text-2xl font-bold text-teal-700 ml-2"
-                    style={{ fontFamily: "var(--font-arabic), 'Amiri', serif", direction: "rtl" }}>
-                    {s.name}
-                  </p>
+                  <SurahName surah={s.number} size={26} className="text-teal-800 ml-2" />
                 </div>
               </div>
             </Link>

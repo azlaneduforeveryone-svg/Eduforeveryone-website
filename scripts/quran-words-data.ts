@@ -37,21 +37,25 @@ function fail(msg: string): never { console.error(`quran-words: FAIL: ${msg}`); 
 
 // ── Text helpers ─────────────────────────────────────────────────────────────
 const stripTags = (t: string) => t.replace(/<[^>]+>|&(?:gt|lt|amp);/g, "");
-const FINAL = new Set(["ً", "ٌ", "ٍ", "َ", "ُ", "ِ", "ۡ", "ْ", "ٗ", "ٖ", "ٞ"]);
+const FINAL = new Set(["\u064B", "\u064C", "\u064D", "\u064E", "\u064F", "\u0650", "\u06E1", "\u0652", "\u0657", "\u0656", "\u065E"]);
 /** The Arabic word as written, without waqf signs, as it would appear on its own. */
 function cleanArabic(t: string): string {
-  return stripTags(t).replace(/[ۖ-ۜ۞۩‌]/g, "").trim();
+  return stripTags(t).replace(/[\u06D6-\u06DC\u06DE\u06E9\u200C]/g, "").trim();
 }
 /** Grouping key: the word without its final vowel, and without a shadda on its first letter
  *  that only comes from the word before it (مِّن is مِن). */
 function formKey(t: string): string {
-  let k = cleanArabic(t).replace(/ـ/g, "");
+  let k = cleanArabic(t).replace(/\u0640/g, "");
   while (k && FINAL.has(k[k.length - 1])) k = k.slice(0, -1);
-  if (k.length > 1 && k[1] === "ّ") k = k[0] + k.slice(2);
+  if (k.length > 1 && k[1] === "\u0651") k = k[0] + k.slice(2);
   return k;
 }
+/** "believe [d]" in the source means "believe(d)": join short bracketed endings to the word. */
+const joinEndings = (html: string) =>
+  html.replace(/<\/span>\s*<span class='punc'>\[<\/span><span class='[a-z]+'>(d|s|es|ed|ies|ing|er|ly)<\/span><span class='punc'>\]<\/span>/g, "$1</span>");
+
 function englishOf(html: string): { text: string; cls: string | null } {
-  const pieces = [...html.matchAll(/<span class='([a-z]+)'>([^<]*)<\/span>/g)].map(m => [m[1], m[2]]);
+  const pieces = [...joinEndings(html).matchAll(/<span class='([a-z]+)'>([^<]*)<\/span>/g)].map(m => [m[1], m[2]]);
   const text = pieces.filter(([c]) => c !== "paren" && c !== "punc").map(([, t]) => t).join(" ")
     .replace(/[[\]]/g, "").replace(/\s+/g, " ").trim();
   const counts = new Map<string, number>();
@@ -59,9 +63,9 @@ function englishOf(html: string): { text: string; cls: string | null } {
   const cls = [...counts.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] ?? null;
   return { text, cls };
 }
-const URDU_CASE = /\s(کو|کے|کی|کا)$/;
+const URDU_CASE = /\s(\u06A9\u0648|\u06A9\u06D2|\u06A9\u06CC|\u06A9\u0627)$/;
 function urduOf(s: string, cls: string | null): string {
-  let t = s.replace(/\s*\/\s*/g, " / ").replace(/\s+/g, " ").replace(/[ ۔]+$/, "").trim();
+  let t = s.replace(/\s*\/\s*/g, " / ").replace(/\s+/g, " ").replace(/[ \u06D4]+$/, "").trim();
   // A trailing کو / کے / کی / کا on a noun only reflects the ayah's grammar ("رات کو" is "رات").
   if ((cls === "n" || cls === "pn") && t.includes(" ")) t = t.replace(URDU_CASE, "");
   return t;
@@ -132,7 +136,7 @@ function build(): string {
   for (const [key, occ] of byFreq) {
     if (words.length === WORD_COUNT) break;
     // Skip وَ / فَ + a word already chosen (وَلَا when لَا is in): more distinct words.
-    if (/^[وف][َ]/.test(key) && chosenKeys.has(key.slice(2))) continue;
+    if (/^[\u0648\u0641][\u064E]/.test(key) && chosenKeys.has(key.slice(2))) continue;
     const n = occ.length;
     const ens = occ.map(o => o.en);
     const er = ranked(ens, s => s.toLowerCase());
@@ -149,12 +153,12 @@ function build(): string {
     const first = [...occ].sort((a, b) => refOrder(a.ref) - refOrder(b.ref))[0];
     const arabic = ranked(occ.map(o => o.full), s => s)[0][0];
     chosenKeys.add(key); seenEn.add(enAnswer.toLowerCase());
-    words.push({ id: "", arabic, count: n, ref: first.ref, kind, en: enAnswer, ur: urAns.join("، ") });
+    words.push({ id: "", arabic, count: n, ref: first.ref, kind, en: enAnswer, ur: urAns.join("\u060C ") });
   }
   if (words.length !== WORD_COUNT) fail(`only ${words.length} words qualified`);
 
   // Wrong answers: same kind of word, no shared meaning in either language.
-  const tokens = (s: string) => new Set(s.toLowerCase().split(/[\s,،/]+/).filter(t => t && !["the", "a", "an", "of", "to"].includes(t)));
+  const tokens = (s: string) => new Set(s.toLowerCase().split(/[\s,\u060C/]+/).filter(t => t && !["the", "a", "an", "of", "to"].includes(t)));
   const overlaps = (a: string, b: string) => { const A = tokens(a); return [...tokens(b)].some(t => A.has(t)); };
   const out: QulWord[] = words.map((w, i) => {
     const rand = rng(i + 1);

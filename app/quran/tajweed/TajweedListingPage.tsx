@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import SurahName from "@/components/quran/SurahName";
 
 type Lang = "en" | "ur" | "hi";
 
@@ -164,12 +165,9 @@ export default function TajweedListingPage({ localSurahs = [] }: { localSurahs?:
                 <p className="text-gray-500 text-xs truncate">{s.translated_name?.name}</p>
                 <p className="text-gray-400 text-xs">{s.verses_count} Ayahs · {s.revelation_place}</p>
               </div>
-              {/* Arabic name — fixed font */}
+              {/* Arabic name in King Fahd Complex calligraphy */}
               <div className="flex-shrink-0 text-right">
-                <p className="text-amber-700 font-bold arabic-text leading-loose"
-                   style={{ fontSize:"clamp(16px, 3vw, 22px)", lineHeight:"2" }}>
-                  {s.name_arabic}
-                </p>
+                <SurahName surah={s.id} size={24} className="text-amber-800" />
               </div>
             </Link>
           ))}

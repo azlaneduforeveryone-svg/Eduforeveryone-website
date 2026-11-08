@@ -78,7 +78,7 @@ function parseTajweed(markup: string, where: string): Ch[] {
 
 /** Base letters only, so the two encodings can be matched word to word. */
 function skeleton(s: string): string {
-  const t = s.replace(/ٔ/g, "ء").replace(/[ىٮ]/g, "ي").replace(/ٱ/g, "ا");
+  const t = s.replace(/\u0654/g, "\u0621").replace(/[\u0649\u066E]/g, "\u064A").replace(/\u0671/g, "\u0627");
   let out = "";
   for (const ch of t) {
     const c = ch.codePointAt(0)!;
@@ -213,17 +213,17 @@ function buildAll() {
     for (let a = 1; reader.has(`${s}:${a}`); a++) {
       const key = `${s}:${a}`;
       const text = reader.get(key)!;
-      const parts = text.split(/( | )/);
+      const parts = text.split(/( |\u00A0)/);
       const tokens = parts.filter((_, i) => i % 2 === 0);
       const sep = parts.filter((_, i) => i % 2 === 1);
       const qmap = tajweed.get(key) ?? fail(`${key}: missing from QUL tajweed file`);
       const qul = [...qmap.keys()].sort((x, y) => x - y)
-        .map(n => ({ n, chars: parseTajweed(qmap.get(n)!, `${key}:${n}`).filter(ch => ch.c !== "۞") }));
+        .map(n => ({ n, chars: parseTajweed(qmap.get(n)!, `${key}:${n}`).filter(ch => ch.c !== "\u06DE") }));
 
       let qi = 0;
       const words: Word[] = tokens.map((tok, ti) => {
         const isEnd = ti === tokens.length - 1;
-        if (tok === "۞") { stats.hizbMarks++; return { r: [[tok]], q: [] }; }
+        if (tok === "\u06DE") { stats.hizbMarks++; return { r: [[tok]], q: [] }; }
         if (isEnd && qi === qul.length) { stats.missingEnd++; return { r: [[tok]], q: [] }; }
         if (qi >= qul.length) fail(`${key}: Reader has more words than the QUL file`);
 
@@ -238,7 +238,7 @@ function buildAll() {
         if (sim < 1) {
           // The only accepted difference: the Reader writes ى where QUL writes a tatweel.
           const a = skeleton(txt(chars)), b = skeleton(tok);
-          if (b.replace(/ي/g, "") !== a.replace(/ي/g, "") || b.length - a.length !== 1)
+          if (b.replace(/\u064A/g, "") !== a.replace(/\u064A/g, "") || b.length - a.length !== 1)
             fail(`${key} word ${ti + 1}: "${tok}" does not match QUL "${txt(chars)}"`);
           stats.spellingDiffs++;
         }

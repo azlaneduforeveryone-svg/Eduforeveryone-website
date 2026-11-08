@@ -85,6 +85,13 @@ export default function QuranLandingPage() {
         <p className="text-gray-500 max-w-2xl mx-auto leading-relaxed">
           Choose how you want to read the Holy Quran. Four different reading experiences — all free, all ad-free.
         </p>
+        {/* Quran search: opens /quran/search with the query */}
+        <form action="/quran/search" method="get" role="search" className="mt-6 max-w-xl mx-auto flex gap-2">
+          <input type="search" name="q" dir="auto" aria-label="Search the Quran"
+            placeholder="Search the Quran: Arabic, English or Urdu"
+            className="flex-1 min-w-0 rounded-xl border border-gray-300 px-4 py-3 outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-100" />
+          <button type="submit" className="px-5 rounded-xl bg-teal-600 text-white font-semibold hover:bg-teal-700">Search</button>
+        </form>
       </div>
 
       {/* 4 Options Grid */}
