@@ -7,7 +7,7 @@
  */
 
 import type { Metadata, Viewport } from 'next';
-import { DM_Sans, Playfair_Display, Amiri, Amiri_Quran, Noto_Naskh_Arabic } from 'next/font/google';
+import { DM_Sans, Playfair_Display, Amiri, Amiri_Quran, Noto_Naskh_Arabic, Scheherazade_New } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
 import Navbar from '@/components/Navbar';
@@ -23,12 +23,21 @@ const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-displa
 const amiri = Amiri({
   subsets: ['arabic'],
   weight: ['400', '700'],
+  preload: false,
   variable: '--font-arabic',
 });
 const notoNaskh = Noto_Naskh_Arabic({
   subsets: ['arabic'],
   weight: ['400', '600', '700'],
+  preload: false,
   variable: '--font-indopak',
+});
+const scheherazadeNew = Scheherazade_New({
+  weight: ['400', '600', '700'],
+  subsets: ['arabic'],
+  display: 'swap',
+  preload: false,
+  variable: '--font-scheherazade-new',
 });
 // Quran reader fonts: one self-hosted font per script, so every OS and
 // browser shows the same letters. Never fall back to fonts installed on the
@@ -111,7 +120,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${playfair.variable} ${amiri.variable} ${notoNaskh.variable} ${indopakNastaleeq.variable} ${amiriQuran.variable} ${qpcHafs.variable}`}
+      className={`${dmSans.variable} ${playfair.variable} ${amiri.variable} ${notoNaskh.variable} ${scheherazadeNew.variable} ${indopakNastaleeq.variable} ${amiriQuran.variable} ${qpcHafs.variable}`}
     >
       <body className="font-body bg-gray-50 min-h-screen flex flex-col text-gray-900 antialiased">
         <JsonLd data={{

@@ -88,6 +88,32 @@ export const TRANSLATION_FONTS = [
   { id: "'Courier New', monospace", name: "Typewriter" },
 ];
 
+const FONT_CSS_MAP: Record<string, string> = {
+  "Amiri, serif": "Amiri, var(--font-arabic), serif",
+  "'Traditional Arabic', serif": "'Traditional Arabic', serif",
+  "'Scheherazade New', serif": "var(--font-scheherazade-new), 'Scheherazade New', serif",
+  "Cairo, sans-serif": "Cairo, sans-serif",
+  "'Playfair Display', serif": "var(--font-display), 'Playfair Display', serif",
+};
+
+/**
+ * Canvas 2D ctx.font cannot evaluate CSS var(--*) directly.
+ * Resolve the computed font-family string from a hidden DOM probe styled with the CSS variable.
+ */
+function resolveCanvasFontFamily(fontId: string): string {
+  if (typeof document === "undefined" || !document.body) return fontId;
+  const cssFamily = FONT_CSS_MAP[fontId] ?? fontId;
+  const probe = document.createElement("span");
+  probe.style.position = "fixed";
+  probe.style.visibility = "hidden";
+  probe.style.pointerEvents = "none";
+  probe.style.fontFamily = cssFamily;
+  document.body.appendChild(probe);
+  const resolved = window.getComputedStyle(probe).fontFamily || fontId;
+  document.body.removeChild(probe);
+  return resolved;
+}
+
 /**
  * Synchronously convert HTMLCanvasElement to a Blob.
  * Preserves the active user-gesture token for navigator.share and synchronous click actions.
@@ -212,9 +238,12 @@ export default function DuaShareModal({ dua, currentLang, isOpen, onClose }: Dua
       (ctx as unknown as { wordSpacing: string }).wordSpacing = "2px";
     }
 
+    const resolvedArabicFont = resolveCanvasFontFamily(selectedArabicFont);
+    const resolvedTransFont = resolveCanvasFontFamily(selectedTransFont);
+
     // Title (wrapped to max width W - 260)
     const titleFontSize = 28;
-    ctx.font = `bold ${titleFontSize}px ${selectedTransFont}`;
+    ctx.font = `bold ${titleFontSize}px ${resolvedTransFont}`;
     const titleLines = getWrappedLines(ctx, activeTitle, W - 260);
     const titleLineHeight = 42;
 
@@ -222,7 +251,7 @@ export default function DuaShareModal({ dua, currentLang, isOpen, onClose }: Dua
     if ("wordSpacing" in ctx) {
       (ctx as unknown as { wordSpacing: string }).wordSpacing = "4px";
     }
-    ctx.font = `normal ${arabicFontSize}px ${selectedArabicFont}`;
+    ctx.font = `normal ${arabicFontSize}px ${resolvedArabicFont}`;
     const arabicLines = getWrappedLines(ctx, dua.arabic, W - 240);
     const arabicLineHeight = arabicFontSize * 1.85;
 
@@ -231,13 +260,13 @@ export default function DuaShareModal({ dua, currentLang, isOpen, onClose }: Dua
       (ctx as unknown as { wordSpacing: string }).wordSpacing = "2px";
     }
     const transFontSize = Math.max(18, translationFontSize - 4);
-    ctx.font = `italic ${transFontSize}px ${selectedTransFont}`;
+    ctx.font = `italic ${transFontSize}px ${resolvedTransFont}`;
     const transLines = getWrappedLines(ctx, `"${dua.transliteration}"`, W - 240);
     const transLineHeight = transFontSize * 1.45;
     const effectiveTransLines = transLines.slice(0, 3);
 
     // Translation text
-    ctx.font = `medium ${translationFontSize}px ${selectedTransFont}`;
+    ctx.font = `medium ${translationFontSize}px ${resolvedTransFont}`;
     const transTextLines = getWrappedLines(ctx, activeTranslation, W - 240);
     const transTextLineHeight = translationFontSize * 1.5;
 
@@ -275,14 +304,14 @@ export default function DuaShareModal({ dua, currentLang, isOpen, onClose }: Dua
 
     // 4. Draw Header Source
     ctx.fillStyle = selectedFrame.borderGold;
-    ctx.font = `bold ${sourceFontSize}px ${selectedTransFont}`;
+    ctx.font = `bold ${sourceFontSize}px ${resolvedTransFont}`;
     ctx.textAlign = "center";
     ctx.fillText("🤲   " + dua.source, W / 2, currentY);
 
     // 5. Draw Header Title
     currentY += gapSourceToTitle;
     ctx.fillStyle = selectedFrame.textColor;
-    ctx.font = `bold ${titleFontSize}px ${selectedTransFont}`;
+    ctx.font = `bold ${titleFontSize}px ${resolvedTransFont}`;
     titleLines.forEach((line, idx) => {
       ctx.fillText(line, W / 2, currentY + idx * titleLineHeight);
     });
@@ -300,7 +329,7 @@ export default function DuaShareModal({ dua, currentLang, isOpen, onClose }: Dua
     // 7. Draw Arabic Text Block
     currentY += gapSeparatorToArabic;
     ctx.fillStyle = selectedFrame.arabicColor;
-    ctx.font = `normal ${arabicFontSize}px ${selectedArabicFont}`;
+    ctx.font = `normal ${arabicFontSize}px ${resolvedArabicFont}`;
     ctx.textAlign = "center";
 
     arabicLines.forEach((line, idx) => {
@@ -311,7 +340,7 @@ export default function DuaShareModal({ dua, currentLang, isOpen, onClose }: Dua
     // 8. Draw Transliteration Block
     currentY += gapArabicToTrans;
     ctx.fillStyle = selectedFrame.transColor;
-    ctx.font = `italic ${transFontSize}px ${selectedTransFont}`;
+    ctx.font = `italic ${transFontSize}px ${resolvedTransFont}`;
 
     effectiveTransLines.forEach((line, idx) => {
       ctx.fillText(line, W / 2, currentY + idx * transLineHeight);
@@ -321,7 +350,7 @@ export default function DuaShareModal({ dua, currentLang, isOpen, onClose }: Dua
     // 9. Draw Translation Block
     currentY += gapTransToTranslation;
     ctx.fillStyle = selectedFrame.textColor;
-    ctx.font = `medium ${translationFontSize}px ${selectedTransFont}`;
+    ctx.font = `medium ${translationFontSize}px ${resolvedTransFont}`;
 
     const maxFooterY = H - 140;
     for (let i = 0; i < transTextLines.length; i++) {
@@ -336,12 +365,12 @@ export default function DuaShareModal({ dua, currentLang, isOpen, onClose }: Dua
     ctx.fillRect(pad + 12, footerY, W - (pad + 12) * 2, 85);
 
     ctx.fillStyle = selectedFrame.borderGold;
-    ctx.font = `bold 24px ${selectedTransFont}`;
+    ctx.font = `bold 24px ${resolvedTransFont}`;
     ctx.textAlign = "left";
     ctx.fillText("☪ EduForEveryone", pad + 45, footerY + 52);
 
     ctx.fillStyle = selectedFrame.textColor;
-    ctx.font = `semibold 22px ${selectedTransFont}`;
+    ctx.font = `semibold 22px ${resolvedTransFont}`;
     ctx.textAlign = "right";
     ctx.fillText("eduforeveryone.com/duas", W - (pad + 45), footerY + 52);
 
@@ -364,16 +393,34 @@ export default function DuaShareModal({ dua, currentLang, isOpen, onClose }: Dua
   // Re-render Canvas whenever frame, text sizes, fonts, or dua data changes
   useEffect(() => {
     if (!isOpen || !canvasRef.current) return;
-    renderCanvasCard();
+    let cancelled = false;
 
-    if (typeof document !== "undefined" && document.fonts) {
-      document.fonts.ready.then(() => {
-        if (canvasRef.current) {
-          renderCanvasCard();
+    const loadAndRender = async () => {
+      const resolvedArabicFont = resolveCanvasFontFamily(selectedArabicFont);
+      const resolvedTransFont = resolveCanvasFontFamily(selectedTransFont);
+      if (typeof document !== "undefined" && document.fonts) {
+        try {
+          await Promise.all([
+            document.fonts.load(`normal ${arabicFontSize}px ${resolvedArabicFont}`, dua.arabic),
+            document.fonts.load(`bold 28px ${resolvedTransFont}`, activeTitle),
+            document.fonts.ready,
+          ]);
+        } catch {
+          // Proceed with fallback if font loading fails
         }
-      });
-    }
-  }, [isOpen, renderCanvasCard]);
+      }
+      if (!cancelled && canvasRef.current) {
+        renderCanvasCard();
+      }
+    };
+
+    renderCanvasCard();
+    loadAndRender();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [isOpen, renderCanvasCard, selectedArabicFont, selectedTransFont, arabicFontSize, dua.arabic, activeTitle]);
 
   const getWrappedLines = (ctx: CanvasRenderingContext2D, text: string, maxWidth: number): string[] => {
     const words = text.split(" ");

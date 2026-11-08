@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 mb-8">
           <div className="col-span-2 sm:col-span-3 lg:col-span-1">
             <div className="flex items-center gap-2 mb-3">
-              <img src="/Main_Logo.jpg" alt="EduForEveryone Logo" className="h-8 w-8 object-contain" />
+              <img src="/Main_Logo.jpg" alt="EduForEveryone Logo" className="h-8 w-8 object-contain" loading="lazy" />
               <span className="text-white font-bold text-lg">EduForEveryone</span>
             </div>
             <p className="text-sm leading-relaxed">

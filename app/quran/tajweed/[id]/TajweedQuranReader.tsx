@@ -43,8 +43,6 @@ const TAJWEED_CSS = Object.entries(TAJWEED_RULES)
   .map(([id, r]) => `.tj-${id} { color: ${r.color}; cursor: pointer; }`)
   .join("\n");
 
-const ARABIC_FONT_CSS = `@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');`;
-
 type ReaderLang = "en" | "ur" | "hi";
 
 interface RulePopup {
@@ -170,9 +168,9 @@ export default function TajweedQuranReader({ surahId, initialSurah }: { surahId:
 
   return (
     <div className={bg} onClick={() => setPopup(null)}>
-      {/* Inject Tajweed CSS + Arabic font */}
+      {/* Inject Tajweed CSS */}
       {/* Set as raw CSS so server and browser render it identically (no hydration mismatch). */}
-      <style dangerouslySetInnerHTML={{ __html: ARABIC_FONT_CSS + "\n" + TAJWEED_CSS }} />
+      <style dangerouslySetInnerHTML={{ __html: TAJWEED_CSS }} />
 
       <div className="max-w-4xl mx-auto px-4 py-8">
         {/* Breadcrumb */}
@@ -339,7 +337,7 @@ export default function TajweedQuranReader({ surahId, initialSurah }: { surahId:
                   <div className="w-5 h-5 rounded-full flex-shrink-0 mt-0.5 shadow-sm" style={{background:rule.color}} />
                   <div>
                     <p className={`text-sm font-bold ${text}`}>{rule.name}</p>
-                    <p className="text-xs text-gray-500 mt-0.5" style={{fontFamily:"'Amiri',serif", direction:"rtl"}}>{rule.nameAr}</p>
+                    <p className="text-xs text-gray-500 mt-0.5" style={{fontFamily:"var(--font-arabic), 'Amiri', serif", direction:"rtl"}}>{rule.nameAr}</p>
                     <p className={`text-xs ${sub} mt-1 leading-relaxed ${ruleLang==="ur"?"text-right":""}`}
                        style={ruleLang==="ur"?{fontFamily:"'Noto Nastaliq Urdu',serif"}:{}}>
                       {rule.desc[ruleLang]}
@@ -471,7 +469,7 @@ export default function TajweedQuranReader({ surahId, initialSurah }: { surahId:
               <div className="w-8 h-8 rounded-full flex-shrink-0" style={{background: rule.color}} />
               <div className="flex-1">
                 <p className="font-black text-gray-900 text-base">{rule.name}</p>
-                <p className="text-sm text-amber-700" style={{fontFamily:"'Amiri',serif", direction:"rtl"}}>{rule.nameAr}</p>
+                <p className="text-sm text-amber-700" style={{fontFamily:"var(--font-arabic), 'Amiri', serif", direction:"rtl"}}>{rule.nameAr}</p>
               </div>
               <button onClick={() => setPopup(null)} className="text-gray-400 hover:text-gray-600 text-xl leading-none flex-shrink-0">×</button>
             </div>

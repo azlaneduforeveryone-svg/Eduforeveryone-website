@@ -449,7 +449,7 @@ export default function IslamicQuizGame() {
             {curQ.arabicAyah && (
               <div className="bg-teal-50 border border-teal-100 rounded-xl p-3 mb-3 text-center">
                 <p className="text-xl leading-loose text-teal-900 mb-1"
-                  style={{fontFamily:"'Amiri','Noto Naskh Arabic',serif", direction:"rtl"}}>
+                  style={{fontFamily:"'Amiri', var(--font-indopak), 'Noto Naskh Arabic', serif", direction:"rtl"}}>
                   {curQ.arabicAyah}
                 </p>
                 {curQ.reference && (

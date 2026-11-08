@@ -19,7 +19,7 @@
  * Bump CACHE_VERSION on any change to this file.
  */
 
-const CACHE_VERSION = 'v2'; // v2: purge caches poisoned by v1 (stale RSC payloads, cached 404s)
+const CACHE_VERSION = 'v3'; // v2: purge caches poisoned by v1 (stale RSC payloads, cached 404s)
 const PRECACHE = `efe-precache-${CACHE_VERSION}`;
 const RUNTIME = `efe-runtime-${CACHE_VERSION}`;
 const MEDIA = `efe-media-${CACHE_VERSION}`;

@@ -152,7 +152,7 @@ export default function TajweedListingPage({ localSurahs = [] }: { localSurahs?:
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {filtered.map(s => (
-            <Link key={s.id} href={`/quran/tajweed/${s.id}`}
+            <Link key={s.id} href={`/quran/tajweed/${s.id}`} prefetch={false}
               className="group bg-white border border-gray-200 rounded-2xl p-4 hover:border-amber-300 hover:shadow-md transition-all flex items-center gap-3">
               {/* Number */}
               <div className="w-11 h-11 bg-amber-50 border border-amber-100 rounded-xl flex items-center justify-center flex-shrink-0">
