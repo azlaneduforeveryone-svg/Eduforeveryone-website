@@ -28,8 +28,8 @@ service cloud.firestore {
       return isSignedIn() && (
         request.auth.token.get('admin', false) == true ||
         request.auth.uid == 'YOUR_ADMIN_UID' ||
-        (request.auth.token.email_verified == true &&
-         request.auth.token.email == 'YOUR_ADMIN_EMAIL@example.com')
+        (request.auth.token.get('email_verified', false) == true &&
+         request.auth.token.get('email', '') == 'YOUR_ADMIN_EMAIL@example.com')
       );
     }
 
