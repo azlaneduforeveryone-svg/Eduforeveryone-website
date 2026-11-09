@@ -1,11 +1,6 @@
 // ============================================================================
 // Firestore Security Rules — EduForEveryone (project: eduforeveryone-ded2d)
 // ============================================================================
-// Note: Expired test-mode rule removed. Default deny applies to all unlisted paths.
-// Replace "YOUR_ADMIN_EMAIL@example.com" / "YOUR_ADMIN_UID" in isAdmin() below
-// with your actual Firebase Auth admin email/UID (or use custom claim admin: true
-// / Firebase Admin SDK on the server).
-// ============================================================================
 
 rules_version = '2';
 service cloud.firestore {
@@ -21,19 +16,13 @@ service cloud.firestore {
       return isSignedIn() && request.auth.uid == uid;
     }
 
-    // Admin check: supports custom claim `admin == true`, or a designated
-    // admin UID / verified email. (Note: Server-side Firebase Admin SDK
-    // bypasses security rules automatically.)
     function isAdmin() {
-      return isSignedIn() && (
-        request.auth.token.get('admin', false) == true ||
-        request.auth.uid == 'YOUR_ADMIN_UID' ||
-        (request.auth.token.get('email_verified', false) == true &&
-         request.auth.token.get('email', '') == 'YOUR_ADMIN_EMAIL@example.com')
-      );
+      return isSignedIn() && request.auth.uid == '<PASTE YOUR UID HERE>';
     }
 
-    // Validates global & category leaderboard entry payloads
+    // Validates global & category leaderboard entry payloads:
+    // Global (`leaderboard/{uid}`): { uid, displayName, photoURL, totalScore, totalGames, bestScore, updatedAt }
+    // Category (`leaderboard_{cat}/{uid}`): { uid, displayName, photoURL, totalScore, bestScore, games, updatedAt }
     function isValidLeaderboardWrite(uid) {
       let d = request.resource.data;
       return isOwner(uid)
@@ -120,13 +109,16 @@ service cloud.firestore {
     }
 
     // ── 3. Quiz Sessions (quizSessions/{sessionId}) ─────────────────────────
-    // Used by saveQuizScore (creates session doc) and getUserSessions (queries
-    // where("uid", "==", uid)). Signed-in user can only read & create their own
-    // sessions; sessions are immutable once recorded.
+    // Written by saveQuizScore: { uid, displayName, photoURL, gameName,
+    // category, difficulty, score, correct, total, playedAt }
     match /quizSessions/{sessionId} {
       allow read: if isSignedIn() && resource.data.uid == request.auth.uid;
       allow create: if isSignedIn()
         && request.resource.data.uid == request.auth.uid
+        && request.resource.data.displayName is string
+        && request.resource.data.gameName is string
+        && request.resource.data.category is string
+        && request.resource.data.difficulty is string
         && request.resource.data.score is number
         && request.resource.data.score >= 0
         && request.resource.data.score <= 100000
@@ -138,20 +130,28 @@ service cloud.firestore {
     }
 
     // ── 4. IELTS & GMAT User History ────────────────────────────────────────
-    // ieltsSessions/{sessionId}: queried with where("uid", "==", uid)
+    // Written by saveIeltsResult: { uid, displayName, skill, band, raw, total,
+    // testId, source, mockId, date }
     match /ieltsSessions/{sessionId} {
       allow read: if isSignedIn() && resource.data.uid == request.auth.uid;
       allow create: if isSignedIn()
         && request.resource.data.uid == request.auth.uid
+        && request.resource.data.displayName is string
+        && request.resource.data.skill in ['listening', 'reading', 'writing', 'speaking']
+        && request.resource.data.source in ['practice', 'simulation', 'full-mock']
         && request.resource.data.band is number
         && request.resource.data.band >= 0
         && request.resource.data.band <= 9;
       allow update, delete: if false;
     }
 
-    // gmatResults/{uid}/sessions/{sessionId}: per-user subcollection
+    // Written by saveGmatResult: { formId, sections, estimatedTotal, completedAt }
     match /gmatResults/{uid}/sessions/{sessionId} {
-      allow read, create: if isOwner(uid);
+      allow read: if isOwner(uid);
+      allow create: if isOwner(uid)
+        && request.resource.data.formId is string
+        && request.resource.data.sections is list
+        && request.resource.data.estimatedTotal is number;
       allow update, delete: if false;
     }
 
