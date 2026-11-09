@@ -150,49 +150,77 @@ export function mergeProgressRecords(a: TopicProgress, b: TopicProgress): TopicP
     quizPassed: a.quizPassed || b.quizPassed,
     bestScore: Math.max(a.bestScore, b.bestScore),
     attempts: Math.max(a.attempts, b.attempts),
-    lastQuizIds: latestIds,
-    updatedAt: Math.max(a.updatedAt, b.updatedAt, Date.now()),
+    lastQuizIds: [...latestIds],
+    updatedAt: Math.max(a.updatedAt, b.updatedAt),
   };
+}
+
+export interface MergeStorageAdapter {
+  getFlag: (key: string) => string | null;
+  setFlag: (key: string, val: string) => void;
+  getLocalTopics: () => Record<string, TopicProgress>;
+  getRemoteTopics: () => Promise<Record<string, TopicProgress>>;
+  writeRemoteTopics: (mergedToWrite: Record<string, TopicProgress>) => Promise<void>;
+}
+
+export async function runSignInMerge(
+  uid: string,
+  adapter: MergeStorageAdapter
+): Promise<{ didMerge: boolean; written: Record<string, TopicProgress> }> {
+  const mergeFlagKey = `${MERGE_FLAG_PREFIX}${uid}`;
+  if (adapter.getFlag(mergeFlagKey) === "true") {
+    return { didMerge: false, written: {} };
+  }
+
+  const localMap = adapter.getLocalTopics();
+  const localEntries = Object.entries(localMap).filter(([, p]) => hasProgressActivity(p));
+
+  const written: Record<string, TopicProgress> = {};
+  if (localEntries.length > 0) {
+    const remoteMap = await adapter.getRemoteTopics();
+    for (const [topicId, localP] of localEntries) {
+      const remoteP = remoteMap[topicId] || { ...DEFAULT_TOPIC_PROGRESS };
+      written[topicId] = mergeProgressRecords(localP, remoteP);
+    }
+    await adapter.writeRemoteTopics(written);
+  }
+
+  adapter.setFlag(mergeFlagKey, "true");
+  return { didMerge: true, written };
 }
 
 // ── Firestore Read / Write / Merge (Signed-in users) ──────────────────────────
 export async function mergeLocalToFirestoreOnce(uid: string): Promise<void> {
   if (typeof window === "undefined" || !uid) return;
-  const mergeFlagKey = `${MERGE_FLAG_PREFIX}${uid}`;
   try {
-    if (localStorage.getItem(mergeFlagKey) === "true") {
-      return;
-    }
-
-    // Collect any non-empty local progress across the 28 topics
-    const localEntries: Array<{ topicId: string; progress: TopicProgress }> = [];
-    for (const t of ALL_O_LEVEL_TOPICS) {
-      const localP = getLocalTopicProgress(t.topicId);
-      if (hasProgressActivity(localP)) {
-        localEntries.push({ topicId: t.topicId, progress: localP });
-      }
-    }
-
-    if (localEntries.length > 0) {
-      // Read existing Firestore docs in users/{uid}/courseProgress
-      const colRef = collection(db, "users", uid, "courseProgress");
-      const snap = await getDocs(colRef);
-      const remoteMap: Record<string, TopicProgress> = {};
-      snap.forEach((d) => {
-        remoteMap[d.id] = normalizeProgress(d.data());
-      });
-
-      const batch = writeBatch(db);
-      for (const { topicId, progress: localP } of localEntries) {
-        const remoteP = remoteMap[topicId] || { ...DEFAULT_TOPIC_PROGRESS };
-        const merged = mergeProgressRecords(localP, remoteP);
-        const docRef = doc(db, "users", uid, "courseProgress", topicId);
-        batch.set(docRef, merged);
-      }
-      await batch.commit();
-    }
-
-    localStorage.setItem(mergeFlagKey, "true");
+    await runSignInMerge(uid, {
+      getFlag: (k) => localStorage.getItem(k),
+      setFlag: (k, v) => localStorage.setItem(k, v),
+      getLocalTopics: () => {
+        const map: Record<string, TopicProgress> = {};
+        for (const t of ALL_O_LEVEL_TOPICS) {
+          map[t.topicId] = getLocalTopicProgress(t.topicId);
+        }
+        return map;
+      },
+      getRemoteTopics: async () => {
+        const colRef = collection(db, "users", uid, "courseProgress");
+        const snap = await getDocs(colRef);
+        const remoteMap: Record<string, TopicProgress> = {};
+        snap.forEach((d) => {
+          remoteMap[d.id] = normalizeProgress(d.data());
+        });
+        return remoteMap;
+      },
+      writeRemoteTopics: async (mergedToWrite) => {
+        const batch = writeBatch(db);
+        for (const [topicId, merged] of Object.entries(mergedToWrite)) {
+          const docRef = doc(db, "users", uid, "courseProgress", topicId);
+          batch.set(docRef, merged);
+        }
+        await batch.commit();
+      },
+    });
   } catch (err) {
     console.error("Failed to merge local accounting progress to Firestore:", err);
   }
