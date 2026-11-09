@@ -1822,7 +1822,7 @@ function HowToPlay({onClose}:{onClose:()=>void}){
         <div className="px-5 py-4 border-t border-gray-100 flex-shrink-0 bg-white sm:rounded-b-2xl">
           <button onClick={onClose} className="w-full bg-teal-600 text-white py-3 rounded-xl font-bold text-base"
             style={{ boxShadow: "0 4px 0 #0F6E56" }}>
-            Let's Play! 🎮
+            Let&apos;s Play! 🎮
           </button>
         </div>
       </div>
@@ -1888,7 +1888,7 @@ function MeaningCard({entry,streak}:{entry:WordEntry;streak:number}){
         </div>
         <div className="bg-white rounded-xl p-4 border border-teal-100">
           <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">✏️ Example Sentence</p>
-          <p className="text-sm text-gray-600 leading-relaxed italic">"{entry.sentence}"</p>
+          <p className="text-sm text-gray-600 leading-relaxed italic">&ldquo;{entry.sentence}&rdquo;</p>
         </div>
       </div>
       <p className="text-center text-xs text-teal-600 font-semibold mt-3">

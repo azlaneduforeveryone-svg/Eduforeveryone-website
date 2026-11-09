@@ -35,6 +35,98 @@ export const ALL_LEADERBOARD_TAB_IDS: LeaderboardTabId[] = [
 export const PER_GAME_DAILY_CAP = 500;
 export const GLOBAL_DAILY_CAP = 3000;
 export const MAX_SINGLE_ROUND_POINTS = 270;
+export const LEADERBOARD_UPDATE_WARNING =
+  "Your score was saved to your profile, but the leaderboard could not be updated.";
+
+// ── Server Time Offset Management ────────────────────────────────────────────
+// Stores (serverTimeMs - deviceTimeMs) so dailyDate is computed from server time
+// rather than trusting a potentially skewed client device clock.
+let serverTimeOffsetMs: number | null = null;
+
+export function getServerTimeOffsetMs(): number | null {
+  return serverTimeOffsetMs;
+}
+
+export function resetServerTimeOffset(): void {
+  serverTimeOffsetMs = null;
+}
+
+function updateOffsetFromSnapshot(snapData: Record<string, unknown> | undefined): boolean {
+  const lastSeen = snapData?.lastSeen as { toMillis?: () => number } | undefined;
+  if (lastSeen && typeof lastSeen.toMillis === "function") {
+    serverTimeOffsetMs = lastSeen.toMillis() - Date.now();
+    return true;
+  }
+  return false;
+}
+
+/**
+ * Writes serverTimestamp() to users/{uid}.lastSeen and reads it back to compute
+ * and store the offset between Firestore server time and the device clock.
+ */
+export async function syncServerTimeOffset(uid: string): Promise<number> {
+  const userRef = doc(db, "users", uid);
+  await setDoc(userRef, { uid, lastSeen: serverTimestamp() }, { merge: true });
+  const snap = await getDoc(userRef);
+  if (!updateOffsetFromSnapshot(snap.data() as Record<string, unknown> | undefined)) {
+    serverTimeOffsetMs = 0;
+  }
+  return serverTimeOffsetMs ?? 0;
+}
+
+function isPermissionDeniedError(err: unknown): boolean {
+  if (!err || typeof err !== "object") return false;
+  const code = String((err as { code?: unknown }).code || "");
+  const msg = String((err as { message?: unknown }).message || "");
+  return (
+    code === "permission-denied" ||
+    code.endsWith("/permission-denied") ||
+    msg.includes("PERMISSION_DENIED") ||
+    msg.includes("permission-denied")
+  );
+}
+
+/**
+ * Displays a small non-blocking notice in the browser when personal stats were
+ * saved but the leaderboard batch could not be updated.
+ */
+export function showNonBlockingLeaderboardNotice(
+  message: string = LEADERBOARD_UPDATE_WARNING
+): void {
+  if (typeof document === "undefined" || !document.body) return;
+  try {
+    const existing = document.getElementById("efe-leaderboard-warning-toast");
+    if (existing) existing.remove();
+
+    const toast = document.createElement("div");
+    toast.id = "efe-leaderboard-warning-toast";
+    toast.setAttribute("role", "status");
+    toast.setAttribute("aria-live", "polite");
+    toast.textContent = message;
+    Object.assign(toast.style, {
+      position: "fixed",
+      bottom: "20px",
+      right: "20px",
+      maxWidth: "360px",
+      backgroundColor: "#fffbeb",
+      color: "#92400e",
+      border: "1px solid #fcd34d",
+      borderRadius: "12px",
+      padding: "12px 16px",
+      fontSize: "13px",
+      fontWeight: "600",
+      lineHeight: "1.4",
+      boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.12)",
+      zIndex: "9999",
+    });
+    document.body.appendChild(toast);
+    setTimeout(() => {
+      toast.remove();
+    }, 6000);
+  } catch {
+    // Ignore DOM errors in non-browser environments
+  }
+}
 
 export interface LeaderboardEntry {
   uid: string;
@@ -112,8 +204,12 @@ export function resolveFirstName(displayName?: string | null, email?: string | n
   return "Student";
 }
 
-export function getTodayUtcString(date = new Date()): string {
-  return date.toISOString().slice(0, 10);
+export function getTodayUtcString(date?: Date): string {
+  if (date) {
+    return date.toISOString().slice(0, 10);
+  }
+  const adjustedMs = Date.now() + (serverTimeOffsetMs ?? 0);
+  return new Date(adjustedMs).toISOString().slice(0, 10);
 }
 
 /**
@@ -204,6 +300,24 @@ export async function createOrUpdateUser(user: {
       lastSeen:    serverTimestamp(),
     });
   }
+
+  // Read back the serverTimestamp() on users/{uid}.lastSeen to store the
+  // offset between Firestore server time and the device clock.
+  try {
+    const freshSnap = await getDoc(ref);
+    updateOffsetFromSnapshot(freshSnap.data() as Record<string, unknown> | undefined);
+  } catch {
+    // Non-fatal; saveGameScore will sync before the first leaderboard write if needed
+  }
+}
+
+export interface SaveGameScoreResult {
+  roundPoints: number;
+  awardedPoints: number;
+  hidden: boolean;
+  leaderboardUpdated: boolean;
+  retriedAfterPermissionDenied?: boolean;
+  leaderboardWarning?: string;
 }
 
 // ── Unified Save Game & Leaderboard Score ────────────────────────────────────
@@ -222,7 +336,7 @@ export async function saveGameScore(params: {
   streak?: number;
   guessesUsed?: number;
   roundPoints?: number;
-}) {
+}): Promise<SaveGameScoreResult> {
   const {
     uid,
     gameId,
@@ -259,12 +373,7 @@ export async function saveGameScore(params: {
   const gameEntryRef = doc(db, "leaderboards", gameId, "entries", uid);
   const globalEntryRef = doc(db, "leaderboards", "global", "entries", uid);
 
-  const [userSnap, gameSnap, globalSnap] = await Promise.all([
-    getDoc(userRef),
-    getDoc(gameEntryRef),
-    getDoc(globalEntryRef),
-  ]);
-
+  const userSnap = await getDoc(userRef);
   const userData = userSnap.exists() ? (userSnap.data() as UserProfile) : null;
   const catStat = userData?.categoryScores?.[category] || {
     games: 0,
@@ -274,7 +383,9 @@ export async function saveGameScore(params: {
     bestScore: 0,
   };
 
-  // 1. Save session to quizSessions + update user profile stats
+  // ── Batch (a): Personal data (users/{uid} stats + quizSessions record) ────
+  // Saved first in its own writeBatch so personal stats are never lost even if
+  // the public leaderboard batch (b) fails.
   const sessionBatch = writeBatch(db);
   const sessionRef = doc(collection(db, "quizSessions"));
   sessionBatch.set(sessionRef, {
@@ -333,55 +444,120 @@ export async function saveGameScore(params: {
 
   await sessionBatch.commit();
 
-  // 2. If user has opted out of public leaderboards, do NOT write leaderboard entries
+  // If user has opted out of public leaderboards, do NOT write leaderboard entries
   if (userData?.hideFromLeaderboards) {
-    return { roundPoints, awardedPoints: 0, hidden: true };
+    return { roundPoints, awardedPoints: 0, hidden: true, leaderboardUpdated: false };
   }
 
-  // 3. Write per-game entry and global entry in a single writeBatch
-  const today = getTodayUtcString();
-  const prevGame = gameSnap.exists() ? (gameSnap.data() as LeaderboardEntry) : null;
-  const prevGlobal = globalSnap.exists() ? (globalSnap.data() as LeaderboardEntry) : null;
+  // ── Batch (b): Leaderboard data (per-game entry + global entry) ───────────
+  const attemptLeaderboardWrite = async (): Promise<number> => {
+    // Before the first leaderboard write, ensure we have synced server time offset
+    if (serverTimeOffsetMs === null) {
+      const freshUserSnap = await getDoc(userRef);
+      if (
+        !updateOffsetFromSnapshot(
+          freshUserSnap.data() as Record<string, unknown> | undefined
+        )
+      ) {
+        await syncServerTimeOffset(uid);
+      }
+    }
 
-  const prevGameDaily =
-    prevGame && prevGame.dailyDate === today ? prevGame.dailyPoints : 0;
-  const prevGlobalDaily =
-    prevGlobal && prevGlobal.dailyDate === today ? prevGlobal.dailyPoints : 0;
+    const today = getTodayUtcString();
+    const [gameSnap, globalSnap] = await Promise.all([
+      getDoc(gameEntryRef),
+      getDoc(globalEntryRef),
+    ]);
 
-  const gameRemaining = Math.max(0, PER_GAME_DAILY_CAP - prevGameDaily);
-  const globalRemaining = Math.max(0, GLOBAL_DAILY_CAP - prevGlobalDaily);
-  const awardedPoints = Math.min(roundPoints, gameRemaining, globalRemaining);
+    const prevGame = gameSnap.exists() ? (gameSnap.data() as LeaderboardEntry) : null;
+    const prevGlobal = globalSnap.exists() ? (globalSnap.data() as LeaderboardEntry) : null;
 
-  const nextGameEntry: LeaderboardEntry = {
-    uid,
-    displayName: firstName,
-    photoURL,
-    totalPoints: (prevGame?.totalPoints || 0) + awardedPoints,
-    bestRound: Math.max(prevGame?.bestRound || 0, roundPoints),
-    games: (prevGame?.games || 0) + 1,
-    dailyPoints: prevGameDaily + awardedPoints,
-    dailyDate: today,
-    updatedAt: serverTimestamp(),
+    const prevGameDaily =
+      prevGame && prevGame.dailyDate === today ? prevGame.dailyPoints : 0;
+    const prevGlobalDaily =
+      prevGlobal && prevGlobal.dailyDate === today ? prevGlobal.dailyPoints : 0;
+
+    const gameRemaining = Math.max(0, PER_GAME_DAILY_CAP - prevGameDaily);
+    const globalRemaining = Math.max(0, GLOBAL_DAILY_CAP - prevGlobalDaily);
+    const awardedPoints = Math.min(roundPoints, gameRemaining, globalRemaining);
+
+    const nextGameEntry: LeaderboardEntry = {
+      uid,
+      displayName: firstName,
+      photoURL,
+      totalPoints: (prevGame?.totalPoints || 0) + awardedPoints,
+      bestRound: Math.max(prevGame?.bestRound || 0, roundPoints),
+      games: (prevGame?.games || 0) + 1,
+      dailyPoints: prevGameDaily + awardedPoints,
+      dailyDate: today,
+      updatedAt: serverTimestamp(),
+    };
+
+    const nextGlobalEntry: LeaderboardEntry = {
+      uid,
+      displayName: firstName,
+      photoURL,
+      totalPoints: (prevGlobal?.totalPoints || 0) + awardedPoints,
+      bestRound: Math.max(prevGlobal?.bestRound || 0, roundPoints),
+      games: (prevGlobal?.games || 0) + 1,
+      dailyPoints: prevGlobalDaily + awardedPoints,
+      dailyDate: today,
+      updatedAt: serverTimestamp(),
+    };
+
+    const lbBatch = writeBatch(db);
+    lbBatch.set(gameEntryRef, nextGameEntry);
+    lbBatch.set(globalEntryRef, nextGlobalEntry);
+    await lbBatch.commit();
+
+    return awardedPoints;
   };
 
-  const nextGlobalEntry: LeaderboardEntry = {
-    uid,
-    displayName: firstName,
-    photoURL,
-    totalPoints: (prevGlobal?.totalPoints || 0) + awardedPoints,
-    bestRound: Math.max(prevGlobal?.bestRound || 0, roundPoints),
-    games: (prevGlobal?.games || 0) + 1,
-    dailyPoints: prevGlobalDaily + awardedPoints,
-    dailyDate: today,
-    updatedAt: serverTimestamp(),
-  };
+  try {
+    const awardedPoints = await attemptLeaderboardWrite();
+    return {
+      roundPoints,
+      awardedPoints,
+      hidden: false,
+      leaderboardUpdated: true,
+    };
+  } catch (firstErr) {
+    if (isPermissionDeniedError(firstErr)) {
+      // Retry once after re-syncing server time and recalculating dailyDate
+      // (covers rounds finishing right across midnight UTC).
+      try {
+        await syncServerTimeOffset(uid);
+        const awardedPoints = await attemptLeaderboardWrite();
+        return {
+          roundPoints,
+          awardedPoints,
+          hidden: false,
+          leaderboardUpdated: true,
+          retriedAfterPermissionDenied: true,
+        };
+      } catch (retryErr) {
+        console.error("Failed to update leaderboard after retry:", retryErr);
+        showNonBlockingLeaderboardNotice(LEADERBOARD_UPDATE_WARNING);
+        return {
+          roundPoints,
+          awardedPoints: 0,
+          hidden: false,
+          leaderboardUpdated: false,
+          leaderboardWarning: LEADERBOARD_UPDATE_WARNING,
+        };
+      }
+    }
 
-  const lbBatch = writeBatch(db);
-  lbBatch.set(gameEntryRef, nextGameEntry);
-  lbBatch.set(globalEntryRef, nextGlobalEntry);
-  await lbBatch.commit();
-
-  return { roundPoints, awardedPoints, hidden: false };
+    console.error("Failed to update leaderboard:", firstErr);
+    showNonBlockingLeaderboardNotice(LEADERBOARD_UPDATE_WARNING);
+    return {
+      roundPoints,
+      awardedPoints: 0,
+      hidden: false,
+      leaderboardUpdated: false,
+      leaderboardWarning: LEADERBOARD_UPDATE_WARNING,
+    };
+  }
 }
 
 // ── Save Quiz Score (Islamic Quiz wrapper) ───────────────────────────────────
