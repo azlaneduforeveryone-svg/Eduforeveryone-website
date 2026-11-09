@@ -20,26 +20,88 @@ service cloud.firestore {
       return isSignedIn() && request.auth.uid == 'Vbw90jysj8c4X4R02sPmdNKjvrf2';
     }
 
-    // Validates global & category leaderboard entry payloads:
-    // Global (`leaderboard/{uid}`): { uid, displayName, photoURL, totalScore, totalGames, bestScore, updatedAt }
-    // Category (`leaderboard_{cat}/{uid}`): { uid, displayName, photoURL, totalScore, bestScore, games, updatedAt }
-    function isValidLeaderboardWrite(uid) {
+    function isValidGameId(gameId) {
+      return gameId in [
+        'global',
+        'islamic-quiz',
+        'math-puzzle',
+        'word-puzzle',
+        'quiz-battle',
+        'quran-words',
+        'subject-quiz'
+      ];
+    }
+
+    function todayUtcString() {
+      let y = string(request.time.year());
+      let m = request.time.month() < 10 ? '0' + string(request.time.month()) : string(request.time.month());
+      let d = request.time.day() < 10 ? '0' + string(request.time.day()) : string(request.time.day());
+      return y + '-' + m + '-' + d;
+    }
+
+    function dailyCapForGame(gameId) {
+      return gameId == 'global' ? 3000 : 500;
+    }
+
+    function hasValidLeaderboardEntryShape(gameId, uid) {
       let d = request.resource.data;
-      return isOwner(uid)
-        && d.uid == request.auth.uid
+      return isValidGameId(gameId)
+        && isOwner(uid)
+        && d.keys().hasOnly([
+          'uid',
+          'displayName',
+          'photoURL',
+          'totalPoints',
+          'bestRound',
+          'games',
+          'dailyPoints',
+          'dailyDate',
+          'updatedAt'
+        ])
+        && d.keys().hasAll([
+          'uid',
+          'displayName',
+          'photoURL',
+          'totalPoints',
+          'bestRound',
+          'games',
+          'dailyPoints',
+          'dailyDate',
+          'updatedAt'
+        ])
+        && d.uid == uid
         && d.displayName is string
         && d.displayName.size() >= 1 && d.displayName.size() <= 100
-        && d.totalScore is number
-        && d.totalScore >= 0 && d.totalScore <= 10000000
-        && d.bestScore is number
-        && d.bestScore >= 0 && d.bestScore <= 10000000
+        && d.photoURL is string
+        && d.totalPoints is number && d.totalPoints >= 0
+        && d.bestRound is number && d.bestRound >= 0 && d.bestRound <= 270
+        && d.games is number && d.games >= 1
+        && d.dailyPoints is number && d.dailyPoints >= 0 && d.dailyPoints <= dailyCapForGame(gameId)
+        && d.dailyDate is string && d.dailyDate == todayUtcString()
+        && (d.updatedAt is timestamp || d.updatedAt is number);
+    }
+
+    function isValidLeaderboardEntryCreate(gameId, uid) {
+      let d = request.resource.data;
+      return hasValidLeaderboardEntryShape(gameId, uid)
+        && d.games == 1
+        && d.totalPoints == d.dailyPoints
+        && d.dailyPoints <= 270
+        && d.bestRound >= d.dailyPoints;
+    }
+
+    function isValidLeaderboardEntryUpdate(gameId, uid) {
+      let d = request.resource.data;
+      let prev = resource.data;
+      let totalDelta = d.totalPoints - prev.totalPoints;
+      let dailyDelta = d.dailyPoints - prev.dailyPoints;
+      return hasValidLeaderboardEntryShape(gameId, uid)
+        && d.games == prev.games + 1
+        && d.bestRound >= prev.bestRound
+        && totalDelta >= 0 && totalDelta <= 270
         && (
-          !('totalGames' in d) ||
-          (d.totalGames is number && d.totalGames >= 0 && d.totalGames <= 1000000)
-        )
-        && (
-          !('games' in d) ||
-          (d.games is number && d.games >= 0 && d.games <= 1000000)
+          (prev.dailyDate == todayUtcString() && dailyDelta == totalDelta)
+          || (prev.dailyDate != todayUtcString() && d.dailyPoints == totalDelta)
         );
     }
 
@@ -57,60 +119,58 @@ service cloud.firestore {
       }
     }
 
-    // ── 2. Leaderboards (global + category leaderboards) ────────────────────
-    // Public read; signed-in user may write only their own entry (doc id == uid)
-    // with field validation on uid and scores.
+    // ── 2. Unified Leaderboards (leaderboards/{gameId}/entries/{uid}) ───────
+    match /leaderboards/{gameId}/entries/{uid} {
+      allow read: if isValidGameId(gameId);
+      allow create: if isValidLeaderboardEntryCreate(gameId, uid);
+      allow update: if isValidLeaderboardEntryUpdate(gameId, uid);
+      allow delete: if isValidGameId(gameId) && isOwner(uid);
+    }
+
+    // ── 2b. Legacy Leaderboards (Read-Only) ─────────────────────────────────
     match /leaderboard/{uid} {
       allow read: if true;
-      allow create, update: if isValidLeaderboardWrite(uid);
-      allow delete: if false;
+      allow write: if false;
     }
 
     match /leaderboard_quran/{uid} {
       allow read: if true;
-      allow create, update: if isValidLeaderboardWrite(uid);
-      allow delete: if false;
+      allow write: if false;
     }
 
     match /leaderboard_hadith/{uid} {
       allow read: if true;
-      allow create, update: if isValidLeaderboardWrite(uid);
-      allow delete: if false;
+      allow write: if false;
     }
 
     match /leaderboard_fiqh/{uid} {
       allow read: if true;
-      allow create, update: if isValidLeaderboardWrite(uid);
-      allow delete: if false;
+      allow write: if false;
     }
 
     match /leaderboard_seerah/{uid} {
       allow read: if true;
-      allow create, update: if isValidLeaderboardWrite(uid);
-      allow delete: if false;
+      allow write: if false;
     }
 
     match /leaderboard_history/{uid} {
       allow read: if true;
-      allow create, update: if isValidLeaderboardWrite(uid);
-      allow delete: if false;
+      allow write: if false;
     }
 
     match /leaderboard_pillars/{uid} {
       allow read: if true;
-      allow create, update: if isValidLeaderboardWrite(uid);
-      allow delete: if false;
+      allow write: if false;
     }
 
     match /leaderboard_names/{uid} {
       allow read: if true;
-      allow create, update: if isValidLeaderboardWrite(uid);
-      allow delete: if false;
+      allow write: if false;
     }
 
     // ── 3. Quiz Sessions (quizSessions/{sessionId}) ─────────────────────────
-    // Written by saveQuizScore: { uid, displayName, photoURL, gameName,
-    // category, difficulty, score, correct, total, playedAt }
+    // Written by saveQuizScore / saveGameScore: { uid, displayName, photoURL,
+    // gameName, category, difficulty, score, correct, total, playedAt }
     match /quizSessions/{sessionId} {
       allow read: if isSignedIn() && resource.data.uid == request.auth.uid;
       allow create: if isSignedIn()

@@ -1,11 +1,52 @@
 // lib/firebaseDB.ts
 import {
   doc, setDoc, getDoc, updateDoc, collection,
-  query, orderBy, limit, getDocs, increment,
+  query, orderBy, limit, getDocs,
   serverTimestamp, where, writeBatch, addDoc,
 } from "firebase/firestore";
 import { db } from "./firebase";
 import type { GmatSessionResult } from "./gmat/types";
+
+// ── Leaderboard Constants & Types ─────────────────────────────────────────────
+export type LeaderboardGameId =
+  | "islamic-quiz"
+  | "math-puzzle"
+  | "word-puzzle"
+  | "quiz-battle"
+  | "quran-words"
+  | "subject-quiz";
+
+export type LeaderboardTabId = "global" | LeaderboardGameId;
+
+export const ALL_LEADERBOARD_GAME_IDS: LeaderboardGameId[] = [
+  "islamic-quiz",
+  "math-puzzle",
+  "word-puzzle",
+  "quiz-battle",
+  "quran-words",
+  "subject-quiz",
+];
+
+export const ALL_LEADERBOARD_TAB_IDS: LeaderboardTabId[] = [
+  "global",
+  ...ALL_LEADERBOARD_GAME_IDS,
+];
+
+export const PER_GAME_DAILY_CAP = 500;
+export const GLOBAL_DAILY_CAP = 3000;
+export const MAX_SINGLE_ROUND_POINTS = 270;
+
+export interface LeaderboardEntry {
+  uid: string;
+  displayName: string;
+  photoURL: string;
+  totalPoints: number;
+  bestRound: number;
+  games: number;
+  dailyPoints: number;
+  dailyDate: string;
+  updatedAt: unknown;
+}
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 export interface UserProfile {
@@ -24,6 +65,7 @@ export interface UserProfile {
   mathTopicsCompleted: string[];
   lastSeen: unknown;
   country?: string;
+  hideFromLeaderboards?: boolean;
 }
 
 export interface CategoryStat {
@@ -47,12 +89,82 @@ export interface QuizSession {
   playedAt: unknown;
 }
 
-function resolveFallbackName(displayName?: string | null, email?: string | null): string {
+export function resolveFallbackName(displayName?: string | null, email?: string | null): string {
   const trimmed = displayName?.trim();
   if (trimmed) return trimmed;
   const emailPrefix = email?.split("@")[0]?.trim();
   if (emailPrefix) return emailPrefix;
   return "Student";
+}
+
+/**
+ * Extracts first name only by default for public leaderboard display.
+ * Falls back to email prefix before '@' or "Student".
+ */
+export function resolveFirstName(displayName?: string | null, email?: string | null): string {
+  const trimmed = displayName?.trim();
+  if (trimmed) {
+    const first = trimmed.split(/\s+/)[0];
+    if (first) return first.slice(0, 30);
+  }
+  const emailPrefix = email?.split("@")[0]?.trim();
+  if (emailPrefix) return emailPrefix.slice(0, 30);
+  return "Student";
+}
+
+export function getTodayUtcString(date = new Date()): string {
+  return date.toISOString().slice(0, 10);
+}
+
+/**
+ * Unified scoring scale across all games and quizzes:
+ * - Question-based games: 10 pts × difficulty multiplier (1.0x=10, 1.5x=15, 2.0x=20, 2.5x=25)
+ *   per correct answer, plus +20 pts for a 100% perfect round (max 270 pts).
+ * - WordWise (`word-puzzle`): 30..60 base points by difficulty + 5 pts per unused guess when won.
+ */
+export function calculateRoundPoints(params: {
+  gameId: LeaderboardGameId;
+  correct: number;
+  total: number;
+  difficulty?: string;
+  guessesUsed?: number;
+}): number {
+  const { gameId, correct, total, difficulty = "medium", guessesUsed = 6 } = params;
+  if (correct <= 0) return 0;
+
+  if (gameId === "word-puzzle") {
+    const diffKey = difficulty.toLowerCase();
+    const baseByDiff: Record<string, number> = {
+      beginner: 30,
+      easy: 38,
+      medium: 45,
+      expert: 60,
+    };
+    const base = baseByDiff[diffKey] ?? 38;
+    const unusedBonus = Math.max(0, 6 - guessesUsed) * 5;
+    return Math.min(MAX_SINGLE_ROUND_POINTS, Math.max(0, base + unusedBonus));
+  }
+
+  if (total <= 0) return 0;
+
+  let ptsPerCorrect = 15;
+  if (gameId === "math-puzzle" || gameId === "subject-quiz") {
+    const diffKey = difficulty.toLowerCase();
+    const map: Record<string, number> = {
+      easy: 10,
+      medium: 15,
+      hard: 20,
+      expert: 25,
+    };
+    ptsPerCorrect = map[diffKey] ?? 15;
+  } else {
+    // islamic-quiz, quiz-battle, quran-words use 1.5x (15 pts/correct)
+    ptsPerCorrect = 15;
+  }
+
+  const perfectBonus = correct === total ? 20 : 0;
+  const totalPts = correct * ptsPerCorrect + perfectBonus;
+  return Math.min(MAX_SINGLE_ROUND_POINTS, Math.max(0, Math.round(totalPts)));
 }
 
 // ── Create / Update User Profile ─────────────────────────────────────────────
@@ -67,20 +179,21 @@ export async function createOrUpdateUser(user: {
   if (!snap.exists()) {
     // New user — create profile
     const profile: UserProfile = {
-      uid:                user.uid,
-      displayName:        fallbackName,
-      email:              user.email || "",
-      photoURL:           user.photoURL || "",
-      createdAt:          serverTimestamp(),
-      lastSeen:           serverTimestamp(),
-      totalScore:         0,
-      totalGames:         0,
-      totalCorrect:       0,
-      totalQuestions:     0,
-      currentStreak:      0,
-      bestStreak:         0,
-      categoryScores:     {},
-      mathTopicsCompleted:[],
+      uid:                 user.uid,
+      displayName:         fallbackName,
+      email:               user.email || "",
+      photoURL:            user.photoURL || "",
+      createdAt:           serverTimestamp(),
+      lastSeen:            serverTimestamp(),
+      totalScore:          0,
+      totalGames:          0,
+      totalCorrect:        0,
+      totalQuestions:      0,
+      currentStreak:       0,
+      bestStreak:          0,
+      categoryScores:      {},
+      mathTopicsCompleted: [],
+      hideFromLeaderboards: false,
     };
     await setDoc(ref, profile);
   } else {
@@ -93,7 +206,185 @@ export async function createOrUpdateUser(user: {
   }
 }
 
-// ── Save Quiz Score ───────────────────────────────────────────────────────────
+// ── Unified Save Game & Leaderboard Score ────────────────────────────────────
+export async function saveGameScore(params: {
+  uid: string;
+  displayName: string | null;
+  email?: string | null;
+  photoURL?: string | null;
+  gameId: LeaderboardGameId;
+  gameName: string;
+  category: string;
+  difficulty: string;
+  rawScore?: number;
+  correct: number;
+  total: number;
+  streak?: number;
+  guessesUsed?: number;
+  roundPoints?: number;
+}) {
+  const {
+    uid,
+    gameId,
+    gameName,
+    category,
+    difficulty,
+    correct,
+    total,
+    streak = 0,
+    guessesUsed,
+  } = params;
+  const photoURL = params.photoURL || "";
+  const fullDisplayName = resolveFallbackName(params.displayName, params.email);
+  const firstName = resolveFirstName(params.displayName, params.email);
+
+  const computedPoints =
+    typeof params.roundPoints === "number"
+      ? params.roundPoints
+      : calculateRoundPoints({
+          gameId,
+          correct,
+          total,
+          difficulty,
+          guessesUsed,
+        });
+  const roundPoints = Math.min(
+    MAX_SINGLE_ROUND_POINTS,
+    Math.max(0, Math.round(computedPoints))
+  );
+  const sessionScore =
+    typeof params.rawScore === "number" ? params.rawScore : roundPoints;
+
+  const userRef = doc(db, "users", uid);
+  const gameEntryRef = doc(db, "leaderboards", gameId, "entries", uid);
+  const globalEntryRef = doc(db, "leaderboards", "global", "entries", uid);
+
+  const [userSnap, gameSnap, globalSnap] = await Promise.all([
+    getDoc(userRef),
+    getDoc(gameEntryRef),
+    getDoc(globalEntryRef),
+  ]);
+
+  const userData = userSnap.exists() ? (userSnap.data() as UserProfile) : null;
+  const catStat = userData?.categoryScores?.[category] || {
+    games: 0,
+    correct: 0,
+    total: 0,
+    totalScore: 0,
+    bestScore: 0,
+  };
+
+  // 1. Save session to quizSessions + update user profile stats
+  const sessionBatch = writeBatch(db);
+  const sessionRef = doc(collection(db, "quizSessions"));
+  sessionBatch.set(sessionRef, {
+    uid,
+    displayName: fullDisplayName,
+    photoURL,
+    gameName,
+    category,
+    difficulty,
+    score: sessionScore,
+    correct,
+    total,
+    playedAt: serverTimestamp(),
+  });
+
+  const nextCatStat: CategoryStat = {
+    games: (catStat.games || 0) + 1,
+    correct: (catStat.correct || 0) + correct,
+    total: (catStat.total || 0) + total,
+    totalScore: (catStat.totalScore || 0) + roundPoints,
+    bestScore: Math.max(catStat.bestScore || 0, roundPoints),
+  };
+
+  if (!userSnap.exists()) {
+    sessionBatch.set(userRef, {
+      uid,
+      displayName: fullDisplayName,
+      email: params.email || "",
+      photoURL,
+      createdAt: serverTimestamp(),
+      lastSeen: serverTimestamp(),
+      totalScore: roundPoints,
+      totalGames: 1,
+      totalCorrect: correct,
+      totalQuestions: total,
+      currentStreak: streak,
+      bestStreak: streak,
+      categoryScores: { [category]: nextCatStat },
+      mathTopicsCompleted: [],
+      hideFromLeaderboards: false,
+    });
+  } else {
+    sessionBatch.update(userRef, {
+      totalScore: (userData?.totalScore || 0) + roundPoints,
+      totalGames: (userData?.totalGames || 0) + 1,
+      totalCorrect: (userData?.totalCorrect || 0) + correct,
+      totalQuestions: (userData?.totalQuestions || 0) + total,
+      currentStreak: streak,
+      bestStreak: Math.max(userData?.bestStreak || 0, streak),
+      [`categoryScores.${category}`]: nextCatStat,
+      lastSeen: serverTimestamp(),
+      displayName: fullDisplayName,
+      photoURL,
+    });
+  }
+
+  await sessionBatch.commit();
+
+  // 2. If user has opted out of public leaderboards, do NOT write leaderboard entries
+  if (userData?.hideFromLeaderboards) {
+    return { roundPoints, awardedPoints: 0, hidden: true };
+  }
+
+  // 3. Write per-game entry and global entry in a single writeBatch
+  const today = getTodayUtcString();
+  const prevGame = gameSnap.exists() ? (gameSnap.data() as LeaderboardEntry) : null;
+  const prevGlobal = globalSnap.exists() ? (globalSnap.data() as LeaderboardEntry) : null;
+
+  const prevGameDaily =
+    prevGame && prevGame.dailyDate === today ? prevGame.dailyPoints : 0;
+  const prevGlobalDaily =
+    prevGlobal && prevGlobal.dailyDate === today ? prevGlobal.dailyPoints : 0;
+
+  const gameRemaining = Math.max(0, PER_GAME_DAILY_CAP - prevGameDaily);
+  const globalRemaining = Math.max(0, GLOBAL_DAILY_CAP - prevGlobalDaily);
+  const awardedPoints = Math.min(roundPoints, gameRemaining, globalRemaining);
+
+  const nextGameEntry: LeaderboardEntry = {
+    uid,
+    displayName: firstName,
+    photoURL,
+    totalPoints: (prevGame?.totalPoints || 0) + awardedPoints,
+    bestRound: Math.max(prevGame?.bestRound || 0, roundPoints),
+    games: (prevGame?.games || 0) + 1,
+    dailyPoints: prevGameDaily + awardedPoints,
+    dailyDate: today,
+    updatedAt: serverTimestamp(),
+  };
+
+  const nextGlobalEntry: LeaderboardEntry = {
+    uid,
+    displayName: firstName,
+    photoURL,
+    totalPoints: (prevGlobal?.totalPoints || 0) + awardedPoints,
+    bestRound: Math.max(prevGlobal?.bestRound || 0, roundPoints),
+    games: (prevGlobal?.games || 0) + 1,
+    dailyPoints: prevGlobalDaily + awardedPoints,
+    dailyDate: today,
+    updatedAt: serverTimestamp(),
+  };
+
+  const lbBatch = writeBatch(db);
+  lbBatch.set(gameEntryRef, nextGameEntry);
+  lbBatch.set(globalEntryRef, nextGlobalEntry);
+  await lbBatch.commit();
+
+  return { roundPoints, awardedPoints, hidden: false };
+}
+
+// ── Save Quiz Score (Islamic Quiz wrapper) ───────────────────────────────────
 export async function saveQuizScore(params: {
   uid: string;
   displayName: string | null;
@@ -107,70 +398,43 @@ export async function saveQuizScore(params: {
   total: number;
   streak: number;
 }) {
-  const { uid, photoURL, gameName, category,
-          difficulty, score, correct, total, streak } = params;
-  const displayName = resolveFallbackName(params.displayName, params.email);
+  return saveGameScore({
+    uid: params.uid,
+    displayName: params.displayName,
+    email: params.email,
+    photoURL: params.photoURL,
+    gameId: "islamic-quiz",
+    gameName: params.gameName,
+    category: params.category,
+    difficulty: params.difficulty,
+    rawScore: params.score,
+    correct: params.correct,
+    total: params.total,
+    streak: params.streak,
+  });
+}
 
+// ── Hide / Show User on Public Leaderboards ──────────────────────────────────
+export async function setHideFromLeaderboards(uid: string, hide: boolean) {
   const batch = writeBatch(db);
-
-  // 1. Save session to quizSessions collection
-  const sessionRef = doc(collection(db, "quizSessions"));
-  batch.set(sessionRef, {
-    uid, displayName, photoURL, gameName,
-    category, difficulty, score, correct, total,
-    playedAt: serverTimestamp(),
-  });
-
-  // 2. Update user profile stats
   const userRef = doc(db, "users", uid);
-  const catKey  = `categoryScores.${category}`;
+  batch.set(
+    userRef,
+    {
+      uid,
+      hideFromLeaderboards: hide,
+      lastSeen: serverTimestamp(),
+    },
+    { merge: true }
+  );
 
-  batch.update(userRef, {
-    totalScore:     increment(score),
-    totalGames:     increment(1),
-    totalCorrect:   increment(correct),
-    totalQuestions: increment(total),
-    lastSeen:       serverTimestamp(),
-    displayName,
-    photoURL,
-  });
+  if (hide) {
+    for (const tabId of ALL_LEADERBOARD_TAB_IDS) {
+      batch.delete(doc(db, "leaderboards", tabId, "entries", uid));
+    }
+  }
 
   await batch.commit();
-
-  // 3. Update category stats (need current data for bestScore)
-  const userSnap = await getDoc(doc(db, "users", uid));
-  const userData = userSnap.data() as UserProfile;
-  const catStat  = userData?.categoryScores?.[category] || { games:0, correct:0, total:0, totalScore:0, bestScore:0 };
-
-  await updateDoc(doc(db, "users", uid), {
-    [`categoryScores.${category}`]: {
-      games:      (catStat.games || 0) + 1,
-      correct:    (catStat.correct || 0) + correct,
-      total:      (catStat.total || 0) + total,
-      totalScore: (catStat.totalScore || 0) + score,
-      bestScore:  Math.max(catStat.bestScore || 0, score),
-    },
-    currentStreak: streak,
-    bestStreak:    Math.max(userData?.bestStreak || 0, streak),
-  });
-
-  // 4. Update global leaderboard entry
-  await setDoc(doc(db, "leaderboard", uid), {
-    uid, displayName, photoURL,
-    totalScore:   (userData?.totalScore || 0) + score,
-    totalGames:   (userData?.totalGames || 0) + 1,
-    bestScore:    Math.max(userData?.totalScore || 0, score),
-    updatedAt:    serverTimestamp(),
-  }, { merge: true });
-
-  // 5. Update category leaderboard
-  await setDoc(doc(db, `leaderboard_${category}`, uid), {
-    uid, displayName, photoURL,
-    totalScore: (catStat.totalScore || 0) + score,
-    bestScore:  Math.max(catStat.bestScore || 0, score),
-    games:      (catStat.games || 0) + 1,
-    updatedAt:  serverTimestamp(),
-  }, { merge: true });
 }
 
 // ── Save Math Topic Completion ────────────────────────────────────────────────
@@ -193,14 +457,27 @@ export async function getUserProfile(uid: string): Promise<UserProfile | null> {
   return snap.exists() ? snap.data() as UserProfile : null;
 }
 
-// ── Get Global Leaderboard ────────────────────────────────────────────────────
-export async function getGlobalLeaderboard(top = 20) {
-  const q = query(collection(db, "leaderboard"), orderBy("totalScore", "desc"), limit(top));
+// ── Get Leaderboard (Global or Per-Game) ─────────────────────────────────────
+export async function getLeaderboard(
+  tabId: LeaderboardTabId,
+  top = 20
+): Promise<(LeaderboardEntry & { id: string })[]> {
+  const q = query(
+    collection(db, "leaderboards", tabId, "entries"),
+    orderBy("totalPoints", "desc"),
+    limit(top)
+  );
   const snap = await getDocs(q);
-  return snap.docs.map(d => ({ id: d.id, ...d.data() }));
+  return snap.docs.map((d) => ({
+    id: d.id,
+    ...(d.data() as LeaderboardEntry),
+  }));
 }
 
-// ── Get Category Leaderboard ──────────────────────────────────────────────────
+export async function getGlobalLeaderboard(top = 20) {
+  return getLeaderboard("global", top);
+}
+
 export async function getCategoryLeaderboard(category: string, top = 20) {
   const q = query(
     collection(db, `leaderboard_${category}`),
