@@ -2,7 +2,12 @@
 // app/profile/ProfilePage.tsx
 import { useEffect, useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
-import { getUserProfile, getUserSessions, UserProfile } from "@/lib/firebaseDB";
+import {
+  getUserProfile,
+  getUserSessions,
+  setHideFromLeaderboards,
+  UserProfile,
+} from "@/lib/firebaseDB";
 import AuthModal from "@/components/AuthModal";
 import Link from "next/link";
 
@@ -31,6 +36,23 @@ export default function ProfilePage() {
   const [sessions, setSessions] = useState<unknown[]>([]);
   const [showAuth, setShowAuth] = useState(false);
   const [fetching, setFetching] = useState(false);
+  const [togglingHide, setTogglingHide] = useState(false);
+
+  const handleToggleHide = async () => {
+    if (!user || togglingHide) return;
+    const nextHide = !Boolean(profile?.hideFromLeaderboards);
+    setTogglingHide(true);
+    setProfile((prev) =>
+      prev ? { ...prev, hideFromLeaderboards: nextHide } : prev
+    );
+    try {
+      await setHideFromLeaderboards(user.uid, nextHide);
+    } catch (e) {
+      console.error("Failed to update leaderboard visibility:", e);
+    } finally {
+      setTogglingHide(false);
+    }
+  };
 
   useEffect(() => {
     if (!user) return;
@@ -103,6 +125,37 @@ export default function ProfilePage() {
           <StatCard label="Games Played"   value={profile?.totalGames || 0}     emoji="🎮" color="bg-teal-50 border border-teal-100" />
           <StatCard label="Accuracy"       value={`${accuracy}%`}               emoji="🎯" color="bg-blue-50 border border-blue-100" />
           <StatCard label="Best Streak"    value={profile?.bestStreak || 0}      emoji="🔥" color="bg-orange-50 border border-orange-100" />
+        </div>
+
+        {/* Leaderboard Privacy Toggle */}
+        <div className="efe-card p-5 mb-6 flex items-center justify-between gap-4">
+          <div>
+            <h2 className="font-bold text-efe-fg text-sm">
+              🔒 Hide me from leaderboards
+            </h2>
+            <p className="text-xs text-efe-muted mt-0.5 leading-relaxed">
+              {profile?.hideFromLeaderboards
+                ? "You are currently hidden from all public leaderboards. Uncheck to start competing again."
+                : "Only your first name is shown on public leaderboards. Turn on to remove your entries and play privately."}
+            </p>
+          </div>
+          <button
+            type="button"
+            role="switch"
+            aria-checked={Boolean(profile?.hideFromLeaderboards)}
+            aria-label="Hide me from leaderboards"
+            disabled={togglingHide}
+            onClick={handleToggleHide}
+            className={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
+              profile?.hideFromLeaderboards ? "bg-efe-accent" : "bg-gray-300"
+            } ${togglingHide ? "opacity-50 cursor-not-allowed" : ""}`}
+          >
+            <span
+              className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out ${
+                profile?.hideFromLeaderboards ? "translate-x-5" : "translate-x-0"
+              }`}
+            />
+          </button>
         </div>
 
         {/* Category breakdown */}
