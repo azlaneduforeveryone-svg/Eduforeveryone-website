@@ -1,24 +1,201 @@
 // ============================================================================
-// PASTE CURRENT LIVE RULES FROM FIREBASE CONSOLE HERE BEFORE DEPLOYING
+// Firestore Security Rules — EduForEveryone (project: eduforeveryone-ded2d)
 // ============================================================================
-// WARNING: Your existing Firestore rules (for users, quizSessions, leaderboard,
-// ieltsSessions, gmatResults, admin_*, etc.) currently live in the Firebase
-// Console. Deploying this file without pasting your live rules first will
-// overwrite them and break IELTS, GMAT, and Quiz features.
+// Note: Expired test-mode rule removed. Default deny applies to all unlisted paths.
+// Replace "YOUR_ADMIN_EMAIL@example.com" / "YOUR_ADMIN_UID" in isAdmin() below
+// with your actual Firebase Auth admin email/UID (or use custom claim admin: true
+// / Firebase Admin SDK on the server).
 // ============================================================================
 
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    // >>> PASTE YOUR EXISTING LIVE MATCH BLOCKS ABOVE OR BELOW THIS BLOCK <<<
+    // ── Helper Functions ────────────────────────────────────────────────────
 
-    // O Level Accounting 7707 course progress: each signed-in user can only
-    // read and write their own progress documents (e.g. o7707-1.2).
-    match /users/{uid}/courseProgress/{topicId} {
-      allow read, write: if request.auth != null && request.auth.uid == uid;
+    function isSignedIn() {
+      return request.auth != null;
     }
 
+    function isOwner(uid) {
+      return isSignedIn() && request.auth.uid == uid;
+    }
+
+    // Admin check: supports custom claim `admin == true`, or a designated
+    // admin UID / verified email. (Note: Server-side Firebase Admin SDK
+    // bypasses security rules automatically.)
+    function isAdmin() {
+      return isSignedIn() && (
+        request.auth.token.get('admin', false) == true ||
+        request.auth.uid == 'YOUR_ADMIN_UID' ||
+        (request.auth.token.email_verified == true &&
+         request.auth.token.email == 'YOUR_ADMIN_EMAIL@example.com')
+      );
+    }
+
+    // Validates global & category leaderboard entry payloads
+    function isValidLeaderboardWrite(uid) {
+      let d = request.resource.data;
+      return isOwner(uid)
+        && d.uid == request.auth.uid
+        && d.displayName is string
+        && d.displayName.size() >= 1 && d.displayName.size() <= 100
+        && d.totalScore is number
+        && d.totalScore >= 0 && d.totalScore <= 10000000
+        && d.bestScore is number
+        && d.bestScore >= 0 && d.bestScore <= 10000000
+        && (
+          !('totalGames' in d) ||
+          (d.totalGames is number && d.totalGames >= 0 && d.totalGames <= 1000000)
+        )
+        && (
+          !('games' in d) ||
+          (d.games is number && d.games >= 0 && d.games <= 1000000)
+        );
+    }
+
+    // ── 1. Users & Subcollections (including courseProgress) ────────────────
+    // users/{uid} and any subcollections: only the signed-in owner can read & write.
+    match /users/{uid} {
+      allow read, write: if isOwner(uid);
+
+      match /courseProgress/{topicId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /{subcollection}/{docId} {
+        allow read, write: if isOwner(uid);
+      }
+    }
+
+    // ── 2. Leaderboards (global + category leaderboards) ────────────────────
+    // Public read; signed-in user may write only their own entry (doc id == uid)
+    // with field validation on uid and scores.
+    match /leaderboard/{uid} {
+      allow read: if true;
+      allow create, update: if isValidLeaderboardWrite(uid);
+      allow delete: if false;
+    }
+
+    match /leaderboard_quran/{uid} {
+      allow read: if true;
+      allow create, update: if isValidLeaderboardWrite(uid);
+      allow delete: if false;
+    }
+
+    match /leaderboard_hadith/{uid} {
+      allow read: if true;
+      allow create, update: if isValidLeaderboardWrite(uid);
+      allow delete: if false;
+    }
+
+    match /leaderboard_fiqh/{uid} {
+      allow read: if true;
+      allow create, update: if isValidLeaderboardWrite(uid);
+      allow delete: if false;
+    }
+
+    match /leaderboard_seerah/{uid} {
+      allow read: if true;
+      allow create, update: if isValidLeaderboardWrite(uid);
+      allow delete: if false;
+    }
+
+    match /leaderboard_history/{uid} {
+      allow read: if true;
+      allow create, update: if isValidLeaderboardWrite(uid);
+      allow delete: if false;
+    }
+
+    match /leaderboard_pillars/{uid} {
+      allow read: if true;
+      allow create, update: if isValidLeaderboardWrite(uid);
+      allow delete: if false;
+    }
+
+    match /leaderboard_names/{uid} {
+      allow read: if true;
+      allow create, update: if isValidLeaderboardWrite(uid);
+      allow delete: if false;
+    }
+
+    // ── 3. Quiz Sessions (quizSessions/{sessionId}) ─────────────────────────
+    // Used by saveQuizScore (creates session doc) and getUserSessions (queries
+    // where("uid", "==", uid)). Signed-in user can only read & create their own
+    // sessions; sessions are immutable once recorded.
+    match /quizSessions/{sessionId} {
+      allow read: if isSignedIn() && resource.data.uid == request.auth.uid;
+      allow create: if isSignedIn()
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.score is number
+        && request.resource.data.score >= 0
+        && request.resource.data.score <= 100000
+        && request.resource.data.correct is number
+        && request.resource.data.total is number
+        && request.resource.data.correct >= 0
+        && request.resource.data.correct <= request.resource.data.total;
+      allow update, delete: if false;
+    }
+
+    // ── 4. IELTS & GMAT User History ────────────────────────────────────────
+    // ieltsSessions/{sessionId}: queried with where("uid", "==", uid)
+    match /ieltsSessions/{sessionId} {
+      allow read: if isSignedIn() && resource.data.uid == request.auth.uid;
+      allow create: if isSignedIn()
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.band is number
+        && request.resource.data.band >= 0
+        && request.resource.data.band <= 9;
+      allow update, delete: if false;
+    }
+
+    // gmatResults/{uid}/sessions/{sessionId}: per-user subcollection
+    match /gmatResults/{uid}/sessions/{sessionId} {
+      allow read, create: if isOwner(uid);
+      allow update, delete: if false;
+    }
+
+    // ── 5. Admin Content Collections (Public Read, Admin Write Only) ────────
+    // Shown to all visitors on public pages; writes restricted to isAdmin().
+    match /admin_ielts_listening/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /admin_ielts_reading/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /admin_math/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /admin_quiz/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /admin_courses/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /admin_notes/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // ── 6. Admin Audit Log (admin_uploads) ──────────────────────────────────
+    // Only read/written inside AdminPanel.tsx — NOT shown to public visitors.
+    match /admin_uploads/{docId} {
+      allow read, write: if isAdmin();
+    }
+
+    // ── 7. Default Deny Everything Else ─────────────────────────────────────
+    match /{document=**} {
+      allow read, write: if false;
+    }
   }
 }
-
