@@ -17,7 +17,7 @@ service cloud.firestore {
     }
 
     function isAdmin() {
-      return isSignedIn() && request.auth.uid == '<PASTE YOUR UID HERE>';
+      return isSignedIn() && request.auth.uid == 'Vbw90jysj8c4X4R02sPmdNKjvrf2';
     }
 
     // Validates global & category leaderboard entry payloads:
