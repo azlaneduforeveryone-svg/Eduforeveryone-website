@@ -1,0 +1,23 @@
+// ============================================================================
+// PASTE CURRENT LIVE RULES FROM FIREBASE CONSOLE HERE BEFORE DEPLOYING
+// ============================================================================
+// WARNING: Your existing Firestore rules (for users, quizSessions, leaderboard,
+// ieltsSessions, gmatResults, admin_*, etc.) currently live in the Firebase
+// Console. Deploying this file without pasting your live rules first will
+// overwrite them and break IELTS, GMAT, and Quiz features.
+// ============================================================================
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // >>> PASTE YOUR EXISTING LIVE MATCH BLOCKS ABOVE OR BELOW THIS BLOCK <<<
+
+    // O Level Accounting 7707 course progress: each signed-in user can only
+    // read and write their own progress documents (e.g. o7707-1.2).
+    match /users/{uid}/courseProgress/{topicId} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+
+  }
+}
