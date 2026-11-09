@@ -40,3 +40,4 @@ export default function AccountingHubPage() {
 
   return <AccountingHubClient sections={sections} />;
 }
+

@@ -264,3 +264,4 @@ export default function SaveProgressPrompt({ onClose }: SaveProgressPromptProps)
 
   return createPortal(modal, document.body);
 }
+
