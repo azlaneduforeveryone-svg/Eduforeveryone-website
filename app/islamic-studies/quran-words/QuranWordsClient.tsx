@@ -190,6 +190,9 @@ export default function QuranWordsClient({
           gameName="Quran Word Meanings"
           gameEmoji="📖"
           gameUrl="/islamic-studies/quran-words"
+          leaderboardGameId="quran-words"
+          leaderboardCategory="quran"
+          leaderboardDifficulty="medium"
           isArabicQuestion={true}
           questionFontFamily={QPC_FONT}
           optionsDir={lang === "ur" ? "rtl" : "ltr"}

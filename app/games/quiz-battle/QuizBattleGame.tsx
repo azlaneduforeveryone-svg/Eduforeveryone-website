@@ -2,6 +2,8 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import ShareScore from "@/components/ShareScore";
 import { track } from "@/lib/analytics";
+import { useAuth } from "@/contexts/AuthContext";
+import { saveGameScore } from "@/lib/firebaseDB";
 
 type Category = "all" | "math" | "science" | "history" | "english";
 type Difficulty = "easy" | "medium" | "hard";
@@ -94,11 +96,14 @@ export default function QuizBattleGame() {
   const [hiddenOpts, setHiddenOpts] = useState<number[]>([]);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const totalTimeRef = useRef(0);
+  const savedRef = useRef(false);
+  const { user } = useAuth();
 
   const clearTimer = () => { if (timerRef.current) clearInterval(timerRef.current); };
 
   const startGame = useCallback((c: Category = cat) => {
     track("game_start", { game: "quiz_battle" });
+    savedRef.current = false;
     clearTimer();
     const list = shuffle(getPool(c)).slice(0, TOTAL);
     setQList(list); setQIdx(0); setScore(0); setStreak(0); setCorrect(0);
@@ -112,14 +117,35 @@ export default function QuizBattleGame() {
   }, [cat]);
 
   const loadNext = useCallback((list: Question[], idx: number, lv: number) => {
-    if (idx >= TOTAL || lv <= 0) { setGameOver(true); clearTimer(); return; }
+    if (idx >= TOTAL || lv <= 0) {
+      setGameOver(true);
+      clearTimer();
+      if (user && !savedRef.current) {
+        savedRef.current = true;
+        saveGameScore({
+          uid: user.uid,
+          displayName: user.displayName,
+          email: user.email,
+          photoURL: user.photoURL,
+          gameId: "quiz-battle",
+          gameName: "Quiz Battle",
+          category: cat,
+          difficulty: "medium",
+          rawScore: score,
+          correct,
+          total: TOTAL,
+          streak,
+        }).catch((e) => console.error("saveGameScore failed", e));
+      }
+      return;
+    }
     const q = list[idx]; setCurQ(q); setAnswered(false); setSelected(null);
     setFeedback(null); setHiddenOpts([]);
     const t = q.diff === "hard" ? 12 : q.diff === "medium" ? 18 : 25;
     totalTimeRef.current = t; setTimeLeft(t);
     clearTimer();
     timerRef.current = setInterval(() => setTimeLeft(v => Math.max(0, parseFloat((v - 0.1).toFixed(1)))), 100);
-  }, []);
+  }, [user, cat, score, correct, streak]);
 
   useEffect(() => {
     if (timeLeft === 0 && curQ && !answered && started && !gameOver) {

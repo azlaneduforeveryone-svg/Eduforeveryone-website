@@ -2,6 +2,8 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import ShareScore from "@/components/ShareScore";
 import { track } from "@/lib/analytics";
+import { useAuth } from "@/contexts/AuthContext";
+import { saveGameScore } from "@/lib/firebaseDB";
 
 type Category = "all" | "math" | "science" | "english";
 type CellState = "correct" | "present" | "absent" | "revealed";
@@ -1917,6 +1919,7 @@ export default function WordWiseGame(){
   const [showHow,setShowHow]=useState(false);
   const inputRef=useRef<HTMLInputElement>(null);
   const hasStartedRef=useRef(false);
+  const { user } = useAuth();
 
   const word=entry?.w.toUpperCase()??"";
 
@@ -1975,6 +1978,23 @@ export default function WordWiseGame(){
         const nd=getDiff(ns);
         if(nd!==difficulty) showMsg(`🎉 Level Up! Now ${DIFF_INFO[nd].label}! +${earned} pts`);
         else showMsg(`🎉 ${["Genius!","Amazing!","Excellent!","Great!","Good!","Phew!"][newGuesses.length-1]||"Well done!"} +${earned} pts`);
+        if (user) {
+          saveGameScore({
+            uid: user.uid,
+            displayName: user.displayName,
+            email: user.email,
+            photoURL: user.photoURL,
+            gameId: "word-puzzle",
+            gameName: "WordWise",
+            category: entry.cat.toLowerCase(),
+            difficulty,
+            rawScore: earned,
+            correct: 1,
+            total: 1,
+            streak: ns,
+            guessesUsed: newGuesses.length,
+          }).catch((e) => console.error("saveGameScore failed", e));
+        }
       } else if(newGuesses.length>=MAX_GUESSES){
         setStreak(0); setGameLost(true); setDifficulty("beginner");
         showMsg(`The word was: ${word}`);
@@ -1982,7 +2002,7 @@ export default function WordWiseGame(){
       return;
     }
     if(/^[A-Za-z]$/.test(key)&&current.length<word.length) setCurrent(c=>c+key.toUpperCase());
-  },[entry,gameWon,gameLost,current,word,guesses,keyStates,difficulty,streak]);
+  },[entry,gameWon,gameLost,current,word,guesses,keyStates,difficulty,streak,user]);
 
   useEffect(()=>{
     const h=(e:KeyboardEvent)=>{

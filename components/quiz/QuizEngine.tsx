@@ -1,12 +1,14 @@
 "use client";
 
-import React, { useState, useEffect, useCallback, useMemo, useRef } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import type { QuizQuestion } from "@/types";
 import type { EncouragementConfig } from "@/lib/games/types";
 import { useBestScore } from "@/lib/games/useBestScore";
 import AnswerFeedback from "./AnswerFeedback";
 import ShareScore from "@/components/ShareScore";
 import { track } from "@/lib/analytics";
+import { useAuth } from "@/contexts/AuthContext";
+import { saveGameScore, type LeaderboardGameId } from "@/lib/firebaseDB";
 
 export interface QuizEngineProps<T extends QuizQuestion = QuizQuestion> {
   questions: T[];
@@ -26,6 +28,12 @@ export interface QuizEngineProps<T extends QuizQuestion = QuizQuestion> {
   gameEmoji?: string;
   /** Game URL for ShareScore link (e.g. /ielts/word-upgrade) */
   gameUrl?: string;
+  /** Optional leaderboard gameId; when set, completed rounds save to Firestore leaderboards */
+  leaderboardGameId?: LeaderboardGameId;
+  /** Optional category label for session/profile stats */
+  leaderboardCategory?: string;
+  /** Optional difficulty level for leaderboard points calculation */
+  leaderboardDifficulty?: "easy" | "medium" | "hard" | "expert";
   /** Apply Arabic font styles, RTL direction, and larger line-height to question text */
   isArabicQuestion?: boolean;
   /** Custom extra element to render below the question title */
@@ -78,6 +86,9 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
   gameName,
   gameEmoji = "🎯",
   gameUrl,
+  leaderboardGameId,
+  leaderboardCategory,
+  leaderboardDifficulty = "medium",
   isArabicQuestion = false,
   renderQuestionDetail,
   encouragementConfig,
@@ -87,7 +98,9 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
 }: QuizEngineProps<T>) {
   // Best score hook (safe localStorage with try/catch)
   const { bestScore, updateBestScore } = useBestScore(storageKey);
+  const { user } = useAuth();
   const hasStartedRef = useRef(false);
+  const savedRoundRef = useRef(false);
 
   // Round preparation: sample questions & optionally shuffle options
   const prepareRound = useCallback((): PreparedQuestion<T>[] => {
@@ -145,6 +158,7 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
     setAnswers(Array(round.length).fill(null));
     setFinished(false);
     setStreak(0);
+    savedRoundRef.current = false;
   }, [prepareRound]);
 
   const totalCount = activeQuestions.length;
@@ -196,6 +210,24 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
         updateBestScore(finalScore);
       }
 
+      // Save to Firestore leaderboard when configured and signed in
+      if (leaderboardGameId && user && !savedRoundRef.current) {
+        savedRoundRef.current = true;
+        saveGameScore({
+          uid: user.uid,
+          displayName: user.displayName,
+          email: user.email,
+          photoURL: user.photoURL,
+          gameId: leaderboardGameId,
+          gameName: gameName || leaderboardGameId,
+          category: leaderboardCategory || leaderboardGameId,
+          difficulty: leaderboardDifficulty,
+          correct: finalScore,
+          total: totalCount,
+          streak,
+        }).catch((e) => console.error("saveGameScore failed", e));
+      }
+
       // Track GA4 game_finish
       if (
         gameName &&
@@ -210,7 +242,20 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
         });
       }
     }
-  }, [current, totalCount, answers, activeQuestions, storageKey, updateBestScore, gameName]);
+  }, [
+    current,
+    totalCount,
+    answers,
+    activeQuestions,
+    storageKey,
+    updateBestScore,
+    leaderboardGameId,
+    leaderboardCategory,
+    leaderboardDifficulty,
+    user,
+    gameName,
+    streak,
+  ]);
 
   // Restart round (re-samples and re-shuffles)
   const handleRestart = useCallback(() => {
@@ -222,6 +267,7 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
     setFinished(false);
     setStreak(0);
     hasStartedRef.current = true;
+    savedRoundRef.current = false;
 
     const gameId = getGameId(gameName);
     if (gameId) {

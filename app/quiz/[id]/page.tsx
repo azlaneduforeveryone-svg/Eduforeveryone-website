@@ -50,7 +50,17 @@ export default function QuizDetailPage({ params }: { params: { id: string } }) {
             <span>{quiz.questionCount} questions</span>
           </div>
         </div>
-        <QuizEngine questions={quiz.questions} />
+        <QuizEngine
+          questions={quiz.questions}
+          gameName={quiz.title}
+          gameEmoji="🧠"
+          gameUrl={`/quiz/${quiz.id}`}
+          leaderboardGameId="subject-quiz"
+          leaderboardCategory={quiz.subject.toLowerCase()}
+          leaderboardDifficulty={
+            quiz.difficulty.toLowerCase() as "easy" | "medium" | "hard"
+          }
+        />
       </div>
     </div>
   );

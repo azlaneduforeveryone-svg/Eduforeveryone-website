@@ -2,6 +2,8 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import ShareScore from "@/components/ShareScore";
 import { track } from "@/lib/analytics";
+import { useAuth } from "@/contexts/AuthContext";
+import { saveGameScore } from "@/lib/firebaseDB";
 
 type Level = "easy" | "medium" | "hard" | "expert";
 type QuestionType = "add" | "sub" | "mul" | "div" | "missing" | "equation" | "sequence" | "power" | "mcq";
@@ -100,6 +102,8 @@ export default function MathPuzzleGame() {
   const [started, setStarted] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const totalTime = useRef(0);
+  const savedRef = useRef(false);
+  const { user } = useAuth();
 
   const clearTimer = () => { if (timerRef.current) clearInterval(timerRef.current); };
 
@@ -141,6 +145,7 @@ export default function MathPuzzleGame() {
 
   const startGame = useCallback((lv: Level = level) => {
     track("game_start", { game: "math_puzzle" });
+    savedRef.current = false;
     clearTimer(); setScore(0); setCorrect(0); setStreak(0); setHistory([]);
     setGameOver(false); setStarted(true);
     const q = generateQuestion(lv);
@@ -149,7 +154,28 @@ export default function MathPuzzleGame() {
 
   const nextQuestion = () => {
     const next = qNum + 1;
-    if (next > TOTAL_Q) { setGameOver(true); clearTimer(); return; }
+    if (next > TOTAL_Q) {
+      setGameOver(true);
+      clearTimer();
+      if (user && !savedRef.current) {
+        savedRef.current = true;
+        saveGameScore({
+          uid: user.uid,
+          displayName: user.displayName,
+          email: user.email,
+          photoURL: user.photoURL,
+          gameId: "math-puzzle",
+          gameName: "Math Puzzle",
+          category: "math",
+          difficulty: level,
+          rawScore: score,
+          correct,
+          total: TOTAL_Q,
+          streak,
+        }).catch((e) => console.error("saveGameScore failed", e));
+      }
+      return;
+    }
     setQNum(next);
     startQuestion(generateQuestion(level), next);
   };
