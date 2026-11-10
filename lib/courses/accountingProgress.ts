@@ -72,18 +72,21 @@ export function normalizeProgress(raw: Partial<Record<string, unknown>> | null |
 }
 
 // ── Status Calculation ────────────────────────────────────────────────────────
-// Topics with no video skip the videoWatched check for Studied.
-// Mastered = quizPassed is true.
-// Studied = video + notes done (or notes done if topic has no video).
+// Topics with no video skip the videoWatched check; topics with no notes skip
+// the notesRead check.
+// Mastered = quizPassed is true (5 out of 5 on the topic quiz).
+// Studied = available video/notes completed when at least one of video or notes exists.
 // In progress = any activity (videoWatched, notesRead, or attempts > 0) not yet studied/mastered.
 export function computeTopicStatus(
   progress: TopicProgress | undefined,
-  hasVideo: boolean
+  hasVideo: boolean,
+  hasNotes = false
 ): TopicStatus {
   if (!progress) return "not-started";
   if (progress.quizPassed) return "mastered";
   const videoOk = hasVideo ? progress.videoWatched : true;
-  if (videoOk && progress.notesRead) return "studied";
+  const notesOk = hasNotes ? progress.notesRead : true;
+  if ((hasVideo || hasNotes) && videoOk && notesOk) return "studied";
   if (progress.videoWatched || progress.notesRead || progress.attempts > 0) {
     return "in-progress";
   }

@@ -50,6 +50,7 @@ export default function TopicPageClient({
   const [showAuthPrompt, setShowAuthPrompt] = useState(false);
 
   const hasVideo = Boolean(topicMeta.videoId);
+  const hasNotes = Boolean(topicMeta.notes?.trim());
 
   // 1. Load progress from Firestore (signed-in) or localStorage (signed-out)
   useEffect(() => {
@@ -167,6 +168,7 @@ export default function TopicPageClient({
 
     const passedNow = correctCount === 5;
     const currentIds = quizSet.map((q) => q.id);
+    const wasFirstQuizAttempt = progress.attempts === 0;
 
     const updated: TopicProgress = {
       ...progress,
@@ -177,6 +179,12 @@ export default function TopicPageClient({
       updatedAt: Date.now(),
     };
     await persistProgress(updated);
+
+    // When topic has no notes, trigger sign-up prompt after the student's first completed quiz attempt
+    if (!hasNotes && !user && wasFirstQuizAttempt && shouldShowSaveProgressPrompt()) {
+      markSaveProgressPromptShown();
+      setShowAuthPrompt(true);
+    }
   };
 
   // Step 3: Try a new set of 5
@@ -190,7 +198,7 @@ export default function TopicPageClient({
   };
 
   // Overall status calculation
-  const overallStatus = computeTopicStatus(progress, hasVideo);
+  const overallStatus = computeTopicStatus(progress, hasVideo, hasNotes);
   const statusDisplayLabel =
     overallStatus === "mastered"
       ? "Mastered"
@@ -214,7 +222,7 @@ export default function TopicPageClient({
       <PageHeader
         eyebrow={`O Level Accounting 7707 · Section ${topicMeta.section} · Topic ${topicMeta.topic}`}
         title={`${topicMeta.topic} ${topicMeta.topicTitle}`}
-        description="Complete the three steps below to study and master this topic."
+        description="Practice questions are available for every topic now. Notes and videos are being added."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Courses", href: "/courses" },
@@ -237,7 +245,7 @@ export default function TopicPageClient({
               <p className="text-xs text-efe-muted mt-0.5">
                 {progress.attempts > 0
                   ? `Best quiz score: ${progress.bestScore}/5 · Attempts: ${progress.attempts}`
-                  : "Complete the steps below to master this topic."}
+                  : "Score 5 out of 5 on the practice quiz below to master this topic."}
               </p>
             </div>
             <div className="flex items-center gap-2 self-start sm:self-center">
@@ -251,41 +259,46 @@ export default function TopicPageClient({
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            {/* Check 1: Watch */}
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-efe-bg border border-efe-line">
-              <StepCheckCircle
-                done={hasVideo ? progress.videoWatched : true}
-                skipped={!hasVideo}
-              />
-              <div>
-                <div className="text-xs font-bold text-efe-fg">1. Watch Video</div>
-                <div className="text-xs text-efe-muted">
-                  {hasVideo
-                    ? progress.videoWatched
-                      ? "Watched (90%+)"
-                      : "Not watched yet"
-                    : "Coming soon (check skipped)"}
+          <div
+            className={`grid grid-cols-1 ${
+              hasVideo && hasNotes
+                ? "sm:grid-cols-3"
+                : hasVideo || hasNotes
+                ? "sm:grid-cols-2"
+                : "sm:grid-cols-1"
+            } gap-3`}
+          >
+            {/* Check 1: Watch (shown when topic has a video) */}
+            {hasVideo && (
+              <div className="flex items-center gap-3 p-3 rounded-xl bg-efe-bg border border-efe-line">
+                <StepCheckCircle done={progress.videoWatched} />
+                <div>
+                  <div className="text-xs font-bold text-efe-fg">Watch Video</div>
+                  <div className="text-xs text-efe-muted">
+                    {progress.videoWatched ? "Watched (90%+)" : "Not watched yet"}
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
 
-            {/* Check 2: Read */}
-            <div className="flex items-center gap-3 p-3 rounded-xl bg-efe-bg border border-efe-line">
-              <StepCheckCircle done={progress.notesRead} />
-              <div>
-                <div className="text-xs font-bold text-efe-fg">2. Read Notes</div>
-                <div className="text-xs text-efe-muted">
-                  {progress.notesRead ? "Completed" : "Not read yet"}
+            {/* Check 2: Read (shown when topic has notes) */}
+            {hasNotes && (
+              <div className="flex items-center gap-3 p-3 rounded-xl bg-efe-bg border border-efe-line">
+                <StepCheckCircle done={progress.notesRead} />
+                <div>
+                  <div className="text-xs font-bold text-efe-fg">Read Notes</div>
+                  <div className="text-xs text-efe-muted">
+                    {progress.notesRead ? "Completed" : "Not read yet"}
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
 
             {/* Check 3: Quiz */}
             <div className="flex items-center gap-3 p-3 rounded-xl bg-efe-bg border border-efe-line">
               <StepCheckCircle done={progress.quizPassed} />
               <div>
-                <div className="text-xs font-bold text-efe-fg">3. Check Yourself</div>
+                <div className="text-xs font-bold text-efe-fg">Check Yourself</div>
                 <div className="text-xs text-efe-muted">
                   {progress.quizPassed
                     ? "Passed (5/5)"
@@ -298,116 +311,96 @@ export default function TopicPageClient({
           </div>
         </section>
 
-        {/* STEP 1: WATCH */}
-        <section
-          aria-labelledby="step-watch-heading"
-          className="efe-card p-6 sm:p-8"
-        >
-          <div className="flex items-center justify-between gap-2 mb-4">
-            <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-efe-accent-ink">
-                Step 1 · Watch
-              </span>
-              <h2
-                id="step-watch-heading"
-                className="text-xl font-bold font-display text-efe-fg mt-0.5"
-              >
-                Video Lesson
-              </h2>
+        {/* STEP 1: WATCH (only rendered when topic has a video) */}
+        {hasVideo && topicMeta.videoId && (
+          <section
+            aria-labelledby="step-watch-heading"
+            className="efe-card p-6 sm:p-8"
+          >
+            <div className="flex items-center justify-between gap-2 mb-4">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-efe-accent-ink">
+                  Watch
+                </span>
+                <h2
+                  id="step-watch-heading"
+                  className="text-xl font-bold font-display text-efe-fg mt-0.5"
+                >
+                  Video Lesson
+                </h2>
+              </div>
+              {progress.videoWatched && (
+                <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-efe-accent-soft text-efe-accent-ink">
+                  ✓ Video watched
+                </span>
+              )}
             </div>
-            {hasVideo && progress.videoWatched && (
-              <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-efe-accent-soft text-efe-accent-ink">
-                ✓ Video watched
-              </span>
-            )}
-          </div>
 
-          {topicMeta.videoId ? (
             <YouTubeWatchedPlayer
               videoId={topicMeta.videoId}
               alreadyWatched={progress.videoWatched}
               onWatched90Percent={handleVideoWatched}
             />
-          ) : (
-            <div className="rounded-2xl border-2 border-dashed border-efe-line bg-efe-bg p-8 text-center">
-              <div className="w-12 h-12 rounded-2xl bg-efe-accent-soft text-efe-accent-ink flex items-center justify-center text-2xl mx-auto mb-3">
-                🎬
+          </section>
+        )}
+
+        {/* STEP 2: READ (only rendered when topic has notes) */}
+        {hasNotes && topicMeta.notes && (
+          <section
+            aria-labelledby="step-read-heading"
+            className="efe-card p-6 sm:p-8"
+          >
+            <div className="flex items-center justify-between gap-2 mb-4">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-efe-accent-ink">
+                  Read
+                </span>
+                <h2
+                  id="step-read-heading"
+                  className="text-xl font-bold font-display text-efe-fg mt-0.5"
+                >
+                  Revision Notes: {topicMeta.topicTitle}
+                </h2>
               </div>
-              <p className="font-bold text-efe-fg text-base">Video coming soon</p>
-              <p className="text-sm text-efe-muted mt-1 max-w-md mx-auto">
-                We are recording the video lesson for{" "}
-                <span className="font-semibold text-efe-fg">
-                  {topicMeta.topic} {topicMeta.topicTitle}
+              {progress.notesRead && (
+                <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-efe-accent-soft text-efe-accent-ink">
+                  ✓ Notes read
                 </span>
-                . You can read the notes and complete the quiz right now.
-              </p>
+              )}
             </div>
-          )}
-        </section>
 
-        {/* STEP 2: READ */}
-        <section
-          aria-labelledby="step-read-heading"
-          className="efe-card p-6 sm:p-8"
-        >
-          <div className="flex items-center justify-between gap-2 mb-4">
-            <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-efe-accent-ink">
-                Step 2 · Read
-              </span>
-              <h2
-                id="step-read-heading"
-                className="text-xl font-bold font-display text-efe-fg mt-0.5"
-              >
-                Revision Notes: {topicMeta.topicTitle}
-              </h2>
+            <div className="prose prose-sm sm:prose-base max-w-none text-efe-fg space-y-3 bg-efe-bg p-5 rounded-xl border border-efe-line mb-6 whitespace-pre-line">
+              {topicMeta.notes}
             </div>
-            {progress.notesRead && (
-              <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-efe-accent-soft text-efe-accent-ink">
-                ✓ Notes read
-              </span>
-            )}
-          </div>
 
-          <div className="prose prose-sm sm:prose-base max-w-none text-efe-fg space-y-3 bg-efe-bg p-5 rounded-xl border border-efe-line mb-6">
-            <p className="font-semibold text-efe-fg">
-              Syllabus Topic {topicMeta.topic}: {topicMeta.topicTitle}
-            </p>
-            <p className="text-sm text-efe-muted leading-relaxed">
-              Detailed study notes, pro-forma accounting layouts, and worked ledger examples for{" "}
-              <strong>{topicMeta.topicTitle}</strong> are being formatted for this section. Review
-              the key syllabus definitions and principles, then mark these notes as read and test
-              your understanding in Step 3 below.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-3">
-            {!progress.notesRead ? (
-              <button
-                type="button"
-                onClick={handleMarkNotesRead}
-                className="efe-btn efe-btn-primary"
-              >
-                I have read and understood these notes
-              </button>
-            ) : (
-              <div className="flex flex-wrap items-center gap-3">
-                <span className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-efe-accent-soft text-efe-accent-ink text-sm font-bold border border-efe-accent/30">
-                  ✓ You have read and understood these notes
-                </span>
+            <div className="flex flex-wrap items-center gap-3">
+              {!progress.notesRead ? (
                 <button
                   type="button"
-                  onClick={handleUndoNotesRead}
-                  className="efe-btn efe-btn-secondary efe-btn-sm"
+                  onClick={handleMarkNotesRead}
+                  className="efe-btn efe-btn-primary"
                 >
-                  Undo
+                  I have read and understood these notes
                 </button>
-              </div>
-            )}
-          </div>
-        </section>
+              ) : (
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-efe-accent-soft text-efe-accent-ink text-sm font-bold border border-efe-accent/30">
+                    ✓ You have read and understood these notes
+                  </span>
+                  <button
+                    type="button"
+                    onClick={handleUndoNotesRead}
+                    className="efe-btn efe-btn-secondary efe-btn-sm"
+                  >
+                    Undo
+                  </button>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
 
-        {/* STEP 3: CHECK YOURSELF */}
+        {/* CHECK YOURSELF */}
         <section
           aria-labelledby="step-quiz-heading"
           className="efe-card p-6 sm:p-8"
@@ -415,7 +408,7 @@ export default function TopicPageClient({
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6 pb-4 border-b border-efe-line">
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-efe-accent-ink">
-                Step 3 · Check yourself
+                Check yourself
               </span>
               <h2
                 id="step-quiz-heading"

@@ -100,7 +100,11 @@ export default function AccountingHubClient({ sections }: AccountingHubClientPro
     let mastered = 0;
     let studied = 0;
     for (const t of allTopics) {
-      const st = computeTopicStatus(progressMap[t.topicId], Boolean(t.videoId));
+      const st = computeTopicStatus(
+        progressMap[t.topicId],
+        Boolean(t.videoId),
+        Boolean(t.notes)
+      );
       if (st === "mastered") mastered++;
       else if (st === "studied") studied++;
     }
@@ -181,7 +185,7 @@ export default function AccountingHubClient({ sections }: AccountingHubClientPro
                   O Level Accounting (7707) Progress
                 </h2>
                 <p className="text-sm text-efe-muted">
-                  Read the notes and score 5/5 on the topic quiz to master each topic.
+                  Practice questions are available for every topic now. Notes and videos are being added.
                 </p>
               </div>
               <div className="text-right">
@@ -218,11 +222,11 @@ export default function AccountingHubClient({ sections }: AccountingHubClientPro
               </span>
               <span className="inline-flex items-center gap-2">
                 <ProgressCircle status="studied" />
-                <span>Studied (video + notes done)</span>
+                <span>Studied</span>
               </span>
               <span className="inline-flex items-center gap-2">
                 <ProgressCircle status="mastered" />
-                <span>Mastered (quiz passed)</span>
+                <span>Mastered (quiz passed 5/5)</span>
               </span>
               {loadingProgress && (
                 <span className="text-efe-muted ml-auto">Syncing progress…</span>
@@ -261,7 +265,8 @@ export default function AccountingHubClient({ sections }: AccountingHubClientPro
                   {section.topics.map((topic) => {
                     const rawStatus = computeTopicStatus(
                       progressMap[topic.topicId],
-                      Boolean(topic.videoId)
+                      Boolean(topic.videoId),
+                      Boolean(topic.notes)
                     );
                     // On hub circle, display not-started, studied, or mastered
                     const circleStatus: "not-started" | "studied" | "mastered" =

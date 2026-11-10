@@ -10,6 +10,7 @@ export interface AccountingTopicMeta {
   section: number;    // 1..7
   topicTitle: string; // Exact title from oLevelAccountingMcqs.ts
   videoId?: string;   // Optional YouTube video ID when available
+  notes?: string;     // Optional topic notes when available
 }
 
 export interface AccountingSectionMeta {
