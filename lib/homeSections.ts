@@ -1,4 +1,5 @@
 import type { HomeIconName } from "@/components/home/HomeIcons";
+import coursesData from "@/data/courses.json";
 
 export interface HomeTile {
   name: string;
@@ -14,12 +15,40 @@ export interface HomeSection {
   chipIcon: HomeIconName;
   description: string;
   hub: string;
+  countLabel?: string;
   arabic?: string;
   badge?: string;
   tiles: HomeTile[];
 }
 
+const COURSE_ICON_MAP: Record<string, HomeIconName> = {
+  "science-biology-cells": "network",
+  "physics-mechanics": "compass",
+  "english-essay-writing": "pen-line",
+  "history-world-war-2": "landmark",
+};
+
+const EXTRA_COURSE_TILES: HomeTile[] = coursesData.map((course) => ({
+  name: course.title,
+  href: `/courses/${course.id}`,
+  icon: COURSE_ICON_MAP[course.id] ?? "book-open",
+}));
+
 export const HOME_SECTIONS: HomeSection[] = [
+  {
+    id: "courses",
+    title: "Courses",
+    chip: "Courses",
+    chipIcon: "graduation-cap",
+    description: "Free structured courses with short videos, notes and practice questions.",
+    hub: "/courses",
+    countLabel: "courses",
+    tiles: [
+      { name: "O Level Accounting", href: "/courses/accounting", icon: "calculator", isNew: true },
+      { name: "Mathematics", href: "/courses/mathematics", icon: "sigma" },
+      ...EXTRA_COURSE_TILES,
+    ],
+  },
   {
     id: "islamic",
     title: "Islamic Studies",

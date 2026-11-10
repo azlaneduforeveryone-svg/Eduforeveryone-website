@@ -94,7 +94,7 @@ export default function HomePage() {
                         {s.arabic}
                       </span>
                     )}
-                    <span>{s.tiles.length} tools</span>
+                    <span>{s.tiles.length} {s.countLabel ?? "tools"}</span>
                   </div>
                   <h2 id={`${s.id}-title`}>{s.title}</h2>
                   <p>{s.description}</p>
