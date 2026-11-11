@@ -51,12 +51,11 @@
     "description": "Understand the causes, key events, and lasting impact of the Second World War.",
     "thumbnail": "🌍",
     "level": "Intermediate",
-    "lessonCount": 3,
+    "lessonCount": 2,
     "featured": true,
     "lessons": [
       { "id": "lesson-1", "title": "Causes of WWII",                  "duration": "16 min", "type": "video", "youtubeId": "fo2Rb9h788s" },
-      { "id": "lesson-2", "title": "Key Battles and Turning Points",  "duration": "20 min", "type": "video", "youtubeId": "_uk_6vfqwTA" },
-      { "id": "lesson-3", "title": "The Holocaust and Its Legacy",    "duration": "18 min", "type": "video", "youtubeId": "SX7cL0-i9Mg" }
+      { "id": "lesson-2", "title": "Key Battles and Turning Points",  "duration": "20 min", "type": "video", "youtubeId": "_uk_6vfqwTA" }
     ]
   }
 ]
