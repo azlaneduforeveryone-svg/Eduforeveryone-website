@@ -36,20 +36,6 @@ const EXTRA_COURSE_TILES: HomeTile[] = coursesData.map((course) => ({
 
 export const HOME_SECTIONS: HomeSection[] = [
   {
-    id: "courses",
-    title: "Courses",
-    chip: "Courses",
-    chipIcon: "graduation-cap",
-    description: "Free structured courses with short videos, notes and practice questions.",
-    hub: "/courses",
-    countLabel: "courses",
-    tiles: [
-      { name: "O Level Accounting", href: "/courses/accounting", icon: "calculator", isNew: true },
-      { name: "Mathematics", href: "/courses/mathematics", icon: "sigma" },
-      ...EXTRA_COURSE_TILES,
-    ],
-  },
-  {
     id: "islamic",
     title: "Islamic Studies",
     chip: "Islamic Studies",
@@ -66,6 +52,20 @@ export const HOME_SECTIONS: HomeSection[] = [
       { name: "Duas & Tasbeeh", href: "/duas", icon: "hand-heart" },
       { name: "Islamic Quiz", href: "/quiz/islamic-quiz", icon: "circle-help" },
       { name: "Quran Word Meanings", href: "/islamic-studies/quran-words", icon: "languages", isNew: true },
+    ],
+  },
+  {
+    id: "courses",
+    title: "Courses",
+    chip: "Courses",
+    chipIcon: "graduation-cap",
+    description: "Free structured courses with short videos, notes and practice questions.",
+    hub: "/courses",
+    countLabel: "courses",
+    tiles: [
+      { name: "O Level Accounting", href: "/courses/accounting", icon: "calculator", isNew: true },
+      { name: "Mathematics", href: "/courses/mathematics", icon: "sigma" },
+      ...EXTRA_COURSE_TILES,
     ],
   },
   {
