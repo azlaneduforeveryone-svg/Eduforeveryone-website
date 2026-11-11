@@ -133,7 +133,8 @@ export default function IslamicQuizGame() {
     try {
       await saveQuizScore({
         uid:         user.uid,
-        displayName: user.displayName || "Anonymous",
+        displayName: user.displayName,
+        email:       user.email,
         photoURL:    user.photoURL    || "",
         gameName:    "Islamic Quiz",
         category:    selectedCats.has("all") ? "quran" : Array.from(selectedCats)[0],

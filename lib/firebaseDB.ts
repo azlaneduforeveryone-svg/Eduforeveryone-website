@@ -47,6 +47,14 @@ export interface QuizSession {
   playedAt: unknown;
 }
 
+function resolveFallbackName(displayName?: string | null, email?: string | null): string {
+  const trimmed = displayName?.trim();
+  if (trimmed) return trimmed;
+  const emailPrefix = email?.split("@")[0]?.trim();
+  if (emailPrefix) return emailPrefix;
+  return "Student";
+}
+
 // ── Create / Update User Profile ─────────────────────────────────────────────
 export async function createOrUpdateUser(user: {
   uid: string; displayName: string | null;
@@ -54,12 +62,13 @@ export async function createOrUpdateUser(user: {
 }) {
   const ref = doc(db, "users", user.uid);
   const snap = await getDoc(ref);
+  const fallbackName = resolveFallbackName(user.displayName, user.email);
 
   if (!snap.exists()) {
     // New user — create profile
     const profile: UserProfile = {
       uid:                user.uid,
-      displayName:        user.displayName || "Anonymous",
+      displayName:        fallbackName,
       email:              user.email || "",
       photoURL:           user.photoURL || "",
       createdAt:          serverTimestamp(),
@@ -77,8 +86,8 @@ export async function createOrUpdateUser(user: {
   } else {
     // Existing user — update last seen + name/photo
     await updateDoc(ref, {
-      displayName: user.displayName || snap.data()?.displayName,
-      photoURL:    user.photoURL    || snap.data()?.photoURL,
+      displayName: user.displayName?.trim() || snap.data()?.displayName || fallbackName,
+      photoURL:    user.photoURL    || snap.data()?.photoURL || "",
       lastSeen:    serverTimestamp(),
     });
   }
@@ -87,7 +96,8 @@ export async function createOrUpdateUser(user: {
 // ── Save Quiz Score ───────────────────────────────────────────────────────────
 export async function saveQuizScore(params: {
   uid: string;
-  displayName: string;
+  displayName: string | null;
+  email?: string | null;
   photoURL: string;
   gameName: string;
   category: string;
@@ -97,8 +107,9 @@ export async function saveQuizScore(params: {
   total: number;
   streak: number;
 }) {
-  const { uid, displayName, photoURL, gameName, category,
+  const { uid, photoURL, gameName, category,
           difficulty, score, correct, total, streak } = params;
+  const displayName = resolveFallbackName(params.displayName, params.email);
 
   const batch = writeBatch(db);
 
@@ -215,7 +226,8 @@ export async function getUserSessions(uid: string, count = 10) {
 // ── IELTS Results ─────────────────────────────────────────────────────────────
 export interface IeltsResult {
   uid?: string;
-  displayName?: string;
+  displayName?: string | null;
+  email?: string | null;
   skill: "listening" | "reading" | "writing" | "speaking";
   band: number;
   raw?: number;
@@ -247,7 +259,7 @@ export async function saveIeltsResult(r: IeltsResult) {
   try {
     await addDoc(collection(db, "ieltsSessions"), {
       uid: r.uid,
-      displayName: r.displayName || "Anonymous",
+      displayName: resolveFallbackName(r.displayName, r.email),
       skill: r.skill,
       band: r.band,
       raw: r.raw ?? null,

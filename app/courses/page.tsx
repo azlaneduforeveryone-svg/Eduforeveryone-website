@@ -33,6 +33,31 @@ export default function CoursesPage() {
         {/* Admin-uploaded courses from Firebase */}
         <AdminCoursesSection />
 
+        {/* Accounting Hub Banner */}
+        <Link
+          href="/courses/accounting"
+          className="group efe-banner flex flex-col sm:flex-row items-start sm:items-center gap-5 p-6 mb-6 transition-all hover:shadow-lg"
+        >
+          <div className="w-14 h-14 rounded-2xl bg-white/15 border border-white/25 flex items-center justify-center text-3xl flex-shrink-0">
+            📊
+          </div>
+          <div className="flex-1">
+            <div className="flex flex-wrap items-center gap-2 mb-1.5">
+              <span className="text-xs font-bold bg-efe-gold-soft text-efe-gold px-2.5 py-0.5 rounded-full">NEW</span>
+              <span className="text-xs text-white/80 font-medium">Accounting · O Level 7707</span>
+            </div>
+            <h2 className="text-xl font-bold text-white mb-1">Cambridge O Level Accounting (7707)</h2>
+            <p className="text-white/85 text-sm leading-relaxed">
+              28 topics across all 7 syllabus sections — video lessons, concise notes, and 336 practice multiple-choice questions with instant option-by-option feedback.
+            </p>
+          </div>
+          <div className="flex-shrink-0">
+            <span className="efe-btn efe-btn-on-hero efe-btn-sm whitespace-nowrap">
+              Start O Level 7707 →
+            </span>
+          </div>
+        </Link>
+
         {/* Mathematics Hub Banner */}
         <Link
           href="/courses/mathematics"

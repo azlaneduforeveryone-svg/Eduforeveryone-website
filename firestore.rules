@@ -1,0 +1,201 @@
+// ============================================================================
+// Firestore Security Rules — EduForEveryone (project: eduforeveryone-ded2d)
+// ============================================================================
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── Helper Functions ────────────────────────────────────────────────────
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return isSignedIn() && request.auth.uid == uid;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && request.auth.uid == 'Vbw90jysj8c4X4R02sPmdNKjvrf2';
+    }
+
+    // Validates global & category leaderboard entry payloads:
+    // Global (`leaderboard/{uid}`): { uid, displayName, photoURL, totalScore, totalGames, bestScore, updatedAt }
+    // Category (`leaderboard_{cat}/{uid}`): { uid, displayName, photoURL, totalScore, bestScore, games, updatedAt }
+    function isValidLeaderboardWrite(uid) {
+      let d = request.resource.data;
+      return isOwner(uid)
+        && d.uid == request.auth.uid
+        && d.displayName is string
+        && d.displayName.size() >= 1 && d.displayName.size() <= 100
+        && d.totalScore is number
+        && d.totalScore >= 0 && d.totalScore <= 10000000
+        && d.bestScore is number
+        && d.bestScore >= 0 && d.bestScore <= 10000000
+        && (
+          !('totalGames' in d) ||
+          (d.totalGames is number && d.totalGames >= 0 && d.totalGames <= 1000000)
+        )
+        && (
+          !('games' in d) ||
+          (d.games is number && d.games >= 0 && d.games <= 1000000)
+        );
+    }
+
+    // ── 1. Users & Subcollections (including courseProgress) ────────────────
+    // users/{uid} and any subcollections: only the signed-in owner can read & write.
+    match /users/{uid} {
+      allow read, write: if isOwner(uid);
+
+      match /courseProgress/{topicId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /{subcollection}/{docId} {
+        allow read, write: if isOwner(uid);
+      }
+    }
+
+    // ── 2. Leaderboards (global + category leaderboards) ────────────────────
+    // Public read; signed-in user may write only their own entry (doc id == uid)
+    // with field validation on uid and scores.
+    match /leaderboard/{uid} {
+      allow read: if true;
+      allow create, update: if isValidLeaderboardWrite(uid);
+      allow delete: if false;
+    }
+
+    match /leaderboard_quran/{uid} {
+      allow read: if true;
+      allow create, update: if isValidLeaderboardWrite(uid);
+      allow delete: if false;
+    }
+
+    match /leaderboard_hadith/{uid} {
+      allow read: if true;
+      allow create, update: if isValidLeaderboardWrite(uid);
+      allow delete: if false;
+    }
+
+    match /leaderboard_fiqh/{uid} {
+      allow read: if true;
+      allow create, update: if isValidLeaderboardWrite(uid);
+      allow delete: if false;
+    }
+
+    match /leaderboard_seerah/{uid} {
+      allow read: if true;
+      allow create, update: if isValidLeaderboardWrite(uid);
+      allow delete: if false;
+    }
+
+    match /leaderboard_history/{uid} {
+      allow read: if true;
+      allow create, update: if isValidLeaderboardWrite(uid);
+      allow delete: if false;
+    }
+
+    match /leaderboard_pillars/{uid} {
+      allow read: if true;
+      allow create, update: if isValidLeaderboardWrite(uid);
+      allow delete: if false;
+    }
+
+    match /leaderboard_names/{uid} {
+      allow read: if true;
+      allow create, update: if isValidLeaderboardWrite(uid);
+      allow delete: if false;
+    }
+
+    // ── 3. Quiz Sessions (quizSessions/{sessionId}) ─────────────────────────
+    // Written by saveQuizScore: { uid, displayName, photoURL, gameName,
+    // category, difficulty, score, correct, total, playedAt }
+    match /quizSessions/{sessionId} {
+      allow read: if isSignedIn() && resource.data.uid == request.auth.uid;
+      allow create: if isSignedIn()
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.displayName is string
+        && request.resource.data.gameName is string
+        && request.resource.data.category is string
+        && request.resource.data.difficulty is string
+        && request.resource.data.score is number
+        && request.resource.data.score >= 0
+        && request.resource.data.score <= 100000
+        && request.resource.data.correct is number
+        && request.resource.data.total is number
+        && request.resource.data.correct >= 0
+        && request.resource.data.correct <= request.resource.data.total;
+      allow update, delete: if false;
+    }
+
+    // ── 4. IELTS & GMAT User History ────────────────────────────────────────
+    // Written by saveIeltsResult: { uid, displayName, skill, band, raw, total,
+    // testId, source, mockId, date }
+    match /ieltsSessions/{sessionId} {
+      allow read: if isSignedIn() && resource.data.uid == request.auth.uid;
+      allow create: if isSignedIn()
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.displayName is string
+        && request.resource.data.skill in ['listening', 'reading', 'writing', 'speaking']
+        && request.resource.data.source in ['practice', 'simulation', 'full-mock']
+        && request.resource.data.band is number
+        && request.resource.data.band >= 0
+        && request.resource.data.band <= 9;
+      allow update, delete: if false;
+    }
+
+    // Written by saveGmatResult: { formId, sections, estimatedTotal, completedAt }
+    match /gmatResults/{uid}/sessions/{sessionId} {
+      allow read: if isOwner(uid);
+      allow create: if isOwner(uid)
+        && request.resource.data.formId is string
+        && request.resource.data.sections is list
+        && request.resource.data.estimatedTotal is number;
+      allow update, delete: if false;
+    }
+
+    // ── 5. Admin Content Collections (Public Read, Admin Write Only) ────────
+    // Shown to all visitors on public pages; writes restricted to isAdmin().
+    match /admin_ielts_listening/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /admin_ielts_reading/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /admin_math/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /admin_quiz/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /admin_courses/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /admin_notes/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // ── 6. Admin Audit Log (admin_uploads) ──────────────────────────────────
+    // Only read/written inside AdminPanel.tsx — NOT shown to public visitors.
+    match /admin_uploads/{docId} {
+      allow read, write: if isAdmin();
+    }
+
+    // ── 7. Default Deny Everything Else ─────────────────────────────────────
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
