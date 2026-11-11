@@ -174,7 +174,7 @@ export const DUAS_DATABASE: DuaItem[] = [
     },
     translations: {
       en: "Our Lord! Let not our hearts swerve after Thou hast guided us, and bestow upon us mercy from Thy presence; for Thou art the Bestower.",
-      ur: "اے ہمارے رب! ہدایت دینے کے بعد ہمارے دلوں کو ٹیڑھا نہ کر، اور ہمیں اپنے پاس سے رحمت عطا فرما، بے شک تو ہی سب کچھ عطا کرنے والا ہے۔",
+      ur: "اے پروردگار! جب تو نے ہمیں ہدایت بخشی ہے تو اس کے بعد ہمارے دلوں میں کجی نہ پیدا کر دیجیو اور ہمیں اپنے ہاں سے نعمت عطا فرما تو تو بڑا عطا فرمانے والا ہے",
       hi: "ऐ हमारे पालनहार! हमें हिदायत देने के बाद हमारे दिलों को टेढ़ा न कर, और हमें अपनी ओर से दया प्रदान कर। निःसंदेह तू ही बहुत बड़ा दाता है।",
       tr: "Rabbimiz! Bizi doğru yola erdirdikten sonra kalblerimizi eğriltme, katından bize rahmet bağışla; şüphesiz Sen sonsuz bağışta bulunansın.",
       es: "¡Señor nuestro! No permitas que nuestros corazones se desvíen después de habernos guiado. Concédenos Tu misericordia, Tú eres el Dadivoso.",
