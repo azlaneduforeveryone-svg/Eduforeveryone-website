@@ -22,6 +22,7 @@ import {
 } from "@/lib/courses/accountingProgress";
 import YouTubeWatchedPlayer from "@/components/courses/YouTubeWatchedPlayer";
 import SaveProgressPrompt from "@/components/courses/SaveProgressPrompt";
+import NotesContent from "@/components/courses/NotesContent";
 
 interface TopicPageClientProps {
   topicMeta: AccountingTopicMeta;
@@ -369,8 +370,8 @@ export default function TopicPageClient({
               )}
             </div>
 
-            <div className="prose prose-sm sm:prose-base max-w-none text-efe-fg space-y-3 bg-efe-bg p-5 rounded-xl border border-efe-line mb-6 whitespace-pre-line">
-              {topicMeta.notes}
+            <div className="max-w-none bg-efe-bg p-5 rounded-xl border border-efe-line mb-6">
+              <NotesContent notes={topicMeta.notes} />
             </div>
 
             <div className="flex flex-wrap items-center gap-3">

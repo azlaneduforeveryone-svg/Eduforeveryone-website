@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { oLevelAccountingMcqs } from "@/lib/courses/oLevelAccountingMcqs";
 import { O_LEVEL_ACCOUNTING_SECTIONS, type AccountingSectionMeta } from "@/lib/courses/accountingSyllabus";
+import { getOLevelNotes } from "@/lib/courses/oLevelAccountingNotes";
 import AccountingHubClient from "./AccountingHubClient";
 
 export const metadata: Metadata = {
@@ -35,6 +36,9 @@ export default function AccountingHubPage() {
     topics: sec.topics.map((t) => ({
       ...t,
       topicTitle: titleMap.get(t.topic) || t.topicTitle,
+      // The hub only checks whether notes exist (for progress status),
+      // so send a short marker instead of the full notes text.
+      notes: (getOLevelNotes(t.topic) || t.notes) ? "available" : undefined,
     })),
   }));
 

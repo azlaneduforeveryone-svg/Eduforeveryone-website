@@ -7,6 +7,7 @@ import {
   getTopicByCode,
   getAdjacentTopics,
 } from "@/lib/courses/accountingSyllabus";
+import { getOLevelNotes } from "@/lib/courses/oLevelAccountingNotes";
 import TopicPageClient from "./TopicPageClient";
 
 export function generateStaticParams() {
@@ -70,6 +71,8 @@ export default function OLevelAccountingTopicPage({
   const resolvedMeta = {
     ...topicMeta,
     topicTitle: topicQuestions[0]?.topicTitle || topicMeta.topicTitle,
+    // Only this topic's notes are sent to the client
+    notes: getOLevelNotes(topicMeta.topic) ?? topicMeta.notes,
   };
   const { prev, next } = getAdjacentTopics(topicMeta.slug);
 
