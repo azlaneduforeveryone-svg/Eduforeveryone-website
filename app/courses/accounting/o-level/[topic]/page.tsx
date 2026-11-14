@@ -9,6 +9,7 @@ import {
 } from "@/lib/courses/accountingSyllabus";
 import { getOLevelNotes } from "@/lib/courses/oLevelAccountingNotes";
 import { getOLevelRevision } from "@/lib/courses/oLevelAccountingRevision";
+import { splitOLevelNotes } from "@/lib/courses/notesSplit";
 import TopicPageClient from "./TopicPageClient";
 
 export function generateStaticParams() {
@@ -69,11 +70,15 @@ export default function OLevelAccountingTopicPage({
 
   // Filter to only this topic's 12 questions on the server
   const topicQuestions = mcqsByTopic(topicMeta.topic);
+  // Only this topic's notes are sent to the client. The "What you need to know"
+  // and "Key words" blocks are split off so they can be shown before the video.
+  const { intro: notesIntro, body: notesBody } = splitOLevelNotes(
+    getOLevelNotes(topicMeta.topic) ?? topicMeta.notes
+  );
   const resolvedMeta = {
     ...topicMeta,
     topicTitle: topicQuestions[0]?.topicTitle || topicMeta.topicTitle,
-    // Only this topic's notes are sent to the client
-    notes: getOLevelNotes(topicMeta.topic) ?? topicMeta.notes,
+    notes: notesBody,
   };
   const { prev, next } = getAdjacentTopics(topicMeta.slug);
 
@@ -84,6 +89,7 @@ export default function OLevelAccountingTopicPage({
       prevTopic={prev}
       nextTopic={next}
       revision={getOLevelRevision(topicMeta.topic)}
+      notesIntro={notesIntro ?? null}
     />
   );
 }

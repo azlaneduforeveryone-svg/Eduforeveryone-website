@@ -451,6 +451,17 @@ Next: test yourself with the practice questions below.`,
 - Explain how each document is a source of information for the accounting records.
 - Explain that these documents can be produced and recorded manually or digitally.
 
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Source document | A document that gives the details of a transaction and is used as evidence for the entry in the books. |
+| Invoice | A document from the seller to the buyer for goods sold on credit, showing the amount due. |
+| Debit note | A document from the buyer asking the seller for a credit, for example for returned goods. |
+| Credit note | A document from the seller confirming that the amount the buyer owes has been reduced. |
+| Trade discount | A reduction in price for trade customers, usually for buying in bulk. It is not recorded in the books. |
+| Statement of account | A summary sent by the seller to a credit customer showing what is owed. |
+
 ## Why documents matter
 
 Every entry in the books should come from a document. The document is **evidence** that the transaction happened. It shows the date, the amount and who was involved.
@@ -555,6 +566,17 @@ Next: test yourself with the practice questions below.`,
 - Record money received and paid by cash, cheque, debit or credit card, online payment and bank transfer.
 - Explain the imprest system and use it for petty cash.
 - Assess the benefits and limitations of keeping cash on the premises, and of manual and digital recording.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Book of prime entry | The book where a transaction is first recorded from its source document. |
+| Journal | A book of prime entry that lists similar transactions, such as credit sales. |
+| Cash book | The book that records all money received and paid, in cash and through the bank. |
+| Contra entry | A transaction where both the debit and the credit are in the cash book. |
+| Cash discount | A reduction given for paying early. Called discount allowed or discount received in the books. |
+| Imprest system | A petty cash system where the amount spent is given back to restore a fixed float. |
 
 ## What a book of prime entry is
 
@@ -754,6 +776,16 @@ Next: test yourself with the practice questions below.`,
 - Prepare a trial balance from a list of balances, and correct one that contains errors.
 - Name and explain the six types of error that do not stop a trial balance from balancing.
 
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Trial balance | A list of all the ledger balances at a certain date, in a debit column and a credit column. |
+| Debit balance | An account where the debit side is bigger than the credit side. |
+| Credit balance | An account where the credit side is bigger than the debit side. |
+| Casting | Adding up a column or an account. |
+| Suspense account | A temporary account that holds the difference when the trial balance totals do not agree. |
+
 ## What a trial balance is
 
 A trial balance is a list of all the ledger balances at a certain date. Debit balances go in one column and credit balances in the other.
@@ -865,6 +897,16 @@ Next: test yourself with the practice questions below.`,
 - Correct errors through the suspense account.
 - Work out the corrected profit or loss after errors are corrected.
 - Explain how corrections change the statement of financial position.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Correcting journal entry | A new journal entry that fixes an error instead of crossing out the wrong one. |
+| Narrative | A short explanation written under every journal entry. |
+| Suspense account | A temporary account that holds the trial balance difference until the errors are found. |
+| Draft profit | The profit worked out before errors are corrected. |
+| Corrected profit | The profit after adjusting for errors that affect income or expenses. |
 
 ## How to correct any error
 
@@ -1103,6 +1145,17 @@ Next: test yourself with the practice questions below.`,
 - Prepare control accounts including credit sales and purchases, receipts, payments, cash discounts, returns, irrecoverable debts, dishonoured cheques, interest on overdue accounts, contra entries, refunds, and opening and closing balances.
 - Explain how digital recording affects control accounts.
 
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Control account | A summary account that records the totals of all the transactions in one ledger. |
+| Sales ledger control account | The control account for credit customers. Its balance is total trade receivables. |
+| Purchases ledger control account | The control account for credit suppliers. Its balance is total trade payables. |
+| Contra entry | Setting off what a firm owes the business against what the business owes the same firm. |
+| Dishonoured cheque | A cheque received that the payer's bank refused to pay. |
+| Refund | Money paid back, for example to a customer who has paid too much. |
+
 ## What a control account is
 
 A control account is a **summary** account. It records the **totals** of all the transactions in one ledger.
@@ -1226,6 +1279,16 @@ Next: test yourself with the practice questions below.`,
 - Tell the difference between capital receipts and revenue receipts, and record each one correctly.
 - Work out the effect on profit and on asset values when an item is treated wrongly.
 
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Capital expenditure | Spending on buying or improving non-current assets. |
+| Revenue expenditure | Spending on the day-to-day running of the business. |
+| Capital receipt | Money received that does not come from normal trading, such as a loan or the sale of a non-current asset. |
+| Revenue receipt | Money received from normal trading and regular income, such as sales or rent received. |
+| Non-current asset | An asset the business keeps and uses for more than one year. |
+
 ## Capital expenditure and revenue expenditure
 
 | | Capital expenditure | Revenue expenditure |
@@ -1322,6 +1385,16 @@ Next: test yourself with the practice questions below.`,
 - Prepare the non-current asset, provision for depreciation and disposal accounts.
 - Calculate the profit or loss on disposal.
 
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Cost | The total capital expenditure on the asset (topic 4.1) |
+| Residual value | The expected amount the asset will be sold for at the end of its life |
+| Useful life | The number of years the business expects to use the asset |
+| Accumulated depreciation | Total depreciation charged on the asset since it was bought |
+| Carrying value | Cost minus accumulated depreciation |
+
 ## What depreciation is
 
 Depreciation is the part of a non-current asset's cost that is used up in a year. It is charged as an **expense** each year of the asset's useful life.
@@ -1340,16 +1413,6 @@ Non-current assets lose value because of:
 - **Realistic values.** Without depreciation, assets would be overstated in the statement of financial position.
 
 Depreciation does **not** involve paying out any money. It is a book entry.
-
-## Key words
-
-| Word | Meaning |
-|---|---|
-| Cost | The total capital expenditure on the asset (topic 4.1) |
-| Residual value | The expected amount the asset will be sold for at the end of its life |
-| Useful life | The number of years the business expects to use the asset |
-| Accumulated depreciation | Total depreciation charged on the asset since it was bought |
-| Carrying value | Cost minus accumulated depreciation |
 
 ## Straight-line method
 
@@ -1476,6 +1539,17 @@ Next: test yourself with the practice questions below.`,
 - Apply the matching (accruals) concept using accruals and prepayments.
 - Prepare journal entries and ledger accounts for accrued and prepaid expenses.
 - Prepare journal entries and ledger accounts for accrued and prepaid income.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Matching (accruals) concept | Income and expenses are recorded in the period they belong to, not when cash is paid or received. |
+| Accrued expense | An expense used in the year but not yet paid. |
+| Prepaid expense | An expense paid this year that belongs to next year. |
+| Accrued income | Income earned in the year but not yet received. |
+| Income received in advance | Income received this year that belongs to next year. |
+| Other payables and other receivables | The headings used for these items in the statement of financial position. |
 
 ## Why matching matters
 
@@ -1808,6 +1882,17 @@ Next: test yourself with the practice questions below.`,
 - Prepare both statements, with adjustments for depreciation, accruals and prepayments, irrecoverable debts, the allowance for irrecoverable debts, and drawings.
 - Explain how a change in one account affects other figures in the statements.
 
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Sole trader | A business owned by one person. |
+| Unlimited liability | The owner's personal possessions can be used to pay the business's debts. |
+| Revenue | Sales less sales returns. |
+| Cost of sales | The cost of the goods sold in the period. |
+| Gross profit | Revenue minus cost of sales. |
+| Profit for the year | Gross profit plus other income minus expenses. |
+
 ## Sole traders
 
 A sole trader is a business owned by **one person**. The owner may employ staff.
@@ -1985,6 +2070,17 @@ Next: test yourself with the practice questions below.`,
 - Apply the sole trader adjustments from topic 5.1.
 - Explain the difference between capital accounts and current accounts, and prepare both.
 
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Partnership | A business owned by two or more people who share the profits. |
+| Partnership agreement | A written agreement setting out how the partnership will be run and how profit is shared. |
+| Profit sharing ratio | The ratio in which partners share the profit left after salaries and interest. |
+| Appropriation account | The account that shows how the profit for the year is shared between the partners. |
+| Capital account | The account that records the fixed capital each partner has put in. |
+| Current account | The account that records each partner's share of profit, salary and interest, less drawings. |
+
 ## Partnerships
 
 A partnership is a business owned by **two or more** people who share the profits. Like a sole trader, it can be a trading, service, manufacturing or combined business. Doctors, lawyers and accountants often work in partnerships.
@@ -2121,6 +2217,17 @@ Next: test yourself with the practice questions below.`,
 - Prepare the statement of profit or loss, statement of changes in equity and statement of financial position.
 - Apply the sole trader adjustments from topic 5.1.
 
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Limited company | A business owned by shareholders that is a separate legal person from its owners. |
+| Shareholder | A person who owns shares in a company. |
+| Limited liability | Shareholders can only lose the amount they paid, or agreed to pay, for their shares. |
+| Equity | Share capital plus reserves. |
+| Dividend | The part of profit paid out to shareholders. |
+| Debenture | A long-term loan to a company, paid a fixed rate of interest. |
+
 ## What a limited company is
 
 A limited company is owned by **shareholders**. It is a separate legal person from its owners. It can own property, make contracts, sue and be sued in its own name. It is run by **directors**, who are chosen by the shareholders.
@@ -2243,10 +2350,6 @@ Next: test yourself with the practice questions below.`,
 - Prepare a manufacturing account, statement of profit or loss and statement of financial position.
 - Apply the sole trader adjustments from topic 5.1.
 
-## Why a manufacturing account is needed
-
-A manufacturer makes its own goods instead of buying them ready-made. The **manufacturing account** works out how much it cost to make the goods finished in the year. This figure, the **cost of production**, replaces purchases in the cost of sales calculation.
-
 ## Key words
 
 | Word | Meaning |
@@ -2259,6 +2362,10 @@ A manufacturer makes its own goods instead of buying them ready-made. The **manu
 | Prime cost | Direct material + direct labour + direct expenses |
 | Work in progress (WIP) | Goods that are partly made at the year end |
 | Cost of production | The total factory cost of goods completed in the year |
+
+## Why a manufacturing account is needed
+
+A manufacturer makes its own goods instead of buying them ready-made. The **manufacturing account** works out how much it cost to make the goods finished in the year. This figure, the **cost of production**, replaces purchases in the cost of sales calculation.
 
 ## Examples of factory overheads
 
@@ -2385,6 +2492,17 @@ Next: test yourself with the practice questions below.`,
 - Prepare an income and expenditure account and statement of financial position.
 - Apply the sole trader adjustments from topic 5.1.
 - Explain and calculate the accumulated fund.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Accumulated fund | The club word for capital: total assets minus total liabilities. |
+| Receipts and payments account | A summary of the cash book for the year. |
+| Income and expenditure account | The club version of the statement of profit or loss. |
+| Surplus | When income is more than expenditure. |
+| Deficit | When expenditure is more than income. |
+| Subscription | The yearly fee members pay to the club. |
 
 ## Clubs and societies
 
@@ -2552,6 +2670,16 @@ Next: test yourself with the practice questions below.`,
 - Prepare a statement of profit or loss and statement of financial position from incomplete records.
 - Use mark-up, margin and inventory turnover to find missing figures.
 
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Incomplete records | Accounting records that are not kept by a full double entry system. |
+| Statement of affairs | A list of assets and liabilities at a date, used to find capital. |
+| Mark-up | Gross profit as a percentage of cost of sales. |
+| Margin | Gross profit as a percentage of revenue. |
+| Rate of inventory turnover | Cost of sales divided by average inventory. |
+
 ## What incomplete records are
 
 Many small businesses do not keep full double entry records. They may only keep a cash book, bank statements, a list of customers who owe them and a file of unpaid invoices.
@@ -2682,6 +2810,17 @@ Next: test yourself with the practice questions below.`,
 
 - Calculate and understand these ratios: gross profit margin, mark-up, profit margin, return on capital employed (ROCE), current ratio, acid test ratio, rate of inventory turnover (times), inventory turnover (days), trade receivables turnover (days) and trade payables turnover (days).
 - Use only the formulas given in the syllabus.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Ratio | One figure compared with another, to judge results. |
+| Profitability | How well a business makes profit. |
+| Liquidity | Whether a business can pay its short-term debts. |
+| Efficiency | How well a business manages its inventory, receivables and payables. |
+| Capital employed | For a company: issued shares plus reserves plus non-current liabilities. |
+| Average inventory | Opening inventory plus closing inventory, divided by 2. |
 
 ## Why ratios are used
 
@@ -2822,6 +2961,16 @@ Next: test yourself with the practice questions below.`,
 - Explain how changes in gross profit, other income and expenses affect profit for the year.
 - Explain why cash and profit are different.
 
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Interpretation | Explaining what a ratio means, whether it is better or worse, and why. |
+| Working capital | Current assets minus current liabilities. |
+| Sales mix | The share of different products in total sales. |
+| Profitability | How well a business makes profit. |
+| Liquidity | Whether a business can pay its short-term debts. |
+
 ## How to interpret a ratio
 
 Calculating a ratio is only half the job. To interpret it:
@@ -2930,6 +3079,16 @@ Next: test yourself with the practice questions below.`,
 - Identify factors that may affect the ratios of two businesses.
 - Explain the problems of comparing two businesses.
 
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Inter-business comparison | Comparing the results of one business with another business. |
+| Accounting policy | A method a business chooses, such as its depreciation method. |
+| Industry average | The typical figure for businesses of the same type. |
+| Year end | The last day of a business's accounting period. |
+| One-off event | Something unusual, such as a fire or a very large order, that affects one year's figures. |
+
 ## Why compare businesses
 
 An owner may want to know how their business is doing against a competitor or the industry average. An investor may want to choose between two companies. Ratios make this easier because they remove the effect of size.
@@ -2990,6 +3149,16 @@ Next: test yourself with the practice questions below.`,
 
 - Explain how accounting information helps different groups of people make decisions: owners, managers, employees, banks, investors and lenders, suppliers, customers, governments and tax authorities, club members, and other groups such as the public and environmental bodies.
 
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Interested party | A person or group who uses accounting information to make decisions. Also called a stakeholder or user. |
+| Internal user | Someone inside the business, such as a manager. |
+| External user | Someone outside the business, such as a bank or supplier. |
+| Published accounts | The financial statements a limited company makes available to the public. |
+| Security | An asset a lender can take if a loan is not repaid. |
+
 ## Who uses accounting information
 
 Many people are interested in a business's financial statements. Each group wants to know something different.
@@ -3040,6 +3209,16 @@ Next: test yourself with the practice questions below.`,
 - Explain the limitations caused by historic cost.
 - Explain the limitations caused by the accounting policies a business chooses.
 - Explain the limitations caused by non-financial aspects that the statements do not show, such as staff skills, business location and the economic climate.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Historic cost | The price actually paid for an asset when it was bought. |
+| Inflation | A general rise in prices over time. |
+| Accounting policy | A method a business chooses, such as its depreciation method. |
+| Estimate | A judgement used when the exact figure is not known, such as an asset's useful life. |
+| Non-financial factor | Something that matters to a business but cannot be measured in money, such as staff skills. |
 
 ## Why financial statements have limits
 
@@ -3108,6 +3287,16 @@ Next: test yourself with the practice questions below.`,
 
 - Understand and apply these accounting concepts in records and financial statements: business entity, consistency, duality, going concern, historic cost, matching (accruals), materiality, money measurement, prudence and realisation.
 
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Accounting concept | A basic rule followed when keeping records and preparing financial statements. |
+| Reliable | Information that users can trust. |
+| Comparable | Information that can be compared with other years or other businesses. |
+| Foreseeable future | The period ahead that can reasonably be predicted, usually at least the next year. |
+| Material item | An item big enough to affect a user's decision. |
+
 ## Why concepts matter
 
 Accounting concepts are the basic rules that everyone follows when keeping records and preparing financial statements. They make statements reliable and comparable, so users can trust them and compare one year or one business with another.
@@ -3168,6 +3357,16 @@ Next: test yourself with the practice questions below.`,
 - Explain why accounting needs an ethical framework.
 - Explain the five fundamental principles: integrity, objectivity, professional competence and due care, confidentiality, and professional behaviour.
 - Explain why an ethical framework matters to stakeholders and to society.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Ethics | Doing what is right, honest and fair, even when no one is checking. |
+| Ethical framework | A set of principles that guides how accountants behave. |
+| Fundamental principles | The five principles: integrity, objectivity, professional competence and due care, confidentiality, and professional behaviour. |
+| Conflict of interest | A situation where personal interests could affect professional judgement. |
+| Stakeholder | A person or group affected by a business, such as owners, employees, lenders and customers. |
 
 ## What ethics means in accounting
 
@@ -3236,6 +3435,17 @@ Next: test yourself with the practice questions below.`,
 - Describe the types of storage (manual, data storage devices, cloud and other digital services) and their advantages and disadvantages.
 
 You do not need to know any specific accounting software.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Digital application | Software or an app used to keep all or part of the accounting records. |
+| Backup | A copy of data kept in a separate place in case the original is lost. |
+| Cloud storage | Data stored on a provider's servers and reached over the internet. |
+| Data storage device | Equipment that stores data, such as a hard drive or USB drive. |
+| Sustainability | Meeting today's needs without harming the future. |
+| Electronic waste | Old computers and devices that are thrown away. |
 
 ## Digital applications in accounting
 

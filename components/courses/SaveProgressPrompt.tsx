@@ -9,9 +9,19 @@ type Mode = "signup" | "signin" | "reset";
 
 interface SaveProgressPromptProps {
   onClose: () => void;
+  /** Optional heading/message override, e.g. when opened from the AI tutor */
+  heading?: string;
+  message?: string;
+  /** When false, "Skip" just closes without hiding progress prompts for 7 days */
+  rememberSkip?: boolean;
 }
 
-export default function SaveProgressPrompt({ onClose }: SaveProgressPromptProps) {
+export default function SaveProgressPrompt({
+  onClose,
+  heading,
+  message,
+  rememberSkip = true,
+}: SaveProgressPromptProps) {
   const { signInGoogle, signInEmail, signUpEmail, resetPassword, error, clearError } = useAuth();
   const [mode, setMode] = useState<Mode>("signup");
   const [name, setName] = useState("");
@@ -33,7 +43,7 @@ export default function SaveProgressPrompt({ onClose }: SaveProgressPromptProps)
   };
 
   const handleSkip = () => {
-    skipSaveProgressPromptFor7Days();
+    if (rememberSkip) skipSaveProgressPromptFor7Days();
     onClose();
   };
 
@@ -79,10 +89,12 @@ export default function SaveProgressPrompt({ onClose }: SaveProgressPromptProps)
               Free Account
             </span>
             <h2 id="save-progress-title" className="text-xl font-bold font-display text-efe-fg">
-              Save your progress on every device
+              {heading ?? "Save your progress on every device"}
             </h2>
             <p className="text-efe-muted text-sm mt-1">
-              {mode === "signup"
+              {message && mode !== "reset"
+                ? message
+                : mode === "signup"
                 ? "Create a free account so your studied topics and quiz scores stay synced everywhere."
                 : mode === "signin"
                 ? "Sign in to sync your O Level Accounting progress."

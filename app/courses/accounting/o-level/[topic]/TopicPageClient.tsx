@@ -25,6 +25,7 @@ import SaveProgressPrompt from "@/components/courses/SaveProgressPrompt";
 import NotesContent from "@/components/courses/NotesContent";
 import Flashcards from "@/components/courses/Flashcards";
 import MindMap from "@/components/courses/MindMap";
+import AiTutor from "@/components/courses/AiTutor";
 import type { TopicRevision } from "@/lib/courses/oLevelAccountingRevisionTypes";
 
 interface TopicPageClientProps {
@@ -33,6 +34,7 @@ interface TopicPageClientProps {
   prevTopic: AccountingTopicMeta | null;
   nextTopic: AccountingTopicMeta | null;
   revision?: TopicRevision | null;
+  notesIntro?: string | null;
 }
 
 export default function TopicPageClient({
@@ -41,6 +43,7 @@ export default function TopicPageClient({
   prevTopic,
   nextTopic,
   revision = null,
+  notesIntro = null,
 }: TopicPageClientProps) {
   const { user, loading: authLoading } = useAuth();
   const [progress, setProgress] = useState<TopicProgress>(DEFAULT_TOPIC_PROGRESS);
@@ -54,6 +57,7 @@ export default function TopicPageClient({
 
   // Sign-up prompt modal state
   const [showAuthPrompt, setShowAuthPrompt] = useState(false);
+  const [authFromTutor, setAuthFromTutor] = useState(false);
 
   const hasVideo = Boolean(topicMeta.videoId);
   const hasNotes = Boolean(topicMeta.notes?.trim());
@@ -317,6 +321,32 @@ export default function TopicPageClient({
           </div>
         </section>
 
+        {/* STEP 0: START HERE (What you need to know + Key words) */}
+        {notesIntro && (
+          <section
+            aria-labelledby="step-intro-heading"
+            className="efe-card p-6 sm:p-8"
+          >
+            <div className="mb-4">
+              <span className="text-xs font-bold uppercase tracking-wider text-efe-accent-ink">
+                Start here
+              </span>
+              <h2
+                id="step-intro-heading"
+                className="text-xl font-bold font-display text-efe-fg mt-0.5"
+              >
+                What you will learn in {topicMeta.topic}
+              </h2>
+              <p className="text-sm text-efe-muted mt-1">
+                Read these goals and key words first, then watch the lesson.
+              </p>
+            </div>
+            <div className="max-w-none bg-efe-bg p-5 rounded-xl border border-efe-line">
+              <NotesContent notes={notesIntro} />
+            </div>
+          </section>
+        )}
+
         {/* STEP 1: WATCH (only rendered when topic has a video) */}
         {hasVideo && topicMeta.videoId && (
           <section
@@ -375,18 +405,6 @@ export default function TopicPageClient({
               )}
             </div>
 
-            {revision?.mindMap && (
-              <details open className="group mb-6 rounded-xl border border-efe-line bg-efe-surface">
-                <summary className="cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden flex items-center justify-between gap-2 px-5 py-3 text-sm font-bold text-efe-fg">
-                  <span>🧠 Topic map: the whole topic on one page</span>
-                  <span aria-hidden className="text-efe-muted transition-transform group-open:rotate-180">▾</span>
-                </summary>
-                <div className="px-4 sm:px-5 pb-5 pt-1">
-                  <MindMap data={revision.mindMap} />
-                </div>
-              </details>
-            )}
-
             <div className="max-w-none bg-efe-bg p-5 rounded-xl border border-efe-line mb-6">
               <NotesContent notes={topicMeta.notes} />
             </div>
@@ -418,7 +436,28 @@ export default function TopicPageClient({
           </section>
         )}
 
-        {/* STEP 3: FLASHCARDS (only rendered when topic has cards) */}
+        {/* STEP 3: MIND MAP */}
+        {revision?.mindMap && (
+          <section
+            aria-labelledby="step-map-heading"
+            className="efe-card p-6 sm:p-8"
+          >
+            <div className="mb-5">
+              <span className="text-xs font-bold uppercase tracking-wider text-efe-accent-ink">
+                Mind map
+              </span>
+              <h2
+                id="step-map-heading"
+                className="text-xl font-bold font-display text-efe-fg mt-0.5"
+              >
+                The whole topic on one page
+              </h2>
+            </div>
+            <MindMap data={revision.mindMap} />
+          </section>
+        )}
+
+        {/* STEP 4: FLASHCARDS (only rendered when topic has cards) */}
         {revision?.flashcards && revision.flashcards.length > 0 && (
           <section
             aria-labelledby="step-cards-heading"
@@ -442,7 +481,7 @@ export default function TopicPageClient({
           </section>
         )}
 
-        {/* CHECK YOURSELF */}
+        {/* STEP 5: CHECK YOURSELF (MCQ) */}
         <section
           aria-labelledby="step-quiz-heading"
           className="efe-card p-6 sm:p-8"
@@ -676,6 +715,35 @@ export default function TopicPageClient({
           )}
         </section>
 
+        {/* STEP 6: ASK THE AI TUTOR */}
+        <section
+          aria-labelledby="step-ask-heading"
+          className="efe-card p-6 sm:p-8"
+        >
+          <div className="mb-4">
+            <span className="text-xs font-bold uppercase tracking-wider text-efe-accent-ink">
+              Ask
+            </span>
+            <h2
+              id="step-ask-heading"
+              className="text-xl font-bold font-display text-efe-fg mt-0.5"
+            >
+              Still stuck? Ask the AI tutor
+            </h2>
+            <p className="text-sm text-efe-muted mt-1">
+              Ask about anything in topic {topicMeta.topic}. Answers are based on these notes.
+            </p>
+          </div>
+          <AiTutor
+            topic={topicMeta.topic}
+            topicTitle={topicMeta.topicTitle}
+            onNeedSignIn={() => {
+              setAuthFromTutor(true);
+              setShowAuthPrompt(true);
+            }}
+          />
+        </section>
+
         {/* Bottom Navigation: Course Hub / Previous / Next Topic */}
         <nav
           aria-label="Topic navigation"
@@ -720,7 +788,19 @@ export default function TopicPageClient({
 
       {/* Sign-up Prompt Modal (with Skip for now) */}
       {showAuthPrompt && (
-        <SaveProgressPrompt onClose={() => setShowAuthPrompt(false)} />
+        <SaveProgressPrompt
+          onClose={() => {
+            setShowAuthPrompt(false);
+            setAuthFromTutor(false);
+          }}
+          {...(authFromTutor
+            ? {
+                heading: "Sign in to ask the AI tutor",
+                message: "The tutor is free. Signing in lets us keep it running fairly for every student.",
+                rememberSkip: false,
+              }
+            : {})}
+        />
       )}
     </div>
   );
