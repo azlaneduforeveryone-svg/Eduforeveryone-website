@@ -72,7 +72,7 @@ function StatCard({ label, value, emoji, color, href }: { label:string; value:st
 }
 
 export default function ProfilePage() {
-  const { user, logout, loading } = useAuth();
+  const { user, logout, loading, resendVerification } = useAuth();
   const [profile,  setProfile]  = useState<UserProfile | null>(null);
   const [sessions, setSessions] = useState<any[]>([]);
   const [ieltsSessions, setIeltsSessions] = useState<any[]>([]);
@@ -80,6 +80,12 @@ export default function ProfilePage() {
   const [accountingProgress, setAccountingProgress] = useState<Record<string, TopicProgress>>({});
   const [showAuth, setShowAuth] = useState(false);
   const [fetching, setFetching] = useState(false);
+  const [emailVerified, setEmailVerified] = useState(true);
+  const [verifyMsg, setVerifyMsg] = useState("");
+
+  useEffect(() => {
+    setEmailVerified(Boolean(user?.emailVerified));
+  }, [user]);
 
   useEffect(() => {
     if (!user) return;
@@ -147,6 +153,40 @@ export default function ProfilePage() {
   return (
     <div className="efe-page min-h-screen">
       <div className="max-w-3xl mx-auto px-4 py-8">
+        {!emailVerified && (
+          <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 mb-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold text-amber-900">
+                Verify your email to appear on leaderboards and use AI feedback.
+              </p>
+              {verifyMsg && <p className="text-xs text-amber-700 mt-1">{verifyMsg}</p>}
+            </div>
+            <div className="flex flex-wrap gap-2 flex-shrink-0">
+              <button
+                type="button"
+                onClick={async () => {
+                  await resendVerification();
+                  setVerifyMsg("Verification email sent. Check your inbox.");
+                }}
+                className="px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-600 text-white hover:bg-amber-700 transition-colors"
+              >
+                Resend email
+              </button>
+              <button
+                type="button"
+                onClick={async () => {
+                  await user.reload();
+                  const verified = Boolean(user.emailVerified);
+                  setEmailVerified(verified);
+                  setVerifyMsg(verified ? "" : "Email not verified yet. Please check your inbox.");
+                }}
+                className="px-3 py-1.5 rounded-lg text-xs font-bold border border-amber-300 text-amber-900 bg-white hover:bg-amber-100 transition-colors"
+              >
+                I have verified
+              </button>
+            </div>
+          </div>
+        )}
         {/* Profile header */}
         <div className="efe-banner rounded-2xl p-6 text-white mb-6">
           <div className="flex items-center gap-4">

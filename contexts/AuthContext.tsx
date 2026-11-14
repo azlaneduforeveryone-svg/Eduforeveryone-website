@@ -4,7 +4,7 @@ import { createContext, useContext, useState, useEffect } from 'react';
 import {
   onAuthStateChanged, signInWithPopup, GoogleAuthProvider,
   signInWithEmailAndPassword, createUserWithEmailAndPassword,
-  sendPasswordResetEmail, updateProfile, signOut, User,
+  sendPasswordResetEmail, sendEmailVerification, updateProfile, signOut, User,
   getAdditionalUserInfo,
 } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
@@ -19,6 +19,7 @@ type AuthContextType = {
   signInEmail: (email: string, password: string) => Promise<void>;
   signUpEmail: (email: string, password: string, name: string) => Promise<void>;
   resetPassword: (email: string) => Promise<void>;
+  resendVerification: () => Promise<void>;
   logout: () => Promise<void>;
   clearError: () => void;
 };
@@ -76,6 +77,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       const cred = await createUserWithEmailAndPassword(auth, email, password);
       track('sign_up', { method: 'email' });
       if (name) await updateProfile(cred.user, { displayName: name });
+      await sendEmailVerification(cred.user);
       // ensure the profile doc uses the entered name
       await createOrUpdateUser({
         uid: cred.user.uid, displayName: name || cred.user.displayName,
@@ -89,6 +91,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     catch (err: any) { setError(err?.message ?? 'Reset failed'); }
   };
 
+  const resendVerification = async () => {
+    if (!auth.currentUser) return;
+    try { setError(null); await sendEmailVerification(auth.currentUser); }
+    catch (err: any) { setError(err?.message ?? 'Failed to send verification email'); }
+  };
+
   const logout = async () => {
     try { await signOut(auth); }
     catch (err: any) { setError(err?.message ?? 'Sign-out failed'); }
@@ -99,7 +107,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   return (
     <AuthContext.Provider value={{
       user, loading, error,
-      signInGoogle, signInEmail, signUpEmail, resetPassword, logout, clearError,
+      signInGoogle, signInEmail, signUpEmail, resetPassword, resendVerification, logout, clearError,
     }}>
       {children}
     </AuthContext.Provider>

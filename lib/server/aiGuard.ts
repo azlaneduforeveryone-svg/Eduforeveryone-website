@@ -115,6 +115,9 @@ export async function requireAiQuota(req: Request): Promise<AiQuotaResult> {
   if (!verified) {
     return { ok: false, status: 401, error: "Your sign-in has expired. Please sign in again." };
   }
+  if (!verified.emailVerified) {
+    return { ok: false, status: 403, error: "Please verify your email address to use AI feedback." };
+  }
 
   const uid = verified.localId;
   const appCheckToken = req.headers.get("x-firebase-appcheck");
