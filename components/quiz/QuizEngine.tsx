@@ -7,6 +7,8 @@ import { useBestScore } from "@/lib/games/useBestScore";
 import AnswerFeedback from "./AnswerFeedback";
 import ShareScore from "@/components/ShareScore";
 import { track } from "@/lib/analytics";
+import { useAuth } from "@/contexts/AuthContext";
+import { saveQuizScore } from "@/lib/firebaseDB";
 
 export interface QuizEngineProps<T extends QuizQuestion = QuizQuestion> {
   questions: T[];
@@ -87,7 +89,9 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
 }: QuizEngineProps<T>) {
   // Best score hook (safe localStorage with try/catch)
   const { bestScore, updateBestScore } = useBestScore(storageKey);
+  const { user } = useAuth();
   const hasStartedRef = useRef(false);
+  const savedRef = useRef(false);
 
   // Round preparation: sample questions & optionally shuffle options
   const prepareRound = useCallback((): PreparedQuestion<T>[] => {
@@ -135,6 +139,7 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
   const [answers, setAnswers] = useState<(number | null)[]>([]);
   const [finished, setFinished] = useState(false);
   const [streak, setStreak] = useState(0);
+  const [saveStatus, setSaveStatus] = useState<"idle" | "saved" | "error">("idle");
 
   // Initialize round on mount or when questions change
   useEffect(() => {
@@ -145,6 +150,8 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
     setAnswers(Array(round.length).fill(null));
     setFinished(false);
     setStreak(0);
+    savedRef.current = false;
+    setSaveStatus("idle");
   }, [prepareRound]);
 
   const totalCount = activeQuestions.length;
@@ -196,6 +203,37 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
         updateBestScore(finalScore);
       }
 
+      // Save result to Firestore for signed-in users (skip preview games)
+      if (user && gameName && !gameName.includes("(Preview)") && !savedRef.current) {
+        savedRef.current = true;
+        const category = gameName.includes("Quran Word")
+          ? "quran-words"
+          : gameName.includes("Word Upgrade")
+            ? "ielts-word-upgrade"
+            : gameName.includes("Phrase Upgrade")
+              ? "ielts-phrase-upgrade"
+              : "quiz";
+        saveQuizScore({
+          uid: user.uid,
+          displayName: user.displayName,
+          email: user.email,
+          photoURL: user.photoURL || "",
+          gameName,
+          category,
+          difficulty: "normal",
+          score: finalScore * 10,
+          correct: finalScore,
+          total: totalCount,
+          streak: 0,
+          skipCategoryLeaderboard: true,
+        })
+          .then(() => setSaveStatus("saved"))
+          .catch((err) => {
+            console.error("Failed to save quiz score:", err);
+            setSaveStatus("error");
+          });
+      }
+
       // Track GA4 game_finish
       if (
         gameName &&
@@ -210,7 +248,7 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
         });
       }
     }
-  }, [current, totalCount, answers, activeQuestions, storageKey, updateBestScore, gameName]);
+  }, [current, totalCount, answers, activeQuestions, storageKey, updateBestScore, gameName, user]);
 
   // Restart round (re-samples and re-shuffles)
   const handleRestart = useCallback(() => {
@@ -221,6 +259,8 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
     setAnswers(Array(round.length).fill(null));
     setFinished(false);
     setStreak(0);
+    savedRef.current = false;
+    setSaveStatus("idle");
     hasStartedRef.current = true;
 
     const gameId = getGameId(gameName);
@@ -313,8 +353,19 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
         )}
 
         {/* Dynamic Encouragement Feedback */}
-        <p className="text-sm text-efe-muted max-w-md mx-auto mb-8 leading-relaxed">
+        <p className="text-sm text-efe-muted max-w-md mx-auto mb-3 leading-relaxed">
           {scoreMessage}
+        </p>
+
+        {/* Save status */}
+        <p className={`text-xs font-semibold mb-6 ${saveStatus === "error" ? "text-red-600" : saveStatus === "saved" ? "text-efe-accent" : "text-efe-muted"}`}>
+          {!user
+            ? "Sign in to save your score"
+            : saveStatus === "saved"
+              ? "Score saved to your profile"
+              : saveStatus === "error"
+                ? "Could not save score"
+                : ""}
         </p>
 
         {/* Review Mistakes Section */}

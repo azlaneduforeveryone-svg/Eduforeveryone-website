@@ -22,17 +22,23 @@ const CAT_LABELS: Record<string, string> = {
   quran:"Quran", hadith:"Hadith", fiqh:"Fiqh", seerah:"Seerah",
   history:"History", pillars:"Pillars", names:"99 Names",
   "math-puzzle":"Math Puzzle", "quiz-battle":"Quiz Battle", "word-puzzle":"Word Puzzle",
+  "quran-words":"Quran Word Meanings", "ielts-word-upgrade":"IELTS Word Upgrade",
+  "ielts-phrase-upgrade":"IELTS Phrase Upgrade", quiz:"Quiz",
 };
 const CAT_EMOJIS: Record<string, string> = {
   quran:"📖", hadith:"📜", fiqh:"⚖️", seerah:"🕌",
   history:"📚", pillars:"🕋", names:"☪️",
   "math-puzzle":"🧮", "quiz-battle":"🧠", "word-puzzle":"🔤",
+  "quran-words":"📖", "ielts-word-upgrade":"✍️", "ielts-phrase-upgrade":"💬", quiz:"📝",
 };
 
 function getGameHref(category?: string, gameName?: string): string {
   if (category === "math-puzzle" || gameName === "Math Puzzle") return "/games/math-puzzle";
   if (category === "quiz-battle" || gameName === "Quiz Battle") return "/games/quiz-battle";
   if (category === "word-puzzle" || gameName === "Word Puzzle") return "/games/word-puzzle";
+  if (category === "quran-words" || gameName?.includes("Quran Word")) return "/islamic-studies/quran-words";
+  if (category === "ielts-word-upgrade" || gameName?.includes("Word Upgrade")) return "/ielts/word-upgrade";
+  if (category === "ielts-phrase-upgrade" || gameName?.includes("Phrase Upgrade")) return "/ielts/phrase-upgrade";
   return "/quiz/islamic-quiz";
 }
 
@@ -80,16 +86,23 @@ export default function ProfilePage() {
     setFetching(true);
     Promise.allSettled([
       getUserProfile(user.uid),
-      getUserSessions(user.uid, 10),
       getIeltsSessions(user.uid, 20),
       getGmatSessions(user.uid, 20),
       getAllFirestoreProgress(user.uid),
-    ]).then(([profRes, sessRes, ieltsRes, gmatRes, accRes]) => {
-      if (profRes.status === "fulfilled") setProfile(profRes.value);
-      else console.error("Failed to load user profile:", profRes.reason);
-
-      if (sessRes.status === "fulfilled") setSessions(sessRes.value);
-      else console.error("Failed to load recent sessions:", sessRes.reason);
+    ]).then(([profRes, ieltsRes, gmatRes, accRes]) => {
+      if (profRes.status === "fulfilled") {
+        const prof = profRes.value;
+        setProfile(prof);
+        if (Array.isArray(prof?.recentGames)) {
+          setSessions(prof.recentGames);
+        } else if (prof && prof.recentGames === undefined) {
+          getUserSessions(user.uid, 10)
+            .then(setSessions)
+            .catch(err => console.error("Failed to load recent sessions:", err));
+        }
+      } else {
+        console.error("Failed to load user profile:", profRes.reason);
+      }
 
       if (ieltsRes.status === "fulfilled") setIeltsSessions(ieltsRes.value);
       else console.error("Failed to load IELTS sessions:", ieltsRes.reason);

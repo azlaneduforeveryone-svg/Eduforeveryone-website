@@ -8,6 +8,12 @@ import { db } from "./firebase";
 import type { GmatSessionResult } from "./gmat/types";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
+export interface RecentGame {
+  gameName: string; category: string; difficulty: string;
+  score: number; correct: number; total: number;
+  playedAt: number;   // Date.now() in milliseconds
+}
+
 export interface UserProfile {
   uid: string;
   displayName: string;
@@ -22,6 +28,7 @@ export interface UserProfile {
   bestStreak: number;
   categoryScores: Record<string, CategoryStat>;
   mathTopicsCompleted: string[];
+  recentGames?: RecentGame[];
   lastSeen: unknown;
   country?: string;
 }
@@ -141,6 +148,18 @@ export async function saveQuizScore(params: {
   const lbSnap = await getDoc(doc(db, "leaderboard", uid));
   const existingLbBestScore = lbSnap.exists() ? (lbSnap.data()?.bestScore || 0) : 0;
 
+  const catStat = before.categoryScores?.[category] || { games:0, correct:0, total:0, totalScore:0, bestScore:0 };
+  const thisGame: RecentGame = {
+    gameName,
+    category,
+    difficulty,
+    score,
+    correct,
+    total,
+    playedAt: Date.now(),
+  };
+  const newRecent = [thisGame, ...(before.recentGames || [])].slice(0, 10);
+
   const batch = writeBatch(db);
 
   // 1. Save session to quizSessions collection
@@ -151,7 +170,7 @@ export async function saveQuizScore(params: {
     playedAt: serverTimestamp(),
   });
 
-  // 2. Update user profile stats
+  // 2. Update user profile stats, category stats, streak, and recentGames
   batch.update(userRef, {
     totalScore:     increment(score),
     totalGames:     increment(1),
@@ -160,14 +179,6 @@ export async function saveQuizScore(params: {
     lastSeen:       serverTimestamp(),
     displayName,
     photoURL,
-  });
-
-  await batch.commit();
-
-  // 3. Update category stats (using pre-commit snapshot)
-  const catStat = before.categoryScores?.[category] || { games:0, correct:0, total:0, totalScore:0, bestScore:0 };
-
-  await updateDoc(userRef, {
     [`categoryScores.${category}`]: {
       games:      (catStat.games || 0) + 1,
       correct:    (catStat.correct || 0) + correct,
@@ -177,10 +188,11 @@ export async function saveQuizScore(params: {
     },
     currentStreak: streak,
     bestStreak:    Math.max(before.bestStreak || 0, streak),
+    recentGames:   newRecent,
   });
 
-  // 4. Update global leaderboard entry
-  await setDoc(doc(db, "leaderboard", uid), {
+  // 3. Update global leaderboard entry
+  batch.set(doc(db, "leaderboard", uid), {
     uid, displayName, photoURL,
     totalScore:   (before.totalScore || 0) + score,
     totalGames:   (before.totalGames || 0) + 1,
@@ -188,9 +200,9 @@ export async function saveQuizScore(params: {
     updatedAt:    serverTimestamp(),
   }, { merge: true });
 
-  // 5. Update category leaderboard
+  // 4. Update category leaderboard
   if (!skipCategoryLeaderboard) {
-    await setDoc(doc(db, `leaderboard_${category}`, uid), {
+    batch.set(doc(db, `leaderboard_${category}`, uid), {
       uid, displayName, photoURL,
       totalScore: (catStat.totalScore || 0) + score,
       bestScore:  Math.max(catStat.bestScore || 0, score),
@@ -198,6 +210,8 @@ export async function saveQuizScore(params: {
       updatedAt:  serverTimestamp(),
     }, { merge: true });
   }
+
+  await batch.commit();
 }
 
 // ── Save Math Topic Completion ────────────────────────────────────────────────
@@ -242,7 +256,8 @@ export async function getCategoryLeaderboard(category: string, top = 20) {
 export async function getUserSessions(uid: string, count = 10) {
   const q = query(
     collection(db, "quizSessions"),
-    where("uid", "==", uid)
+    where("uid", "==", uid),
+    limit(50)
   );
   const snap = await getDocs(q);
   return snap.docs
