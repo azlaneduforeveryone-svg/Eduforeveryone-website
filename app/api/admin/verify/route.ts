@@ -19,7 +19,11 @@ export async function GET(req: NextRequest) {
     .update(timestamp)
     .digest("hex");
 
-  if (signature !== expected) return NextResponse.json({ valid: false }, { status: 401 });
+  const sigBuf = Buffer.from(signature);
+  const expBuf = Buffer.from(expected);
+  if (sigBuf.length !== expBuf.length || !crypto.timingSafeEqual(sigBuf, expBuf)) {
+    return NextResponse.json({ valid: false }, { status: 401 });
+  }
 
   // Check 24-hour expiry
   const age = Date.now() - parseInt(timestamp, 10);

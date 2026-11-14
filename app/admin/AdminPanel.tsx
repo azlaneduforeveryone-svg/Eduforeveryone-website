@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef, useCallback, useEffect } from "react";
 import * as XLSX from "xlsx";
+import { useAuth } from "@/contexts/AuthContext";
 import {
   saveToCollection, getCollectionCount,
   getUploadHistory, SaveMode,
@@ -200,10 +201,11 @@ function downloadTemplate(tab: Tab) {
 
 // ── Main Component ────────────────────────────────────────────────────────────
 export default function AdminPanel() {
+  const { user } = useAuth();
   const [loggedIn,   setLoggedIn]   = useState(false);
   const [checking,   setChecking]   = useState(true); // verifying session on mount
   const [password,   setPassword]   = useState("");
-  const [pwError,    setPwError]    = useState(false);
+  const [pwError,    setPwError]    = useState<string | null>(null);
   const [loginBusy,  setLoginBusy]  = useState(false);
   const [activeTab,  setActiveTab]  = useState<Tab>("quiz");
   const [dragging,   setDragging]   = useState(false);
@@ -226,21 +228,31 @@ export default function AdminPanel() {
   }, []);
 
   const handleLogin = async () => {
+    if (!user) {
+      setPwError("Sign in with the admin Google account first");
+      return;
+    }
     setLoginBusy(true);
+    setPwError(null);
     try {
+      const idToken = await user.getIdToken();
       const res = await fetch("/api/admin/auth", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${idToken}`,
+        },
         body: JSON.stringify({ password }),
       });
       if (res.ok) {
         setLoggedIn(true);
       } else {
-        setPwError(true);
-        setTimeout(() => setPwError(false), 2000);
+        const data = await res.json().catch(() => ({}));
+        setPwError(data.error || "Incorrect password");
+        setTimeout(() => setPwError(null), 3000);
       }
     } catch {
-      setPwError(true);
+      setPwError("Login failed");
     }
     setLoginBusy(false);
   };
@@ -401,6 +413,11 @@ export default function AdminPanel() {
           <h1 className="text-xl font-black text-white">Admin Panel</h1>
           <p className="text-gray-500 text-sm mt-1">EduForEveryone — Content Management</p>
         </div>
+        {!user && (
+          <p className="text-amber-400 text-xs font-semibold mb-3 text-center">
+            Sign in with the admin Google account first
+          </p>
+        )}
         <input
           type="password"
           placeholder="Enter admin password"
@@ -409,7 +426,7 @@ export default function AdminPanel() {
           onKeyDown={e => e.key === "Enter" && handleLogin()}
           className={`w-full bg-gray-800 border rounded-xl px-4 py-3 text-white text-sm mb-3 focus:outline-none focus:border-teal-500 ${pwError ? "border-red-500" : "border-gray-700"}`}
         />
-        {pwError && <p className="text-red-400 text-xs mb-3 text-center">Incorrect password</p>}
+        {pwError && <p className="text-red-400 text-xs mb-3 text-center">{pwError}</p>}
         <button onClick={handleLogin} disabled={loginBusy || !password}
           className="w-full bg-teal-600 text-white py-3 rounded-xl font-bold hover:bg-teal-700 disabled:opacity-50 transition-all">
           {loginBusy ? "Checking…" : "Sign In →"}
