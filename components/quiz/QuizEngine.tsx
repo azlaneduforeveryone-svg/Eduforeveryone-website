@@ -226,6 +226,7 @@ export default function QuizEngine<T extends QuizQuestion = QuizQuestion>({
           total: totalCount,
           streak: 0,
           skipCategoryLeaderboard: true,
+          emailVerified: user.emailVerified,
         })
           .then(() => setSaveStatus("saved"))
           .catch((err) => {

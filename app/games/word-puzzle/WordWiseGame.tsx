@@ -2022,6 +2022,7 @@ export default function WordWiseGame(){
       total: 1,
       streak: Math.max(0, Math.round(streak)),
       skipCategoryLeaderboard: true,
+      emailVerified: user.emailVerified,
     })
       .then(()=>setSaveStatus("saved"))
       .catch((e)=>{

@@ -7,6 +7,9 @@ import {
 import { db } from "./firebase";
 import type { GmatSessionResult } from "./gmat/types";
 
+export const MAX_GAME_SCORE = 2000;       // keep in sync with firestore.rules
+const LEADERBOARD_MIN_INTERVAL_MS = 8000; // keep in sync with firestore.rules
+
 // ── Types ─────────────────────────────────────────────────────────────────────
 export interface RecentGame {
   gameName: string; category: string; difficulty: string;
@@ -114,9 +117,10 @@ export async function saveQuizScore(params: {
   total: number;
   streak: number;
   skipCategoryLeaderboard?: boolean;
+  emailVerified?: boolean;
 }) {
   const { uid, photoURL, gameName, category,
-          difficulty, score, correct, total, streak, skipCategoryLeaderboard } = params;
+          difficulty, score, correct, total, streak, skipCategoryLeaderboard, emailVerified } = params;
   const displayName = resolveFallbackName(params.displayName, params.email);
 
   const userRef = doc(db, "users", uid);
@@ -145,8 +149,22 @@ export async function saveQuizScore(params: {
     before = userSnap.data() as UserProfile;
   }
 
-  const lbSnap = await getDoc(doc(db, "leaderboard", uid));
-  const existingLbBestScore = lbSnap.exists() ? (lbSnap.data()?.bestScore || 0) : 0;
+  const isWithinCooldown = (data?: Record<string, any>): boolean => {
+    const updatedMs =
+      data?.updatedAt?.toMillis?.() ??
+      (data?.updatedAt?.seconds ? data.updatedAt.seconds * 1000 : 0);
+    return updatedMs > 0 && Date.now() - updatedMs < LEADERBOARD_MIN_INTERVAL_MS;
+  };
+
+  const canWriteLeaderboard = emailVerified !== false;
+  const lbSnap = canWriteLeaderboard ? await getDoc(doc(db, "leaderboard", uid)) : null;
+  const lbData = lbSnap?.exists() ? lbSnap.data() : undefined;
+
+  const catLbSnap =
+    canWriteLeaderboard && !skipCategoryLeaderboard
+      ? await getDoc(doc(db, `leaderboard_${category}`, uid))
+      : null;
+  const catLbData = catLbSnap?.exists() ? catLbSnap.data() : undefined;
 
   const catStat = before.categoryScores?.[category] || { games:0, correct:0, total:0, totalScore:0, bestScore:0 };
   const thisGame: RecentGame = {
@@ -191,22 +209,36 @@ export async function saveQuizScore(params: {
     recentGames:   newRecent,
   });
 
-  // 3. Update global leaderboard entry
-  batch.set(doc(db, "leaderboard", uid), {
-    uid, displayName, photoURL,
-    totalScore:   (before.totalScore || 0) + score,
-    totalGames:   (before.totalGames || 0) + 1,
-    bestScore:    Math.max(existingLbBestScore || 0, score),
-    updatedAt:    serverTimestamp(),
-  }, { merge: true });
+  const lbScore = Math.min(Math.max(0, Math.round(score)), MAX_GAME_SCORE);
 
-  // 4. Update category leaderboard
-  if (!skipCategoryLeaderboard) {
+  // 3. Update global leaderboard entry (skip if unverified or within cooldown)
+  if (canWriteLeaderboard && !isWithinCooldown(lbData)) {
+    const prevTotal = Number(lbData?.totalScore || 0);
+    const prevGames = Number(lbData?.totalGames || 0);
+    const prevBest  = Number(lbData?.bestScore || 0);
+    const bestScore = prevBest > MAX_GAME_SCORE ? prevBest : Math.max(prevBest, lbScore);
+
+    batch.set(doc(db, "leaderboard", uid), {
+      uid, displayName, photoURL,
+      totalScore: prevTotal + lbScore,
+      totalGames: prevGames + 1,
+      bestScore,
+      updatedAt:  serverTimestamp(),
+    }, { merge: true });
+  }
+
+  // 4. Update category leaderboard (skip if unverified, skipped, or within cooldown)
+  if (canWriteLeaderboard && !skipCategoryLeaderboard && !isWithinCooldown(catLbData)) {
+    const prevCatTotal = Number(catLbData?.totalScore || 0);
+    const prevCatGames = Number(catLbData?.games || 0);
+    const prevCatBest  = Number(catLbData?.bestScore || 0);
+    const catBestScore = prevCatBest > MAX_GAME_SCORE ? prevCatBest : Math.max(prevCatBest, lbScore);
+
     batch.set(doc(db, `leaderboard_${category}`, uid), {
       uid, displayName, photoURL,
-      totalScore: (catStat.totalScore || 0) + score,
-      bestScore:  Math.max(catStat.bestScore || 0, score),
-      games:      (catStat.games || 0) + 1,
+      totalScore: prevCatTotal + lbScore,
+      bestScore:  catBestScore,
+      games:      prevCatGames + 1,
       updatedAt:  serverTimestamp(),
     }, { merge: true });
   }

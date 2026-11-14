@@ -145,6 +145,7 @@ export default function IslamicQuizGame() {
         correct:     finalCorrect,
         total:       TOTAL,
         streak:      finalStreak,
+        emailVerified: user.emailVerified,
       });
     } catch (e) {
       console.error("Failed to save score:", e);
