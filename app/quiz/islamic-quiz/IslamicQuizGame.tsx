@@ -70,6 +70,7 @@ export default function IslamicQuizGame() {
   });
   const [firebaseQs,   setFirebaseQs]   = useState<Question[]>([]);
   const [fbLoading,    setFbLoading]    = useState(true);
+  const [saveError,    setSaveError]    = useState(false);
 
   const seenIdsRef  = useRef<Set<number>>(new Set());
   const savedRef    = useRef(false);
@@ -130,6 +131,7 @@ export default function IslamicQuizGame() {
   const saveScore = useCallback(async (finalScore: number, finalCorrect: number, finalStreak: number) => {
     if (!user || savedRef.current) return;
     savedRef.current = true;
+    setSaveError(false);
     try {
       await saveQuizScore({
         uid:         user.uid,
@@ -146,6 +148,7 @@ export default function IslamicQuizGame() {
       });
     } catch (e) {
       console.error("Failed to save score:", e);
+      setSaveError(true);
     }
   }, [user, selectedCats, diff]);
 
@@ -386,10 +389,17 @@ export default function IslamicQuizGame() {
           )}
 
           {/* Saved confirmation for logged in users */}
-          {user && (
+          {user && !saveError && (
             <div className="bg-green-50 border border-green-100 rounded-xl px-4 py-2 mb-4 text-center">
               <p className="text-xs text-green-700 font-semibold">
                 ✅ {lang==="en"?"Score saved to your profile!":lang==="ur"?"اسکور آپ کی پروفائل میں محفوظ ہو گیا!":"स्कोर आपकी प्रोफ़ाइल में सेव हो गया!"}
+              </p>
+            </div>
+          )}
+          {user && saveError && (
+            <div className="bg-red-50 border border-red-100 rounded-xl px-4 py-2 mb-4 text-center">
+              <p className="text-xs text-red-700 font-semibold">
+                Could not save score
               </p>
             </div>
           )}

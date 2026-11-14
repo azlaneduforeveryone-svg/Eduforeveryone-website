@@ -106,10 +106,40 @@ export async function saveQuizScore(params: {
   correct: number;
   total: number;
   streak: number;
+  skipCategoryLeaderboard?: boolean;
 }) {
   const { uid, photoURL, gameName, category,
-          difficulty, score, correct, total, streak } = params;
+          difficulty, score, correct, total, streak, skipCategoryLeaderboard } = params;
   const displayName = resolveFallbackName(params.displayName, params.email);
+
+  const userRef = doc(db, "users", uid);
+  const userSnap = await getDoc(userRef);
+  let before: UserProfile;
+
+  if (!userSnap.exists()) {
+    before = {
+      uid,
+      displayName,
+      email: params.email || "",
+      photoURL,
+      createdAt: serverTimestamp(),
+      lastSeen: serverTimestamp(),
+      totalScore: 0,
+      totalGames: 0,
+      totalCorrect: 0,
+      totalQuestions: 0,
+      currentStreak: 0,
+      bestStreak: 0,
+      categoryScores: {},
+      mathTopicsCompleted: [],
+    };
+    await setDoc(userRef, before);
+  } else {
+    before = userSnap.data() as UserProfile;
+  }
+
+  const lbSnap = await getDoc(doc(db, "leaderboard", uid));
+  const existingLbBestScore = lbSnap.exists() ? (lbSnap.data()?.bestScore || 0) : 0;
 
   const batch = writeBatch(db);
 
@@ -122,9 +152,6 @@ export async function saveQuizScore(params: {
   });
 
   // 2. Update user profile stats
-  const userRef = doc(db, "users", uid);
-  const catKey  = `categoryScores.${category}`;
-
   batch.update(userRef, {
     totalScore:     increment(score),
     totalGames:     increment(1),
@@ -137,12 +164,10 @@ export async function saveQuizScore(params: {
 
   await batch.commit();
 
-  // 3. Update category stats (need current data for bestScore)
-  const userSnap = await getDoc(doc(db, "users", uid));
-  const userData = userSnap.data() as UserProfile;
-  const catStat  = userData?.categoryScores?.[category] || { games:0, correct:0, total:0, totalScore:0, bestScore:0 };
+  // 3. Update category stats (using pre-commit snapshot)
+  const catStat = before.categoryScores?.[category] || { games:0, correct:0, total:0, totalScore:0, bestScore:0 };
 
-  await updateDoc(doc(db, "users", uid), {
+  await updateDoc(userRef, {
     [`categoryScores.${category}`]: {
       games:      (catStat.games || 0) + 1,
       correct:    (catStat.correct || 0) + correct,
@@ -151,26 +176,28 @@ export async function saveQuizScore(params: {
       bestScore:  Math.max(catStat.bestScore || 0, score),
     },
     currentStreak: streak,
-    bestStreak:    Math.max(userData?.bestStreak || 0, streak),
+    bestStreak:    Math.max(before.bestStreak || 0, streak),
   });
 
   // 4. Update global leaderboard entry
   await setDoc(doc(db, "leaderboard", uid), {
     uid, displayName, photoURL,
-    totalScore:   (userData?.totalScore || 0) + score,
-    totalGames:   (userData?.totalGames || 0) + 1,
-    bestScore:    Math.max(userData?.totalScore || 0, score),
+    totalScore:   (before.totalScore || 0) + score,
+    totalGames:   (before.totalGames || 0) + 1,
+    bestScore:    Math.max(existingLbBestScore || 0, score),
     updatedAt:    serverTimestamp(),
   }, { merge: true });
 
   // 5. Update category leaderboard
-  await setDoc(doc(db, `leaderboard_${category}`, uid), {
-    uid, displayName, photoURL,
-    totalScore: (catStat.totalScore || 0) + score,
-    bestScore:  Math.max(catStat.bestScore || 0, score),
-    games:      (catStat.games || 0) + 1,
-    updatedAt:  serverTimestamp(),
-  }, { merge: true });
+  if (!skipCategoryLeaderboard) {
+    await setDoc(doc(db, `leaderboard_${category}`, uid), {
+      uid, displayName, photoURL,
+      totalScore: (catStat.totalScore || 0) + score,
+      bestScore:  Math.max(catStat.bestScore || 0, score),
+      games:      (catStat.games || 0) + 1,
+      updatedAt:  serverTimestamp(),
+    }, { merge: true });
+  }
 }
 
 // ── Save Math Topic Completion ────────────────────────────────────────────────
@@ -215,12 +242,17 @@ export async function getCategoryLeaderboard(category: string, top = 20) {
 export async function getUserSessions(uid: string, count = 10) {
   const q = query(
     collection(db, "quizSessions"),
-    where("uid", "==", uid),
-    orderBy("playedAt", "desc"),
-    limit(count)
+    where("uid", "==", uid)
   );
   const snap = await getDocs(q);
-  return snap.docs.map(d => ({ id: d.id, ...d.data() }));
+  return snap.docs
+    .map(d => ({ id: d.id, ...d.data() } as Record<string, any> & { id: string }))
+    .sort((a, b) => {
+      const ta = a.playedAt?.toMillis?.() ?? (a.playedAt?.seconds ? a.playedAt.seconds * 1000 : 0);
+      const tb = b.playedAt?.toMillis?.() ?? (b.playedAt?.seconds ? b.playedAt.seconds * 1000 : 0);
+      return tb - ta;
+    })
+    .slice(0, count);
 }
 
 // ── IELTS Results ─────────────────────────────────────────────────────────────
@@ -275,12 +307,17 @@ export async function saveIeltsResult(r: IeltsResult) {
 export async function getIeltsSessions(uid: string, count = 100) {
   const q = query(
     collection(db, "ieltsSessions"),
-    where("uid", "==", uid),
-    orderBy("date", "desc"),
-    limit(count)
+    where("uid", "==", uid)
   );
   const snap = await getDocs(q);
-  return snap.docs.map(d => ({ id: d.id, ...d.data() }));
+  return snap.docs
+    .map(d => ({ id: d.id, ...d.data() } as Record<string, any> & { id: string }))
+    .sort((a, b) => {
+      const ta = a.date?.toMillis?.() ?? (a.date?.seconds ? a.date.seconds * 1000 : new Date(a.date || 0).getTime() || 0);
+      const tb = b.date?.toMillis?.() ?? (b.date?.seconds ? b.date.seconds * 1000 : new Date(b.date || 0).getTime() || 0);
+      return tb - ta;
+    })
+    .slice(0, count);
 }
 
 // ── GMAT Results ──────────────────────────────────────────────────────────────

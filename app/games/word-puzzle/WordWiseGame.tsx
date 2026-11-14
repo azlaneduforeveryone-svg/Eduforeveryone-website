@@ -2,6 +2,8 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import ShareScore from "@/components/ShareScore";
 import { track } from "@/lib/analytics";
+import { useAuth } from "@/contexts/AuthContext";
+import { saveQuizScore } from "@/lib/firebaseDB";
 
 type Category = "all" | "math" | "science" | "english";
 type CellState = "correct" | "present" | "absent" | "revealed";
@@ -1915,12 +1917,19 @@ export default function WordWiseGame(){
   const [difficulty,setDifficulty]=useState<Difficulty>("beginner");
   const [shake,setShake]=useState(false);
   const [showHow,setShowHow]=useState(false);
+  const [saveStatus,setSaveStatus]=useState<"idle"|"saved"|"error">("idle");
   const inputRef=useRef<HTMLInputElement>(null);
   const hasStartedRef=useRef(false);
+  const savedRef=useRef(false);
+  const roundScoreRef=useRef(0);
+  const { user }=useAuth();
 
   const word=entry?.w.toUpperCase()??"";
 
   const newGame=useCallback((cat:Category=category,str:number=streak)=>{
+    savedRef.current=false;
+    roundScoreRef.current=0;
+    setSaveStatus("idle");
     const pool=cat==="all"?getAllWords():WORDS[cat]??getAllWords();
     const pick=pool[Math.floor(Math.random()*pool.length)];
     const diff=getDiff(str);
@@ -1970,12 +1979,14 @@ export default function WordWiseGame(){
         const bonus=Math.max(0,(MAX_GUESSES-newGuesses.length)*20);
         const dBonus={beginner:0,easy:10,medium:20,expert:50}[difficulty];
         const earned=100+bonus+dBonus;
+        roundScoreRef.current=earned;
         const ns=streak+1;
         setScore(s=>s+earned); setWins(w=>w+1); setStreak(ns); setGameWon(true);
         const nd=getDiff(ns);
         if(nd!==difficulty) showMsg(`🎉 Level Up! Now ${DIFF_INFO[nd].label}! +${earned} pts`);
         else showMsg(`🎉 ${["Genius!","Amazing!","Excellent!","Great!","Good!","Phew!"][newGuesses.length-1]||"Well done!"} +${earned} pts`);
       } else if(newGuesses.length>=MAX_GUESSES){
+        roundScoreRef.current=0;
         setStreak(0); setGameLost(true); setDifficulty("beginner");
         showMsg(`The word was: ${word}`);
       }
@@ -1993,6 +2004,31 @@ export default function WordWiseGame(){
     window.addEventListener("keydown",h);
     return ()=>window.removeEventListener("keydown",h);
   },[pressKey]);
+
+  useEffect(()=>{
+    if((!gameWon&&!gameLost)||!user||savedRef.current) return;
+    savedRef.current=true;
+    const clampedScore=Math.max(0,Math.min(100000,Math.round(roundScoreRef.current)));
+    saveQuizScore({
+      uid: user.uid,
+      displayName: user.displayName,
+      email: user.email,
+      photoURL: user.photoURL || "",
+      gameName: "Word Puzzle",
+      category: "word-puzzle",
+      difficulty,
+      score: clampedScore,
+      correct: gameWon ? 1 : 0,
+      total: 1,
+      streak: Math.max(0, Math.round(streak)),
+      skipCategoryLeaderboard: true,
+    })
+      .then(()=>setSaveStatus("saved"))
+      .catch((e)=>{
+        console.error("Failed to save Word Puzzle score:", e);
+        setSaveStatus("error");
+      });
+  },[gameWon,gameLost,user,difficulty,streak]);
 
   const diffInfo=DIFF_INFO[difficulty];
   const attemptsLeft=MAX_GUESSES-guesses.length;
@@ -2100,6 +2136,10 @@ export default function WordWiseGame(){
               </div>
             )}
             <MeaningCard entry={entry} streak={streak}/>
+
+            <p className={`text-xs font-semibold text-center ${saveStatus === "error" ? "text-red-600" : saveStatus === "saved" ? "text-teal-700" : "text-gray-500"}`}>
+              {!user ? "Sign in to save your score" : saveStatus === "saved" ? "Score saved" : saveStatus === "error" ? "Could not save score" : ""}
+            </p>
 
             {/* Share Score — only on win */}
             {gameWon&&(

@@ -2,6 +2,8 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import ShareScore from "@/components/ShareScore";
 import { track } from "@/lib/analytics";
+import { useAuth } from "@/contexts/AuthContext";
+import { saveQuizScore } from "@/lib/firebaseDB";
 
 type Category = "all" | "math" | "science" | "history" | "english";
 type Difficulty = "easy" | "medium" | "hard";
@@ -92,13 +94,18 @@ export default function QuizBattleGame() {
   const [started, setStarted] = useState(false);
   const [puUsed, setPuUsed] = useState({ fifty: false, skip: false, time: false });
   const [hiddenOpts, setHiddenOpts] = useState<number[]>([]);
+  const [saveStatus, setSaveStatus] = useState<"idle" | "saved" | "error">("idle");
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const totalTimeRef = useRef(0);
+  const savedRef = useRef(false);
+  const { user } = useAuth();
 
   const clearTimer = () => { if (timerRef.current) clearInterval(timerRef.current); };
 
   const startGame = useCallback((c: Category = cat) => {
     track("game_start", { game: "quiz_battle" });
+    savedRef.current = false;
+    setSaveStatus("idle");
     clearTimer();
     const list = shuffle(getPool(c)).slice(0, TOTAL);
     setQList(list); setQIdx(0); setScore(0); setStreak(0); setCorrect(0);
@@ -129,6 +136,32 @@ export default function QuizBattleGame() {
       setStreak(0); setHistory(h => [...h, false]);
     }
   }, [timeLeft, curQ, answered, started, gameOver]);
+
+  useEffect(() => {
+    if (!gameOver || !user || savedRef.current) return;
+    savedRef.current = true;
+    const clampedScore = Math.max(0, Math.min(100000, Math.round(score)));
+    const clampedCorrect = Math.max(0, Math.min(TOTAL, Math.round(correct)));
+    saveQuizScore({
+      uid: user.uid,
+      displayName: user.displayName,
+      email: user.email,
+      photoURL: user.photoURL || "",
+      gameName: "Quiz Battle",
+      category: "quiz-battle",
+      difficulty: "normal",
+      score: clampedScore,
+      correct: clampedCorrect,
+      total: TOTAL,
+      streak: Math.max(0, Math.round(streak)),
+      skipCategoryLeaderboard: true,
+    })
+      .then(() => setSaveStatus("saved"))
+      .catch((e) => {
+        console.error("Failed to save Quiz Battle score:", e);
+        setSaveStatus("error");
+      });
+  }, [gameOver, user, score, correct, streak]);
 
   const handleAnswer = useCallback((idx: number) => {
     if (answered || !curQ) return;
@@ -223,7 +256,10 @@ export default function QuizBattleGame() {
           <p className="text-4xl mb-2">{correct>=9?"🏆":correct>=7?"🌟":correct>=5?"👍":"📚"}</p>
           <p className="text-4xl font-black my-2">{score}</p>
           <p className="text-lg font-bold mb-1">{correct}/{TOTAL} Correct</p>
-          <p className="text-indigo-200 text-sm mb-5">{correct>=9?"Outstanding!":correct>=7?"Excellent!":correct>=5?"Good Job!":"Keep Studying!"}</p>
+          <p className="text-indigo-200 text-sm mb-3">{correct>=9?"Outstanding!":correct>=7?"Excellent!":correct>=5?"Good Job!":"Keep Studying!"}</p>
+          <p className={`text-xs font-semibold mb-4 ${saveStatus === "error" ? "text-red-200" : saveStatus === "saved" ? "text-emerald-200" : "text-indigo-200"}`}>
+            {!user ? "Sign in to save your score" : saveStatus === "saved" ? "Score saved" : saveStatus === "error" ? "Could not save score" : ""}
+          </p>
           <button onClick={() => startGame()} className="bg-white text-indigo-700 px-8 py-3 rounded-xl font-bold mb-5" style={{boxShadow:"0 4px 0 rgba(0,0,0,0.2)"}}>
             Play Again
           </button>

@@ -2,6 +2,8 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import ShareScore from "@/components/ShareScore";
 import { track } from "@/lib/analytics";
+import { useAuth } from "@/contexts/AuthContext";
+import { saveQuizScore } from "@/lib/firebaseDB";
 
 type Level = "easy" | "medium" | "hard" | "expert";
 type QuestionType = "add" | "sub" | "mul" | "div" | "missing" | "equation" | "sequence" | "power" | "mcq";
@@ -98,8 +100,11 @@ export default function MathPuzzleGame() {
   const [history, setHistory] = useState<HistItem[]>([]);
   const [gameOver, setGameOver] = useState(false);
   const [started, setStarted] = useState(false);
+  const [saveStatus, setSaveStatus] = useState<"idle" | "saved" | "error">("idle");
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const totalTime = useRef(0);
+  const savedRef = useRef(false);
+  const { user } = useAuth();
 
   const clearTimer = () => { if (timerRef.current) clearInterval(timerRef.current); };
 
@@ -141,11 +146,39 @@ export default function MathPuzzleGame() {
 
   const startGame = useCallback((lv: Level = level) => {
     track("game_start", { game: "math_puzzle" });
+    savedRef.current = false;
+    setSaveStatus("idle");
     clearTimer(); setScore(0); setCorrect(0); setStreak(0); setHistory([]);
     setGameOver(false); setStarted(true);
     const q = generateQuestion(lv);
     setQNum(1); startQuestion(q, 1);
   }, [level, startQuestion]);
+
+  useEffect(() => {
+    if (!gameOver || !user || savedRef.current) return;
+    savedRef.current = true;
+    const clampedScore = Math.max(0, Math.min(100000, Math.round(score)));
+    const clampedCorrect = Math.max(0, Math.min(TOTAL_Q, Math.round(correct)));
+    saveQuizScore({
+      uid: user.uid,
+      displayName: user.displayName,
+      email: user.email,
+      photoURL: user.photoURL || "",
+      gameName: "Math Puzzle",
+      category: "math-puzzle",
+      difficulty: level,
+      score: clampedScore,
+      correct: clampedCorrect,
+      total: TOTAL_Q,
+      streak: Math.max(0, Math.round(streak)),
+      skipCategoryLeaderboard: true,
+    })
+      .then(() => setSaveStatus("saved"))
+      .catch((e) => {
+        console.error("Failed to save Math Puzzle score:", e);
+        setSaveStatus("error");
+      });
+  }, [gameOver, user, score, correct, level, streak]);
 
   const nextQuestion = () => {
     const next = qNum + 1;
@@ -219,8 +252,11 @@ export default function MathPuzzleGame() {
           <p className="text-gray-500 text-sm font-semibold mb-1">Game Over</p>
           <p className="text-5xl font-bold text-teal-600 my-2">{score}</p>
           <p className="text-lg font-bold text-gray-900 mb-1">{correct}/{TOTAL_Q} Correct</p>
-          <p className="text-gray-500 text-sm mb-5">
+          <p className="text-gray-500 text-sm mb-3">
             {correct>=9?"🏆 Outstanding!":correct>=7?"🌟 Great job!":correct>=5?"👍 Good effort!":"📚 Keep practicing!"}
+          </p>
+          <p className={`text-xs font-semibold mb-4 ${saveStatus === "error" ? "text-red-600" : saveStatus === "saved" ? "text-teal-700" : "text-gray-500"}`}>
+            {!user ? "Sign in to save your score" : saveStatus === "saved" ? "Score saved" : saveStatus === "error" ? "Could not save score" : ""}
           </p>
           <button onClick={() => startGame()} className="bg-teal-600 text-white px-8 py-3 rounded-xl font-bold mb-5" style={{boxShadow:"0 4px 0 #0F6E56"}}>
             Play Again
