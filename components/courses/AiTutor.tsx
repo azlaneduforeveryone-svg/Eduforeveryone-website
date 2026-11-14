@@ -6,6 +6,7 @@
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { useAuth } from "@/contexts/AuthContext";
+import { getAppCheckHeader } from "@/lib/appCheck";
 import NotesContent from "@/components/courses/NotesContent";
 
 type Turn = { role: "user" | "assistant"; content: string };
@@ -58,10 +59,17 @@ export default function AiTutor({
     setTurns((t) => [...t, { role: "user", content: q }]);
     setQuestion("");
     try {
-      const idToken = await user.getIdToken();
+      const [idToken, appCheckHeaders] = await Promise.all([
+        user.getIdToken(),
+        getAppCheckHeader(),
+      ]);
       const res = await fetch("/api/accounting/tutor", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Authorization: `Bearer ${idToken}` },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${idToken}`,
+          ...appCheckHeaders,
+        },
         body: JSON.stringify({ topic, question: q, history }),
       });
       const data = (await res.json().catch(() => ({}))) as { answer?: string; error?: string; remaining?: number };

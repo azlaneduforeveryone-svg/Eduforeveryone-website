@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
 import { SpeakingTopic, PART2_SPEAK_SECONDS } from "@/lib/ielts/ielts-speaking-data";
 import { useAuth } from "@/contexts/AuthContext";
+import { getAppCheckHeader } from "@/lib/appCheck";
 import AuthModal from "@/components/AuthModal";
 
 interface Props {
@@ -65,10 +66,17 @@ export default function SpeakingSection({ test, onComplete }: Props) {
         ? `${test.cueCard.title}\nYou should say:\n- ${test.cueCard.points.join("\n- ")}\n${test.cueCard.followUp}`
         : test.part3[0].q;
     try {
-      const idToken = await user.getIdToken();
+      const [idToken, appCheckHeaders] = await Promise.all([
+        user.getIdToken(),
+        getAppCheckHeader(),
+      ]);
       const res = await fetch("/api/speaking", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Authorization: `Bearer ${idToken}` },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${idToken}`,
+          ...appCheckHeaders,
+        },
         body: JSON.stringify({
           task,
           response: transcript,

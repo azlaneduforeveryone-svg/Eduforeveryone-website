@@ -5,6 +5,7 @@ import { WritingTest, IELTSFormat } from "@/lib/ielts/ielts-types";
 import { academicT1ApiType, gtT1ApiType, task2ApiType } from "@/lib/ielts/writingData";
 import Task1Figure from "@/components/ielts/Task1Figure";
 import { useAuth } from "@/contexts/AuthContext";
+import { getAppCheckHeader } from "@/lib/appCheck";
 import AuthModal from "@/components/AuthModal";
 
 interface Props {
@@ -35,11 +36,16 @@ async function gradeTask(
     task: string;
     response: string;
   },
-  idToken: string
+  idToken: string,
+  appCheckHeaders: Record<string, string>
 ): Promise<TaskGrade> {
   const res = await fetch("/api/writing", {
     method: "POST",
-    headers: { "Content-Type": "application/json", Authorization: `Bearer ${idToken}` },
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${idToken}`,
+      ...appCheckHeaders,
+    },
     body: JSON.stringify(payload),
   });
   const data = await res.json();
@@ -95,10 +101,13 @@ export default function WritingSection({ test, format, onComplete }: Props) {
     setLoading(true);
     setError("");
     try {
-      const idToken = await user.getIdToken();
+      const [idToken, appCheckHeaders] = await Promise.all([
+        user.getIdToken(),
+        getAppCheckHeader(),
+      ]);
       const [t1, t2] = await Promise.all([
-        gradeTask({ testType, taskType: task1Meta.taskType, task: task1Meta.task, response: task1Answer }, idToken),
-        gradeTask({ testType, taskType: task2Meta.taskType, task: task2Meta.task, response: task2Answer }, idToken),
+        gradeTask({ testType, taskType: task1Meta.taskType, task: task1Meta.task, response: task1Answer }, idToken, appCheckHeaders),
+        gradeTask({ testType, taskType: task2Meta.taskType, task: task2Meta.task, response: task2Answer }, idToken, appCheckHeaders),
       ]);
       // Official weighting: Task 2 carries twice the weight of Task 1.
       const writing = roundHalf((t1.overall + 2 * t2.overall) / 3);

@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import Link from "next/link";
 import { IELTSFormat, Task1Figure as Task1FigureData } from "@/lib/ielts/ielts-types";
 import { useAuth } from "@/contexts/AuthContext";
+import { getAppCheckHeader } from "@/lib/appCheck";
 import AuthModal from "@/components/AuthModal";
 import { saveIeltsResult } from "@/lib/firebaseDB";
 import {
@@ -235,11 +236,18 @@ export default function WritingPage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
 
     try {
-      const idToken = await user.getIdToken();
+      const [idToken, appCheckHeaders] = await Promise.all([
+        user.getIdToken(),
+        getAppCheckHeader(),
+      ]);
       // 🔁 CHANGED: Now sending testType, taskType, task, response
       const res = await fetch("/api/writing", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Authorization: `Bearer ${idToken}` },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${idToken}`,
+          ...appCheckHeaders,
+        },
         body: JSON.stringify({
           testType: format === "academic" ? "Academic" : "General",
           taskType: selected.taskType,

@@ -4,6 +4,7 @@ import Link from "next/link";
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import { SPEAKING_TOPICS as TOPICS, type SpeakingTopic as Topic } from "@/lib/ielts/ielts-speaking-data";
 import { useAuth } from "@/contexts/AuthContext";
+import { getAppCheckHeader } from "@/lib/appCheck";
 import AuthModal from "@/components/AuthModal";
 import { saveIeltsResult } from "@/lib/firebaseDB";
 import { track } from "@/lib/analytics";
@@ -188,10 +189,17 @@ export default function SpeakingPage() {
     }
 
     try {
-      const idToken = await user.getIdToken();
+      const [idToken, appCheckHeaders] = await Promise.all([
+        user.getIdToken(),
+        getAppCheckHeader(),
+      ]);
       const res = await fetch("/api/speaking", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Authorization: `Bearer ${idToken}` },
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${idToken}`,
+          ...appCheckHeaders,
+        },
         body: JSON.stringify({
           task: taskPrompt,
           response: transcript,

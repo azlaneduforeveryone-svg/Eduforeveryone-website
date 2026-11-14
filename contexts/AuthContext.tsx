@@ -8,6 +8,7 @@ import {
   getAdditionalUserInfo,
 } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
+import { initAppCheck } from '@/lib/appCheck';
 import { createOrUpdateUser } from '@/lib/firebaseDB';
 import { setAnalyticsUser, track } from '@/lib/analytics';
 
@@ -32,6 +33,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    initAppCheck();
     const unsub = onAuthStateChanged(auth, async (u) => {
       setUser(u);
       setAnalyticsUser(u ? u.uid : null);
