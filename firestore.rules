@@ -23,24 +23,44 @@ service cloud.firestore {
     // Validates global & category leaderboard entry payloads:
     // Global (`leaderboard/{uid}`): { uid, displayName, photoURL, totalScore, totalGames, bestScore, updatedAt }
     // Category (`leaderboard_{cat}/{uid}`): { uid, displayName, photoURL, totalScore, bestScore, games, updatedAt }
-    function isValidLeaderboardWrite(uid) {
+    function isValidLeaderboardShape(uid) {
       let d = request.resource.data;
       return isOwner(uid)
+        && request.auth.token.email_verified == true
         && d.uid == request.auth.uid
         && d.displayName is string
         && d.displayName.size() >= 1 && d.displayName.size() <= 100
-        && d.totalScore is number
-        && d.totalScore >= 0 && d.totalScore <= 10000000
-        && d.bestScore is number
-        && d.bestScore >= 0 && d.bestScore <= 10000000
-        && (
-          !('totalGames' in d) ||
-          (d.totalGames is number && d.totalGames >= 0 && d.totalGames <= 1000000)
-        )
-        && (
-          !('games' in d) ||
-          (d.games is number && d.games >= 0 && d.games <= 1000000)
-        );
+        && d.totalScore is number && d.totalScore >= 0
+        && d.bestScore is number && d.bestScore >= 0
+        && d.updatedAt == request.time
+        && (('totalGames' in d) || ('games' in d))
+        && (!('totalGames' in d) || d.totalGames is number)
+        && (!('games' in d) || d.games is number);
+    }
+
+    // First entry: one game, at most one game's worth of score.
+    function isValidLeaderboardCreate(uid) {
+      let d = request.resource.data;
+      return isValidLeaderboardShape(uid)
+        && d.totalScore <= 2000
+        && d.bestScore <= 2000
+        && (!('totalGames' in d) || d.totalGames == 1)
+        && (!('games' in d) || d.games == 1);
+    }
+
+    // Later entries: exactly one more game, score rises by at most one game's
+    // worth, and at least 8 seconds since the last update.
+    function isValidLeaderboardUpdate(uid) {
+      let d = request.resource.data;
+      let old = resource.data;
+      return isValidLeaderboardShape(uid)
+        && d.totalScore >= old.get('totalScore', 0)
+        && d.totalScore <= old.get('totalScore', 0) + 2000
+        && (d.bestScore <= 2000 || d.bestScore == old.get('bestScore', 0))
+        && (!('totalGames' in d) || d.totalGames == old.get('totalGames', 0) + 1)
+        && (!('games' in d) || d.games == old.get('games', 0) + 1)
+        && (!('updatedAt' in old)
+            || request.time >= old.updatedAt + duration.value(8, 's'));
     }
 
     // ── 1. Users & Subcollections (including courseProgress) ────────────────
@@ -62,49 +82,57 @@ service cloud.firestore {
     // with field validation on uid and scores.
     match /leaderboard/{uid} {
       allow read: if true;
-      allow create, update: if isValidLeaderboardWrite(uid);
+      allow create: if isValidLeaderboardCreate(uid);
+      allow update: if isValidLeaderboardUpdate(uid);
       allow delete: if false;
     }
 
     match /leaderboard_quran/{uid} {
       allow read: if true;
-      allow create, update: if isValidLeaderboardWrite(uid);
+      allow create: if isValidLeaderboardCreate(uid);
+      allow update: if isValidLeaderboardUpdate(uid);
       allow delete: if false;
     }
 
     match /leaderboard_hadith/{uid} {
       allow read: if true;
-      allow create, update: if isValidLeaderboardWrite(uid);
+      allow create: if isValidLeaderboardCreate(uid);
+      allow update: if isValidLeaderboardUpdate(uid);
       allow delete: if false;
     }
 
     match /leaderboard_fiqh/{uid} {
       allow read: if true;
-      allow create, update: if isValidLeaderboardWrite(uid);
+      allow create: if isValidLeaderboardCreate(uid);
+      allow update: if isValidLeaderboardUpdate(uid);
       allow delete: if false;
     }
 
     match /leaderboard_seerah/{uid} {
       allow read: if true;
-      allow create, update: if isValidLeaderboardWrite(uid);
+      allow create: if isValidLeaderboardCreate(uid);
+      allow update: if isValidLeaderboardUpdate(uid);
       allow delete: if false;
     }
 
     match /leaderboard_history/{uid} {
       allow read: if true;
-      allow create, update: if isValidLeaderboardWrite(uid);
+      allow create: if isValidLeaderboardCreate(uid);
+      allow update: if isValidLeaderboardUpdate(uid);
       allow delete: if false;
     }
 
     match /leaderboard_pillars/{uid} {
       allow read: if true;
-      allow create, update: if isValidLeaderboardWrite(uid);
+      allow create: if isValidLeaderboardCreate(uid);
+      allow update: if isValidLeaderboardUpdate(uid);
       allow delete: if false;
     }
 
     match /leaderboard_names/{uid} {
       allow read: if true;
-      allow create, update: if isValidLeaderboardWrite(uid);
+      allow create: if isValidLeaderboardCreate(uid);
+      allow update: if isValidLeaderboardUpdate(uid);
       allow delete: if false;
     }
 
