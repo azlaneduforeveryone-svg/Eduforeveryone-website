@@ -8,6 +8,7 @@ import {
   getAdjacentTopics,
 } from "@/lib/courses/accountingSyllabus";
 import { getOLevelNotes } from "@/lib/courses/oLevelAccountingNotes";
+import { getOLevelRevision } from "@/lib/courses/oLevelAccountingRevision";
 import TopicPageClient from "./TopicPageClient";
 
 export function generateStaticParams() {
@@ -82,6 +83,7 @@ export default function OLevelAccountingTopicPage({
       topicQuestions={topicQuestions}
       prevTopic={prev}
       nextTopic={next}
+      revision={getOLevelRevision(topicMeta.topic)}
     />
   );
 }

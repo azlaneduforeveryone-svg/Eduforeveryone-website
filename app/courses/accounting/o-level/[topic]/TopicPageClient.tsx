@@ -23,12 +23,16 @@ import {
 import YouTubeWatchedPlayer from "@/components/courses/YouTubeWatchedPlayer";
 import SaveProgressPrompt from "@/components/courses/SaveProgressPrompt";
 import NotesContent from "@/components/courses/NotesContent";
+import Flashcards from "@/components/courses/Flashcards";
+import MindMap from "@/components/courses/MindMap";
+import type { TopicRevision } from "@/lib/courses/oLevelAccountingRevisionTypes";
 
 interface TopicPageClientProps {
   topicMeta: AccountingTopicMeta;
   topicQuestions: AccountingMcq[];
   prevTopic: AccountingTopicMeta | null;
   nextTopic: AccountingTopicMeta | null;
+  revision?: TopicRevision | null;
 }
 
 export default function TopicPageClient({
@@ -36,6 +40,7 @@ export default function TopicPageClient({
   topicQuestions,
   prevTopic,
   nextTopic,
+  revision = null,
 }: TopicPageClientProps) {
   const { user, loading: authLoading } = useAuth();
   const [progress, setProgress] = useState<TopicProgress>(DEFAULT_TOPIC_PROGRESS);
@@ -370,6 +375,18 @@ export default function TopicPageClient({
               )}
             </div>
 
+            {revision?.mindMap && (
+              <details open className="group mb-6 rounded-xl border border-efe-line bg-efe-surface">
+                <summary className="cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden flex items-center justify-between gap-2 px-5 py-3 text-sm font-bold text-efe-fg">
+                  <span>🧠 Topic map: the whole topic on one page</span>
+                  <span aria-hidden className="text-efe-muted transition-transform group-open:rotate-180">▾</span>
+                </summary>
+                <div className="px-4 sm:px-5 pb-5 pt-1">
+                  <MindMap data={revision.mindMap} />
+                </div>
+              </details>
+            )}
+
             <div className="max-w-none bg-efe-bg p-5 rounded-xl border border-efe-line mb-6">
               <NotesContent notes={topicMeta.notes} />
             </div>
@@ -398,6 +415,30 @@ export default function TopicPageClient({
                 </div>
               )}
             </div>
+          </section>
+        )}
+
+        {/* STEP 3: FLASHCARDS (only rendered when topic has cards) */}
+        {revision?.flashcards && revision.flashcards.length > 0 && (
+          <section
+            aria-labelledby="step-cards-heading"
+            className="efe-card p-6 sm:p-8"
+          >
+            <div className="mb-4">
+              <span className="text-xs font-bold uppercase tracking-wider text-efe-accent-ink">
+                Recall
+              </span>
+              <h2
+                id="step-cards-heading"
+                className="text-xl font-bold font-display text-efe-fg mt-0.5"
+              >
+                Flashcards ({revision.flashcards.length} cards)
+              </h2>
+              <p className="text-sm text-efe-muted mt-1">
+                Say the answer in your head first, then flip. Mark the ones you missed and go through them again.
+              </p>
+            </div>
+            <Flashcards cards={revision.flashcards} />
           </section>
         )}
 
