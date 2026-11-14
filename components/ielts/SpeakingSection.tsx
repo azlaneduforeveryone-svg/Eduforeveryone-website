@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
 import { SpeakingTopic, PART2_SPEAK_SECONDS } from "@/lib/ielts/ielts-speaking-data";
+import { useAuth } from "@/contexts/AuthContext";
+import AuthModal from "@/components/AuthModal";
 
 interface Props {
   test: SpeakingTopic;
@@ -17,6 +19,8 @@ export default function SpeakingSection({ test, onComplete }: Props) {
   const [isRecording, setIsRecording] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [showAuth, setShowAuth] = useState(false);
+  const { user } = useAuth();
 
   const {
     transcript: liveTranscript,
@@ -49,6 +53,11 @@ export default function SpeakingSection({ test, onComplete }: Props) {
       setError("Please speak or type at least 20 words first.");
       return;
     }
+    if (!user) {
+      setError("Sign in to get AI feedback");
+      setShowAuth(true);
+      return;
+    }
     setLoading(true);
     setError("");
     const task =
@@ -56,9 +65,10 @@ export default function SpeakingSection({ test, onComplete }: Props) {
         ? `${test.cueCard.title}\nYou should say:\n- ${test.cueCard.points.join("\n- ")}\n${test.cueCard.followUp}`
         : test.part3[0].q;
     try {
+      const idToken = await user.getIdToken();
       const res = await fetch("/api/speaking", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${idToken}` },
         body: JSON.stringify({
           task,
           response: transcript,
@@ -147,6 +157,7 @@ export default function SpeakingSection({ test, onComplete }: Props) {
         </div>
 
         {error && <div className="text-red-600 text-sm">{error}</div>}
+        {showAuth && <AuthModal onClose={() => setShowAuth(false)} />}
 
         {stage === "part2" ? (
           <button

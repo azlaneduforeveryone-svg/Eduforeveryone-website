@@ -1,4 +1,6 @@
 // app/api/speaking/route.ts
+import { requireAiQuota } from "@/lib/server/aiGuard";
+
 export const runtime = "edge";
 
 const DEEPSEEK_URL = "https://api.deepseek.com/chat/completions";
@@ -19,17 +21,24 @@ const json = (data: unknown, status = 200) =>
 const wordCount = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
 
 export async function POST(req: Request) {
+  const apiKey = process.env.DEEPSEEK_API_KEY;
+  if (!apiKey) return json({ error: "Server configuration error: scoring key not set." }, 500);
+
+  const quota = await requireAiQuota(req);
+  if (!quota.ok) return json({ error: quota.error }, quota.status);
+
   const body = await req.json().catch(() => null);
   if (!body) return json({ error: "Invalid JSON body." }, 400);
 
   const { task = "", response: studentResponse = "", part = 2, topic = "General" } = body;
 
   if (!task || !studentResponse) return json({ error: "Missing task or response." }, 400);
-  if (typeof studentResponse !== "string" || wordCount(studentResponse) < 20)
+  if (typeof task !== "string" || task.length > 2000)
+    return json({ error: "Task must be up to 2,000 characters." }, 400);
+  if (typeof studentResponse !== "string" || studentResponse.length > 10000)
+    return json({ error: "Response must be up to 10,000 characters." }, 400);
+  if (wordCount(studentResponse) < 20)
     return json({ error: "Please speak (or type) at least 20 words before submitting." }, 400);
-
-  const apiKey = process.env.DEEPSEEK_API_KEY;
-  if (!apiKey) return json({ error: "Server configuration error: scoring key not set." }, 500);
 
   // IMPORTANT: this grades a TEXT TRANSCRIPT, so it can only honestly assess the
   // criteria that survive transcription. Pronunciation is deliberately NOT scored.

@@ -14,11 +14,11 @@
 
 import { getOLevelNotes } from "@/lib/courses/oLevelAccountingNotes";
 import { getTopicByCode } from "@/lib/courses/accountingSyllabus";
+import { requireAiQuota } from "@/lib/server/aiGuard";
 
 export const runtime = "edge";
 
 const DEEPSEEK_URL = "https://api.deepseek.com/chat/completions";
-const DAILY_LIMIT = 10;
 const MAX_QUESTION = 500;
 const MAX_HISTORY_TURNS = 4;
 const MAX_HISTORY_CHARS = 1500;
@@ -31,70 +31,21 @@ const json = (data: unknown, status = 200) =>
 
 type Turn = { role: "user" | "assistant"; content: string };
 
-async function verifyUser(idToken: string, apiKey: string): Promise<string | null> {
-  const res = await fetch(
-    `https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=${encodeURIComponent(apiKey)}`,
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ idToken }),
-    }
-  );
-  if (!res.ok) return null;
-  const data = (await res.json().catch(() => null)) as { users?: { localId?: string }[] } | null;
-  return data?.users?.[0]?.localId ?? null;
-}
-
-function usageDocPath(projectId: string, uid: string, date: string) {
-  return `projects/${projectId}/databases/(default)/documents/aiTutorUsage/${uid}_${date}`;
-}
-
-async function readUsage(projectId: string, idToken: string, uid: string, date: string): Promise<number> {
-  const res = await fetch(`https://firestore.googleapis.com/v1/${usageDocPath(projectId, uid, date)}`, {
-    headers: { Authorization: `Bearer ${idToken}` },
-  });
-  if (res.status === 404) return 0;
-  if (!res.ok) throw new Error(`usage read ${res.status}`);
-  const doc = (await res.json()) as { fields?: { count?: { integerValue?: string } } };
-  return Number(doc.fields?.count?.integerValue ?? 0);
-}
-
-async function bumpUsage(projectId: string, idToken: string, uid: string, date: string): Promise<boolean> {
-  const name = usageDocPath(projectId, uid, date);
-  const res = await fetch(
-    `https://firestore.googleapis.com/v1/projects/${projectId}/databases/(default)/documents:commit`,
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Authorization: `Bearer ${idToken}` },
-      body: JSON.stringify({
-        writes: [
-          {
-            update: { name, fields: { uid: { stringValue: uid }, date: { stringValue: date } } },
-            updateMask: { fieldPaths: ["uid", "date"] },
-            updateTransforms: [{ fieldPath: "count", increment: { integerValue: "1" } }],
-          },
-        ],
-      }),
-    }
-  );
-  return res.ok;
-}
-
 export async function POST(req: Request) {
   const deepseekKey = process.env.DEEPSEEK_API_KEY;
-  const firebaseKey = process.env.NEXT_PUBLIC_FIREBASE_API_KEY;
-  const projectId = process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID;
-  if (!deepseekKey || !firebaseKey || !projectId) {
+  if (!deepseekKey) {
     return json({ error: "The tutor is not set up yet. Please try again later." }, 500);
   }
 
-  // ── Auth ──
-  const authHeader = req.headers.get("authorization") || "";
-  const idToken = authHeader.startsWith("Bearer ") ? authHeader.slice(7).trim() : "";
-  if (!idToken) return json({ error: "Please sign in to ask the tutor." }, 401);
-
-  const uid = await verifyUser(idToken, firebaseKey).catch(() => null);
-  if (!uid) return json({ error: "Your sign-in has expired. Please sign in again." }, 401);
+  // ── Auth & Daily Quota ──
+  const quota = await requireAiQuota(req);
+  if (!quota.ok) {
+    return json(
+      quota.status === 429 ? { error: quota.error, remaining: 0 } : { error: quota.error },
+      quota.status
+    );
+  }
+  const { remaining } = quota;
 
   // ── Input ──
   const body = (await req.json().catch(() => null)) as
@@ -124,28 +75,6 @@ export async function POST(req: Request) {
         .slice(-MAX_HISTORY_TURNS * 2)
         .map((t) => ({ role: t.role, content: t.content.slice(0, MAX_HISTORY_CHARS) }))
     : [];
-
-  // ── Daily limit (counted before calling DeepSeek) ──
-  const date = new Date().toISOString().slice(0, 10); // UTC day
-  let used: number;
-  try {
-    used = await readUsage(projectId, idToken, uid, date);
-  } catch (e) {
-    console.error("[tutor] usage read failed:", e);
-    return json({ error: "The tutor is not available right now. Please try again later." }, 503);
-  }
-  if (used >= DAILY_LIMIT) {
-    return json(
-      { error: `You have used all ${DAILY_LIMIT} tutor questions for today. Come back tomorrow.`, remaining: 0 },
-      429
-    );
-  }
-  const counted = await bumpUsage(projectId, idToken, uid, date).catch(() => false);
-  if (!counted) {
-    console.error("[tutor] usage write refused (check aiTutorUsage rule in firestore.rules)");
-    return json({ error: "The tutor is not available right now. Please try again later." }, 503);
-  }
-  const remaining = Math.max(0, DAILY_LIMIT - used - 1);
 
   // ── Prompt ──
   const systemPrompt = `You are a friendly, careful tutor for Cambridge O Level Accounting (syllabus 7707, exams 2027 to 2029).

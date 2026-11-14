@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import Link from "next/link";
 import { IELTSFormat, Task1Figure as Task1FigureData } from "@/lib/ielts/ielts-types";
 import { useAuth } from "@/contexts/AuthContext";
+import AuthModal from "@/components/AuthModal";
 import { saveIeltsResult } from "@/lib/firebaseDB";
 import {
   academicTask1Pool,
@@ -174,6 +175,7 @@ function useTimer(totalSeconds: number) {
 
 export default function WritingPage() {
   const { user } = useAuth();
+  const [showAuth, setShowAuth] = useState(false);
   const [selected, setSelected] = useState<Prompt | null>(null);
   const [format, setFormat] = useState<IELTSFormat>("academic");
   const PROMPTS = useMemo(() => buildPrompts(format), [format]);
@@ -218,6 +220,12 @@ export default function WritingPage() {
 
   async function handleSubmit() {
     if (!selected) return;
+    if (!user) {
+      setSubmitted(true);
+      setAiError("Sign in to get AI feedback");
+      setShowAuth(true);
+      return;
+    }
     track("ai_feedback_submit", { task: selected.task === 1 ? "task1" : "task2" });
     timer.pause();
     setSubmitted(true);
@@ -227,10 +235,11 @@ export default function WritingPage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
 
     try {
+      const idToken = await user.getIdToken();
       // 🔁 CHANGED: Now sending testType, taskType, task, response
       const res = await fetch("/api/writing", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${idToken}` },
         body: JSON.stringify({
           testType: format === "academic" ? "Academic" : "General",
           taskType: selected.taskType,
@@ -292,6 +301,7 @@ export default function WritingPage() {
     const timerWarning = timer.remaining < 300 && timer.state === "running";
     return (
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10">
+        {showAuth && <AuthModal onClose={() => setShowAuth(false)} />}
         <div className="flex items-center gap-2 text-sm text-efe-muted mb-6">
           <Link href="/ielts" className="hover:text-efe-accent transition-colors">IELTS</Link>
           <span>›</span>

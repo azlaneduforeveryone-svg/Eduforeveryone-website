@@ -4,6 +4,7 @@ import Link from "next/link";
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import { SPEAKING_TOPICS as TOPICS, type SpeakingTopic as Topic } from "@/lib/ielts/ielts-speaking-data";
 import { useAuth } from "@/contexts/AuthContext";
+import AuthModal from "@/components/AuthModal";
 import { saveIeltsResult } from "@/lib/firebaseDB";
 import { track } from "@/lib/analytics";
 
@@ -115,6 +116,7 @@ function CueCardTimer() {
 // ---------- Main Speaking Page Component ----------
 export default function SpeakingPage() {
   const { user } = useAuth();
+  const [showAuth, setShowAuth] = useState(false);
   const [activeTopic, setActiveTopic] = useState<Topic | null>(null);
   const [activePart, setActivePart] = useState<1 | 2 | 3>(1);
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
@@ -165,6 +167,11 @@ export default function SpeakingPage() {
   return;
 }
     if (!activeTopic) return;
+    if (!user) {
+      setAiError("Sign in to get AI feedback");
+      setShowAuth(true);
+      return;
+    }
 
     setSubmitted(true);
     setAiLoading(true);
@@ -181,9 +188,10 @@ export default function SpeakingPage() {
     }
 
     try {
+      const idToken = await user.getIdToken();
       const res = await fetch("/api/speaking", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${idToken}` },
         body: JSON.stringify({
           task: taskPrompt,
           response: transcript,
@@ -279,6 +287,7 @@ export default function SpeakingPage() {
         </div>
 
         {/* ---------- Recording & AI Grading Section (shown on all parts) ---------- */}
+        {showAuth && <AuthModal onClose={() => setShowAuth(false)} />}
         <div className="bg-efe-surface border border-efe-line rounded-2xl p-5 mb-6 shadow-sm">
           <h3 className="font-bold text-efe-fg mb-3 font-display">🎙️ Practice & Get AI Feedback</h3>
           <p className="text-sm text-efe-muted mb-4">

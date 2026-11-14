@@ -4,6 +4,8 @@ import { useState, useMemo } from "react";
 import { WritingTest, IELTSFormat } from "@/lib/ielts/ielts-types";
 import { academicT1ApiType, gtT1ApiType, task2ApiType } from "@/lib/ielts/writingData";
 import Task1Figure from "@/components/ielts/Task1Figure";
+import { useAuth } from "@/contexts/AuthContext";
+import AuthModal from "@/components/AuthModal";
 
 interface Props {
   test: WritingTest;
@@ -26,15 +28,18 @@ interface CombinedResult {
 const wordCount = (s: string) => (s.trim() ? s.trim().split(/\s+/).length : 0);
 const roundHalf = (n: number) => Math.round(n * 2) / 2;
 
-async function gradeTask(payload: {
-  testType: string;
-  taskType: string;
-  task: string;
-  response: string;
-}): Promise<TaskGrade> {
+async function gradeTask(
+  payload: {
+    testType: string;
+    taskType: string;
+    task: string;
+    response: string;
+  },
+  idToken: string
+): Promise<TaskGrade> {
   const res = await fetch("/api/writing", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", Authorization: `Bearer ${idToken}` },
     body: JSON.stringify(payload),
   });
   const data = await res.json();
@@ -48,6 +53,8 @@ export default function WritingSection({ test, format, onComplete }: Props) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [result, setResult] = useState<CombinedResult | null>(null);
+  const [showAuth, setShowAuth] = useState(false);
+  const { user } = useAuth();
 
   const testType = format === "academic" ? "Academic" : "General";
 
@@ -80,12 +87,18 @@ export default function WritingSection({ test, format, onComplete }: Props) {
       setError("Please write a genuine attempt for both tasks (at least ~25 words each) before submitting.");
       return;
     }
+    if (!user) {
+      setError("Sign in to get AI feedback");
+      setShowAuth(true);
+      return;
+    }
     setLoading(true);
     setError("");
     try {
+      const idToken = await user.getIdToken();
       const [t1, t2] = await Promise.all([
-        gradeTask({ testType, taskType: task1Meta.taskType, task: task1Meta.task, response: task1Answer }),
-        gradeTask({ testType, taskType: task2Meta.taskType, task: task2Meta.task, response: task2Answer }),
+        gradeTask({ testType, taskType: task1Meta.taskType, task: task1Meta.task, response: task1Answer }, idToken),
+        gradeTask({ testType, taskType: task2Meta.taskType, task: task2Meta.task, response: task2Answer }, idToken),
       ]);
       // Official weighting: Task 2 carries twice the weight of Task 1.
       const writing = roundHalf((t1.overall + 2 * t2.overall) / 3);
@@ -203,6 +216,7 @@ export default function WritingSection({ test, format, onComplete }: Props) {
       </div>
 
       {error && <div className="text-red-600 text-sm">{error}</div>}
+      {showAuth && <AuthModal onClose={() => setShowAuth(false)} />}
       <button
         onClick={handleSubmit}
         disabled={loading}
