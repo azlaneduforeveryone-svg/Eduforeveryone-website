@@ -6,6 +6,7 @@
 //   - bullet item       1. numbered item
 //   > rule box          | table | row |   (|---| separator rows are skipped)
 //   **bold** inside any text
+//   ![Caption](/images/...)   a diagram on its own line (only site images under /images/)
 // Anything else is a paragraph.
 
 import { Fragment, type ReactNode } from "react";
@@ -48,6 +49,28 @@ export default function NotesContent({ notes }: { notes: string }) {
         const key = `blk-${bi}`;
         const lines = block.split("\n").map((l) => l.trimEnd());
         const first = lines[0];
+
+        const img = lines.length === 1 ? /^!\[([^\]]+)\]\((\/images\/[a-z0-9/_.-]+\.(?:svg|png|webp|jpg))\)$/i.exec(first.trim()) : null;
+        if (img) {
+          const [, caption, src] = img;
+          return (
+            <figure key={key} className="my-2">
+              <a href={src} target="_blank" rel="noopener noreferrer" aria-label={`Open full size: ${caption}`}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={src}
+                  alt={caption}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-auto rounded-xl border border-efe-line bg-white"
+                />
+              </a>
+              <figcaption className="mt-2 text-sm text-efe-muted text-center">
+                {caption} <span className="whitespace-nowrap">(tap to enlarge)</span>
+              </figcaption>
+            </figure>
+          );
+        }
 
         if (first.startsWith("### ")) {
           return (

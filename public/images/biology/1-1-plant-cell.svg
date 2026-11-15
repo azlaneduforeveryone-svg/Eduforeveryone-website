@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-110 0 880 440" role="img" aria-labelledby="t d" font-family="Inter, Arial, sans-serif">
+  <title id="t">Plant cell</title>
+  <desc id="d">Labelled diagram of a plant cell showing the cellulose cell wall, cell membrane, cytoplasm, nucleus, chloroplasts, large sap vacuole, mitochondria and ribosomes.</desc>
+  <rect x="-110" width="880" height="440" fill="#ffffff"/>
+  <!-- cell wall -->
+  <rect x="190" y="50" width="300" height="320" rx="14" fill="#e3efc9" stroke="#4d6b1f" stroke-width="5"/>
+  <!-- membrane + cytoplasm -->
+  <rect x="202" y="62" width="276" height="296" rx="10" fill="#f4f9e8" stroke="#7a4a1e" stroke-width="2"/>
+  <!-- sap vacuole -->
+  <path d="M245 115 C300 95 400 100 435 125 C455 170 450 280 425 310 C380 330 300 330 255 310 C232 270 230 160 245 115 Z" fill="#dff1fb" stroke="#2b7fae" stroke-width="2"/>
+  <!-- nucleus pushed to the side -->
+  <ellipse cx="226" cy="215" rx="18" ry="32" fill="#d9c7f0" stroke="#5b3a8c" stroke-width="2.5"/>
+  <!-- chloroplasts around the edge -->
+  <g fill="#7cc35b" stroke="#2f6b1b" stroke-width="1.8">
+    <ellipse cx="260" cy="85" rx="18" ry="9"/>
+    <ellipse cx="330" cy="80" rx="18" ry="9"/>
+    <ellipse cx="405" cy="85" rx="18" ry="9"/>
+    <ellipse cx="460" cy="150" rx="9" ry="18"/>
+    <ellipse cx="462" cy="245" rx="9" ry="18"/>
+    <ellipse cx="330" cy="342" rx="18" ry="9"/>
+    <ellipse cx="410" cy="338" rx="18" ry="9"/>
+  </g>
+  <g stroke="#2f6b1b" stroke-width="1"><line x1="248" y1="85" x2="272" y2="85"/><line x1="318" y1="80" x2="342" y2="80"/><line x1="393" y1="85" x2="417" y2="85"/><line x1="318" y1="342" x2="342" y2="342"/><line x1="398" y1="338" x2="422" y2="338"/></g>
+  <!-- mitochondria -->
+  <g fill="#ffd2c2" stroke="#b5452a" stroke-width="1.8">
+    <ellipse cx="225" cy="300" rx="9" ry="16"/>
+    <ellipse cx="460" cy="300" rx="9" ry="15"/>
+  </g>
+  <!-- ribosomes -->
+  <g fill="#3d3d3d"><circle cx="222" cy="120" r="2.6"/><circle cx="230" cy="140" r="2.6"/><circle cx="286" cy="344" r="2.6"/><circle cx="372" cy="344" r="2.6"/><circle cx="444" cy="110" r="2.6"/><circle cx="452" cy="200" r="2.6"/></g>
+  <!-- labels -->
+  <g stroke="#222" stroke-width="1.4">
+    <line x1="140" y1="60"  x2="192" y2="70"/>
+    <line x1="140" y1="125" x2="204" y2="125"/>
+    <line x1="140" y1="215" x2="210" y2="215"/>
+    <line x1="140" y1="300" x2="216" y2="300"/>
+    <line x1="540" y1="70"  x2="414" y2="85"/>
+    <line x1="540" y1="200" x2="400" y2="200"/>
+    <line x1="540" y1="275" x2="470" y2="275"/>
+    <line x1="540" y1="350" x2="372" y2="344"/>
+  </g>
+  <g font-size="20" fill="#1a1a1a">
+    <text x="132" y="58" text-anchor="end">cellulose cell wall</text>
+    <text x="132" y="130" text-anchor="end">cell membrane</text>
+    <text x="132" y="220" text-anchor="end">nucleus</text>
+    <text x="132" y="305" text-anchor="end">mitochondrion</text>
+    <text x="548" y="75">chloroplast</text>
+    <text x="548" y="196">large sap vacuole</text>
+    <text x="548" y="220" font-size="17" fill="#555">(full of cell sap)</text>
+    <text x="548" y="280">cytoplasm</text>
+    <text x="548" y="355">ribosomes</text>
+  </g>
+  <text x="340" y="420" text-anchor="middle" font-size="18" font-weight="700" fill="#1a1a1a">Plant cell (for example, a leaf palisade cell)</text>
+</svg>

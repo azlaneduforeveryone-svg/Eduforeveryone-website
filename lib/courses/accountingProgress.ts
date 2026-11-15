@@ -173,9 +173,12 @@ export interface MergeStorageAdapter {
 
 export async function runSignInMerge(
   uid: string,
-  adapter: MergeStorageAdapter
+  adapter: MergeStorageAdapter,
+  // Each course has its own "already merged" flag, so signing in on one course
+  // does not skip the merge for another. Accounting keeps the original key.
+  flagScope?: string
 ): Promise<{ didMerge: boolean; written: Record<string, TopicProgress> }> {
-  const mergeFlagKey = `${MERGE_FLAG_PREFIX}${uid}`;
+  const mergeFlagKey = flagScope ? `${MERGE_FLAG_PREFIX}${flagScope}-${uid}` : `${MERGE_FLAG_PREFIX}${uid}`;
   if (adapter.getFlag(mergeFlagKey) === "true") {
     return { didMerge: false, written: {} };
   }
@@ -203,6 +206,8 @@ export async function mergeLocalToFirestoreOnce(
   topics: readonly { topicId: string }[] = ALL_O_LEVEL_TOPICS
 ): Promise<void> {
   if (typeof window === "undefined" || !uid) return;
+  // Accounting (default list) keeps the original flag; other courses use their id prefix, e.g. "o5090".
+  const flagScope = topics === ALL_O_LEVEL_TOPICS ? undefined : topics[0]?.topicId.split("-")[0];
   try {
     await runSignInMerge(uid, {
       getFlag: (k) => localStorage.getItem(k),
@@ -231,9 +236,9 @@ export async function mergeLocalToFirestoreOnce(
         }
         await batch.commit();
       },
-    });
+    }, flagScope);
   } catch (err) {
-    console.error("Failed to merge local accounting progress to Firestore:", err);
+    console.error("Failed to merge local course progress to Firestore:", err);
   }
 }
 

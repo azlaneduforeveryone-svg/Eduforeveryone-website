@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-100 0 860 420" role="img" aria-labelledby="t d" font-family="Inter, Arial, sans-serif">
+  <title id="t">Animal cell</title>
+  <desc id="d">Labelled diagram of an animal cell showing the cell membrane, cytoplasm, nucleus, mitochondria and ribosomes.</desc>
+  <rect x="-100" width="860" height="420" fill="#ffffff"/>
+  <!-- cell membrane + cytoplasm -->
+  <path d="M190 120 C240 70 380 60 450 95 C520 128 530 220 505 285 C480 345 380 365 300 352 C220 340 165 300 160 230 C156 180 165 145 190 120 Z" fill="#fdf1e4" stroke="#7a4a1e" stroke-width="3"/>
+  <!-- nucleus -->
+  <ellipse cx="335" cy="215" rx="58" ry="48" fill="#d9c7f0" stroke="#5b3a8c" stroke-width="2.5"/>
+  <ellipse cx="345" cy="208" rx="16" ry="13" fill="#b39ddb" stroke="none"/>
+  <!-- mitochondria -->
+  <g fill="#ffd2c2" stroke="#b5452a" stroke-width="2">
+    <ellipse cx="235" cy="170" rx="30" ry="14" transform="rotate(-20 235 170)"/>
+    <ellipse cx="445" cy="290" rx="30" ry="14" transform="rotate(15 445 290)"/>
+    <ellipse cx="430" cy="140" rx="26" ry="12" transform="rotate(25 430 140)"/>
+  </g>
+  <g fill="none" stroke="#b5452a" stroke-width="1.5">
+    <path d="M212 176 l6 -10 l6 10 l6 -10 l6 10 l6 -10 l6 10 l6 -10" transform="rotate(-20 235 170)"/>
+    <path d="M422 296 l6 -10 l6 10 l6 -10 l6 10 l6 -10 l6 10 l6 -10" transform="rotate(15 445 290)"/>
+    <path d="M412 145 l5 -9 l5 9 l5 -9 l5 9 l5 -9 l5 9" transform="rotate(25 430 140)"/>
+  </g>
+  <!-- ribosomes -->
+  <g fill="#3d3d3d">
+    <circle cx="225" cy="250" r="3"/><circle cx="240" cy="262" r="3"/><circle cx="212" cy="270" r="3"/>
+    <circle cx="260" cy="300" r="3"/><circle cx="285" cy="318" r="3"/><circle cx="400" cy="320" r="3"/>
+    <circle cx="470" cy="210" r="3"/><circle cx="480" cy="232" r="3"/><circle cx="380" cy="110" r="3"/>
+    <circle cx="300" cy="120" r="3"/><circle cx="270" cy="135" r="3"/><circle cx="410" cy="250" r="3"/>
+  </g>
+  <!-- label lines (ruled, no arrowheads) -->
+  <g stroke="#222" stroke-width="1.4">
+    <line x1="120" y1="95"  x2="235" y2="170"/>
+    <line x1="120" y1="230" x2="226" y2="250"/>
+    <line x1="120" y1="330" x2="185" y2="305"/>
+    <line x1="560" y1="110" x2="372" y2="204"/>
+    <line x1="560" y1="330" x2="440" y2="250"/>
+  </g>
+  <g font-size="21" fill="#1a1a1a">
+    <text x="112" y="100" text-anchor="end">mitochondrion</text>
+    <text x="112" y="235" text-anchor="end">ribosomes</text>
+    <text x="112" y="335" text-anchor="end">cell membrane</text>
+    <text x="568" y="115">nucleus</text>
+    <text x="568" y="335">cytoplasm</text>
+  </g>
+  <text x="340" y="400" text-anchor="middle" font-size="18" font-weight="700" fill="#1a1a1a">Animal cell (for example, a cheek cell)</text>
+</svg>
