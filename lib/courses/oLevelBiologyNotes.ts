@@ -3533,6 +3533,869 @@ In **Type 1 diabetes**, the pancreas does **not make enough insulin**.
 - Type 1 diabetes: two signs (**high blood glucose**, **glucose in urine**) and the treatment (**insulin**).
 
 Next: test yourself with the practice questions below.`,
+
+  "15.1": `## What you need to know
+
+- Describe **gravitropism** and **phototropism**.
+- Explain how **auxin** controls shoot growth.
+- Investigate gravitropism and phototropism in shoots and roots.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Tropism | Growth of a plant part towards or away from a stimulus. |
+| Gravitropism | Growth of plant parts towards or away from gravity. |
+| Phototropism | Growth of plant parts towards or away from light. |
+| Auxin | A plant hormone made in the shoot tip that makes cells grow longer. |
+| Cell elongation | Cells getting longer. |
+| Positive | Growing towards the stimulus. |
+| Negative | Growing away from the stimulus. |
+
+## Tropisms
+
+Plants cannot move about, but they can **grow** towards or away from things.
+
+> **Phototropism**: growth towards or away from **light**.
+
+> **Gravitropism**: growth towards or away from **gravity**.
+
+| Plant part | Light | Gravity |
+|---|---|---|
+| **Shoot** | Grows **towards** light (positive phototropism) | Grows **away** from gravity (negative gravitropism) |
+| **Root** | Grows away from light | Grows **towards** gravity (positive gravitropism) |
+
+Why this helps:
+
+- Shoots grow up towards light, so leaves get light for **photosynthesis**.
+- Roots grow down into the soil, to take in **water and mineral ions** and **anchor** the plant.
+
+## How auxin controls shoot growth
+
+![How auxin makes a shoot bend towards light](/images/biology/15-1-auxin.svg)
+
+1. **Auxin is made in the shoot tip.**
+2. It **spreads down** through the plant from the tip.
+3. Auxin is **unequally distributed** in response to **light** and **gravity**. In one-sided light, more auxin moves to the **shaded side**.
+4. **Auxin stimulates cell elongation**: cells on the shaded side **grow longer** than cells on the lit side.
+5. So the shoot **bends towards the light**.
+
+> Think of a bendy straw. If one side gets longer than the other, the straw curves towards the shorter side. The lit side stays shorter, so the shoot curves towards the light.
+
+In a shoot lying on its side, auxin collects on the **lower side**. The lower side grows more, so the shoot **bends upwards**, away from gravity.
+
+## Practicals
+
+### Phototropism in shoots
+
+1. Grow seedlings (such as cress) in a box with a hole on **one side**, so light comes from one direction.
+2. Grow a **control** group in light from all sides (or on a turning clinostat).
+3. After a few days, the one-sided seedlings bend **towards the light**. The control seedlings grow straight up.
+
+### Gravitropism in roots and shoots
+
+1. Pin germinating seeds (such as beans) onto damp cotton wool in a dish, with the roots pointing in different directions.
+2. Keep them in the **dark** so light has no effect.
+3. After a few days, all the **roots bend down** and all the **shoots bend up**, whichever way they started.
+
+A **clinostat** (a slowly turning disc) can be used as a control. It turns the seedlings so gravity acts on all sides evenly, and they grow straight.
+
+## Common mistakes
+
+- Saying auxin is destroyed by light. Say auxin **moves to the shaded side**.
+- Saying the lit side grows more. The **shaded side** grows more, because it has more auxin.
+- Saying auxin makes cells divide. In this topic, auxin causes cell **elongation**.
+- Mixing up positive and negative: shoots show **positive phototropism** and **negative gravitropism**.
+
+## Exam tips
+
+- For auxin, learn the four points: **made in tip, spreads down, unequal distribution, cell elongation**.
+- In a practical, always describe the **control**.
+
+Next: test yourself with the practice questions below.`,
+
+  "16.1": `## What you need to know
+
+- Understand that chromosomes contain DNA, which carries genes.
+- Describe haploid and diploid nuclei. A human diploid cell has 23 pairs of chromosomes.
+- Describe mitosis and what it is used for.
+- Describe stem cells.
+- State that meiosis makes gametes, and describe it as a reduction division.
+- Understand that cancer is caused by uncontrolled cell division.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Chromosome | A thread of DNA in the nucleus, carrying many genes. |
+| Gene | A length of DNA that codes for a protein. |
+| Haploid | A nucleus with a single set of chromosomes (23 in humans). |
+| Diploid | A nucleus with two sets of chromosomes (46 in humans, as 23 pairs). |
+| Mitosis | Nuclear division that gives genetically identical cells with the same number of chromosomes. |
+| Meiosis | Reduction division that makes haploid gametes that are genetically different. |
+| Gamete | A sex cell: sperm or egg. |
+| Stem cell | An unspecialised cell that divides by mitosis to make cells that can become specialised. |
+
+## Chromosomes, DNA and genes
+
+- The **nucleus** contains **chromosomes**.
+- Chromosomes are made of **DNA**.
+- DNA carries genetic information in the form of **genes**.
+
+> Think of a library. The nucleus is the library, each chromosome is a book, and each gene is a recipe in that book.
+
+## Haploid and diploid
+
+| | Diploid | Haploid |
+|---|---|---|
+| Sets of chromosomes | **Two** | **One** |
+| Humans | **46** (23 pairs) | **23** |
+| Found in | Body cells | **Gametes** (sperm and eggs) |
+
+In a diploid cell, chromosomes come in **pairs**: one of each pair came from the mother and one from the father.
+
+## Mitosis
+
+![Mitosis and meiosis compared](/images/biology/16-1-mitosis-meiosis.svg)
+
+> **Mitosis** is nuclear division that gives **genetically identical** cells, with the **chromosome number kept the same**.
+
+One diploid cell makes **two** diploid cells, exactly like the parent cell.
+
+Mitosis is used for:
+
+- **Growth**: making new cells.
+- **Repair** of damaged tissues, such as healing a cut.
+- **Replacing** dying cells, such as skin cells and red blood cells.
+- **Asexual reproduction**.
+
+## Stem cells
+
+> **Stem cells** are **unspecialised** cells that divide by **mitosis** to make daughter cells that can **become specialised**.
+
+For example, stem cells in the bone marrow make new red and white blood cells.
+
+## Meiosis
+
+> **Meiosis** is involved in making **gametes**. It is a **reduction division**: diploid cells divide to make **haploid** cells that are **genetically different**.
+
+Why halve the number? When a haploid sperm (23) joins a haploid egg (23) at fertilisation, the zygote has the full **46**.
+
+| | Mitosis | Meiosis |
+|---|---|---|
+| Used for | Growth, repair, replacement, asexual reproduction | Making **gametes** |
+| Chromosome number | **Stays the same** (diploid to diploid) | **Halved** (diploid to haploid) |
+| New cells are | **Genetically identical** | **Genetically different** |
+
+## Cancer
+
+> **Cancers** form as a result of **uncontrolled cell division**.
+
+Normally cells divide only when needed. If the control goes wrong, cells keep dividing by mitosis and form a lump called a **tumour**.
+
+## Common mistakes
+
+- Saying gametes are made by mitosis. Gametes are made by **meiosis**.
+- Saying humans have 23 chromosomes. Body cells have **46** (23 **pairs**). Gametes have 23.
+- Saying mitosis makes different cells. Mitosis makes **identical** cells.
+
+## Exam tips
+
+- Learn the definitions of **haploid** and **diploid** word for word.
+- When comparing mitosis and meiosis, mention **chromosome number** and **identical or different**.
+
+Next: test yourself with the practice questions below.`,
+
+  "16.2": `## What you need to know
+
+- Describe asexual reproduction and give examples.
+- Describe sexual reproduction as the fusion of haploid nuclei to make a diploid zygote.
+- Discuss the advantages and disadvantages of each.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Asexual reproduction | Producing genetically identical offspring from one parent. |
+| Sexual reproduction | The fusion of two haploid nuclei to form a diploid zygote, producing genetically different offspring. |
+| Fertilisation | The fusion of the nuclei of two gametes. |
+| Zygote | The first cell of a new organism, made at fertilisation. |
+| Clone | A genetically identical copy. |
+
+## Asexual reproduction
+
+> **Asexual reproduction** produces **genetically identical** offspring from **one parent**.
+
+There are no gametes and no fertilisation. Offspring are **clones** of the parent.
+
+| Example | How |
+|---|---|
+| **Bacteria** | Split into two (binary fission) |
+| **Yeast** | Grows buds that break off |
+| **Potatoes** | New plants grow from tubers |
+| **Strawberry plants** | Grow runners that form new plants |
+| **Spider plants** | Grow small plantlets |
+| **Fungi** | Make spores |
+
+## Sexual reproduction
+
+> **Sexual reproduction** is the **fusion of the nuclei of two haploid gametes** (fertilisation) to form a **diploid zygote**. It produces **genetically different** offspring.
+
+Each parent gives half the chromosomes, so offspring are a **mix** of both parents.
+
+## Advantages and disadvantages
+
+| | Asexual | Sexual |
+|---|---|---|
+| **Parents needed** | Only **one**, so no need to find a mate | **Two** (usually); finding a mate takes time and energy |
+| **Speed** | **Fast**: many offspring quickly | **Slower** |
+| **Variation** | **None**: all offspring identical | **Variation** in offspring |
+| **If the environment changes** | All may die, because they are all the same (for example, all killed by the same disease) | Some may survive, because they are different |
+| **Good features** | Good features of the parent are **kept** exactly | Good features may be lost, but new useful combinations can appear |
+
+> In short: asexual is **fast and easy** but makes **no variation**. Sexual is **slower** but makes **variation**, which helps a species survive change.
+
+## Common mistakes
+
+- Saying asexual offspring are "similar" to the parent. They are **genetically identical**.
+- Saying sexual reproduction always needs two organisms. Some plants can self-pollinate, but **two gametes** are always needed.
+- Forgetting to mention **variation** when comparing the two.
+
+## Exam tips
+
+- Learn both definitions word for word, including **haploid**, **diploid** and **zygote**.
+- For "discuss", give at least **one advantage and one disadvantage of each**.
+
+Next: test yourself with the practice questions below.`,
+
+  "16.3": `## What you need to know
+
+- Identify and draw the parts of an insect-pollinated flower, and the anthers and stigmas of a wind-pollinated flower.
+- State what each flower part does.
+- Compare insect-pollinated and wind-pollinated flowers and their pollen.
+- Describe pollination, self-pollination and cross-pollination, and discuss their effects.
+- Describe pollen tube growth and fertilisation.
+- Understand that ovules become seeds and the ovary becomes a fruit.
+- Describe seed structure.
+- Explain seed and fruit dispersal by wind and animals.
+- Investigate the conditions needed for germination, and describe germination.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Pollination | The transfer of pollen from an anther to a stigma. |
+| Self-pollination | Pollen moves to a stigma on the same flower or same plant. |
+| Cross-pollination | Pollen moves to a stigma on a different plant of the same species. |
+| Pollen tube | A tube that grows from a pollen grain down to the ovule. |
+| Ovule | Contains the female gamete. Becomes a seed. |
+| Dispersal | Spreading seeds away from the parent plant. |
+| Germination | When a seed starts to grow into a new plant. |
+| Testa | The tough seed coat. |
+| Embryo | The young plant inside a seed: radicle, plumule and cotyledons. |
+
+## Parts of a flower
+
+![An insect-pollinated flower, labelled](/images/biology/16-3-flower.svg)
+
+| Part | Job |
+|---|---|
+| **Sepals** | Protect the flower when it is a bud |
+| **Petals** | Brightly coloured and scented to **attract insects** |
+| **Stamen** (male) | Made of the **anther** and **filament** |
+| **Anther** | Makes **pollen**, which contains the male gametes |
+| **Filament** | Holds up the anther |
+| **Carpel** (female) | Made of the stigma, style, ovary and ovules |
+| **Stigma** | Sticky top that **catches pollen** |
+| **Style** | Holds up the stigma; the pollen tube grows down it |
+| **Ovary** | Contains the ovules; becomes the **fruit** |
+| **Ovules** | Contain the female gametes; become **seeds** |
+
+## Insect-pollinated and wind-pollinated flowers
+
+![Insect-pollinated and wind-pollinated flowers compared](/images/biology/16-3-wind-insect.svg)
+
+| Feature | Insect-pollinated | Wind-pollinated |
+|---|---|---|
+| Petals | **Large, bright, scented**, often with nectar | **Small**, green or dull, no scent or nectar |
+| Anthers | Inside the flower, so insects brush against them | **Hang outside** the flower, in the wind |
+| Stigmas | Inside the flower, sticky | **Large and feathery**, hang outside to catch pollen |
+| Pollen | **Larger, sticky or spiky**, small amounts | **Smaller, light, smooth**, huge amounts |
+
+## Pollination
+
+> **Pollination** is the transfer of **pollen** from an **anther** to a **stigma**.
+
+| | Self-pollination | Cross-pollination |
+|---|---|---|
+| Pollen goes to | The **same** flower or another flower on the **same** plant | A flower on a **different** plant of the same species |
+| Variation | **Less** variation in offspring | **More** variation |
+| Response to environmental change | Population **less able** to adapt | Population **better able** to adapt |
+| Reliance on pollinators | **Does not** need insects or wind to reach another plant | **Relies** on pollinators (insects) or wind; if pollinators decline, reproduction suffers |
+
+## Fertilisation
+
+1. A pollen grain lands on the **stigma**.
+2. It grows a **pollen tube** down through the **style** to the **ovary**.
+3. The pollen tube enters an **ovule**.
+4. The male nucleus passes down the tube and **fuses** with the female nucleus in the ovule. This is **fertilisation**.
+
+After fertilisation:
+
+- Each **ovule** becomes a **seed**.
+- The **ovary** becomes a **fruit**.
+
+## Seed structure
+
+![The inside of a seed](/images/biology/16-3-seed.svg)
+
+| Part | What it is |
+|---|---|
+| **Testa** | Tough seed coat that protects the seed |
+| **Embryo** | The young plant, made of: |
+| Radicle | The embryo root |
+| Plumule | The embryo shoot |
+| **Cotyledons** | Seed leaves that store food for the embryo |
+
+## Seed and fruit dispersal
+
+Seeds are spread away from the parent plant. This:
+
+- lets the plant **colonise new areas**, and
+- **reduces competition** between the young plants and the parent for light, water and mineral ions.
+
+| Dispersed by | Features | Examples |
+|---|---|---|
+| **Wind** | Light, with **wings** or **parachutes** of hairs, to be carried far | Sycamore, dandelion |
+| **Animals** | **Hooks** that stick to fur | Burdock |
+| | **Juicy, tasty, colourful** fruit that animals eat; seeds pass out in faeces | Berries, tomatoes |
+
+## Germination
+
+### Conditions needed
+
+| Condition | Why |
+|---|---|
+| **Water** | Makes the seed swell and the testa split; activates enzymes |
+| **Oxygen** | For **aerobic respiration**, to release energy for growth |
+| **A suitable temperature** | For **enzymes** to work |
+
+Light is **not** needed for germination.
+
+### Practical
+
+Set up tubes of seeds on cotton wool: one with all three conditions (the **control**), one with no water, one with no oxygen (with an oxygen absorber), one in the fridge (cold). Only the control seeds germinate well.
+
+### What happens during germination
+
+1. The seed takes in **water** and swells. The testa splits.
+2. Water activates **enzymes**.
+3. Enzymes break down **stored food** in the cotyledons (for example, **amylase** turns starch into maltose).
+4. The soluble food is used by the embryo for **respiration** and **growth**.
+5. The **radicle** grows down first, then the **plumule** grows up.
+
+## Common mistakes
+
+- Saying pollination and fertilisation are the same. **Pollination** moves pollen; **fertilisation** is fusion of nuclei.
+- Saying seeds need light to germinate. They need **water, oxygen and a suitable temperature**.
+- Saying the ovule becomes the fruit. The **ovary** becomes the fruit; the **ovule** becomes the seed.
+
+## Exam tips
+
+- Learn flower parts as a labelled drawing.
+- When comparing wind and insect flowers, compare **the same feature** for both in one sentence.
+- For germination, link each condition to its reason (**enzymes**, **respiration**).
+
+Next: test yourself with the practice questions below.`,
+
+  "16.4": `## What you need to know
+
+- Identify the male and female reproductive organs and say what they do.
+- Explain how sperm and egg cells are adapted.
+- Describe fertilisation, and compare male and female gametes.
+- Describe what testosterone and oestrogen do at puberty.
+- Describe the menstrual cycle and the roles of FSH, LH, oestrogen and progesterone.
+- Describe early development of the zygote, the amniotic sac and fluid, the placenta and umbilical cord.
+- State that some viruses can cross the placenta.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Gamete | A sex cell: sperm (male) or egg (female). |
+| Fertilisation | The fusion of the nuclei of a sperm and an egg cell. |
+| Puberty | The time when the body becomes sexually mature. |
+| Secondary sexual characteristics | Changes in the body at puberty, such as breasts or a deeper voice. |
+| Menstrual cycle | The monthly cycle of egg release and changes in the uterus lining. |
+| Ovulation | Release of an egg from an ovary. |
+| Implantation | When the embryo sinks into the uterus lining. |
+| Placenta | The organ where substances pass between mother's and fetus's blood. |
+| Fetus | The developing baby, from about 8 weeks. |
+
+## Male reproductive system
+
+![The male reproductive system](/images/biology/16-4-male.svg)
+
+| Part | Job |
+|---|---|
+| **Testes** | Make **sperm** and the hormone **testosterone** |
+| **Scrotum** | Bag of skin that holds the testes outside the body, where it is slightly **cooler** for sperm production |
+| **Sperm ducts** | Carry sperm from the testes to the urethra |
+| **Prostate gland** | Adds **fluid** to sperm to make **semen**, giving nutrients for the sperm |
+| **Urethra** | Carries semen (or urine) out through the penis |
+| **Penis** | Places semen in the vagina |
+
+## Female reproductive system
+
+![The female reproductive system](/images/biology/16-4-female.svg)
+
+| Part | Job |
+|---|---|
+| **Ovaries** | Make **eggs** and the hormones **oestrogen** and **progesterone** |
+| **Oviducts** | Carry the egg to the uterus. **Fertilisation** happens here. |
+| **Uterus** (womb) | Where the baby **develops** |
+| **Cervix** | Ring of muscle at the bottom of the uterus. It holds the baby in until birth. |
+| **Vagina** | Receives the penis and sperm; the birth canal |
+
+## Sperm and egg cells
+
+| Sperm cell feature | Why |
+|---|---|
+| **Flagellum** (tail) | To **swim** to the egg |
+| Many **mitochondria** | Release **energy** for swimming |
+| **Enzymes** in the **acrosome** (in the head) | **Digest** a way into the egg |
+
+| Egg cell feature | Why |
+|---|---|
+| **Energy stores** (food in the cytoplasm) | Feed the embryo in its first days |
+| **Jelly coat** | **Changes** after fertilisation so **only one sperm** can enter |
+
+> **Fertilisation** is the fusion of the **nuclei** of a sperm and an egg cell.
+
+| | Sperm (male gamete) | Egg (female gamete) |
+|---|---|---|
+| **Size** | Very **small** | Much **larger** |
+| **Structure** | Head, midpiece, flagellum | Round, with energy stores and jelly coat |
+| **Numbers** | **Millions** made | **One** released per month |
+| **Motility** (movement) | **Swims** | Cannot move by itself |
+
+## Puberty
+
+| Hormone | Made in | Secondary sexual characteristics |
+|---|---|---|
+| **Testosterone** | Testes (boys) | Voice deepens, facial and body hair grows, muscles develop, sperm production starts |
+| **Oestrogen** | Ovaries (girls) | Breasts develop, hips widen, body hair grows, menstrual cycle starts |
+
+## The menstrual cycle
+
+![The menstrual cycle](/images/biology/16-4-menstrual-cycle.svg)
+
+The cycle lasts about **28 days**.
+
+| Days | What happens |
+|---|---|
+| **1 to 5** | **Menstruation** (period): the uterus lining breaks down and leaves the body |
+| **6 to 13** | The uterus lining **builds up** again. An egg matures in the ovary. |
+| **About 14** | **Ovulation**: an egg is released from the ovary |
+| **15 to 28** | The lining stays thick, ready for an embryo. If no egg is fertilised, the lining breaks down and the cycle starts again. |
+
+### Hormones in the cycle
+
+| Hormone | Made in | Job |
+|---|---|---|
+| **FSH** | Pituitary gland | Makes an **egg mature** in the ovary; makes the ovary produce oestrogen |
+| **Oestrogen** | Ovaries | Makes the uterus lining **build up** |
+| **LH** | Pituitary gland | Causes **ovulation** (egg release) |
+| **Progesterone** | Ovaries | **Keeps** the uterus lining thick |
+
+When progesterone falls at the end of the cycle, the lining breaks down (menstruation).
+
+## Pregnancy
+
+1. After fertilisation, the zygote divides by mitosis to form a **ball of cells**: the **embryo**.
+2. The embryo moves to the uterus and **implants** in the thick **uterus lining**.
+
+| Structure | Job |
+|---|---|
+| **Amniotic sac** | A bag that **encloses** the fetus and holds the amniotic fluid |
+| **Amniotic fluid** | **Protects** the fetus from knocks and bumps |
+| **Placenta** | Where substances **exchange** between the mother's blood and the fetus's blood |
+| **Umbilical cord** | Joins the fetus to the placenta; contains the fetus's blood vessels |
+
+At the placenta:
+
+- **Glucose, amino acids, oxygen** and other dissolved nutrients pass **from mother to fetus**.
+- **Carbon dioxide** and **urea** pass **from fetus to mother**.
+
+The mother's and fetus's blood **do not mix**. Substances diffuse across.
+
+> Some **viruses** (such as HIV and rubella) can **cross the placenta** and affect the fetus.
+
+## Common mistakes
+
+- Saying fertilisation happens in the uterus. It happens in the **oviduct**.
+- Saying LH makes the egg mature. **FSH** makes it mature; **LH** causes ovulation.
+- Saying the mother's blood flows into the fetus. The bloods **do not mix**.
+- Saying the egg swims. Eggs **cannot move**; they are moved along the oviduct.
+
+## Exam tips
+
+- Learn the four hormones and one job each: **FSH matures, oestrogen builds, LH releases, progesterone maintains**.
+- For gamete comparison, cover **size, structure, numbers and motility**.
+
+Next: test yourself with the practice questions below.`,
+
+  "17.1": `## What you need to know
+
+- Describe variation as differences between individuals of the same species.
+- Understand continuous and discontinuous variation, with examples.
+- Understand that discontinuous variation is usually caused by genes only, and continuous variation by genes and the environment.
+- Investigate examples of both types.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Variation | Differences between individuals of the same species. |
+| Phenotype | The features an organism shows, such as height or blood group. |
+| Continuous variation | A range of phenotypes between two extremes, with many in-between values. |
+| Discontinuous variation | A limited number of phenotypes, with no in-between values. |
+| Environment | The conditions around an organism, such as diet, light and climate. |
+
+## What is variation?
+
+> **Variation** is the **differences between individuals of the same species**.
+
+Look around your class: people have different heights, hair colours and blood groups. That is variation.
+
+## Two types of variation
+
+![Continuous and discontinuous variation](/images/biology/17-1-variation.svg)
+
+| | Continuous variation | Discontinuous variation |
+|---|---|---|
+| **What it gives** | A **range** of phenotypes between two extremes | A **limited number** of phenotypes, **no intermediates** |
+| **Examples** | **Body length** (height), **body mass** | **ABO blood groups**, **seed shape** and **seed colour** in peas |
+| **Caused by** | **Genes and the environment** | Usually **genes only** |
+| **Graph** | A **histogram** (often a bell-shaped curve) | A **bar chart** with separate bars |
+
+### Why is height continuous?
+
+Height is controlled by **many genes**, and also affected by the **environment**: for example, a good diet helps you grow taller. So people can be any height in a range.
+
+### Why are blood groups discontinuous?
+
+Your blood group is set by your **genes**. You are A, B, AB or O. There is nothing in between, and diet cannot change it.
+
+## Practical: investigating variation
+
+1. Measure the **height** (or hand span) of everyone in the class. Group the results (for example 150 to 154 cm, 155 to 159 cm) and draw a **histogram**. You will see continuous variation.
+2. Record a feature with clear categories, such as **blood group** or whether people can **roll their tongue**. Draw a **bar chart**. You will see discontinuous variation.
+
+## Common mistakes
+
+- Saying discontinuous variation is caused by the environment. It is usually caused by **genes only**.
+- Drawing a histogram for discontinuous data. Use a **bar chart** with gaps between bars.
+- Saying variation means differences between species. It means differences **within the same species**.
+
+## Exam tips
+
+- Learn **two examples** of each type from the syllabus.
+- When asked what causes each type, give: **continuous = genes and environment**; **discontinuous = genes only**.
+
+Next: test yourself with the practice questions below.`,
+
+  "17.2": `## What you need to know
+
+- Describe the structure of DNA: double helix, nucleotides, bases A, T, C and G, and base pairing.
+- Define a gene.
+- Explain that DNA controls cells by controlling which proteins (including enzymes) are made.
+- State that the base sequence of a gene sets the amino acid sequence of a protein.
+- Understand that different amino acid sequences give proteins different shapes.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| DNA | The chemical that genes are made of. |
+| Double helix | The shape of DNA: two strands twisted together like a spiral ladder. |
+| Nucleotide | A building block of DNA. Each contains one base. |
+| Base | Part of a nucleotide: A, T, C or G. |
+| Gene | A length of DNA that codes for a protein. |
+| Base sequence | The order of bases along a strand of DNA. |
+
+## The structure of DNA
+
+![The structure of DNA](/images/biology/17-2-dna.svg)
+
+- DNA has **two strands** coiled together to form a **double helix**.
+- Each strand is a **chain of nucleotides**.
+- Each nucleotide contains a **base**: **A**, **T**, **C** or **G**.
+- **Bonds between pairs of bases** hold the two strands together.
+- The bases always pair the same way: **A with T**, and **C with G**.
+
+> Think of a twisted ladder. The two sides are the strands. Each rung is a pair of bases joined in the middle.
+
+> Memory trick: **A**pple **T**ree, **C**ar **G**arage. A pairs with T; C pairs with G.
+
+**Example**: if one strand reads **A T G C C A**, the other strand reads **T A C G G T**.
+
+## What is a gene?
+
+> A **gene** is a **length of DNA that codes for a protein**.
+
+Each chromosome carries hundreds or thousands of genes.
+
+## How DNA controls a cell
+
+1. The **order of bases** in a gene (the **base sequence**) sets the **order of amino acids** in a protein.
+2. A different order of amino acids gives a protein a **different shape**.
+3. The shape of a protein decides its job. For example, an enzyme's **active site** shape decides which substrate it fits.
+
+So DNA controls what a cell does by controlling **which proteins**, including **enzymes**, the cell makes.
+
+> Think of the base sequence as a recipe written in a four-letter alphabet. The recipe tells the cell which amino acids to join, in which order, to build a protein.
+
+## Common mistakes
+
+- Pairing A with C or G with T. Always **A with T** and **C with G**.
+- Saying a gene codes for a feature directly. A gene codes for a **protein**; the protein affects the feature.
+- Saying DNA is made of amino acids. DNA is made of **nucleotides**; proteins are made of amino acids.
+
+## Exam tips
+
+- Practise writing the complementary strand for a given base sequence.
+- Learn the gene definition word for word: **a length of DNA that codes for a protein**.
+- Link the chain: **base sequence, amino acid sequence, protein shape, protein function**.
+
+Next: test yourself with the practice questions below.`,
+
+  "17.3": `## What you need to know
+
+- Describe inheritance and define an allele.
+- Use the words dominant, recessive, phenotype, genotype, homozygous and heterozygous.
+- Use genetic diagrams and Punnett squares to predict 1:1 and 3:1 ratios.
+- Explain why real results often differ from expected ratios.
+- State what pure-breeding means.
+- Explain codominance using ABO blood groups.
+- Describe how sex is determined (XX and XY).
+- Describe gene mutations (sickle cell anaemia) and chromosome mutations (Down's syndrome).
+- State the sources of genetic variation, and what increases the rate of mutation.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Inheritance | The passing of genetic information from one generation to the next. |
+| Allele | An alternative form of a gene. |
+| Dominant | An allele that shows in the phenotype even if only one copy is present. Shown by a capital letter, such as **T**. |
+| Recessive | An allele that only shows if two copies are present. Shown by a small letter, such as **t**. |
+| Genotype | The alleles an organism has, such as **Tt**. |
+| Phenotype | The features an organism shows, such as tall. |
+| Homozygous | Two identical alleles, such as **TT** or **tt**. |
+| Heterozygous | Two different alleles, such as **Tt**. |
+| Pure-breeding | Always produces offspring like the parents, because both parents are identical homozygous. |
+| Codominance | When both alleles in a heterozygote show in the phenotype. |
+| Mutation | A random change in DNA or chromosomes. |
+
+## Inheritance and alleles
+
+> **Inheritance** is the transmission of genetic information from generation to generation.
+
+> An **allele** is an **alternative form of a gene**.
+
+For example, the gene for height in pea plants has two alleles: **T** (tall, dominant) and **t** (short, recessive).
+
+| Genotype | Description | Phenotype |
+|---|---|---|
+| **TT** | Homozygous dominant | Tall |
+| **Tt** | Heterozygous | Tall (T is dominant) |
+| **tt** | Homozygous recessive | Short |
+
+## Genetic diagrams
+
+![Punnett squares for 3:1 and 1:1 ratios](/images/biology/17-3-punnett.svg)
+
+### A 3:1 ratio: crossing two heterozygous plants (Tt and Tt)
+
+| | **T** | **t** |
+|---|---|---|
+| **T** | TT (tall) | Tt (tall) |
+| **t** | Tt (tall) | tt (short) |
+
+**Result**: 3 tall to 1 short, a **3:1** ratio.
+
+### A 1:1 ratio: crossing a heterozygous plant with a homozygous recessive plant (Tt and tt)
+
+| | **T** | **t** |
+|---|---|---|
+| **t** | Tt (tall) | tt (short) |
+| **t** | Tt (tall) | tt (short) |
+
+**Result**: 2 tall to 2 short, a **1:1** ratio.
+
+### How to set out a genetic diagram
+
+1. Write the **parents' phenotypes**.
+2. Write the **parents' genotypes**.
+3. Write the **gametes** each parent can make (one allele per gamete).
+4. Draw a **Punnett square**.
+5. Write the **offspring genotypes** and **phenotypes**, and the **ratio**.
+
+### Why real results differ
+
+Fertilisation is **random**. With **small numbers** of offspring, the results can be quite far from the expected ratio, just as tossing a coin 4 times does not always give 2 heads and 2 tails. With **large numbers**, results get closer to the expected ratio.
+
+### Pure-breeding
+
+Two **identical homozygous** individuals (for example **tt** and **tt**) bred together are **pure-breeding**: all their offspring are the same.
+
+## Codominance: ABO blood groups
+
+In **codominance**, **both** alleles show in the phenotype.
+
+The blood group gene has three alleles: **Iᴬ**, **Iᴮ** and **Iᴼ**.
+
+- **Iᴬ** and **Iᴮ** are **codominant**.
+- **Iᴼ** is **recessive** to both.
+
+| Genotype | Blood group (phenotype) |
+|---|---|
+| IᴬIᴬ or IᴬIᴼ | **A** |
+| IᴮIᴮ or IᴮIᴼ | **B** |
+| **IᴬIᴮ** | **AB** (both show: codominance) |
+| IᴼIᴼ | **O** |
+
+## Sex determination
+
+- **Females** have two **X** chromosomes: **XX**.
+- **Males** have one **X** and one **Y**: **XY**.
+
+| | **X** (from mother) | **X** (from mother) |
+|---|---|---|
+| **X** (from father) | XX girl | XX girl |
+| **Y** (from father) | XY boy | XY boy |
+
+There is a **1:1** chance of a boy or a girl. The **father's sperm** decides the sex.
+
+## Mutation
+
+> A **gene mutation** is a **random change in the base sequence** of DNA.
+
+**Example: sickle cell anaemia.** A change in one base in the haemoglobin gene makes faulty haemoglobin. Red blood cells become **sickle-shaped**, carry less oxygen and can block capillaries.
+
+> A **chromosome mutation** is a change in the **number or structure** of chromosomes.
+
+**Example: Down's syndrome.** A person has **47 chromosomes instead of 46** (an extra copy of chromosome 21).
+
+**Ionising radiation** (such as X-rays and gamma rays) and **some chemicals** (such as chemicals in tobacco smoke) **increase the rate of mutation**.
+
+## Sources of genetic variation
+
+- **Mutation**
+- **Meiosis** (makes genetically different gametes)
+- **Random mating** (who mates with whom)
+- **Random fertilisation** (which sperm joins which egg)
+
+## Common mistakes
+
+- Mixing up genotype and phenotype. **Genotype = letters. Phenotype = what you see.**
+- Using different letters for the two alleles (such as T and s). Use the **same letter**: **T** and **t**.
+- Saying the mother decides the baby's sex. The **father's sperm** (X or Y) decides.
+- Saying AB blood group is "a mixture". Both **A and B show**: that is **codominance**.
+
+## Exam tips
+
+- Always set out genetic diagrams fully: **parents, gametes, Punnett square, offspring, ratio**.
+- Learn the six key terms and one example of each.
+- Learn the two mutation examples: **sickle cell anaemia** (gene) and **Down's syndrome** (chromosome).
+
+Next: test yourself with the practice questions below.`,
+
+  "17.4": `## What you need to know
+
+- Describe natural selection.
+- Describe how a population evolves over time by natural selection.
+- Describe antibiotic resistance (including MRSA) as an example of natural selection.
+- Describe artificial selection (selective breeding) and its role in producing useful plants and animals.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Natural selection | The process where individuals better adapted to their environment survive and reproduce more, passing on their alleles. |
+| Adapted | Having features that help an organism survive in its environment. |
+| Competition | Struggle between organisms for the same resources, such as food or mates. |
+| Evolution | Change in the inherited features of a population over many generations. |
+| Artificial selection | Humans choosing which plants or animals breed, to get desirable features. Also called selective breeding. |
+
+## Natural selection
+
+![How natural selection works](/images/biology/17-4-natural-selection.svg)
+
+Natural selection happens in five steps:
+
+1. **Variation**: individuals in a population are different from each other.
+2. **Many offspring**: organisms produce more offspring than can survive.
+3. **Struggle for survival**: there is **competition** for resources such as food, water and space. Many die.
+4. **Better adapted individuals survive and reproduce**: those with useful features are more likely to survive and have offspring.
+5. **They pass on their alleles**: their offspring inherit the useful alleles.
+
+> Memory trick: **V**ery **M**any **S**trong **S**urvivors **P**ass it on: **V**ariation, **M**any offspring, **S**truggle, **S**urvival and reproduction of the best adapted, **P**ass on alleles.
+
+## Evolution
+
+Over **many generations**, the useful alleles become **more common** in the population. The inherited features of the population **change over time**. This is **evolution**.
+
+## Example: antibiotic-resistant bacteria
+
+This is natural selection happening fast, because bacteria reproduce very quickly.
+
+1. **Variation**: by chance, a mutation makes one bacterium **resistant** to an antibiotic.
+2. When the antibiotic is used, **non-resistant bacteria die**.
+3. The **resistant bacterium survives** and has no competition.
+4. It **reproduces**, passing on the **resistance allele**.
+5. Soon most of the population is resistant, such as **MRSA**.
+
+## Artificial selection (selective breeding)
+
+Humans can change plants and animals by choosing which ones breed.
+
+1. **Humans select** animals or plants with **desirable features** (for example, cows that give lots of milk).
+2. They **cross** (breed) these to produce the next generation.
+3. They **select the offspring** that show the desirable features.
+4. They **repeat** this over **many generations**.
+
+### Economically important examples
+
+| Organism | Desirable feature |
+|---|---|
+| Dairy cows | Produce **more milk** |
+| Beef cattle | More **meat** |
+| Wheat and rice | **Higher yield**, resistance to disease |
+| Sheep | More or better **wool** |
+| Fruit and vegetables | Bigger, tastier, longer-lasting |
+
+## Natural and artificial selection compared
+
+| | Natural selection | Artificial selection |
+|---|---|---|
+| Who selects | The **environment** | **Humans** |
+| Features selected | Those that help **survival** | Those **useful to humans** |
+| Speed | Usually **slow** | **Faster** |
+
+## Common mistakes
+
+- Saying organisms "decide" or "try" to adapt. Variation is **random**; the environment **selects**.
+- Saying individuals evolve. **Populations** evolve over many generations; individuals do not.
+- Saying bacteria become resistant because of the antibiotic. The resistance comes from a **chance mutation**; the antibiotic **selects** it.
+
+## Exam tips
+
+- For natural selection, use all five points: **variation, many offspring, struggle, better adapted reproduce, pass on alleles**.
+- For selective breeding, use the four steps: **select, cross, select offspring, repeat**.
+
+Next: test yourself with the practice questions below.`,
 };
 
 export function getBiologyNotes(topic: string): string | undefined {

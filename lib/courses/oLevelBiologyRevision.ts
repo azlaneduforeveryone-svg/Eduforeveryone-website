@@ -3999,6 +3999,993 @@ export const O_LEVEL_BIOLOGY_REVISION: Record<string, TopicRevision> = {
         "tag": "Store"
       }
     ]
+  },
+  "15.1": {
+    "mindMap": {
+      "centre": "Plant responses",
+      "branches": [
+        {
+          "label": "Tropisms",
+          "items": [
+            "Phototropism: light",
+            "Gravitropism: gravity"
+          ]
+        },
+        {
+          "label": "Shoots",
+          "items": [
+            "Grow towards light",
+            "Grow away from gravity"
+          ]
+        },
+        {
+          "label": "Roots",
+          "items": [
+            "Grow towards gravity",
+            "Grow away from light"
+          ]
+        },
+        {
+          "label": "Auxin",
+          "items": [
+            "Made in shoot tip",
+            "Spreads down the plant",
+            "Moves to shaded side",
+            "Stimulates cell elongation"
+          ]
+        },
+        {
+          "label": "Practicals",
+          "items": [
+            "Light from one side",
+            "Seeds on damp cotton wool in dark",
+            "Clinostat as control"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is phototropism?",
+        "back": "Growth of plant parts towards or away from light.",
+        "tag": "Tropisms"
+      },
+      {
+        "front": "What is gravitropism?",
+        "back": "Growth of plant parts towards or away from gravity.",
+        "tag": "Tropisms"
+      },
+      {
+        "front": "How do shoots respond to light and gravity?",
+        "back": "They grow towards light and away from gravity.",
+        "tag": "Tropisms"
+      },
+      {
+        "front": "How do roots respond to gravity?",
+        "back": "They grow towards gravity (downwards).",
+        "tag": "Tropisms"
+      },
+      {
+        "front": "Where is auxin made?",
+        "back": "In the shoot tip.",
+        "tag": "Auxin"
+      },
+      {
+        "front": "What does auxin do to cells?",
+        "back": "Stimulates cell elongation.",
+        "tag": "Auxin"
+      },
+      {
+        "front": "Where does auxin collect in light from one side?",
+        "back": "On the shaded side of the shoot.",
+        "tag": "Auxin"
+      },
+      {
+        "front": "Explain why a shoot bends towards light.",
+        "back": "Auxin moves to the shaded side; cells there elongate more, so the shoot bends towards the light.",
+        "tag": "Auxin"
+      },
+      {
+        "front": "Why does a shoot lying on its side bend upwards?",
+        "back": "Auxin collects on the lower side, which grows more, so the shoot bends up.",
+        "tag": "Auxin"
+      },
+      {
+        "front": "Why are gravitropism seedlings kept in the dark?",
+        "back": "So light does not affect the direction of growth.",
+        "tag": "Practical"
+      },
+      {
+        "front": "What does a clinostat do?",
+        "back": "Turns seedlings slowly so light or gravity acts evenly on all sides, as a control.",
+        "tag": "Practical"
+      }
+    ]
+  },
+  "16.1": {
+    "mindMap": {
+      "centre": "Nuclear division",
+      "branches": [
+        {
+          "label": "Chromosomes",
+          "items": [
+            "Made of DNA",
+            "DNA carries genes"
+          ]
+        },
+        {
+          "label": "Haploid and diploid",
+          "items": [
+            "Haploid: one set, 23 in humans",
+            "Diploid: two sets, 23 pairs",
+            "Gametes are haploid"
+          ]
+        },
+        {
+          "label": "Mitosis",
+          "items": [
+            "Identical cells",
+            "Chromosome number kept",
+            "Growth, repair, replacement",
+            "Asexual reproduction"
+          ]
+        },
+        {
+          "label": "Meiosis",
+          "items": [
+            "Makes gametes",
+            "Reduction: diploid to haploid",
+            "Genetically different cells"
+          ]
+        },
+        {
+          "label": "Stem cells and cancer",
+          "items": [
+            "Stem cells: unspecialised, can specialise",
+            "Cancer: uncontrolled cell division"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What do chromosomes contain?",
+        "back": "DNA, which carries genetic information in the form of genes.",
+        "tag": "Chromosomes"
+      },
+      {
+        "front": "What is a haploid nucleus?",
+        "back": "One containing a single set of chromosomes.",
+        "tag": "Haploid"
+      },
+      {
+        "front": "What is a diploid nucleus?",
+        "back": "One containing two sets of chromosomes.",
+        "tag": "Diploid"
+      },
+      {
+        "front": "How many chromosomes in a human diploid cell?",
+        "back": "46, as 23 pairs.",
+        "tag": "Diploid"
+      },
+      {
+        "front": "Describe mitosis.",
+        "back": "Nuclear division giving genetically identical cells with the chromosome number maintained.",
+        "tag": "Mitosis"
+      },
+      {
+        "front": "Give four uses of mitosis.",
+        "back": "Growth, repair of damaged tissues, replacement of dying cells, asexual reproduction.",
+        "tag": "Mitosis"
+      },
+      {
+        "front": "What are stem cells?",
+        "back": "Unspecialised cells that divide by mitosis to make cells that can become specialised.",
+        "tag": "Stem cells"
+      },
+      {
+        "front": "What is meiosis used for?",
+        "back": "Making gametes.",
+        "tag": "Meiosis"
+      },
+      {
+        "front": "Why is meiosis called a reduction division?",
+        "back": "It halves the chromosome number, from diploid to haploid.",
+        "tag": "Meiosis"
+      },
+      {
+        "front": "Are cells from meiosis identical?",
+        "back": "No. They are genetically different.",
+        "tag": "Meiosis"
+      },
+      {
+        "front": "What causes cancer?",
+        "back": "Uncontrolled cell division.",
+        "tag": "Cancer"
+      },
+      {
+        "front": "How many chromosomes are in a human gamete?",
+        "back": "23.",
+        "tag": "Haploid"
+      }
+    ]
+  },
+  "16.2": {
+    "mindMap": {
+      "centre": "Asexual and sexual reproduction",
+      "branches": [
+        {
+          "label": "Asexual",
+          "items": [
+            "One parent",
+            "Identical offspring",
+            "No gametes"
+          ]
+        },
+        {
+          "label": "Examples",
+          "items": [
+            "Bacteria splitting",
+            "Potato tubers",
+            "Strawberry runners"
+          ]
+        },
+        {
+          "label": "Sexual",
+          "items": [
+            "Haploid nuclei fuse",
+            "Diploid zygote",
+            "Different offspring"
+          ]
+        },
+        {
+          "label": "Asexual pros and cons",
+          "items": [
+            "Fast, no mate needed",
+            "No variation",
+            "All may die if conditions change"
+          ]
+        },
+        {
+          "label": "Sexual pros and cons",
+          "items": [
+            "Variation helps survival",
+            "Slower, needs a mate"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is asexual reproduction?",
+        "back": "Producing genetically identical offspring from one parent.",
+        "tag": "Asexual"
+      },
+      {
+        "front": "Give two examples of asexual reproduction.",
+        "back": "Any two: bacteria splitting, yeast budding, potato tubers, strawberry runners, fungal spores.",
+        "tag": "Asexual"
+      },
+      {
+        "front": "What is sexual reproduction?",
+        "back": "The fusion of the nuclei of two haploid gametes to form a diploid zygote, producing genetically different offspring.",
+        "tag": "Sexual"
+      },
+      {
+        "front": "What is a zygote?",
+        "back": "The first cell of a new organism, formed at fertilisation.",
+        "tag": "Sexual"
+      },
+      {
+        "front": "Give two advantages of asexual reproduction.",
+        "back": "It is fast and needs only one parent.",
+        "tag": "Compare"
+      },
+      {
+        "front": "Give one disadvantage of asexual reproduction.",
+        "back": "No variation, so all offspring may die if the environment changes.",
+        "tag": "Compare"
+      },
+      {
+        "front": "Give one advantage of sexual reproduction.",
+        "back": "Variation, so some offspring may survive environmental change.",
+        "tag": "Compare"
+      },
+      {
+        "front": "Give one disadvantage of sexual reproduction.",
+        "back": "It is slower and usually needs a mate.",
+        "tag": "Compare"
+      },
+      {
+        "front": "What are offspring from asexual reproduction called?",
+        "back": "Clones.",
+        "tag": "Asexual"
+      },
+      {
+        "front": "Is the zygote haploid or diploid?",
+        "back": "Diploid.",
+        "tag": "Sexual"
+      }
+    ]
+  },
+  "16.3": {
+    "mindMap": {
+      "centre": "Reproduction in plants",
+      "branches": [
+        {
+          "label": "Flower parts",
+          "items": [
+            "Sepals protect bud",
+            "Petals attract insects",
+            "Anther makes pollen",
+            "Stigma catches pollen",
+            "Ovary holds ovules"
+          ]
+        },
+        {
+          "label": "Wind and insect",
+          "items": [
+            "Insect: big bright petals, sticky pollen",
+            "Wind: feathery stigmas, light pollen",
+            "Wind: anthers hang outside"
+          ]
+        },
+        {
+          "label": "Pollination",
+          "items": [
+            "Pollen from anther to stigma",
+            "Self: same plant, less variation",
+            "Cross: other plant, more variation"
+          ]
+        },
+        {
+          "label": "Fertilisation",
+          "items": [
+            "Pollen tube grows to ovule",
+            "Nuclei fuse",
+            "Ovule becomes seed, ovary fruit"
+          ]
+        },
+        {
+          "label": "Seeds and dispersal",
+          "items": [
+            "Testa, radicle, plumule, cotyledons",
+            "Wind: wings, parachutes",
+            "Animals: hooks, juicy fruit"
+          ]
+        },
+        {
+          "label": "Germination",
+          "items": [
+            "Needs water, oxygen, warmth",
+            "Enzymes break down food store"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What do petals do in an insect-pollinated flower?",
+        "back": "Attract insects with colour and scent.",
+        "tag": "Flower"
+      },
+      {
+        "front": "What does the anther do?",
+        "back": "Makes pollen.",
+        "tag": "Flower"
+      },
+      {
+        "front": "What does the stigma do?",
+        "back": "Catches pollen.",
+        "tag": "Flower"
+      },
+      {
+        "front": "What do sepals do?",
+        "back": "Protect the flower in bud.",
+        "tag": "Flower"
+      },
+      {
+        "front": "Give two features of wind-pollinated flowers.",
+        "back": "Any two: small dull petals, anthers hanging outside, large feathery stigmas, light smooth pollen in large amounts.",
+        "tag": "Wind and insect"
+      },
+      {
+        "front": "What is pollination?",
+        "back": "The transfer of pollen from an anther to a stigma.",
+        "tag": "Pollination"
+      },
+      {
+        "front": "What is cross-pollination?",
+        "back": "Transfer of pollen to a flower on a different plant of the same species.",
+        "tag": "Pollination"
+      },
+      {
+        "front": "Give one effect of self-pollination on a population.",
+        "back": "Less variation, so the population is less able to respond to environmental change.",
+        "tag": "Pollination"
+      },
+      {
+        "front": "Describe what happens after pollen lands on a stigma.",
+        "back": "A pollen tube grows down the style into an ovule, and the male nucleus fuses with the female nucleus.",
+        "tag": "Fertilisation"
+      },
+      {
+        "front": "What do the ovule and ovary become after fertilisation?",
+        "back": "The ovule becomes a seed; the ovary becomes a fruit.",
+        "tag": "Fertilisation"
+      },
+      {
+        "front": "Name the parts of a seed embryo.",
+        "back": "Radicle, plumule and cotyledons.",
+        "tag": "Seeds"
+      },
+      {
+        "front": "Why are seeds dispersed?",
+        "back": "To colonise new areas and reduce competition.",
+        "tag": "Dispersal"
+      },
+      {
+        "front": "Give one feature of a wind-dispersed fruit.",
+        "back": "Wings or parachutes of hairs so it is carried far.",
+        "tag": "Dispersal"
+      },
+      {
+        "front": "Name three conditions needed for germination.",
+        "back": "Water, oxygen and a suitable temperature.",
+        "tag": "Germination"
+      },
+      {
+        "front": "What do enzymes do in germination?",
+        "back": "Break down stored food into soluble substances for the embryo to use.",
+        "tag": "Germination"
+      }
+    ]
+  },
+  "16.4": {
+    "mindMap": {
+      "centre": "Reproduction in humans",
+      "branches": [
+        {
+          "label": "Male organs",
+          "items": [
+            "Testes: sperm, testosterone",
+            "Scrotum, sperm ducts",
+            "Prostate gland adds fluid",
+            "Urethra, penis"
+          ]
+        },
+        {
+          "label": "Female organs",
+          "items": [
+            "Ovaries: eggs, hormones",
+            "Oviduct: fertilisation",
+            "Uterus, cervix, vagina"
+          ]
+        },
+        {
+          "label": "Gametes",
+          "items": [
+            "Sperm: flagellum, mitochondria, acrosome",
+            "Egg: energy store, jelly coat",
+            "Sperm small, many, swim"
+          ]
+        },
+        {
+          "label": "Menstrual cycle",
+          "items": [
+            "Days 1 to 5: period",
+            "Day 14: ovulation",
+            "FSH, LH, oestrogen, progesterone"
+          ]
+        },
+        {
+          "label": "Pregnancy",
+          "items": [
+            "Ball of cells implants",
+            "Amniotic fluid protects",
+            "Placenta exchanges substances",
+            "Some viruses cross placenta"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What do the testes do?",
+        "back": "Make sperm and the hormone testosterone.",
+        "tag": "Male"
+      },
+      {
+        "front": "What does the prostate gland do?",
+        "back": "Adds fluid to sperm to make semen.",
+        "tag": "Male"
+      },
+      {
+        "front": "Where does fertilisation happen?",
+        "back": "In the oviduct.",
+        "tag": "Female"
+      },
+      {
+        "front": "What is the job of the uterus?",
+        "back": "Where the baby develops.",
+        "tag": "Female"
+      },
+      {
+        "front": "How is a sperm cell adapted?",
+        "back": "Flagellum to swim, many mitochondria for energy, enzymes in the acrosome to digest into the egg.",
+        "tag": "Gametes"
+      },
+      {
+        "front": "How is an egg cell adapted?",
+        "back": "Energy stores to feed the embryo, and a jelly coat that changes so only one sperm enters.",
+        "tag": "Gametes"
+      },
+      {
+        "front": "What is fertilisation?",
+        "back": "The fusion of the nuclei of a sperm and an egg cell.",
+        "tag": "Gametes"
+      },
+      {
+        "front": "Compare sperm and egg in size and numbers.",
+        "back": "Sperm are much smaller and made in millions; eggs are larger and one is released each month.",
+        "tag": "Gametes"
+      },
+      {
+        "front": "What does testosterone do at puberty?",
+        "back": "Develops male secondary sexual characteristics, such as a deeper voice and facial hair.",
+        "tag": "Puberty"
+      },
+      {
+        "front": "What does FSH do?",
+        "back": "Makes an egg mature in the ovary.",
+        "tag": "Cycle"
+      },
+      {
+        "front": "What does LH do?",
+        "back": "Causes ovulation.",
+        "tag": "Cycle"
+      },
+      {
+        "front": "What does oestrogen do in the menstrual cycle?",
+        "back": "Makes the uterus lining build up.",
+        "tag": "Cycle"
+      },
+      {
+        "front": "What does progesterone do?",
+        "back": "Keeps the uterus lining thick.",
+        "tag": "Cycle"
+      },
+      {
+        "front": "What does amniotic fluid do?",
+        "back": "Protects the fetus from knocks.",
+        "tag": "Pregnancy"
+      },
+      {
+        "front": "What passes from mother to fetus across the placenta?",
+        "back": "Dissolved nutrients such as glucose and amino acids, and oxygen.",
+        "tag": "Pregnancy"
+      },
+      {
+        "front": "What passes from fetus to mother across the placenta?",
+        "back": "Carbon dioxide and urea.",
+        "tag": "Pregnancy"
+      }
+    ]
+  },
+  "17.1": {
+    "mindMap": {
+      "centre": "Variation",
+      "branches": [
+        {
+          "label": "Definition",
+          "items": [
+            "Differences within a species",
+            "Shown by phenotypes"
+          ]
+        },
+        {
+          "label": "Continuous",
+          "items": [
+            "Range between two extremes",
+            "Height, body mass",
+            "Genes and environment"
+          ]
+        },
+        {
+          "label": "Graphs",
+          "items": [
+            "Continuous: histogram",
+            "Discontinuous: bar chart"
+          ]
+        },
+        {
+          "label": "Discontinuous",
+          "items": [
+            "Few groups, no in-between",
+            "ABO blood groups",
+            "Pea seed shape and colour",
+            "Genes only"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is variation?",
+        "back": "Differences between individuals of the same species.",
+        "tag": "Definition"
+      },
+      {
+        "front": "What is continuous variation?",
+        "back": "Variation giving a range of phenotypes between two extremes.",
+        "tag": "Continuous"
+      },
+      {
+        "front": "Give two examples of continuous variation.",
+        "back": "Body length (height) and body mass.",
+        "tag": "Continuous"
+      },
+      {
+        "front": "What causes continuous variation?",
+        "back": "Genes and the environment.",
+        "tag": "Continuous"
+      },
+      {
+        "front": "What is discontinuous variation?",
+        "back": "Variation giving a limited number of phenotypes with no intermediates.",
+        "tag": "Discontinuous"
+      },
+      {
+        "front": "Give two examples of discontinuous variation.",
+        "back": "ABO blood groups and seed shape (or seed colour) in peas.",
+        "tag": "Discontinuous"
+      },
+      {
+        "front": "What usually causes discontinuous variation?",
+        "back": "Genes only.",
+        "tag": "Discontinuous"
+      },
+      {
+        "front": "Which graph shows continuous variation?",
+        "back": "A histogram.",
+        "tag": "Graphs"
+      },
+      {
+        "front": "Which graph shows discontinuous variation?",
+        "back": "A bar chart.",
+        "tag": "Graphs"
+      },
+      {
+        "front": "Why is height affected by the environment?",
+        "back": "Factors like diet affect how tall a person grows.",
+        "tag": "Continuous"
+      }
+    ]
+  },
+  "17.2": {
+    "mindMap": {
+      "centre": "DNA",
+      "branches": [
+        {
+          "label": "Structure",
+          "items": [
+            "Two strands, double helix",
+            "Chains of nucleotides",
+            "Bases A, T, C, G"
+          ]
+        },
+        {
+          "label": "Base pairing",
+          "items": [
+            "A with T",
+            "C with G",
+            "Bonds hold strands together"
+          ]
+        },
+        {
+          "label": "Gene",
+          "items": [
+            "Length of DNA",
+            "Codes for a protein"
+          ]
+        },
+        {
+          "label": "Control of the cell",
+          "items": [
+            "Base sequence sets amino acid order",
+            "Order sets protein shape",
+            "Proteins include enzymes"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Describe the shape of DNA.",
+        "back": "Two strands coiled together as a double helix.",
+        "tag": "Structure"
+      },
+      {
+        "front": "What is each DNA strand made of?",
+        "back": "A chain of nucleotides.",
+        "tag": "Structure"
+      },
+      {
+        "front": "Name the four bases in DNA.",
+        "back": "A, T, C and G.",
+        "tag": "Structure"
+      },
+      {
+        "front": "Which bases pair together?",
+        "back": "A with T, and C with G.",
+        "tag": "Pairing"
+      },
+      {
+        "front": "What holds the two strands together?",
+        "back": "Bonds between pairs of bases.",
+        "tag": "Pairing"
+      },
+      {
+        "front": "Give the complementary strand for ATGC.",
+        "back": "TACG.",
+        "tag": "Pairing"
+      },
+      {
+        "front": "What is a gene?",
+        "back": "A length of DNA that codes for a protein.",
+        "tag": "Gene"
+      },
+      {
+        "front": "How does DNA control cell function?",
+        "back": "By controlling which proteins, including enzymes, are made.",
+        "tag": "Control"
+      },
+      {
+        "front": "What does the base sequence of a gene decide?",
+        "back": "The amino acid sequence of a protein.",
+        "tag": "Control"
+      },
+      {
+        "front": "Why do proteins have different shapes?",
+        "back": "They have different amino acid sequences.",
+        "tag": "Control"
+      }
+    ]
+  },
+  "17.3": {
+    "mindMap": {
+      "centre": "Inheritance",
+      "branches": [
+        {
+          "label": "Key terms",
+          "items": [
+            "Allele: form of a gene",
+            "Dominant, recessive",
+            "Genotype, phenotype",
+            "Homozygous, heterozygous"
+          ]
+        },
+        {
+          "label": "Crosses",
+          "items": [
+            "Tt x Tt gives 3:1",
+            "Tt x tt gives 1:1",
+            "Small samples differ from ratio"
+          ]
+        },
+        {
+          "label": "Codominance",
+          "items": [
+            "Blood groups A, B, AB, O",
+            "IA and IB codominant",
+            "IO recessive"
+          ]
+        },
+        {
+          "label": "Sex",
+          "items": [
+            "XX female",
+            "XY male",
+            "Father's sperm decides"
+          ]
+        },
+        {
+          "label": "Mutation",
+          "items": [
+            "Gene: sickle cell anaemia",
+            "Chromosome: Down's syndrome, 47",
+            "Radiation, chemicals increase rate"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is inheritance?",
+        "back": "The transmission of genetic information from generation to generation.",
+        "tag": "Terms"
+      },
+      {
+        "front": "What is an allele?",
+        "back": "An alternative form of a gene.",
+        "tag": "Terms"
+      },
+      {
+        "front": "What is a recessive allele?",
+        "back": "One that only shows in the phenotype when two copies are present.",
+        "tag": "Terms"
+      },
+      {
+        "front": "What does heterozygous mean?",
+        "back": "Having two different alleles of a gene, such as Tt.",
+        "tag": "Terms"
+      },
+      {
+        "front": "What is the difference between genotype and phenotype?",
+        "back": "Genotype is the alleles (such as Tt); phenotype is the feature shown (such as tall).",
+        "tag": "Terms"
+      },
+      {
+        "front": "What ratio comes from crossing two heterozygous parents?",
+        "back": "3:1 (dominant to recessive phenotype).",
+        "tag": "Crosses"
+      },
+      {
+        "front": "What ratio comes from crossing Tt with tt?",
+        "back": "1:1.",
+        "tag": "Crosses"
+      },
+      {
+        "front": "Why do real results often differ from expected ratios?",
+        "back": "Fertilisation is random, and with small numbers of offspring chance has a big effect.",
+        "tag": "Crosses"
+      },
+      {
+        "front": "What does pure-breeding mean?",
+        "back": "Two identical homozygous parents always produce offspring the same as themselves.",
+        "tag": "Crosses"
+      },
+      {
+        "front": "What is codominance?",
+        "back": "When both alleles in a heterozygote show in the phenotype, such as blood group AB.",
+        "tag": "Codominance"
+      },
+      {
+        "front": "Which genotype gives blood group O?",
+        "back": "IᴼIᴼ.",
+        "tag": "Codominance"
+      },
+      {
+        "front": "What are the sex chromosomes of a male?",
+        "back": "XY.",
+        "tag": "Sex"
+      },
+      {
+        "front": "What is a gene mutation? Give an example.",
+        "back": "A random change in the base sequence of DNA, such as in sickle cell anaemia.",
+        "tag": "Mutation"
+      },
+      {
+        "front": "What is a chromosome mutation? Give an example.",
+        "back": "A change in chromosome number or structure, such as Down's syndrome (47 chromosomes).",
+        "tag": "Mutation"
+      },
+      {
+        "front": "Name four sources of genetic variation.",
+        "back": "Mutation, meiosis, random mating and random fertilisation.",
+        "tag": "Variation"
+      },
+      {
+        "front": "What increases the rate of mutation?",
+        "back": "Ionising radiation and some chemicals.",
+        "tag": "Mutation"
+      }
+    ]
+  },
+  "17.4": {
+    "mindMap": {
+      "centre": "Selection",
+      "branches": [
+        {
+          "label": "Natural selection",
+          "items": [
+            "Variation in population",
+            "Many offspring",
+            "Struggle and competition",
+            "Best adapted reproduce",
+            "Pass on alleles"
+          ]
+        },
+        {
+          "label": "Evolution",
+          "items": [
+            "Useful alleles become common",
+            "Population changes over time"
+          ]
+        },
+        {
+          "label": "Antibiotic resistance",
+          "items": [
+            "Chance mutation",
+            "Others killed",
+            "Resistant ones reproduce, MRSA"
+          ]
+        },
+        {
+          "label": "Artificial selection",
+          "items": [
+            "Humans choose parents",
+            "Cross them",
+            "Select offspring, repeat"
+          ]
+        },
+        {
+          "label": "Uses",
+          "items": [
+            "More milk, more meat",
+            "Higher crop yield",
+            "Disease resistance"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "List the five points of natural selection.",
+        "back": "Variation, many offspring, struggle for survival, better adapted individuals reproduce, they pass on their alleles.",
+        "tag": "Natural selection"
+      },
+      {
+        "front": "Why is there a struggle for survival?",
+        "back": "More offspring are produced than can survive, so they compete for limited resources.",
+        "tag": "Natural selection"
+      },
+      {
+        "front": "What happens to better adapted individuals?",
+        "back": "They are more likely to survive, reproduce and pass on their alleles.",
+        "tag": "Natural selection"
+      },
+      {
+        "front": "What is evolution?",
+        "back": "A change in the inherited features of a population over many generations.",
+        "tag": "Evolution"
+      },
+      {
+        "front": "Explain how antibiotic resistance is an example of natural selection.",
+        "back": "A chance mutation makes some bacteria resistant; the antibiotic kills others; resistant bacteria reproduce and pass on the allele.",
+        "tag": "Resistance"
+      },
+      {
+        "front": "Name a bacterium that is resistant to many antibiotics.",
+        "back": "MRSA.",
+        "tag": "Resistance"
+      },
+      {
+        "front": "What is artificial selection?",
+        "back": "Humans selecting plants or animals with desirable features to breed, over many generations.",
+        "tag": "Artificial"
+      },
+      {
+        "front": "List the steps of selective breeding.",
+        "back": "Select parents with desirable features, cross them, select offspring with the features, repeat over many generations.",
+        "tag": "Artificial"
+      },
+      {
+        "front": "Give two examples of selective breeding.",
+        "back": "Any two: cows for more milk, cattle for meat, high-yield wheat, disease-resistant crops.",
+        "tag": "Artificial"
+      },
+      {
+        "front": "Who does the selecting in natural selection?",
+        "back": "The environment.",
+        "tag": "Compare"
+      },
+      {
+        "front": "Who does the selecting in artificial selection?",
+        "back": "Humans.",
+        "tag": "Compare"
+      }
+    ]
   }
 };
 
