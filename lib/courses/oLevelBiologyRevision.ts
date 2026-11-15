@@ -4986,6 +4986,725 @@ export const O_LEVEL_BIOLOGY_REVISION: Record<string, TopicRevision> = {
         "tag": "Compare"
       }
     ]
+  },
+  "18.1": {
+    "mindMap": {
+      "centre": "Biotechnology",
+      "branches": [
+        {
+          "label": "Yeast",
+          "items": [
+            "Bread: carbon dioxide makes dough rise",
+            "Ethanol: drinks and biofuel",
+            "Anaerobic respiration"
+          ]
+        },
+        {
+          "label": "Why bacteria",
+          "items": [
+            "Reproduce rapidly",
+            "Make complex molecules",
+            "No ethical concerns",
+            "Have plasmids"
+          ]
+        },
+        {
+          "label": "Fermenter",
+          "items": [
+            "Water jacket controls temperature",
+            "pH probe, sterile air for oxygen",
+            "Nutrients in, wastes out",
+            "Stirrer mixes"
+          ]
+        },
+        {
+          "label": "Enzymes in products",
+          "items": [
+            "Washing powder: protease, lipase",
+            "Pectinase: more, clearer juice",
+            "Lactase: lactose-free milk"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "How does yeast make bread rise?",
+        "back": "It respires sugar and makes carbon dioxide bubbles that make the dough rise.",
+        "tag": "Yeast"
+      },
+      {
+        "front": "What does yeast make in anaerobic respiration that is used as a fuel?",
+        "back": "Ethanol.",
+        "tag": "Yeast"
+      },
+      {
+        "front": "Give four reasons bacteria are useful in biotechnology.",
+        "back": "They reproduce rapidly, make complex molecules, raise no ethical concerns, and have plasmids.",
+        "tag": "Bacteria"
+      },
+      {
+        "front": "Why are plasmids useful?",
+        "back": "They are small rings of DNA that can be removed, changed and put back easily.",
+        "tag": "Bacteria"
+      },
+      {
+        "front": "What is a fermenter?",
+        "back": "A large container for growing microorganisms to make products on a large scale.",
+        "tag": "Fermenter"
+      },
+      {
+        "front": "Why does a fermenter need a water jacket?",
+        "back": "To remove heat from respiration and keep the temperature at the optimum.",
+        "tag": "Fermenter"
+      },
+      {
+        "front": "Why is sterile air bubbled into a fermenter?",
+        "back": "To supply oxygen for aerobic respiration without letting other microorganisms in.",
+        "tag": "Fermenter"
+      },
+      {
+        "front": "Name five conditions controlled in a fermenter.",
+        "back": "Temperature, pH, oxygen, nutrient supply and waste products.",
+        "tag": "Fermenter"
+      },
+      {
+        "front": "Which enzymes are in biological washing powders and what do they do?",
+        "back": "Proteases and lipases, which break down protein and fat stains.",
+        "tag": "Enzymes"
+      },
+      {
+        "front": "What does pectinase do in fruit juice production?",
+        "back": "Breaks down pectin in cell walls, giving more and clearer juice.",
+        "tag": "Enzymes"
+      },
+      {
+        "front": "What does lactase do?",
+        "back": "Breaks down lactose to make lactose-free milk.",
+        "tag": "Enzymes"
+      }
+    ]
+  },
+  "18.2": {
+    "mindMap": {
+      "centre": "Genetic modification",
+      "branches": [
+        {
+          "label": "Definition",
+          "items": [
+            "Removing, changing or inserting genes",
+            "Makes a GMO"
+          ]
+        },
+        {
+          "label": "Insulin from bacteria",
+          "items": [
+            "Human insulin gene cut out",
+            "Inserted into a plasmid",
+            "Bacteria grown in fermenter"
+          ]
+        },
+        {
+          "label": "GM crops",
+          "items": [
+            "Herbicide resistance",
+            "Insect pest resistance",
+            "Extra vitamins"
+          ]
+        },
+        {
+          "label": "Advantages",
+          "items": [
+            "Higher yields",
+            "Less insecticide",
+            "More nutritious food"
+          ]
+        },
+        {
+          "label": "Risks",
+          "items": [
+            "Genes spread to wild plants",
+            "Harm to other insects",
+            "Less variation, cost"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is genetic modification?",
+        "back": "Changing an organism's genetic material by removing, changing or inserting individual genes.",
+        "tag": "Definition"
+      },
+      {
+        "front": "Which human gene has been put into bacteria for commercial production?",
+        "back": "The human insulin gene.",
+        "tag": "Insulin"
+      },
+      {
+        "front": "Outline how bacteria are modified to make insulin.",
+        "back": "The insulin gene is cut out and inserted into a plasmid, which is put into a bacterium; the bacteria multiply in a fermenter and make insulin.",
+        "tag": "Insulin"
+      },
+      {
+        "front": "Why put a herbicide-resistance gene into a crop?",
+        "back": "So weedkiller can be sprayed to kill weeds without harming the crop.",
+        "tag": "Crops"
+      },
+      {
+        "front": "Why put an insect-resistance gene into a crop?",
+        "back": "So the crop is protected from insect pests and less insecticide is needed.",
+        "tag": "Crops"
+      },
+      {
+        "front": "Give an example of a crop modified to provide extra vitamins.",
+        "back": "Golden Rice, which provides a source of vitamin A.",
+        "tag": "Crops"
+      },
+      {
+        "front": "Give two advantages of GM crops.",
+        "back": "Any two: higher yields, less insecticide, more nutritious food.",
+        "tag": "Discuss"
+      },
+      {
+        "front": "Give two risks of GM crops.",
+        "back": "Any two: genes spreading to wild plants, harm to other insects, unknown health effects, less variation, costly seeds.",
+        "tag": "Discuss"
+      },
+      {
+        "front": "Give one advantage of using GM bacteria.",
+        "back": "Large amounts of cheap human insulin.",
+        "tag": "Discuss"
+      },
+      {
+        "front": "What is a superweed?",
+        "back": "A wild plant that has gained a herbicide-resistance gene from a GM crop.",
+        "tag": "Discuss"
+      }
+    ]
+  },
+  "19.1": {
+    "mindMap": {
+      "centre": "Energy flow",
+      "branches": [
+        {
+          "label": "The Sun",
+          "items": [
+            "Main energy input",
+            "Captured by photosynthesis",
+            "Life depends on it"
+          ]
+        },
+        {
+          "label": "Food chains",
+          "items": [
+            "Arrows show energy flow",
+            "Producer, then consumers",
+            "Decomposers break down waste"
+          ]
+        },
+        {
+          "label": "Roles",
+          "items": [
+            "Herbivore eats plants",
+            "Carnivore eats animals",
+            "Decomposer: bacteria, fungi"
+          ]
+        },
+        {
+          "label": "Energy loss",
+          "items": [
+            "Respiration, heat",
+            "Not all eaten or digested",
+            "Excretion",
+            "So chains are short"
+          ]
+        },
+        {
+          "label": "Pyramids",
+          "items": [
+            "Numbers: can be odd shape",
+            "Biomass: usually a pyramid",
+            "Energy: always a pyramid"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is the main energy input to most living systems?",
+        "back": "The Sun.",
+        "tag": "Sun"
+      },
+      {
+        "front": "Why does most life depend on photosynthesis?",
+        "back": "Producers capture light energy in food that all other organisms eat directly or indirectly.",
+        "tag": "Sun"
+      },
+      {
+        "front": "What do the arrows in a food chain show?",
+        "back": "The direction of energy flow, from food to the eater.",
+        "tag": "Food chains"
+      },
+      {
+        "front": "What is a producer?",
+        "back": "An organism that makes its own food, usually by photosynthesis.",
+        "tag": "Roles"
+      },
+      {
+        "front": "What is a herbivore?",
+        "back": "An animal that eats plants.",
+        "tag": "Roles"
+      },
+      {
+        "front": "What is a decomposer?",
+        "back": "An organism, such as bacteria or fungi, that gets energy from dead or waste material.",
+        "tag": "Roles"
+      },
+      {
+        "front": "What is a food web?",
+        "back": "A network of interconnected food chains.",
+        "tag": "Food webs"
+      },
+      {
+        "front": "Give three ways energy is lost between trophic levels.",
+        "back": "Any three: respiration and heat loss, not all parts eaten, not all digested (faeces), excretion.",
+        "tag": "Energy loss"
+      },
+      {
+        "front": "Why do food chains usually have fewer than five trophic levels?",
+        "back": "So much energy is lost at each level that too little is left for more levels.",
+        "tag": "Energy loss"
+      },
+      {
+        "front": "Why is eating crops more efficient than eating livestock?",
+        "back": "There is one less trophic level, so less energy is lost.",
+        "tag": "Energy loss"
+      },
+      {
+        "front": "Which pyramid is always a true pyramid shape?",
+        "back": "The pyramid of energy.",
+        "tag": "Pyramids"
+      },
+      {
+        "front": "Why can a pyramid of numbers be an odd shape?",
+        "back": "One large producer, like a tree, can feed many small consumers.",
+        "tag": "Pyramids"
+      }
+    ]
+  },
+  "19.2": {
+    "mindMap": {
+      "centre": "Nutrient cycles",
+      "branches": [
+        {
+          "label": "Carbon removed from air",
+          "items": [
+            "Photosynthesis by plants",
+            "Carbon made into glucose"
+          ]
+        },
+        {
+          "label": "Carbon added to air",
+          "items": [
+            "Respiration",
+            "Decomposition",
+            "Combustion"
+          ]
+        },
+        {
+          "label": "Carbon stored",
+          "items": [
+            "Feeding passes carbon on",
+            "Fossil fuels form"
+          ]
+        },
+        {
+          "label": "Nitrogen cycle",
+          "items": [
+            "Protein to ammonium (decomposition)",
+            "Ammonium to nitrate (nitrification)",
+            "Plants absorb nitrate",
+            "Make amino acids, proteins"
+          ]
+        },
+        {
+          "label": "Nitrogen in and out of air",
+          "items": [
+            "Fixation by lightning, bacteria",
+            "Denitrification to nitrogen gas"
+          ]
+        },
+        {
+          "label": "Decomposers",
+          "items": [
+            "Fungi and bacteria",
+            "Release CO₂ and ammonium"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Which process removes carbon dioxide from the air?",
+        "back": "Photosynthesis.",
+        "tag": "Carbon"
+      },
+      {
+        "front": "Name three processes that add carbon dioxide to the air.",
+        "back": "Respiration, decomposition and combustion.",
+        "tag": "Carbon"
+      },
+      {
+        "front": "How are fossil fuels formed?",
+        "back": "Dead organisms that do not decompose are changed over millions of years into coal, oil and gas.",
+        "tag": "Carbon"
+      },
+      {
+        "front": "How does carbon pass from plants to animals?",
+        "back": "By feeding.",
+        "tag": "Carbon"
+      },
+      {
+        "front": "What happens to protein in dead organisms in the nitrogen cycle?",
+        "back": "Decomposers break it down into ammonium ions.",
+        "tag": "Nitrogen"
+      },
+      {
+        "front": "What is nitrification?",
+        "back": "Bacteria converting ammonium ions into nitrate ions.",
+        "tag": "Nitrogen"
+      },
+      {
+        "front": "How do plants get nitrogen?",
+        "back": "They absorb nitrate ions from the soil.",
+        "tag": "Nitrogen"
+      },
+      {
+        "front": "What is nitrogen fixation? Name two ways it happens.",
+        "back": "Turning nitrogen gas into usable compounds, by lightning and by nitrogen-fixing bacteria.",
+        "tag": "Nitrogen"
+      },
+      {
+        "front": "What is denitrification?",
+        "back": "Bacteria converting nitrate ions back into nitrogen gas.",
+        "tag": "Nitrogen"
+      },
+      {
+        "front": "How do animals get nitrogen?",
+        "back": "By eating and digesting proteins.",
+        "tag": "Nitrogen"
+      },
+      {
+        "front": "What is the role of decomposers?",
+        "back": "Break down dead material and waste, releasing carbon dioxide and ammonium ions.",
+        "tag": "Decomposers"
+      }
+    ]
+  },
+  "19.3": {
+    "mindMap": {
+      "centre": "Ecosystems and biodiversity",
+      "branches": [
+        {
+          "label": "Population",
+          "items": [
+            "One species",
+            "Same area, same time"
+          ]
+        },
+        {
+          "label": "Community",
+          "items": [
+            "All populations of different species",
+            "Living in one ecosystem"
+          ]
+        },
+        {
+          "label": "Ecosystem",
+          "items": [
+            "Community and environment",
+            "Interacting together"
+          ]
+        },
+        {
+          "label": "Biodiversity",
+          "items": [
+            "Number of species in an area",
+            "High in rainforests"
+          ]
+        },
+        {
+          "label": "Population growth",
+          "items": [
+            "Food supply",
+            "Competition",
+            "Predation",
+            "Disease"
+          ]
+        },
+        {
+          "label": "Humans",
+          "items": [
+            "Population growing fast",
+            "More demand for resources"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is a population?",
+        "back": "A group of organisms of one species, living in the same area at the same time.",
+        "tag": "Definitions"
+      },
+      {
+        "front": "What is a community?",
+        "back": "All the populations of different species in an ecosystem.",
+        "tag": "Definitions"
+      },
+      {
+        "front": "What is an ecosystem?",
+        "back": "A unit containing the community of organisms and their environment, interacting together.",
+        "tag": "Definitions"
+      },
+      {
+        "front": "What is biodiversity?",
+        "back": "The number of different species living in an area.",
+        "tag": "Definitions"
+      },
+      {
+        "front": "Name four factors affecting population growth rate.",
+        "back": "Food supply, competition, predation and disease.",
+        "tag": "Growth"
+      },
+      {
+        "front": "How does predation affect prey numbers?",
+        "back": "More predators means more prey are eaten, so prey numbers fall.",
+        "tag": "Growth"
+      },
+      {
+        "front": "How does food supply affect population growth?",
+        "back": "More food allows the population to grow; a shortage makes it fall.",
+        "tag": "Growth"
+      },
+      {
+        "front": "Why does disease affect crowded populations most?",
+        "back": "Pathogens spread more easily between organisms living close together.",
+        "tag": "Growth"
+      },
+      {
+        "front": "What is the effect of human population growth on resources?",
+        "back": "It increases demand for global resources such as food, water, land and energy.",
+        "tag": "Humans"
+      },
+      {
+        "front": "Give an example of a population in a pond.",
+        "back": "All the frogs in the pond.",
+        "tag": "Definitions"
+      }
+    ]
+  },
+  "19.4": {
+    "mindMap": {
+      "centre": "Human effects on ecosystems",
+      "branches": [
+        {
+          "label": "Deforestation",
+          "items": [
+            "Loss of biodiversity, extinction",
+            "Soil loss, flooding",
+            "More carbon dioxide"
+          ]
+        },
+        {
+          "label": "Over-harvesting and aliens",
+          "items": [
+            "Species taken faster than they recover",
+            "Non-native species outcompete natives"
+          ]
+        },
+        {
+          "label": "Eutrophication",
+          "items": [
+            "Extra nitrate, algae grow",
+            "Producers die, decomposed",
+            "Bacteria use up oxygen",
+            "Fish die"
+          ]
+        },
+        {
+          "label": "Global warming",
+          "items": [
+            "Carbon dioxide and methane",
+            "Ice melts, sea level rises",
+            "Extreme weather"
+          ]
+        },
+        {
+          "label": "Other pollution",
+          "items": [
+            "Insecticides kill useful insects",
+            "Herbicides cut biodiversity",
+            "Plastics: not biodegradable"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Give three consequences of deforestation.",
+        "back": "Any three: loss of biodiversity, extinction, soil loss, flooding, more carbon dioxide in the air.",
+        "tag": "Deforestation"
+      },
+      {
+        "front": "Why does deforestation increase flooding?",
+        "back": "There are fewer trees to absorb rainwater, so it runs off quickly.",
+        "tag": "Deforestation"
+      },
+      {
+        "front": "Why does deforestation increase atmospheric carbon dioxide?",
+        "back": "Fewer trees photosynthesise, and burning trees releases carbon dioxide.",
+        "tag": "Deforestation"
+      },
+      {
+        "front": "What is over-harvesting?",
+        "back": "Taking a species from the wild faster than it can replace itself.",
+        "tag": "Over-harvesting"
+      },
+      {
+        "front": "Why can a non-native species harm an ecosystem?",
+        "back": "It may have no predators, so it spreads and outcompetes or eats native species.",
+        "tag": "Non-native"
+      },
+      {
+        "front": "What causes eutrophication?",
+        "back": "Untreated sewage or nitrogen-containing fertilisers entering water.",
+        "tag": "Eutrophication"
+      },
+      {
+        "front": "List the steps of eutrophication.",
+        "back": "More nitrate, producers grow, producers die, more decomposition, decomposers respire aerobically, oxygen falls, organisms die.",
+        "tag": "Eutrophication"
+      },
+      {
+        "front": "Why does oxygen fall in eutrophication?",
+        "back": "Decomposers break down dead plants and use oxygen in aerobic respiration.",
+        "tag": "Eutrophication"
+      },
+      {
+        "front": "Name two greenhouse gases.",
+        "back": "Carbon dioxide and methane.",
+        "tag": "Global warming"
+      },
+      {
+        "front": "Give two likely effects of global warming.",
+        "back": "Any two: melting ice and rising sea levels, extreme weather, species moving or becoming extinct, crop failure.",
+        "tag": "Global warming"
+      },
+      {
+        "front": "Give one harmful effect of insecticides.",
+        "back": "They kill useful insects such as bees.",
+        "tag": "Pollution"
+      },
+      {
+        "front": "Why are non-biodegradable plastics harmful?",
+        "back": "They are not broken down; animals get tangled in them or eat them.",
+        "tag": "Pollution"
+      }
+    ]
+  },
+  "19.5": {
+    "mindMap": {
+      "centre": "Conservation",
+      "branches": [
+        {
+          "label": "Reasons",
+          "items": [
+            "Maintain biodiversity",
+            "Reduce extinction",
+            "Protect vulnerable environments"
+          ]
+        },
+        {
+          "label": "Sustainable resource",
+          "items": [
+            "Replaced as fast as removed",
+            "Does not run out"
+          ]
+        },
+        {
+          "label": "Forests",
+          "items": [
+            "Education",
+            "Protected areas",
+            "Quotas",
+            "Replanting"
+          ]
+        },
+        {
+          "label": "Fish stocks",
+          "items": [
+            "Closed seasons, protected areas",
+            "Larger mesh size",
+            "Quotas, monitoring",
+            "Education"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Give three reasons for conserving species.",
+        "back": "To maintain biodiversity, reduce extinction and protect vulnerable environments.",
+        "tag": "Reasons"
+      },
+      {
+        "front": "What is a sustainable resource?",
+        "back": "One that is produced as rapidly as it is removed from the environment, so it does not run out.",
+        "tag": "Sustainable"
+      },
+      {
+        "front": "Name four ways to conserve forests.",
+        "back": "Education, protected areas, quotas and replanting.",
+        "tag": "Forests"
+      },
+      {
+        "front": "How does replanting help conserve forests?",
+        "back": "New trees replace those cut down.",
+        "tag": "Forests"
+      },
+      {
+        "front": "What is a closed season in fishing?",
+        "back": "A time, usually the breeding season, when fishing is not allowed.",
+        "tag": "Fish"
+      },
+      {
+        "front": "How does a larger mesh size help fish stocks?",
+        "back": "Young fish can escape, grow and breed.",
+        "tag": "Fish"
+      },
+      {
+        "front": "What is a fishing quota?",
+        "back": "A limit on how many fish can be caught.",
+        "tag": "Fish"
+      },
+      {
+        "front": "Why is monitoring of fish stocks useful?",
+        "back": "Rules can be changed if numbers fall.",
+        "tag": "Fish"
+      },
+      {
+        "front": "Why does maintaining biodiversity matter?",
+        "back": "Food webs stay stable, and species provide food, medicines and materials.",
+        "tag": "Reasons"
+      },
+      {
+        "front": "Name six ways fish stocks can be conserved.",
+        "back": "Education, closed seasons, protected areas, controlled net types and mesh size, quotas, monitoring.",
+        "tag": "Fish"
+      }
+    ]
   }
 };
 

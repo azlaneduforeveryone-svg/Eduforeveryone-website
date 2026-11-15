@@ -4396,6 +4396,542 @@ Humans can change plants and animals by choosing which ones breed.
 - For selective breeding, use the four steps: **select, cross, select offspring, repeat**.
 
 Next: test yourself with the practice questions below.`,
+
+  "18.1": `## What you need to know
+
+- Explain how yeast is used to make bread and ethanol.
+- Explain why bacteria are useful in biotechnology and genetic modification.
+- Describe how fermenters are used for large-scale production.
+- Describe the use of enzymes in biological washing powders, pectinase for fruit juice and lactase for lactose-free milk.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Biotechnology | Using living organisms, such as bacteria and yeast, to make useful products. |
+| Fermenter | A large container where microorganisms are grown to make products on a large scale. |
+| Plasmid | A small ring of DNA in a bacterium. |
+| Pectinase | An enzyme that breaks down pectin in plant cell walls. |
+| Lactase | An enzyme that breaks down lactose (milk sugar). |
+
+## Yeast
+
+Yeast is a single-celled fungus. In **anaerobic respiration** it makes **ethanol** and **carbon dioxide**.
+
+| Product | How yeast helps |
+|---|---|
+| **Bread** | Yeast is mixed into dough. It respires the sugar and makes **carbon dioxide** bubbles, which make the dough **rise**. Baking kills the yeast and the ethanol evaporates. |
+| **Ethanol** | Yeast respires sugars **anaerobically** and makes **ethanol**. This is used for alcoholic drinks and as a **biofuel**. |
+
+## Why bacteria are useful
+
+| Reason | Why it matters |
+|---|---|
+| **Reproduce very rapidly** | Huge numbers can be grown quickly. |
+| **Can make complex molecules** | Such as proteins (for example, insulin). |
+| **No ethical concerns** | Few people object to growing and changing bacteria. |
+| **Have plasmids** | Plasmids are small rings of DNA that are easy to remove, change and put back. Useful for **genetic modification**. |
+
+## Fermenters
+
+![A fermenter](/images/biology/18-1-fermenter.svg)
+
+A **fermenter** grows bacteria or fungi on a **large scale** to make products such as insulin, penicillin or enzymes.
+
+Conditions are carefully **controlled** so the microorganisms grow as fast as possible:
+
+| Condition | How it is controlled | Why |
+|---|---|---|
+| **Temperature** | A **water jacket** removes heat | Respiration releases heat; enzymes would be denatured if too hot |
+| **pH** | A pH probe; acid or alkali added | Enzymes work best at their optimum pH |
+| **Oxygen** | Sterile air bubbled in | For **aerobic respiration** |
+| **Nutrient supply** | Nutrients (such as glucose) added | For respiration and growth |
+| **Waste products** | Removed through an outlet | Wastes could poison the microorganisms |
+
+A **stirrer** (paddle) keeps everything **mixed** evenly. Everything is kept **sterile** so no other microorganisms get in.
+
+## Enzymes in everyday products
+
+| Product | Enzyme | What it does |
+|---|---|---|
+| **Biological washing powder** | Proteases and lipases | Break down **protein** stains (blood, egg) and **fat** stains into small soluble molecules that wash away. Work at **lower temperatures**, saving energy. |
+| **Fruit juice** | **Pectinase** | Breaks down **pectin** in plant cell walls, so **more juice** is released and the juice is **clearer**. |
+| **Lactose-free milk** | **Lactase** | Breaks down **lactose** into glucose and galactose, so people who are lactose intolerant can drink the milk. |
+
+## Common mistakes
+
+- Saying bread rises because of ethanol. It rises because of **carbon dioxide**.
+- Saying fermenters are heated. Usually they must be **cooled**, because respiration releases heat.
+- Saying biological washing powders work best in very hot water. High temperatures **denature** the enzymes.
+
+## Exam tips
+
+- For each fermenter condition, give **how** it is controlled and **why**.
+- For bacteria, learn the four reasons: **rapid reproduction, complex molecules, no ethical concerns, plasmids**.
+
+Next: test yourself with the practice questions below.`,
+
+  "18.2": `## What you need to know
+
+- Describe genetic modification.
+- Understand that the human insulin gene has been put into bacteria to make insulin.
+- Outline how genetic modification is used in crop plants.
+- Discuss the advantages and risks of genetically modifying crops and bacteria.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Genetic modification (GM) | Changing the genetic material of an organism by removing, changing or inserting individual genes. |
+| Genetically modified organism (GMO) | An organism whose genes have been changed. |
+| Herbicide | A chemical that kills weeds. |
+| Insect pest | An insect that damages crops. |
+| Insulin | A hormone that lowers blood glucose. People with Type 1 diabetes need it. |
+
+## What is genetic modification?
+
+> **Genetic modification** is changing the genetic material of an organism by **removing, changing or inserting individual genes**.
+
+## Making human insulin with bacteria
+
+![How bacteria are modified to make human insulin](/images/biology/18-2-insulin.svg)
+
+1. The **human insulin gene** is cut out of human DNA.
+2. A **plasmid** is taken out of a bacterium and cut open.
+3. The insulin gene is **inserted** into the plasmid.
+4. The plasmid is put back into a bacterium.
+5. The bacteria are grown in a **fermenter**. They multiply quickly, and every bacterium makes **human insulin**.
+6. The insulin is collected and purified for people with **diabetes**.
+
+## GM crop plants
+
+| Gene inserted | Advantage |
+|---|---|
+| **Resistance to herbicides** | Farmers can spray weedkiller to kill the weeds without harming the crop. |
+| **Resistance to insect pests** | The plant makes a substance that kills insects that eat it, so less insecticide is needed. |
+| **Extra vitamins** | For example, **Golden Rice** has a gene to make a substance the body turns into **vitamin A**, to help prevent vitamin A deficiency. |
+
+## Advantages and risks
+
+| Advantages | Risks |
+|---|---|
+| **Higher crop yields**, more food | Genes may **spread** to wild plants by pollen (for example, making **"superweeds"** resistant to herbicide) |
+| Less **insecticide** needed | Insects that are not pests may be harmed |
+| More **nutritious** food (extra vitamins) | Possible unknown effects on human **health** |
+| Cheap, plentiful **human insulin** from bacteria | **Reduces variation**: crops are all the same, so a new disease could wipe them out |
+| | Seeds may be **expensive** for poor farmers |
+
+## Common mistakes
+
+- Saying GM adds "chemicals" to food. GM changes the **genes**.
+- Saying the bacteria make animal insulin. They make **human** insulin, because the gene is human.
+- Giving only advantages in a "discuss" question. Always give **both sides**.
+
+## Exam tips
+
+- Learn the definition: **removing, changing or inserting individual genes**.
+- For the insulin example, use the words **gene**, **plasmid**, **bacteria** and **fermenter**.
+
+Next: test yourself with the practice questions below.`,
+
+  "19.1": `## What you need to know
+
+- Understand that the Sun is the main energy source for most living things, and why life depends on photosynthesis.
+- Describe energy flow through food chains and webs.
+- Construct and interpret food chains and food webs.
+- Use the terms producer, consumer, herbivore, carnivore and decomposer.
+- Explain why energy transfer between trophic levels is inefficient, and why food chains are short.
+- Explain why eating crops is more efficient than eating livestock.
+- Construct and interpret pyramids of numbers, biomass and energy.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Food chain | A diagram showing the transfer of energy from one organism to the next. |
+| Food web | A network of connected food chains. |
+| Producer | An organism that makes its own food, usually by photosynthesis (plants). |
+| Consumer | An organism that gets energy by eating other organisms. |
+| Herbivore | An animal that eats plants. |
+| Carnivore | An animal that eats other animals. |
+| Decomposer | An organism that gets energy from dead or waste material (bacteria, fungi). |
+| Trophic level | The position of an organism in a food chain. |
+| Biomass | The mass of living material. |
+
+## The Sun: the start of it all
+
+- The **Sun** is the main **energy input** to most living systems.
+- **Producers** (plants) capture light energy by **photosynthesis** and store it in food.
+- Almost all other life **depends on photosynthesis**: animals eat plants, or eat animals that ate plants. Photosynthesis also gives us **oxygen**.
+
+## Food chains
+
+![A food chain and how energy is lost](/images/biology/19-1-food-chain.svg)
+
+> A food chain shows how **energy** is passed from one organism to the next. The arrows show the **direction energy flows**: from the food to the eater.
+
+**Example**: grass, then rabbit, then fox. Grass is eaten by the rabbit; the rabbit is eaten by the fox.
+
+| Organism | Role | Trophic level |
+|---|---|---|
+| Grass | **Producer** | 1 |
+| Rabbit | **Primary consumer**, herbivore | 2 |
+| Fox | **Secondary consumer**, carnivore | 3 |
+
+**Decomposers** (bacteria and fungi) break down dead organisms and waste from every level.
+
+Energy enters as **light**, is passed along the chain as **chemical energy** in food, and is finally lost to the **environment** as **heat**.
+
+## Food webs
+
+> A **food web** is a **network of interconnected food chains**.
+
+Most animals eat more than one type of food, so food chains join up. In a food web, if one species is removed, it can affect many others. For example, if foxes disappear, rabbit numbers may rise and grass may be over-eaten.
+
+## Why energy transfer is inefficient
+
+Only about **10%** of the energy at one trophic level passes to the next. The rest is lost because:
+
+- Energy is used in **respiration** and lost as **heat**.
+- Not all of the organism is **eaten** (bones, roots).
+- Not all of what is eaten is **digested**: some is lost in **faeces**.
+- Energy is lost in **excretion** (urine).
+
+## Why food chains are short
+
+Because so much energy is lost at each step, there is **not enough energy** left to support more than about **four or five trophic levels**.
+
+## Eating plants or animals?
+
+It is **more energy efficient** for humans to eat **crop plants** than to eat **livestock** fed on crop plants.
+
+- If we eat plants, we are at trophic level 2: less energy is lost.
+- If cows eat the plants and we eat the cows, there is an **extra step**. About 90% of the energy is lost at that step.
+- So the same field of crops can feed **many more people** if they eat the crops directly.
+
+## Ecological pyramids
+
+![Pyramids of numbers, biomass and energy](/images/biology/19-1-pyramids.svg)
+
+| Pyramid | Shows | Shape |
+|---|---|---|
+| **Numbers** | How **many** organisms at each level | Can be an odd shape: one big tree can feed many insects |
+| **Biomass** | The **mass** of living material at each level | Usually a true pyramid |
+| **Energy** | The **energy** at each level | **Always** a true pyramid, because energy is lost at each level |
+
+## Common mistakes
+
+- Drawing food chain arrows the wrong way. The arrow points **to the eater**: it shows energy flow.
+- Saying energy is "used up". Energy is **transferred**, mostly to the environment as **heat**.
+- Saying a pyramid of numbers is always a pyramid. It can be **inverted** or odd-shaped.
+
+## Exam tips
+
+- Learn the four reasons energy is lost between levels.
+- When reading a food web, follow arrows to find what eats what.
+
+Next: test yourself with the practice questions below.`,
+
+  "19.2": `## What you need to know
+
+- Describe the carbon cycle: photosynthesis, respiration, feeding, decomposition, fossil fuels and combustion.
+- Outline the nitrogen cycle, from decomposition to denitrification.
+- Outline the role of fungi and bacteria in decomposition.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Decomposition | The breakdown of dead organisms and waste by decomposers. |
+| Decomposers | Bacteria and fungi that break down dead material. |
+| Combustion | Burning. It releases carbon dioxide. |
+| Fossil fuels | Coal, oil and gas, formed from the remains of organisms over millions of years. |
+| Nitrification | Bacteria turning ammonium ions into nitrate ions. |
+| Nitrogen fixation | Turning nitrogen gas from the air into nitrogen compounds that plants can use. |
+| Denitrification | Bacteria turning nitrate ions back into nitrogen gas. |
+
+## The carbon cycle
+
+![The carbon cycle](/images/biology/19-2-carbon-cycle.svg)
+
+Carbon moves between the **air** (as carbon dioxide) and **living things**.
+
+| Process | What happens to carbon |
+|---|---|
+| **Photosynthesis** | Plants take **carbon dioxide** from the air and make carbohydrates. |
+| **Feeding** | Animals eat plants (or other animals), taking in the carbon compounds. |
+| **Respiration** | Plants, animals and decomposers release **carbon dioxide** into the air. |
+| **Decomposition** | Decomposers break down dead organisms and waste, and **respire**, releasing carbon dioxide. |
+| **Formation of fossil fuels** | Some dead organisms do not decompose. Over millions of years they become **coal, oil and gas**. |
+| **Combustion** | Burning fossil fuels (and wood) releases **carbon dioxide** into the air. |
+
+> Photosynthesis **removes** carbon dioxide from the air. Respiration, decomposition and combustion **add** it.
+
+## The nitrogen cycle
+
+![The nitrogen cycle](/images/biology/19-2-nitrogen-cycle.svg)
+
+Living things need nitrogen to make **proteins**. Air is about 78% nitrogen gas, but plants and animals **cannot use nitrogen gas** directly.
+
+1. **Decomposition**: decomposers break down protein in dead plants, animals and waste into **ammonium ions**.
+2. **Nitrification**: **nitrifying bacteria** turn ammonium ions into **nitrate ions**.
+3. **Absorption**: plants **absorb nitrate ions** through their roots.
+4. **Making protein**: plants use nitrates to make **amino acids** and then **proteins**.
+5. **Feeding and digestion**: animals eat plants and **digest** the proteins into amino acids, then build their own proteins.
+6. **Nitrogen fixation**: nitrogen gas from the air is turned into nitrogen compounds by **lightning** and by **nitrogen-fixing bacteria** (some live in the roots of plants like peas and beans).
+7. **Denitrification**: **denitrifying bacteria** turn nitrate ions back into **nitrogen gas**, which goes into the air.
+
+## Decomposers
+
+**Fungi** and **bacteria** are decomposers. They:
+
+- Break down **dead organisms** and **waste** (faeces, urine).
+- Release **carbon dioxide** into the air by **respiration** (carbon cycle).
+- Release **ammonium ions** into the soil (nitrogen cycle).
+
+Without decomposers, nutrients would stay locked in dead bodies and could not be used again.
+
+## Common mistakes
+
+- Saying plants take in nitrogen gas. Plants absorb **nitrate ions** from the soil.
+- Mixing up nitrification and denitrification. **Nitrification makes nitrate. Denitrification turns nitrate into nitrogen gas.**
+- Forgetting that decomposers **respire**, which releases carbon dioxide.
+
+## Exam tips
+
+- For the carbon cycle, say which processes **remove** carbon dioxide (photosynthesis) and which **add** it (respiration, decomposition, combustion).
+- For the nitrogen cycle, learn the order: **protein, ammonium, nitrate, plant protein**, plus **fixation** and **denitrification**.
+
+Next: test yourself with the practice questions below.`,
+
+  "19.3": `## What you need to know
+
+- Describe a population, a community and an ecosystem.
+- Describe biodiversity.
+- State the factors that affect population growth: food supply, competition, predation and disease.
+- Understand that the growing human population increases demand for resources.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Population | A group of organisms of one species, living in the same area at the same time. |
+| Community | All the populations of different species in an ecosystem. |
+| Ecosystem | A unit containing the community of organisms and their environment, interacting together. |
+| Biodiversity | The number of different species living in an area. |
+| Predation | One animal (the predator) hunting and eating another (the prey). |
+| Competition | Organisms struggling for the same limited resources. |
+
+## Levels of ecology
+
+![Population, community and ecosystem](/images/biology/19-3-levels.svg)
+
+| Term | Meaning | Example (a pond) |
+|---|---|---|
+| **Population** | One **species**, same area, same time | All the frogs in the pond |
+| **Community** | All the **populations** of different species | Frogs, fish, insects, pondweed and algae in the pond |
+| **Ecosystem** | The **community and its environment**, interacting | The pond's living things plus the water, mud, light and temperature |
+
+## Biodiversity
+
+> **Biodiversity** is the **number of different species** living in an area.
+
+A rainforest has very high biodiversity. A wheat field has low biodiversity.
+
+## What affects population growth?
+
+| Factor | Effect |
+|---|---|
+| **Food supply** | More food lets the population grow. A shortage makes it fall. |
+| **Competition** | Organisms compete for food, water, space and mates. Strong competition slows growth. |
+| **Predation** | More predators means more prey are eaten, so the prey population falls. |
+| **Disease** | Disease spreads quickly in a crowded population and can make it fall. |
+
+> Predator and prey numbers often rise and fall in turn. When rabbits increase, foxes have more food and increase. Then foxes eat more rabbits, so rabbits fall, and then foxes fall too.
+
+## The human population
+
+The human population has grown very quickly, especially in the last 200 years, because of better food supply, medicine and hygiene.
+
+More people means a growing demand for **global resources**: food, water, land, energy (fossil fuels) and materials. This puts pressure on ecosystems (see topic 19.4).
+
+## Common mistakes
+
+- Mixing up population and community. A **population** is **one species**; a **community** is **all species**.
+- Saying an ecosystem is just the living things. An ecosystem includes the **environment** too.
+- Saying biodiversity means the number of organisms. It is the number of **species**.
+
+## Exam tips
+
+- Learn the three definitions word for word: **population, community, ecosystem**.
+- Learn the four factors affecting population growth: **food supply, competition, predation, disease**.
+
+Next: test yourself with the practice questions below.`,
+
+  "19.4": `## What you need to know
+
+- Outline the causes and consequences of deforestation.
+- Describe the impacts of over-harvesting and of introducing non-native species.
+- Describe eutrophication caused by sewage and fertilisers.
+- Describe air pollution by greenhouse gases and global warming.
+- Describe the harmful effects of insecticides, herbicides and non-biodegradable plastics.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Deforestation | Cutting down large areas of forest. |
+| Extinction | When a species dies out completely. |
+| Over-harvesting | Taking too many of a species from the wild, faster than it can replace itself. |
+| Non-native species | A species brought into an area where it does not naturally live. |
+| Eutrophication | When extra nutrients in water cause algae to grow, then decompose, using up oxygen so other organisms die. |
+| Greenhouse gases | Gases such as carbon dioxide and methane that trap heat in the atmosphere. |
+| Non-biodegradable | Cannot be broken down by decomposers. |
+
+## Deforestation
+
+**Causes**: clearing land for **farming** and cattle, for **timber**, for **roads and buildings**, and for **mining**.
+
+| Consequence | Why |
+|---|---|
+| **Loss of biodiversity** | Habitats are destroyed, so many species lose their homes and food. |
+| **Extinction** | Some species live only in that forest and die out. |
+| **Loss of soil** | Without roots to hold it, soil is washed or blown away (**soil erosion**). |
+| **Flooding** | Without trees to absorb rain, water runs off quickly into rivers. |
+| **More carbon dioxide in the air** | Fewer trees take in carbon dioxide by photosynthesis, and burning the trees releases more. |
+
+## Over-harvesting and non-native species
+
+| Impact | Effect |
+|---|---|
+| **Over-harvesting** (for example, overfishing, hunting) | Populations fall faster than they can recover, which can lead to **extinction** and harm food webs. |
+| **Introducing a non-native species** | It may have **no natural predators**, so it spreads quickly, **outcompetes** native species for food and space, or eats them. |
+
+## Water pollution and eutrophication
+
+![The stages of eutrophication](/images/biology/19-4-eutrophication.svg)
+
+**Untreated sewage** and **nitrogen-containing fertilisers** washed off fields can enter rivers and lakes.
+
+1. The water has **more nitrate and other ions**.
+2. **Producers** (algae and water plants) **grow quickly**. Algae cover the surface and block light.
+3. Plants below the surface die. More **producers die**.
+4. **Decomposers** (bacteria) break down the dead plants. There is much more **decomposition**.
+5. The decomposers carry out lots of **aerobic respiration**, using up oxygen.
+6. **Dissolved oxygen** in the water **falls**.
+7. Fish and other organisms that need dissolved oxygen **die**.
+
+> Memory trick: **N**ew **A**lgae **D**ie, **B**acteria **B**reathe, **F**ish **F**ail. Nutrients, Algae grow, Die, Bacteria decompose, Breathe (respire), Fish die.
+
+## Air pollution and global warming
+
+**Greenhouse gases** trap heat in the atmosphere:
+
+- **Carbon dioxide**: from burning fossil fuels and deforestation.
+- **Methane**: from cattle, rice fields and rotting rubbish in landfill.
+
+More greenhouse gases cause **global warming**: the Earth's average temperature rises.
+
+Likely effects:
+
+- **Ice caps melt** and **sea levels rise**, flooding low-lying land.
+- More **extreme weather**: droughts, floods and storms.
+- **Changes in where species can live**; some may become extinct.
+- **Crops fail** in some areas.
+
+## Insecticides and herbicides
+
+| Chemical | Harmful effects |
+|---|---|
+| **Insecticides** (kill insects) | Can kill **useful insects** such as bees that pollinate crops. Can build up in food chains and harm animals at the top, such as birds of prey. |
+| **Herbicides** (kill weeds) | Kill wild plants, **reducing biodiversity** and food and shelter for animals. Can wash into rivers. |
+
+## Non-biodegradable plastics
+
+Plastics are **not broken down** by decomposers, so they last for hundreds of years.
+
+- **In the sea and rivers**: animals get **tangled** in plastic or **eat** it, thinking it is food. They can starve or choke. Small pieces (microplastics) enter food chains.
+- **On land**: plastic fills **landfill sites**, spoils habitats, and can trap or harm animals.
+
+## Common mistakes
+
+- Saying eutrophication fish die because the water is "poisoned". They die because **oxygen is used up** by **decomposers** respiring.
+- Saying algae use up the oxygen. It is mainly the **bacteria decomposing** dead plants that use up oxygen.
+- Saying deforestation causes flooding because trees "hold water back". Explain: trees **absorb rain** and **roots hold soil**.
+
+## Exam tips
+
+- For eutrophication, learn the six steps in order. Each step causes the next.
+- For deforestation, give at least **three consequences** with reasons.
+
+Next: test yourself with the practice questions below.`,
+
+  "19.5": `## What you need to know
+
+- Discuss reasons for conserving species: biodiversity, reducing extinction and protecting vulnerable environments.
+- Explain how forests can be conserved.
+- Explain how fish stocks can be conserved.
+- Describe a sustainable resource.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Conservation | Protecting species and their habitats. |
+| Sustainable resource | A resource produced as quickly as it is removed from the environment, so it does not run out. |
+| Quota | A limit on how much can be taken. |
+| Protected area | An area where hunting, fishing or logging is not allowed, such as a national park or marine reserve. |
+| Closed season | A time of year when fishing is not allowed, usually the breeding season. |
+| Mesh size | The size of the holes in a fishing net. |
+
+## Why conserve species?
+
+| Reason | Why it matters |
+|---|---|
+| **Maintaining biodiversity** | Every species has a role in its ecosystem. Food webs stay stable. Many species give us food, medicines and materials, some not yet discovered. |
+| **Reducing extinction** | Once a species is extinct, it is gone forever. |
+| **Protecting vulnerable environments** | Some habitats, like coral reefs and rainforests, are easily damaged and hard to repair. |
+
+## Sustainable resources
+
+> A **sustainable resource** is one that is **produced as rapidly as it is removed** from the environment, so it **does not run out**.
+
+Forests and fish can be sustainable if we do not take them faster than they grow back.
+
+## Conserving forests
+
+| Method | How it helps |
+|---|---|
+| **Education** | People learn why forests matter and use wood and land more carefully. |
+| **Protected areas** | National parks where trees cannot be cut down. |
+| **Quotas** | Limits on how many trees can be cut down. |
+| **Replanting** | New trees are planted to replace those cut down. |
+
+## Conserving fish stocks
+
+![Ways to conserve fish stocks](/images/biology/19-5-fish.svg)
+
+| Method | How it helps |
+|---|---|
+| **Education** | People choose fish from sustainable sources. |
+| **Closed seasons** | No fishing during the **breeding season**, so fish can reproduce. |
+| **Protected areas** | Marine reserves where no fishing is allowed. |
+| **Controlled net types and mesh size** | **Larger holes** in nets let **young fish escape**, so they can grow and breed. |
+| **Quotas** | Limits on how many fish each boat can catch. |
+| **Monitoring** | Scientists count fish stocks, and boats are checked, so rules can be changed if numbers fall. |
+
+## Common mistakes
+
+- Saying a sustainable resource "never runs out" without the reason. Say it is **replaced as fast as it is used**.
+- Saying a small mesh size helps conservation. A **larger** mesh lets young fish escape.
+- Giving only one reason in a "discuss" question. Give **all three reasons** for conservation.
+
+## Exam tips
+
+- Learn the definition of a sustainable resource word for word.
+- For fish, list several methods and explain **how each lets fish numbers recover**.
+
+Next: test yourself with the practice questions below.`,
 };
 
 export function getBiologyNotes(topic: string): string | undefined {
