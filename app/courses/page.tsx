@@ -44,7 +44,7 @@ export default function CoursesPage() {
           <div className="flex-1">
             <div className="flex flex-wrap items-center gap-2 mb-1.5">
               <span className="text-xs font-bold bg-efe-gold-soft text-efe-gold px-2.5 py-0.5 rounded-full">NEW</span>
-              <span className="text-xs text-white/80 font-medium">Accounting · O Level 7707</span>
+              <span className="text-xs text-white/80 font-medium">O Level Accounting (7707)</span>
             </div>
             <h2 className="text-xl font-bold text-white mb-1">Cambridge O Level Accounting (7707)</h2>
             <p className="text-white/85 text-sm leading-relaxed">
@@ -53,7 +53,7 @@ export default function CoursesPage() {
           </div>
           <div className="flex-shrink-0">
             <span className="efe-btn efe-btn-on-hero efe-btn-sm whitespace-nowrap">
-              Start O Level 7707 →
+              Start O Level Accounting →
             </span>
           </div>
         </Link>
@@ -69,7 +69,7 @@ export default function CoursesPage() {
           <div className="flex-1">
             <div className="flex flex-wrap items-center gap-2 mb-1.5">
               <span className="text-xs font-bold bg-efe-gold-soft text-efe-gold px-2.5 py-0.5 rounded-full">NEW</span>
-              <span className="text-xs text-white/80 font-medium">Biology · O Level 5090</span>
+              <span className="text-xs text-white/80 font-medium">O Level Biology (5090)</span>
             </div>
             <h2 className="text-xl font-bold text-white mb-1">Cambridge O Level Biology (5090)</h2>
             <p className="text-white/85 text-sm leading-relaxed">
@@ -78,7 +78,7 @@ export default function CoursesPage() {
           </div>
           <div className="flex-shrink-0">
             <span className="efe-btn efe-btn-on-hero efe-btn-sm whitespace-nowrap">
-              Start O Level 5090 →
+              Start O Level Biology →
             </span>
           </div>
         </Link>

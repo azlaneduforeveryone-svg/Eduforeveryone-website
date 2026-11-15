@@ -90,7 +90,7 @@ export default function BiologyHubClient({ sections }: BiologyHubClientProps) {
     <div className="efe-page min-h-screen flex flex-col">
       {/* Hero */}
       <PageHeader
-        eyebrow="Cambridge Biology · O Level 5090"
+        eyebrow="Cambridge O Level Biology (5090)"
         title="Biology"
         description="Learn O Level Biology (5090) topic by topic for exams in 2026, 2027 and 2028 — from cells and enzymes to genetics, ecology, and biotechnology. Free, structured, and built for exam mastery."
         breadcrumbs={[
@@ -104,7 +104,7 @@ export default function BiologyHubClient({ sections }: BiologyHubClientProps) {
               href="#o-level-5090"
               className="efe-btn efe-btn-on-hero"
             >
-              Start O Level 5090
+              Start O Level Biology
             </a>
           </div>
         }
@@ -184,7 +184,7 @@ export default function BiologyHubClient({ sections }: BiologyHubClientProps) {
         <section aria-labelledby="syllabus-sections-heading" className="space-y-10">
           <SectionHeader
             eyebrow="2026–2028 Syllabus"
-            title={<span id="syllabus-sections-heading">O Level 5090 Syllabus Topics</span>}
+            title={<span id="syllabus-sections-heading">O Level Biology Syllabus Topics</span>}
             description={`${totalTopics} topics across ${sections.length} sections, built for exams in 2026, 2027 and 2028.`}
           />
 

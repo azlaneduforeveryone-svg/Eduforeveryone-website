@@ -118,7 +118,7 @@ export default function AccountingHubClient({ sections }: AccountingHubClientPro
     <div className="efe-page min-h-screen flex flex-col">
       {/* Hero */}
       <PageHeader
-        eyebrow="Cambridge Accounting · O Level 7707"
+        eyebrow="Cambridge O Level Accounting (7707)"
         title="Accounting"
         description="Learn O Level Accounting (7707) topic by topic — from the accounting equation and double-entry book-keeping to financial statements and ratio analysis. Free, structured, and built for exam mastery."
         breadcrumbs={[
@@ -132,7 +132,7 @@ export default function AccountingHubClient({ sections }: AccountingHubClientPro
               href="#o-level-7707"
               className="efe-btn efe-btn-on-hero"
             >
-              Start O Level 7707
+              Start O Level Accounting
             </a>
             <button
               type="button"
@@ -239,7 +239,7 @@ export default function AccountingHubClient({ sections }: AccountingHubClientPro
         <section aria-labelledby="syllabus-sections-heading" className="space-y-10">
           <SectionHeader
             eyebrow="2027–2029 Syllabus"
-            title={<span id="syllabus-sections-heading">O Level 7707 Syllabus Topics</span>}
+            title={<span id="syllabus-sections-heading">O Level Accounting Syllabus Topics</span>}
             description="28 topics across 7 sections, with 336 original multiple-choice practice questions."
           />
 
