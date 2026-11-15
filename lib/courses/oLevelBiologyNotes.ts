@@ -2634,6 +2634,905 @@ Plasma is mostly water. It **transports**:
 - Learn the list of substances carried in plasma.
 
 Next: test yourself with the practice questions below.`,
+
+  "12.1": `## What you need to know
+
+- Describe a pathogen and a transmissible disease.
+- Describe how pathogens are passed on: directly and indirectly.
+- Describe the body's barriers: skin, nose hairs, mucus and stomach acid.
+- Describe the mosquito as a vector, how malaria is passed on, and how mosquitoes are controlled using their life cycle.
+- Describe HIV: how it is passed on, how it can lead to AIDS, and how it is controlled.
+- Describe cholera, how it spreads, how it is prevented, and how it causes diarrhoea.
+- Describe the effects of too much alcohol and of tobacco smoke.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Pathogen | A disease-causing organism, such as a bacterium or virus. |
+| Transmissible disease | A disease where the pathogen can be passed from one host to another. |
+| Host | The organism a pathogen lives in. |
+| Vector | An organism that carries a pathogen from one host to another, such as a mosquito. |
+| Parasite | An organism that lives in or on a host and harms it. |
+| Toxin | A poison made by a pathogen. |
+| Dehydration | When the body loses too much water. |
+
+## Pathogens and how they spread
+
+> A **pathogen** is a **disease-causing organism**.
+
+> A **transmissible disease** is one where the pathogen can be **passed from one host to another**.
+
+| Way of spreading | Examples |
+|---|---|
+| **Direct contact** | Touching an infected person; through **blood** or other **body fluids** |
+| **Indirect contact** | **Contaminated surfaces** or **food**; from **animals** (such as mosquitoes); through the **air** (coughs and sneezes) |
+
+## The body's barriers
+
+| Barrier | How it protects |
+|---|---|
+| **Skin** | A tough layer that pathogens cannot easily get through |
+| **Hairs in the nose** | Trap dust and pathogens in the air we breathe |
+| **Mucus** | Sticky; traps pathogens in the airways |
+| **Stomach acid** | Kills pathogens in food and drink |
+
+## Malaria and the mosquito
+
+![The mosquito life cycle and how to control it](/images/biology/12-1-mosquito.svg)
+
+- Malaria is caused by a **parasite** (a single-celled organism called *Plasmodium*).
+- It is carried by female **mosquitoes**. The mosquito is a **vector**.
+- When an infected mosquito **bites** a person to feed on blood, it passes the parasite into their blood.
+- If a mosquito bites an infected person, it picks up the parasite and can pass it to the next person.
+
+### Controlling mosquitoes using their life cycle
+
+Mosquitoes lay eggs in **still water**. The eggs hatch into **larvae**, which become **pupae**, then adults.
+
+| Stage | How to control it |
+|---|---|
+| **Eggs, larvae and pupae** (in water) | **Drain** still water; cover water tanks; spread a thin layer of **oil** on water so larvae cannot breathe; put **fish** that eat larvae in ponds |
+| **Adults** | Spray **insecticides**; sleep under **mosquito nets** (treated with insecticide); use insect repellent |
+
+## HIV and AIDS
+
+- **HIV** (human immunodeficiency virus) is a **virus**: a viral pathogen.
+- HIV infection can lead to **AIDS** (Acquired Immune Deficiency Syndrome), where the immune system becomes very weak.
+
+| HIV is passed on by | Controlled by |
+|---|---|
+| **Sexual intercourse** without a condom | Using **condoms** |
+| **Sharing needles** (for example, for drugs) | Never sharing needles; using new, sterile needles |
+| **Infected blood** (transfusions) | **Testing** donated blood |
+| **Mother to baby**: across the placenta, at birth, or in breast milk | Medicines for the mother; bottle-feeding instead of breast-feeding |
+
+Drugs can slow HIV down, but there is no cure. Testing and education also help control its spread.
+
+## Cholera
+
+> **Cholera** is a disease caused by a **bacterium**, passed on in **contaminated water**.
+
+### How cholera makes people ill
+
+1. The cholera bacterium makes a **toxin** in the small intestine.
+2. The toxin makes the cells lining the intestine release **chloride ions** into the gut.
+3. Water follows by **osmosis**, out of the blood and into the gut.
+4. This causes very watery **diarrhoea**, **dehydration**, and **loss of ions** from the blood.
+
+### Stopping cholera spreading
+
+| Method | Why it helps |
+|---|---|
+| **Clean water supply** | Water is treated, so there are no bacteria in drinking water |
+| **Hygienic food preparation** | Bacteria are not spread onto food |
+| **Good personal hygiene** (washing hands) | Bacteria are not spread from hands to mouth |
+| **Waste disposal** | Rubbish does not attract flies or contaminate water |
+| **Sewage treatment** | Faeces with bacteria do not get into drinking water |
+
+## Alcohol
+
+Drinking too much alcohol:
+
+- **Reduces self-control**, so people take risks.
+- Is a **depressant**: it slows down the nervous system.
+- Makes **reaction times longer**, so driving is dangerous.
+- **Damages the liver** (the liver breaks down alcohol).
+- Has **social effects**: violence, crime, family problems, losing jobs.
+
+## Tobacco smoke
+
+| Substance | Effect |
+|---|---|
+| **Nicotine** | **Addictive**; raises heart rate and blood pressure |
+| **Tar** | Causes **cancer**; damages cilia, so mucus builds up |
+| **Carbon monoxide** | Joins with **haemoglobin**, so blood carries **less oxygen** |
+
+Smoking is strongly linked to:
+
+- **Bronchitis**: inflamed airways, lots of mucus and coughing.
+- **Emphysema**: alveoli walls break down, so there is less surface area for gas exchange.
+- **Lung cancer**.
+- **Heart disease**.
+- **Lower birth weight** of babies when mothers smoke in pregnancy.
+
+## Common mistakes
+
+- Saying malaria is caused by mosquitoes. It is caused by a **parasite**; the mosquito is the **vector**.
+- Saying cholera is caused by a virus. It is a **bacterium**.
+- Saying the cholera toxin "kills cells". It causes **chloride ions** to be released, and water follows by **osmosis**.
+- Saying carbon monoxide causes cancer. **Tar** causes cancer. Carbon monoxide reduces **oxygen** carried.
+
+## Exam tips
+
+- For cholera, give the full chain: **toxin, chloride ions, osmosis, diarrhoea, dehydration**.
+- For mosquito control, link each method to a **stage of the life cycle**.
+- For smoking, match each **substance** to its **effect**.
+
+Next: test yourself with the practice questions below.`,
+
+  "12.2": `## What you need to know
+
+- Describe a drug.
+- Describe how antibiotics are used to treat bacterial infections.
+- State that antibiotics kill bacteria but do not affect viruses.
+- Explain how to reduce antibiotic resistance (including MRSA) by using antibiotics only when essential.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Drug | Any substance taken into the body that changes or affects chemical reactions in the body. |
+| Antibiotic | A drug that kills bacteria. |
+| Resistant | Not killed by an antibiotic. |
+| MRSA | A type of bacterium that is resistant to many antibiotics. |
+| Mutation | A random change in a gene. |
+
+## What is a drug?
+
+> A **drug** is any substance taken into the body that **modifies or affects chemical reactions** in the body.
+
+Examples: medicines like antibiotics and painkillers, and also alcohol, nicotine and caffeine.
+
+## Antibiotics
+
+**Antibiotics** are drugs used to treat infections caused by **bacteria**.
+
+> Antibiotics **kill bacteria** but **do not affect viruses**.
+
+So antibiotics do **not** help colds, flu or other viral illnesses. Viruses live inside our own cells, and antibiotics do not work on them.
+
+## Antibiotic resistance
+
+![How antibiotic resistance develops](/images/biology/12-2-resistance.svg)
+
+Sometimes, by chance, a bacterium has a **mutation** that makes it **resistant** to an antibiotic.
+
+1. When the antibiotic is used, the normal bacteria are **killed**.
+2. The **resistant** bacteria **survive**.
+3. They **reproduce**, so soon most of the bacteria are resistant.
+4. Now the antibiotic **no longer works** against that infection.
+
+**MRSA** is a dangerous bacterium that is resistant to many antibiotics. It is hard to treat.
+
+### How to slow down resistance
+
+- Use antibiotics **only when essential**, for serious bacterial infections.
+- **Do not** use antibiotics for **viral** infections like colds.
+- **Finish the whole course**, so all bacteria are killed and none are left to develop resistance.
+
+> The more we use antibiotics, the more chances resistant bacteria have to win. Using them less keeps them working longer.
+
+## Common mistakes
+
+- Saying antibiotics kill viruses. They **only kill bacteria**.
+- Saying the person becomes resistant. It is the **bacteria** that become resistant.
+- Saying antibiotics cause the mutation. The mutation happens **by chance**; antibiotics only **select** the resistant ones.
+
+## Exam tips
+
+- Learn the definition of a drug word for word.
+- Explain resistance in order: **mutation, antibiotic kills others, resistant ones survive, they reproduce**.
+- The key phrase for prevention: **use antibiotics only when essential**.
+
+Next: test yourself with the practice questions below.`,
+
+  "12.3": `## What you need to know
+
+- Describe active immunity, antigens and antibodies.
+- Explain that active immunity comes from infection or vaccination.
+- Outline how vaccination works and why it controls disease.
+- Explain passive immunity, including through the placenta and breast milk.
+- State that passive immunity makes no memory cells.
+- Outline how HIV weakens the immune system.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Antigen | A molecule on the surface of a pathogen, with a specific shape. |
+| Antibody | A protein made by lymphocytes that fits and binds to a specific antigen. |
+| Active immunity | Defence by antibodies your own body makes. |
+| Passive immunity | Short-term defence by antibodies received from someone else. |
+| Vaccination | Giving weakened pathogens or their antigens to make the body produce antibodies and memory cells. |
+| Memory cells | Lymphocytes that stay in the blood and remember an antigen, so the body responds faster next time. |
+
+## Antigens and antibodies
+
+![Antibodies fit specific antigens](/images/biology/12-3-antibodies.svg)
+
+- **Every pathogen has its own antigens**, with **specific shapes**.
+- **Lymphocytes** make **antibodies**. Antibodies are **proteins**.
+- Each type of antibody has a shape that is **complementary** to one type of antigen, so it **fits** only that antigen.
+
+When antibodies bind to antigens, they either:
+
+- **destroy the pathogen directly**, or
+- **mark the pathogen** so **phagocytes** can find and engulf it.
+
+> Think of a lock and key again. The antigen is the lock, and only the right antibody (key) fits.
+
+## Active immunity
+
+> **Active immunity** is defence against a pathogen by **antibody production in your own body**.
+
+You get active immunity in two ways:
+
+1. **After an infection**: you catch the disease, your lymphocytes make antibodies, and memory cells remain.
+2. **By vaccination**.
+
+## How vaccination works
+
+1. **Weakened** (or dead) pathogens, or just their **antigens**, are put into the body, often by injection.
+2. The antigens make **lymphocytes** respond and **produce antibodies**.
+3. **Memory cells** are made. They give **long-term immunity**.
+4. If the real pathogen enters later, memory cells make antibodies **much faster** and in **larger amounts**, so you do not get ill.
+
+### Why vaccination controls disease
+
+When most people in a community are vaccinated, the pathogen **cannot spread** easily from person to person. This also protects people who cannot be vaccinated, such as newborn babies.
+
+## Passive immunity
+
+> **Passive immunity** is **short-term** defence by **antibodies received from another person**.
+
+| How a baby gets antibodies | |
+|---|---|
+| **Across the placenta** | Before birth, from the mother's blood |
+| **In breast milk** | After birth |
+
+**Breast-feeding** is important because the baby's own immune system is not fully developed. The mother's antibodies protect the baby against diseases she has met.
+
+**No memory cells** are made in passive immunity, so the protection does not last.
+
+| | Active immunity | Passive immunity |
+|---|---|---|
+| Antibodies made by | Your own lymphocytes | Another person |
+| Memory cells made? | **Yes** | **No** |
+| How long it lasts | **Long term** | **Short term** |
+| Examples | Infection, vaccination | Placenta, breast milk |
+
+## How HIV affects the immune system
+
+HIV infects and destroys **lymphocytes**.
+
+1. The number of **lymphocytes falls**.
+2. The body **cannot make enough antibodies**.
+3. The immune system is **weakened**, so other infections (such as tuberculosis) can make the person very ill. This is **AIDS**.
+
+## Common mistakes
+
+- Mixing up antigen and antibody. **Antigens are on the pathogen. Antibodies are made by you.**
+- Saying vaccines contain antibodies. Vaccines contain **antigens** (or weakened pathogens).
+- Saying passive immunity makes memory cells. It does **not**.
+- Saying antibodies "eat" pathogens. **Phagocytes** engulf pathogens.
+
+## Exam tips
+
+- For vaccination, give the three steps: **antigens given, lymphocytes make antibodies, memory cells made**.
+- Use the word **complementary** when explaining how antibodies fit antigens.
+- Compare active and passive immunity using **memory cells** and **how long it lasts**.
+
+Next: test yourself with the practice questions below.`,
+
+  "13.1": `## What you need to know
+
+- Describe excretion as removing toxic materials and waste products of metabolism.
+- State that carbon dioxide is a waste product of respiration, excreted by the lungs.
+- State that urea is a toxic waste made in the liver from excess amino acids.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Excretion | The removal of toxic materials and waste products of metabolism from organisms. |
+| Metabolism | All the chemical reactions in the body. |
+| Urea | A toxic waste made in the liver from excess amino acids. |
+| Toxic | Poisonous. |
+| Egestion | Getting rid of undigested food (faeces). This is not excretion. |
+
+## What is excretion?
+
+> **Excretion** is the removal of **toxic materials** and the **waste products of metabolism** from organisms.
+
+Our cells carry out many chemical reactions. Some make waste products that would poison us if they built up.
+
+> Think of a busy kitchen. Cooking (metabolism) makes rubbish. If no one takes the rubbish out (excretion), the kitchen becomes unsafe.
+
+## Two main excretory products
+
+| Waste product | Made by | Excreted by |
+|---|---|---|
+| **Carbon dioxide** | **Respiration** in all cells | The **lungs** (breathed out) |
+| **Urea** | The **liver**, from breaking down **excess amino acids** | The **kidneys** (in urine) |
+
+## Excretion is not egestion
+
+| Excretion | Egestion |
+|---|---|
+| Removing wastes **made by the body's cells** | Removing **undigested food** that never entered the cells |
+| Examples: carbon dioxide, urea | Example: faeces |
+
+## Common mistakes
+
+- Saying faeces are excreted. Faeces are **egested**: they were never made by the body's reactions.
+- Saying urea is made in the kidneys. Urea is made in the **liver**; the kidneys **remove** it.
+- Saying urea comes from all proteins we eat. It comes from **excess amino acids** that the body does not need.
+
+## Exam tips
+
+- Learn the definition of excretion word for word.
+- For each waste, give **where it is made** and **where it leaves the body**.
+
+Next: test yourself with the practice questions below.`,
+
+  "13.2": `## What you need to know
+
+- Identify the kidneys, ureters, bladder and urethra, and state what each does.
+- Explain why we must excrete urea.
+- Outline the structure of a nephron: Bowman's capsule, glomerulus, tubules, loop of Henle and collecting duct.
+- Outline what a nephron does: filtration, reabsorption and making urine.
+- Describe how the liver turns amino acids into proteins, and how deamination makes urea.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Kidney | The organ that removes urea, excess salts and excess water from the blood as urine. |
+| Ureter | A tube that carries urine from a kidney to the bladder. |
+| Bladder | A bag that stores urine. |
+| Urethra | The tube that carries urine out of the body. |
+| Nephron | One of about a million tiny tubes in each kidney that make urine. |
+| Glomerulus | A knot of capillaries inside the Bowman's capsule, where filtering happens. |
+| Filtration | Small molecules being pushed out of the blood into the nephron. |
+| Reabsorption | Useful substances being taken back into the blood from the nephron. |
+| Deamination | Removing the nitrogen-containing part of amino acids. |
+
+## The urinary system
+
+![The urinary system](/images/biology/13-2-urinary-system.svg)
+
+| Part | Job |
+|---|---|
+| **Kidneys** | **Remove urea, excess salts and excess water** from the blood, as **urine** |
+| **Ureters** | Carry urine from each kidney to the bladder |
+| **Bladder** | **Stores** urine |
+| **Urethra** | Carries urine **out of the body** |
+
+## Why excrete urea?
+
+**Urea is toxic.** If it builds up in the blood, it poisons cells. So it must be removed.
+
+## The nephron
+
+![A nephron and its blood vessels](/images/biology/13-2-nephron.svg)
+
+| Part | What it does |
+|---|---|
+| **Glomerulus** | A knot of capillaries. Blood is under high pressure here, so small molecules are **filtered** out. |
+| **Bowman's capsule** | A cup around the glomerulus that collects the filtered liquid. |
+| **Tubules** | Long tubes where useful substances are **reabsorbed** into the blood. |
+| **Loop of Henle** | A loop in the tubule that helps reabsorb water. |
+| **Collecting duct** | Collects urine from many nephrons and carries it towards the ureter. |
+
+### What happens in a nephron
+
+1. **Filtration**: in the **glomerulus**, **water, glucose, urea and ions** are filtered out of the blood into the Bowman's capsule. Blood cells and large proteins are too big and stay in the blood.
+2. **Reabsorption**: as the liquid flows along the tubules, **all the glucose**, **some of the ions** and **most of the water** are taken back into the blood.
+3. **Urine is formed**: what is left is **urine**, containing **urea, excess water and excess ions**. It flows into the collecting duct.
+
+> Think of tidying a messy drawer. You tip everything out (filtration), put back what you want to keep (reabsorption), and throw away the rest (urine).
+
+| Substance | Filtered? | Reabsorbed? | In urine? |
+|---|---|---|---|
+| Glucose | Yes | **All** | No |
+| Water | Yes | **Most** | Some |
+| Ions (salts) | Yes | **Some** | Excess |
+| Urea | Yes | No | **Yes** |
+| Proteins and blood cells | **No** (too big) | | No |
+
+## The liver and amino acids
+
+After digestion, amino acids are carried to the **liver** in the hepatic portal vein.
+
+- **Assimilation**: the liver uses some amino acids to make **proteins**, such as plasma proteins.
+- **Deamination**: **excess amino acids** cannot be stored. The liver **removes the nitrogen-containing part** of each one. This part is made into **urea**.
+
+The urea goes into the blood and is carried to the **kidneys**, which remove it in urine.
+
+## Common mistakes
+
+- Mixing up the ureter and urethra. **Ureter: kidney to bladder** (two of them). **Urethra: bladder to outside** (one).
+- Saying glucose is in normal urine. **All glucose is reabsorbed.**
+- Saying the kidney makes urea. The **liver** makes urea.
+- Saying proteins are filtered. Proteins are **too big** to be filtered.
+
+## Exam tips
+
+- Learn the three nephron steps: **filtration, reabsorption, urine formation**.
+- Learn what is reabsorbed: **all glucose, some ions, most water**.
+- For deamination, use the phrase **removal of the nitrogen-containing part of amino acids**.
+
+Next: test yourself with the practice questions below.`,
+
+  "14.1": `## What you need to know
+
+- Explain that the nervous system (brain, spinal cord and nerves) coordinates and regulates body functions.
+- Describe the central nervous system (CNS) and peripheral nervous system (PNS).
+- Identify sensory, relay and motor neurones.
+- State that electrical impulses travel along neurones.
+- Describe a reflex arc and a reflex action.
+- Describe the structure of a synapse and what happens there.
+- State that synapses make impulses travel in one direction only.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Stimulus | A change in the surroundings that the body detects, such as heat or light. |
+| Receptor | A cell or organ that detects a stimulus. |
+| Effector | A muscle or gland that makes a response. |
+| Neurone | A nerve cell. It carries electrical impulses. |
+| Impulse | An electrical signal travelling along a neurone. |
+| Reflex action | A rapid and automatic response to a stimulus. |
+| Synapse | A junction between two neurones. |
+| Neurotransmitter | A chemical that carries the signal across a synapse. |
+
+## The nervous system
+
+The **nervous system** (brain, spinal cord and nerves) **coordinates and regulates** body functions. It lets different parts of the body work together and respond to changes.
+
+| Part | What it includes |
+|---|---|
+| **Central nervous system (CNS)** | The **brain** and **spinal cord** |
+| **Peripheral nervous system (PNS)** | All the **nerves** outside the brain and spinal cord |
+
+## Three types of neurone
+
+**Electrical impulses** travel along neurones.
+
+| Neurone | Carries impulses from | To |
+|---|---|---|
+| **Sensory neurone** | A **receptor** | The **CNS** |
+| **Relay neurone** | A sensory neurone | A motor neurone (inside the CNS) |
+| **Motor neurone** | The **CNS** | An **effector** (muscle or gland) |
+
+## Reflex actions
+
+> A **reflex action** is a **rapid** and **automatic** response to a stimulus.
+
+You do not have to think about it. Reflexes protect you from harm, for example pulling your hand away from something hot, or blinking.
+
+## The reflex arc
+
+![A reflex arc](/images/biology/14-1-reflex-arc.svg)
+
+1. **Stimulus**: your hand touches a hot pan.
+2. **Receptor** in the skin detects the heat.
+3. **Sensory neurone** carries an impulse to the spinal cord.
+4. **Relay neurone** in the spinal cord passes it on.
+5. **Motor neurone** carries the impulse to a muscle.
+6. **Effector**: the muscle contracts and pulls your hand away.
+
+> Memory trick: **S**ome **R**eally **S**illy **R**abbits **M**ake **E**xcuses: **S**timulus, **R**eceptor, **S**ensory, **R**elay, **M**otor, **E**ffector.
+
+## Synapses
+
+![A synapse](/images/biology/14-1-synapse.svg)
+
+> A **synapse** is a **junction between two neurones**. There is a tiny gap between them.
+
+Parts of a synapse:
+
+- **Vesicles** at the end of the first neurone, containing **neurotransmitter** molecules.
+- The **synaptic gap**.
+- **Receptor proteins** on the second neurone.
+
+### What happens at a synapse
+
+1. An **impulse** arrives at the end of the first neurone. It makes vesicles **release neurotransmitter** into the gap.
+2. The neurotransmitter **diffuses** across the gap and **binds to receptor proteins** on the next neurone.
+3. This starts an **impulse** in the next neurone.
+
+> Synapses make sure impulses travel in **one direction only**. Only the first neurone has vesicles, and only the second has receptor proteins.
+
+## Common mistakes
+
+- Saying the brain controls reflexes. Many reflexes go through the **spinal cord** and happen before the brain knows.
+- Saying the impulse "jumps" across the synapse. A **chemical** (neurotransmitter) **diffuses** across.
+- Mixing up sensory and motor neurones. **Sensory: to the CNS. Motor: from the CNS to the effector.**
+
+## Exam tips
+
+- Learn the reflex arc in order: **stimulus, receptor, sensory, relay, motor, effector, response**.
+- For a synapse, use the words **vesicles, neurotransmitter, diffuses, receptor proteins**.
+- Effectors are **muscles or glands**.
+
+Next: test yourself with the practice questions below.`,
+
+  "14.2": `## What you need to know
+
+- Describe sense organs as groups of receptor cells that respond to specific stimuli.
+- Identify the parts of the eye: cornea, iris, pupil, lens, ciliary muscles, suspensory ligaments, retina, fovea, optic nerve and blind spot.
+- Describe what each part does.
+- Explain the pupil reflex.
+- Explain accommodation: focusing on near and distant objects.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Sense organ | A group of receptor cells that respond to a specific stimulus. |
+| Refract | Bend light. |
+| Retina | The layer at the back of the eye with light receptor cells. |
+| Fovea | The part of the retina with the most light receptors. |
+| Blind spot | Where the optic nerve leaves the eye. It has no receptors. |
+| Pupil reflex | Automatic change in pupil size when light intensity changes. |
+| Accommodation | Changing the shape of the lens to focus on near or distant objects. |
+| Antagonistic muscles | A pair of muscles that work against each other. |
+
+## Sense organs
+
+> **Sense organs** are groups of **receptor cells** responding to specific **stimuli**.
+
+| Sense organ | Stimulus |
+|---|---|
+| **Eye** | Light |
+| **Ear** | Sound |
+| **Skin** | Touch, temperature |
+| **Tongue and nose** | Chemicals |
+
+## Parts of the eye
+
+![The human eye, labelled](/images/biology/14-2-eye.svg)
+
+| Part | Job |
+|---|---|
+| **Cornea** | Clear front of the eye. **Refracts** (bends) light. |
+| **Iris** | Coloured ring of muscle. **Controls how much light enters** the pupil. |
+| **Pupil** | The hole in the middle of the iris that lets light in. |
+| **Lens** | **Focuses light onto the retina**. |
+| **Ciliary muscles** and **suspensory ligaments** | **Control the shape of the lens**. |
+| **Retina** | Contains **light receptors**, some sensitive to **different colours**. |
+| **Fovea** | Part of the retina with the **most light receptors**. Gives the clearest vision. |
+| **Optic nerve** | Carries **impulses to the brain**. |
+| **Blind spot** | Where the optic nerve leaves. **No receptors**, so no image is seen here. |
+
+## The pupil reflex
+
+The iris has two sets of muscles that work against each other (**antagonistic**):
+
+- **Circular muscles**, in rings around the pupil.
+- **Radial muscles**, like the spokes of a wheel.
+
+| | Bright light | Dim light |
+|---|---|---|
+| Circular muscles | **Contract** | Relax |
+| Radial muscles | Relax | **Contract** |
+| Pupil | **Gets smaller** (constricts) | **Gets bigger** (dilates) |
+| Why | Protects the retina from damage | Lets more light in to see |
+
+## Accommodation
+
+![Focusing on near and distant objects](/images/biology/14-2-accommodation.svg)
+
+| | Distant object | Near object |
+|---|---|---|
+| Ciliary muscles | **Relax** | **Contract** |
+| Suspensory ligaments | **Tight** (pulled taut) | **Slack** (loose) |
+| Lens shape | **Thin** (flatter) | **Thick** (fatter, more rounded) |
+| Light refraction | **Less** | **More** |
+
+> Near objects need **more bending** of light, so the lens becomes **fatter**. Memory trick: **near, needs a fat lens**.
+
+## Common mistakes
+
+- Saying the iris is the pupil. The **iris** is the coloured muscle; the **pupil** is the hole.
+- Saying the lens does all the refracting. The **cornea** refracts most of the light; the lens fine-tunes the focus.
+- Getting accommodation backwards. When ciliary muscles **contract**, ligaments go **slack** and the lens gets **fatter** (for **near** objects).
+
+## Exam tips
+
+- For the pupil reflex, name **both** muscles and say which **contracts**.
+- For accommodation, give all four: **ciliary muscles, suspensory ligaments, lens shape, refraction**.
+
+Next: test yourself with the practice questions below.`,
+
+  "14.3": `## What you need to know
+
+- Describe a hormone.
+- Identify the endocrine glands and the hormones they make.
+- Explain how adrenaline increases blood glucose and heart rate, with examples.
+- Compare nervous and hormonal control: speed and how long the effect lasts.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Hormone | A chemical substance, made by a gland and carried by the blood, that changes the activity of one or more target organs. |
+| Endocrine gland | A gland that releases hormones straight into the blood. |
+| Target organ | The organ a hormone acts on. |
+| Adrenaline | The "fight or flight" hormone. |
+
+## What is a hormone?
+
+> A **hormone** is a **chemical substance**, produced by a **gland** and **carried by the blood**, that **alters the activity** of one or more specific **target organs**.
+
+## The endocrine glands
+
+![The endocrine glands](/images/biology/14-3-glands.svg)
+
+| Gland | Hormone(s) |
+|---|---|
+| **Pituitary gland** (in the brain) | **FSH** and **LH** |
+| **Adrenal glands** (on top of the kidneys) | **Adrenaline** |
+| **Pancreas** | **Insulin** and **glucagon** |
+| **Testes** (in males) | **Testosterone** |
+| **Ovaries** (in females) | **Oestrogen** and **progesterone** |
+
+## Adrenaline
+
+Adrenaline is released when you are **frightened, excited or stressed**: the "**fight or flight**" response.
+
+Examples: being chased by a dog, a near miss on the road, before an exam or a race.
+
+| Effect | Why it helps |
+|---|---|
+| **Increases blood glucose** concentration | More glucose for muscles to **respire** and release energy |
+| **Increases heart rate** | Delivers **glucose and oxygen** to muscles faster |
+
+## Nervous and hormonal control compared
+
+| | Nervous control | Hormonal control |
+|---|---|---|
+| Signal | Electrical impulses | Chemicals (hormones) |
+| Carried by | Neurones | The blood |
+| **Speed of action** | **Very fast** | **Slower** |
+| **Duration of effect** | **Short** | **Longer lasting** |
+
+> Think of a text message (nerves: fast, quick to forget) and a letter in the post (hormones: slower, but you keep it).
+
+## Common mistakes
+
+- Saying hormones travel along nerves. Hormones are carried in the **blood**.
+- Saying adrenaline is made in the kidneys. It is made in the **adrenal glands**, which sit on top of the kidneys.
+- Mixing up which hormones the pancreas makes: **insulin and glucagon**.
+
+## Exam tips
+
+- Learn the definition of a hormone word for word.
+- Learn the five glands and their hormones as a table.
+- When comparing nerves and hormones, mention **speed** and **duration**.
+
+Next: test yourself with the practice questions below.`,
+
+  "14.4": `## What you need to know
+
+- Describe homeostasis as keeping a constant internal environment.
+- Explain control by negative feedback, with reference to a set point.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Homeostasis | The maintenance of a constant internal environment. |
+| Internal environment | Conditions inside the body, such as temperature, blood glucose and water content. |
+| Set point | The normal level the body tries to keep, such as 37 °C. |
+| Negative feedback | When a change from the set point causes a response that brings it back to the set point. |
+
+## What is homeostasis?
+
+> **Homeostasis** is the **maintenance of a constant internal environment**.
+
+Our cells work best when conditions stay steady. Enzymes, for example, need the right temperature and pH.
+
+Examples of things the body keeps constant:
+
+- **Body temperature** (about 37 °C), see topic 14.5.
+- **Blood glucose** concentration, see topic 14.6.
+- **Water content** of the blood.
+
+## Negative feedback
+
+![How negative feedback works](/images/biology/14-4-negative-feedback.svg)
+
+> **Negative feedback**: when a factor moves away from its **set point**, the body makes a change that brings it **back** to the set point.
+
+1. A factor **rises above** the set point.
+2. **Receptors** detect the change.
+3. A **control centre** (such as the brain) responds.
+4. **Effectors** act to **lower** it back to the set point.
+
+It works the other way too: if the factor **falls below** the set point, effectors act to **raise** it.
+
+> Think of a room heater with a thermostat. Set it to 20 °C. If the room gets too cold, the heater turns on. When it gets too warm, the heater turns off. The temperature stays close to 20 °C.
+
+## Common mistakes
+
+- Saying homeostasis keeps the body "the same as the outside". It keeps the **inside** constant, even when the outside changes.
+- Saying negative feedback is "bad". "Negative" means it **reverses** the change.
+- Forgetting to mention the **set point**.
+
+## Exam tips
+
+- Learn the definition of homeostasis word for word.
+- When explaining negative feedback, always say: **change from the set point, detected, response, returns to the set point**.
+
+Next: test yourself with the practice questions below.`,
+
+  "14.5": `## What you need to know
+
+- Identify on a diagram of the skin: hairs, hair erector muscles, sweat glands, receptors, sensory neurones, blood vessels and fatty tissue.
+- Describe how insulation helps keep body temperature constant.
+- Describe the roles of the hypothalamus and skin temperature receptors.
+- Explain how sweating, shivering, hair erector muscles, vasodilation and vasoconstriction keep body temperature constant.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Hypothalamus | The part of the brain that controls body temperature. |
+| Insulation | A layer that reduces heat loss, such as fat or trapped air. |
+| Hair erector muscle | A tiny muscle that makes a hair stand up. |
+| Vasodilation | Arterioles near the skin surface get wider. |
+| Vasoconstriction | Arterioles near the skin surface get narrower. |
+| Arteriole | A small artery. |
+| Shivering | Fast, automatic muscle contractions that release heat. |
+
+## The skin
+
+![A section through human skin](/images/biology/14-5-skin.svg)
+
+| Part | Role in temperature control |
+|---|---|
+| **Hairs** | Trap a layer of air (insulation) |
+| **Hair erector muscles** | Pull hairs up or let them lie flat |
+| **Sweat glands** | Make sweat |
+| **Receptors** | Detect temperature |
+| **Sensory neurones** | Carry impulses from receptors to the brain |
+| **Blood vessels** | Carry blood close to or away from the surface |
+| **Fatty tissue** | Insulation under the skin |
+
+## Insulation
+
+**Fatty tissue** under the skin and **air trapped by hairs** are poor conductors of heat. They **reduce heat loss** from the body.
+
+## Control by the hypothalamus
+
+- **Temperature receptors** in the **skin** detect the outside temperature and send impulses to the brain.
+- The **hypothalamus** in the brain **monitors the temperature of the blood**. It is the **control centre**.
+- If the temperature moves away from **37 °C** (the set point), the hypothalamus sends impulses to **effectors** to bring it back. This is **negative feedback**.
+
+## When we are too hot
+
+| Response | How it cools us |
+|---|---|
+| **Sweating** | Sweat glands release sweat. Water **evaporates** from the skin, taking **heat energy** with it. |
+| **Vasodilation** | **Arterioles** supplying skin capillaries **widen**. More blood flows near the surface, so more heat is **lost by radiation**. |
+| **Hair erector muscles relax** | Hairs **lie flat**, trapping less air, so more heat is lost. |
+
+## When we are too cold
+
+| Response | How it warms us |
+|---|---|
+| **Shivering** | Muscles contract quickly. **Respiration** in the muscles releases **heat**. |
+| **Vasoconstriction** | **Arterioles** supplying skin capillaries **narrow**. Less blood flows near the surface, so **less heat is lost**. |
+| **Hair erector muscles contract** | Hairs **stand up**, trapping a layer of **air** for insulation. |
+| **Less sweating** | Less heat lost by evaporation. |
+
+![Vasodilation and vasoconstriction](/images/biology/14-5-vaso.svg)
+
+## Common mistakes
+
+- Saying blood vessels "move" closer to the skin. They do not move. The **arterioles widen or narrow**, changing how much blood flows near the surface.
+- Saying capillaries dilate. It is the **arterioles** that dilate or constrict.
+- Saying sweating cools us because sweat is cold. Cooling happens when **water evaporates**, taking heat away.
+- Saying shivering is to "move about". Shivering releases heat from **respiration**.
+
+## Exam tips
+
+- Always say **arterioles** for vasodilation and vasoconstriction.
+- Name the control centre: the **hypothalamus**.
+- For each response, explain **how heat is gained or lost** (evaporation, radiation, respiration, insulation).
+
+Next: test yourself with the practice questions below.`,
+
+  "14.6": `## What you need to know
+
+- Explain why blood glucose concentration must be controlled.
+- Describe how the liver and pancreas control blood glucose using insulin and glucagon.
+- Describe the signs of Type 1 diabetes and its treatment.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Blood glucose concentration | How much glucose is in the blood. |
+| Insulin | A hormone from the pancreas that lowers blood glucose. |
+| Glucagon | A hormone from the pancreas that raises blood glucose. |
+| Glycogen | A storage carbohydrate made from glucose, stored in the liver and muscles. |
+| Type 1 diabetes | A condition where the pancreas does not make enough insulin. |
+
+## Why control blood glucose?
+
+- Cells need a steady supply of glucose for **respiration**. If glucose falls **too low**, cells (especially brain cells) cannot get enough energy.
+- If glucose rises **too high**, water leaves cells by **osmosis** into the blood, and this damages cells.
+
+So blood glucose is kept close to a **set point** by **negative feedback**.
+
+## Control by the pancreas and liver
+
+![How insulin and glucagon control blood glucose](/images/biology/14-6-glucose-control.svg)
+
+### Blood glucose too high (after a meal)
+
+1. The **pancreas** detects the rise.
+2. It releases **insulin** into the blood.
+3. Insulin makes the **liver** (and muscles) take in glucose and convert it to **glycogen** to store it.
+4. Blood glucose **falls** back to normal.
+
+### Blood glucose too low (during exercise or between meals)
+
+1. The **pancreas** detects the fall.
+2. It releases **glucagon** into the blood.
+3. Glucagon makes the **liver** convert **glycogen** back into **glucose**, which goes into the blood.
+4. Blood glucose **rises** back to normal.
+
+| | Insulin | Glucagon |
+|---|---|---|
+| Made by | Pancreas | Pancreas |
+| Released when glucose is | **High** | **Low** |
+| Effect on the liver | Glucose made into glycogen | Glycogen made into glucose |
+| Effect on blood glucose | **Lowers** it | **Raises** it |
+
+> Memory trick: insulin puts glucose **in** to storage. Glucagon makes glucose **go**. Do not mix up **glucagon** (hormone) and **glycogen** (store).
+
+## Type 1 diabetes
+
+In **Type 1 diabetes**, the pancreas does **not make enough insulin**.
+
+**Signs:**
+
+- **High blood glucose** concentration.
+- **Glucose in the urine** (the kidneys cannot reabsorb it all).
+
+**Treatment:**
+
+- **Insulin** given by **injection** (or a pump), usually before meals.
+- People also check their blood glucose regularly and watch their diet and exercise.
+
+## Common mistakes
+
+- Mixing up **glucagon** and **glycogen**.
+- Saying insulin "turns into" glycogen. Insulin is a hormone that **causes** the liver to turn glucose into glycogen.
+- Saying the liver makes insulin. The **pancreas** makes insulin and glucagon.
+
+## Exam tips
+
+- For each hormone, give **where it is made**, **when it is released**, and **what it does in the liver**.
+- Type 1 diabetes: two signs (**high blood glucose**, **glucose in urine**) and the treatment (**insulin**).
+
+Next: test yourself with the practice questions below.`,
 };
 
 export function getBiologyNotes(topic: string): string | undefined {

@@ -2846,6 +2846,1159 @@ export const O_LEVEL_BIOLOGY_REVISION: Record<string, TopicRevision> = {
         "tag": "Plasma"
       }
     ]
+  },
+  "12.1": {
+    "mindMap": {
+      "centre": "Disease",
+      "branches": [
+        {
+          "label": "Basics",
+          "items": [
+            "Pathogen: disease-causing organism",
+            "Transmissible: passed host to host",
+            "Direct or indirect spread"
+          ]
+        },
+        {
+          "label": "Barriers",
+          "items": [
+            "Skin",
+            "Nose hairs, mucus",
+            "Stomach acid"
+          ]
+        },
+        {
+          "label": "Malaria",
+          "items": [
+            "Parasite carried by mosquito (vector)",
+            "Drain still water, oil on water",
+            "Nets and insecticides"
+          ]
+        },
+        {
+          "label": "HIV",
+          "items": [
+            "A virus, can lead to AIDS",
+            "Sex, needles, blood, mother to baby",
+            "Condoms, blood tests, no shared needles"
+          ]
+        },
+        {
+          "label": "Cholera",
+          "items": [
+            "Bacterium in dirty water",
+            "Toxin: chloride ions, osmosis",
+            "Diarrhoea, dehydration"
+          ]
+        },
+        {
+          "label": "Alcohol and tobacco",
+          "items": [
+            "Alcohol: depressant, liver damage",
+            "Tar: cancer; CO: less oxygen",
+            "Nicotine: addictive"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is a pathogen?",
+        "back": "A disease-causing organism.",
+        "tag": "Definitions"
+      },
+      {
+        "front": "What is a transmissible disease?",
+        "back": "A disease where the pathogen can be passed from one host to another.",
+        "tag": "Definitions"
+      },
+      {
+        "front": "Give two indirect ways pathogens spread.",
+        "back": "Any two: contaminated surfaces, contaminated food, animals, the air.",
+        "tag": "Spread"
+      },
+      {
+        "front": "Name four barriers to pathogens.",
+        "back": "Skin, hairs in the nose, mucus, stomach acid.",
+        "tag": "Barriers"
+      },
+      {
+        "front": "What is a vector?",
+        "back": "An organism that carries a pathogen from one host to another, such as a mosquito.",
+        "tag": "Malaria"
+      },
+      {
+        "front": "How is malaria transmitted?",
+        "back": "A female mosquito carrying the parasite bites a person and passes it into their blood.",
+        "tag": "Malaria"
+      },
+      {
+        "front": "Give two ways to control mosquitoes using their life cycle.",
+        "back": "Any two: drain still water, oil on water to kill larvae, fish that eat larvae, insecticides, mosquito nets.",
+        "tag": "Malaria"
+      },
+      {
+        "front": "Give three ways HIV is transmitted.",
+        "back": "Any three: unprotected sex, sharing needles, infected blood, mother to baby (placenta, birth, breast milk).",
+        "tag": "HIV"
+      },
+      {
+        "front": "Give two ways to control the spread of HIV.",
+        "back": "Any two: condoms, not sharing needles, testing donated blood, medicines.",
+        "tag": "HIV"
+      },
+      {
+        "front": "What causes cholera and how is it spread?",
+        "back": "A bacterium, spread in contaminated water.",
+        "tag": "Cholera"
+      },
+      {
+        "front": "Explain how cholera causes diarrhoea.",
+        "back": "Its toxin makes cells release chloride ions into the gut; water follows by osmosis, causing diarrhoea and dehydration.",
+        "tag": "Cholera"
+      },
+      {
+        "front": "Give three ways to control cholera.",
+        "back": "Any three: clean water, hygienic food preparation, hand washing, waste disposal, sewage treatment.",
+        "tag": "Cholera"
+      },
+      {
+        "front": "Give three effects of drinking too much alcohol.",
+        "back": "Any three: reduced self-control, depressant, slower reactions, liver damage, social problems.",
+        "tag": "Alcohol"
+      },
+      {
+        "front": "What do tar and carbon monoxide in smoke do?",
+        "back": "Tar causes cancer and damages cilia; carbon monoxide reduces the oxygen carried by the blood.",
+        "tag": "Tobacco"
+      },
+      {
+        "front": "Name three diseases linked to smoking.",
+        "back": "Any three: bronchitis, emphysema, lung cancer, heart disease.",
+        "tag": "Tobacco"
+      }
+    ]
+  },
+  "12.2": {
+    "mindMap": {
+      "centre": "Antibiotics",
+      "branches": [
+        {
+          "label": "Drugs",
+          "items": [
+            "Change chemical reactions in the body",
+            "Medicines, alcohol, nicotine"
+          ]
+        },
+        {
+          "label": "Antibiotics",
+          "items": [
+            "Treat bacterial infections",
+            "Kill bacteria",
+            "Do not affect viruses"
+          ]
+        },
+        {
+          "label": "Resistance",
+          "items": [
+            "Mutation by chance",
+            "Antibiotic kills others",
+            "Resistant ones survive, reproduce"
+          ]
+        },
+        {
+          "label": "Prevention",
+          "items": [
+            "Use only when essential",
+            "Not for viral infections",
+            "Finish the course"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is a drug?",
+        "back": "Any substance taken into the body that modifies or affects chemical reactions in the body.",
+        "tag": "Drugs"
+      },
+      {
+        "front": "What are antibiotics used for?",
+        "back": "To treat bacterial infections.",
+        "tag": "Antibiotics"
+      },
+      {
+        "front": "Do antibiotics work against viruses?",
+        "back": "No. They kill bacteria but do not affect viruses.",
+        "tag": "Antibiotics"
+      },
+      {
+        "front": "Why should antibiotics not be used for a cold?",
+        "back": "Colds are caused by viruses, which antibiotics do not affect.",
+        "tag": "Antibiotics"
+      },
+      {
+        "front": "What is an antibiotic-resistant bacterium?",
+        "back": "A bacterium that is not killed by an antibiotic.",
+        "tag": "Resistance"
+      },
+      {
+        "front": "What is MRSA?",
+        "back": "A bacterium resistant to many antibiotics.",
+        "tag": "Resistance"
+      },
+      {
+        "front": "How does a population of resistant bacteria develop?",
+        "back": "A chance mutation makes some bacteria resistant; the antibiotic kills the others; the resistant ones survive and reproduce.",
+        "tag": "Resistance"
+      },
+      {
+        "front": "How can the development of resistance be minimised?",
+        "back": "Use antibiotics only when essential.",
+        "tag": "Prevention"
+      },
+      {
+        "front": "Who becomes resistant: the patient or the bacteria?",
+        "back": "The bacteria.",
+        "tag": "Resistance"
+      },
+      {
+        "front": "Why finish a course of antibiotics?",
+        "back": "So all the bacteria are killed and none survive to become resistant.",
+        "tag": "Prevention"
+      }
+    ]
+  },
+  "12.3": {
+    "mindMap": {
+      "centre": "Immunity",
+      "branches": [
+        {
+          "label": "Antigens and antibodies",
+          "items": [
+            "Antigens on pathogens, specific shapes",
+            "Antibodies: proteins from lymphocytes",
+            "Complementary shapes fit"
+          ]
+        },
+        {
+          "label": "Antibody action",
+          "items": [
+            "Destroy pathogens directly",
+            "Mark them for phagocytes"
+          ]
+        },
+        {
+          "label": "Active immunity",
+          "items": [
+            "Your own antibodies",
+            "From infection or vaccination",
+            "Memory cells, long term"
+          ]
+        },
+        {
+          "label": "Vaccination",
+          "items": [
+            "Weakened pathogens or antigens",
+            "Lymphocytes make antibodies",
+            "Memory cells made",
+            "Stops disease spreading"
+          ]
+        },
+        {
+          "label": "Passive immunity",
+          "items": [
+            "Antibodies from another person",
+            "Placenta, breast milk",
+            "No memory cells, short term"
+          ]
+        },
+        {
+          "label": "HIV",
+          "items": [
+            "Kills lymphocytes",
+            "Fewer antibodies",
+            "Weak immune system"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is active immunity?",
+        "back": "Defence against a pathogen by antibody production in your own body.",
+        "tag": "Active"
+      },
+      {
+        "front": "What are antigens?",
+        "back": "Molecules on a pathogen with specific shapes; each pathogen has its own.",
+        "tag": "Antigens"
+      },
+      {
+        "front": "What are antibodies?",
+        "back": "Proteins that bind to antigens, destroying pathogens or marking them for phagocytes.",
+        "tag": "Antibodies"
+      },
+      {
+        "front": "Why does each antibody fit only one antigen?",
+        "back": "Its shape is complementary to that specific antigen.",
+        "tag": "Antibodies"
+      },
+      {
+        "front": "Give two ways to gain active immunity.",
+        "back": "Infection by the pathogen, or vaccination.",
+        "tag": "Active"
+      },
+      {
+        "front": "What does a vaccine contain?",
+        "back": "Weakened pathogens or their antigens.",
+        "tag": "Vaccination"
+      },
+      {
+        "front": "Outline how vaccination gives immunity.",
+        "back": "Antigens stimulate lymphocytes to make antibodies, and memory cells are made for long-term immunity.",
+        "tag": "Vaccination"
+      },
+      {
+        "front": "How does vaccination control the spread of disease?",
+        "back": "If most people are immune, the pathogen cannot spread from person to person.",
+        "tag": "Vaccination"
+      },
+      {
+        "front": "What is passive immunity?",
+        "back": "Short-term defence by antibodies received from another person.",
+        "tag": "Passive"
+      },
+      {
+        "front": "How does a baby get passive immunity?",
+        "back": "Antibodies across the placenta and in breast milk.",
+        "tag": "Passive"
+      },
+      {
+        "front": "Why is breast-feeding important?",
+        "back": "It gives the baby antibodies while its own immune system develops.",
+        "tag": "Passive"
+      },
+      {
+        "front": "Are memory cells made in passive immunity?",
+        "back": "No, so the protection is short term.",
+        "tag": "Passive"
+      },
+      {
+        "front": "How does HIV weaken the immune system?",
+        "back": "It reduces the number of lymphocytes, so fewer antibodies are made.",
+        "tag": "HIV"
+      }
+    ]
+  },
+  "13.1": {
+    "mindMap": {
+      "centre": "Excretion",
+      "branches": [
+        {
+          "label": "Definition",
+          "items": [
+            "Removal of toxic materials",
+            "And waste products of metabolism"
+          ]
+        },
+        {
+          "label": "Carbon dioxide",
+          "items": [
+            "Made by respiration",
+            "Excreted by the lungs"
+          ]
+        },
+        {
+          "label": "Urea",
+          "items": [
+            "Toxic",
+            "Made in the liver",
+            "From excess amino acids"
+          ]
+        },
+        {
+          "label": "Not excretion",
+          "items": [
+            "Egestion: faeces",
+            "Undigested food"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is excretion?",
+        "back": "The removal of toxic materials and the waste products of metabolism from organisms.",
+        "tag": "Definition"
+      },
+      {
+        "front": "Which process makes carbon dioxide?",
+        "back": "Respiration.",
+        "tag": "Carbon dioxide"
+      },
+      {
+        "front": "Which organ excretes carbon dioxide?",
+        "back": "The lungs.",
+        "tag": "Carbon dioxide"
+      },
+      {
+        "front": "Where is urea made?",
+        "back": "In the liver.",
+        "tag": "Urea"
+      },
+      {
+        "front": "What is urea made from?",
+        "back": "The breakdown of excess amino acids.",
+        "tag": "Urea"
+      },
+      {
+        "front": "Why must urea be excreted?",
+        "back": "It is toxic.",
+        "tag": "Urea"
+      },
+      {
+        "front": "Which organs excrete urea?",
+        "back": "The kidneys, in urine.",
+        "tag": "Urea"
+      },
+      {
+        "front": "Is passing faeces excretion?",
+        "back": "No. It is egestion: removing undigested food, not waste from metabolism.",
+        "tag": "Egestion"
+      },
+      {
+        "front": "What is metabolism?",
+        "back": "All the chemical reactions in the body.",
+        "tag": "Definition"
+      },
+      {
+        "front": "Name the two main excretory products in humans.",
+        "back": "Carbon dioxide and urea.",
+        "tag": "Products"
+      }
+    ]
+  },
+  "13.2": {
+    "mindMap": {
+      "centre": "Urinary system",
+      "branches": [
+        {
+          "label": "Organs",
+          "items": [
+            "Kidneys: remove urea, salts, water",
+            "Ureters: kidney to bladder",
+            "Bladder stores urine",
+            "Urethra: out of the body"
+          ]
+        },
+        {
+          "label": "Nephron parts",
+          "items": [
+            "Glomerulus, Bowman's capsule",
+            "Tubules, loop of Henle",
+            "Collecting duct"
+          ]
+        },
+        {
+          "label": "Filtration",
+          "items": [
+            "In the glomerulus",
+            "Water, glucose, urea, ions",
+            "Not cells or proteins"
+          ]
+        },
+        {
+          "label": "Reabsorption",
+          "items": [
+            "All glucose",
+            "Some ions",
+            "Most water"
+          ]
+        },
+        {
+          "label": "Liver",
+          "items": [
+            "Amino acids into proteins",
+            "Deamination makes urea"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is the function of the kidneys?",
+        "back": "To remove urea, excess salts and excess water from the blood as urine.",
+        "tag": "Organs"
+      },
+      {
+        "front": "What does a ureter do?",
+        "back": "Carries urine from a kidney to the bladder.",
+        "tag": "Organs"
+      },
+      {
+        "front": "What does the bladder do?",
+        "back": "Stores urine.",
+        "tag": "Organs"
+      },
+      {
+        "front": "What does the urethra do?",
+        "back": "Carries urine out of the body.",
+        "tag": "Organs"
+      },
+      {
+        "front": "Why does the body need to excrete urea?",
+        "back": "Urea is toxic.",
+        "tag": "Need"
+      },
+      {
+        "front": "Name the five parts of a nephron you must know.",
+        "back": "Bowman's capsule, glomerulus, tubules, loop of Henle, collecting duct.",
+        "tag": "Nephron"
+      },
+      {
+        "front": "What happens in the glomerulus?",
+        "back": "Water, glucose, urea and ions are filtered from the blood.",
+        "tag": "Nephron"
+      },
+      {
+        "front": "Which substances are reabsorbed in the nephron?",
+        "back": "All the glucose, some of the ions and most of the water.",
+        "tag": "Nephron"
+      },
+      {
+        "front": "What does urine contain?",
+        "back": "Urea, excess water and excess ions.",
+        "tag": "Nephron"
+      },
+      {
+        "front": "Why is there no protein in normal urine?",
+        "back": "Proteins are too big to be filtered.",
+        "tag": "Nephron"
+      },
+      {
+        "front": "What is deamination?",
+        "back": "Removal of the nitrogen-containing part of amino acids in the liver, forming urea.",
+        "tag": "Liver"
+      },
+      {
+        "front": "How does the liver assimilate amino acids?",
+        "back": "It converts them into proteins.",
+        "tag": "Liver"
+      }
+    ]
+  },
+  "14.1": {
+    "mindMap": {
+      "centre": "Nervous system",
+      "branches": [
+        {
+          "label": "Parts",
+          "items": [
+            "CNS: brain and spinal cord",
+            "PNS: nerves outside",
+            "Coordinates body functions"
+          ]
+        },
+        {
+          "label": "Neurones",
+          "items": [
+            "Sensory: receptor to CNS",
+            "Relay: inside CNS",
+            "Motor: CNS to effector"
+          ]
+        },
+        {
+          "label": "Reflex arc",
+          "items": [
+            "Stimulus, receptor",
+            "Sensory, relay, motor neurones",
+            "Effector: muscle or gland"
+          ]
+        },
+        {
+          "label": "Reflex action",
+          "items": [
+            "Rapid",
+            "Automatic",
+            "Protects the body"
+          ]
+        },
+        {
+          "label": "Synapse",
+          "items": [
+            "Vesicles of neurotransmitter",
+            "Diffuses across gap",
+            "Binds receptor proteins",
+            "One direction only"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What does the nervous system do?",
+        "back": "Coordinates and regulates body functions.",
+        "tag": "Basics"
+      },
+      {
+        "front": "What is the CNS made of?",
+        "back": "The brain and spinal cord.",
+        "tag": "Basics"
+      },
+      {
+        "front": "What is the PNS?",
+        "back": "All the nerves outside the brain and spinal cord.",
+        "tag": "Basics"
+      },
+      {
+        "front": "What travels along neurones?",
+        "back": "Electrical impulses.",
+        "tag": "Neurones"
+      },
+      {
+        "front": "What does a sensory neurone do?",
+        "back": "Carries impulses from a receptor to the CNS.",
+        "tag": "Neurones"
+      },
+      {
+        "front": "What does a motor neurone do?",
+        "back": "Carries impulses from the CNS to an effector.",
+        "tag": "Neurones"
+      },
+      {
+        "front": "What is a reflex action?",
+        "back": "A rapid and automatic response to a stimulus.",
+        "tag": "Reflex"
+      },
+      {
+        "front": "List the parts of a reflex arc in order.",
+        "back": "Receptor, sensory neurone, relay neurone, motor neurone, effector.",
+        "tag": "Reflex"
+      },
+      {
+        "front": "Name the two types of effector.",
+        "back": "Muscles and glands.",
+        "tag": "Reflex"
+      },
+      {
+        "front": "What is a synapse?",
+        "back": "A junction between two neurones.",
+        "tag": "Synapse"
+      },
+      {
+        "front": "Describe what happens at a synapse.",
+        "back": "An impulse releases neurotransmitter from vesicles; it diffuses across the gap and binds to receptor proteins, starting an impulse in the next neurone.",
+        "tag": "Synapse"
+      },
+      {
+        "front": "Why do impulses travel in only one direction at a synapse?",
+        "back": "Only the first neurone has vesicles of neurotransmitter, and only the next has receptor proteins.",
+        "tag": "Synapse"
+      }
+    ]
+  },
+  "14.2": {
+    "mindMap": {
+      "centre": "Sense organs and the eye",
+      "branches": [
+        {
+          "label": "Sense organs",
+          "items": [
+            "Groups of receptor cells",
+            "Light, sound, touch",
+            "Temperature, chemicals"
+          ]
+        },
+        {
+          "label": "Front of the eye",
+          "items": [
+            "Cornea refracts light",
+            "Iris controls light entering",
+            "Pupil lets light in"
+          ]
+        },
+        {
+          "label": "Focusing",
+          "items": [
+            "Lens focuses on retina",
+            "Ciliary muscles, suspensory ligaments",
+            "Change lens shape"
+          ]
+        },
+        {
+          "label": "Back of the eye",
+          "items": [
+            "Retina: light receptors",
+            "Fovea: most receptors",
+            "Optic nerve to brain",
+            "Blind spot: no receptors"
+          ]
+        },
+        {
+          "label": "Pupil reflex",
+          "items": [
+            "Bright: circular contract, pupil small",
+            "Dim: radial contract, pupil big"
+          ]
+        },
+        {
+          "label": "Accommodation",
+          "items": [
+            "Near: ciliary contract, lens fat",
+            "Far: ciliary relax, lens thin"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is a sense organ?",
+        "back": "A group of receptor cells responding to specific stimuli.",
+        "tag": "Sense organs"
+      },
+      {
+        "front": "Name five types of stimulus.",
+        "back": "Light, sound, touch, temperature, chemicals.",
+        "tag": "Sense organs"
+      },
+      {
+        "front": "What does the cornea do?",
+        "back": "Refracts (bends) light.",
+        "tag": "Eye"
+      },
+      {
+        "front": "What does the iris do?",
+        "back": "Controls how much light enters the pupil.",
+        "tag": "Eye"
+      },
+      {
+        "front": "What does the lens do?",
+        "back": "Focuses light onto the retina.",
+        "tag": "Eye"
+      },
+      {
+        "front": "What is the fovea?",
+        "back": "The part of the retina with the greatest density of light receptors.",
+        "tag": "Eye"
+      },
+      {
+        "front": "What does the optic nerve do?",
+        "back": "Carries impulses from the retina to the brain.",
+        "tag": "Eye"
+      },
+      {
+        "front": "Why can't we see at the blind spot?",
+        "back": "There are no light receptors where the optic nerve leaves.",
+        "tag": "Eye"
+      },
+      {
+        "front": "What happens to the iris muscles in bright light?",
+        "back": "Circular muscles contract and radial muscles relax, so the pupil gets smaller.",
+        "tag": "Pupil reflex"
+      },
+      {
+        "front": "What happens to the iris muscles in dim light?",
+        "back": "Radial muscles contract and circular muscles relax, so the pupil gets bigger.",
+        "tag": "Pupil reflex"
+      },
+      {
+        "front": "How does the eye focus on a near object?",
+        "back": "Ciliary muscles contract, suspensory ligaments slacken, the lens becomes fatter and refracts light more.",
+        "tag": "Accommodation"
+      },
+      {
+        "front": "How does the eye focus on a distant object?",
+        "back": "Ciliary muscles relax, suspensory ligaments tighten, the lens becomes thinner and refracts light less.",
+        "tag": "Accommodation"
+      }
+    ]
+  },
+  "14.3": {
+    "mindMap": {
+      "centre": "Hormones",
+      "branches": [
+        {
+          "label": "Hormone",
+          "items": [
+            "Chemical made by a gland",
+            "Carried in the blood",
+            "Acts on target organs"
+          ]
+        },
+        {
+          "label": "Glands",
+          "items": [
+            "Pituitary: FSH, LH",
+            "Adrenal: adrenaline",
+            "Pancreas: insulin, glucagon",
+            "Testes: testosterone",
+            "Ovaries: oestrogen, progesterone"
+          ]
+        },
+        {
+          "label": "Adrenaline",
+          "items": [
+            "Fight or flight",
+            "Raises blood glucose",
+            "Raises heart rate"
+          ]
+        },
+        {
+          "label": "Nerves and hormones",
+          "items": [
+            "Nerves: fast, short effect",
+            "Hormones: slower, longer effect"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is a hormone?",
+        "back": "A chemical substance, produced by a gland and carried by the blood, that alters the activity of one or more specific target organs.",
+        "tag": "Definition"
+      },
+      {
+        "front": "Which hormone do the adrenal glands make?",
+        "back": "Adrenaline.",
+        "tag": "Glands"
+      },
+      {
+        "front": "Which hormones does the pancreas make?",
+        "back": "Insulin and glucagon.",
+        "tag": "Glands"
+      },
+      {
+        "front": "Which hormones does the pituitary gland make?",
+        "back": "FSH and LH.",
+        "tag": "Glands"
+      },
+      {
+        "front": "Which hormone do the testes make?",
+        "back": "Testosterone.",
+        "tag": "Glands"
+      },
+      {
+        "front": "Which hormones do the ovaries make?",
+        "back": "Oestrogen and progesterone.",
+        "tag": "Glands"
+      },
+      {
+        "front": "Give two effects of adrenaline.",
+        "back": "Increases blood glucose concentration and increases heart rate.",
+        "tag": "Adrenaline"
+      },
+      {
+        "front": "Give an example of when adrenaline is released.",
+        "back": "When frightened or stressed, for example being chased or before a race.",
+        "tag": "Adrenaline"
+      },
+      {
+        "front": "Why does adrenaline increase blood glucose?",
+        "back": "To give muscles more glucose for respiration and energy.",
+        "tag": "Adrenaline"
+      },
+      {
+        "front": "Compare the speed of nervous and hormonal control.",
+        "back": "Nervous control is faster; hormonal control is slower.",
+        "tag": "Compare"
+      },
+      {
+        "front": "Compare how long nervous and hormonal effects last.",
+        "back": "Nervous effects are short; hormonal effects last longer.",
+        "tag": "Compare"
+      }
+    ]
+  },
+  "14.4": {
+    "mindMap": {
+      "centre": "Homeostasis",
+      "branches": [
+        {
+          "label": "Definition",
+          "items": [
+            "Constant internal environment",
+            "Cells and enzymes work best"
+          ]
+        },
+        {
+          "label": "Things kept constant",
+          "items": [
+            "Body temperature",
+            "Blood glucose",
+            "Water content"
+          ]
+        },
+        {
+          "label": "Negative feedback",
+          "items": [
+            "Change from set point",
+            "Detected by receptors",
+            "Control centre responds"
+          ]
+        },
+        {
+          "label": "Response",
+          "items": [
+            "Effectors act",
+            "Factor returns to set point",
+            "Works both ways: up or down"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is homeostasis?",
+        "back": "The maintenance of a constant internal environment.",
+        "tag": "Definition"
+      },
+      {
+        "front": "Give three things kept constant by homeostasis.",
+        "back": "Body temperature, blood glucose concentration, water content of the blood.",
+        "tag": "Examples"
+      },
+      {
+        "front": "What is a set point?",
+        "back": "The normal level that the body keeps a factor at, such as 37 °C.",
+        "tag": "Feedback"
+      },
+      {
+        "front": "What is negative feedback?",
+        "back": "When a change from the set point causes a response that brings the factor back to the set point.",
+        "tag": "Feedback"
+      },
+      {
+        "front": "What detects a change from the set point?",
+        "back": "Receptors.",
+        "tag": "Feedback"
+      },
+      {
+        "front": "What makes the response in negative feedback?",
+        "back": "Effectors (muscles or glands).",
+        "tag": "Feedback"
+      },
+      {
+        "front": "Why is homeostasis important for enzymes?",
+        "back": "Enzymes work best at a constant temperature and pH.",
+        "tag": "Definition"
+      },
+      {
+        "front": "What happens if body temperature rises above the set point?",
+        "back": "Responses happen that lower it back to the set point.",
+        "tag": "Feedback"
+      },
+      {
+        "front": "What happens if blood glucose falls below the set point?",
+        "back": "Responses happen that raise it back to the set point.",
+        "tag": "Feedback"
+      },
+      {
+        "front": "Give an everyday example of negative feedback.",
+        "back": "A heater with a thermostat that turns off when the room is warm and on when it is cold.",
+        "tag": "Feedback"
+      }
+    ]
+  },
+  "14.5": {
+    "mindMap": {
+      "centre": "Temperature control",
+      "branches": [
+        {
+          "label": "Skin parts",
+          "items": [
+            "Hairs, hair erector muscles",
+            "Sweat glands, receptors",
+            "Blood vessels, fatty tissue"
+          ]
+        },
+        {
+          "label": "Control",
+          "items": [
+            "Skin receptors detect temperature",
+            "Hypothalamus is control centre",
+            "Set point 37 °C"
+          ]
+        },
+        {
+          "label": "Too hot",
+          "items": [
+            "Sweating: evaporation cools",
+            "Vasodilation: more heat lost",
+            "Hairs lie flat"
+          ]
+        },
+        {
+          "label": "Too cold",
+          "items": [
+            "Shivering: respiration heat",
+            "Vasoconstriction: less heat lost",
+            "Hairs stand up, trap air"
+          ]
+        },
+        {
+          "label": "Insulation",
+          "items": [
+            "Fatty tissue",
+            "Trapped air"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Which part of the brain controls body temperature?",
+        "back": "The hypothalamus.",
+        "tag": "Control"
+      },
+      {
+        "front": "What do skin temperature receptors do?",
+        "back": "Detect temperature and send impulses to the brain.",
+        "tag": "Control"
+      },
+      {
+        "front": "How does sweating cool the body?",
+        "back": "Water in sweat evaporates, taking heat energy from the skin.",
+        "tag": "Too hot"
+      },
+      {
+        "front": "What is vasodilation?",
+        "back": "Widening of arterioles supplying skin capillaries.",
+        "tag": "Too hot"
+      },
+      {
+        "front": "How does vasodilation cool the body?",
+        "back": "More blood flows near the skin surface, so more heat is lost by radiation.",
+        "tag": "Too hot"
+      },
+      {
+        "front": "What is vasoconstriction?",
+        "back": "Narrowing of arterioles supplying skin capillaries.",
+        "tag": "Too cold"
+      },
+      {
+        "front": "How does vasoconstriction keep the body warm?",
+        "back": "Less blood flows near the surface, so less heat is lost.",
+        "tag": "Too cold"
+      },
+      {
+        "front": "How does shivering warm the body?",
+        "back": "Rapid muscle contractions increase respiration, which releases heat.",
+        "tag": "Too cold"
+      },
+      {
+        "front": "What do hair erector muscles do when you are cold?",
+        "back": "They contract, making hairs stand up and trap a layer of insulating air.",
+        "tag": "Too cold"
+      },
+      {
+        "front": "How does fatty tissue help keep body temperature constant?",
+        "back": "It is an insulator that reduces heat loss.",
+        "tag": "Insulation"
+      },
+      {
+        "front": "Which blood vessels dilate or constrict in temperature control?",
+        "back": "The arterioles supplying skin surface capillaries.",
+        "tag": "Control"
+      }
+    ]
+  },
+  "14.6": {
+    "mindMap": {
+      "centre": "Blood glucose control",
+      "branches": [
+        {
+          "label": "Why control it",
+          "items": [
+            "Cells need glucose for respiration",
+            "Too high damages cells"
+          ]
+        },
+        {
+          "label": "Too high",
+          "items": [
+            "Pancreas releases insulin",
+            "Liver makes glucose into glycogen",
+            "Glucose falls"
+          ]
+        },
+        {
+          "label": "Too low",
+          "items": [
+            "Pancreas releases glucagon",
+            "Liver makes glycogen into glucose",
+            "Glucose rises"
+          ]
+        },
+        {
+          "label": "Type 1 diabetes",
+          "items": [
+            "Too little insulin made",
+            "High blood glucose",
+            "Glucose in urine",
+            "Treated with insulin"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Why must blood glucose be controlled?",
+        "back": "Cells need a steady supply for respiration, and too much glucose damages cells.",
+        "tag": "Need"
+      },
+      {
+        "front": "Which organ makes insulin and glucagon?",
+        "back": "The pancreas.",
+        "tag": "Hormones"
+      },
+      {
+        "front": "When is insulin released?",
+        "back": "When blood glucose concentration is too high.",
+        "tag": "Insulin"
+      },
+      {
+        "front": "What does insulin cause the liver to do?",
+        "back": "Take in glucose and convert it to glycogen.",
+        "tag": "Insulin"
+      },
+      {
+        "front": "When is glucagon released?",
+        "back": "When blood glucose concentration is too low.",
+        "tag": "Glucagon"
+      },
+      {
+        "front": "What does glucagon cause the liver to do?",
+        "back": "Convert glycogen into glucose and release it into the blood.",
+        "tag": "Glucagon"
+      },
+      {
+        "front": "What is glycogen?",
+        "back": "A storage carbohydrate made from glucose, stored in the liver and muscles.",
+        "tag": "Store"
+      },
+      {
+        "front": "What is Type 1 diabetes?",
+        "back": "A condition where the pancreas does not produce enough insulin.",
+        "tag": "Diabetes"
+      },
+      {
+        "front": "Give two signs of Type 1 diabetes.",
+        "back": "Increased blood glucose concentration and glucose in the urine.",
+        "tag": "Diabetes"
+      },
+      {
+        "front": "How is Type 1 diabetes treated?",
+        "back": "With insulin, usually by injection.",
+        "tag": "Diabetes"
+      },
+      {
+        "front": "Which word is the hormone: glucagon or glycogen?",
+        "back": "Glucagon is the hormone; glycogen is the store.",
+        "tag": "Store"
+      }
+    ]
   }
 };
 
