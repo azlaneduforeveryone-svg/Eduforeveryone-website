@@ -4,6 +4,7 @@ import { useEffect, useState, useMemo } from "react";
 import Link from "next/link";
 import PageHeader from "@/components/ui/PageHeader";
 import SectionHeader from "@/components/ui/SectionHeader";
+import HowItWorks, { type HowItWorksStep } from "@/components/courses/HowItWorks";
 import { useAuth } from "@/contexts/AuthContext";
 import { ALL_O_LEVEL_BIOLOGY_TOPICS } from "@/lib/courses/biologySyllabus";
 import {
@@ -14,49 +15,15 @@ import {
 } from "@/lib/courses/accountingProgress";
 import type { BiologyHubSection, BiologyHubTopic } from "./page";
 
-const SEVEN_STEPS = [
-  {
-    step: 1,
-    title: "Watch",
-    icon: "🎬",
-    description: "Short, focused video lesson explaining key biological processes clearly.",
-  },
-  {
-    step: 2,
-    title: "Read notes",
-    icon: "📖",
-    description: "Structured syllabus notes with definitions, diagrams, and exam tips.",
-  },
-  {
-    step: 3,
-    title: "Interactive model",
-    icon: "🧬",
-    description: "Explore 3D biological structures and interactive simulations where available.",
-  },
-  {
-    step: 4,
-    title: "Mind map",
-    icon: "🗺️",
-    description: "Visual topic overview connecting core concepts, processes, and terms.",
-  },
-  {
-    step: 5,
-    title: "Flashcards",
-    icon: "🗂️",
-    description: "Quick-fire recall cards for key biological terms, enzymes, and pathways.",
-  },
-  {
-    step: 6,
-    title: "Practice MCQs",
-    icon: "✅",
-    description: "Exam-style multiple-choice questions with line-by-line option feedback.",
-  },
-  {
-    step: 7,
-    title: "Ask the AI tutor",
-    icon: "💬",
-    description: "Ask questions about any biological mechanism, practical, or syllabus point.",
-  },
+const STEPS: HowItWorksStep[] = [
+  { title: "Start here", text: "See what you need to know and learn the key words for the topic." },
+  { title: "Watch", text: "A short video lesson on the topic.", soon: true },
+  { title: "Read the notes", text: "Clear notes with labelled diagrams, common mistakes and exam tips." },
+  { title: "Explore in 3D", text: "Turn and tap 3D models of organs such as the heart, on selected topics.", soon: true },
+  { title: "Mind map", text: "The whole topic on one page, to see how the ideas link." },
+  { title: "Flashcards", text: "Test your memory of key words, structures and processes." },
+  { title: "Practice MCQs", text: "Exam-style questions. Every answer explains why it is right or wrong." },
+  { title: "Ask the AI tutor", text: "Still stuck? Sign in and ask a question about the topic." },
 ];
 
 interface BiologyHubClientProps {
@@ -144,34 +111,15 @@ export default function BiologyHubClient({ sections }: BiologyHubClientProps) {
       />
 
       <main className="max-w-6xl mx-auto px-4 sm:px-6 py-12 flex-1 w-full space-y-14">
-        {/* Seven Steps Section */}
-        <section aria-labelledby="seven-steps-heading">
-          <SectionHeader
-            eyebrow="How It Works"
-            title={<span id="seven-steps-heading">Every topic, the same seven steps</span>}
-            description={`A clear, repeatable learning routine across all ${totalTopics} syllabus topics.`}
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {SEVEN_STEPS.map((s) => (
-              <div key={s.step} className="efe-card p-5 flex items-start gap-4">
-                <div className="w-11 h-11 rounded-xl bg-efe-accent-soft text-efe-accent-ink flex items-center justify-center text-xl flex-shrink-0 font-bold">
-                  {s.icon}
-                </div>
-                <div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-efe-accent-ink mb-0.5">
-                    Step {s.step}
-                  </div>
-                  <h3 className="font-bold font-display text-base text-efe-fg mb-1">
-                    {s.title}
-                  </h3>
-                  <p className="text-xs text-efe-muted leading-relaxed">
-                    {s.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+        {/* How it works (not clickable on purpose; one real start link) */}
+        <HowItWorks
+          id="how-it-works-heading"
+          title="How each topic works"
+          intro={`Every one of the ${totalTopics} topics follows the same steps, in this order. Topics are being added section by section.`}
+          steps={STEPS}
+          startHref="/courses/biology/o-level/1-1"
+          startLabel="Start with topic 1.1"
+        />
 
         {/* Progress Bar */}
         <section id="o-level-5090" className="scroll-mt-20" aria-label="Course progress">
