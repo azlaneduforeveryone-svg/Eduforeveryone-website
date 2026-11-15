@@ -1899,6 +1899,741 @@ Examples:
 - Remember the route: **ileum, hepatic portal vein, liver**.
 
 Next: test yourself with the practice questions below.`,
+
+  "9.1": `## What you need to know
+
+- Describe the features of gas exchange surfaces: large surface area, thin surface, good blood supply and good air supply.
+- State the percentages of gases in air.
+- Investigate and explain the differences between breathed-in and breathed-out air.
+- Identify the larynx, trachea, lungs, bronchi, bronchioles, alveoli and capillaries.
+- Describe how gas exchange happens in the alveoli.
+- Identify the ribs, intercostal muscles and diaphragm, and explain how they make us breathe.
+- Investigate and explain how exercise changes breathing.
+- Explain how goblet cells, ciliated cells and mucus protect the lungs.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Gas exchange | Oxygen moving into the blood and carbon dioxide moving out, by diffusion. |
+| Trachea | The windpipe. It carries air from the throat to the lungs. |
+| Bronchi | The two tubes that branch from the trachea, one to each lung. One is a bronchus. |
+| Bronchioles | Smaller tubes that branch from the bronchi. |
+| Alveoli | Tiny air sacs at the ends of the bronchioles, where gas exchange happens. One is an alveolus. |
+| Diaphragm | A sheet of muscle under the lungs. |
+| Intercostal muscles | Muscles between the ribs. There are external and internal ones. |
+| Thorax | The chest. |
+| Inspired air | Air breathed in. |
+| Expired air | Air breathed out. |
+
+## Features of a good gas exchange surface
+
+| Feature | Why it helps |
+|---|---|
+| **Large surface area** | More space for gases to diffuse across at the same time. |
+| **Thin surface** | **Short distance** for gases to diffuse. |
+| **Good blood supply** | Blood carries oxygen away and brings carbon dioxide, keeping a **steep concentration gradient**. |
+| **Good air supply** (ventilation) | Breathing brings fresh air in and removes carbon dioxide, keeping the **concentration gradient** steep. |
+
+## The gas exchange system
+
+![The human gas exchange system](/images/biology/9-1-lungs.svg)
+
+Air travels through:
+
+1. **Nose and mouth**
+2. **Larynx** (voice box)
+3. **Trachea** (windpipe), held open by rings of **cartilage**
+4. Two **bronchi**, one to each **lung**
+5. Many **bronchioles**
+6. Millions of **alveoli**, each covered in **capillaries**
+
+## Gas exchange in the alveoli
+
+![Gas exchange between an alveolus and a capillary](/images/biology/9-1-alveolus.svg)
+
+1. Air in the alveolus has a **high concentration of oxygen**. Blood arriving in the capillary has a **low concentration of oxygen**.
+2. **Oxygen diffuses** from the air in the alveolus into the blood.
+3. Blood arriving has a **high concentration of carbon dioxide**.
+4. **Carbon dioxide diffuses** from the blood into the alveolus, then is breathed out.
+
+The alveoli are well suited to gas exchange:
+
+- There are **millions** of them, giving a **huge surface area**.
+- Their walls are **one cell thick**, and so are the capillary walls: a **short diffusion distance**.
+- They are covered in a dense network of **capillaries**: a **good blood supply**.
+- Breathing keeps them supplied with fresh air: a **good air supply**.
+- The surface is **moist**, so gases dissolve before they diffuse.
+
+## Air in and air out
+
+| Gas | Air in (inspired) | Air out (expired) | Why |
+|---|---|---|---|
+| **Oxygen** | 21% | about **16%** | Some is taken into the blood for respiration. |
+| **Carbon dioxide** | 0.04% | about **4%** | Made by respiration and breathed out. |
+| **Nitrogen** | 78% | 78% | Not used by the body. |
+| **Water vapour** | Varies | **More** (saturated) | Water evaporates from the moist alveoli. |
+
+Expired air is also **warmer**, because it is warmed by the body.
+
+### Practical: testing for carbon dioxide
+
+Breathe gently through **limewater**. Limewater turns **milky (cloudy)** when carbon dioxide bubbles through it.
+
+Expired air turns limewater milky **much faster** than inspired air, because it has more carbon dioxide.
+
+## How we breathe
+
+![How breathing in and out works](/images/biology/9-1-breathing.svg)
+
+### Breathing in (inspiration)
+
+1. The **external intercostal muscles contract**. The **internal intercostal muscles relax**.
+2. The **ribs move up and out**.
+3. The **diaphragm contracts** and **flattens** (moves down).
+4. The **volume** of the thorax **increases**.
+5. The **pressure** inside the thorax **decreases** below the air pressure outside.
+6. **Air moves into** the lungs.
+
+### Breathing out (expiration)
+
+1. The **external intercostal muscles relax**. When breathing out hard, the **internal intercostal muscles contract**.
+2. The **ribs move down and in**.
+3. The **diaphragm relaxes** and moves **up** into a dome shape.
+4. The **volume** of the thorax **decreases**.
+5. The **pressure** inside the thorax **increases** above the air pressure outside.
+6. **Air moves out** of the lungs.
+
+> Think of a syringe. Pull the plunger out: the volume goes up, the pressure goes down and air rushes in. Push it in: the volume goes down, the pressure goes up and air is pushed out.
+
+## Exercise and breathing
+
+During exercise, breathing gets **faster** (higher rate) and **deeper**.
+
+Why? Muscles are working harder, so they need **more energy** from respiration:
+
+- They need **more oxygen** delivered.
+- They make **more carbon dioxide**, which must be removed.
+
+The brain detects the **rise in carbon dioxide** in the blood and makes you breathe faster and deeper.
+
+### Practical
+
+1. Count breaths per minute at rest.
+2. Exercise (for example, step-ups) for 2 minutes.
+3. Count breaths per minute straight away, then every minute until it returns to normal.
+
+## Protecting the lungs
+
+Air contains dust and **pathogens** (germs). The airways are protected by:
+
+| Cell or substance | What it does |
+|---|---|
+| **Goblet cells** | Make **mucus**. |
+| **Mucus** | Sticky. **Traps** dust and pathogens. |
+| **Ciliated cells** | Have tiny hairs called **cilia** that **beat** to move the mucus **up and away** from the lungs to the throat, where it is swallowed. |
+
+> Think of a conveyor belt. The mucus is sticky tape catching dirt, and the cilia move the belt up and out.
+
+## Common mistakes
+
+- Saying we breathe in oxygen and breathe out carbon dioxide only. Expired air still has about **16% oxygen**.
+- Saying the diaphragm moves up when you breathe in. When it **contracts**, it **flattens** and moves **down**.
+- Saying air rushing in makes the lungs bigger. It is the other way round: the **volume increases first**, then air moves in.
+- Saying cilia trap dust. **Mucus traps** dust. **Cilia move** the mucus.
+
+## Exam tips
+
+- For breathing, give the full chain: **muscles, ribs, diaphragm, volume, pressure, air movement**.
+- For gas exchange features, link each one to **diffusion**.
+- Learn the numbers: **21% and 16%** oxygen, **0.04% and 4%** carbon dioxide.
+
+Next: test yourself with the practice questions below.`,
+
+  "10.1": `## What you need to know
+
+- Describe respiration as chemical reactions in all living cells that release energy from glucose.
+- State what living things use energy for.
+- Investigate and describe the effect of temperature on respiration in yeast.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Respiration | The chemical reactions in all living cells that release energy from glucose. |
+| Glucose | A sugar. It is the main fuel for respiration. |
+| Yeast | A single-celled fungus. It respires and gives off carbon dioxide. |
+| Mitochondria | The parts of a cell where aerobic respiration happens. |
+
+## What is respiration?
+
+> **Respiration** is the chemical reactions in **all living cells** that **release energy** from **glucose**.
+
+Every living cell respires, all the time, day and night: in plants, animals, fungi and bacteria.
+
+**Respiration is not the same as breathing.** Breathing moves air in and out of the lungs. Respiration is a chemical reaction inside cells.
+
+> Think of glucose as fuel, like petrol in a car. Respiration "burns" the fuel slowly inside the cell to release the energy the cell needs.
+
+## What is the energy used for?
+
+| Use | Example |
+|---|---|
+| **Muscle contraction** | Moving, breathing, the heart beating |
+| **Protein synthesis** | Making new proteins from amino acids |
+| **Cell division** | Making new cells |
+| **Active transport** | Moving ions against a concentration gradient |
+| **Growth** | Making new tissue |
+| **Nerve impulses** | Sending electrical impulses along neurones |
+| **Keeping body temperature constant** | Keeping mammals and birds warm |
+
+> Memory trick: **M**y **P**et **C**at **A**lways **G**ets **N**ice **T**reats. **M**uscles, **P**roteins, **C**ell division, **A**ctive transport, **G**rowth, **N**erve impulses, **T**emperature.
+
+## Practical: temperature and respiration in yeast
+
+![Measuring respiration in yeast](/images/biology/10-1-yeast.svg)
+
+Yeast respires the sugar in a solution and gives off **carbon dioxide** gas. We can measure how fast it respires by counting the **bubbles** of carbon dioxide.
+
+1. Mix yeast with **glucose solution** in a test tube.
+2. Put the tube in a **water bath** at a set temperature, for example 20 °C.
+3. Fit a delivery tube that bubbles into water or limewater.
+4. Wait 5 minutes for the yeast to reach the right temperature.
+5. **Count the bubbles** in one minute.
+6. Repeat at 30, 40, 50 and 60 °C.
+
+**Results:**
+
+- As the temperature rises, the number of bubbles goes **up**, up to an **optimum** (about 35 to 40 °C).
+- Above the optimum, the number of bubbles goes **down**, because the **enzymes** that control respiration are being **denatured**.
+
+Keep the **same**: amount of yeast, volume and concentration of glucose solution.
+
+## Common mistakes
+
+- Saying respiration "makes" energy. Energy cannot be made. Respiration **releases** energy.
+- Saying respiration is breathing.
+- Saying only animals respire. **All living cells** respire, including plant cells.
+- Saying plants respire only at night. Plants respire **all the time**.
+
+## Exam tips
+
+- Learn the definition word for word: **chemical reactions in all living cells that release energy from glucose**.
+- Learn **at least four** uses of energy.
+- In the yeast practical, explain the fall at high temperature using **enzymes** and **denatured**.
+
+Next: test yourself with the practice questions below.`,
+
+  "10.2": `## What you need to know
+
+- Describe aerobic respiration as releasing a relatively large amount of energy by breaking down glucose using oxygen.
+- State the word equation and balanced chemical equation for aerobic respiration.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Aerobic respiration | Respiration that uses oxygen. It releases a lot of energy. |
+| Mitochondria | The parts of the cell where aerobic respiration happens. |
+
+## What is aerobic respiration?
+
+> **Aerobic respiration** is the release of a **relatively large amount of energy** by the breakdown of **glucose** in the presence of **oxygen**.
+
+"Aerobic" means "with air" (with oxygen).
+
+It happens in the **mitochondria**. Cells that need lots of energy, such as muscle cells and sperm cells, have many mitochondria.
+
+## The equations
+
+![The aerobic respiration equations](/images/biology/10-2-equations.svg)
+
+| | Word equation | Balanced chemical equation |
+|---|---|---|
+| Goes in | glucose + oxygen | C₆H₁₂O₆ + 6O₂ |
+| Comes out | carbon dioxide + water | 6CO₂ + 6H₂O |
+| Released | energy | energy |
+
+> Look closely: aerobic respiration is **photosynthesis backwards**. Photosynthesis takes in carbon dioxide and water and makes glucose and oxygen. Respiration takes in glucose and oxygen and gives out carbon dioxide and water.
+
+## Where do the raw materials come from?
+
+| Substance | Where it comes from in humans |
+|---|---|
+| Glucose | From digested food, carried in the blood plasma |
+| Oxygen | From the lungs, carried by red blood cells |
+
+## Where do the products go?
+
+| Substance | Where it goes in humans |
+|---|---|
+| Carbon dioxide | Carried in the blood to the lungs, then breathed out |
+| Water | Used by the body, or lost in urine, sweat and breath |
+
+## Common mistakes
+
+- Writing energy as a chemical in the balanced equation. Energy is **released**. It is not a substance.
+- Getting the balanced equation the wrong way round. Glucose and oxygen go **in**.
+- Saying aerobic respiration happens in the cytoplasm. It happens in the **mitochondria**.
+
+## Exam tips
+
+- Learn the balanced equation exactly: **C₆H₁₂O₆ + 6O₂ gives 6CO₂ + 6H₂O**.
+- Use the phrase **"relatively large amount of energy"** for aerobic, compared with anaerobic.
+
+Next: test yourself with the practice questions below.`,
+
+  "10.3": `## What you need to know
+
+- Describe anaerobic respiration as releasing a relatively small amount of energy by breaking down glucose without oxygen.
+- State the word equations for anaerobic respiration in humans and in yeast.
+- Explain why lactic acid builds up in muscles during hard exercise, causing an oxygen debt.
+- Outline how the oxygen debt is removed after exercise.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Anaerobic respiration | Respiration without oxygen. It releases only a small amount of energy. |
+| Lactic acid | The product of anaerobic respiration in human muscles. |
+| Ethanol | Alcohol. Made by yeast in anaerobic respiration. |
+| Oxygen debt | The extra oxygen needed after exercise to break down lactic acid. Also called EPOC (Excess Post-exercise Oxygen Consumption). |
+| Vigorous exercise | Very hard exercise, such as sprinting. |
+
+## What is anaerobic respiration?
+
+> **Anaerobic respiration** is the release of a **relatively small amount of energy** by the breakdown of glucose **without using oxygen**.
+
+"Anaerobic" means "without air" (without oxygen).
+
+## The equations
+
+![Anaerobic respiration in humans and yeast](/images/biology/10-3-equations.svg)
+
+| | In humans (muscles) | In yeast |
+|---|---|---|
+| Goes in | glucose | glucose |
+| Comes out | **lactic acid** | **ethanol + carbon dioxide** |
+
+## Aerobic and anaerobic compared
+
+| | Aerobic | Anaerobic |
+|---|---|---|
+| Oxygen needed? | **Yes** | **No** |
+| Energy released | **Large** amount | **Small** amount |
+| Products in humans | Carbon dioxide + water | Lactic acid |
+| Glucose broken down | Completely | Only partly |
+
+## Uses of yeast
+
+Bakers and brewers use anaerobic respiration in yeast:
+
+- **Bread**: the **carbon dioxide** bubbles make the dough rise.
+- **Beer and wine**: yeast makes **ethanol** (alcohol).
+
+## Exercise and the oxygen debt
+
+During **vigorous exercise**, muscles need lots of energy very quickly.
+
+1. The heart and lungs **cannot deliver oxygen fast enough** for aerobic respiration alone.
+2. So muscles also respire **anaerobically**.
+3. **Lactic acid** builds up in the **muscles** and **blood**. It can make muscles ache and tire.
+4. After exercise, extra oxygen is needed to break down the lactic acid. This is the **oxygen debt** (EPOC).
+
+> Think of borrowing money. During a sprint, the muscles "borrow" energy without paying with oxygen. Afterwards, they must "pay back" the debt with extra oxygen.
+
+## Paying back the oxygen debt
+
+After exercise:
+
+- The **heart rate stays fast** for a while, to carry **lactic acid** in the blood from the **muscles to the liver**.
+- **Breathing stays deep and fast** for a while, to supply **oxygen** for breaking down the lactic acid in the **liver**.
+
+When all the lactic acid has been broken down, heart rate and breathing return to normal.
+
+## Common mistakes
+
+- Saying humans make ethanol or carbon dioxide in anaerobic respiration. Humans make **lactic acid only**.
+- Saying anaerobic respiration releases no energy. It releases a **small** amount.
+- Saying lactic acid is broken down in the muscles. It is carried to the **liver**.
+- Saying we keep breathing fast after exercise "to get our breath back". Say it is **to supply oxygen to break down lactic acid**.
+
+## Exam tips
+
+- Learn both word equations: **glucose gives lactic acid** (humans); **glucose gives ethanol + carbon dioxide** (yeast).
+- For oxygen debt answers, use **lactic acid**, **liver**, **heart rate**, **breathing rate** and **oxygen**.
+
+Next: test yourself with the practice questions below.`,
+
+  "11.1": `## What you need to know
+
+- Describe the circulatory system as blood vessels, a pump (the heart) and valves that keep blood flowing one way.
+- Describe a **double circulation**: blood passes through the heart twice for each complete circuit.
+- Understand that a double circulation gives low pressure to the lungs and high pressure to the body.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Circulatory system | The heart, blood vessels and blood, which carry substances around the body. |
+| Valve | A flap that lets blood flow only one way. |
+| Double circulation | Blood passes through the heart twice for each complete circuit of the body. |
+| Pulmonary circulation | The circuit from the heart to the lungs and back. |
+| Systemic circulation | The circuit from the heart to the rest of the body and back. |
+| Oxygenated blood | Blood with lots of oxygen (bright red). |
+| Deoxygenated blood | Blood with little oxygen (dark red). |
+
+## The circulatory system
+
+> The circulatory system is a system of **blood vessels** with a **pump** and **valves** to make sure blood flows **one way**.
+
+| Part | Job |
+|---|---|
+| **Heart** | The **pump**. It pushes blood around the body. |
+| **Blood vessels** | Tubes that carry blood: arteries, veins and capillaries. |
+| **Valves** | In the heart and veins. They stop blood flowing **backwards**. |
+
+## Double circulation
+
+![The double circulation](/images/biology/11-1-double-circulation.svg)
+
+> In a **double circulation**, blood passes through the **heart twice** for each complete circuit of the body.
+
+1. **Right side of the heart** pumps deoxygenated blood to the **lungs**. Blood picks up oxygen there.
+2. Oxygenated blood comes back to the **left side of the heart**.
+3. **Left side of the heart** pumps it to the **body**. Cells take oxygen from the blood.
+4. Deoxygenated blood comes back to the **right side of the heart**.
+
+> Think of a figure of eight, with the heart in the middle. One loop goes to the lungs, the other loop goes to the body.
+
+## Why have a double circulation?
+
+| Circuit | Pressure | Why |
+|---|---|---|
+| To the **lungs** | **Low** pressure | The capillaries in the lungs are delicate. High pressure could damage them. Blood also moves slowly enough to pick up lots of oxygen. |
+| To the **body** | **High** pressure | Blood has to travel a long way to every part of the body, quickly. |
+
+Because the blood comes back to the heart after the lungs, the heart can **pump it again** at high pressure to the body.
+
+## Common mistakes
+
+- Saying blood goes through the heart once. In mammals it goes through **twice** per circuit.
+- Mixing up the sides. **Right side: to the lungs. Left side: to the body.**
+- Saying the lungs need high pressure. The lungs get **low** pressure.
+
+## Exam tips
+
+- Learn the definition: **blood passes through the heart twice for each complete circuit**.
+- To explain the advantage, give **both**: low pressure protects the lungs, high pressure delivers blood quickly to the body.
+
+Next: test yourself with the practice questions below.`,
+
+  "11.2": `## What you need to know
+
+- Identify the parts of the heart: muscular wall, septum, left and right atria and ventricles, atrioventricular and semilunar valves, coronary arteries.
+- Explain why the left ventricle wall is thicker than the right, and why ventricle walls are thicker than atrium walls.
+- Describe how the heart beats: atria and ventricles contracting, and valves opening and closing.
+- State that arteries carry blood away from the heart and veins carry it back.
+- State how heart activity can be monitored.
+- Investigate and explain how exercise changes heart rate.
+- Describe coronary heart disease, its risk factors, and how diet and exercise reduce the risk.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Atrium (plural atria) | One of the two small upper chambers of the heart. Atria receive blood. |
+| Ventricle | One of the two large lower chambers. Ventricles pump blood out of the heart. |
+| Septum | The wall of muscle between the left and right sides of the heart. |
+| Atrioventricular valves | Valves between each atrium and ventricle. |
+| Semilunar valves | Valves at the start of the aorta and pulmonary artery. |
+| Coronary arteries | Arteries on the outside of the heart that supply the heart muscle with blood. |
+| ECG | Electrocardiogram: a machine that records the electrical activity of the heart. |
+| Pulse | The beat you feel in an artery each time the heart pumps. |
+
+## Parts of the heart
+
+![The heart, labelled](/images/biology/11-2-heart.svg)
+
+> The heart is drawn as if you are **looking at someone facing you**. So the **left side of the heart is on the right of the diagram**.
+
+| Part | Job |
+|---|---|
+| **Right atrium** | Receives **deoxygenated** blood from the body (through the vena cava). |
+| **Right ventricle** | Pumps deoxygenated blood to the **lungs** (through the pulmonary artery). |
+| **Left atrium** | Receives **oxygenated** blood from the lungs (through the pulmonary vein). |
+| **Left ventricle** | Pumps oxygenated blood to the **body** (through the aorta). |
+| **Septum** | Keeps oxygenated and deoxygenated blood **apart**. |
+| **Atrioventricular valves** | Stop blood flowing back from the ventricles into the atria. |
+| **Semilunar valves** | Stop blood flowing back from the arteries into the ventricles. |
+| **Coronary arteries** | Bring oxygen and glucose to the **heart muscle** itself. |
+| **Muscular wall** | Contracts to pump blood. |
+
+## Why are the walls different thicknesses?
+
+| Comparison | Why |
+|---|---|
+| **Left ventricle is thicker than right ventricle** | The left ventricle pumps blood all round the **body**, at **high pressure**. The right ventricle only pumps to the **lungs**, which are close, at **low pressure**. |
+| **Ventricles are thicker than atria** | Ventricles pump blood **out of the heart** to the lungs or body. Atria only pump blood a short way, **down into the ventricles**. |
+
+## How the heart beats
+
+1. Blood flows into the **atria** from the veins.
+2. The **atria contract**. Blood is pushed through the **atrioventricular valves** into the ventricles.
+3. The **ventricles contract**. The pressure closes the **atrioventricular valves**, so blood cannot go back into the atria.
+4. Blood is pushed out through the open **semilunar valves** into the **arteries** (aorta and pulmonary artery).
+5. The ventricles relax. The **semilunar valves close**, so blood cannot flow back into the ventricles.
+
+> **Arteries** carry blood **away** from the heart. **Veins** carry blood **back** to the heart. Memory trick: **A** for **A**way.
+
+## Monitoring the heart
+
+The activity of the heart can be checked by:
+
+- An **ECG** (electrocardiogram), which records electrical signals from the heart.
+- Taking the **pulse rate** (beats per minute), for example at the wrist or neck.
+- **Listening** to the sounds of the **valves closing** with a stethoscope ("lub-dub").
+
+## Exercise and heart rate
+
+During exercise, the **heart rate increases**.
+
+Why? Muscles respire faster, so they need:
+
+- **more oxygen and glucose** delivered faster, and
+- **more carbon dioxide** removed faster.
+
+After exercise, heart rate stays high for a while to carry **lactic acid** to the liver (see topic 10.3).
+
+### Practical
+
+1. Measure your pulse rate at rest for one minute.
+2. Exercise for 2 minutes.
+3. Measure your pulse straight away, then every minute until it returns to normal.
+
+## Coronary heart disease
+
+> **Coronary heart disease** is when the **coronary arteries** become **blocked**, usually by fatty deposits.
+
+1. Fatty material builds up inside a coronary artery, making it narrow.
+2. Less blood reaches the heart muscle, so it gets **less oxygen and glucose**.
+3. The muscle cannot **respire** properly.
+4. If an artery is completely blocked, part of the heart muscle can die. This is a **heart attack**.
+
+### Risk factors
+
+| Risk factor | Can it be changed? |
+|---|---|
+| **Diet** high in saturated fat and salt | Yes |
+| **Sedentary lifestyle** (little exercise) | Yes |
+| **Stress** | Yes |
+| **Smoking** | Yes |
+| **Genetic predisposition** (it runs in the family) | No |
+| **Age** (older people are at higher risk) | No |
+| **Gender** (men are at higher risk) | No |
+
+### Reducing the risk
+
+- **Diet**: eat less saturated fat and salt, and more fruit, vegetables and fibre. This reduces fatty deposits in the arteries.
+- **Exercise**: regular exercise makes the heart muscle stronger, helps control body mass and lowers blood pressure.
+
+## Common mistakes
+
+- Labelling the left side of the heart on the left of the diagram. It is on the **right** of the diagram.
+- Saying the left ventricle is thicker "because it pumps more blood". Both pump the same volume. The left pumps at **higher pressure** to the **whole body**.
+- Saying the coronary arteries carry blood inside the heart chambers. They supply the **heart muscle** itself.
+- Saying veins always carry deoxygenated blood. The **pulmonary vein** carries **oxygenated** blood.
+
+## Exam tips
+
+- Describe a heartbeat in order: **atria contract, ventricles contract, which valves open and close**.
+- For coronary heart disease, link **blocked artery** to **less oxygen** to **less respiration** in heart muscle.
+- Learn the seven risk factors.
+
+Next: test yourself with the practice questions below.`,
+
+  "11.3": `## What you need to know
+
+- Name the main blood vessels to and from the heart, lungs, liver and kidneys.
+- Describe and identify the structure of arteries, veins and capillaries.
+- Explain how their structure is related to the pressure of the blood inside them.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Artery | A blood vessel that carries blood away from the heart, at high pressure. |
+| Vein | A blood vessel that carries blood back to the heart, at low pressure. |
+| Capillary | A tiny blood vessel with a wall one cell thick, where substances are exchanged. |
+| Lumen | The space inside a blood vessel where blood flows. |
+| Elastic tissue | Tissue that can stretch and spring back. |
+| Pulmonary | To do with the lungs. |
+| Hepatic | To do with the liver. |
+| Renal | To do with the kidneys. |
+
+## The main blood vessels
+
+![The main blood vessels](/images/biology/11-3-main-vessels.svg)
+
+| Blood vessel | From | To |
+|---|---|---|
+| **Vena cava** | The body | Right atrium of the heart |
+| **Pulmonary artery** | Right ventricle | The **lungs** |
+| **Pulmonary vein** | The **lungs** | Left atrium |
+| **Aorta** | Left ventricle | The body |
+| **Hepatic artery** | Aorta | The **liver** |
+| **Hepatic vein** | The **liver** | Vena cava |
+| **Hepatic portal vein** | The **gut** (ileum) | The **liver** |
+| **Renal artery** | Aorta | The **kidneys** |
+| **Renal vein** | The **kidneys** | Vena cava |
+
+> Two exceptions to remember: the **pulmonary artery** carries **deoxygenated** blood, and the **pulmonary vein** carries **oxygenated** blood.
+
+## Arteries, veins and capillaries
+
+![Arteries, veins and capillaries compared](/images/biology/11-3-vessels.svg)
+
+| Feature | Artery | Vein | Capillary |
+|---|---|---|---|
+| **Wall thickness** | **Thick** | **Thin** | **One cell thick** |
+| **Muscle and elastic tissue** | **Lots** | **Little** | **None** |
+| **Lumen** | **Narrow** | **Wide** | **Very narrow** (just one red cell wide) |
+| **Valves** | No | **Yes** | No |
+| **Blood pressure** | **High** | **Low** | Falling |
+
+## How structure matches pressure
+
+### Arteries: high pressure
+
+- **Thick walls** stop them **bursting** under high pressure.
+- **Elastic tissue** stretches as each surge of blood arrives, then springs back. This keeps blood flowing smoothly.
+- **Muscle** in the wall can contract or relax to change blood flow.
+- **Narrow lumen** helps keep pressure high.
+
+### Veins: low pressure
+
+- Blood pressure is **low**, so walls can be **thin**.
+- A **wide lumen** lets blood flow easily with little resistance.
+- **Valves** stop blood flowing **backwards** (for example, sinking back down the legs).
+- Muscles around veins squeeze them when you move, helping push blood back to the heart.
+
+### Capillaries: exchange
+
+- **Wall one cell thick**: short diffusion distance for substances to move between blood and cells.
+- Very narrow, so red blood cells pass slowly in single file: more time for exchange.
+- Huge network: every cell is close to a capillary.
+
+## Common mistakes
+
+- Saying arteries carry oxygenated blood and veins carry deoxygenated blood. That is the usual pattern, but the **pulmonary** vessels are the opposite. Define them by **direction**: arteries away, veins towards the heart.
+- Saying arteries have valves. Only **veins** (and the heart) have valves.
+- Mixing up the hepatic vein and hepatic portal vein. The **hepatic portal vein** brings blood **from the gut to the liver**.
+
+## Exam tips
+
+- To identify a vessel in a photograph: **thick wall and narrow lumen = artery**; **thin wall and wide lumen = vein**.
+- To explain a structure, always link it to **pressure**: "thick, elastic walls **to withstand high pressure**".
+
+Next: test yourself with the practice questions below.`,
+
+  "11.4": `## What you need to know
+
+- Identify red blood cells and white blood cells (lymphocytes and phagocytes) under the microscope and in diagrams.
+- List the parts of blood: red blood cells, white blood cells, platelets and plasma.
+- State what each part does.
+- Describe how substances move between the blood in capillaries, tissue fluid and body cells.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Plasma | The pale yellow liquid part of blood. |
+| Red blood cell | A cell that carries oxygen. It contains haemoglobin. |
+| Haemoglobin | The red protein in red blood cells that carries oxygen. |
+| Phagocyte | A white blood cell that engulfs (swallows up) pathogens. |
+| Lymphocyte | A white blood cell that makes antibodies. |
+| Platelets | Small cell fragments that help blood clot. |
+| Pathogen | A microorganism that causes disease. |
+| Fibrinogen | A soluble protein in plasma. |
+| Fibrin | Insoluble threads that form a clot. |
+| Tissue fluid | Liquid that leaks out of capillaries and surrounds body cells. |
+
+## What is blood made of?
+
+![Blood cells seen under a microscope](/images/biology/11-4-blood-cells.svg)
+
+| Part | What it looks like | Job |
+|---|---|---|
+| **Red blood cells** | Round, red, dimple in the middle (biconcave), **no nucleus** | **Carry oxygen** (using haemoglobin) |
+| **White blood cells: phagocytes** | Larger than red cells, with a **lobed** (bumpy, many-part) nucleus | **Engulf pathogens** |
+| **White blood cells: lymphocytes** | Small, with a **large round nucleus** that fills most of the cell | **Make antibodies** |
+| **Platelets** | Tiny fragments | **Clotting** |
+| **Plasma** | Pale yellow liquid | **Transport** |
+
+> Think of blood as a river. **Plasma** is the water. **Red cells** are delivery boats carrying oxygen. **White cells** are the police boats. **Platelets** are the repair crew.
+
+## Red blood cells
+
+- Carry **oxygen** from the lungs to the body cells.
+- Full of **haemoglobin**, which joins with oxygen.
+- **No nucleus**, so there is more room for haemoglobin.
+- **Biconcave** disc shape gives a large surface area for oxygen to diffuse in and out.
+
+## White blood cells
+
+| Phagocytes | Lymphocytes |
+|---|---|
+| **Engulf** (surround and swallow) pathogens, then digest them | Make **antibodies**, which help destroy pathogens |
+| Lobed nucleus | Large round nucleus |
+
+## Platelets and clotting
+
+When you cut yourself:
+
+1. **Platelets** gather at the wound.
+2. They help turn **soluble fibrinogen** into **insoluble fibrin**.
+3. Fibrin forms a **mesh of threads** that traps red blood cells, making a **clot**.
+
+The clot **stops blood loss** and stops **pathogens** getting into the body.
+
+## Plasma
+
+Plasma is mostly water. It **transports**:
+
+- **Blood cells**
+- **Ions** (such as sodium)
+- **Glucose** and **amino acids** (from digestion)
+- **Hormones**
+- **Carbon dioxide** (to the lungs)
+- **Urea** (to the kidneys)
+- **Vitamins**
+- **Plasma proteins** (such as fibrinogen)
+
+## From blood to cells: tissue fluid
+
+![Exchange between a capillary, tissue fluid and cells](/images/biology/11-4-tissue-fluid.svg)
+
+1. Blood in capillaries is under pressure. Some **plasma leaks out** through the thin capillary walls. It is now called **tissue fluid**. Red cells and large proteins stay in the blood.
+2. Tissue fluid surrounds the body cells.
+3. **Oxygen, glucose** and other useful substances **diffuse** from the tissue fluid **into the cells**.
+4. **Carbon dioxide** and other **wastes** diffuse **out of the cells** into the tissue fluid, then back into the blood.
+
+> Tissue fluid is the "go-between". Blood never touches most cells directly. Substances pass through the tissue fluid.
+
+## Common mistakes
+
+- Saying red blood cells have a nucleus. Mature red cells have **no nucleus**.
+- Saying phagocytes make antibodies. **Lymphocytes** make antibodies. **Phagocytes** engulf.
+- Saying platelets are cells. They are cell **fragments**.
+- Saying fibrin is soluble. **Fibrinogen is soluble; fibrin is insoluble.**
+
+## Exam tips
+
+- To identify cells in a picture, look at the **nucleus**: none (red cell), lobed (phagocyte), large and round (lymphocyte).
+- For clotting, use the words **platelets**, **fibrinogen**, **fibrin**, **soluble** and **insoluble**.
+- Learn the list of substances carried in plasma.
+
+Next: test yourself with the practice questions below.`,
 };
 
 export function getBiologyNotes(topic: string): string | undefined {

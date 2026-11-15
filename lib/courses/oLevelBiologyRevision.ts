@@ -1981,6 +1981,871 @@ export const O_LEVEL_BIOLOGY_REVISION: Record<string, TopicRevision> = {
         "tag": "Liver"
       }
     ]
+  },
+  "9.1": {
+    "mindMap": {
+      "centre": "Gas exchange in humans",
+      "branches": [
+        {
+          "label": "Good exchange surface",
+          "items": [
+            "Large surface area",
+            "Thin surface",
+            "Good blood supply",
+            "Good air supply"
+          ]
+        },
+        {
+          "label": "Airways",
+          "items": [
+            "Larynx, trachea",
+            "Bronchi, bronchioles",
+            "Alveoli with capillaries"
+          ]
+        },
+        {
+          "label": "Air in and out",
+          "items": [
+            "Oxygen 21% in, 16% out",
+            "Carbon dioxide 0.04% in, 4% out",
+            "Out: more water vapour, warmer",
+            "Limewater turns milky"
+          ]
+        },
+        {
+          "label": "Breathing in",
+          "items": [
+            "External intercostals contract",
+            "Ribs up and out",
+            "Diaphragm contracts, flattens",
+            "Volume up, pressure down"
+          ]
+        },
+        {
+          "label": "Exercise",
+          "items": [
+            "Faster, deeper breathing",
+            "More oxygen for respiration",
+            "Remove more carbon dioxide"
+          ]
+        },
+        {
+          "label": "Protection",
+          "items": [
+            "Goblet cells make mucus",
+            "Mucus traps dust and pathogens",
+            "Cilia move mucus away"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Give four features of a gas exchange surface.",
+        "back": "Large surface area, thin surface, good blood supply and good air supply.",
+        "tag": "Surfaces"
+      },
+      {
+        "front": "What percentage of air is oxygen?",
+        "back": "About 21%.",
+        "tag": "Air"
+      },
+      {
+        "front": "Give the percentages of oxygen and carbon dioxide in expired air.",
+        "back": "About 16% oxygen and 4% carbon dioxide.",
+        "tag": "Air"
+      },
+      {
+        "front": "Give two other differences between inspired and expired air.",
+        "back": "Expired air has more water vapour and is warmer.",
+        "tag": "Air"
+      },
+      {
+        "front": "How do you show that expired air has more carbon dioxide?",
+        "back": "Breathe through limewater. Expired air turns it milky much faster than inspired air.",
+        "tag": "Practical"
+      },
+      {
+        "front": "Name the parts air passes through from the larynx to the alveoli.",
+        "back": "Larynx, trachea, bronchi, bronchioles, alveoli.",
+        "tag": "Structure"
+      },
+      {
+        "front": "Describe how oxygen gets into the blood in the lungs.",
+        "back": "Oxygen diffuses from the air in the alveoli, where its concentration is high, into the blood in the capillaries, where it is low.",
+        "tag": "Alveoli"
+      },
+      {
+        "front": "Give two ways alveoli are adapted for gas exchange.",
+        "back": "Any two: huge surface area, walls one cell thick, dense capillary network, moist surface, good air supply.",
+        "tag": "Alveoli"
+      },
+      {
+        "front": "What happens to the intercostal muscles and ribs when you breathe in?",
+        "back": "External intercostals contract (internal relax), so the ribs move up and out.",
+        "tag": "Breathing"
+      },
+      {
+        "front": "What happens to the diaphragm when you breathe in?",
+        "back": "It contracts and flattens (moves down).",
+        "tag": "Breathing"
+      },
+      {
+        "front": "Explain why air moves into the lungs when you breathe in.",
+        "back": "The volume of the thorax increases, so the pressure inside falls below air pressure outside.",
+        "tag": "Breathing"
+      },
+      {
+        "front": "What happens to the diaphragm when you breathe out?",
+        "back": "It relaxes and moves up into a dome.",
+        "tag": "Breathing"
+      },
+      {
+        "front": "How does exercise change breathing, and why?",
+        "back": "It becomes faster and deeper, to supply more oxygen and remove more carbon dioxide for faster respiration.",
+        "tag": "Exercise"
+      },
+      {
+        "front": "What do goblet cells do?",
+        "back": "They make mucus, which traps dust and pathogens.",
+        "tag": "Protection"
+      },
+      {
+        "front": "What do ciliated cells do?",
+        "back": "Their cilia beat to move mucus up and away from the lungs.",
+        "tag": "Protection"
+      }
+    ]
+  },
+  "10.1": {
+    "mindMap": {
+      "centre": "Respiration",
+      "branches": [
+        {
+          "label": "Definition",
+          "items": [
+            "Chemical reactions in all living cells",
+            "Release energy from glucose",
+            "Not the same as breathing"
+          ]
+        },
+        {
+          "label": "Uses of energy",
+          "items": [
+            "Muscle contraction, growth",
+            "Protein synthesis, cell division",
+            "Active transport, nerve impulses",
+            "Constant body temperature"
+          ]
+        },
+        {
+          "label": "Yeast practical",
+          "items": [
+            "Yeast in glucose solution",
+            "Count carbon dioxide bubbles",
+            "Water baths at different temperatures"
+          ]
+        },
+        {
+          "label": "Results",
+          "items": [
+            "Faster as temperature rises",
+            "Optimum about 35 to 40 °C",
+            "Slower above: enzymes denatured"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is respiration?",
+        "back": "The chemical reactions in all living cells that release energy from glucose.",
+        "tag": "Definition"
+      },
+      {
+        "front": "Which cells respire?",
+        "back": "All living cells, all the time.",
+        "tag": "Definition"
+      },
+      {
+        "front": "How is respiration different from breathing?",
+        "back": "Respiration is a chemical reaction in cells. Breathing moves air in and out of the lungs.",
+        "tag": "Definition"
+      },
+      {
+        "front": "Give four uses of energy in living things.",
+        "back": "Any four: muscle contraction, protein synthesis, cell division, active transport, growth, nerve impulses, keeping body temperature constant.",
+        "tag": "Uses"
+      },
+      {
+        "front": "Why do mammals need energy even when resting?",
+        "back": "To keep a constant body temperature, and for processes like protein synthesis and active transport.",
+        "tag": "Uses"
+      },
+      {
+        "front": "Which gas does yeast give off when it respires?",
+        "back": "Carbon dioxide.",
+        "tag": "Practical"
+      },
+      {
+        "front": "How can you measure the rate of respiration of yeast?",
+        "back": "Count the bubbles of carbon dioxide given off in one minute.",
+        "tag": "Practical"
+      },
+      {
+        "front": "How does temperature affect respiration in yeast, up to about 40 °C?",
+        "back": "The rate increases as temperature rises.",
+        "tag": "Practical"
+      },
+      {
+        "front": "Why does yeast respiration slow down at high temperatures?",
+        "back": "The enzymes that control respiration are denatured.",
+        "tag": "Practical"
+      },
+      {
+        "front": "Name two things to keep the same in the yeast practical.",
+        "back": "Any two: amount of yeast, volume of glucose solution, concentration of glucose.",
+        "tag": "Practical"
+      }
+    ]
+  },
+  "10.2": {
+    "mindMap": {
+      "centre": "Aerobic respiration",
+      "branches": [
+        {
+          "label": "Definition",
+          "items": [
+            "Uses oxygen",
+            "Releases a large amount of energy",
+            "Breaks down glucose completely"
+          ]
+        },
+        {
+          "label": "Word equation",
+          "items": [
+            "Glucose + oxygen",
+            "Gives carbon dioxide + water"
+          ]
+        },
+        {
+          "label": "Balanced equation",
+          "items": [
+            "C₆H₁₂O₆ + 6O₂",
+            "Gives 6CO₂ + 6H₂O"
+          ]
+        },
+        {
+          "label": "Where",
+          "items": [
+            "In mitochondria",
+            "Muscle cells have many"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is aerobic respiration?",
+        "back": "The release of a relatively large amount of energy by the breakdown of glucose in the presence of oxygen.",
+        "tag": "Definition"
+      },
+      {
+        "front": "Give the word equation for aerobic respiration.",
+        "back": "Glucose + oxygen gives carbon dioxide + water (energy is released).",
+        "tag": "Equation"
+      },
+      {
+        "front": "Give the balanced equation for aerobic respiration.",
+        "back": "C₆H₁₂O₆ + 6O₂ gives 6CO₂ + 6H₂O.",
+        "tag": "Equation"
+      },
+      {
+        "front": "Where in the cell does aerobic respiration happen?",
+        "back": "In the mitochondria.",
+        "tag": "Location"
+      },
+      {
+        "front": "Why do muscle cells have many mitochondria?",
+        "back": "They need lots of energy from aerobic respiration for contraction.",
+        "tag": "Location"
+      },
+      {
+        "front": "How does the oxygen for respiration reach body cells?",
+        "back": "It is absorbed in the lungs and carried by red blood cells.",
+        "tag": "Transport"
+      },
+      {
+        "front": "How is carbon dioxide from respiration removed?",
+        "back": "Carried in the blood plasma to the lungs and breathed out.",
+        "tag": "Transport"
+      },
+      {
+        "front": "How is aerobic respiration related to photosynthesis?",
+        "back": "Its equation is the reverse of photosynthesis.",
+        "tag": "Compare"
+      },
+      {
+        "front": "Does aerobic respiration release more or less energy than anaerobic?",
+        "back": "More: a relatively large amount.",
+        "tag": "Compare"
+      },
+      {
+        "front": "Is energy a product in the equation?",
+        "back": "No. Energy is released, but it is not a substance.",
+        "tag": "Equation"
+      }
+    ]
+  },
+  "10.3": {
+    "mindMap": {
+      "centre": "Anaerobic respiration",
+      "branches": [
+        {
+          "label": "Definition",
+          "items": [
+            "No oxygen used",
+            "Releases a small amount of energy"
+          ]
+        },
+        {
+          "label": "In humans",
+          "items": [
+            "Glucose gives lactic acid",
+            "In muscles during hard exercise"
+          ]
+        },
+        {
+          "label": "In yeast",
+          "items": [
+            "Glucose gives ethanol + carbon dioxide",
+            "Bread rises (carbon dioxide)",
+            "Beer and wine (ethanol)"
+          ]
+        },
+        {
+          "label": "Oxygen debt",
+          "items": [
+            "Not enough oxygen in vigorous exercise",
+            "Lactic acid builds up",
+            "Extra oxygen needed afterwards"
+          ]
+        },
+        {
+          "label": "Paying it back",
+          "items": [
+            "Fast heart rate: lactic acid to liver",
+            "Deep fast breathing: oxygen to liver",
+            "Lactic acid broken down"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is anaerobic respiration?",
+        "back": "The release of a relatively small amount of energy by the breakdown of glucose without using oxygen.",
+        "tag": "Definition"
+      },
+      {
+        "front": "Give the word equation for anaerobic respiration in humans.",
+        "back": "Glucose gives lactic acid.",
+        "tag": "Equation"
+      },
+      {
+        "front": "Give the word equation for anaerobic respiration in yeast.",
+        "back": "Glucose gives ethanol + carbon dioxide.",
+        "tag": "Equation"
+      },
+      {
+        "front": "Why do muscles respire anaerobically during vigorous exercise?",
+        "back": "Oxygen cannot be delivered fast enough for aerobic respiration alone.",
+        "tag": "Exercise"
+      },
+      {
+        "front": "What builds up in muscles during vigorous exercise?",
+        "back": "Lactic acid.",
+        "tag": "Exercise"
+      },
+      {
+        "front": "What is the oxygen debt?",
+        "back": "The extra oxygen needed after exercise to break down lactic acid (EPOC).",
+        "tag": "Oxygen debt"
+      },
+      {
+        "front": "Why does heart rate stay high after exercise?",
+        "back": "To carry lactic acid in the blood from the muscles to the liver.",
+        "tag": "Oxygen debt"
+      },
+      {
+        "front": "Why does breathing stay deep and fast after exercise?",
+        "back": "To supply oxygen for breaking down lactic acid in the liver.",
+        "tag": "Oxygen debt"
+      },
+      {
+        "front": "Where is lactic acid broken down?",
+        "back": "In the liver.",
+        "tag": "Oxygen debt"
+      },
+      {
+        "front": "Why is yeast used in bread making?",
+        "back": "Its carbon dioxide makes the dough rise.",
+        "tag": "Yeast"
+      },
+      {
+        "front": "Compare the energy released by aerobic and anaerobic respiration.",
+        "back": "Aerobic releases a large amount; anaerobic releases a small amount.",
+        "tag": "Compare"
+      },
+      {
+        "front": "Do humans make carbon dioxide in anaerobic respiration?",
+        "back": "No. Humans make only lactic acid.",
+        "tag": "Compare"
+      }
+    ]
+  },
+  "11.1": {
+    "mindMap": {
+      "centre": "Circulatory system",
+      "branches": [
+        {
+          "label": "Parts",
+          "items": [
+            "Heart: the pump",
+            "Blood vessels",
+            "Valves: one-way flow"
+          ]
+        },
+        {
+          "label": "Double circulation",
+          "items": [
+            "Through heart twice per circuit",
+            "Right side: to lungs",
+            "Left side: to body"
+          ]
+        },
+        {
+          "label": "Lung circuit",
+          "items": [
+            "Low pressure",
+            "Protects delicate capillaries"
+          ]
+        },
+        {
+          "label": "Body circuit",
+          "items": [
+            "High pressure",
+            "Reaches all tissues quickly"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Describe the circulatory system.",
+        "back": "A system of blood vessels with a pump and valves to make sure blood flows one way.",
+        "tag": "Definition"
+      },
+      {
+        "front": "What is the job of valves in the circulatory system?",
+        "back": "To stop blood flowing backwards.",
+        "tag": "Parts"
+      },
+      {
+        "front": "What is a double circulation?",
+        "back": "A system in which blood passes through the heart twice for each complete circuit.",
+        "tag": "Double circulation"
+      },
+      {
+        "front": "Which side of the heart pumps blood to the lungs?",
+        "back": "The right side.",
+        "tag": "Double circulation"
+      },
+      {
+        "front": "Which side of the heart pumps blood to the body?",
+        "back": "The left side.",
+        "tag": "Double circulation"
+      },
+      {
+        "front": "Is the pressure to the lungs high or low?",
+        "back": "Low.",
+        "tag": "Pressure"
+      },
+      {
+        "front": "Why is low pressure to the lungs useful?",
+        "back": "It does not damage the delicate lung capillaries.",
+        "tag": "Pressure"
+      },
+      {
+        "front": "Why is high pressure to the body useful?",
+        "back": "Blood reaches all body tissues quickly.",
+        "tag": "Pressure"
+      },
+      {
+        "front": "Where does blood pick up oxygen?",
+        "back": "In the lungs.",
+        "tag": "Double circulation"
+      },
+      {
+        "front": "What colour is oxygenated blood?",
+        "back": "Bright red.",
+        "tag": "Blood"
+      }
+    ]
+  },
+  "11.2": {
+    "mindMap": {
+      "centre": "Heart",
+      "branches": [
+        {
+          "label": "Chambers",
+          "items": [
+            "Right atrium, right ventricle",
+            "Left atrium, left ventricle",
+            "Septum separates sides"
+          ]
+        },
+        {
+          "label": "Valves",
+          "items": [
+            "Atrioventricular: atria to ventricles",
+            "Semilunar: ventricles to arteries",
+            "Stop backflow"
+          ]
+        },
+        {
+          "label": "Wall thickness",
+          "items": [
+            "Left ventricle thickest: whole body",
+            "Ventricles thicker than atria"
+          ]
+        },
+        {
+          "label": "Heartbeat",
+          "items": [
+            "Atria contract",
+            "Ventricles contract",
+            "AV valves shut, semilunar open"
+          ]
+        },
+        {
+          "label": "Monitoring",
+          "items": [
+            "ECG",
+            "Pulse rate",
+            "Valve sounds"
+          ]
+        },
+        {
+          "label": "Heart disease",
+          "items": [
+            "Coronary arteries blocked",
+            "Risks: diet, smoking, stress, no exercise",
+            "Also genes, age, gender"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Name the four chambers of the heart.",
+        "back": "Right atrium, right ventricle, left atrium, left ventricle.",
+        "tag": "Structure"
+      },
+      {
+        "front": "What does the septum do?",
+        "back": "Separates the left and right sides, so oxygenated and deoxygenated blood do not mix.",
+        "tag": "Structure"
+      },
+      {
+        "front": "What do the coronary arteries do?",
+        "back": "Supply the heart muscle with oxygen and glucose.",
+        "tag": "Structure"
+      },
+      {
+        "front": "Why is the left ventricle wall thicker than the right?",
+        "back": "It pumps blood at high pressure to the whole body; the right only pumps to the nearby lungs.",
+        "tag": "Walls"
+      },
+      {
+        "front": "Why are the ventricle walls thicker than the atrium walls?",
+        "back": "Ventricles pump blood out of the heart; atria only pump it into the ventricles.",
+        "tag": "Walls"
+      },
+      {
+        "front": "What do the atrioventricular valves do?",
+        "back": "Stop blood flowing back from the ventricles into the atria.",
+        "tag": "Valves"
+      },
+      {
+        "front": "What do the semilunar valves do?",
+        "back": "Stop blood flowing back from the arteries into the ventricles.",
+        "tag": "Valves"
+      },
+      {
+        "front": "Describe what happens when the ventricles contract.",
+        "back": "The atrioventricular valves close and blood is pushed out through the semilunar valves into the arteries.",
+        "tag": "Heartbeat"
+      },
+      {
+        "front": "Which vessels carry blood away from the heart?",
+        "back": "Arteries.",
+        "tag": "Vessels"
+      },
+      {
+        "front": "Give three ways to monitor heart activity.",
+        "back": "ECG, pulse rate, and listening to the valves closing.",
+        "tag": "Monitoring"
+      },
+      {
+        "front": "Why does heart rate increase during exercise?",
+        "back": "To deliver more oxygen and glucose to muscles and remove more carbon dioxide.",
+        "tag": "Exercise"
+      },
+      {
+        "front": "What is coronary heart disease?",
+        "back": "Blockage of the coronary arteries, so heart muscle gets less oxygen.",
+        "tag": "Disease"
+      },
+      {
+        "front": "Give four risk factors for coronary heart disease.",
+        "back": "Any four: poor diet, sedentary lifestyle, stress, smoking, genetic predisposition, age, gender.",
+        "tag": "Disease"
+      },
+      {
+        "front": "How can diet reduce the risk of coronary heart disease?",
+        "back": "Eating less saturated fat and salt reduces fatty deposits in the arteries.",
+        "tag": "Disease"
+      }
+    ]
+  },
+  "11.3": {
+    "mindMap": {
+      "centre": "Blood vessels",
+      "branches": [
+        {
+          "label": "Heart and lungs",
+          "items": [
+            "Vena cava: body to heart",
+            "Aorta: heart to body",
+            "Pulmonary artery: to lungs",
+            "Pulmonary vein: from lungs"
+          ]
+        },
+        {
+          "label": "Liver and kidneys",
+          "items": [
+            "Hepatic artery, hepatic vein",
+            "Hepatic portal vein: gut to liver",
+            "Renal artery, renal vein"
+          ]
+        },
+        {
+          "label": "Arteries",
+          "items": [
+            "Thick, muscular, elastic walls",
+            "Narrow lumen",
+            "High pressure, no valves"
+          ]
+        },
+        {
+          "label": "Veins",
+          "items": [
+            "Thin walls, wide lumen",
+            "Valves",
+            "Low pressure"
+          ]
+        },
+        {
+          "label": "Capillaries",
+          "items": [
+            "Wall one cell thick",
+            "Very narrow lumen",
+            "Exchange with cells"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Which vessel carries blood from the body to the heart?",
+        "back": "The vena cava.",
+        "tag": "Vessels"
+      },
+      {
+        "front": "Which vessel carries blood from the heart to the body?",
+        "back": "The aorta.",
+        "tag": "Vessels"
+      },
+      {
+        "front": "Which vessel carries blood to the lungs?",
+        "back": "The pulmonary artery.",
+        "tag": "Vessels"
+      },
+      {
+        "front": "Which vessel carries oxygenated blood from the lungs to the heart?",
+        "back": "The pulmonary vein.",
+        "tag": "Vessels"
+      },
+      {
+        "front": "Which vessel carries blood from the gut to the liver?",
+        "back": "The hepatic portal vein.",
+        "tag": "Vessels"
+      },
+      {
+        "front": "Which vessels carry blood to and from the kidneys?",
+        "back": "The renal artery (to) and the renal vein (from).",
+        "tag": "Vessels"
+      },
+      {
+        "front": "Describe the wall of an artery.",
+        "back": "Thick, with lots of muscle and elastic tissue, and a narrow lumen.",
+        "tag": "Structure"
+      },
+      {
+        "front": "Why do arteries have thick, elastic walls?",
+        "back": "To withstand high blood pressure and stretch and recoil with each heartbeat.",
+        "tag": "Structure"
+      },
+      {
+        "front": "Describe the structure of a vein.",
+        "back": "Thin wall with little muscle, a wide lumen, and valves.",
+        "tag": "Structure"
+      },
+      {
+        "front": "Why do veins have valves?",
+        "back": "Blood pressure is low, so valves stop blood flowing backwards.",
+        "tag": "Structure"
+      },
+      {
+        "front": "Describe the wall of a capillary.",
+        "back": "One cell thick.",
+        "tag": "Structure"
+      },
+      {
+        "front": "Why are capillary walls one cell thick?",
+        "back": "To give a short diffusion distance for exchange between blood and cells.",
+        "tag": "Structure"
+      },
+      {
+        "front": "Which artery carries deoxygenated blood?",
+        "back": "The pulmonary artery.",
+        "tag": "Vessels"
+      }
+    ]
+  },
+  "11.4": {
+    "mindMap": {
+      "centre": "Blood",
+      "branches": [
+        {
+          "label": "Red blood cells",
+          "items": [
+            "Carry oxygen",
+            "Haemoglobin",
+            "No nucleus, biconcave"
+          ]
+        },
+        {
+          "label": "White blood cells",
+          "items": [
+            "Phagocytes engulf pathogens",
+            "Lymphocytes make antibodies"
+          ]
+        },
+        {
+          "label": "Platelets",
+          "items": [
+            "Help clotting",
+            "Fibrinogen to fibrin",
+            "Stop blood loss and pathogens"
+          ]
+        },
+        {
+          "label": "Plasma",
+          "items": [
+            "Transports cells, glucose, ions",
+            "Hormones, urea, carbon dioxide",
+            "Vitamins, plasma proteins"
+          ]
+        },
+        {
+          "label": "Tissue fluid",
+          "items": [
+            "Plasma leaks from capillaries",
+            "Substances diffuse to cells",
+            "Wastes diffuse back"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "List the four components of blood.",
+        "back": "Red blood cells, white blood cells, platelets and plasma.",
+        "tag": "Components"
+      },
+      {
+        "front": "What is the function of red blood cells?",
+        "back": "To transport oxygen.",
+        "tag": "Red cells"
+      },
+      {
+        "front": "Name the protein in red blood cells that carries oxygen.",
+        "back": "Haemoglobin.",
+        "tag": "Red cells"
+      },
+      {
+        "front": "Why do red blood cells have no nucleus?",
+        "back": "To leave more room for haemoglobin.",
+        "tag": "Red cells"
+      },
+      {
+        "front": "What do phagocytes do?",
+        "back": "Engulf and digest pathogens.",
+        "tag": "White cells"
+      },
+      {
+        "front": "What do lymphocytes do?",
+        "back": "Make antibodies.",
+        "tag": "White cells"
+      },
+      {
+        "front": "How can you tell a lymphocyte from a phagocyte?",
+        "back": "A lymphocyte has a large round nucleus; a phagocyte has a lobed nucleus.",
+        "tag": "White cells"
+      },
+      {
+        "front": "What is the function of platelets?",
+        "back": "Clotting, by converting soluble fibrinogen to insoluble fibrin.",
+        "tag": "Platelets"
+      },
+      {
+        "front": "Why is blood clotting important?",
+        "back": "It prevents blood loss and the entry of pathogens.",
+        "tag": "Platelets"
+      },
+      {
+        "front": "Name five things transported in plasma.",
+        "back": "Any five: blood cells, ions, glucose, amino acids, hormones, carbon dioxide, urea, vitamins, plasma proteins.",
+        "tag": "Plasma"
+      },
+      {
+        "front": "How is tissue fluid formed?",
+        "back": "Plasma leaks out of capillaries under pressure.",
+        "tag": "Tissue fluid"
+      },
+      {
+        "front": "How does oxygen get from the blood into a body cell?",
+        "back": "It diffuses out of the capillary into the tissue fluid, then into the cell.",
+        "tag": "Tissue fluid"
+      },
+      {
+        "front": "Which waste is carried in plasma to the kidneys?",
+        "back": "Urea.",
+        "tag": "Plasma"
+      }
+    ]
   }
 };
 
