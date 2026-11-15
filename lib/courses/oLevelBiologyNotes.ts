@@ -1083,6 +1083,822 @@ Use the same method, but keep the temperature the same (for example, a 37 °C wa
 - In a planning question, say what you **change**, what you **measure**, and what you **keep the same**.
 
 Next: test yourself with the practice questions below.`,
+
+  "6.1": `## What you need to know
+
+- Describe photosynthesis and the job of chlorophyll.
+- State what plants do with the carbohydrates they make.
+- Write the word equation and the balanced chemical equation.
+- Investigate the need for chlorophyll, light and carbon dioxide, using controls.
+- Describe and explain how light intensity, carbon dioxide concentration and temperature change the rate of photosynthesis.
+- Investigate these factors with pondweed and hydrogencarbonate indicator.
+- Identify and explain limiting factors.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Photosynthesis | The process where plants make carbohydrates from raw materials, using energy from light. |
+| Chlorophyll | A green pigment found in chloroplasts. It absorbs light energy. |
+| Raw materials | What the plant takes in to make food: carbon dioxide and water. |
+| Rate of photosynthesis | How fast photosynthesis happens. |
+| Limiting factor | The one thing in short supply that stops the rate going any higher. |
+| Destarch | Keep a plant in the dark for 48 hours so it uses up all its starch before an experiment. |
+| Control | A set-up that is the same in every way except the one factor you are testing, so you can compare. |
+
+## What is photosynthesis?
+
+> **Photosynthesis** is the process by which plants make **carbohydrates** from **raw materials** using **energy from light**.
+
+Plants do not eat. They make their own food in their leaves, using:
+
+- **Carbon dioxide** from the air (it enters through tiny holes called stomata).
+- **Water** from the soil (it comes up from the roots).
+- **Light** from the Sun.
+
+The products are **glucose** (a sugar) and **oxygen**. The oxygen goes out into the air.
+
+## Chlorophyll
+
+**Chlorophyll** is a **green pigment** found in **chloroplasts**. It absorbs light.
+
+Chlorophyll **transfers light energy into chemical energy** for making glucose and other carbohydrates.
+
+> Think of chlorophyll as a solar panel. It catches light energy and turns it into energy stored in food.
+
+## The equations
+
+![The photosynthesis equations](/images/biology/6-1-equations.svg)
+
+| | Word equation | Balanced chemical equation |
+|---|---|---|
+| Goes in | carbon dioxide + water | 6CO₂ + 6H₂O |
+| Comes out | glucose + oxygen | C₆H₁₂O₆ + 6O₂ |
+| Needed | light and chlorophyll | light and chlorophyll |
+
+> Memory trick: **6, 6, 1, 6**. Six carbon dioxide and six water make one glucose and six oxygen.
+
+## What the plant does with its carbohydrates
+
+The glucose made in photosynthesis is used in four ways:
+
+| Made into | Used for |
+|---|---|
+| **Starch** | An **energy store**. Starch does not dissolve, so it is a good store. |
+| **Cellulose** | Building **cell walls**. |
+| Glucose (kept as glucose) | **Respiration**, to release energy for the cell. |
+| **Sucrose** | **Transport** around the plant in the phloem. |
+
+## Practical: what does a plant need for photosynthesis?
+
+We test a leaf for **starch**. If there is starch, the leaf has been photosynthesising.
+
+**First, destarch the plant**: keep it in the dark for 48 hours so it uses up all its starch. Then any starch you find must be new.
+
+### How to test a leaf for starch
+
+1. Put the leaf in **boiling water** for 1 minute. This kills it and stops all reactions.
+2. Put it in hot **ethanol** in a water bath, with the burner **turned off**. The ethanol removes the **chlorophyll**, so the leaf turns white.
+3. Dip it in hot water to **soften** it.
+4. Spread it on a tile and add **iodine solution**.
+5. **Blue-black** means starch is present. **Orange-brown** means no starch.
+
+### The three experiments
+
+| Testing the need for | What you do | Result |
+|---|---|---|
+| **Chlorophyll** | Use a **variegated** leaf (green and white parts). | Only the **green** parts go blue-black. White parts have no chlorophyll, so no starch. |
+| **Light** | Cover part of a leaf with black paper, then put the plant in light. | Only the **uncovered** part goes blue-black. |
+| **Carbon dioxide** | Put a plant in a bag with **soda lime** or sodium hydroxide, which absorbs carbon dioxide. The **control** plant has no soda lime. | Only the **control** plant's leaves go blue-black. |
+
+> Ethanol catches fire easily. Never heat it with a flame. Use a hot water bath.
+
+## What changes the rate of photosynthesis?
+
+![How light intensity changes the rate of photosynthesis](/images/biology/6-1-limiting-factors.svg)
+
+### Light intensity
+
+More light gives more energy for photosynthesis, so the rate goes **up**. At high light intensity the rate **stops rising** (the graph levels off). Now something else is in short supply.
+
+### Carbon dioxide concentration
+
+More carbon dioxide means more raw material, so the rate goes **up**, until it levels off.
+
+### Temperature
+
+Photosynthesis is controlled by **enzymes**. As it gets warmer the rate goes up, up to an **optimum** temperature. Above that, the enzymes start to be **denatured**, so the rate falls quickly.
+
+## Limiting factors
+
+> A **limiting factor** is the factor in shortest supply. It holds the rate back.
+
+- On the **rising part** of the light graph, **light** is the limiting factor. More light makes it faster.
+- On the **flat part**, light is no longer limiting. Something else is: usually **carbon dioxide** or **temperature**.
+
+| Situation | Likely limiting factor |
+|---|---|
+| Night, or a dark shady place | Light |
+| A bright, warm sunny day | Carbon dioxide |
+| A bright but cold winter morning | Temperature |
+
+Farmers use this in **greenhouses**. They add lamps (light), burn fuel to add carbon dioxide and warm the air (temperature) so crops grow faster.
+
+## Practical: measuring the rate with pondweed
+
+![Measuring the rate of photosynthesis with pondweed](/images/biology/6-1-pondweed.svg)
+
+1. Put a piece of pondweed (such as *Elodea*) upside down in a beaker of water with a little **sodium hydrogencarbonate**, which gives carbon dioxide.
+2. Put a lamp at a set distance, for example 10 cm.
+3. Wait 5 minutes, then **count the oxygen bubbles** for 1 minute.
+4. Move the lamp further away (20, 30, 40 cm) and count again.
+
+**Result:** the closer the lamp, the **more bubbles**, so the faster the rate.
+
+Keep the **temperature** the same: a glass tank of water between the lamp and the plant soaks up heat from the lamp.
+
+### Hydrogencarbonate indicator
+
+This indicator changes colour with the amount of **carbon dioxide** in it.
+
+| Carbon dioxide level | Colour |
+|---|---|
+| High (more than in air) | **Yellow** |
+| Same as air | **Orange-red** |
+| Low (less than in air) | **Purple** |
+
+Put a leaf or pondweed in the indicator in bright light. It uses up carbon dioxide in photosynthesis, so the indicator turns **purple**. In the dark the plant only respires, adding carbon dioxide, so it turns **yellow**.
+
+## Common mistakes
+
+- Saying plants get their food from the soil. They **make** it by photosynthesis. The soil gives water and mineral ions.
+- Saying chlorophyll "makes" energy. It **transfers** light energy into chemical energy.
+- Forgetting to **destarch** the plant first.
+- Boiling the leaf in ethanol over a flame. **Ethanol is flammable.**
+- Saying "light is the limiting factor" on the flat part of the graph. On the flat part, light is **not** limiting.
+
+## Exam tips
+
+- Learn the balanced equation exactly: **6CO₂ + 6H₂O, light and chlorophyll, gives C₆H₁₂O₆ + 6O₂**.
+- In an experiment question, always name the **control** and say why it is needed.
+- For a limiting factor graph, say **which factor** is limiting on each part, and **why**.
+
+Next: test yourself with the practice questions below.`,
+
+  "6.2": `## What you need to know
+
+- State that most leaves are thin with a large surface area, and explain why this helps photosynthesis.
+- Identify and label the parts of a dicot leaf in diagrams and photographs: cuticle, upper and lower epidermis, palisade and spongy mesophyll, air spaces, stomata and guard cells, vascular bundles (xylem and phloem), and where the chloroplasts are.
+- Explain how each part helps photosynthesis and gas exchange.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Cuticle | A thin waxy layer on top of the leaf. It stops water escaping. |
+| Epidermis | The thin outer layer of cells, on the top (upper) and bottom (lower) of the leaf. |
+| Palisade mesophyll | Tall cells under the upper epidermis, packed with chloroplasts. Most photosynthesis happens here. |
+| Spongy mesophyll | Round, loosely packed cells with air spaces between them. |
+| Stomata | Tiny holes, mostly in the lower epidermis, that let gases in and out. One is called a stoma. |
+| Guard cells | A pair of cells around each stoma that open and close it. |
+| Vascular bundle | A vein. It contains xylem and phloem. |
+| Xylem | Tubes that bring water and mineral ions to the leaf. |
+| Phloem | Tubes that carry sugars (sucrose) away from the leaf. |
+
+## The shape of a leaf
+
+| Feature | How it helps photosynthesis |
+|---|---|
+| **Large surface area** | Catches as much **light** as possible, and lets more carbon dioxide in. |
+| **Thin** | Gases have only a **short distance** to diffuse. Light reaches all the cells. |
+
+## Inside a leaf
+
+![A section through a leaf, labelled](/images/biology/6-2-leaf-section.svg)
+
+Going from the top of the leaf to the bottom:
+
+| Part | What it is like | How it helps |
+|---|---|---|
+| **Cuticle** | Waxy, see-through layer | Stops water loss. Lets light through. |
+| **Upper epidermis** | One layer of see-through cells, no chloroplasts | Lets light pass straight to the palisade cells. |
+| **Palisade mesophyll** | Tall cells in a row, **packed with chloroplasts** | Near the top, so they get the most light. Main site of photosynthesis. |
+| **Spongy mesophyll** | Round cells, fewer chloroplasts, loosely packed | Leaves **air spaces** between cells. |
+| **Air spaces** | Gaps between spongy cells | Let carbon dioxide **diffuse** to the cells and oxygen diffuse out. Large surface for gas exchange. |
+| **Vascular bundle** | Xylem and phloem together | **Xylem** brings water and ions. **Phloem** takes sucrose away. |
+| **Lower epidermis** | Layer of cells with many **stomata** | Gases go in and out here. |
+| **Stomata and guard cells** | Small holes, each between two guard cells | Let carbon dioxide **in** and oxygen and water vapour **out**. Guard cells close them to save water. |
+
+## Where are the chloroplasts?
+
+- **Most** chloroplasts are in the **palisade** mesophyll, near the top where light is strongest.
+- **Fewer** are in the **spongy** mesophyll.
+- **Guard cells** have chloroplasts.
+- The other epidermis cells have **none**, so light passes straight through them.
+
+## How gases move in a leaf
+
+In daylight, photosynthesis uses carbon dioxide, so there is **less carbon dioxide inside** the leaf than outside.
+
+1. Carbon dioxide **diffuses** in through the **stomata**.
+2. It spreads through the **air spaces** to the mesophyll cells.
+3. Oxygen made in photosynthesis diffuses the other way and out through the stomata.
+
+> Think of the stomata as doors and the air spaces as corridors. Gases come in through the doors and travel along the corridors to the rooms (cells).
+
+## Common mistakes
+
+- Saying photosynthesis happens mainly in the spongy layer. It happens mainly in the **palisade** layer.
+- Saying the epidermis cells photosynthesise. Only **guard cells** in the epidermis have chloroplasts.
+- Saying the cuticle stops light. It is **see-through**. It stops **water loss**.
+- Mixing up xylem and phloem. **Xylem: water in. Phloem: food (sucrose) out.**
+
+## Exam tips
+
+- When labelling a leaf diagram, draw label lines that touch the right layer exactly.
+- To explain an adaptation, give the **feature** and **how it helps**: "palisade cells have many chloroplasts **to absorb more light** for photosynthesis."
+- Gas exchange answers should use the word **diffusion** and mention **stomata** and **air spaces**.
+
+Next: test yourself with the practice questions below.`,
+
+  "6.3": `## What you need to know
+
+- Explain why plants need **nitrate ions**: to make amino acids, which are needed to make proteins.
+- Explain why plants need **magnesium ions**: to make chlorophyll.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Mineral ions | Small charged particles from the soil, dissolved in water, such as nitrate and magnesium. |
+| Nitrate ions | Mineral ions that contain nitrogen. |
+| Magnesium ions | Mineral ions that contain magnesium. |
+| Amino acids | The building blocks of proteins. |
+| Deficiency | Not having enough of something. |
+| Fertiliser | A substance farmers add to soil to give plants mineral ions. |
+
+## Plants need more than photosynthesis
+
+Photosynthesis gives a plant **glucose**. Glucose contains only carbon, hydrogen and oxygen.
+
+To make other molecules, plants need extra elements. They take these from the soil as **mineral ions**, dissolved in water, through their **root hair cells**.
+
+## Nitrate ions
+
+> Plants need **nitrate ions** to make **amino acids**. Amino acids are joined to make **proteins**.
+
+Why? Glucose has **no nitrogen**. Amino acids **do** contain nitrogen. Nitrate ions supply that nitrogen.
+
+Proteins are needed for **growth** (for example, for new cells and enzymes).
+
+**Without enough nitrate:**
+
+- The plant grows **slowly** and stays **small** (stunted).
+- The **older leaves turn yellow**.
+
+## Magnesium ions
+
+> Plants need **magnesium ions** to make **chlorophyll**.
+
+Every chlorophyll molecule contains magnesium.
+
+**Without enough magnesium:**
+
+- The plant cannot make enough chlorophyll, so the **leaves turn yellow** (especially between the veins).
+- With less chlorophyll, the plant absorbs less light, so it does **less photosynthesis**.
+
+## Summary
+
+| Mineral ion | Used to make | If it is missing |
+|---|---|---|
+| **Nitrate** | **Amino acids**, then **proteins** | Poor growth, small plant, yellow older leaves |
+| **Magnesium** | **Chlorophyll** | Yellow leaves, less photosynthesis |
+
+> Memory trick: **N**itrate for **N**ew growth (proteins). **M**agnesium for **M**aking green (chlorophyll).
+
+## Fertilisers
+
+Farmers add **fertilisers** containing nitrate and magnesium (and other ions) to the soil. This helps crops grow bigger and greener.
+
+## Common mistakes
+
+- Saying nitrate is used to make glucose. Glucose is made by **photosynthesis** and has no nitrogen.
+- Saying magnesium makes proteins. Magnesium is for **chlorophyll**. Nitrate is for **proteins**.
+- Writing "nitrogen" when the question asks for the ion. Plants take in **nitrate ions**, not nitrogen gas.
+
+## Exam tips
+
+- For nitrate, give the full chain: **nitrate, amino acids, proteins, growth**.
+- For magnesium, give the full chain: **magnesium, chlorophyll, light absorption, photosynthesis**.
+- If a question shows a yellow, stunted plant, think of **nitrate**. If it shows yellow leaves on a normal-sized plant, think of **magnesium**.
+
+Next: test yourself with the practice questions below.`,
+
+  "7.1": `## What you need to know
+
+- Explain how the shape of **root hair cells** helps them take up water and mineral ions.
+- Describe the path water takes: root hair cells, root cortex cells, xylem, then mesophyll cells in the leaf.
+- Investigate the path of water in a cut stem using a stain.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Root hair cell | A cell on the outside of a root with a long thin hair. It takes in water and mineral ions. |
+| Root cortex | The layer of cells between the outside of the root and the xylem in the middle. |
+| Xylem | Tubes that carry water and mineral ions up the plant. |
+| Mesophyll cells | The cells inside a leaf (palisade and spongy). |
+| Osmosis | Movement of water from a dilute solution to a more concentrated solution through a partially permeable membrane. |
+| Active transport | Movement of particles against a concentration gradient, using energy. |
+
+## Root hair cells
+
+Each root hair cell has a **long, thin hair** that grows out between the soil particles.
+
+| Feature | How it helps |
+|---|---|
+| Long thin hair | Gives a **large surface area**, so more water and ions can be taken in. |
+| Grows between soil particles | Is in close contact with the **soil water**. |
+| Thin cell wall | Short distance for water to move. |
+| Many mitochondria | Release **energy** for **active transport** of mineral ions. |
+
+- **Water** enters by **osmosis**, because the soil water is more dilute (has a higher water potential) than the cell sap.
+- **Mineral ions** enter by **active transport**, because there are usually more ions inside the cell than in the soil.
+
+## The path of water through a plant
+
+![The path of water from the soil to the leaf](/images/biology/7-1-water-pathway.svg)
+
+1. **Root hair cells** take in water from the soil.
+2. Water moves across the **root cortex cells**.
+3. It enters the **xylem** in the middle of the root.
+4. The xylem carries it **up the stem** to the leaves.
+5. In the leaf, water leaves the xylem and enters the **mesophyll cells**.
+
+> Memory trick: **R**eally **C**old **X**-ray **M**achine: **R**oot hair, **C**ortex, **X**ylem, **M**esophyll.
+
+## Practical: seeing the path of water in a stem
+
+1. Put a fresh stem with leaves (celery works well) in water with a **stain**, such as food colouring or eosin.
+2. Leave it for a few hours.
+3. Cut across the stem and look at the cut end with a hand lens.
+
+**Result:** only the **xylem** is coloured. This shows water travels up the stem in the **xylem**.
+
+In a stem the xylem is in **vascular bundles** arranged in a **ring** near the outside. You will see coloured dots in a ring.
+
+## Common mistakes
+
+- Saying water enters root hair cells by diffusion. Water moves by **osmosis**.
+- Saying mineral ions enter by osmosis. Ions enter by **active transport** (or diffusion).
+- Saying root hairs are separate cells. Each hair is part of **one root hair cell**.
+- Missing out the **cortex** in the path of water.
+
+## Exam tips
+
+- For the pathway, give all four in order: **root hair cell, cortex, xylem, mesophyll**.
+- To explain root hair adaptations, always link to **large surface area** for uptake.
+- In the stain practical, say clearly that the stain shows the position of the **xylem**.
+
+Next: test yourself with the practice questions below.`,
+
+  "7.2": `## What you need to know
+
+- Describe **transpiration** as the loss of water vapour from leaves.
+- Explain how water evaporates from mesophyll cells into air spaces, then diffuses out through stomata.
+- Explain how wind speed, temperature, humidity and light intensity change the rate of transpiration, and how wilting happens.
+- Investigate transpiration rate.
+- Explain how water moves up the xylem by **transpiration pull**.
+- Describe **translocation** of sucrose and amino acids in the phloem, from sources to sinks.
+- Identify the positions of xylem, phloem and cortex in sections of roots and stems.
+- State the functions of xylem and relate its structure to its function.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Transpiration | The loss of water vapour from leaves. |
+| Evaporation | Liquid water turning into water vapour (a gas). |
+| Humidity | How much water vapour is in the air. |
+| Wilting | When a plant droops because its cells have lost water and gone soft. |
+| Transpiration pull | The pulling force, caused by water loss from leaves, that draws water up the xylem. |
+| Translocation | Movement of sucrose and amino acids in the phloem, from sources to sinks. |
+| Source | A part of the plant that makes or releases sucrose, such as a leaf. |
+| Sink | A part of the plant that uses or stores sucrose, such as a root, fruit or growing bud. |
+| Lignin | A tough substance in xylem walls that makes them strong. |
+
+## What is transpiration?
+
+> **Transpiration** is the loss of **water vapour** from **leaves**.
+
+![How water leaves a leaf](/images/biology/7-2-transpiration.svg)
+
+1. Water **evaporates** from the surfaces of the **mesophyll cells** into the **air spaces**.
+2. The air spaces fill with water vapour.
+3. Water vapour **diffuses** out of the leaf through the **stomata**, into the drier air outside.
+
+## What changes the rate of transpiration?
+
+| Factor | Effect | Why |
+|---|---|---|
+| **Higher temperature** | Faster | Water molecules have more kinetic energy, so they **evaporate** and **diffuse** faster. |
+| **Higher humidity** (damp air) | Slower | The air outside already has lots of water vapour, so the **concentration gradient** is smaller. |
+| **Higher wind speed** | Faster | Wind blows away the water vapour near the leaf, keeping the **concentration gradient** steep. |
+| **Higher light intensity** | Faster | **Stomata open** wider in light (for photosynthesis), so more water vapour escapes. |
+
+> Think about washing drying on a line. It dries fastest on a **hot, dry, windy, sunny** day. Leaves lose water fastest on the same kind of day.
+
+## Wilting
+
+If a plant **loses water faster than its roots take it in**:
+
+1. Its cells lose water and become **flaccid** (soft), not turgid.
+2. The cells no longer push against each other to hold the plant up.
+3. The leaves and stem **droop**. The plant **wilts**.
+
+Wilting can help a little: drooping leaves catch less sunlight, so they lose less water.
+
+## Practical: measuring transpiration with a potometer
+
+A **potometer** measures how fast a plant takes up water. This is close to the rate of transpiration.
+
+1. Cut a leafy shoot **under water** so no air bubbles get into the xylem.
+2. Fit it into the potometer, also under water. Seal joints with petroleum jelly.
+3. Let in one air bubble at the end of the capillary tube.
+4. Measure how far the bubble moves in a set time (for example, 5 minutes).
+5. Repeat with a fan (wind), a lamp (light) or in a warmer room (temperature).
+
+**The faster the bubble moves, the faster the rate of transpiration.**
+
+## How water moves up the xylem: transpiration pull
+
+1. Water evaporates from the leaves.
+2. This **pulls** more water out of the xylem in the leaf.
+3. Water molecules **stick together** (they have forces of attraction between them).
+4. So a whole **column of water** is pulled up the xylem, from roots to leaves.
+
+> Think of drinking through a straw. When you suck at the top, the whole column of drink moves up. The leaf is the top of the straw.
+
+## Xylem: structure and function
+
+The **functions** of xylem are:
+
+- To **transport water and mineral ions** from the roots to the rest of the plant.
+- To **support** the plant.
+
+| Feature of xylem vessels | How it helps |
+|---|---|
+| **Thick walls with lignin** | Strong, so they **support** the plant and do not collapse. |
+| **No cell contents** (dead, empty cells) | Nothing gets in the way of water flow. |
+| **Cells joined end to end with no cross walls** | Forms a **long continuous tube**, like a pipe. |
+
+## Translocation in the phloem
+
+> **Translocation** is the movement of **sucrose** and **amino acids** in the **phloem**, from **sources** to **sinks**.
+
+| Sources (make or release sucrose) | Sinks (use or store sucrose) |
+|---|---|
+| Leaves doing photosynthesis | Roots |
+| Storage organs in spring, such as potatoes, releasing stored food | Growing buds and young leaves |
+| | Fruits and seeds |
+| | Storage organs in summer |
+
+A part of a plant can be a **sink at one time and a source at another**. A potato stores sugar in summer (sink), then releases it for new shoots in spring (source).
+
+Phloem can carry food **up or down** the plant. Xylem only carries water **up**.
+
+## Where are xylem and phloem?
+
+![Where xylem and phloem are in a root and a stem](/images/biology/7-2-root-stem-sections.svg)
+
+| | In a root | In a stem |
+|---|---|---|
+| Xylem | In the **centre**, often star-shaped | In **vascular bundles** in a ring, on the **inside** of each bundle |
+| Phloem | Between the arms of the xylem star | In the same bundles, on the **outside** |
+| Cortex | Wide layer around the outside | Between the bundles and the outside |
+
+## Common mistakes
+
+- Saying transpiration is water loss "from the plant". Say from the **leaves**, as **water vapour**.
+- Saying water vapour leaves by evaporation through the stomata. It **evaporates** inside the leaf, then **diffuses** out through the stomata.
+- Saying humidity speeds up transpiration. **Higher humidity slows it down.**
+- Mixing up xylem and phloem. **Xylem: water and ions, upwards. Phloem: sucrose and amino acids, any direction.**
+- Saying translocation moves glucose. It moves **sucrose**.
+
+## Exam tips
+
+- Explain every factor using either **evaporation** or the **concentration gradient** of water vapour.
+- In the potometer, always mention cutting the shoot **under water**.
+- For transpiration pull, the key words are **evaporation, pull, column of water, forces of attraction**.
+
+Next: test yourself with the practice questions below.`,
+
+  "8.1": `## What you need to know
+
+- List the main food sources of carbohydrates, lipids, proteins, vitamins C and D, calcium, iron, fibre and water, and say why each is important.
+- Name the diseases caused by a lack of vitamin C (scurvy), vitamin D (rickets), calcium (rickets) and iron (anaemia), and describe their symptoms.
+- Understand what a **balanced diet** is.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Diet | All the food and drink a person usually has. |
+| Balanced diet | A diet with all the nutrients, in the right amounts, to stay healthy. |
+| Nutrient | A substance in food that the body needs. |
+| Deficiency disease | An illness caused by not getting enough of one nutrient. |
+| Fibre (roughage) | The parts of plant food we cannot digest, such as cellulose. |
+| Vitamin | A nutrient needed in tiny amounts to stay healthy. |
+| Mineral salt | A nutrient from the soil, such as calcium or iron, needed in small amounts. |
+
+## The seven parts of a healthy diet
+
+| Nutrient | Good sources | Why we need it |
+|---|---|---|
+| **Carbohydrates** | Bread, rice, pasta, potatoes, sugar | Main source of **energy** |
+| **Lipids** (fats and oils) | Butter, oil, nuts, cheese | Store of **energy**, insulation, cell membranes |
+| **Proteins** | Meat, fish, eggs, beans, lentils | **Growth and repair**, making enzymes |
+| **Vitamin C** | Oranges, lemons, fresh fruit and vegetables | Healthy **skin and gums** (makes a protein that holds tissues together) |
+| **Vitamin D** | Oily fish, eggs; also made in skin in **sunlight** | Helps the body **absorb calcium** for bones and teeth |
+| **Calcium** | Milk, cheese, yoghurt | Strong **bones and teeth**, blood clotting |
+| **Iron** | Red meat, liver, spinach, beans | Making **haemoglobin** in red blood cells, to carry oxygen |
+| **Fibre** | Vegetables, fruit, wholemeal bread, brown rice | Helps food move through the gut (**peristalsis**); prevents **constipation** |
+| **Water** | Drinks, and most foods | Needed for all reactions; dissolves substances; transport in blood |
+
+## Deficiency diseases
+
+| Missing nutrient | Disease | Symptoms |
+|---|---|---|
+| **Vitamin C** | **Scurvy** | Bleeding, swollen gums; teeth fall out; wounds heal slowly |
+| **Vitamin D** | **Rickets** | Soft, weak bones; legs bend (bow legs) in children |
+| **Calcium** | **Rickets** | Soft, weak bones that bend |
+| **Iron** | **Anaemia** | Tiredness and weakness, pale skin, short of breath, because the blood carries less oxygen |
+
+> Rickets has **two** causes: not enough **vitamin D** or not enough **calcium**. Both are needed for strong bones.
+
+> Memory trick: **I**ron for **I**nside red blood cells. **C** for **C**itrus fruit and gums. **D** for **D**aylight.
+
+## A balanced diet
+
+> A **balanced diet** contains **all the nutrients** the body needs, in the **right amounts**.
+
+A balanced diet is not just "eating healthy food". It means getting the right **amount** of each nutrient, and the right amount of **energy**, for your body.
+
+The amount of food a person needs depends on their:
+
+- **Age**: growing teenagers need lots of energy and protein.
+- **Activity**: very active people need more energy.
+- **Pregnancy**: pregnant women need more energy, protein, iron and calcium for the baby.
+
+Eating **too much** energy food (especially fat and sugar) can lead to obesity. Eating **too little** of a nutrient can lead to a deficiency disease.
+
+## Common mistakes
+
+- Saying fibre gives energy. We **cannot digest** fibre. It helps food move through the gut.
+- Saying iron is for bones. Iron is for **haemoglobin**. Calcium is for bones.
+- Saying vitamin D makes bones. Vitamin D helps the body **absorb calcium**, which makes bones strong.
+- Forgetting that rickets can be caused by a lack of **calcium** as well as vitamin D.
+
+## Exam tips
+
+- For each nutrient, learn **one source** and **one use**.
+- For deficiency questions, give the **disease name** and at least **one symptom**.
+- When asked what a balanced diet is, mention **all nutrients** and **right amounts**.
+
+Next: test yourself with the practice questions below.`,
+
+  "8.2": `## What you need to know
+
+- Identify the main parts of the digestive system.
+- Explain why most food must be digested before it can be absorbed.
+- Describe physical and chemical digestion.
+- Identify the four types of teeth, describe the structure of a tooth and the job of each type.
+- Describe the job of each part of the digestive system.
+- Describe what amylase, maltase, protease and lipase do.
+- Describe the role of hydrochloric acid and bile.
+- Understand that proteases in the stomach and duodenum work best at different pH.
+- Describe peristalsis.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Ingestion | Taking food into the mouth. |
+| Digestion | Breaking food down into small molecules. |
+| Physical digestion | Breaking food into smaller pieces, with no change to the food molecules. |
+| Chemical digestion | Breaking large molecules into small molecules, using enzymes. |
+| Absorption | Moving digested food from the gut into the blood. |
+| Egestion | Passing out undigested food (faeces) through the anus. |
+| Bile | A green liquid made by the liver. It breaks fat into small droplets. |
+| Emulsify | Break fat into tiny droplets. |
+| Peristalsis | Waves of muscle contraction that push food along the gut. |
+
+## Why digest food?
+
+Most food is made of **large molecules**, such as starch, protein and fat. They are **too big** to pass through the wall of the gut into the blood.
+
+> Digestion breaks large, **insoluble** molecules into small, **soluble** molecules that can be **absorbed** into the blood.
+
+## The digestive system
+
+![The human digestive system, labelled](/images/biology/8-2-digestive-system.svg)
+
+| Part | Job |
+|---|---|
+| **Mouth** | **Ingestion**. Teeth do **physical digestion**. **Amylase** in saliva starts digesting **starch**. |
+| **Salivary glands** | Make **saliva**, which contains **amylase**. |
+| **Oesophagus** | Tube that carries food to the stomach by peristalsis. |
+| **Stomach** | Churns food (**physical digestion**). **Protease** (pepsin) digests **protein**. Makes **hydrochloric acid**. |
+| **Liver** | Makes **bile**. Stores **glycogen**. |
+| **Gall bladder** | **Stores bile**. |
+| **Pancreas** | Makes an **alkaline** juice containing **amylase, protease and lipase**. |
+| **Small intestine: duodenum** | First part. Amylase, maltase, protease and lipase digest food. |
+| **Small intestine: ileum** | Last part. Finishes digestion. **Absorbs** digested food and most water. |
+| **Large intestine: colon** | **Absorbs** some water. |
+| **Rectum and anus** | Store and pass out faeces (**egestion**). |
+
+## Physical digestion
+
+> **Physical digestion** breaks food into **smaller pieces** with **no chemical change** to the food molecules.
+
+Examples: **chewing** with teeth, **churning** in the stomach, and bile breaking fat into droplets.
+
+Physical digestion gives the food a **bigger surface area**, so enzymes can work on it faster.
+
+> Think of a sugar lump and loose sugar. Loose sugar dissolves faster, because more of its surface touches the water.
+
+## Teeth
+
+![The four types of teeth and the inside of a tooth](/images/biology/8-2-teeth.svg)
+
+| Type | Shape | Job |
+|---|---|---|
+| **Incisors** | Flat and sharp, like a chisel, at the front | **Biting and cutting** |
+| **Canines** | Pointed | **Tearing** food |
+| **Premolars** | Wide with bumps (cusps) | **Grinding and chewing** |
+| **Molars** | Widest, with more bumps, at the back | **Grinding and crushing** |
+
+### Inside a tooth
+
+| Part | What it is |
+|---|---|
+| **Enamel** | The hard white outer layer. The hardest substance in the body. |
+| **Dentine** | Under the enamel. Hard, but softer than enamel. |
+| **Pulp** | The soft centre, with **nerves** and blood vessels. |
+| **Nerves** | In the pulp. They sense pain, heat and cold. |
+| **Cement** | Holds the root of the tooth in the jaw bone. |
+
+Teeth are **embedded in the gum** and jaw bone.
+
+## Chemical digestion
+
+> **Chemical digestion** breaks **large molecules** into **small molecules**. It uses **enzymes**.
+
+| Enzyme | Breaks down | Into | Made in | Works in |
+|---|---|---|---|---|
+| **Amylase** | Starch | Maltose | Salivary glands, pancreas | Mouth, duodenum |
+| **Maltase** | Maltose | Glucose | Wall of small intestine | Small intestine |
+| **Protease** (pepsin and trypsin) | Protein | Amino acids | Stomach (pepsin), pancreas (trypsin) | Stomach, duodenum |
+| **Lipase** | Lipids (fats and oils) | Fatty acids and glycerol | Pancreas | Duodenum |
+
+## Hydrochloric acid in the stomach
+
+The stomach makes **hydrochloric acid**. Its job is to **kill bacteria** in the food we eat.
+
+It also makes the stomach **very acidic** (about pH 2).
+
+## Different proteases, different pH
+
+| Protease | Where | Best pH |
+|---|---|---|
+| **Pepsin** | Stomach | About **2** (acidic) |
+| **Trypsin** | Duodenum | About **8** (slightly alkaline) |
+
+The juice from the pancreas is **alkaline**. It neutralises the stomach acid, so the enzymes in the duodenum can work.
+
+## Bile
+
+Bile is made in the **liver**, stored in the **gall bladder**, and released into the **duodenum**.
+
+> Bile **emulsifies** fats: it breaks big fat drops into **tiny droplets**. This gives a much **bigger surface area** for **lipase** to digest the fat into fatty acids and glycerol.
+
+Bile is **not an enzyme**. It does physical digestion, not chemical.
+
+## Peristalsis
+
+> **Peristalsis** is waves of contractions of **circular and longitudinal muscles** that move food through the digestive system.
+
+- **Circular muscles** contract behind the food, squeezing the gut narrow and pushing the food forward.
+- **Longitudinal muscles** contract in front of the food, making the gut wider and shorter there.
+
+> Think of squeezing toothpaste out of a tube. You squeeze behind the paste, and it moves forward.
+
+**Fibre** gives the muscles something to push against, so food moves smoothly.
+
+## Common mistakes
+
+- Saying bile is an enzyme. Bile **emulsifies** fat. It does not break molecules.
+- Saying the stomach digests starch. The stomach digests **protein**. Starch is digested in the mouth and small intestine.
+- Saying hydrochloric acid digests food. Its job is to **kill bacteria**.
+- Mixing up the liver and gall bladder. The liver **makes** bile. The gall bladder **stores** it.
+- Saying physical digestion makes smaller molecules. It makes smaller **pieces**. The molecules stay the same.
+
+## Exam tips
+
+- For each enzyme, learn **substrate, product, and where it works**.
+- To explain bile, use **emulsify**, **surface area** and **lipase**.
+- Learn the label positions on the digestive system diagram: liver above stomach on the left of the diagram, pancreas behind and below the stomach.
+
+Next: test yourself with the practice questions below.`,
+
+  "8.3": `## What you need to know
+
+- State that most nutrients are absorbed in the small intestine.
+- Understand **absorption** and **assimilation**.
+- Describe a **villus** and the jobs of its capillaries and lacteal.
+- Explain how villi and microvilli give the ileum a large surface area.
+- Understand that water is absorbed in the small intestine and colon, but mostly in the small intestine.
+- State the job of the **hepatic portal vein**.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Absorption | Movement of digested nutrients from the intestines into the cells lining the gut, and then into the blood. |
+| Assimilation | Cells taking nutrients from the blood and using them. |
+| Villus (plural villi) | A tiny finger-shaped fold in the wall of the small intestine. |
+| Microvilli | Even tinier folds on the surface of each cell on a villus. |
+| Capillary | A tiny blood vessel with a very thin wall. |
+| Lacteal | A small tube in the middle of a villus that absorbs fatty acids and glycerol. |
+| Hepatic portal vein | The blood vessel that carries absorbed nutrients from the intestine to the liver. |
+| Lumen | The space inside a tube, such as the inside of the gut. |
+
+## Absorption
+
+> **Absorption** is the movement of nutrients from the **intestines** into the **cells lining the gut**, and then into the **blood**.
+
+Most absorption happens in the **small intestine** (mainly the **ileum**).
+
+Nutrients are absorbed by:
+
+- **Diffusion**: from a high concentration in the gut to a lower concentration in the blood.
+- **Osmosis**: for water.
+- **Active transport**: when the concentration in the gut is lower than in the blood, using energy.
+
+## Villi
+
+![A villus, labelled](/images/biology/8-3-villus.svg)
+
+The inside wall of the small intestine is covered in millions of tiny folds called **villi**.
+
+| Feature of a villus | How it helps absorption |
+|---|---|
+| **Villi and microvilli** | Give a **huge surface area**, so more nutrients are absorbed faster. |
+| **Wall only one cell thick** | **Short distance** for nutrients to travel into the blood. |
+| **Network of capillaries** | Absorbs **glucose and amino acids**. Blood flow carries them away, keeping a **steep concentration gradient**. |
+| **Lacteal** in the middle | Absorbs **fatty acids and glycerol**. |
+
+> Think of a towel. A towel with lots of little loops soaks up much more water than a flat cloth. Villi are like the loops on a towel.
+
+The small intestine is also very **long** (about 6 metres), which gives even more time and surface for absorption.
+
+## Water absorption
+
+Water is absorbed from the **small intestine** and the **colon**.
+
+**Most** water is absorbed in the **small intestine**. The colon absorbs the rest, so faeces become solid.
+
+## The hepatic portal vein
+
+> The **hepatic portal vein** carries most absorbed nutrients from the **ileum** to the **liver**.
+
+The liver checks and processes the nutrients before they go around the body. For example, it stores extra glucose as **glycogen**.
+
+## Assimilation
+
+> **Assimilation** is the uptake and **use** of nutrients by **cells**.
+
+Examples:
+
+- Cells use **glucose** for respiration, to release energy.
+- Cells use **amino acids** to build **proteins**, for growth and repair.
+
+**Absorption** gets nutrients **into the blood**. **Assimilation** gets them **into cells and used**.
+
+## Common mistakes
+
+- Saying most absorption happens in the stomach or colon. It happens in the **small intestine**.
+- Mixing up absorption and assimilation.
+- Saying fats go into the capillaries. Fatty acids and glycerol go into the **lacteal**.
+- Saying most water is absorbed in the colon. **Most is absorbed in the small intestine.**
+
+## Exam tips
+
+- To explain how villi help, give a **feature** and link it to **surface area**, **short distance** or **concentration gradient**.
+- Learn the two vessels in a villus: **capillaries** (glucose, amino acids) and **lacteal** (fatty acids, glycerol).
+- Remember the route: **ileum, hepatic portal vein, liver**.
+
+Next: test yourself with the practice questions below.`,
 };
 
 export function getBiologyNotes(topic: string): string | undefined {

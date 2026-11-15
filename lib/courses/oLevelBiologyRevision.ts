@@ -1058,6 +1058,929 @@ export const O_LEVEL_BIOLOGY_REVISION: Record<string, TopicRevision> = {
         "tag": "Practical"
       }
     ]
+  },
+  "6.1": {
+    "mindMap": {
+      "centre": "Photosynthesis",
+      "branches": [
+        {
+          "label": "The process",
+          "items": [
+            "Makes carbohydrates using light energy",
+            "Raw materials: carbon dioxide and water",
+            "Products: glucose and oxygen",
+            "Chlorophyll in chloroplasts absorbs light"
+          ]
+        },
+        {
+          "label": "Equation",
+          "items": [
+            "6CO₂ + 6H₂O gives C₆H₁₂O₆ + 6O₂",
+            "Needs light and chlorophyll"
+          ]
+        },
+        {
+          "label": "Uses of glucose",
+          "items": [
+            "Starch: energy store",
+            "Cellulose: cell walls",
+            "Respiration: energy",
+            "Sucrose: transport"
+          ]
+        },
+        {
+          "label": "Starch test on a leaf",
+          "items": [
+            "Destarch: 48 hours in the dark",
+            "Boil, hot ethanol, soften, iodine",
+            "Blue-black means starch"
+          ]
+        },
+        {
+          "label": "Limiting factors",
+          "items": [
+            "Light intensity",
+            "Carbon dioxide concentration",
+            "Temperature (enzymes)",
+            "Shortest supply limits the rate"
+          ]
+        },
+        {
+          "label": "Pondweed practical",
+          "items": [
+            "Count oxygen bubbles",
+            "Closer lamp gives more bubbles",
+            "Indicator: purple low CO₂, yellow high"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is photosynthesis?",
+        "back": "The process by which plants make carbohydrates from raw materials using energy from light.",
+        "tag": "Definition"
+      },
+      {
+        "front": "What is chlorophyll and where is it found?",
+        "back": "A green pigment found in chloroplasts.",
+        "tag": "Chlorophyll"
+      },
+      {
+        "front": "What does chlorophyll do?",
+        "back": "It transfers light energy into chemical energy for making glucose and other carbohydrates.",
+        "tag": "Chlorophyll"
+      },
+      {
+        "front": "Give the word equation for photosynthesis.",
+        "back": "Carbon dioxide + water gives glucose + oxygen, using light and chlorophyll.",
+        "tag": "Equation"
+      },
+      {
+        "front": "Give the balanced chemical equation for photosynthesis.",
+        "back": "6CO₂ + 6H₂O gives C₆H₁₂O₆ + 6O₂, using light and chlorophyll.",
+        "tag": "Equation"
+      },
+      {
+        "front": "Name four uses of the glucose a plant makes.",
+        "back": "Starch as an energy store, cellulose for cell walls, glucose for respiration, sucrose for transport.",
+        "tag": "Uses"
+      },
+      {
+        "front": "Why is a plant destarched before an experiment?",
+        "back": "So any starch found afterwards must have been made during the experiment.",
+        "tag": "Practical"
+      },
+      {
+        "front": "Why is a leaf put in hot ethanol in the starch test?",
+        "back": "To remove the chlorophyll, so the iodine colour can be seen clearly.",
+        "tag": "Practical"
+      },
+      {
+        "front": "How do you show chlorophyll is needed for photosynthesis?",
+        "back": "Test a variegated leaf for starch. Only the green parts turn blue-black.",
+        "tag": "Practical"
+      },
+      {
+        "front": "How do you show carbon dioxide is needed?",
+        "back": "Keep a plant with soda lime (absorbs CO₂) and a control without. Only the control's leaves contain starch.",
+        "tag": "Practical"
+      },
+      {
+        "front": "What is a limiting factor?",
+        "back": "The factor in shortest supply, which stops the rate of photosynthesis rising any higher.",
+        "tag": "Limiting factors"
+      },
+      {
+        "front": "Why does the rate level off at high light intensity?",
+        "back": "Light is no longer limiting. Another factor, such as carbon dioxide or temperature, is now limiting.",
+        "tag": "Limiting factors"
+      },
+      {
+        "front": "Why does the rate fall at high temperatures?",
+        "back": "The enzymes that control photosynthesis are denatured.",
+        "tag": "Limiting factors"
+      },
+      {
+        "front": "In the pondweed experiment, how is the rate measured?",
+        "back": "By counting the oxygen bubbles given off per minute.",
+        "tag": "Practical"
+      },
+      {
+        "front": "What colour is hydrogencarbonate indicator when carbon dioxide is low?",
+        "back": "Purple. (Orange-red is normal air level, yellow is high.)",
+        "tag": "Practical"
+      }
+    ]
+  },
+  "6.2": {
+    "mindMap": {
+      "centre": "Leaf structure",
+      "branches": [
+        {
+          "label": "Leaf shape",
+          "items": [
+            "Large surface area catches light",
+            "Thin: short diffusion distance"
+          ]
+        },
+        {
+          "label": "Top layers",
+          "items": [
+            "Cuticle: waxy, stops water loss",
+            "Upper epidermis: see-through",
+            "Palisade: most chloroplasts"
+          ]
+        },
+        {
+          "label": "Middle layers",
+          "items": [
+            "Spongy mesophyll: loose cells",
+            "Air spaces: gases diffuse",
+            "Vascular bundle: xylem and phloem"
+          ]
+        },
+        {
+          "label": "Bottom layer",
+          "items": [
+            "Lower epidermis",
+            "Stomata let gases in and out",
+            "Guard cells open and close stomata"
+          ]
+        },
+        {
+          "label": "Gas exchange",
+          "items": [
+            "Carbon dioxide diffuses in",
+            "Oxygen diffuses out",
+            "Through stomata and air spaces"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "How does a large surface area help a leaf?",
+        "back": "It absorbs more light and lets more carbon dioxide in, for photosynthesis.",
+        "tag": "Leaf shape"
+      },
+      {
+        "front": "Why are leaves thin?",
+        "back": "Gases have a short distance to diffuse, and light reaches all the cells.",
+        "tag": "Leaf shape"
+      },
+      {
+        "front": "What does the cuticle do?",
+        "back": "It is a waxy layer that stops water loss. It is see-through so light passes.",
+        "tag": "Layers"
+      },
+      {
+        "front": "Why does the upper epidermis have no chloroplasts?",
+        "back": "So light passes straight through to the palisade cells.",
+        "tag": "Layers"
+      },
+      {
+        "front": "Where does most photosynthesis happen in a leaf?",
+        "back": "In the palisade mesophyll cells.",
+        "tag": "Layers"
+      },
+      {
+        "front": "How are palisade cells adapted for photosynthesis?",
+        "back": "They are packed with chloroplasts and are near the top of the leaf, where light is strongest.",
+        "tag": "Layers"
+      },
+      {
+        "front": "What is the job of the air spaces in the spongy mesophyll?",
+        "back": "They let carbon dioxide and oxygen diffuse to and from the cells, and give a large surface for gas exchange.",
+        "tag": "Gas exchange"
+      },
+      {
+        "front": "What is in a vascular bundle?",
+        "back": "Xylem, which brings water and mineral ions, and phloem, which carries sucrose away.",
+        "tag": "Layers"
+      },
+      {
+        "front": "Where are most stomata found?",
+        "back": "In the lower epidermis.",
+        "tag": "Stomata"
+      },
+      {
+        "front": "What do guard cells do?",
+        "back": "They open and close the stoma.",
+        "tag": "Stomata"
+      },
+      {
+        "front": "Which epidermis cells contain chloroplasts?",
+        "back": "Only the guard cells.",
+        "tag": "Chloroplasts"
+      },
+      {
+        "front": "Describe how carbon dioxide reaches the palisade cells.",
+        "back": "It diffuses in through the stomata, then through the air spaces to the mesophyll cells.",
+        "tag": "Gas exchange"
+      }
+    ]
+  },
+  "6.3": {
+    "mindMap": {
+      "centre": "Mineral nutrition",
+      "branches": [
+        {
+          "label": "Mineral ions",
+          "items": [
+            "Taken from soil water",
+            "Enter through root hair cells",
+            "Supply elements glucose lacks"
+          ]
+        },
+        {
+          "label": "Nitrate ions",
+          "items": [
+            "Supply nitrogen",
+            "Make amino acids",
+            "Amino acids make proteins"
+          ]
+        },
+        {
+          "label": "Lack of nitrate",
+          "items": [
+            "Slow growth, small plant",
+            "Older leaves turn yellow"
+          ]
+        },
+        {
+          "label": "Magnesium ions",
+          "items": [
+            "Make chlorophyll",
+            "Needed to absorb light"
+          ]
+        },
+        {
+          "label": "Lack of magnesium",
+          "items": [
+            "Yellow leaves",
+            "Less photosynthesis"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Why do plants need nitrate ions?",
+        "back": "To make amino acids, which are needed to make proteins.",
+        "tag": "Nitrate"
+      },
+      {
+        "front": "Why can't a plant make amino acids from glucose alone?",
+        "back": "Glucose has no nitrogen. Amino acids contain nitrogen, which comes from nitrate ions.",
+        "tag": "Nitrate"
+      },
+      {
+        "front": "Why do plants need proteins?",
+        "back": "For growth, for example new cells and enzymes.",
+        "tag": "Nitrate"
+      },
+      {
+        "front": "Give two signs of nitrate deficiency.",
+        "back": "Slow, stunted growth and yellow older leaves.",
+        "tag": "Nitrate"
+      },
+      {
+        "front": "Why do plants need magnesium ions?",
+        "back": "To make chlorophyll.",
+        "tag": "Magnesium"
+      },
+      {
+        "front": "Give one sign of magnesium deficiency.",
+        "back": "Yellow leaves, especially between the veins.",
+        "tag": "Magnesium"
+      },
+      {
+        "front": "Why does magnesium deficiency reduce photosynthesis?",
+        "back": "Less chlorophyll is made, so less light is absorbed.",
+        "tag": "Magnesium"
+      },
+      {
+        "front": "How do mineral ions get into a plant?",
+        "back": "They are taken from the soil water through root hair cells.",
+        "tag": "Uptake"
+      },
+      {
+        "front": "What do farmers add to soil to supply mineral ions?",
+        "back": "Fertilisers.",
+        "tag": "Uptake"
+      },
+      {
+        "front": "A plant is small with yellow older leaves. Which ion is most likely missing?",
+        "back": "Nitrate.",
+        "tag": "Deficiency"
+      }
+    ]
+  },
+  "7.1": {
+    "mindMap": {
+      "centre": "Water and ion uptake",
+      "branches": [
+        {
+          "label": "Root hair cells",
+          "items": [
+            "Long hair: large surface area",
+            "Close contact with soil water",
+            "Many mitochondria for active transport"
+          ]
+        },
+        {
+          "label": "How things enter",
+          "items": [
+            "Water by osmosis",
+            "Mineral ions by active transport"
+          ]
+        },
+        {
+          "label": "Path of water",
+          "items": [
+            "Root hair cell",
+            "Root cortex",
+            "Xylem",
+            "Mesophyll cells in leaf"
+          ]
+        },
+        {
+          "label": "Stain practical",
+          "items": [
+            "Stem in coloured water",
+            "Cut across the stem",
+            "Only xylem is stained"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "How is a root hair cell adapted for absorbing water?",
+        "back": "Its long thin hair gives a large surface area and grows between soil particles, in contact with soil water.",
+        "tag": "Root hair"
+      },
+      {
+        "front": "How does water enter a root hair cell?",
+        "back": "By osmosis.",
+        "tag": "Uptake"
+      },
+      {
+        "front": "How do mineral ions usually enter a root hair cell?",
+        "back": "By active transport, against the concentration gradient, using energy.",
+        "tag": "Uptake"
+      },
+      {
+        "front": "Why do root hair cells have many mitochondria?",
+        "back": "To release energy by respiration for active transport of mineral ions.",
+        "tag": "Root hair"
+      },
+      {
+        "front": "Give the path of water from soil to leaf.",
+        "back": "Root hair cell, root cortex cells, xylem, mesophyll cells.",
+        "tag": "Pathway"
+      },
+      {
+        "front": "Which tissue carries water up the stem?",
+        "back": "Xylem.",
+        "tag": "Pathway"
+      },
+      {
+        "front": "Describe how to show the path of water in a stem.",
+        "back": "Stand a leafy stem in water with a stain, then cut across it and look for the coloured tissue.",
+        "tag": "Practical"
+      },
+      {
+        "front": "What does the stain experiment show?",
+        "back": "Water travels up the stem in the xylem, because only the xylem is coloured.",
+        "tag": "Practical"
+      },
+      {
+        "front": "Where is the xylem in a stem?",
+        "back": "In vascular bundles, arranged in a ring near the outside.",
+        "tag": "Pathway"
+      },
+      {
+        "front": "Why does water move into root hair cells from the soil?",
+        "back": "The soil water is more dilute (higher water potential) than the cell sap.",
+        "tag": "Uptake"
+      }
+    ]
+  },
+  "7.2": {
+    "mindMap": {
+      "centre": "Transpiration and translocation",
+      "branches": [
+        {
+          "label": "Transpiration",
+          "items": [
+            "Loss of water vapour from leaves",
+            "Evaporates from mesophyll into air spaces",
+            "Diffuses out through stomata"
+          ]
+        },
+        {
+          "label": "Faster when",
+          "items": [
+            "Hotter",
+            "Windier",
+            "Brighter (stomata open)",
+            "Less humid"
+          ]
+        },
+        {
+          "label": "Transpiration pull",
+          "items": [
+            "Water lost from leaves",
+            "Pulls column of water up xylem",
+            "Water molecules attract each other"
+          ]
+        },
+        {
+          "label": "Xylem",
+          "items": [
+            "Transports water and ions, support",
+            "Lignin: thick strong walls",
+            "Empty, no cross walls: continuous tube"
+          ]
+        },
+        {
+          "label": "Translocation",
+          "items": [
+            "Sucrose and amino acids in phloem",
+            "From sources to sinks",
+            "Can move up or down"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is transpiration?",
+        "back": "The loss of water vapour from leaves.",
+        "tag": "Definition"
+      },
+      {
+        "front": "Describe how water leaves a leaf.",
+        "back": "Water evaporates from mesophyll cell surfaces into the air spaces, then diffuses out through the stomata as water vapour.",
+        "tag": "Mechanism"
+      },
+      {
+        "front": "How does wind speed affect transpiration?",
+        "back": "More wind increases it, because water vapour is blown away, keeping a steep concentration gradient.",
+        "tag": "Factors"
+      },
+      {
+        "front": "How does humidity affect transpiration?",
+        "back": "Higher humidity decreases it, because the concentration gradient of water vapour is smaller.",
+        "tag": "Factors"
+      },
+      {
+        "front": "Why does higher temperature increase transpiration?",
+        "back": "Water molecules have more kinetic energy, so they evaporate and diffuse faster.",
+        "tag": "Factors"
+      },
+      {
+        "front": "Why does light increase transpiration?",
+        "back": "Stomata open in the light, so more water vapour can diffuse out.",
+        "tag": "Factors"
+      },
+      {
+        "front": "Explain how wilting happens.",
+        "back": "The plant loses water faster than it takes it up, so cells become flaccid and the plant droops.",
+        "tag": "Wilting"
+      },
+      {
+        "front": "Explain transpiration pull.",
+        "back": "Water lost from leaves pulls a column of water up the xylem. The column holds together because water molecules attract each other.",
+        "tag": "Xylem"
+      },
+      {
+        "front": "State two functions of xylem.",
+        "back": "Transporting water and mineral ions, and supporting the plant.",
+        "tag": "Xylem"
+      },
+      {
+        "front": "How is xylem adapted to its function?",
+        "back": "Thick walls with lignin, no cell contents, and cells joined end to end with no cross walls to form a long tube.",
+        "tag": "Xylem"
+      },
+      {
+        "front": "What is translocation?",
+        "back": "The movement of sucrose and amino acids in the phloem from sources to sinks.",
+        "tag": "Translocation"
+      },
+      {
+        "front": "What is a source? Give an example.",
+        "back": "A part that makes or releases sucrose, such as a leaf doing photosynthesis.",
+        "tag": "Translocation"
+      },
+      {
+        "front": "What is a sink? Give an example.",
+        "back": "A part that uses or stores sucrose, such as a root, fruit or growing bud.",
+        "tag": "Translocation"
+      },
+      {
+        "front": "Where is the xylem in a root?",
+        "back": "In the centre, often in a star shape.",
+        "tag": "Sections"
+      },
+      {
+        "front": "Why must a shoot be cut under water for a potometer?",
+        "back": "To stop air bubbles entering the xylem and blocking water flow.",
+        "tag": "Practical"
+      }
+    ]
+  },
+  "8.1": {
+    "mindMap": {
+      "centre": "Diet",
+      "branches": [
+        {
+          "label": "Energy foods",
+          "items": [
+            "Carbohydrates: bread, rice, main energy",
+            "Lipids: oil, butter, energy store"
+          ]
+        },
+        {
+          "label": "Growth",
+          "items": [
+            "Proteins: meat, beans",
+            "Growth and repair"
+          ]
+        },
+        {
+          "label": "Vitamins",
+          "items": [
+            "C: citrus fruit, skin and gums",
+            "D: oily fish, sunlight, calcium uptake"
+          ]
+        },
+        {
+          "label": "Minerals",
+          "items": [
+            "Calcium: milk, bones and teeth",
+            "Iron: red meat, haemoglobin"
+          ]
+        },
+        {
+          "label": "Fibre and water",
+          "items": [
+            "Fibre: vegetables, moves food along",
+            "Prevents constipation",
+            "Water: reactions and transport"
+          ]
+        },
+        {
+          "label": "Deficiency diseases",
+          "items": [
+            "Vitamin C: scurvy",
+            "Vitamin D or calcium: rickets",
+            "Iron: anaemia"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is a balanced diet?",
+        "back": "A diet containing all the nutrients the body needs, in the right amounts.",
+        "tag": "Balanced diet"
+      },
+      {
+        "front": "Why do we need carbohydrates? Give a source.",
+        "back": "For energy. Sources: bread, rice, pasta, potatoes.",
+        "tag": "Nutrients"
+      },
+      {
+        "front": "Why do we need proteins? Give a source.",
+        "back": "For growth and repair, and to make enzymes. Sources: meat, fish, eggs, beans.",
+        "tag": "Nutrients"
+      },
+      {
+        "front": "Why do we need lipids?",
+        "back": "As an energy store, for insulation and for cell membranes.",
+        "tag": "Nutrients"
+      },
+      {
+        "front": "Why do we need vitamin C? Give a source.",
+        "back": "For healthy skin and gums. Source: citrus fruit such as oranges.",
+        "tag": "Vitamins"
+      },
+      {
+        "front": "Why do we need vitamin D? Give a source.",
+        "back": "To help absorb calcium for bones and teeth. Sources: oily fish, eggs, and sunlight on skin.",
+        "tag": "Vitamins"
+      },
+      {
+        "front": "Why do we need calcium? Give a source.",
+        "back": "For strong bones and teeth. Source: milk and cheese.",
+        "tag": "Minerals"
+      },
+      {
+        "front": "Why do we need iron? Give a source.",
+        "back": "To make haemoglobin in red blood cells. Sources: red meat, liver, spinach.",
+        "tag": "Minerals"
+      },
+      {
+        "front": "Why do we need fibre?",
+        "back": "It helps food move through the gut by peristalsis and prevents constipation.",
+        "tag": "Fibre"
+      },
+      {
+        "front": "Which disease is caused by a lack of vitamin C? Give a symptom.",
+        "back": "Scurvy. Bleeding gums.",
+        "tag": "Deficiency"
+      },
+      {
+        "front": "Which two deficiencies cause rickets?",
+        "back": "Lack of vitamin D or lack of calcium.",
+        "tag": "Deficiency"
+      },
+      {
+        "front": "What are the symptoms of rickets?",
+        "back": "Soft, weak bones that bend, such as bow legs.",
+        "tag": "Deficiency"
+      },
+      {
+        "front": "Which disease is caused by a lack of iron? Give a symptom.",
+        "back": "Anaemia. Tiredness, because the blood carries less oxygen.",
+        "tag": "Deficiency"
+      },
+      {
+        "front": "Give two things that change how much food a person needs.",
+        "back": "Any two of: age, activity level, pregnancy.",
+        "tag": "Balanced diet"
+      }
+    ]
+  },
+  "8.2": {
+    "mindMap": {
+      "centre": "Digestive system",
+      "branches": [
+        {
+          "label": "Why digest",
+          "items": [
+            "Large insoluble molecules",
+            "Broken into small soluble ones",
+            "So they can be absorbed"
+          ]
+        },
+        {
+          "label": "Physical digestion",
+          "items": [
+            "Teeth chew, stomach churns",
+            "No change to molecules",
+            "Bigger surface area for enzymes"
+          ]
+        },
+        {
+          "label": "Teeth",
+          "items": [
+            "Incisors cut, canines tear",
+            "Premolars and molars grind",
+            "Enamel, dentine, pulp, cement"
+          ]
+        },
+        {
+          "label": "Enzymes",
+          "items": [
+            "Amylase: starch to maltose",
+            "Maltase: maltose to glucose",
+            "Protease: protein to amino acids",
+            "Lipase: lipids to fatty acids and glycerol"
+          ]
+        },
+        {
+          "label": "Helpers",
+          "items": [
+            "HCl kills bacteria",
+            "Bile emulsifies fats",
+            "Pancreatic juice is alkaline"
+          ]
+        },
+        {
+          "label": "Peristalsis",
+          "items": [
+            "Waves of muscle contraction",
+            "Circular and longitudinal muscles",
+            "Push food along"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Why must most food be digested before absorption?",
+        "back": "Large insoluble molecules are too big to be absorbed. They are broken into small soluble molecules.",
+        "tag": "Digestion"
+      },
+      {
+        "front": "What is physical digestion?",
+        "back": "Breaking food into smaller pieces without changing the food molecules.",
+        "tag": "Digestion"
+      },
+      {
+        "front": "What is chemical digestion?",
+        "back": "Breaking large molecules into small molecules, using enzymes.",
+        "tag": "Digestion"
+      },
+      {
+        "front": "How does physical digestion help chemical digestion?",
+        "back": "It increases the surface area of food for enzymes to act on.",
+        "tag": "Digestion"
+      },
+      {
+        "front": "Name the four types of teeth and their jobs.",
+        "back": "Incisors bite and cut, canines tear, premolars and molars grind and chew.",
+        "tag": "Teeth"
+      },
+      {
+        "front": "Name the hard outer layer of a tooth.",
+        "back": "Enamel.",
+        "tag": "Teeth"
+      },
+      {
+        "front": "What does amylase do and where is it made?",
+        "back": "Breaks starch into maltose. Made in salivary glands and pancreas.",
+        "tag": "Enzymes"
+      },
+      {
+        "front": "What does maltase do?",
+        "back": "Breaks maltose into glucose.",
+        "tag": "Enzymes"
+      },
+      {
+        "front": "What does protease do? Name two proteases.",
+        "back": "Breaks protein into amino acids. Pepsin (stomach) and trypsin (duodenum).",
+        "tag": "Enzymes"
+      },
+      {
+        "front": "What does lipase do and where is it made?",
+        "back": "Breaks lipids into fatty acids and glycerol. Made in the pancreas.",
+        "tag": "Enzymes"
+      },
+      {
+        "front": "What is the function of hydrochloric acid in the stomach?",
+        "back": "To kill bacteria in the food.",
+        "tag": "Stomach"
+      },
+      {
+        "front": "Where is bile made and where is it stored?",
+        "back": "Made in the liver, stored in the gall bladder.",
+        "tag": "Bile"
+      },
+      {
+        "front": "What does bile do?",
+        "back": "Emulsifies fats into small droplets, increasing the surface area for lipase.",
+        "tag": "Bile"
+      },
+      {
+        "front": "Why do pepsin and trypsin need different conditions?",
+        "back": "Pepsin works best at about pH 2 in the stomach; trypsin works best at about pH 8 in the duodenum.",
+        "tag": "Enzymes"
+      },
+      {
+        "front": "What is peristalsis?",
+        "back": "Waves of contraction of circular and longitudinal muscles that move food through the gut.",
+        "tag": "Peristalsis"
+      },
+      {
+        "front": "What does the liver store?",
+        "back": "Glycogen.",
+        "tag": "Liver"
+      }
+    ]
+  },
+  "8.3": {
+    "mindMap": {
+      "centre": "Absorption and assimilation",
+      "branches": [
+        {
+          "label": "Absorption",
+          "items": [
+            "Mainly in small intestine (ileum)",
+            "Gut into cells, then blood",
+            "Diffusion, osmosis, active transport"
+          ]
+        },
+        {
+          "label": "Villus features",
+          "items": [
+            "Villi and microvilli: huge surface area",
+            "Wall one cell thick",
+            "Capillaries: glucose, amino acids",
+            "Lacteal: fatty acids, glycerol"
+          ]
+        },
+        {
+          "label": "Water",
+          "items": [
+            "Absorbed in small intestine and colon",
+            "Most in small intestine"
+          ]
+        },
+        {
+          "label": "Hepatic portal vein",
+          "items": [
+            "Ileum to liver",
+            "Carries absorbed nutrients"
+          ]
+        },
+        {
+          "label": "Assimilation",
+          "items": [
+            "Cells take up and use nutrients",
+            "Glucose for respiration",
+            "Amino acids for proteins"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Where are most nutrients absorbed?",
+        "back": "In the small intestine (mainly the ileum).",
+        "tag": "Absorption"
+      },
+      {
+        "front": "What is absorption?",
+        "back": "The movement of nutrients from the intestines into the cells lining the gut, and then into the blood.",
+        "tag": "Absorption"
+      },
+      {
+        "front": "Name three ways nutrients are absorbed.",
+        "back": "Diffusion, osmosis (water) and active transport.",
+        "tag": "Absorption"
+      },
+      {
+        "front": "What is assimilation?",
+        "back": "The uptake and use of nutrients by cells.",
+        "tag": "Assimilation"
+      },
+      {
+        "front": "Give one example of assimilation.",
+        "back": "Cells using amino acids to build proteins (or glucose for respiration).",
+        "tag": "Assimilation"
+      },
+      {
+        "front": "How do villi and microvilli help absorption?",
+        "back": "They greatly increase the surface area of the ileum.",
+        "tag": "Villi"
+      },
+      {
+        "front": "Why is the wall of a villus only one cell thick?",
+        "back": "So nutrients have a short distance to travel into the blood.",
+        "tag": "Villi"
+      },
+      {
+        "front": "What do the capillaries in a villus absorb?",
+        "back": "Glucose and amino acids.",
+        "tag": "Villi"
+      },
+      {
+        "front": "What does the lacteal absorb?",
+        "back": "Fatty acids and glycerol.",
+        "tag": "Villi"
+      },
+      {
+        "front": "Why does blood flow in the villus help absorption?",
+        "back": "It carries nutrients away, keeping a steep concentration gradient.",
+        "tag": "Villi"
+      },
+      {
+        "front": "Where is most water absorbed?",
+        "back": "In the small intestine. The colon absorbs some too.",
+        "tag": "Water"
+      },
+      {
+        "front": "What is the function of the hepatic portal vein?",
+        "back": "It carries most absorbed nutrients from the ileum to the liver.",
+        "tag": "Liver"
+      }
+    ]
   }
 };
 
