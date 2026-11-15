@@ -20,10 +20,12 @@ const STARTERS = [
 ];
 
 export default function AiTutor({
+  course = "accounting",
   topic,
   topicTitle,
   onNeedSignIn,
 }: {
+  course?: "accounting" | "biology";
   topic: string;
   topicTitle: string;
   onNeedSignIn: () => void;
@@ -70,7 +72,7 @@ export default function AiTutor({
           Authorization: `Bearer ${idToken}`,
           ...appCheckHeaders,
         },
-        body: JSON.stringify({ topic, question: q, history }),
+        body: JSON.stringify({ course, topic, question: q, history }),
       });
       const data = (await res.json().catch(() => ({}))) as { answer?: string; error?: string; remaining?: number };
       if (typeof data.remaining === "number") setRemaining(data.remaining);

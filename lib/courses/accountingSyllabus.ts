@@ -137,24 +137,28 @@ const shuffle = <T,>(items: T[]): T[] => {
 const isNumericOption = (s: string) =>
   /^\$?[\d ,.]+(%| days| : 1)?( debit| credit)?$/.test(s.trim());
 
-export const shuffleQuestionOptions = (q: AccountingMcq): AccountingMcq => {
+import type { BiologyMcq } from "./oLevelBiologyMcqs";
+
+export type CourseMcq = AccountingMcq | BiologyMcq;
+
+export const shuffleQuestionOptions = <T extends CourseMcq>(q: T): T => {
   if (q.options.every(isNumericOption)) return q;
   const order = shuffle([0, 1, 2, 3]);
   return {
     ...q,
-    options: order.map((i) => q.options[i]) as AccountingMcq["options"],
-    optionFeedback: order.map((i) => q.optionFeedback[i]) as AccountingMcq["optionFeedback"],
-    answer: order.indexOf(q.answer) as AccountingMcq["answer"],
+    options: order.map((i) => q.options[i]) as T["options"],
+    optionFeedback: order.map((i) => q.optionFeedback[i]) as T["optionFeedback"],
+    answer: order.indexOf(q.answer) as T["answer"],
   };
 };
 
 // Mirrors drawQuiz(topic, n, lastIds) from oLevelAccountingMcqs.ts,
 // taking the already-filtered topic questions so the full bank is not bundled on the client.
-export const drawQuizFromPool = (
-  topicQuestions: AccountingMcq[],
+export const drawQuizFromPool = <T extends CourseMcq>(
+  topicQuestions: T[],
   n = 5,
   lastIds: string[] = []
-): AccountingMcq[] => {
+): T[] => {
   const pool = shuffle(topicQuestions);
   const fresh = pool.filter((q) => !lastIds.includes(q.id));
   const seen = pool.filter((q) => lastIds.includes(q.id));

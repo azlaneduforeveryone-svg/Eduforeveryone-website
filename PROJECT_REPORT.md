@@ -73,10 +73,10 @@ eduforeveryone/
 │   │   └── writing/                    # Edge route for IELTS writing essay AI evaluation
 │   ├── courses/                        # Academic courses catalog, lessons, and Math curriculum hub
 │   │   ├── [id]/                       # Dynamic course detail pages
+│   │   ├── biology/                    # O Level Biology 5090 hub & 52 topic pages (/courses/science-biology-cells redirects here)
 │   │   ├── english-essay-writing/      # Dedicated English essay writing lesson
 │   │   ├── history-world-war-1/        # Dedicated World War I lesson
-│   │   ├── mathematics/                # 20-topic comprehensive math curriculum hub & topic viewer
-│   │   └── science-biology-cells/      # Dedicated Cell Biology lesson
+│   │   └── mathematics/                # 20-topic comprehensive math curriculum hub & topic viewer
 │   ├── duas/                           # Authentic Duas & Azkar with audio, 8 translations, and Tasbeeh
 │   ├── games/                          # Educational games (Math Puzzle, WordWise, Quiz Battle)
 │   ├── gmat/                           # GMAT Focus Edition practice (Quant, Verbal, Data Insights, Full Mock)
@@ -168,7 +168,8 @@ The platform contains **68 distinct page routes** (compiled into **528 static an
 | `/courses/mathematics` | `app/courses/mathematics/page.tsx` | Static (○) | Mathematics curriculum hub covering 20 topics from Elementary to Professional. |
 | `/courses/mathematics/[topicId]` | `app/courses/mathematics/[topicId]/page.tsx` | SSG (●) | 4-tab interactive Math study page (Explain, Examples, Practice, Quiz; 20 paths). |
 | `/courses/mathematics/fractions-basics/lesson` | `app/courses/mathematics/fractions-basics/lesson/page.tsx` | Static (○) | Dedicated fractions lesson with interactive practice exercises. |
-| `/courses/science-biology-cells/lesson` | `app/courses/science-biology-cells/lesson/page.tsx` | Static (○) | Full interactive cell biology lesson with exercises and quiz. |
+| `/courses/biology` | `app/courses/biology/page.tsx` | Static (○) | Cambridge O Level Biology (5090) hub (19 sections, 52 topics); `/courses/science-biology-cells` redirects here. |
+| `/courses/biology/o-level/[topic]` | `app/courses/biology/o-level/[topic]/page.tsx` | SSG (●) | O Level Biology 5090 topic pages (52 paths). |
 | `/duas` | `app/duas/page.tsx` | Static (○) | Duas & Azkar viewer with audio recitation, 8 languages, and digital Tasbeeh. |
 | `/games` | `app/games/page.tsx` | Static (○) | Educational games hub. |
 | `/games/math-puzzle` | `app/games/math-puzzle/page.tsx` | Static (○) | Timed mental math and arithmetic puzzle game. |
@@ -492,7 +493,7 @@ export interface ColumnMapping {
 ### 4.5 Academic Courses, Notes & Mathematics Hub
 - **What Exists & Works:**
   - **Mathematics Curriculum Hub (`/courses/mathematics`, `/courses/mathematics/[topicId]`):** 20 comprehensive mathematics topics across 5 progressive levels (Elementary, Middle School, High School, University, Professional). Each topic features an interactive 4-tab interface: Concept Explanation, Step-by-Step Worked Examples, Practice Problems with revealable hints, and a 5-question Quiz with instant feedback.
-  - **Full Interactive Lessons:** Dedicated multi-tab lessons for Fractions (`/courses/mathematics/fractions-basics/lesson`), Biology Cells (`/courses/science-biology-cells/lesson`), English Essay Writing (`/courses/english-essay-writing/lesson`), and World War I (`/courses/history-world-war-1/lesson`).
+  - **Full Interactive Lessons:** Dedicated multi-tab lessons for Fractions (`/courses/mathematics/fractions-basics/lesson`), English Essay Writing (`/courses/english-essay-writing/lesson`), and World War I (`/courses/history-world-war-1/lesson`).
   - **Study Notes (`/notes`, `/notes/[id]`):** Structured revision notes covering Algebra, Cell Biology, Essay Writing, and Mechanics.
   - **General Quizzes (`/quiz`, `/quiz/[id]`):** Interactive multiple-choice tests powered by `QuizEngine.tsx`.
 - **Unfinished / Work in Progress:**

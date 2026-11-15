@@ -22,7 +22,6 @@ export interface HomeSection {
 }
 
 const COURSE_ICON_MAP: Record<string, HomeIconName> = {
-  "science-biology-cells": "network",
   "physics-mechanics": "compass",
   "english-essay-writing": "pen-line",
   "history-world-war-2": "landmark",
@@ -64,6 +63,7 @@ export const HOME_SECTIONS: HomeSection[] = [
     countLabel: "courses",
     tiles: [
       { name: "O Level Accounting", href: "/courses/accounting", icon: "calculator", isNew: true },
+      { name: "O Level Biology", href: "/courses/biology", icon: "network", isNew: true },
       { name: "Mathematics", href: "/courses/mathematics", icon: "sigma" },
       ...EXTRA_COURSE_TILES,
     ],

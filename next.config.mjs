@@ -14,6 +14,16 @@ const nextConfig = {
         destination: "/quran",
         permanent: true,
       },
+      {
+        source: "/courses/science-biology-cells",
+        destination: "/courses/biology",
+        permanent: true,
+      },
+      {
+        source: "/courses/science-biology-cells/:path*",
+        destination: "/courses/biology",
+        permanent: true,
+      },
     ];
   },
   async headers() {

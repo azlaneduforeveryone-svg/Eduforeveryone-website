@@ -1,20 +1,5 @@
 [
   {
-    "id": "science-biology-cells",
-    "title": "Cell Biology",
-    "subject": "Science",
-    "description": "Explore the building blocks of life — cell structure, function, and division.",
-    "thumbnail": "🔬",
-    "level": "Intermediate",
-    "lessonCount": 3,
-    "featured": true,
-    "lessons": [
-      { "id": "lesson-1", "title": "Cell Structure Overview",        "duration": "14 min", "type": "video", "youtubeId": "URUJD5NEXC8" },
-      { "id": "lesson-2", "title": "Organelles and Their Functions",  "duration": "18 min", "type": "video", "youtubeId": "Hmwvj9X4GNY" },
-      { "id": "lesson-3", "title": "Cell Division: Mitosis",          "duration": "11 min", "type": "video", "youtubeId": "Q3mFi48a3_M" }
-    ]
-  },
-  {
     "id": "physics-mechanics",
     "title": "Classical Mechanics",
     "subject": "Science",

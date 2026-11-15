@@ -80,13 +80,16 @@ export function normalizeProgress(raw: Partial<Record<string, unknown>> | null |
 export function computeTopicStatus(
   progress: TopicProgress | undefined,
   hasVideo: boolean,
-  hasNotes = false
+  hasNotes = false,
+  hasQuiz = true
 ): TopicStatus {
   if (!progress) return "not-started";
   if (progress.quizPassed) return "mastered";
   const videoOk = hasVideo ? progress.videoWatched : true;
   const notesOk = hasNotes ? progress.notesRead : true;
-  if ((hasVideo || hasNotes) && videoOk && notesOk) return "studied";
+  if ((hasVideo || hasNotes) && videoOk && notesOk) {
+    return hasQuiz ? "studied" : "mastered";
+  }
   if (progress.videoWatched || progress.notesRead || progress.attempts > 0) {
     return "in-progress";
   }
@@ -105,10 +108,12 @@ export function getLocalTopicProgress(topicId: string): TopicProgress {
   }
 }
 
-export function getAllLocalProgress(): Record<string, TopicProgress> {
+export function getAllLocalProgress(
+  topics: readonly { topicId: string }[] = ALL_O_LEVEL_TOPICS
+): Record<string, TopicProgress> {
   const map: Record<string, TopicProgress> = {};
   if (typeof window === "undefined") return map;
-  for (const t of ALL_O_LEVEL_TOPICS) {
+  for (const t of topics) {
     map[t.topicId] = getLocalTopicProgress(t.topicId);
   }
   return map;
@@ -193,7 +198,10 @@ export async function runSignInMerge(
 }
 
 // ── Firestore Read / Write / Merge (Signed-in users) ──────────────────────────
-export async function mergeLocalToFirestoreOnce(uid: string): Promise<void> {
+export async function mergeLocalToFirestoreOnce(
+  uid: string,
+  topics: readonly { topicId: string }[] = ALL_O_LEVEL_TOPICS
+): Promise<void> {
   if (typeof window === "undefined" || !uid) return;
   try {
     await runSignInMerge(uid, {
@@ -201,7 +209,7 @@ export async function mergeLocalToFirestoreOnce(uid: string): Promise<void> {
       setFlag: (k, v) => localStorage.setItem(k, v),
       getLocalTopics: () => {
         const map: Record<string, TopicProgress> = {};
-        for (const t of ALL_O_LEVEL_TOPICS) {
+        for (const t of topics) {
           map[t.topicId] = getLocalTopicProgress(t.topicId);
         }
         return map;
@@ -231,9 +239,10 @@ export async function mergeLocalToFirestoreOnce(uid: string): Promise<void> {
 
 export async function getFirestoreTopicProgress(
   uid: string,
-  topicId: string
+  topicId: string,
+  topics: readonly { topicId: string }[] = ALL_O_LEVEL_TOPICS
 ): Promise<TopicProgress> {
-  await mergeLocalToFirestoreOnce(uid);
+  await mergeLocalToFirestoreOnce(uid, topics);
   try {
     const ref = doc(db, "users", uid, "courseProgress", topicId);
     const snap = await getDoc(ref);
@@ -246,11 +255,12 @@ export async function getFirestoreTopicProgress(
 }
 
 export async function getAllFirestoreProgress(
-  uid: string
+  uid: string,
+  topics: readonly { topicId: string }[] = ALL_O_LEVEL_TOPICS
 ): Promise<Record<string, TopicProgress>> {
-  await mergeLocalToFirestoreOnce(uid);
+  await mergeLocalToFirestoreOnce(uid, topics);
   const map: Record<string, TopicProgress> = {};
-  for (const t of ALL_O_LEVEL_TOPICS) {
+  for (const t of topics) {
     map[t.topicId] = { ...DEFAULT_TOPIC_PROGRESS };
   }
   try {

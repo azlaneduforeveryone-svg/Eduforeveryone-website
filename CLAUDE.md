@@ -78,8 +78,9 @@ app/
 │   │       ├── page.tsx        # Server wrapper (generateStaticParams)
 │   │       └── MathTopicPage.tsx # Client: 4 tabs (Explain/Examples/Practice/Quiz)
 │   │   └── fractions-basics/lesson/  # Full lesson page
-│   ├── science-biology-cells/
-│   │   ├── page.tsx + lesson/
+│   ├── biology/                # O Level Biology 5090 hub & topic pages (redirects from /courses/science-biology-cells)
+│   │   ├── page.tsx            # Biology hub (19 sections, 52 topics)
+│   │   └── o-level/[topic]/    # 52 topic pages (SSG)
 │   ├── english-essay-writing/
 │   │   ├── page.tsx + lesson/
 │   ├── history-world-war-1/
@@ -254,12 +255,12 @@ public/
 - `LeaderboardPage.tsx` — global + per-category, podium for top 3
 - **Firestore collections:** `users`, `quizSessions`, `leaderboard`, `leaderboard_[category]`
 
-### Lesson Pages (4 subjects)
+### Lesson Pages (3 subjects) & O Level Biology
 - `FractionsLesson.tsx` → `/courses/mathematics/fractions-basics/lesson`
-- `CellsLesson.tsx` → `/courses/science-biology-cells/lesson`
 - `EssayWritingLesson.tsx` → `/courses/english-essay-writing/lesson`
 - `WWILesson.tsx` → `/courses/history-world-war-1/lesson`
 - Each: Lesson tab + Practice tab + Quiz tab (5 Qs with explanations)
+- **O Level Biology (5090):** `app/courses/biology/` (hub), `app/courses/biology/o-level/[topic]/` (52 topic pages), `lib/courses/biologySyllabus.ts`, `oLevelBiologyNotes.ts`, `oLevelBiologyRevision.ts`, `oLevelBiologyMcqs.ts`, `components/courses/biology/models/index.ts`. `/courses/science-biology-cells` now redirects to `/courses/biology`.
 
 ### Tools
 - Simple calculator, Scientific calculator, CFA financial calculator, Number-to-Words converter

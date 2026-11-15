@@ -11,7 +11,7 @@ export interface SearchItem {
 export const SEARCH_DATA: SearchItem[] = [
   // ── Courses ───────────────────────────────────────────────────────────────
   { title:"Algebra Basics",       description:"Master variables, equations and functions. Learn algebra from scratch.",        href:"/courses/math-algebra-basics",   category:"Course",   emoji:"🧮", tags:["math","algebra","variables","equations","beginner"] },
-  { title:"Cell Biology",         description:"Explore cell structure, function and division. Biology fundamentals.",          href:"/courses/science-biology-cells", category:"Course",   emoji:"🔬", tags:["science","biology","cells","structure","division"] },
+  { title:"O Level Biology",      description:"Cambridge O Level Biology (5090) — all 19 sections and 52 topics for 2026–2028 exams.", href:"/courses/biology", category:"Course",   emoji:"🧬", tags:["science","biology","o level","5090","cambridge","cells","genetics"] },
   { title:"World War II",         description:"Causes, key events and lasting impact of World War 2.",                        href:"/courses/history-world-war-2",   category:"Course",   emoji:"🌍", tags:["history","ww2","world war","war","europe"] },
 
   // ── Notes ─────────────────────────────────────────────────────────────────

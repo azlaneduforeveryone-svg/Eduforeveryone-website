@@ -58,6 +58,31 @@ export default function CoursesPage() {
           </div>
         </Link>
 
+        {/* Biology Hub Banner */}
+        <Link
+          href="/courses/biology"
+          className="group efe-banner flex flex-col sm:flex-row items-start sm:items-center gap-5 p-6 mb-6 transition-all hover:shadow-lg"
+        >
+          <div className="w-14 h-14 rounded-2xl bg-white/15 border border-white/25 flex items-center justify-center text-3xl flex-shrink-0">
+            🧬
+          </div>
+          <div className="flex-1">
+            <div className="flex flex-wrap items-center gap-2 mb-1.5">
+              <span className="text-xs font-bold bg-efe-gold-soft text-efe-gold px-2.5 py-0.5 rounded-full">NEW</span>
+              <span className="text-xs text-white/80 font-medium">Biology · O Level 5090</span>
+            </div>
+            <h2 className="text-xl font-bold text-white mb-1">Cambridge O Level Biology (5090)</h2>
+            <p className="text-white/85 text-sm leading-relaxed">
+              52 topics across all 19 syllabus sections for exams in 2026, 2027 and 2028 — structured notes, interactive models, mind maps, flashcards, and practice questions.
+            </p>
+          </div>
+          <div className="flex-shrink-0">
+            <span className="efe-btn efe-btn-on-hero efe-btn-sm whitespace-nowrap">
+              Start O Level 5090 →
+            </span>
+          </div>
+        </Link>
+
         {/* Mathematics Hub Banner */}
         <Link
           href="/courses/mathematics"
