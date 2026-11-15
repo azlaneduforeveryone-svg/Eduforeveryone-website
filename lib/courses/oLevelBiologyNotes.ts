@@ -755,6 +755,334 @@ You only **need** to learn the root hair cell example for the exam, but these sh
 - If a question gives data where uptake stops without oxygen, or when a poison stops respiration, the answer is active transport, because respiration has stopped.
 
 Next: test yourself with the practice questions below.`,
+
+  "4.1": `## What you need to know
+
+- Name the chemical elements in carbohydrates, lipids (fats and oils), proteins and DNA.
+- Say which small molecules join up to make each big molecule: starch, cellulose, glycogen, proteins, lipids and DNA.
+- Describe and carry out the four food tests: iodine (starch), Benedict's (glucose and maltose), biuret (protein) and ethanol emulsion (lipids).
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Carbohydrate | A food molecule made of carbon, hydrogen and oxygen, such as glucose or starch. Used for energy. |
+| Lipid | The science word for fats (solid) and oils (liquid). |
+| Protein | A big molecule made of amino acids. Used for growth and repair, and to make enzymes. |
+| Glucose | A small sugar molecule. It is the building block of starch, cellulose and glycogen. |
+| Amino acid | The small building block of a protein. |
+| Fatty acids and glycerol | The small building blocks of a lipid. |
+| Nucleotide | The small building block of DNA. |
+| Element | A simple substance made of one type of atom, such as carbon (C) or nitrogen (N). |
+
+## What our bodies are made of
+
+Living things are built from a few kinds of big molecules. The four you must know are **carbohydrates**, **lipids**, **proteins** and **DNA**.
+
+> Think of big molecules like a train. Each carriage is a small molecule. Join many carriages together and you get a long train.
+
+## The elements in each molecule
+
+| Molecule | Elements it contains |
+|---|---|
+| Carbohydrates | **C**arbon, **H**ydrogen, **O**xygen (C, H, O) |
+| Lipids (fats and oils) | Carbon, Hydrogen, Oxygen (C, H, O) |
+| Proteins | Carbon, Hydrogen, Oxygen, **Nitrogen** (C, H, O, N). Some also have sulfur (S). |
+| DNA | Carbon, Hydrogen, Oxygen, Nitrogen, **Phosphorus** (C, H, O, N, P) |
+
+> Easy way to remember: everything has **C, H and O**. Proteins **add N**. DNA **adds N and P**.
+
+Carbohydrates and lipids have the same three elements. The difference is that lipids have much **less oxygen** than carbohydrates.
+
+## Big molecules are made from small molecules
+
+| Big molecule | Made from | Where you find it |
+|---|---|---|
+| **Starch** | Many **glucose** molecules | Energy store in plants (potatoes, rice, bread) |
+| **Cellulose** | Many **glucose** molecules | Plant cell walls |
+| **Glycogen** | Many **glucose** molecules | Energy store in animals (liver and muscles) |
+| **Protein** | Many **amino acids** | Muscles, enzymes, hair |
+| **Lipid** (fat or oil) | **Fatty acids** and **glycerol** | Butter, cooking oil, energy store under the skin |
+| **DNA** | Many **nucleotides** | The nucleus of every cell |
+
+![Small molecules join to make big molecules](/images/biology/4-1-building-blocks.svg)
+
+Starch, cellulose and glycogen are all made of glucose. They are different because the glucose molecules are joined in different ways.
+
+There are about **20 different amino acids**. They can be joined in any order, so there are millions of different proteins.
+
+## Food tests (practical)
+
+You must know how to do each test, and the colour that shows a **positive result** (the substance is there).
+
+Before most tests, crush the food and mix it with a little water so you have a liquid to test.
+
+### Starch: iodine test
+
+1. Add a few drops of **iodine solution** to the food.
+2. Watch the colour.
+
+**Positive result:** orange-brown changes to **blue-black**.
+
+### Glucose and maltose: Benedict's test
+
+Glucose and maltose are **reducing sugars**.
+
+1. Add **Benedict's solution** to the food solution in a test tube.
+2. **Heat** the tube in a hot water bath (about 80 °C) for a few minutes.
+3. Watch the colour.
+
+**Positive result:** blue changes to **green, yellow, orange or brick-red**.
+
+The more sugar there is, the further along the colour goes: green means a little sugar, brick-red means a lot.
+
+> Do not forget to **heat**. Benedict's test does not work cold. This is the most common mistake.
+
+### Protein: biuret test
+
+1. Add **biuret solution** to the food solution.
+2. Shake gently and wait.
+
+**Positive result:** blue changes to **purple** (lilac or violet).
+
+### Lipids (fats and oils): ethanol emulsion test
+
+1. Shake the food with **ethanol** in a dry test tube, so the fat dissolves.
+2. Pour the ethanol into a tube of **water**.
+
+**Positive result:** a **cloudy white emulsion** forms.
+
+The fat cannot stay dissolved in water, so it forms tiny droplets that make the water look milky.
+
+![The four food tests and their colours](/images/biology/4-1-food-tests.svg)
+
+### Summary of food tests
+
+| Testing for | Reagent | Heat? | Starting colour | Positive result |
+|---|---|---|---|---|
+| Starch | Iodine solution | No | Orange-brown | Blue-black |
+| Glucose and maltose | Benedict's solution | **Yes** | Blue | Green, yellow, orange or brick-red |
+| Protein | Biuret solution | No | Blue | Purple |
+| Lipids | Ethanol, then water | No | Clear | Cloudy white emulsion |
+
+### Staying safe
+
+- Wear **eye protection**, because these chemicals can hurt your eyes.
+- **Ethanol catches fire easily.** Keep it away from flames. Never heat it.
+- Use a water bath for Benedict's test, not a flame directly on the tube.
+
+## Common mistakes
+
+- Forgetting that Benedict's test needs **heating**.
+- Writing "the iodine turns black". Say **blue-black**.
+- Saying the biuret test turns "pink". It turns **purple**.
+- Saying Benedict's tests for "all sugars". It tests for **reducing sugars**, such as **glucose and maltose**.
+- Mixing up the building blocks: starch is made of **glucose**, not amino acids.
+- Forgetting **nitrogen** in proteins, or **phosphorus** in DNA.
+
+## Exam tips
+
+- In a food test question, always give **three things**: the reagent, the method (including heating for Benedict's) and the colour change.
+- Always give the **starting colour and the final colour**: "blue to brick-red", not just "brick-red".
+- If a question gives you a table of test results, read across each row. A positive result means that molecule is in the food.
+
+Next: test yourself with the practice questions below.`,
+
+  "5.1": `## What you need to know
+
+- Describe a **catalyst**.
+- Describe **enzymes** as proteins that act as **biological catalysts**, used in all metabolic reactions.
+- Explain how an enzyme works using the words **substrate**, **active site**, **enzyme-substrate complex** and **product**.
+- Explain why each enzyme works on only **one substrate** (the "lock and key" idea).
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Catalyst | A substance that **speeds up** a chemical reaction and is **not changed** by the reaction. |
+| Enzyme | A **protein** that works as a **biological catalyst**. |
+| Metabolic reactions | All the chemical reactions that happen inside living things. |
+| Substrate | The molecule that an enzyme works on. |
+| Active site | The part of the enzyme where the substrate fits. It has a special shape. |
+| Enzyme-substrate complex | The enzyme and substrate joined together, for a very short time. |
+| Product | The new molecule (or molecules) made by the reaction. |
+| Complementary | Shapes that fit together exactly, like two jigsaw pieces. |
+| Specific | Works on only one type of substrate. |
+
+## What is a catalyst?
+
+> A **catalyst** is a substance that **increases the rate of a chemical reaction** and is **not changed** by the reaction.
+
+Because the catalyst is not changed or used up, it can be used **again and again**.
+
+## What is an enzyme?
+
+> **Enzymes** are **proteins** that function as **biological catalysts**. They are involved in **all metabolic reactions**.
+
+"Biological" means they are made by living cells. Without enzymes, the reactions in your body would be far too slow to keep you alive.
+
+Enzymes can do two kinds of job:
+
+- **Break big molecules into small ones.** Example: amylase breaks starch into maltose when you digest food.
+- **Join small molecules into big ones.** Example: enzymes join amino acids to build proteins.
+
+## How an enzyme works
+
+Each enzyme has an **active site**. This is a small dip in the enzyme with a special shape.
+
+1. The **substrate** has a shape that fits the active site exactly. The two shapes are **complementary**.
+2. The substrate moves into the active site. They join to form an **enzyme-substrate complex**.
+3. The reaction happens. The substrate changes into the **products**.
+4. The products leave the active site.
+5. The enzyme is **unchanged**, so it can work on the next substrate molecule.
+
+![How an enzyme works: the lock and key idea](/images/biology/5-1-lock-and-key.svg)
+
+## Why enzymes are specific: lock and key
+
+> Think of a **lock and key**. Only the right key fits the lock. The **enzyme is the lock** and the **substrate is the key**.
+
+Each enzyme is **specific**: it works on only one substrate. This is because the shape of its active site is **complementary** to the shape of that one substrate. Other molecules have the wrong shape, so they cannot fit.
+
+Example: amylase breaks down **starch**. It cannot break down **protein**, because protein does not fit its active site.
+
+## Examples of enzymes
+
+| Enzyme | Substrate | Products |
+|---|---|---|
+| Amylase | Starch | Maltose (a sugar) |
+| Protease | Protein | Amino acids |
+| Lipase | Lipids (fats and oils) | Fatty acids and glycerol |
+| Catalase | Hydrogen peroxide | Water and oxygen |
+
+The name of an enzyme often ends in **-ase**, and often tells you its substrate: **lip**ase works on **lip**ids, **prote**ase works on **prote**ins.
+
+## Common mistakes
+
+- Saying the enzyme and substrate have the "same shape". Say their shapes are **complementary**: they fit together.
+- Saying enzymes are "used up" or "killed". Enzymes are not living, and they are **not used up**.
+- Forgetting that enzymes are **proteins**.
+- Writing "active sight" or "active side". The correct word is **active site**.
+- Saying the enzyme is the key. The **substrate is the key**, the **enzyme is the lock**.
+
+## Exam tips
+
+- To explain enzyme action, use all four key terms in order: **substrate**, **active site**, **enzyme-substrate complex**, **product**.
+- To explain specificity, use the words **complementary shape** and **active site**.
+- If asked for the definition of a catalyst, give both parts: **speeds up a reaction** and **is not changed**.
+
+Next: test yourself with the practice questions below.`,
+
+  "5.2": `## What you need to know
+
+- Understand that you can follow an enzyme reaction by measuring how the amount of **substrate** goes down, or how the amount of **product** goes up.
+- Investigate and describe how **temperature** and **pH** change enzyme activity.
+- Explain these effects using the words **kinetic energy**, **shape and fit**, **denaturation** and **frequency of effective collisions**.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Enzyme activity | How fast an enzyme works. Also called the rate of reaction. |
+| Optimum | The best temperature or pH, where the enzyme works fastest. |
+| Kinetic energy | Movement energy. Hotter molecules have more kinetic energy, so they move faster. |
+| Effective collision | When a substrate molecule hits the enzyme's active site in a way that lets it fit and react. |
+| Denatured | When an enzyme's shape has changed for good, so its active site no longer fits the substrate. It cannot work any more. |
+| pH | A scale that shows how acidic or alkaline something is. Below 7 is acidic, 7 is neutral, above 7 is alkaline. |
+
+## How do we measure an enzyme reaction?
+
+We cannot watch molecules, so we measure how much **substrate** is left, or how much **product** has been made, at regular times.
+
+| Example | What we measure |
+|---|---|
+| Amylase breaking down starch | How long it takes for the **starch to disappear** (the substrate goes down). Test drops with iodine every 30 seconds. When iodine stays orange-brown, the starch has gone. |
+| Catalase breaking down hydrogen peroxide | How much **oxygen gas** is made (a product goes up). Count the bubbles, or collect the gas in a measuring cylinder. |
+
+The **faster** the substrate disappears, or the **faster** the product appears, the **higher** the enzyme activity.
+
+## The effect of temperature
+
+![How temperature affects enzyme activity](/images/biology/5-2-temperature-graph.svg)
+
+### Cold to warm: activity goes up
+
+As the temperature rises:
+
+1. The enzyme and substrate molecules get more **kinetic energy**, so they move **faster**.
+2. They bump into each other more often. There are more **effective collisions** every second: the substrate fits into the active site more often.
+3. More enzyme-substrate complexes form, so **more product is made each second**.
+
+### The optimum temperature
+
+At the **optimum temperature** the enzyme works **fastest**. For most enzymes in the human body, this is about **37 °C** (body temperature).
+
+### Too hot: activity drops fast
+
+Above the optimum:
+
+1. The enzyme molecule vibrates so much that its **shape changes**.
+2. The **active site changes shape**, so the substrate **no longer fits**.
+3. Fewer enzyme-substrate complexes form, so activity falls quickly.
+4. In the end the enzyme is **denatured**. This **cannot be undone**, even if it cools down again.
+
+> Think of an egg white. When you cook it, it turns from clear to white and you cannot change it back. The protein has been denatured. Enzymes are proteins too.
+
+### Very cold
+
+At low temperatures enzymes work **slowly**, because the molecules have little kinetic energy and there are few effective collisions. But the enzyme is **not denatured**. If you warm it up, it works again.
+
+## The effect of pH
+
+![How pH affects enzyme activity](/images/biology/5-2-ph-graph.svg)
+
+Every enzyme has an **optimum pH** where it works fastest.
+
+| Enzyme | Where it works | Optimum pH |
+|---|---|---|
+| Pepsin (a protease) | Stomach, which is very acidic | About **2** |
+| Salivary amylase | Mouth | About **7** (neutral) |
+
+If the pH moves away from the optimum (more acidic or more alkaline):
+
+1. The **shape of the enzyme** changes, so the **active site changes shape**.
+2. The substrate does not **fit** as well, so fewer enzyme-substrate complexes form.
+3. Activity goes **down**.
+4. At a pH far from the optimum, the enzyme is **denatured**.
+
+![What happens when an enzyme is denatured](/images/biology/5-2-denatured-enzyme.svg)
+
+## Practical: investigating temperature
+
+1. Put tubes of **starch solution** and tubes of **amylase** in water baths at different temperatures, such as 20, 30, 40, 50 and 60 °C. Leave them for 5 minutes so they reach the right temperature.
+2. Put one drop of **iodine** into each dip of a **spotting tile**.
+3. Mix the amylase with the starch and start a stopwatch.
+4. Every 30 seconds, put one drop of the mixture onto a fresh drop of iodine.
+5. Stop when the iodine **stays orange-brown**. This means all the starch has been broken down.
+6. Record the time. A **shorter time** means the enzyme worked **faster**.
+
+To make it a fair test, keep these the **same**: the volume and concentration of starch, the volume and concentration of amylase, and the pH (use a **buffer** solution).
+
+## Practical: investigating pH
+
+Use the same method, but keep the temperature the same (for example, a 37 °C water bath). Change the pH by adding different **buffer solutions** (for example pH 3, 5, 7, 9 and 11).
+
+## Common mistakes
+
+- Saying high temperature "kills" the enzyme. Enzymes are not alive. Say it is **denatured**.
+- Saying the enzyme is denatured at **low** temperatures. Cold enzymes are only **slow**. They work again when warmed.
+- Saying the substrate is denatured. It is the **enzyme** that is denatured.
+- Forgetting to explain **why**: always link to the **shape of the active site** and the **fit** with the substrate.
+- Saying all enzymes have an optimum pH of 7. Pepsin works best at about pH 2.
+
+## Exam tips
+
+- When describing a graph, use numbers from it: "activity increases up to 37 °C, then falls quickly and reaches zero at 60 °C."
+- To explain the rising part of the graph, use **kinetic energy** and **frequency of effective collisions**.
+- To explain the falling part, use **active site changes shape**, **substrate no longer fits**, and **denatured**.
+- In a planning question, say what you **change**, what you **measure**, and what you **keep the same**.
+
+Next: test yourself with the practice questions below.`,
 };
 
 export function getBiologyNotes(topic: string): string | undefined {

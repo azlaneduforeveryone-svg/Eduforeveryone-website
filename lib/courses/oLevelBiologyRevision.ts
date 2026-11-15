@@ -688,6 +688,376 @@ export const O_LEVEL_BIOLOGY_REVISION: Record<string, TopicRevision> = {
         "back": "Diffusion goes down a concentration gradient and needs no energy. Active transport goes against it and needs energy from respiration."
       }
     ]
+  },
+  "4.1": {
+    "mindMap": {
+      "centre": "Biological molecules",
+      "branches": [
+        {
+          "label": "Elements",
+          "items": [
+            "Carbohydrates: C, H, O",
+            "Lipids: C, H, O (less O)",
+            "Proteins: C, H, O, N",
+            "DNA: C, H, O, N, P"
+          ]
+        },
+        {
+          "label": "Building blocks",
+          "items": [
+            "Starch, cellulose, glycogen: glucose",
+            "Proteins: amino acids",
+            "Lipids: fatty acids and glycerol",
+            "DNA: nucleotides"
+          ]
+        },
+        {
+          "label": "Starch and sugar tests",
+          "items": [
+            "Starch: iodine, orange-brown to blue-black",
+            "Glucose, maltose: Benedict's, heat",
+            "Benedict's: blue to brick-red"
+          ]
+        },
+        {
+          "label": "Protein and lipid tests",
+          "items": [
+            "Protein: biuret, blue to purple",
+            "Lipids: ethanol then water",
+            "Lipids: cloudy white emulsion"
+          ]
+        },
+        {
+          "label": "Safety",
+          "items": [
+            "Wear eye protection",
+            "Ethanol is flammable, no flames",
+            "Heat Benedict's in a water bath"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Which elements are in carbohydrates?",
+        "back": "Carbon, hydrogen and oxygen (C, H, O).",
+        "tag": "Elements"
+      },
+      {
+        "front": "Which elements are in lipids?",
+        "back": "Carbon, hydrogen and oxygen (C, H, O), with much less oxygen than carbohydrates.",
+        "tag": "Elements"
+      },
+      {
+        "front": "Which extra element do proteins contain that carbohydrates do not?",
+        "back": "Nitrogen (N). Some proteins also contain sulfur.",
+        "tag": "Elements"
+      },
+      {
+        "front": "Which elements are in DNA?",
+        "back": "Carbon, hydrogen, oxygen, nitrogen and phosphorus (C, H, O, N, P).",
+        "tag": "Elements"
+      },
+      {
+        "front": "Which small molecule are starch, cellulose and glycogen made from?",
+        "back": "Glucose.",
+        "tag": "Building blocks"
+      },
+      {
+        "front": "What are proteins made from?",
+        "back": "Amino acids.",
+        "tag": "Building blocks"
+      },
+      {
+        "front": "What are lipids made from?",
+        "back": "Fatty acids and glycerol.",
+        "tag": "Building blocks"
+      },
+      {
+        "front": "What is DNA made from?",
+        "back": "Nucleotides.",
+        "tag": "Building blocks"
+      },
+      {
+        "front": "Where is glycogen stored?",
+        "back": "In the liver and muscles of animals. It is an energy store.",
+        "tag": "Building blocks"
+      },
+      {
+        "front": "Which reagent tests for starch, and what is a positive result?",
+        "back": "Iodine solution. It turns from orange-brown to blue-black.",
+        "tag": "Food tests"
+      },
+      {
+        "front": "Which sugars does Benedict's test detect?",
+        "back": "Reducing sugars, such as glucose and maltose.",
+        "tag": "Food tests"
+      },
+      {
+        "front": "Describe Benedict's test.",
+        "back": "Add Benedict's solution and heat in a hot water bath. Blue changes to green, yellow, orange or brick-red if a reducing sugar is present.",
+        "tag": "Food tests"
+      },
+      {
+        "front": "Describe the biuret test and its positive result.",
+        "back": "Add biuret solution to the food solution. Blue changes to purple if protein is present.",
+        "tag": "Food tests"
+      },
+      {
+        "front": "Describe the ethanol emulsion test.",
+        "back": "Shake the food with ethanol, then pour it into water. A cloudy white emulsion shows a lipid is present.",
+        "tag": "Food tests"
+      },
+      {
+        "front": "Why must you keep ethanol away from flames?",
+        "back": "Ethanol is flammable: it catches fire easily.",
+        "tag": "Safety"
+      }
+    ]
+  },
+  "5.1": {
+    "mindMap": {
+      "centre": "Enzyme action",
+      "branches": [
+        {
+          "label": "Catalyst",
+          "items": [
+            "Speeds up a reaction",
+            "Not changed by the reaction",
+            "Can be used again"
+          ]
+        },
+        {
+          "label": "Enzymes",
+          "items": [
+            "Proteins",
+            "Biological catalysts",
+            "Used in all metabolic reactions"
+          ]
+        },
+        {
+          "label": "How they work",
+          "items": [
+            "Substrate fits the active site",
+            "Enzyme-substrate complex forms",
+            "Products leave",
+            "Enzyme unchanged"
+          ]
+        },
+        {
+          "label": "Lock and key",
+          "items": [
+            "Enzyme is the lock",
+            "Substrate is the key",
+            "Shapes are complementary",
+            "Each enzyme is specific"
+          ]
+        },
+        {
+          "label": "Examples",
+          "items": [
+            "Amylase: starch to maltose",
+            "Protease: protein to amino acids",
+            "Lipase: lipids to fatty acids and glycerol"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is a catalyst?",
+        "back": "A substance that increases the rate of a chemical reaction and is not changed by the reaction.",
+        "tag": "Definition"
+      },
+      {
+        "front": "What is an enzyme?",
+        "back": "A protein that functions as a biological catalyst. Enzymes are involved in all metabolic reactions.",
+        "tag": "Definition"
+      },
+      {
+        "front": "What type of molecule is every enzyme?",
+        "back": "A protein.",
+        "tag": "Definition"
+      },
+      {
+        "front": "What is the substrate?",
+        "back": "The molecule that an enzyme works on.",
+        "tag": "Key words"
+      },
+      {
+        "front": "What is the active site?",
+        "back": "The part of the enzyme with a special shape, where the substrate fits.",
+        "tag": "Key words"
+      },
+      {
+        "front": "What is an enzyme-substrate complex?",
+        "back": "The enzyme and substrate joined together for a short time while the reaction happens.",
+        "tag": "Key words"
+      },
+      {
+        "front": "Describe how an enzyme works.",
+        "back": "The substrate fits into the active site and forms an enzyme-substrate complex. The reaction happens, the products leave, and the enzyme is unchanged.",
+        "tag": "How it works"
+      },
+      {
+        "front": "Why can one enzyme molecule be used many times?",
+        "back": "It is not changed or used up by the reaction.",
+        "tag": "How it works"
+      },
+      {
+        "front": "In the lock and key idea, which is the lock and which is the key?",
+        "back": "The enzyme is the lock. The substrate is the key.",
+        "tag": "Lock and key"
+      },
+      {
+        "front": "Why does each enzyme work on only one substrate?",
+        "back": "The active site has a shape that is complementary to only that substrate, so only it can fit.",
+        "tag": "Lock and key"
+      },
+      {
+        "front": "What does \"complementary\" mean?",
+        "back": "Shapes that fit together exactly, like two jigsaw pieces.",
+        "tag": "Lock and key"
+      },
+      {
+        "front": "What does amylase break down, and into what?",
+        "back": "Starch into maltose.",
+        "tag": "Examples"
+      },
+      {
+        "front": "What does protease break down, and into what?",
+        "back": "Protein into amino acids.",
+        "tag": "Examples"
+      },
+      {
+        "front": "What does lipase break down, and into what?",
+        "back": "Lipids into fatty acids and glycerol.",
+        "tag": "Examples"
+      }
+    ]
+  },
+  "5.2": {
+    "mindMap": {
+      "centre": "Temperature and pH",
+      "branches": [
+        {
+          "label": "Measuring activity",
+          "items": [
+            "Substrate goes down",
+            "Product goes up",
+            "Starch: iodine test every 30 s",
+            "Catalase: count oxygen bubbles"
+          ]
+        },
+        {
+          "label": "Warming up",
+          "items": [
+            "More kinetic energy",
+            "More effective collisions",
+            "Faster rate"
+          ]
+        },
+        {
+          "label": "Optimum",
+          "items": [
+            "Fastest activity",
+            "About 37 °C in humans",
+            "Each enzyme has an optimum pH"
+          ]
+        },
+        {
+          "label": "Too hot or wrong pH",
+          "items": [
+            "Active site changes shape",
+            "Substrate no longer fits",
+            "Enzyme is denatured",
+            "Cannot be undone"
+          ]
+        },
+        {
+          "label": "Cold",
+          "items": [
+            "Slow, few collisions",
+            "Not denatured",
+            "Works again when warm"
+          ]
+        },
+        {
+          "label": "pH examples",
+          "items": [
+            "Pepsin: about pH 2",
+            "Amylase: about pH 7"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "How can you follow the progress of an enzyme reaction?",
+        "back": "Measure how the amount of substrate goes down, or how the amount of product goes up, over time.",
+        "tag": "Measuring"
+      },
+      {
+        "front": "In the amylase practical, how do you know all the starch has gone?",
+        "back": "A drop of the mixture no longer turns iodine blue-black. The iodine stays orange-brown.",
+        "tag": "Measuring"
+      },
+      {
+        "front": "What is the optimum temperature?",
+        "back": "The temperature at which an enzyme works fastest. About 37 °C for most human enzymes.",
+        "tag": "Temperature"
+      },
+      {
+        "front": "Why does enzyme activity increase as temperature rises towards the optimum?",
+        "back": "Molecules have more kinetic energy and move faster, so there are more frequent effective collisions between substrate and active site.",
+        "tag": "Temperature"
+      },
+      {
+        "front": "Why does activity fall above the optimum temperature?",
+        "back": "The enzyme's shape changes, so the active site changes shape and the substrate no longer fits. The enzyme becomes denatured.",
+        "tag": "Temperature"
+      },
+      {
+        "front": "What does denatured mean?",
+        "back": "The enzyme's shape, including its active site, has changed permanently, so the substrate cannot fit and the enzyme cannot work.",
+        "tag": "Denaturation"
+      },
+      {
+        "front": "Can a denatured enzyme work again if it cools down?",
+        "back": "No. Denaturation is permanent.",
+        "tag": "Denaturation"
+      },
+      {
+        "front": "What happens to enzymes at low temperatures?",
+        "back": "They work slowly because there are fewer effective collisions, but they are not denatured. They work again when warmed.",
+        "tag": "Temperature"
+      },
+      {
+        "front": "What is the optimum pH of pepsin?",
+        "back": "About pH 2. It works in the acidic stomach.",
+        "tag": "pH"
+      },
+      {
+        "front": "What is the optimum pH of salivary amylase?",
+        "back": "About pH 7 (neutral).",
+        "tag": "pH"
+      },
+      {
+        "front": "Why does activity fall when pH moves away from the optimum?",
+        "back": "The active site changes shape, so the substrate fits less well. At extreme pH the enzyme is denatured.",
+        "tag": "pH"
+      },
+      {
+        "front": "In a temperature investigation, name two things to keep the same.",
+        "back": "Any two of: volume and concentration of starch, volume and concentration of enzyme, pH (use a buffer).",
+        "tag": "Practical"
+      },
+      {
+        "front": "How do you control pH in an enzyme investigation?",
+        "back": "Use a buffer solution.",
+        "tag": "Practical"
+      }
+    ]
   }
 };
 
