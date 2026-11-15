@@ -28,6 +28,8 @@ import NotesContent from "@/components/courses/NotesContent";
 import MindMap from "@/components/courses/MindMap";
 import Flashcards from "@/components/courses/Flashcards";
 import AiTutor from "@/components/courses/AiTutor";
+import TopicNav, { type TopicNavLink } from "@/components/courses/TopicNav";
+import FloatingTopicActions from "@/components/courses/FloatingTopicActions";
 import { BIOLOGY_MODELS } from "@/components/courses/biology/models";
 
 interface TopicPageClientProps {
@@ -247,6 +249,12 @@ export default function TopicPageClient({
 
   const checkCount = (hasVideo ? 1 : 0) + (hasNotes ? 1 : 0) + (hasQuiz ? 1 : 0);
 
+  const toNavLink = (t: typeof prevTopic): TopicNavLink | null =>
+    t ? { href: `/courses/biology/o-level/${t.slug}`, code: t.topic, title: t.topicTitle } : null;
+  const topicNav = (position: "top" | "bottom") => (
+    <TopicNav position={position} hubHref="/courses/biology#syllabus-sections-heading" prev={toNavLink(prevTopic)} next={toNavLink(nextTopic)} />
+  );
+
   return (
     <div className="efe-page min-h-screen flex flex-col">
       <PageHeader
@@ -262,6 +270,8 @@ export default function TopicPageClient({
       />
 
       <main className="max-w-4xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full space-y-8">
+        {topicNav("top")}
+
         {/* Progress Panel */}
         <section
           aria-label="Topic progress summary"
@@ -773,8 +783,9 @@ export default function TopicPageClient({
         {/* 8. ASK THE AI TUTOR (hidden if topic has no notes yet) */}
         {hasNotes && (
           <section
+            id="ask-tutor"
             aria-labelledby="step-ask-heading"
-            className="efe-card p-6 sm:p-8"
+            className="scroll-mt-24 efe-card p-6 sm:p-8"
           >
             <div className="mb-4">
               <span className="text-xs font-bold uppercase tracking-wider text-efe-accent-ink">
@@ -803,37 +814,10 @@ export default function TopicPageClient({
         )}
 
         {/* Bottom Navigation: Course Hub / Previous / Next Topic */}
-        <nav
-          aria-label="Topic navigation"
-          className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-4"
-        >
-          <div className="flex items-center gap-3">
-            <Link
-              href="/courses/biology"
-              className="efe-btn efe-btn-secondary"
-            >
-              ← All Biology Topics
-            </Link>
-            {prevTopic && (
-              <Link
-                href={`/courses/biology/o-level/${prevTopic.slug}`}
-                className="efe-btn efe-btn-secondary"
-              >
-                ← {prevTopic.topic}
-              </Link>
-            )}
-          </div>
-
-          {nextTopic && (
-            <Link
-              href={`/courses/biology/o-level/${nextTopic.slug}`}
-              className="efe-btn efe-btn-primary"
-            >
-              Next topic: {nextTopic.topic} {nextTopic.topicTitle} →
-            </Link>
-          )}
-        </nav>
+        {topicNav("bottom")}
       </main>
+
+      <FloatingTopicActions tutorTargetId="ask-tutor" />
 
       {/* Footer Disclaimer */}
       <aside className="border-t border-efe-line bg-white/70 mt-12">

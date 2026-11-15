@@ -184,7 +184,7 @@ export default function BiologyHubClient({ sections }: BiologyHubClientProps) {
         <section aria-labelledby="syllabus-sections-heading" className="space-y-10">
           <SectionHeader
             eyebrow="2026–2028 Syllabus"
-            title={<span id="syllabus-sections-heading">O Level Biology Syllabus Topics</span>}
+            title={<span id="syllabus-sections-heading" className="scroll-mt-24">O Level Biology Syllabus Topics</span>}
             description={`${totalTopics} topics across ${sections.length} sections, built for exams in 2026, 2027 and 2028.`}
           />
 

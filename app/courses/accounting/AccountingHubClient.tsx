@@ -239,7 +239,7 @@ export default function AccountingHubClient({ sections }: AccountingHubClientPro
         <section aria-labelledby="syllabus-sections-heading" className="space-y-10">
           <SectionHeader
             eyebrow="2027–2029 Syllabus"
-            title={<span id="syllabus-sections-heading">O Level Accounting Syllabus Topics</span>}
+            title={<span id="syllabus-sections-heading" className="scroll-mt-24">O Level Accounting Syllabus Topics</span>}
             description="28 topics across 7 sections, with 336 original multiple-choice practice questions."
           />
 

@@ -10,6 +10,7 @@
 // Anything else is a paragraph.
 
 import { Fragment, type ReactNode } from "react";
+import ZoomableFigure from "@/components/courses/ZoomableFigure";
 
 function inline(text: string, keyBase: string): ReactNode[] {
   // Split on **bold** markers
@@ -53,23 +54,7 @@ export default function NotesContent({ notes }: { notes: string }) {
         const img = lines.length === 1 ? /^!\[([^\]]+)\]\((\/images\/[a-z0-9/_.-]+\.(?:svg|png|webp|jpg))\)$/i.exec(first.trim()) : null;
         if (img) {
           const [, caption, src] = img;
-          return (
-            <figure key={key} className="my-2">
-              <a href={src} target="_blank" rel="noopener noreferrer" aria-label={`Open full size: ${caption}`}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={src}
-                  alt={caption}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-auto rounded-xl border border-efe-line bg-white"
-                />
-              </a>
-              <figcaption className="mt-2 text-sm text-efe-muted text-center">
-                {caption} <span className="whitespace-nowrap">(tap to enlarge)</span>
-              </figcaption>
-            </figure>
-          );
+          return <ZoomableFigure key={key} src={src} caption={caption} />;
         }
 
         if (first.startsWith("### ")) {

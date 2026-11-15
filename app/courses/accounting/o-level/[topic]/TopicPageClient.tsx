@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import Link from "next/link";
 import PageHeader from "@/components/ui/PageHeader";
 import { useAuth } from "@/contexts/AuthContext";
 import type { AccountingMcq } from "@/lib/courses/oLevelAccountingMcqs";
@@ -26,6 +25,8 @@ import NotesContent from "@/components/courses/NotesContent";
 import Flashcards from "@/components/courses/Flashcards";
 import MindMap from "@/components/courses/MindMap";
 import AiTutor from "@/components/courses/AiTutor";
+import TopicNav, { type TopicNavLink } from "@/components/courses/TopicNav";
+import FloatingTopicActions from "@/components/courses/FloatingTopicActions";
 import type { TopicRevision } from "@/lib/courses/oLevelAccountingRevisionTypes";
 
 interface TopicPageClientProps {
@@ -227,6 +228,12 @@ export default function TopicPageClient({
       ? "bg-efe-gold-soft text-efe-gold border border-amber-300"
       : "bg-efe-bg text-efe-muted border border-efe-line";
 
+  const toNavLink = (t: typeof prevTopic): TopicNavLink | null =>
+    t ? { href: `/courses/accounting/o-level/${t.slug}`, code: t.topic, title: t.topicTitle } : null;
+  const topicNav = (position: "top" | "bottom") => (
+    <TopicNav position={position} hubHref="/courses/accounting#syllabus-sections-heading" prev={toNavLink(prevTopic)} next={toNavLink(nextTopic)} />
+  );
+
   return (
     <div className="efe-page min-h-screen flex flex-col">
       <PageHeader
@@ -242,6 +249,8 @@ export default function TopicPageClient({
       />
 
       <main className="max-w-4xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full space-y-8">
+        {topicNav("top")}
+
         {/* Progress Panel */}
         <section
           aria-label="Topic progress summary"
@@ -717,8 +726,9 @@ export default function TopicPageClient({
 
         {/* STEP 6: ASK THE AI TUTOR */}
         <section
+          id="ask-tutor"
           aria-labelledby="step-ask-heading"
-          className="efe-card p-6 sm:p-8"
+          className="scroll-mt-24 efe-card p-6 sm:p-8"
         >
           <div className="mb-4">
             <span className="text-xs font-bold uppercase tracking-wider text-efe-accent-ink">
@@ -745,37 +755,10 @@ export default function TopicPageClient({
         </section>
 
         {/* Bottom Navigation: Course Hub / Previous / Next Topic */}
-        <nav
-          aria-label="Topic navigation"
-          className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-4"
-        >
-          <div className="flex items-center gap-3">
-            <Link
-              href="/courses/accounting"
-              className="efe-btn efe-btn-secondary"
-            >
-              ← All Accounting Topics
-            </Link>
-            {prevTopic && (
-              <Link
-                href={`/courses/accounting/o-level/${prevTopic.slug}`}
-                className="efe-btn efe-btn-secondary"
-              >
-                ← {prevTopic.topic}
-              </Link>
-            )}
-          </div>
-
-          {nextTopic && (
-            <Link
-              href={`/courses/accounting/o-level/${nextTopic.slug}`}
-              className="efe-btn efe-btn-primary"
-            >
-              Next topic: {nextTopic.topic} {nextTopic.topicTitle} →
-            </Link>
-          )}
-        </nav>
+        {topicNav("bottom")}
       </main>
+
+      <FloatingTopicActions tutorTargetId="ask-tutor" />
 
       {/* Footer Disclaimer */}
       <aside className="border-t border-efe-line bg-white/70 mt-12">
