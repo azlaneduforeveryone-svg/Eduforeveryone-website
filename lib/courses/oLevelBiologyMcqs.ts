@@ -6892,6 +6892,6343 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "explanation": "A clot seals the wound, preventing blood loss and entry of pathogens.",
     "difficulty": "hard",
     "type": "concept"
+  },
+  {
+    "id": "o5090-12.1-01",
+    "topic": "12.1",
+    "level": "O Level 5090",
+    "question": "What is a pathogen?",
+    "options": [
+      "a disease-causing organism",
+      "a chemical that kills bacteria",
+      "a white blood cell",
+      "a protein that binds to antigens"
+    ],
+    "optionFeedback": [
+      "Correct. A pathogen is an organism that causes disease, such as a bacterium or virus.",
+      "This describes an antibiotic or antiseptic.",
+      "White blood cells fight pathogens.",
+      "This describes an antibody."
+    ],
+    "answer": 0,
+    "explanation": "A pathogen is an organism that causes disease, such as a bacterium or virus.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.1-02",
+    "topic": "12.1",
+    "level": "O Level 5090",
+    "question": "What is a transmissible disease?",
+    "options": [
+      "a disease caused by a poor diet",
+      "a disease in which the pathogen can be passed from one host to another",
+      "a disease that is inherited",
+      "a disease caused by smoking"
+    ],
+    "optionFeedback": [
+      "Deficiency diseases are not transmissible.",
+      "Correct. A transmissible disease spreads when its pathogen passes from host to host.",
+      "Inherited conditions are not passed by pathogens.",
+      "Smoking-related diseases are not transmissible."
+    ],
+    "answer": 1,
+    "explanation": "A transmissible disease spreads when its pathogen passes from host to host.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.1-03",
+    "topic": "12.1",
+    "level": "O Level 5090",
+    "question": "Which row shows a body defence and how it works? (stomach acid; mucus)",
+    "options": [
+      "kills pathogens in food; traps pathogens in the airways",
+      "traps pathogens in the airways; kills pathogens in food",
+      "makes antibodies; engulfs pathogens",
+      "kills pathogens in food; makes antibodies"
+    ],
+    "optionFeedback": [
+      "Correct. Stomach acid kills pathogens in food; mucus traps pathogens in the airways.",
+      "This is the wrong way round.",
+      "These are done by white blood cells.",
+      "Mucus traps pathogens."
+    ],
+    "answer": 0,
+    "explanation": "Stomach acid kills pathogens in food; mucus traps pathogens in the airways.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.1-04",
+    "topic": "12.1",
+    "level": "O Level 5090",
+    "question": "What is the role of the mosquito in malaria?",
+    "options": [
+      "It is the pathogen that causes malaria.",
+      "It is a vector that carries the pathogen between people.",
+      "It kills the malaria parasite.",
+      "It makes antibodies against malaria."
+    ],
+    "optionFeedback": [
+      "Malaria is caused by a single-celled parasite.",
+      "Correct. The mosquito is a vector: when it bites, it passes the malaria parasite into the blood.",
+      "It carries the parasite.",
+      "Insects do not make antibodies."
+    ],
+    "answer": 1,
+    "explanation": "The mosquito is a vector: when it bites, it passes the malaria parasite into the blood.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.1-05",
+    "topic": "12.1",
+    "level": "O Level 5090",
+    "question": "Which method controls mosquitoes at the larva stage?",
+    "options": [
+      "spreading oil on still water",
+      "sleeping under mosquito nets",
+      "using insect repellent on skin",
+      "vaccinating people"
+    ],
+    "optionFeedback": [
+      "Correct. Larvae live in water and breathe at the surface; oil stops them breathing.",
+      "Nets protect against adults.",
+      "Repellent affects adults.",
+      "This does not affect larvae."
+    ],
+    "answer": 0,
+    "explanation": "Larvae live in water and breathe at the surface; oil stops them breathing.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.1-06",
+    "topic": "12.1",
+    "level": "O Level 5090",
+    "question": "How is cholera transmitted?",
+    "options": [
+      "in water contaminated with faeces containing the bacterium",
+      "by mosquito bites",
+      "in the air by coughing",
+      "by sharing needles"
+    ],
+    "optionFeedback": [
+      "Correct. The cholera bacterium is passed on in contaminated water.",
+      "Malaria is spread by mosquitoes.",
+      "Cholera is not spread this way.",
+      "HIV can be spread this way."
+    ],
+    "answer": 0,
+    "explanation": "The cholera bacterium is passed on in contaminated water.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.1-07",
+    "topic": "12.1",
+    "level": "O Level 5090",
+    "question": "How does the cholera toxin cause diarrhoea?",
+    "options": [
+      "It destroys red blood cells.",
+      "It stops peristalsis.",
+      "It causes chloride ions to be released into the gut, and water follows by osmosis.",
+      "It blocks the absorption of protein."
+    ],
+    "optionFeedback": [
+      "This is not how cholera acts.",
+      "Peristalsis is not stopped.",
+      "Correct. Chloride ions move into the small intestine; water follows by osmosis, causing watery diarrhoea and dehydration.",
+      "The toxin affects ion and water movement."
+    ],
+    "answer": 2,
+    "explanation": "Chloride ions move into the small intestine; water follows by osmosis, causing watery diarrhoea and dehydration.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.1-08",
+    "topic": "12.1",
+    "level": "O Level 5090",
+    "question": "Which method would reduce the spread of cholera?",
+    "options": [
+      "using mosquito nets",
+      "treating sewage and supplying clean water",
+      "wearing face masks",
+      "taking antibiotics before every meal"
+    ],
+    "optionFeedback": [
+      "Cholera is not spread by mosquitoes.",
+      "Correct. Cholera spreads in contaminated water, so sewage treatment and clean water stop it.",
+      "Cholera is not spread through the air.",
+      "This is not a control method."
+    ],
+    "answer": 1,
+    "explanation": "Cholera spreads in contaminated water, so sewage treatment and clean water stop it.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.1-09",
+    "topic": "12.1",
+    "level": "O Level 5090",
+    "question": "Which row shows ways HIV is and is not transmitted? (sharing needles; shaking hands)",
+    "options": [
+      "not transmitted; transmitted",
+      "transmitted; transmitted",
+      "not transmitted; not transmitted",
+      "transmitted; not transmitted"
+    ],
+    "optionFeedback": [
+      "This is the wrong way round.",
+      "HIV is not spread by casual contact.",
+      "Sharing needles can transmit HIV.",
+      "Correct. HIV is passed in blood and body fluids, not by casual contact such as shaking hands."
+    ],
+    "answer": 3,
+    "explanation": "HIV is passed in blood and body fluids, not by casual contact such as shaking hands.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.1-10",
+    "topic": "12.1",
+    "level": "O Level 5090",
+    "question": "Which statements describe ways HIV can be transmitted?\n1 sexual intercourse without a condom\n2 from mother to baby in breast milk\n3 sharing a cup\n4 transfusion of infected blood",
+    "options": [
+      "1 and 3 only",
+      "1, 2 and 4",
+      "2 and 3 only",
+      "3 and 4 only"
+    ],
+    "optionFeedback": [
+      "Statement 3 is wrong.",
+      "Correct. HIV passes in blood and body fluids, not by sharing cups.",
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong."
+    ],
+    "answer": 1,
+    "explanation": "HIV passes in blood and body fluids, not by sharing cups.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.1-11",
+    "topic": "12.1",
+    "level": "O Level 5090",
+    "question": "Which substance in tobacco smoke reduces the amount of oxygen carried by the blood?",
+    "options": [
+      "tar",
+      "nicotine",
+      "carbon dioxide",
+      "carbon monoxide"
+    ],
+    "optionFeedback": [
+      "Tar causes cancer and damages cilia.",
+      "Nicotine is addictive and raises heart rate.",
+      "This is not the main harmful gas here.",
+      "Correct. Carbon monoxide binds to haemoglobin, so less oxygen is carried."
+    ],
+    "answer": 3,
+    "explanation": "Carbon monoxide binds to haemoglobin, so less oxygen is carried.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.1-12",
+    "topic": "12.1",
+    "level": "O Level 5090",
+    "question": "Which row shows the substance in tobacco smoke and its effect? (tar; nicotine)",
+    "options": [
+      "addictive; causes cancer",
+      "reduces oxygen carried; causes cancer",
+      "causes cancer; reduces oxygen carried",
+      "causes cancer; addictive"
+    ],
+    "optionFeedback": [
+      "This is the wrong way round.",
+      "Carbon monoxide reduces oxygen carried.",
+      "Nicotine is addictive.",
+      "Correct. Tar causes cancer and damages cilia; nicotine is addictive."
+    ],
+    "answer": 3,
+    "explanation": "Tar causes cancer and damages cilia; nicotine is addictive.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.1-13",
+    "topic": "12.1",
+    "level": "O Level 5090",
+    "question": "Which is an effect of drinking too much alcohol?",
+    "options": [
+      "faster reaction times",
+      "slower reaction times",
+      "improved self-control",
+      "a healthier liver"
+    ],
+    "optionFeedback": [
+      "Alcohol is a depressant.",
+      "Correct. Alcohol is a depressant that slows reactions, reduces self-control and damages the liver.",
+      "Alcohol reduces self-control.",
+      "Too much alcohol damages the liver."
+    ],
+    "answer": 1,
+    "explanation": "Alcohol is a depressant that slows reactions, reduces self-control and damages the liver.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.1-14",
+    "topic": "12.1",
+    "level": "O Level 5090",
+    "question": "What is emphysema?",
+    "options": [
+      "inflammation of the airways with excess mucus",
+      "breakdown of the alveolus walls, reducing the surface area for gas exchange",
+      "a cancer of the lungs",
+      "blockage of the coronary arteries"
+    ],
+    "optionFeedback": [
+      "This is bronchitis.",
+      "Correct. In emphysema the alveoli break down, so less oxygen can be absorbed.",
+      "This is lung cancer.",
+      "This is coronary heart disease."
+    ],
+    "answer": 1,
+    "explanation": "In emphysema the alveoli break down, so less oxygen can be absorbed.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.2-01",
+    "topic": "12.2",
+    "level": "O Level 5090",
+    "question": "What is a drug?",
+    "options": [
+      "any substance that kills bacteria",
+      "a substance made only by doctors",
+      "any substance taken into the body that modifies or affects chemical reactions in the body",
+      "a food that provides energy"
+    ],
+    "optionFeedback": [
+      "This describes an antibiotic, a type of drug.",
+      "Many drugs are not medicines.",
+      "Correct. A drug is any substance taken into the body that changes its chemical reactions.",
+      "Foods are not drugs."
+    ],
+    "answer": 2,
+    "explanation": "A drug is any substance taken into the body that changes its chemical reactions.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.2-02",
+    "topic": "12.2",
+    "level": "O Level 5090",
+    "question": "What do antibiotics treat?",
+    "options": [
+      "bacterial infections",
+      "viral infections",
+      "deficiency diseases",
+      "inherited conditions"
+    ],
+    "optionFeedback": [
+      "Correct. Antibiotics kill bacteria.",
+      "Antibiotics do not affect viruses.",
+      "These are treated with the missing nutrient.",
+      "Antibiotics do not treat these."
+    ],
+    "answer": 0,
+    "explanation": "Antibiotics kill bacteria.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.2-03",
+    "topic": "12.2",
+    "level": "O Level 5090",
+    "question": "Why are antibiotics not used to treat colds?",
+    "options": [
+      "Colds are caused by bacteria that are always resistant.",
+      "Antibiotics make colds last longer.",
+      "Colds are caused by viruses, and antibiotics do not affect viruses.",
+      "Colds are deficiency diseases."
+    ],
+    "optionFeedback": [
+      "Colds are viral.",
+      "They simply have no effect on viruses.",
+      "Correct. Antibiotics kill bacteria but do not affect viruses.",
+      "Colds are caused by viruses."
+    ],
+    "answer": 2,
+    "explanation": "Antibiotics kill bacteria but do not affect viruses.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.2-04",
+    "topic": "12.2",
+    "level": "O Level 5090",
+    "question": "What is MRSA?",
+    "options": [
+      "a bacterium resistant to many antibiotics",
+      "a virus that causes colds",
+      "an antibiotic",
+      "a type of white blood cell"
+    ],
+    "optionFeedback": [
+      "Correct. MRSA is a strain of bacteria resistant to many antibiotics.",
+      "MRSA is a bacterium.",
+      "MRSA is not a drug.",
+      "MRSA is a bacterium."
+    ],
+    "answer": 0,
+    "explanation": "MRSA is a strain of bacteria resistant to many antibiotics.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.2-05",
+    "topic": "12.2",
+    "level": "O Level 5090",
+    "question": "How does a population of antibiotic-resistant bacteria develop?",
+    "options": [
+      "The antibiotic causes all the bacteria to mutate.",
+      "The person becomes resistant to the antibiotic.",
+      "A mutation makes some bacteria resistant; the antibiotic kills the others; the resistant ones reproduce.",
+      "The bacteria learn to avoid the antibiotic."
+    ],
+    "optionFeedback": [
+      "Mutations happen by chance.",
+      "It is the bacteria that become resistant.",
+      "Correct. Chance mutation, selection by the antibiotic, and reproduction of the survivors produce a resistant population.",
+      "Bacteria do not learn."
+    ],
+    "answer": 2,
+    "explanation": "Chance mutation, selection by the antibiotic, and reproduction of the survivors produce a resistant population.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.2-06",
+    "topic": "12.2",
+    "level": "O Level 5090",
+    "question": "How can the development of antibiotic resistance be reduced?",
+    "options": [
+      "using antibiotics for every illness",
+      "stopping the course as soon as you feel better",
+      "using antibiotics only when essential",
+      "using antibiotics to treat viral infections"
+    ],
+    "optionFeedback": [
+      "This increases resistance.",
+      "This can leave bacteria alive.",
+      "Correct. Using antibiotics less often gives resistant bacteria fewer chances to be selected.",
+      "This is unnecessary use."
+    ],
+    "answer": 2,
+    "explanation": "Using antibiotics less often gives resistant bacteria fewer chances to be selected.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.2-07",
+    "topic": "12.2",
+    "level": "O Level 5090",
+    "question": "Which statements about antibiotics are correct?\n1 They kill bacteria.\n2 They have no effect on viruses.\n3 They should be used for every infection.\n4 Overuse can lead to resistant bacteria.",
+    "options": [
+      "1 and 3 only",
+      "2 and 3 only",
+      "1, 2 and 4",
+      "3 and 4 only"
+    ],
+    "optionFeedback": [
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong.",
+      "Correct. Antibiotics kill bacteria, not viruses, and should be used only when essential.",
+      "Statement 3 is wrong."
+    ],
+    "answer": 2,
+    "explanation": "Antibiotics kill bacteria, not viruses, and should be used only when essential.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.2-08",
+    "topic": "12.2",
+    "level": "O Level 5090",
+    "question": "Which row is correct? (antibiotic effect on bacteria; antibiotic effect on viruses)",
+    "options": [
+      "no effect; kills them",
+      "kills them; kills them",
+      "no effect; no effect",
+      "kills them; no effect"
+    ],
+    "optionFeedback": [
+      "This is the wrong way round.",
+      "Antibiotics do not affect viruses.",
+      "Antibiotics kill bacteria.",
+      "Correct. Antibiotics kill bacteria but have no effect on viruses."
+    ],
+    "answer": 3,
+    "explanation": "Antibiotics kill bacteria but have no effect on viruses.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.2-09",
+    "topic": "12.2",
+    "level": "O Level 5090",
+    "question": "A patient stops taking an antibiotic after two days of a seven-day course. Why could this increase resistance?",
+    "options": [
+      "The antibiotic becomes stronger in the body.",
+      "The patient becomes resistant to the antibiotic.",
+      "Viruses start to grow instead.",
+      "Some bacteria survive, and these are more likely to be the resistant ones."
+    ],
+    "optionFeedback": [
+      "This does not happen.",
+      "Bacteria, not patients, become resistant.",
+      "This is not the reason.",
+      "Correct. Surviving bacteria, often the more resistant ones, can multiply and spread."
+    ],
+    "answer": 3,
+    "explanation": "Surviving bacteria, often the more resistant ones, can multiply and spread.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.2-10",
+    "topic": "12.2",
+    "level": "O Level 5090",
+    "question": "Which of these is a drug?",
+    "options": [
+      "glucose",
+      "water",
+      "nicotine",
+      "starch"
+    ],
+    "optionFeedback": [
+      "Glucose is a food.",
+      "Water is not a drug.",
+      "Correct. Nicotine is a drug because it changes chemical reactions in the body.",
+      "Starch is a food."
+    ],
+    "answer": 2,
+    "explanation": "Nicotine is a drug because it changes chemical reactions in the body.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.3-01",
+    "topic": "12.3",
+    "level": "O Level 5090",
+    "question": "What are antibodies?",
+    "options": [
+      "pathogens that cause disease",
+      "cells that engulf pathogens",
+      "proteins that bind to antigens",
+      "molecules on the surface of pathogens"
+    ],
+    "optionFeedback": [
+      "Antibodies fight pathogens.",
+      "Phagocytes engulf pathogens.",
+      "Correct. Antibodies are proteins made by lymphocytes that bind to specific antigens.",
+      "These are antigens."
+    ],
+    "answer": 2,
+    "explanation": "Antibodies are proteins made by lymphocytes that bind to specific antigens.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.3-02",
+    "topic": "12.3",
+    "level": "O Level 5090",
+    "question": "Which cells make antibodies?",
+    "options": [
+      "phagocytes",
+      "red blood cells",
+      "platelets",
+      "lymphocytes"
+    ],
+    "optionFeedback": [
+      "Phagocytes engulf pathogens.",
+      "Red cells carry oxygen.",
+      "Platelets help clotting.",
+      "Correct. Lymphocytes produce antibodies."
+    ],
+    "answer": 3,
+    "explanation": "Lymphocytes produce antibodies.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.3-03",
+    "topic": "12.3",
+    "level": "O Level 5090",
+    "question": "Why does an antibody bind to only one type of antigen?",
+    "options": [
+      "It is the same size as the antigen.",
+      "It is made by phagocytes.",
+      "Its shape is complementary to that specific antigen.",
+      "It is used up after one binding."
+    ],
+    "optionFeedback": [
+      "Shape, not size, matters.",
+      "Antibodies are made by lymphocytes.",
+      "Correct. Each antibody has a shape that fits only one antigen.",
+      "This is not the reason."
+    ],
+    "answer": 2,
+    "explanation": "Each antibody has a shape that fits only one antigen.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.3-04",
+    "topic": "12.3",
+    "level": "O Level 5090",
+    "question": "How do antibodies help destroy pathogens?",
+    "options": [
+      "by carrying oxygen to them",
+      "by making them reproduce faster",
+      "by turning them into antigens",
+      "by destroying them directly or marking them for phagocytes"
+    ],
+    "optionFeedback": [
+      "Red cells carry oxygen.",
+      "Antibodies do not do this.",
+      "Antigens are already on the pathogen.",
+      "Correct. Antibodies bind to antigens and either destroy pathogens or mark them for phagocytes to engulf."
+    ],
+    "answer": 3,
+    "explanation": "Antibodies bind to antigens and either destroy pathogens or mark them for phagocytes to engulf.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.3-05",
+    "topic": "12.3",
+    "level": "O Level 5090",
+    "question": "What is active immunity?",
+    "options": [
+      "antibodies received from another person",
+      "immunity that lasts only a few weeks",
+      "defence against a pathogen by antibodies made in your own body",
+      "a type of antibiotic"
+    ],
+    "optionFeedback": [
+      "This is passive immunity.",
+      "Active immunity is long term.",
+      "Correct. Active immunity comes from your own lymphocytes making antibodies, after infection or vaccination.",
+      "Immunity is not a drug."
+    ],
+    "answer": 2,
+    "explanation": "Active immunity comes from your own lymphocytes making antibodies, after infection or vaccination.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.3-06",
+    "topic": "12.3",
+    "level": "O Level 5090",
+    "question": "What does a vaccine contain?",
+    "options": [
+      "antibodies",
+      "antibiotics",
+      "weakened pathogens or their antigens",
+      "white blood cells"
+    ],
+    "optionFeedback": [
+      "Passive immunity involves antibodies.",
+      "Vaccines are not antibiotics.",
+      "Correct. Vaccines contain weakened pathogens or antigens that trigger an immune response.",
+      "Vaccines do not contain white cells."
+    ],
+    "answer": 2,
+    "explanation": "Vaccines contain weakened pathogens or antigens that trigger an immune response.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.3-07",
+    "topic": "12.3",
+    "level": "O Level 5090",
+    "question": "Why does a vaccinated person not become ill when they meet the real pathogen?",
+    "options": [
+      "The vaccine kills all pathogens in the body forever.",
+      "The person has antibiotics in their blood.",
+      "Memory cells make antibodies quickly and in large amounts.",
+      "The pathogen cannot enter the body."
+    ],
+    "optionFeedback": [
+      "Vaccines do not do this.",
+      "Vaccines do not contain antibiotics.",
+      "Correct. Memory cells from vaccination give a fast, strong antibody response.",
+      "It can enter, but is destroyed quickly."
+    ],
+    "answer": 2,
+    "explanation": "Memory cells from vaccination give a fast, strong antibody response.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.3-08",
+    "topic": "12.3",
+    "level": "O Level 5090",
+    "question": "Which row compares active and passive immunity? (memory cells made; duration)",
+    "options": [
+      "active: no, short term; passive: yes, long term",
+      "active: yes, long term; passive: no, short term",
+      "active: yes, short term; passive: no, long term",
+      "active: no, long term; passive: yes, short term"
+    ],
+    "optionFeedback": [
+      "This is the wrong way round.",
+      "Correct. Active immunity makes memory cells and lasts; passive immunity does not.",
+      "The durations are swapped.",
+      "Memory cells are made in active immunity."
+    ],
+    "answer": 1,
+    "explanation": "Active immunity makes memory cells and lasts; passive immunity does not.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.3-09",
+    "topic": "12.3",
+    "level": "O Level 5090",
+    "question": "How does a baby gain passive immunity?",
+    "options": [
+      "antibodies passed across the placenta and in breast milk",
+      "vaccination at birth",
+      "making its own antibodies",
+      "antibiotics in breast milk"
+    ],
+    "optionFeedback": [
+      "Correct. The mother's antibodies reach the baby through the placenta and breast milk.",
+      "Vaccination gives active immunity.",
+      "This is active immunity.",
+      "Breast milk contains antibodies, not antibiotics."
+    ],
+    "answer": 0,
+    "explanation": "The mother's antibodies reach the baby through the placenta and breast milk.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.3-10",
+    "topic": "12.3",
+    "level": "O Level 5090",
+    "question": "How does vaccination help control the spread of a disease in a community?",
+    "options": [
+      "It kills the pathogen in the environment.",
+      "It makes the pathogen harmless forever.",
+      "It stops people making antibodies.",
+      "If most people are immune, the pathogen cannot spread easily from person to person."
+    ],
+    "optionFeedback": [
+      "Vaccines act inside the body.",
+      "This is not how vaccines work.",
+      "Vaccination makes people produce antibodies.",
+      "Correct. With few people to infect, the pathogen cannot spread, protecting even those not vaccinated."
+    ],
+    "answer": 3,
+    "explanation": "With few people to infect, the pathogen cannot spread, protecting even those not vaccinated.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.3-11",
+    "topic": "12.3",
+    "level": "O Level 5090",
+    "question": "How does HIV weaken the immune system?",
+    "options": [
+      "It increases the number of red blood cells.",
+      "It destroys platelets.",
+      "It makes the stomach acid weaker.",
+      "It reduces the number of lymphocytes, so fewer antibodies are made."
+    ],
+    "optionFeedback": [
+      "This is not the effect.",
+      "HIV targets lymphocytes.",
+      "This is not the effect.",
+      "Correct. HIV infects and destroys lymphocytes, so the body cannot fight other infections well."
+    ],
+    "answer": 3,
+    "explanation": "HIV infects and destroys lymphocytes, so the body cannot fight other infections well.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-12.3-12",
+    "topic": "12.3",
+    "level": "O Level 5090",
+    "question": "Which statements about passive immunity are correct?\n1 Antibodies come from another person.\n2 Memory cells are made.\n3 It is short term.\n4 Breast milk can provide it.",
+    "options": [
+      "1 and 2 only",
+      "1, 3 and 4",
+      "2 and 3 only",
+      "2 and 4 only"
+    ],
+    "optionFeedback": [
+      "Statement 2 is wrong: no memory cells are made.",
+      "Correct. Passive immunity uses antibodies from another person, makes no memory cells and does not last.",
+      "Statement 2 is wrong.",
+      "Statement 2 is wrong."
+    ],
+    "answer": 1,
+    "explanation": "Passive immunity uses antibodies from another person, makes no memory cells and does not last.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-13.1-01",
+    "topic": "13.1",
+    "level": "O Level 5090",
+    "question": "What is excretion?",
+    "options": [
+      "the removal of undigested food",
+      "the breakdown of food into small molecules",
+      "the release of energy from glucose",
+      "the removal of toxic materials and waste products of metabolism from organisms"
+    ],
+    "optionFeedback": [
+      "This is egestion.",
+      "This is digestion.",
+      "This is respiration.",
+      "Correct. Excretion removes wastes made by the body's own reactions."
+    ],
+    "answer": 3,
+    "explanation": "Excretion removes wastes made by the body's own reactions.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-13.1-02",
+    "topic": "13.1",
+    "level": "O Level 5090",
+    "question": "Which organ excretes carbon dioxide?",
+    "options": [
+      "kidneys",
+      "liver",
+      "lungs",
+      "skin"
+    ],
+    "optionFeedback": [
+      "The kidneys excrete urea.",
+      "The liver makes urea.",
+      "Correct. Carbon dioxide from respiration is breathed out through the lungs.",
+      "The skin is not the main organ for carbon dioxide."
+    ],
+    "answer": 2,
+    "explanation": "Carbon dioxide from respiration is breathed out through the lungs.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-13.1-03",
+    "topic": "13.1",
+    "level": "O Level 5090",
+    "question": "Where is urea made?",
+    "options": [
+      "kidneys",
+      "bladder",
+      "liver",
+      "lungs"
+    ],
+    "optionFeedback": [
+      "The kidneys remove urea.",
+      "The bladder stores urine.",
+      "Correct. The liver makes urea from excess amino acids.",
+      "The lungs excrete carbon dioxide."
+    ],
+    "answer": 2,
+    "explanation": "The liver makes urea from excess amino acids.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-13.1-04",
+    "topic": "13.1",
+    "level": "O Level 5090",
+    "question": "What is urea made from?",
+    "options": [
+      "excess glucose",
+      "excess amino acids",
+      "excess fat",
+      "carbon dioxide"
+    ],
+    "optionFeedback": [
+      "Excess glucose is stored as glycogen.",
+      "Correct. Amino acids not needed by the body are broken down in the liver, forming urea.",
+      "Fat is not broken down into urea.",
+      "Carbon dioxide is a separate waste."
+    ],
+    "answer": 1,
+    "explanation": "Amino acids not needed by the body are broken down in the liver, forming urea.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-13.1-05",
+    "topic": "13.1",
+    "level": "O Level 5090",
+    "question": "Which row shows each waste product and the process that makes it? (carbon dioxide; urea)",
+    "options": [
+      "breakdown of excess amino acids; respiration",
+      "respiration; breakdown of excess amino acids",
+      "digestion; respiration",
+      "photosynthesis; digestion"
+    ],
+    "optionFeedback": [
+      "This is the wrong way round.",
+      "Correct. Carbon dioxide comes from respiration; urea comes from breaking down excess amino acids.",
+      "Neither is made by digestion.",
+      "Humans do not photosynthesise."
+    ],
+    "answer": 1,
+    "explanation": "Carbon dioxide comes from respiration; urea comes from breaking down excess amino acids.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-13.1-06",
+    "topic": "13.1",
+    "level": "O Level 5090",
+    "question": "Which is an example of egestion rather than excretion?",
+    "options": [
+      "breathing out carbon dioxide",
+      "passing urine containing urea",
+      "removing excess salts in urine",
+      "passing faeces"
+    ],
+    "optionFeedback": [
+      "This is excretion.",
+      "This is excretion.",
+      "This is excretion.",
+      "Correct. Faeces are undigested food that never entered the body's cells, so passing them is egestion."
+    ],
+    "answer": 3,
+    "explanation": "Faeces are undigested food that never entered the body's cells, so passing them is egestion.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-13.1-07",
+    "topic": "13.1",
+    "level": "O Level 5090",
+    "question": "Why must urea be excreted?",
+    "options": [
+      "It is toxic.",
+      "It is needed by the kidneys.",
+      "It provides energy.",
+      "It forms protein."
+    ],
+    "optionFeedback": [
+      "Correct. Urea would poison cells if it built up in the body.",
+      "Urea is a waste.",
+      "Urea is not a fuel.",
+      "Urea is a waste from protein breakdown."
+    ],
+    "answer": 0,
+    "explanation": "Urea would poison cells if it built up in the body.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-13.1-08",
+    "topic": "13.1",
+    "level": "O Level 5090",
+    "question": "Which statements about excretion are correct?\n1 Carbon dioxide is excreted by the lungs.\n2 Urea is excreted by the kidneys.\n3 Faeces are a product of excretion.\n4 Urea is made in the liver.",
+    "options": [
+      "1, 2 and 4",
+      "1 and 3 only",
+      "2 and 3 only",
+      "3 and 4 only"
+    ],
+    "optionFeedback": [
+      "Correct. Faeces are egested, not excreted. The other statements are correct.",
+      "Statement 3 is wrong: faeces are egested.",
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong."
+    ],
+    "answer": 0,
+    "explanation": "Faeces are egested, not excreted. The other statements are correct.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-13.1-09",
+    "topic": "13.1",
+    "level": "O Level 5090",
+    "question": "Which is a waste product of metabolism?",
+    "options": [
+      "fibre",
+      "glucose",
+      "oxygen",
+      "carbon dioxide"
+    ],
+    "optionFeedback": [
+      "Fibre is undigested food, not a product of metabolism.",
+      "Glucose is a useful nutrient.",
+      "Oxygen is used in respiration.",
+      "Correct. Carbon dioxide is made in cells by respiration."
+    ],
+    "answer": 3,
+    "explanation": "Carbon dioxide is made in cells by respiration.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-13.1-10",
+    "topic": "13.1",
+    "level": "O Level 5090",
+    "question": "After a meal high in protein, more urea is made. Why?",
+    "options": [
+      "More amino acids are absorbed than the body needs, so the excess is broken down.",
+      "Protein is converted directly into urea in the stomach.",
+      "Urea is a protein found in food.",
+      "The kidneys make more urea."
+    ],
+    "optionFeedback": [
+      "Correct. Excess amino acids cannot be stored, so the liver deaminates them, forming more urea.",
+      "Urea is made in the liver.",
+      "Urea is a waste product.",
+      "The liver makes urea."
+    ],
+    "answer": 0,
+    "explanation": "Excess amino acids cannot be stored, so the liver deaminates them, forming more urea.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-13.2-01",
+    "topic": "13.2",
+    "level": "O Level 5090",
+    "question": "Which structure carries urine from the kidney to the bladder?",
+    "options": [
+      "urethra",
+      "renal artery",
+      "ureter",
+      "collecting duct"
+    ],
+    "optionFeedback": [
+      "The urethra carries urine out of the body from the bladder.",
+      "This carries blood to the kidney.",
+      "Correct. Each ureter carries urine from a kidney to the bladder.",
+      "This is inside the kidney."
+    ],
+    "answer": 2,
+    "explanation": "Each ureter carries urine from a kidney to the bladder.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-13.2-02",
+    "topic": "13.2",
+    "level": "O Level 5090",
+    "question": "What is the function of the bladder?",
+    "options": [
+      "filtering blood",
+      "storing urine",
+      "making urea",
+      "reabsorbing glucose"
+    ],
+    "optionFeedback": [
+      "Filtering happens in the kidney.",
+      "Correct. The bladder stores urine until it is released through the urethra.",
+      "Urea is made in the liver.",
+      "This happens in the kidney tubules."
+    ],
+    "answer": 1,
+    "explanation": "The bladder stores urine until it is released through the urethra.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-13.2-03",
+    "topic": "13.2",
+    "level": "O Level 5090",
+    "question": "Where in the nephron does filtration of the blood take place?",
+    "options": [
+      "loop of Henle",
+      "glomerulus into the Bowman's capsule",
+      "collecting duct",
+      "ureter"
+    ],
+    "optionFeedback": [
+      "This is mainly for reabsorbing water.",
+      "Correct. High blood pressure in the glomerulus forces small molecules into the Bowman's capsule.",
+      "Water is reabsorbed here.",
+      "The ureter is outside the nephron."
+    ],
+    "answer": 1,
+    "explanation": "High blood pressure in the glomerulus forces small molecules into the Bowman's capsule.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-13.2-04",
+    "topic": "13.2",
+    "level": "O Level 5090",
+    "question": "Which substances are filtered out of the blood into the Bowman's capsule?",
+    "options": [
+      "water, proteins and red blood cells",
+      "urea only",
+      "red blood cells and platelets",
+      "water, glucose, salts and urea"
+    ],
+    "optionFeedback": [
+      "Proteins and cells are too large to be filtered.",
+      "Many small molecules are filtered.",
+      "Cells are too large.",
+      "Correct. Small molecules pass through; large proteins and blood cells stay in the blood."
+    ],
+    "answer": 3,
+    "explanation": "Small molecules pass through; large proteins and blood cells stay in the blood.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-13.2-05",
+    "topic": "13.2",
+    "level": "O Level 5090",
+    "question": "Which substance is normally all reabsorbed into the blood from the kidney tubule?",
+    "options": [
+      "urea",
+      "glucose",
+      "protein",
+      "red blood cells"
+    ],
+    "optionFeedback": [
+      "Most urea stays in the urine.",
+      "Correct. All the glucose is reabsorbed, so healthy urine contains no glucose.",
+      "Protein is not filtered in a healthy kidney.",
+      "These are not filtered."
+    ],
+    "answer": 1,
+    "explanation": "All the glucose is reabsorbed, so healthy urine contains no glucose.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-13.2-06",
+    "topic": "13.2",
+    "level": "O Level 5090",
+    "question": "The table shows the concentration of substances in the blood plasma and in the urine of a healthy person.\nWhich row identifies P, Q and R?",
+    "table": {
+      "headers": [
+        "substance",
+        "plasma",
+        "urine"
+      ],
+      "rows": [
+        [
+          "P",
+          "0.1",
+          "0.0"
+        ],
+        [
+          "Q",
+          "0.03",
+          "2.0"
+        ],
+        [
+          "R",
+          "8.0",
+          "0.0"
+        ]
+      ]
+    },
+    "options": [
+      "P urea; Q glucose; R protein",
+      "P protein; Q urea; R glucose",
+      "P glucose; Q protein; R urea",
+      "P glucose; Q urea; R protein"
+    ],
+    "optionFeedback": [
+      "Urea is concentrated in urine, not absent.",
+      "Protein is the larger plasma value here.",
+      "Protein is not found in healthy urine.",
+      "Correct. Glucose is filtered then fully reabsorbed; urea is concentrated in urine; protein is not filtered."
+    ],
+    "answer": 3,
+    "explanation": "Glucose is filtered then fully reabsorbed; urea is concentrated in urine; protein is not filtered.",
+    "difficulty": "hard",
+    "type": "diagram"
+  },
+  {
+    "id": "o5090-13.2-07",
+    "topic": "13.2",
+    "level": "O Level 5090",
+    "question": "What happens in the liver during deamination?",
+    "options": [
+      "Glucose is changed into glycogen.",
+      "Urea is filtered out of the blood.",
+      "Proteins are digested into amino acids.",
+      "The nitrogen-containing part of amino acids is removed and made into urea."
+    ],
+    "optionFeedback": [
+      "This is glucose storage, not deamination.",
+      "Filtering happens in the kidney.",
+      "Digestion happens in the gut.",
+      "Correct. Deamination removes the nitrogen part of excess amino acids, which becomes urea."
+    ],
+    "answer": 3,
+    "explanation": "Deamination removes the nitrogen part of excess amino acids, which becomes urea.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-13.2-08",
+    "topic": "13.2",
+    "level": "O Level 5090",
+    "question": "Apart from making urea, what does the liver do with amino acids?",
+    "options": [
+      "uses them to make proteins such as plasma proteins",
+      "stores them as glycogen",
+      "turns them into fats for storage only",
+      "excretes them in bile"
+    ],
+    "optionFeedback": [
+      "Correct. The liver uses amino acids to make proteins, and deaminates the excess.",
+      "Glycogen is made from glucose.",
+      "This is not the main use.",
+      "Amino acids are not excreted in bile."
+    ],
+    "answer": 0,
+    "explanation": "The liver uses amino acids to make proteins, and deaminates the excess.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-13.2-09",
+    "topic": "13.2",
+    "level": "O Level 5090",
+    "question": "Which statements about the nephron are correct?\n1 Filtration happens at the glomerulus.\n2 Water is reabsorbed from the tubules.\n3 Protein is filtered and then reabsorbed.\n4 Urine passes to the collecting duct.",
+    "options": [
+      "1 and 3 only",
+      "2 and 3 only",
+      "3 and 4 only",
+      "1, 2 and 4"
+    ],
+    "optionFeedback": [
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong.",
+      "Correct. Protein is too large to be filtered. The other statements are correct."
+    ],
+    "answer": 3,
+    "explanation": "Protein is too large to be filtered. The other statements are correct.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-13.2-10",
+    "topic": "13.2",
+    "level": "O Level 5090",
+    "question": "A person drinks a lot of water. What happens to their urine?",
+    "options": [
+      "A smaller volume of more concentrated urine is made.",
+      "The urine contains glucose.",
+      "A larger volume of more dilute urine is made.",
+      "No urine is made."
+    ],
+    "optionFeedback": [
+      "This happens when water is short.",
+      "Drinking water does not cause this.",
+      "Correct. Less water is reabsorbed, so more dilute urine is produced.",
+      "Excess water must be removed."
+    ],
+    "answer": 2,
+    "explanation": "Less water is reabsorbed, so more dilute urine is produced.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.1-01",
+    "topic": "14.1",
+    "level": "O Level 5090",
+    "question": "Which structures make up the central nervous system?",
+    "options": [
+      "brain and nerves",
+      "spinal cord and sense organs",
+      "brain and spinal cord",
+      "nerves only"
+    ],
+    "optionFeedback": [
+      "Nerves are part of the peripheral nervous system.",
+      "Sense organs are not part of the CNS.",
+      "Correct. The CNS is the brain and spinal cord.",
+      "Nerves form the peripheral nervous system."
+    ],
+    "answer": 2,
+    "explanation": "The CNS is the brain and spinal cord.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.1-02",
+    "topic": "14.1",
+    "level": "O Level 5090",
+    "question": "What type of neurone carries impulses from a receptor to the CNS?",
+    "options": [
+      "sensory neurone",
+      "motor neurone",
+      "relay neurone",
+      "effector neurone"
+    ],
+    "optionFeedback": [
+      "Correct. Sensory neurones carry impulses from receptors to the CNS.",
+      "Motor neurones carry impulses to effectors.",
+      "Relay neurones are inside the CNS.",
+      "This is not a type of neurone."
+    ],
+    "answer": 0,
+    "explanation": "Sensory neurones carry impulses from receptors to the CNS.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.1-03",
+    "topic": "14.1",
+    "level": "O Level 5090",
+    "question": "What is the correct order of structures in a reflex arc?",
+    "options": [
+      "receptor, motor neurone, relay neurone, sensory neurone, effector",
+      "effector, sensory neurone, relay neurone, motor neurone, receptor",
+      "receptor, relay neurone, sensory neurone, motor neurone, effector",
+      "receptor, sensory neurone, relay neurone, motor neurone, effector"
+    ],
+    "optionFeedback": [
+      "The neurones are in the wrong order.",
+      "This is backwards.",
+      "The sensory neurone comes first.",
+      "Correct. The impulse passes from receptor to sensory, relay and motor neurones, then to the effector."
+    ],
+    "answer": 3,
+    "explanation": "The impulse passes from receptor to sensory, relay and motor neurones, then to the effector.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.1-04",
+    "topic": "14.1",
+    "level": "O Level 5090",
+    "question": "Which is a reflex action?",
+    "options": [
+      "pulling your hand away from a hot object",
+      "choosing what to eat",
+      "writing your name",
+      "deciding to run"
+    ],
+    "optionFeedback": [
+      "Correct. A reflex is fast and automatic, and protects the body.",
+      "This is a voluntary action.",
+      "This is a voluntary action.",
+      "This is a voluntary action."
+    ],
+    "answer": 0,
+    "explanation": "A reflex is fast and automatic, and protects the body.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.1-05",
+    "topic": "14.1",
+    "level": "O Level 5090",
+    "question": "Where is the relay neurone found in a reflex arc?",
+    "options": [
+      "in the muscle",
+      "in the skin",
+      "in the spinal cord",
+      "in the sense organ"
+    ],
+    "optionFeedback": [
+      "The muscle is the effector.",
+      "Receptors are in the skin.",
+      "Correct. Relay neurones connect sensory and motor neurones in the CNS.",
+      "The relay neurone is in the CNS."
+    ],
+    "answer": 2,
+    "explanation": "Relay neurones connect sensory and motor neurones in the CNS.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.1-06",
+    "topic": "14.1",
+    "level": "O Level 5090",
+    "question": "In a reflex arc, what is the effector?",
+    "options": [
+      "the receptor that detects the stimulus",
+      "the neurone in the spinal cord",
+      "a muscle or gland that responds",
+      "the brain"
+    ],
+    "optionFeedback": [
+      "This is the receptor.",
+      "This is the relay neurone.",
+      "Correct. Effectors are muscles or glands.",
+      "The effector carries out the response."
+    ],
+    "answer": 2,
+    "explanation": "Effectors are muscles or glands.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.1-07",
+    "topic": "14.1",
+    "level": "O Level 5090",
+    "question": "How does an impulse cross a synapse?",
+    "options": [
+      "A chemical is released, diffuses across the gap and binds to receptors on the next neurone.",
+      "The electrical impulse jumps across the gap.",
+      "Blood carries the impulse across the gap.",
+      "The two neurones touch and share cytoplasm."
+    ],
+    "optionFeedback": [
+      "Correct. Neurotransmitter molecules diffuse across the gap and bind to receptor proteins.",
+      "The impulse is passed on by a chemical.",
+      "Blood is not involved.",
+      "There is a gap between them."
+    ],
+    "answer": 0,
+    "explanation": "Neurotransmitter molecules diffuse across the gap and bind to receptor proteins.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.1-08",
+    "topic": "14.1",
+    "level": "O Level 5090",
+    "question": "Why can impulses travel in only one direction across a synapse?",
+    "options": [
+      "The gap is too wide for impulses to return.",
+      "Impulses always travel towards the brain.",
+      "The chemical is released from only one side and the receptors are only on the other side.",
+      "The second neurone has no cytoplasm."
+    ],
+    "optionFeedback": [
+      "This is not the reason.",
+      "Motor impulses travel away from the CNS.",
+      "Correct. Neurotransmitter vesicles are on one side, receptors on the other.",
+      "This is not true."
+    ],
+    "answer": 2,
+    "explanation": "Neurotransmitter vesicles are on one side, receptors on the other.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.1-09",
+    "topic": "14.1",
+    "level": "O Level 5090",
+    "question": "Which row shows the type of neurone and where it carries impulses? (sensory; motor)",
+    "options": [
+      "receptor to CNS; CNS to effector",
+      "CNS to effector; receptor to CNS",
+      "CNS to CNS; receptor to effector",
+      "effector to CNS; CNS to receptor"
+    ],
+    "optionFeedback": [
+      "Correct. Sensory neurones carry impulses to the CNS; motor neurones carry them to effectors.",
+      "This is the wrong way round.",
+      "These do not match.",
+      "Neither matches."
+    ],
+    "answer": 0,
+    "explanation": "Sensory neurones carry impulses to the CNS; motor neurones carry them to effectors.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.1-10",
+    "topic": "14.1",
+    "level": "O Level 5090",
+    "question": "Which statements about the nervous system are correct?\n1 Impulses travel along neurones as electrical signals.\n2 Reflex actions are automatic.\n3 Motor neurones carry impulses to receptors.\n4 Synapses are found between neurones.",
+    "options": [
+      "1 and 3 only",
+      "1, 2 and 4",
+      "2 and 3 only",
+      "3 and 4 only"
+    ],
+    "optionFeedback": [
+      "Statement 3 is wrong.",
+      "Correct. Motor neurones carry impulses to effectors, not receptors.",
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong."
+    ],
+    "answer": 1,
+    "explanation": "Motor neurones carry impulses to effectors, not receptors.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.2-01",
+    "topic": "14.2",
+    "level": "O Level 5090",
+    "question": "Which part of the eye contains light receptor cells?",
+    "options": [
+      "retina",
+      "cornea",
+      "iris",
+      "lens"
+    ],
+    "optionFeedback": [
+      "Correct. The retina contains receptor cells that respond to light.",
+      "The cornea refracts light.",
+      "The iris controls pupil size.",
+      "The lens focuses light."
+    ],
+    "answer": 0,
+    "explanation": "The retina contains receptor cells that respond to light.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.2-02",
+    "topic": "14.2",
+    "level": "O Level 5090",
+    "question": "What is the function of the iris?",
+    "options": [
+      "focusing light on the retina",
+      "carrying impulses to the brain",
+      "controlling the amount of light entering the eye",
+      "detecting light"
+    ],
+    "optionFeedback": [
+      "The lens does this.",
+      "The optic nerve does this.",
+      "Correct. The iris changes the size of the pupil.",
+      "The retina does this."
+    ],
+    "answer": 2,
+    "explanation": "The iris changes the size of the pupil.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.2-03",
+    "topic": "14.2",
+    "level": "O Level 5090",
+    "question": "Which part of the eye refracts light the most?",
+    "options": [
+      "lens",
+      "retina",
+      "pupil",
+      "cornea"
+    ],
+    "optionFeedback": [
+      "The lens fine-tunes the focus.",
+      "The retina detects light.",
+      "The pupil is a hole.",
+      "Correct. Most refraction happens at the cornea."
+    ],
+    "answer": 3,
+    "explanation": "Most refraction happens at the cornea.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.2-04",
+    "topic": "14.2",
+    "level": "O Level 5090",
+    "question": "Why does the blind spot not detect light?",
+    "options": [
+      "It is covered by the iris.",
+      "It contains too many receptors.",
+      "There are no receptor cells where the optic nerve leaves the eye.",
+      "The lens does not focus light there."
+    ],
+    "optionFeedback": [
+      "The iris is at the front.",
+      "It has none.",
+      "Correct. The blind spot has no light receptors.",
+      "The reason is the absence of receptors."
+    ],
+    "answer": 2,
+    "explanation": "The blind spot has no light receptors.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.2-05",
+    "topic": "14.2",
+    "level": "O Level 5090",
+    "question": "What happens in the eye when a person moves into bright light?",
+    "options": [
+      "The radial muscles of the iris contract and the pupil gets bigger.",
+      "The circular muscles of the iris contract and the pupil gets smaller.",
+      "The lens becomes thicker.",
+      "The ciliary muscles relax."
+    ],
+    "optionFeedback": [
+      "This happens in dim light.",
+      "Correct. In bright light the pupil narrows to protect the retina.",
+      "This is accommodation for near objects.",
+      "This is about focusing."
+    ],
+    "answer": 1,
+    "explanation": "In bright light the pupil narrows to protect the retina.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.2-06",
+    "topic": "14.2",
+    "level": "O Level 5090",
+    "question": "Which row describes the eye when focusing on a near object?\n(ciliary muscles; suspensory ligaments; lens)",
+    "options": [
+      "contract; slack; fatter",
+      "relax; tight; thinner",
+      "contract; tight; thinner",
+      "relax; slack; fatter"
+    ],
+    "optionFeedback": [
+      "Correct. For near objects the ciliary muscles contract, ligaments slacken and the lens becomes fatter.",
+      "This is for a distant object.",
+      "The ligaments are slack and the lens fatter.",
+      "The ciliary muscles contract."
+    ],
+    "answer": 0,
+    "explanation": "For near objects the ciliary muscles contract, ligaments slacken and the lens becomes fatter.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.2-07",
+    "topic": "14.2",
+    "level": "O Level 5090",
+    "question": "A person looks from a book to a distant mountain. What happens to the lens?",
+    "options": [
+      "It becomes thinner because the suspensory ligaments are pulled tight.",
+      "It becomes fatter because the ciliary muscles contract.",
+      "It moves forward in the eye.",
+      "It stays the same shape."
+    ],
+    "optionFeedback": [
+      "Correct. For distant objects the ciliary muscles relax, ligaments tighten and the lens thins.",
+      "This is for near objects.",
+      "The lens changes shape, it does not move.",
+      "It changes shape to focus."
+    ],
+    "answer": 0,
+    "explanation": "For distant objects the ciliary muscles relax, ligaments tighten and the lens thins.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.2-08",
+    "topic": "14.2",
+    "level": "O Level 5090",
+    "question": "What is the fovea?",
+    "options": [
+      "the place where the optic nerve leaves",
+      "the coloured part of the eye",
+      "the part of the retina with the most cone cells, giving the sharpest image",
+      "the hole in the iris"
+    ],
+    "optionFeedback": [
+      "This is the blind spot.",
+      "This is the iris.",
+      "Correct. The fovea gives the clearest, most detailed vision.",
+      "This is the pupil."
+    ],
+    "answer": 2,
+    "explanation": "The fovea gives the clearest, most detailed vision.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.2-09",
+    "topic": "14.2",
+    "level": "O Level 5090",
+    "question": "What is a sense organ?",
+    "options": [
+      "a muscle that responds to impulses",
+      "a nerve that carries impulses",
+      "a group of receptor cells that respond to specific stimuli",
+      "a gland that releases hormones"
+    ],
+    "optionFeedback": [
+      "This is an effector.",
+      "Nerves carry impulses.",
+      "Correct. Sense organs contain receptors for particular stimuli, such as light.",
+      "This is an endocrine gland."
+    ],
+    "answer": 2,
+    "explanation": "Sense organs contain receptors for particular stimuli, such as light.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.2-10",
+    "topic": "14.2",
+    "level": "O Level 5090",
+    "question": "Which statements about the pupil reflex are correct?\n1 It is automatic.\n2 In dim light the pupil gets bigger.\n3 The lens controls pupil size.\n4 It protects the retina from bright light.",
+    "options": [
+      "1 and 3 only",
+      "2 and 3 only",
+      "1, 2 and 4",
+      "3 and 4 only"
+    ],
+    "optionFeedback": [
+      "Statement 3 is wrong: the iris controls pupil size.",
+      "Statement 3 is wrong.",
+      "Correct. The iris, not the lens, controls pupil size.",
+      "Statement 3 is wrong."
+    ],
+    "answer": 2,
+    "explanation": "The iris, not the lens, controls pupil size.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.3-01",
+    "topic": "14.3",
+    "level": "O Level 5090",
+    "question": "What is a hormone?",
+    "options": [
+      "a chemical made by a gland and carried by the blood to target organs",
+      "an electrical impulse carried by neurones",
+      "an enzyme that digests food",
+      "a cell that fights disease"
+    ],
+    "optionFeedback": [
+      "Correct. Hormones are chemicals secreted by glands into the blood.",
+      "This describes nervous control.",
+      "Hormones are not digestive enzymes.",
+      "This describes white blood cells."
+    ],
+    "answer": 0,
+    "explanation": "Hormones are chemicals secreted by glands into the blood.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.3-02",
+    "topic": "14.3",
+    "level": "O Level 5090",
+    "question": "Which gland makes adrenaline?",
+    "options": [
+      "pancreas",
+      "testis",
+      "ovary",
+      "adrenal gland"
+    ],
+    "optionFeedback": [
+      "The pancreas makes insulin and glucagon.",
+      "The testes make testosterone.",
+      "The ovaries make oestrogen.",
+      "Correct. Adrenaline is made by the adrenal glands."
+    ],
+    "answer": 3,
+    "explanation": "Adrenaline is made by the adrenal glands.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.3-03",
+    "topic": "14.3",
+    "level": "O Level 5090",
+    "question": "Which row shows a gland and the hormone it makes? (pancreas; testis)",
+    "options": [
+      "insulin; testosterone",
+      "testosterone; insulin",
+      "adrenaline; oestrogen",
+      "insulin; oestrogen"
+    ],
+    "optionFeedback": [
+      "Correct. The pancreas makes insulin; the testes make testosterone.",
+      "This is the wrong way round.",
+      "Neither matches.",
+      "The testis makes testosterone."
+    ],
+    "answer": 0,
+    "explanation": "The pancreas makes insulin; the testes make testosterone.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.3-04",
+    "topic": "14.3",
+    "level": "O Level 5090",
+    "question": "What are the effects of adrenaline?",
+    "options": [
+      "decreased heart rate and increased blood glucose",
+      "increased heart rate and decreased blood glucose",
+      "decreased heart rate and decreased blood glucose",
+      "increased heart rate and increased blood glucose"
+    ],
+    "optionFeedback": [
+      "Adrenaline raises heart rate.",
+      "Adrenaline raises blood glucose.",
+      "Both are wrong.",
+      "Correct. Adrenaline prepares the body for action by raising heart rate and blood glucose."
+    ],
+    "answer": 3,
+    "explanation": "Adrenaline prepares the body for action by raising heart rate and blood glucose.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.3-05",
+    "topic": "14.3",
+    "level": "O Level 5090",
+    "question": "In which situation would adrenaline be released?",
+    "options": [
+      "sleeping",
+      "digesting a meal",
+      "running away from danger",
+      "sitting still reading"
+    ],
+    "optionFeedback": [
+      "This is a calm state.",
+      "Adrenaline is not released for this.",
+      "Correct. Adrenaline is released in fear, stress or excitement.",
+      "This is not stressful."
+    ],
+    "answer": 2,
+    "explanation": "Adrenaline is released in fear, stress or excitement.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.3-06",
+    "topic": "14.3",
+    "level": "O Level 5090",
+    "question": "Why does adrenaline increase blood glucose?",
+    "options": [
+      "to store more glucose as glycogen",
+      "to make more urea",
+      "to supply more glucose for respiration in muscles",
+      "to reduce the heart rate"
+    ],
+    "optionFeedback": [
+      "Adrenaline causes glycogen breakdown.",
+      "This is unrelated.",
+      "Correct. More glucose allows more respiration to release energy for action.",
+      "Adrenaline raises it."
+    ],
+    "answer": 2,
+    "explanation": "More glucose allows more respiration to release energy for action.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.3-07",
+    "topic": "14.3",
+    "level": "O Level 5090",
+    "question": "Which row compares nervous and hormonal control? (speed; how long the effect lasts)",
+    "options": [
+      "nervous: slower, longer; hormonal: fast, short",
+      "nervous: fast, longer; hormonal: slower, short",
+      "nervous: slower, short; hormonal: fast, longer",
+      "nervous: fast, short; hormonal: slower, longer"
+    ],
+    "optionFeedback": [
+      "This is the wrong way round.",
+      "The durations are swapped.",
+      "The speeds are swapped.",
+      "Correct. Nerve impulses are fast and short-lived; hormones are slower and last longer."
+    ],
+    "answer": 3,
+    "explanation": "Nerve impulses are fast and short-lived; hormones are slower and last longer.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.3-08",
+    "topic": "14.3",
+    "level": "O Level 5090",
+    "question": "How do hormones reach their target organs?",
+    "options": [
+      "along neurones",
+      "through the lymph only",
+      "in the blood plasma",
+      "by diffusion through the whole body from the gland"
+    ],
+    "optionFeedback": [
+      "Impulses travel along neurones.",
+      "Hormones travel in the blood.",
+      "Correct. Hormones are transported in the blood.",
+      "They are carried by blood."
+    ],
+    "answer": 2,
+    "explanation": "Hormones are transported in the blood.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.3-09",
+    "topic": "14.3",
+    "level": "O Level 5090",
+    "question": "Which gland makes oestrogen?",
+    "options": [
+      "ovary",
+      "testis",
+      "adrenal gland",
+      "pancreas"
+    ],
+    "optionFeedback": [
+      "Correct. Oestrogen is made by the ovaries.",
+      "The testis makes testosterone.",
+      "This makes adrenaline.",
+      "This makes insulin and glucagon."
+    ],
+    "answer": 0,
+    "explanation": "Oestrogen is made by the ovaries.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.3-10",
+    "topic": "14.3",
+    "level": "O Level 5090",
+    "question": "Which statements about hormones are correct?\n1 They are carried in the blood.\n2 They affect target organs.\n3 They act faster than nerve impulses.\n4 They are made by glands.",
+    "options": [
+      "1 and 3 only",
+      "2 and 3 only",
+      "3 and 4 only",
+      "1, 2 and 4"
+    ],
+    "optionFeedback": [
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong.",
+      "Correct. Hormones act more slowly than nerve impulses."
+    ],
+    "answer": 3,
+    "explanation": "Hormones act more slowly than nerve impulses.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.4-01",
+    "topic": "14.4",
+    "level": "O Level 5090",
+    "question": "What is homeostasis?",
+    "options": [
+      "removing waste products from the body",
+      "responding to a stimulus with a reflex",
+      "keeping a constant internal environment",
+      "making new cells by mitosis"
+    ],
+    "optionFeedback": [
+      "This is excretion.",
+      "This is a reflex action.",
+      "Correct. Homeostasis is the maintenance of a constant internal environment.",
+      "This is growth and repair."
+    ],
+    "answer": 2,
+    "explanation": "Homeostasis is the maintenance of a constant internal environment.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.4-02",
+    "topic": "14.4",
+    "level": "O Level 5090",
+    "question": "Which is an example of a factor controlled by homeostasis?",
+    "options": [
+      "eye colour",
+      "height",
+      "body temperature",
+      "blood group"
+    ],
+    "optionFeedback": [
+      "This does not change.",
+      "This is not controlled by homeostasis.",
+      "Correct. Body temperature, blood glucose and water content are kept constant.",
+      "This does not change."
+    ],
+    "answer": 2,
+    "explanation": "Body temperature, blood glucose and water content are kept constant.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.4-03",
+    "topic": "14.4",
+    "level": "O Level 5090",
+    "question": "What is negative feedback?",
+    "options": [
+      "a change from the set point causes a response that makes the change bigger",
+      "the body ignores a change from the set point",
+      "a change that only happens in plants",
+      "a change from the set point causes a response that returns the level to the set point"
+    ],
+    "optionFeedback": [
+      "This is positive feedback.",
+      "Homeostasis responds.",
+      "It happens in animals.",
+      "Correct. Negative feedback reverses changes, bringing the level back to the set point."
+    ],
+    "answer": 3,
+    "explanation": "Negative feedback reverses changes, bringing the level back to the set point.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.4-04",
+    "topic": "14.4",
+    "level": "O Level 5090",
+    "question": "What is a set point?",
+    "options": [
+      "the highest level a factor can reach",
+      "the normal level around which a factor is kept",
+      "the place where hormones are made",
+      "the point at which a reflex happens"
+    ],
+    "optionFeedback": [
+      "It is the normal level.",
+      "Correct. The set point is the normal value, such as 37 °C for body temperature.",
+      "This is a gland.",
+      "This is not a set point."
+    ],
+    "answer": 1,
+    "explanation": "The set point is the normal value, such as 37 °C for body temperature.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.4-05",
+    "topic": "14.4",
+    "level": "O Level 5090",
+    "question": "Body temperature rises above the set point. What does negative feedback cause?",
+    "options": [
+      "responses that raise body temperature further",
+      "no response",
+      "responses that lower body temperature",
+      "a fall in blood glucose"
+    ],
+    "optionFeedback": [
+      "This would be positive feedback.",
+      "The body responds.",
+      "Correct. The body responds by cooling down, returning to the set point.",
+      "This is unrelated."
+    ],
+    "answer": 2,
+    "explanation": "The body responds by cooling down, returning to the set point.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.4-06",
+    "topic": "14.4",
+    "level": "O Level 5090",
+    "question": "Blood glucose rises after a meal and then falls back to normal. Why is this an example of negative feedback?",
+    "options": [
+      "The rise triggers a further rise.",
+      "The level never changes.",
+      "The kidney removes all the glucose.",
+      "The rise triggers a response that brings the level back down to the set point."
+    ],
+    "optionFeedback": [
+      "This would be positive feedback.",
+      "It does change, then returns.",
+      "Glucose is not normally lost in urine.",
+      "Correct. The change is detected and reversed, returning to the set point."
+    ],
+    "answer": 3,
+    "explanation": "The change is detected and reversed, returning to the set point.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.4-07",
+    "topic": "14.4",
+    "level": "O Level 5090",
+    "question": "Why must conditions inside the body be kept constant?",
+    "options": [
+      "so that the body never needs food",
+      "so that enzymes and cells work properly",
+      "so that hormones are never made",
+      "so that the heart stops beating"
+    ],
+    "optionFeedback": [
+      "Food is still needed.",
+      "Correct. Enzymes work best in a narrow range of conditions.",
+      "Hormones are used in homeostasis.",
+      "This is not the reason."
+    ],
+    "answer": 1,
+    "explanation": "Enzymes work best in a narrow range of conditions.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.4-08",
+    "topic": "14.4",
+    "level": "O Level 5090",
+    "question": "Which statements about negative feedback are correct?\n1 It involves a set point.\n2 It reverses a change.\n3 It makes a change larger.\n4 It helps keep conditions constant.",
+    "options": [
+      "1 and 3 only",
+      "2 and 3 only",
+      "1, 2 and 4",
+      "3 and 4 only"
+    ],
+    "optionFeedback": [
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong.",
+      "Correct. Negative feedback reverses changes; it does not make them larger.",
+      "Statement 3 is wrong."
+    ],
+    "answer": 2,
+    "explanation": "Negative feedback reverses changes; it does not make them larger.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.4-09",
+    "topic": "14.4",
+    "level": "O Level 5090",
+    "question": "Which part of the body detects a change in body temperature?",
+    "options": [
+      "effectors such as muscles",
+      "the bladder",
+      "the lens of the eye",
+      "receptors, such as those in the skin and hypothalamus"
+    ],
+    "optionFeedback": [
+      "Effectors respond, they do not detect.",
+      "It is not involved.",
+      "It is not involved.",
+      "Correct. Receptors detect changes; effectors respond."
+    ],
+    "answer": 3,
+    "explanation": "Receptors detect changes; effectors respond.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.4-10",
+    "topic": "14.4",
+    "level": "O Level 5090",
+    "question": "In negative feedback, which structures bring about the response that corrects a change?",
+    "options": [
+      "receptors",
+      "the set point",
+      "effectors",
+      "stimuli"
+    ],
+    "optionFeedback": [
+      "Receptors detect the change.",
+      "This is a value, not a structure.",
+      "Correct. Effectors such as muscles and glands carry out the correction.",
+      "A stimulus is the change itself."
+    ],
+    "answer": 2,
+    "explanation": "Effectors such as muscles and glands carry out the correction.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.5-01",
+    "topic": "14.5",
+    "level": "O Level 5090",
+    "question": "Which part of the brain controls body temperature?",
+    "options": [
+      "cerebrum",
+      "spinal cord",
+      "hypothalamus",
+      "cerebellum"
+    ],
+    "optionFeedback": [
+      "This controls conscious thought.",
+      "This is not part of the brain.",
+      "Correct. The hypothalamus monitors blood temperature and coordinates responses.",
+      "This controls balance."
+    ],
+    "answer": 2,
+    "explanation": "The hypothalamus monitors blood temperature and coordinates responses.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.5-02",
+    "topic": "14.5",
+    "level": "O Level 5090",
+    "question": "How does sweating cool the body?",
+    "options": [
+      "Water in sweat evaporates, taking heat from the skin.",
+      "Sweat is cold.",
+      "Sweat stops blood flowing to the skin.",
+      "Sweat traps a layer of air."
+    ],
+    "optionFeedback": [
+      "Correct. Evaporation of sweat transfers heat away from the skin.",
+      "It is the evaporation that cools.",
+      "It does not.",
+      "This is what hairs do."
+    ],
+    "answer": 0,
+    "explanation": "Evaporation of sweat transfers heat away from the skin.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.5-03",
+    "topic": "14.5",
+    "level": "O Level 5090",
+    "question": "What happens to arterioles in the skin when the body is too hot?",
+    "options": [
+      "They narrow, so less blood flows near the skin surface.",
+      "They widen, so less heat is lost.",
+      "The capillaries move up and down in the skin.",
+      "They widen, so more blood flows near the skin surface and more heat is lost."
+    ],
+    "optionFeedback": [
+      "This happens when cold.",
+      "Widening increases heat loss.",
+      "Capillaries do not move.",
+      "Correct. Vasodilation increases blood flow to the skin, so more heat is lost by radiation."
+    ],
+    "answer": 3,
+    "explanation": "Vasodilation increases blood flow to the skin, so more heat is lost by radiation.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.5-04",
+    "topic": "14.5",
+    "level": "O Level 5090",
+    "question": "What is vasoconstriction?",
+    "options": [
+      "widening of arterioles near the skin surface",
+      "contraction of hair erector muscles",
+      "narrowing of arterioles near the skin surface",
+      "shivering of muscles"
+    ],
+    "optionFeedback": [
+      "This is vasodilation.",
+      "This makes hairs stand up.",
+      "Correct. Vasoconstriction reduces blood flow to the skin, reducing heat loss.",
+      "Shivering releases heat by respiration."
+    ],
+    "answer": 2,
+    "explanation": "Vasoconstriction reduces blood flow to the skin, reducing heat loss.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.5-05",
+    "topic": "14.5",
+    "level": "O Level 5090",
+    "question": "How does shivering help warm the body?",
+    "options": [
+      "It reduces sweating.",
+      "It narrows the blood vessels.",
+      "It makes the hairs lie flat.",
+      "Muscle contractions increase respiration, releasing heat."
+    ],
+    "optionFeedback": [
+      "Shivering is not about sweat.",
+      "This is vasoconstriction.",
+      "This happens when hot.",
+      "Correct. Rapid muscle contractions need respiration, which releases heat."
+    ],
+    "answer": 3,
+    "explanation": "Rapid muscle contractions need respiration, which releases heat.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.5-06",
+    "topic": "14.5",
+    "level": "O Level 5090",
+    "question": "When a person is cold, the hair erector muscles contract. How does this reduce heat loss?",
+    "options": [
+      "The hairs lie flat so heat escapes.",
+      "The muscles produce sweat.",
+      "The hairs widen the blood vessels.",
+      "The hairs stand up and trap a layer of air, which insulates the skin."
+    ],
+    "optionFeedback": [
+      "This happens when hot.",
+      "Sweat glands produce sweat.",
+      "Hairs do not affect vessels.",
+      "Correct. Trapped air is a poor conductor of heat, so it insulates."
+    ],
+    "answer": 3,
+    "explanation": "Trapped air is a poor conductor of heat, so it insulates.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.5-07",
+    "topic": "14.5",
+    "level": "O Level 5090",
+    "question": "Which row shows the responses when the body is too hot? (sweating; arterioles near skin; hair erector muscles)",
+    "options": [
+      "decreases; narrow; contract",
+      "increases; narrow; relax",
+      "decreases; widen; contract",
+      "increases; widen; relax"
+    ],
+    "optionFeedback": [
+      "These are responses to cold.",
+      "Arterioles widen when hot.",
+      "Sweating increases and hair muscles relax.",
+      "Correct. When hot: more sweat, vasodilation and flat hairs."
+    ],
+    "answer": 3,
+    "explanation": "When hot: more sweat, vasodilation and flat hairs.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.5-08",
+    "topic": "14.5",
+    "level": "O Level 5090",
+    "question": "What is the role of fatty tissue under the skin in temperature control?",
+    "options": [
+      "insulation that reduces heat loss",
+      "producing sweat",
+      "detecting temperature",
+      "carrying blood"
+    ],
+    "optionFeedback": [
+      "Correct. Fat is a poor conductor of heat, so it insulates the body.",
+      "Sweat glands do this.",
+      "Receptors do this.",
+      "Blood vessels do this."
+    ],
+    "answer": 0,
+    "explanation": "Fat is a poor conductor of heat, so it insulates the body.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.5-09",
+    "topic": "14.5",
+    "level": "O Level 5090",
+    "question": "Where are the receptors that detect skin temperature?",
+    "options": [
+      "in the lens",
+      "in the stomach",
+      "in the bone",
+      "in the skin"
+    ],
+    "optionFeedback": [
+      "They are in the skin.",
+      "They are in the skin.",
+      "They are in the skin.",
+      "Correct. Temperature receptors in the skin send impulses to the hypothalamus."
+    ],
+    "answer": 3,
+    "explanation": "Temperature receptors in the skin send impulses to the hypothalamus.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.5-10",
+    "topic": "14.5",
+    "level": "O Level 5090",
+    "question": "Which statements describe responses to being cold?\n1 vasoconstriction\n2 shivering\n3 more sweating\n4 hairs standing up",
+    "options": [
+      "1 and 3 only",
+      "2 and 3 only",
+      "3 and 4 only",
+      "1, 2 and 4"
+    ],
+    "optionFeedback": [
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong.",
+      "Correct. Sweating increases when hot, not cold."
+    ],
+    "answer": 3,
+    "explanation": "Sweating increases when hot, not cold.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.6-01",
+    "topic": "14.6",
+    "level": "O Level 5090",
+    "question": "Which organ makes insulin?",
+    "options": [
+      "liver",
+      "kidney",
+      "pancreas",
+      "stomach"
+    ],
+    "optionFeedback": [
+      "The liver responds to insulin.",
+      "The kidney does not make insulin.",
+      "Correct. Insulin is made by the pancreas.",
+      "The stomach does not make insulin."
+    ],
+    "answer": 2,
+    "explanation": "Insulin is made by the pancreas.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.6-02",
+    "topic": "14.6",
+    "level": "O Level 5090",
+    "question": "What is the effect of insulin?",
+    "options": [
+      "It raises blood glucose concentration.",
+      "It raises heart rate.",
+      "It increases urea production.",
+      "It lowers blood glucose concentration."
+    ],
+    "optionFeedback": [
+      "Glucagon does this.",
+      "Adrenaline does this.",
+      "This is not its effect.",
+      "Correct. Insulin causes the liver to take up glucose and store it as glycogen."
+    ],
+    "answer": 3,
+    "explanation": "Insulin causes the liver to take up glucose and store it as glycogen.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.6-03",
+    "topic": "14.6",
+    "level": "O Level 5090",
+    "question": "What does insulin cause the liver to do?",
+    "options": [
+      "convert glycogen into glucose",
+      "convert amino acids into glucose",
+      "convert glucose into glycogen",
+      "release glucose into the blood"
+    ],
+    "optionFeedback": [
+      "Glucagon causes this.",
+      "This is not the effect.",
+      "Correct. Insulin causes the liver to store glucose as glycogen.",
+      "This raises blood glucose."
+    ],
+    "answer": 2,
+    "explanation": "Insulin causes the liver to store glucose as glycogen.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.6-04",
+    "topic": "14.6",
+    "level": "O Level 5090",
+    "question": "When blood glucose falls below the set point, which hormone is released?",
+    "options": [
+      "glucagon",
+      "insulin",
+      "testosterone",
+      "oestrogen"
+    ],
+    "optionFeedback": [
+      "Correct. Glucagon causes glycogen to be broken down into glucose.",
+      "Insulin is released when glucose is high.",
+      "This is a sex hormone.",
+      "This is a sex hormone."
+    ],
+    "answer": 0,
+    "explanation": "Glucagon causes glycogen to be broken down into glucose.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.6-05",
+    "topic": "14.6",
+    "level": "O Level 5090",
+    "question": "Which row describes glucose control? (hormone released after a meal; effect on glycogen in liver)",
+    "options": [
+      "glucagon; more glycogen made",
+      "insulin; more glycogen made",
+      "insulin; glycogen broken down",
+      "glucagon; glycogen broken down"
+    ],
+    "optionFeedback": [
+      "Glucagon is released when glucose is low.",
+      "Correct. After a meal insulin is released and glucose is stored as glycogen.",
+      "Insulin causes glycogen to be made.",
+      "This is the response to low glucose, not after a meal."
+    ],
+    "answer": 1,
+    "explanation": "After a meal insulin is released and glucose is stored as glycogen.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.6-06",
+    "topic": "14.6",
+    "level": "O Level 5090",
+    "question": "Why must blood glucose concentration be controlled?",
+    "options": [
+      "Glucose is a waste product.",
+      "Too much or too little glucose harms cells, for example by affecting water movement by osmosis.",
+      "Glucose is needed only by the liver.",
+      "Glucose blocks the arteries."
+    ],
+    "optionFeedback": [
+      "Glucose is a useful nutrient.",
+      "Correct. Cells need a steady glucose supply, and too much glucose can draw water out of cells.",
+      "All cells need glucose.",
+      "This is not the reason."
+    ],
+    "answer": 1,
+    "explanation": "Cells need a steady glucose supply, and too much glucose can draw water out of cells.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.6-07",
+    "topic": "14.6",
+    "level": "O Level 5090",
+    "question": "What is the cause of Type 1 diabetes?",
+    "options": [
+      "The pancreas makes too much insulin.",
+      "The pancreas does not make enough insulin.",
+      "The kidneys do not filter glucose.",
+      "The person eats too much protein."
+    ],
+    "optionFeedback": [
+      "This would lower blood glucose.",
+      "Correct. In Type 1 diabetes, the cells that make insulin do not work.",
+      "This is not the cause.",
+      "This is not the cause."
+    ],
+    "answer": 1,
+    "explanation": "In Type 1 diabetes, the cells that make insulin do not work.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.6-08",
+    "topic": "14.6",
+    "level": "O Level 5090",
+    "question": "Which is a sign of Type 1 diabetes?",
+    "options": [
+      "very low blood glucose after a meal",
+      "slow heart rate",
+      "protein in the blood",
+      "glucose in the urine"
+    ],
+    "optionFeedback": [
+      "Blood glucose is high.",
+      "This is not a usual sign.",
+      "This is normal.",
+      "Correct. High blood glucose means glucose appears in urine; thirst and tiredness are also signs."
+    ],
+    "answer": 3,
+    "explanation": "High blood glucose means glucose appears in urine; thirst and tiredness are also signs.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.6-09",
+    "topic": "14.6",
+    "level": "O Level 5090",
+    "question": "How is Type 1 diabetes treated?",
+    "options": [
+      "insulin injections and controlling carbohydrate in the diet",
+      "glucagon injections only",
+      "antibiotics",
+      "eating more sugar"
+    ],
+    "optionFeedback": [
+      "Correct. Injected insulin replaces the insulin the pancreas cannot make; diet is also controlled.",
+      "Glucagon raises blood glucose.",
+      "Diabetes is not a bacterial infection.",
+      "This raises blood glucose further."
+    ],
+    "answer": 0,
+    "explanation": "Injected insulin replaces the insulin the pancreas cannot make; diet is also controlled.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-14.6-10",
+    "topic": "14.6",
+    "level": "O Level 5090",
+    "question": "The table shows blood glucose after a meal for two people.\nWhich conclusion is correct?",
+    "table": {
+      "headers": [
+        "time after meal / hours",
+        "person X / mg per 100 cm³",
+        "person Y / mg per 100 cm³"
+      ],
+      "rows": [
+        [
+          "0",
+          "90",
+          "90"
+        ],
+        [
+          "1",
+          "140",
+          "220"
+        ],
+        [
+          "2",
+          "100",
+          "210"
+        ],
+        [
+          "3",
+          "90",
+          "190"
+        ]
+      ]
+    },
+    "options": [
+      "Person Y may have diabetes because their blood glucose stays high.",
+      "Person X may have diabetes because their blood glucose rises after the meal.",
+      "Both people have normal glucose control.",
+      "Person Y makes too much insulin."
+    ],
+    "optionFeedback": [
+      "Correct. X returns to 90 within three hours; Y stays high, a sign of poor insulin control.",
+      "It returns to normal quickly.",
+      "Y does not return to normal.",
+      "Y's glucose stays high, suggesting too little insulin."
+    ],
+    "answer": 0,
+    "explanation": "X returns to 90 within three hours; Y stays high, a sign of poor insulin control.",
+    "difficulty": "hard",
+    "type": "diagram"
+  },
+  {
+    "id": "o5090-15.1-01",
+    "topic": "15.1",
+    "level": "O Level 5090",
+    "question": "What is phototropism?",
+    "options": [
+      "a growth response of a plant to gravity",
+      "the making of food using light",
+      "a growth response of a plant to the direction of light",
+      "the loss of water from leaves"
+    ],
+    "optionFeedback": [
+      "This is gravitropism.",
+      "This is photosynthesis.",
+      "Correct. Phototropism is growth towards or away from light.",
+      "This is transpiration."
+    ],
+    "answer": 2,
+    "explanation": "Phototropism is growth towards or away from light.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-15.1-02",
+    "topic": "15.1",
+    "level": "O Level 5090",
+    "question": "What is gravitropism?",
+    "options": [
+      "a growth response of a plant to light",
+      "the movement of water up the stem",
+      "a growth response of a plant to gravity",
+      "the opening of stomata"
+    ],
+    "optionFeedback": [
+      "This is phototropism.",
+      "This is transpiration.",
+      "Correct. Gravitropism is growth in response to gravity.",
+      "This is not a tropism."
+    ],
+    "answer": 2,
+    "explanation": "Gravitropism is growth in response to gravity.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-15.1-03",
+    "topic": "15.1",
+    "level": "O Level 5090",
+    "question": "Which row describes the responses of shoots and roots? (shoot; root)",
+    "options": [
+      "grows towards gravity; grows towards light",
+      "grows away from light; grows away from gravity",
+      "grows towards light and away from gravity; grows towards gravity",
+      "grows towards gravity; grows away from gravity"
+    ],
+    "optionFeedback": [
+      "This is the wrong way round.",
+      "Both are wrong.",
+      "Correct. Shoots show positive phototropism and negative gravitropism; roots show positive gravitropism.",
+      "Shoots grow away from gravity."
+    ],
+    "answer": 2,
+    "explanation": "Shoots show positive phototropism and negative gravitropism; roots show positive gravitropism.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-15.1-04",
+    "topic": "15.1",
+    "level": "O Level 5090",
+    "question": "What is auxin?",
+    "options": [
+      "a plant hormone that controls growth",
+      "an enzyme that digests starch",
+      "a sugar made in photosynthesis",
+      "a mineral ion taken in by roots"
+    ],
+    "optionFeedback": [
+      "Correct. Auxin is a plant hormone made in the shoot tip.",
+      "This describes amylase.",
+      "This describes glucose.",
+      "Auxin is made by the plant."
+    ],
+    "answer": 0,
+    "explanation": "Auxin is a plant hormone made in the shoot tip.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-15.1-05",
+    "topic": "15.1",
+    "level": "O Level 5090",
+    "question": "Where is auxin made in a shoot?",
+    "options": [
+      "in the roots only",
+      "in the leaves only",
+      "in the flowers",
+      "at the shoot tip"
+    ],
+    "optionFeedback": [
+      "It is made in the shoot tip.",
+      "The shoot tip is the main source.",
+      "It is made in the shoot tip.",
+      "Correct. Auxin is made in the tip and diffuses down the shoot."
+    ],
+    "answer": 3,
+    "explanation": "Auxin is made in the tip and diffuses down the shoot.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-15.1-06",
+    "topic": "15.1",
+    "level": "O Level 5090",
+    "question": "How does auxin make a shoot bend towards light from one side?",
+    "options": [
+      "Auxin moves to the lit side, where it stops cells growing.",
+      "Auxin is destroyed on the shaded side.",
+      "Auxin moves to the shaded side, where it makes cells elongate more.",
+      "Auxin makes cells on the lit side divide faster."
+    ],
+    "optionFeedback": [
+      "Auxin collects on the shaded side.",
+      "It collects there.",
+      "Correct. More elongation on the shaded side makes the shoot bend towards the light.",
+      "The shaded side elongates more."
+    ],
+    "answer": 2,
+    "explanation": "More elongation on the shaded side makes the shoot bend towards the light.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-15.1-07",
+    "topic": "15.1",
+    "level": "O Level 5090",
+    "question": "A student cuts the tips off some shoots and lights them from one side. What result is expected?",
+    "options": [
+      "The shoots bend towards the light more quickly.",
+      "The shoots bend away from the light.",
+      "The shoots grow faster than normal.",
+      "The shoots do not bend towards the light."
+    ],
+    "optionFeedback": [
+      "The tip makes auxin, so removing it stops bending.",
+      "They do not bend.",
+      "Without auxin from the tip they grow less.",
+      "Correct. The tip makes auxin, so without it there is no bending response."
+    ],
+    "answer": 3,
+    "explanation": "The tip makes auxin, so without it there is no bending response.",
+    "difficulty": "hard",
+    "type": "practical"
+  },
+  {
+    "id": "o5090-15.1-08",
+    "topic": "15.1",
+    "level": "O Level 5090",
+    "question": "In an experiment on phototropism, which variable should be kept the same?",
+    "options": [
+      "type and age of seedling",
+      "the direction of the light",
+      "the amount of bending",
+      "whether the tip is covered"
+    ],
+    "optionFeedback": [
+      "Correct. Control variables like seedling type and age must be kept the same.",
+      "This is the independent variable.",
+      "This is the dependent variable.",
+      "This may be the variable being tested."
+    ],
+    "answer": 0,
+    "explanation": "Control variables like seedling type and age must be kept the same.",
+    "difficulty": "medium",
+    "type": "practical"
+  },
+  {
+    "id": "o5090-15.1-09",
+    "topic": "15.1",
+    "level": "O Level 5090",
+    "question": "Why is phototropism useful to a plant?",
+    "options": [
+      "The roots find more light.",
+      "The leaves get more light for photosynthesis.",
+      "It stops the plant losing water.",
+      "It helps pollination by wind."
+    ],
+    "optionFeedback": [
+      "Roots grow towards gravity, not light.",
+      "Correct. Growing towards light increases photosynthesis.",
+      "This is not the reason.",
+      "This is not the reason."
+    ],
+    "answer": 1,
+    "explanation": "Growing towards light increases photosynthesis.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-15.1-10",
+    "topic": "15.1",
+    "level": "O Level 5090",
+    "question": "Which statements about auxin are correct?\n1 It is made in the shoot tip.\n2 It makes shoot cells elongate.\n3 It collects on the lit side of a shoot.\n4 It is a plant hormone.",
+    "options": [
+      "1, 2 and 4",
+      "1 and 3 only",
+      "2 and 3 only",
+      "3 and 4 only"
+    ],
+    "optionFeedback": [
+      "Correct. Auxin collects on the shaded side, not the lit side.",
+      "Statement 3 is wrong: it collects on the shaded side.",
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong."
+    ],
+    "answer": 0,
+    "explanation": "Auxin collects on the shaded side, not the lit side.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.1-01",
+    "topic": "16.1",
+    "level": "O Level 5090",
+    "question": "What is a gene?",
+    "options": [
+      "a length of DNA that codes for a protein",
+      "a whole chromosome",
+      "a type of cell",
+      "an amino acid"
+    ],
+    "optionFeedback": [
+      "Correct. A gene is a section of DNA that codes for a protein.",
+      "A chromosome carries many genes.",
+      "A gene is part of DNA.",
+      "Genes code for chains of amino acids."
+    ],
+    "answer": 0,
+    "explanation": "A gene is a section of DNA that codes for a protein.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.1-02",
+    "topic": "16.1",
+    "level": "O Level 5090",
+    "question": "How many chromosomes are in a human diploid cell?",
+    "options": [
+      "46",
+      "23",
+      "92",
+      "44"
+    ],
+    "optionFeedback": [
+      "Correct. Human diploid cells have 23 pairs, so 46 chromosomes.",
+      "This is the number in a haploid cell.",
+      "This is double the diploid number.",
+      "This misses the sex chromosomes."
+    ],
+    "answer": 0,
+    "explanation": "Human diploid cells have 23 pairs, so 46 chromosomes.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.1-03",
+    "topic": "16.1",
+    "level": "O Level 5090",
+    "question": "What is a haploid nucleus?",
+    "options": [
+      "a nucleus with one set of chromosomes",
+      "a nucleus with two sets of chromosomes",
+      "a nucleus with no chromosomes",
+      "a nucleus found only in muscle cells"
+    ],
+    "optionFeedback": [
+      "Correct. Gametes have haploid nuclei with one set of chromosomes.",
+      "This is diploid.",
+      "All nuclei have chromosomes.",
+      "Haploid nuclei are in gametes."
+    ],
+    "answer": 0,
+    "explanation": "Gametes have haploid nuclei with one set of chromosomes.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.1-04",
+    "topic": "16.1",
+    "level": "O Level 5090",
+    "question": "What is mitosis used for?",
+    "options": [
+      "growth, repair and asexual reproduction",
+      "making gametes",
+      "reducing the chromosome number",
+      "making cells that are genetically different"
+    ],
+    "optionFeedback": [
+      "Correct. Mitosis produces genetically identical cells for growth, repair and asexual reproduction.",
+      "Meiosis makes gametes.",
+      "Meiosis does this.",
+      "Mitosis makes identical cells."
+    ],
+    "answer": 0,
+    "explanation": "Mitosis produces genetically identical cells for growth, repair and asexual reproduction.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.1-05",
+    "topic": "16.1",
+    "level": "O Level 5090",
+    "question": "Which row compares the cells made by mitosis and meiosis? (mitosis; meiosis)",
+    "options": [
+      "genetically identical, diploid; genetically different, haploid",
+      "genetically different, haploid; genetically identical, diploid",
+      "genetically identical, haploid; genetically different, diploid",
+      "genetically different, diploid; genetically identical, haploid"
+    ],
+    "optionFeedback": [
+      "Correct. Mitosis gives identical diploid cells; meiosis gives varied haploid gametes.",
+      "This is the wrong way round.",
+      "The chromosome numbers are swapped.",
+      "Both are wrong."
+    ],
+    "answer": 0,
+    "explanation": "Mitosis gives identical diploid cells; meiosis gives varied haploid gametes.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.1-06",
+    "topic": "16.1",
+    "level": "O Level 5090",
+    "question": "Why is meiosis called a reduction division?",
+    "options": [
+      "It reduces the size of the cell only.",
+      "It makes fewer cells than mitosis.",
+      "It halves the number of chromosomes.",
+      "It removes genes from the DNA."
+    ],
+    "optionFeedback": [
+      "It halves the chromosome number.",
+      "Meiosis makes four cells.",
+      "Correct. Meiosis produces haploid cells with half the chromosome number.",
+      "Genes are not removed."
+    ],
+    "answer": 2,
+    "explanation": "Meiosis produces haploid cells with half the chromosome number.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.1-07",
+    "topic": "16.1",
+    "level": "O Level 5090",
+    "question": "What are stem cells?",
+    "options": [
+      "unspecialised cells that can divide to form specialised cells",
+      "cells found only in plant stems",
+      "specialised cells such as neurones",
+      "cells that cannot divide"
+    ],
+    "optionFeedback": [
+      "Correct. Stem cells divide by mitosis and can become specialised cells.",
+      "Stem cells are found in animals too.",
+      "Stem cells are unspecialised.",
+      "Stem cells divide."
+    ],
+    "answer": 0,
+    "explanation": "Stem cells divide by mitosis and can become specialised cells.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.1-08",
+    "topic": "16.1",
+    "level": "O Level 5090",
+    "question": "What causes cancer?",
+    "options": [
+      "meiosis in body cells",
+      "too few chromosomes in gametes",
+      "uncontrolled cell division",
+      "the death of all cells in an organ"
+    ],
+    "optionFeedback": [
+      "This is not the cause.",
+      "This is not the cause.",
+      "Correct. Cancer cells divide by mitosis without control, forming a tumour.",
+      "Cancer is uncontrolled division."
+    ],
+    "answer": 2,
+    "explanation": "Cancer cells divide by mitosis without control, forming a tumour.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.1-09",
+    "topic": "16.1",
+    "level": "O Level 5090",
+    "question": "A cell with 24 chromosomes divides by meiosis. How many chromosomes are in each cell produced?",
+    "options": [
+      "24",
+      "12",
+      "48",
+      "6"
+    ],
+    "optionFeedback": [
+      "This would be mitosis.",
+      "Correct. Meiosis halves the chromosome number: 24 divided by 2 is 12.",
+      "The number is halved, not doubled.",
+      "The number is halved only once."
+    ],
+    "answer": 1,
+    "explanation": "Meiosis halves the chromosome number: 24 divided by 2 is 12.",
+    "difficulty": "hard",
+    "type": "calculation"
+  },
+  {
+    "id": "o5090-16.1-10",
+    "topic": "16.1",
+    "level": "O Level 5090",
+    "question": "Which statements about mitosis are correct?\n1 It produces genetically identical cells.\n2 It is used for growth and repair.\n3 It produces gametes.\n4 The chromosome number stays the same.",
+    "options": [
+      "1 and 3 only",
+      "2 and 3 only",
+      "3 and 4 only",
+      "1, 2 and 4"
+    ],
+    "optionFeedback": [
+      "Statement 3 is wrong: meiosis makes gametes.",
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong.",
+      "Correct. Gametes are made by meiosis, not mitosis."
+    ],
+    "answer": 3,
+    "explanation": "Gametes are made by meiosis, not mitosis.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.2-01",
+    "topic": "16.2",
+    "level": "O Level 5090",
+    "question": "What is asexual reproduction?",
+    "options": [
+      "reproduction involving the fusion of gametes",
+      "reproduction from two parents",
+      "reproduction from one parent producing genetically identical offspring",
+      "reproduction producing genetically different offspring"
+    ],
+    "optionFeedback": [
+      "This is sexual reproduction.",
+      "Asexual reproduction has one parent.",
+      "Correct. Asexual reproduction needs one parent and gives identical offspring.",
+      "Asexual offspring are identical."
+    ],
+    "answer": 2,
+    "explanation": "Asexual reproduction needs one parent and gives identical offspring.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.2-02",
+    "topic": "16.2",
+    "level": "O Level 5090",
+    "question": "Which is an example of asexual reproduction?",
+    "options": [
+      "a sperm fertilising an egg",
+      "a potato tuber growing into a new plant",
+      "pollen landing on a stigma",
+      "a seed forming in a fruit"
+    ],
+    "optionFeedback": [
+      "This is sexual reproduction.",
+      "Correct. Potato tubers produce new plants without gametes.",
+      "This is pollination in sexual reproduction.",
+      "Seeds come from sexual reproduction."
+    ],
+    "answer": 1,
+    "explanation": "Potato tubers produce new plants without gametes.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.2-03",
+    "topic": "16.2",
+    "level": "O Level 5090",
+    "question": "What is sexual reproduction?",
+    "options": [
+      "the division of one cell into two identical cells",
+      "the fusion of two haploid gamete nuclei to form a diploid zygote",
+      "the fusion of two diploid cells",
+      "the growth of a new plant from a runner"
+    ],
+    "optionFeedback": [
+      "This is asexual.",
+      "Correct. In fertilisation two haploid nuclei fuse, forming a diploid zygote.",
+      "Gametes are haploid.",
+      "This is asexual."
+    ],
+    "answer": 1,
+    "explanation": "In fertilisation two haploid nuclei fuse, forming a diploid zygote.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.2-04",
+    "topic": "16.2",
+    "level": "O Level 5090",
+    "question": "What is an advantage of asexual reproduction?",
+    "options": [
+      "It produces variation in the offspring.",
+      "A single organism can reproduce quickly without a mate.",
+      "It helps species adapt to change.",
+      "It always needs two parents."
+    ],
+    "optionFeedback": [
+      "Asexual offspring are identical.",
+      "Correct. Asexual reproduction is fast and needs only one parent.",
+      "Lack of variation makes this harder.",
+      "It needs one parent."
+    ],
+    "answer": 1,
+    "explanation": "Asexual reproduction is fast and needs only one parent.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.2-05",
+    "topic": "16.2",
+    "level": "O Level 5090",
+    "question": "What is an advantage of sexual reproduction?",
+    "options": [
+      "It is faster than asexual reproduction.",
+      "It produces variation, so some offspring may survive a change in the environment.",
+      "It needs only one parent.",
+      "All offspring are identical to the parent."
+    ],
+    "optionFeedback": [
+      "It is usually slower.",
+      "Correct. Variation increases the chance that some survive changes such as new diseases.",
+      "It needs two.",
+      "Offspring vary."
+    ],
+    "answer": 1,
+    "explanation": "Variation increases the chance that some survive changes such as new diseases.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.2-06",
+    "topic": "16.2",
+    "level": "O Level 5090",
+    "question": "A field of genetically identical crop plants is attacked by a new disease. Why might all the plants die?",
+    "options": [
+      "Identical plants spread disease more slowly.",
+      "Sexual reproduction caused the disease.",
+      "They have too much variation.",
+      "They have no variation, so if one is not resistant, none are."
+    ],
+    "optionFeedback": [
+      "They are all equally affected.",
+      "This is not the cause.",
+      "They have none.",
+      "Correct. Without variation there are no resistant individuals."
+    ],
+    "answer": 3,
+    "explanation": "Without variation there are no resistant individuals.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.2-07",
+    "topic": "16.2",
+    "level": "O Level 5090",
+    "question": "Which row compares asexual and sexual reproduction? (number of parents; offspring)",
+    "options": [
+      "asexual: two, varied; sexual: one, identical",
+      "asexual: one, identical; sexual: two usually, varied",
+      "asexual: one, varied; sexual: two usually, identical",
+      "asexual: two, identical; sexual: one, varied"
+    ],
+    "optionFeedback": [
+      "This is the wrong way round.",
+      "Correct. Asexual has one parent and identical offspring; sexual involves gametes and varied offspring.",
+      "The offspring are swapped.",
+      "The parents are swapped."
+    ],
+    "answer": 1,
+    "explanation": "Asexual has one parent and identical offspring; sexual involves gametes and varied offspring.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.2-08",
+    "topic": "16.2",
+    "level": "O Level 5090",
+    "question": "What is a zygote?",
+    "options": [
+      "the cell formed when two gametes fuse",
+      "a male gamete",
+      "an unfertilised egg",
+      "a cell made by mitosis in a root tip"
+    ],
+    "optionFeedback": [
+      "Correct. A zygote is the diploid cell formed at fertilisation.",
+      "This is a sperm or pollen nucleus.",
+      "The zygote is fertilised.",
+      "This is not a zygote."
+    ],
+    "answer": 0,
+    "explanation": "A zygote is the diploid cell formed at fertilisation.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.2-09",
+    "topic": "16.2",
+    "level": "O Level 5090",
+    "question": "Which statements are disadvantages of sexual reproduction?\n1 It is usually slower.\n2 It needs gametes from two parents in most cases.\n3 It produces variation.\n4 Energy is used to find a mate.",
+    "options": [
+      "1 and 3 only",
+      "2 and 3 only",
+      "1, 2 and 4",
+      "3 and 4 only"
+    ],
+    "optionFeedback": [
+      "Statement 3 is an advantage.",
+      "Statement 3 is an advantage.",
+      "Correct. Variation is an advantage, not a disadvantage.",
+      "Statement 3 is an advantage."
+    ],
+    "answer": 2,
+    "explanation": "Variation is an advantage, not a disadvantage.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.2-10",
+    "topic": "16.2",
+    "level": "O Level 5090",
+    "question": "Why is variation useful in a population?",
+    "options": [
+      "All individuals become identical.",
+      "It stops natural selection.",
+      "It prevents disease completely.",
+      "Some individuals may be better adapted if conditions change."
+    ],
+    "optionFeedback": [
+      "Variation means differences.",
+      "Variation allows natural selection.",
+      "It only makes some survival likely.",
+      "Correct. Variation gives a chance that some survive and reproduce in new conditions."
+    ],
+    "answer": 3,
+    "explanation": "Variation gives a chance that some survive and reproduce in new conditions.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.3-01",
+    "topic": "16.3",
+    "level": "O Level 5090",
+    "question": "Which part of a flower produces pollen?",
+    "options": [
+      "stigma",
+      "ovary",
+      "sepal",
+      "anther"
+    ],
+    "optionFeedback": [
+      "The stigma receives pollen.",
+      "The ovary contains ovules.",
+      "Sepals protect the bud.",
+      "Correct. Pollen grains are made in the anthers."
+    ],
+    "answer": 3,
+    "explanation": "Pollen grains are made in the anthers.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.3-02",
+    "topic": "16.3",
+    "level": "O Level 5090",
+    "question": "What is pollination?",
+    "options": [
+      "the fusion of a pollen nucleus with an ovule nucleus",
+      "the growth of a seed into a seedling",
+      "the spreading of seeds away from the parent",
+      "the transfer of pollen from an anther to a stigma"
+    ],
+    "optionFeedback": [
+      "This is fertilisation.",
+      "This is germination.",
+      "This is dispersal.",
+      "Correct. Pollination is the transfer of pollen from anther to stigma."
+    ],
+    "answer": 3,
+    "explanation": "Pollination is the transfer of pollen from anther to stigma.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.3-03",
+    "topic": "16.3",
+    "level": "O Level 5090",
+    "question": "Which row compares insect-pollinated and wind-pollinated flowers? (petals; pollen)",
+    "options": [
+      "insect: large and coloured, sticky pollen; wind: small or absent, light smooth pollen",
+      "insect: small or absent, light smooth pollen; wind: large and coloured, sticky pollen",
+      "insect: large and coloured, light smooth pollen; wind: small or absent, sticky pollen",
+      "insect: small or absent, sticky pollen; wind: large and coloured, light smooth pollen"
+    ],
+    "optionFeedback": [
+      "Correct. Insect flowers attract insects with petals and have sticky pollen; wind flowers make light pollen.",
+      "This is the wrong way round.",
+      "The pollen types are swapped.",
+      "The petals are swapped."
+    ],
+    "answer": 0,
+    "explanation": "Insect flowers attract insects with petals and have sticky pollen; wind flowers make light pollen.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.3-04",
+    "topic": "16.3",
+    "level": "O Level 5090",
+    "question": "Why do wind-pollinated flowers have feathery stigmas outside the flower?",
+    "options": [
+      "to attract insects",
+      "to make nectar",
+      "to protect the ovary",
+      "to catch pollen grains carried in the air"
+    ],
+    "optionFeedback": [
+      "Wind flowers do not attract insects.",
+      "Nectar is made by nectaries.",
+      "This is not their role.",
+      "Correct. A large feathery surface catches airborne pollen."
+    ],
+    "answer": 3,
+    "explanation": "A large feathery surface catches airborne pollen.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.3-05",
+    "topic": "16.3",
+    "level": "O Level 5090",
+    "question": "What is cross-pollination?",
+    "options": [
+      "transfer of pollen to the stigma of the same flower",
+      "transfer of pollen to a plant of a different species",
+      "fusion of nuclei inside the ovule",
+      "transfer of pollen from one plant to the stigma of another plant of the same species"
+    ],
+    "optionFeedback": [
+      "This is self-pollination.",
+      "It must be the same species.",
+      "This is fertilisation.",
+      "Correct. Cross-pollination is between different plants of the same species."
+    ],
+    "answer": 3,
+    "explanation": "Cross-pollination is between different plants of the same species.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.3-06",
+    "topic": "16.3",
+    "level": "O Level 5090",
+    "question": "Why does cross-pollination produce more variation than self-pollination?",
+    "options": [
+      "It produces identical offspring.",
+      "It uses more pollen.",
+      "It happens only in wind-pollinated plants.",
+      "Gametes come from two different plants, so more combinations of alleles are possible."
+    ],
+    "optionFeedback": [
+      "It produces varied offspring.",
+      "Amount of pollen is not the reason.",
+      "Insect flowers cross-pollinate too.",
+      "Correct. Combining genes from two parents increases variation."
+    ],
+    "answer": 3,
+    "explanation": "Combining genes from two parents increases variation.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.3-07",
+    "topic": "16.3",
+    "level": "O Level 5090",
+    "question": "How does the pollen nucleus reach the ovule?",
+    "options": [
+      "The pollen grain is carried by the xylem.",
+      "Insects carry it into the ovary.",
+      "A pollen tube grows down through the style.",
+      "It swims through the petals."
+    ],
+    "optionFeedback": [
+      "Xylem carries water.",
+      "Insects carry pollen to the stigma only.",
+      "Correct. The pollen tube grows from the stigma to the ovule, carrying the male nucleus.",
+      "It travels down a pollen tube."
+    ],
+    "answer": 2,
+    "explanation": "The pollen tube grows from the stigma to the ovule, carrying the male nucleus.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.3-08",
+    "topic": "16.3",
+    "level": "O Level 5090",
+    "question": "After fertilisation, what do the ovule and ovary become?",
+    "options": [
+      "ovule becomes fruit; ovary becomes seed",
+      "ovule becomes petal; ovary becomes seed",
+      "ovule becomes pollen; ovary becomes fruit",
+      "ovule becomes seed; ovary becomes fruit"
+    ],
+    "optionFeedback": [
+      "This is the wrong way round.",
+      "Neither is correct.",
+      "The ovule becomes the seed.",
+      "Correct. The fertilised ovule develops into a seed and the ovary into a fruit."
+    ],
+    "answer": 3,
+    "explanation": "The fertilised ovule develops into a seed and the ovary into a fruit.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.3-09",
+    "topic": "16.3",
+    "level": "O Level 5090",
+    "question": "Which condition is not needed for seeds to germinate?",
+    "options": [
+      "water",
+      "oxygen",
+      "light",
+      "a suitable temperature"
+    ],
+    "optionFeedback": [
+      "Water is needed.",
+      "Oxygen is needed for respiration.",
+      "Correct. Most seeds germinate without light; they need water, oxygen and warmth.",
+      "Enzymes need a suitable temperature."
+    ],
+    "answer": 2,
+    "explanation": "Most seeds germinate without light; they need water, oxygen and warmth.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.3-10",
+    "topic": "16.3",
+    "level": "O Level 5090",
+    "question": "Four tubes of seeds were set up. Which tube is expected to show germination?",
+    "table": {
+      "headers": [
+        "tube",
+        "water",
+        "oxygen",
+        "temperature / °C"
+      ],
+      "rows": [
+        [
+          "A",
+          "yes",
+          "yes",
+          "25"
+        ],
+        [
+          "B",
+          "no",
+          "yes",
+          "25"
+        ],
+        [
+          "C",
+          "yes",
+          "no",
+          "25"
+        ],
+        [
+          "D",
+          "yes",
+          "yes",
+          "2"
+        ]
+      ]
+    },
+    "options": [
+      "B",
+      "C",
+      "A",
+      "D"
+    ],
+    "optionFeedback": [
+      "Without water the seeds do not germinate.",
+      "Without oxygen they cannot respire.",
+      "Correct. Only tube A has water, oxygen and a suitable temperature.",
+      "At 2 °C enzymes work too slowly."
+    ],
+    "answer": 2,
+    "explanation": "Only tube A has water, oxygen and a suitable temperature.",
+    "difficulty": "hard",
+    "type": "practical"
+  },
+  {
+    "id": "o5090-16.3-11",
+    "topic": "16.3",
+    "level": "O Level 5090",
+    "question": "How are fruits with hooks dispersed?",
+    "options": [
+      "They are carried by the wind.",
+      "They float on water.",
+      "They are eaten and passed out.",
+      "They stick to the fur of animals."
+    ],
+    "optionFeedback": [
+      "Hooks are for animals.",
+      "Hooks are for animals.",
+      "This is for fleshy fruits.",
+      "Correct. Hooked fruits catch on animal fur and are carried away."
+    ],
+    "answer": 3,
+    "explanation": "Hooked fruits catch on animal fur and are carried away.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.4-01",
+    "topic": "16.4",
+    "level": "O Level 5090",
+    "question": "Where are sperm made?",
+    "options": [
+      "testes",
+      "prostate gland",
+      "sperm duct",
+      "urethra"
+    ],
+    "optionFeedback": [
+      "Correct. Sperm are made in the testes.",
+      "This adds fluid to semen.",
+      "This carries sperm.",
+      "This carries semen and urine out."
+    ],
+    "answer": 0,
+    "explanation": "Sperm are made in the testes.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.4-02",
+    "topic": "16.4",
+    "level": "O Level 5090",
+    "question": "Where does fertilisation usually happen in humans?",
+    "options": [
+      "uterus",
+      "oviduct",
+      "ovary",
+      "vagina"
+    ],
+    "optionFeedback": [
+      "The embryo implants in the uterus.",
+      "Correct. Fertilisation usually happens in the oviduct.",
+      "The ovary releases eggs.",
+      "Sperm are deposited here."
+    ],
+    "answer": 1,
+    "explanation": "Fertilisation usually happens in the oviduct.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.4-03",
+    "topic": "16.4",
+    "level": "O Level 5090",
+    "question": "How is a sperm cell adapted to reach the egg?",
+    "options": [
+      "It has a large food store.",
+      "It has a cell wall for protection.",
+      "It is diploid.",
+      "It has a tail for swimming and many mitochondria to release energy."
+    ],
+    "optionFeedback": [
+      "The egg has the food store.",
+      "Animal cells have no cell wall.",
+      "Gametes are haploid.",
+      "Correct. The tail and mitochondria help the sperm swim to the egg."
+    ],
+    "answer": 3,
+    "explanation": "The tail and mitochondria help the sperm swim to the egg.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.4-04",
+    "topic": "16.4",
+    "level": "O Level 5090",
+    "question": "Which row compares male and female gametes? (size; movement)",
+    "options": [
+      "sperm: large, does not swim; egg: small, swims",
+      "sperm: small, does not swim; egg: large, swims",
+      "sperm: small, swims; egg: large, does not swim",
+      "sperm: large, swims; egg: small, does not swim"
+    ],
+    "optionFeedback": [
+      "This is the wrong way round.",
+      "Movement is swapped.",
+      "Correct. Sperm are small and mobile; eggs are large with a food store and do not move by themselves.",
+      "Size is swapped."
+    ],
+    "answer": 2,
+    "explanation": "Sperm are small and mobile; eggs are large with a food store and do not move by themselves.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.4-05",
+    "topic": "16.4",
+    "level": "O Level 5090",
+    "question": "What does testosterone cause at puberty?",
+    "options": [
+      "development of breasts",
+      "the start of the menstrual cycle",
+      "widening of the hips",
+      "growth of facial hair and deepening of the voice"
+    ],
+    "optionFeedback": [
+      "Oestrogen causes this.",
+      "This is controlled by female hormones.",
+      "Oestrogen causes this.",
+      "Correct. Testosterone causes male secondary sexual characteristics."
+    ],
+    "answer": 3,
+    "explanation": "Testosterone causes male secondary sexual characteristics.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.4-06",
+    "topic": "16.4",
+    "level": "O Level 5090",
+    "question": "Which hormone causes the uterus lining to stay thick after ovulation?",
+    "options": [
+      "FSH",
+      "LH",
+      "testosterone",
+      "progesterone"
+    ],
+    "optionFeedback": [
+      "FSH causes an egg to mature.",
+      "LH causes ovulation.",
+      "This is a male hormone.",
+      "Correct. Progesterone maintains the uterus lining."
+    ],
+    "answer": 3,
+    "explanation": "Progesterone maintains the uterus lining.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.4-07",
+    "topic": "16.4",
+    "level": "O Level 5090",
+    "question": "Which row shows a hormone of the menstrual cycle and its role? (FSH; LH)",
+    "options": [
+      "causes an egg to mature; causes ovulation",
+      "causes ovulation; causes an egg to mature",
+      "maintains the uterus lining; causes ovulation",
+      "causes an egg to mature; repairs the uterus lining"
+    ],
+    "optionFeedback": [
+      "Correct. FSH causes an egg to mature; LH triggers ovulation.",
+      "This is the wrong way round.",
+      "Progesterone maintains the lining.",
+      "Oestrogen helps build the lining."
+    ],
+    "answer": 0,
+    "explanation": "FSH causes an egg to mature; LH triggers ovulation.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.4-08",
+    "topic": "16.4",
+    "level": "O Level 5090",
+    "question": "What is the function of the placenta?",
+    "options": [
+      "producing sperm",
+      "exchange of substances between the mother's blood and the fetus's blood",
+      "protecting the fetus from bumps",
+      "making eggs"
+    ],
+    "optionFeedback": [
+      "The testes do this.",
+      "Correct. Oxygen and nutrients pass to the fetus; carbon dioxide and urea pass to the mother.",
+      "The amniotic fluid does this.",
+      "The ovaries do this."
+    ],
+    "answer": 1,
+    "explanation": "Oxygen and nutrients pass to the fetus; carbon dioxide and urea pass to the mother.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.4-09",
+    "topic": "16.4",
+    "level": "O Level 5090",
+    "question": "What is the function of the amniotic fluid?",
+    "options": [
+      "supplying oxygen to the fetus",
+      "removing urea",
+      "making hormones for ovulation",
+      "protecting the fetus from mechanical damage"
+    ],
+    "optionFeedback": [
+      "The placenta does this.",
+      "The placenta does this.",
+      "This is not its role.",
+      "Correct. The amniotic fluid cushions the fetus."
+    ],
+    "answer": 3,
+    "explanation": "The amniotic fluid cushions the fetus.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-16.4-10",
+    "topic": "16.4",
+    "level": "O Level 5090",
+    "question": "Which statements about the placenta are correct?\n1 Oxygen passes from mother to fetus.\n2 Carbon dioxide passes from fetus to mother.\n3 The blood of mother and fetus mixes.\n4 Some viruses can cross it.",
+    "options": [
+      "1 and 3 only",
+      "1, 2 and 4",
+      "2 and 3 only",
+      "3 and 4 only"
+    ],
+    "optionFeedback": [
+      "Statement 3 is wrong: the bloods do not mix.",
+      "Correct. The two blood supplies are close but do not mix.",
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong."
+    ],
+    "answer": 1,
+    "explanation": "The two blood supplies are close but do not mix.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.1-01",
+    "topic": "17.1",
+    "level": "O Level 5090",
+    "question": "What is variation?",
+    "options": [
+      "differences between different species",
+      "changes in the environment",
+      "differences between individuals of the same species",
+      "the passing of genes to offspring"
+    ],
+    "optionFeedback": [
+      "Variation is within a species.",
+      "This is not variation.",
+      "Correct. Variation means differences between individuals of one species.",
+      "This is inheritance."
+    ],
+    "answer": 2,
+    "explanation": "Variation means differences between individuals of one species.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.1-02",
+    "topic": "17.1",
+    "level": "O Level 5090",
+    "question": "Which is an example of discontinuous variation?",
+    "options": [
+      "ABO blood group",
+      "height",
+      "body mass",
+      "hand span"
+    ],
+    "optionFeedback": [
+      "Correct. Blood group falls into distinct categories with no in-between values.",
+      "Height is continuous.",
+      "Mass is continuous.",
+      "Hand span is continuous."
+    ],
+    "answer": 0,
+    "explanation": "Blood group falls into distinct categories with no in-between values.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.1-03",
+    "topic": "17.1",
+    "level": "O Level 5090",
+    "question": "Which is an example of continuous variation?",
+    "options": [
+      "blood group",
+      "height",
+      "sex",
+      "tongue rolling"
+    ],
+    "optionFeedback": [
+      "This is discontinuous.",
+      "Correct. Height has a range of values between two extremes.",
+      "This is discontinuous.",
+      "This is discontinuous."
+    ],
+    "answer": 1,
+    "explanation": "Height has a range of values between two extremes.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.1-04",
+    "topic": "17.1",
+    "level": "O Level 5090",
+    "question": "What usually causes continuous variation?",
+    "options": [
+      "genes only",
+      "the environment only",
+      "both genes and the environment",
+      "mutation only"
+    ],
+    "optionFeedback": [
+      "Discontinuous variation is usually caused by genes only.",
+      "Genes are also involved.",
+      "Correct. Continuous variation is influenced by many genes and by the environment.",
+      "Mutation is one source but not the usual explanation."
+    ],
+    "answer": 2,
+    "explanation": "Continuous variation is influenced by many genes and by the environment.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.1-05",
+    "topic": "17.1",
+    "level": "O Level 5090",
+    "question": "Which row describes discontinuous variation? (values; caused by)",
+    "options": [
+      "range of values; genes only",
+      "distinct categories; genes only",
+      "distinct categories; genes and environment",
+      "range of values; genes and environment"
+    ],
+    "optionFeedback": [
+      "A range of values is continuous.",
+      "Correct. Discontinuous variation has categories and is usually caused by genes alone.",
+      "It is usually genes only.",
+      "This describes continuous variation."
+    ],
+    "answer": 1,
+    "explanation": "Discontinuous variation has categories and is usually caused by genes alone.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.1-06",
+    "topic": "17.1",
+    "level": "O Level 5090",
+    "question": "Which graph is best for showing data on the heights of 30 students?",
+    "options": [
+      "a histogram",
+      "a bar chart with no ordered groups",
+      "a pie chart",
+      "a line graph against time"
+    ],
+    "optionFeedback": [
+      "Correct. Continuous data are grouped into ranges and shown as a histogram.",
+      "Height is continuous, so a histogram is used.",
+      "This does not show distribution well.",
+      "Height is not measured against time here."
+    ],
+    "answer": 0,
+    "explanation": "Continuous data are grouped into ranges and shown as a histogram.",
+    "difficulty": "medium",
+    "type": "practical"
+  },
+  {
+    "id": "o5090-17.1-07",
+    "topic": "17.1",
+    "level": "O Level 5090",
+    "question": "Students recorded which blood group each person in their class had.\nWhich statement is correct?",
+    "table": {
+      "headers": [
+        "blood group",
+        "number of students"
+      ],
+      "rows": [
+        [
+          "A",
+          "12"
+        ],
+        [
+          "B",
+          "6"
+        ],
+        [
+          "AB",
+          "2"
+        ],
+        [
+          "O",
+          "14"
+        ]
+      ]
+    },
+    "options": [
+      "This shows continuous variation because the numbers vary.",
+      "Blood group is caused only by the environment.",
+      "Group AB is the most common.",
+      "This shows discontinuous variation because there are distinct groups."
+    ],
+    "optionFeedback": [
+      "The groups are distinct.",
+      "It is caused by genes.",
+      "Group O is the most common.",
+      "Correct. Blood groups are distinct categories, so this is discontinuous variation."
+    ],
+    "answer": 3,
+    "explanation": "Blood groups are distinct categories, so this is discontinuous variation.",
+    "difficulty": "hard",
+    "type": "diagram"
+  },
+  {
+    "id": "o5090-17.1-08",
+    "topic": "17.1",
+    "level": "O Level 5090",
+    "question": "Two identical twins are raised apart and grow to different heights. What does this show?",
+    "options": [
+      "Height is controlled only by genes.",
+      "Height is discontinuous variation.",
+      "The environment affects height.",
+      "The twins have different genes."
+    ],
+    "optionFeedback": [
+      "The twins have the same genes.",
+      "Height is continuous.",
+      "Correct. Same genes but different heights shows an environmental effect.",
+      "Identical twins have the same genes."
+    ],
+    "answer": 2,
+    "explanation": "Same genes but different heights shows an environmental effect.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.1-09",
+    "topic": "17.1",
+    "level": "O Level 5090",
+    "question": "Which is caused by the environment only?",
+    "options": [
+      "eye colour",
+      "a scar",
+      "blood group",
+      "natural hair colour"
+    ],
+    "optionFeedback": [
+      "This is caused by genes.",
+      "Correct. A scar is acquired during life.",
+      "This is caused by genes.",
+      "This is mainly caused by genes."
+    ],
+    "answer": 1,
+    "explanation": "A scar is acquired during life.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.1-10",
+    "topic": "17.1",
+    "level": "O Level 5090",
+    "question": "Which statements about continuous variation are correct?\n1 It shows a range of values.\n2 It is usually affected by the environment.\n3 It is shown by blood group.\n4 Body mass is an example.",
+    "options": [
+      "1 and 3 only",
+      "1, 2 and 4",
+      "2 and 3 only",
+      "3 and 4 only"
+    ],
+    "optionFeedback": [
+      "Statement 3 is wrong.",
+      "Correct. Blood group is discontinuous variation.",
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong."
+    ],
+    "answer": 1,
+    "explanation": "Blood group is discontinuous variation.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.2-01",
+    "topic": "17.2",
+    "level": "O Level 5090",
+    "question": "What is the shape of a DNA molecule?",
+    "options": [
+      "a double helix",
+      "a single straight strand",
+      "a circle of amino acids",
+      "a flat sheet"
+    ],
+    "optionFeedback": [
+      "Correct. DNA is two strands twisted into a double helix.",
+      "DNA has two strands.",
+      "DNA is made of nucleotides.",
+      "DNA is a helix."
+    ],
+    "answer": 0,
+    "explanation": "DNA is two strands twisted into a double helix.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.2-02",
+    "topic": "17.2",
+    "level": "O Level 5090",
+    "question": "Which base pairs with adenine (A) in DNA?",
+    "options": [
+      "thymine (T)",
+      "cytosine (C)",
+      "guanine (G)",
+      "adenine (A)"
+    ],
+    "optionFeedback": [
+      "Correct. In DNA, A always pairs with T, and C with G.",
+      "C pairs with G.",
+      "G pairs with C.",
+      "A pairs with T."
+    ],
+    "answer": 0,
+    "explanation": "In DNA, A always pairs with T, and C with G.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.2-03",
+    "topic": "17.2",
+    "level": "O Level 5090",
+    "question": "One strand of DNA has the base sequence ATGCCA. What is the sequence on the other strand?",
+    "options": [
+      "ATGCCA",
+      "UACGGU",
+      "TACGGT",
+      "GCATTG"
+    ],
+    "optionFeedback": [
+      "This is the same strand.",
+      "DNA has T, not U.",
+      "Correct. A pairs with T and C pairs with G, giving TACGGT.",
+      "This uses the wrong pairing rules."
+    ],
+    "answer": 2,
+    "explanation": "A pairs with T and C pairs with G, giving TACGGT.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.2-04",
+    "topic": "17.2",
+    "level": "O Level 5090",
+    "question": "What does a gene control?",
+    "options": [
+      "the number of chromosomes in a cell",
+      "the shape of the DNA double helix",
+      "the order of amino acids in a protein",
+      "the size of the nucleus"
+    ],
+    "optionFeedback": [
+      "Genes do not set this.",
+      "All DNA is a double helix.",
+      "Correct. The base sequence of a gene sets the amino acid sequence of a protein.",
+      "This is not what genes code for."
+    ],
+    "answer": 2,
+    "explanation": "The base sequence of a gene sets the amino acid sequence of a protein.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.2-05",
+    "topic": "17.2",
+    "level": "O Level 5090",
+    "question": "Why do different proteins have different shapes?",
+    "options": [
+      "They contain different bases.",
+      "They are made in different organs.",
+      "They contain different sugars.",
+      "They have different sequences of amino acids."
+    ],
+    "optionFeedback": [
+      "Proteins are made of amino acids.",
+      "The sequence decides the shape.",
+      "Shape depends on amino acid sequence.",
+      "Correct. The amino acid sequence decides how the protein folds."
+    ],
+    "answer": 3,
+    "explanation": "The amino acid sequence decides how the protein folds.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.2-06",
+    "topic": "17.2",
+    "level": "O Level 5090",
+    "question": "How does DNA control the activities of a cell?",
+    "options": [
+      "It controls which proteins, including enzymes, are made.",
+      "It moves around the cell carrying oxygen.",
+      "It releases energy for the cell.",
+      "It forms the cell membrane."
+    ],
+    "optionFeedback": [
+      "Correct. By deciding which enzymes are made, DNA controls the cell's reactions.",
+      "This is not its role.",
+      "Respiration releases energy.",
+      "Membranes are made of lipids and proteins."
+    ],
+    "answer": 0,
+    "explanation": "By deciding which enzymes are made, DNA controls the cell's reactions.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.2-07",
+    "topic": "17.2",
+    "level": "O Level 5090",
+    "question": "What are the units that make up a DNA strand?",
+    "options": [
+      "nucleotides",
+      "amino acids",
+      "fatty acids",
+      "glucose molecules"
+    ],
+    "optionFeedback": [
+      "Correct. DNA is a chain of nucleotides, each containing a base.",
+      "These make up proteins.",
+      "These make up fats.",
+      "These make up starch."
+    ],
+    "answer": 0,
+    "explanation": "DNA is a chain of nucleotides, each containing a base.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.2-08",
+    "topic": "17.2",
+    "level": "O Level 5090",
+    "question": "In a DNA molecule, 30% of the bases are adenine. What percentage are guanine?",
+    "options": [
+      "30%",
+      "40%",
+      "70%",
+      "20%"
+    ],
+    "optionFeedback": [
+      "Adenine pairs with thymine, which is also 30%.",
+      "C and G together are 40%, so G is half of this.",
+      "This is all bases except adenine.",
+      "Correct. A is 30% and T is 30%, leaving 40% for C and G, so G is 20%."
+    ],
+    "answer": 3,
+    "explanation": "A is 30% and T is 30%, leaving 40% for C and G, so G is 20%.",
+    "difficulty": "hard",
+    "type": "calculation"
+  },
+  {
+    "id": "o5090-17.2-09",
+    "topic": "17.2",
+    "level": "O Level 5090",
+    "question": "Which row shows the base pairs in DNA? (A pairs with; C pairs with)",
+    "options": [
+      "T; G",
+      "G; T",
+      "C; A",
+      "A; C"
+    ],
+    "optionFeedback": [
+      "Correct. A pairs with T and C pairs with G.",
+      "This is the wrong way round.",
+      "A does not pair with C.",
+      "Bases do not pair with themselves."
+    ],
+    "answer": 0,
+    "explanation": "A pairs with T and C pairs with G.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.2-10",
+    "topic": "17.2",
+    "level": "O Level 5090",
+    "question": "Which statements about DNA are correct?\n1 It has two strands.\n2 It contains the bases A, T, C and G.\n3 A pairs with G.\n4 Genes are sections of DNA.",
+    "options": [
+      "1 and 3 only",
+      "2 and 3 only",
+      "3 and 4 only",
+      "1, 2 and 4"
+    ],
+    "optionFeedback": [
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong.",
+      "Correct. A pairs with T, not G."
+    ],
+    "answer": 3,
+    "explanation": "A pairs with T, not G.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.3-01",
+    "topic": "17.3",
+    "level": "O Level 5090",
+    "question": "What is an allele?",
+    "options": [
+      "a version of a gene",
+      "a whole chromosome",
+      "a sex cell",
+      "a type of protein"
+    ],
+    "optionFeedback": [
+      "Correct. Alleles are different versions of the same gene.",
+      "A chromosome carries many genes.",
+      "This is a gamete.",
+      "An allele is part of DNA."
+    ],
+    "answer": 0,
+    "explanation": "Alleles are different versions of the same gene.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.3-02",
+    "topic": "17.3",
+    "level": "O Level 5090",
+    "question": "What is a genotype?",
+    "options": [
+      "the features an organism shows",
+      "the alleles an organism has",
+      "the number of chromosomes",
+      "a dominant allele"
+    ],
+    "optionFeedback": [
+      "This is the phenotype.",
+      "Correct. The genotype is the combination of alleles, such as Bb.",
+      "This is not the genotype.",
+      "This is one allele."
+    ],
+    "answer": 1,
+    "explanation": "The genotype is the combination of alleles, such as Bb.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.3-03",
+    "topic": "17.3",
+    "level": "O Level 5090",
+    "question": "What does heterozygous mean?",
+    "options": [
+      "having two identical alleles of a gene",
+      "having only recessive alleles",
+      "having two different alleles of a gene",
+      "having no alleles of a gene"
+    ],
+    "optionFeedback": [
+      "This is homozygous.",
+      "This is homozygous recessive.",
+      "Correct. Heterozygous means two different alleles, such as Tt.",
+      "Diploid cells have two."
+    ],
+    "answer": 2,
+    "explanation": "Heterozygous means two different alleles, such as Tt.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.3-04",
+    "topic": "17.3",
+    "level": "O Level 5090",
+    "question": "When is a recessive allele expressed in the phenotype?",
+    "options": [
+      "only when two copies are present",
+      "always, even with a dominant allele",
+      "only when one copy is present",
+      "never"
+    ],
+    "optionFeedback": [
+      "Correct. A recessive allele shows only in the homozygous recessive genotype.",
+      "The dominant allele masks it.",
+      "One copy is masked by a dominant allele.",
+      "It is expressed in homozygous recessive organisms."
+    ],
+    "answer": 0,
+    "explanation": "A recessive allele shows only in the homozygous recessive genotype.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.3-05",
+    "topic": "17.3",
+    "level": "O Level 5090",
+    "question": "Two heterozygous tall pea plants (Tt) are crossed. Tall is dominant. What is the expected ratio of tall to short offspring?",
+    "options": [
+      "3 tall : 1 short",
+      "1 tall : 1 short",
+      "all tall",
+      "1 tall : 3 short"
+    ],
+    "optionFeedback": [
+      "Correct. Tt × Tt gives TT, Tt, Tt and tt, so 3 tall to 1 short.",
+      "This is from Tt crossed with tt.",
+      "Some offspring are tt.",
+      "Tall is dominant, so most are tall."
+    ],
+    "answer": 0,
+    "explanation": "Tt × Tt gives TT, Tt, Tt and tt, so 3 tall to 1 short.",
+    "difficulty": "medium",
+    "type": "calculation"
+  },
+  {
+    "id": "o5090-17.3-06",
+    "topic": "17.3",
+    "level": "O Level 5090",
+    "question": "A heterozygous black mouse (Bb) is crossed with a white mouse (bb). What percentage of offspring are expected to be white?",
+    "options": [
+      "25%",
+      "50%",
+      "75%",
+      "0%"
+    ],
+    "optionFeedback": [
+      "This is for a Bb × Bb cross.",
+      "Correct. Bb × bb gives Bb and bb in a 1:1 ratio.",
+      "This is the proportion of black in a Bb × Bb cross.",
+      "Half the offspring are bb."
+    ],
+    "answer": 1,
+    "explanation": "Bb × bb gives Bb and bb in a 1:1 ratio.",
+    "difficulty": "medium",
+    "type": "calculation"
+  },
+  {
+    "id": "o5090-17.3-07",
+    "topic": "17.3",
+    "level": "O Level 5090",
+    "question": "Why do the results of a real genetic cross often differ from the expected ratio?",
+    "options": [
+      "The genetic diagram is always wrong.",
+      "Dominant alleles sometimes become recessive.",
+      "Fertilisation is random, and small numbers of offspring increase chance effects.",
+      "Only some gametes contain DNA."
+    ],
+    "optionFeedback": [
+      "The diagram gives the probability.",
+      "This does not happen.",
+      "Correct. Which gametes fuse is random, so actual numbers vary from expected ratios.",
+      "All gametes contain DNA."
+    ],
+    "answer": 2,
+    "explanation": "Which gametes fuse is random, so actual numbers vary from expected ratios.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.3-08",
+    "topic": "17.3",
+    "level": "O Level 5090",
+    "question": "What does pure-breeding mean?",
+    "options": [
+      "heterozygous for every gene",
+      "homozygous for a gene, so offspring always show the same feature when bred together",
+      "produced by asexual reproduction",
+      "having a mutation"
+    ],
+    "optionFeedback": [
+      "Pure-breeding is homozygous.",
+      "Correct. Pure-breeding organisms are homozygous, so they breed true.",
+      "It refers to genotype.",
+      "This is not the meaning."
+    ],
+    "answer": 1,
+    "explanation": "Pure-breeding organisms are homozygous, so they breed true.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.3-09",
+    "topic": "17.3",
+    "level": "O Level 5090",
+    "question": "A person has blood group AB. What does this show?",
+    "options": [
+      "that allele A is recessive",
+      "that allele B is recessive",
+      "codominance, because both alleles are expressed",
+      "that the person is homozygous"
+    ],
+    "optionFeedback": [
+      "Both are expressed.",
+      "Both are expressed.",
+      "Correct. Alleles Iᴬ and Iᴮ are codominant, so both show in the phenotype.",
+      "AB is heterozygous."
+    ],
+    "answer": 2,
+    "explanation": "Alleles Iᴬ and Iᴮ are codominant, so both show in the phenotype.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.3-10",
+    "topic": "17.3",
+    "level": "O Level 5090",
+    "question": "A man with genotype IᴬIᴼ and a woman with genotype IᴮIᴼ have a child. Which blood groups are possible?",
+    "options": [
+      "A and B only",
+      "AB only",
+      "O only",
+      "A, B, AB and O"
+    ],
+    "optionFeedback": [
+      "AB and O are also possible.",
+      "Other combinations are possible.",
+      "Other combinations are possible.",
+      "Correct. The gametes combine to give IᴬIᴮ, IᴬIᴼ, IᴮIᴼ and IᴼIᴼ: groups AB, A, B and O."
+    ],
+    "answer": 3,
+    "explanation": "The gametes combine to give IᴬIᴮ, IᴬIᴼ, IᴮIᴼ and IᴼIᴼ: groups AB, A, B and O.",
+    "difficulty": "hard",
+    "type": "calculation"
+  },
+  {
+    "id": "o5090-17.3-11",
+    "topic": "17.3",
+    "level": "O Level 5090",
+    "question": "What are the sex chromosomes of a human male?",
+    "options": [
+      "XY",
+      "XX",
+      "YY",
+      "X only"
+    ],
+    "optionFeedback": [
+      "Correct. Males are XY and females are XX.",
+      "This is female.",
+      "This does not occur.",
+      "Males have XY."
+    ],
+    "answer": 0,
+    "explanation": "Males are XY and females are XX.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.3-12",
+    "topic": "17.3",
+    "level": "O Level 5090",
+    "question": "What is the chance that a baby will be a girl?",
+    "options": [
+      "25%",
+      "75%",
+      "50%",
+      "100%"
+    ],
+    "optionFeedback": [
+      "The ratio is 1:1.",
+      "The ratio is 1:1.",
+      "Correct. Half the sperm carry X and half carry Y, so the chance is 1 in 2.",
+      "Boys are also possible."
+    ],
+    "answer": 2,
+    "explanation": "Half the sperm carry X and half carry Y, so the chance is 1 in 2.",
+    "difficulty": "medium",
+    "type": "calculation"
+  },
+  {
+    "id": "o5090-17.3-13",
+    "topic": "17.3",
+    "level": "O Level 5090",
+    "question": "Which row shows the type of mutation in each condition? (sickle cell anaemia; Down's syndrome)",
+    "options": [
+      "gene mutation; chromosome mutation",
+      "chromosome mutation; gene mutation",
+      "gene mutation; gene mutation",
+      "chromosome mutation; chromosome mutation"
+    ],
+    "optionFeedback": [
+      "Correct. Sickle cell anaemia is a gene mutation; Down's syndrome is an extra chromosome 21.",
+      "This is the wrong way round.",
+      "Down's syndrome involves an extra chromosome.",
+      "Sickle cell is a change in one gene."
+    ],
+    "answer": 0,
+    "explanation": "Sickle cell anaemia is a gene mutation; Down's syndrome is an extra chromosome 21.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.3-14",
+    "topic": "17.3",
+    "level": "O Level 5090",
+    "question": "Which factors increase the rate of mutation?\n1 ionising radiation\n2 some chemicals, such as those in tobacco smoke\n3 eating a balanced diet\n4 X-rays",
+    "options": [
+      "1 and 3 only",
+      "2 and 3 only",
+      "3 and 4 only",
+      "1, 2 and 4"
+    ],
+    "optionFeedback": [
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong.",
+      "Correct. Radiation and certain chemicals increase the rate of mutation."
+    ],
+    "answer": 3,
+    "explanation": "Radiation and certain chemicals increase the rate of mutation.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.3-15",
+    "topic": "17.3",
+    "level": "O Level 5090",
+    "question": "Which is a source of genetic variation?",
+    "options": [
+      "random fertilisation",
+      "exercise",
+      "a suntan",
+      "learning a language"
+    ],
+    "optionFeedback": [
+      "Correct. Meiosis, random fertilisation and mutation produce genetic variation.",
+      "This affects the phenotype, not genes.",
+      "This is environmental.",
+      "This is not genetic."
+    ],
+    "answer": 0,
+    "explanation": "Meiosis, random fertilisation and mutation produce genetic variation.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.4-01",
+    "topic": "17.4",
+    "level": "O Level 5090",
+    "question": "What is natural selection?",
+    "options": [
+      "the process in which humans choose which animals to breed",
+      "the process in which individuals better adapted to their environment survive and reproduce more",
+      "the change of an organism during its lifetime to suit its environment",
+      "the copying of DNA before cell division"
+    ],
+    "optionFeedback": [
+      "This is artificial selection.",
+      "Correct. Better adapted individuals survive and pass on their alleles.",
+      "Individuals do not evolve.",
+      "This is not natural selection."
+    ],
+    "answer": 1,
+    "explanation": "Better adapted individuals survive and pass on their alleles.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.4-02",
+    "topic": "17.4",
+    "level": "O Level 5090",
+    "question": "What is the correct order of events in natural selection?",
+    "options": [
+      "reproduction, variation, competition, alleles passed on, survival",
+      "survival, variation, reproduction, competition, alleles passed on",
+      "competition, reproduction, variation, survival, alleles passed on",
+      "variation, competition, survival of the best adapted, reproduction, alleles passed on"
+    ],
+    "optionFeedback": [
+      "The order is wrong.",
+      "Variation comes first.",
+      "Variation comes first.",
+      "Correct. Variation exists; there is competition; the best adapted survive, reproduce and pass on alleles."
+    ],
+    "answer": 3,
+    "explanation": "Variation exists; there is competition; the best adapted survive, reproduce and pass on alleles.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.4-03",
+    "topic": "17.4",
+    "level": "O Level 5090",
+    "question": "Why is there competition between individuals of a population?",
+    "options": [
+      "All individuals are identical.",
+      "More offspring are produced than the environment can support.",
+      "There are unlimited resources.",
+      "Every individual always survives."
+    ],
+    "optionFeedback": [
+      "Individuals vary.",
+      "Correct. Limited resources mean individuals compete for food, space and mates.",
+      "Resources are limited.",
+      "Many die."
+    ],
+    "answer": 1,
+    "explanation": "Limited resources mean individuals compete for food, space and mates.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.4-04",
+    "topic": "17.4",
+    "level": "O Level 5090",
+    "question": "What is an adaptation?",
+    "options": [
+      "a feature that helps an organism survive and reproduce in its environment",
+      "a disease caused by a pathogen",
+      "a change caused by injury",
+      "a random change in a chromosome number"
+    ],
+    "optionFeedback": [
+      "Correct. Adaptations are inherited features that increase the chance of survival.",
+      "This is not an adaptation.",
+      "This is not inherited.",
+      "This is a mutation."
+    ],
+    "answer": 0,
+    "explanation": "Adaptations are inherited features that increase the chance of survival.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.4-05",
+    "topic": "17.4",
+    "level": "O Level 5090",
+    "question": "How does natural selection lead to evolution?",
+    "options": [
+      "Over many generations the frequency of advantageous alleles increases in the population.",
+      "Individuals change their genes to suit the environment.",
+      "All alleles become equally common.",
+      "Organisms stop reproducing."
+    ],
+    "optionFeedback": [
+      "Correct. Evolution is a change in allele frequencies over generations.",
+      "Individuals cannot change their genes.",
+      "Selection changes frequencies.",
+      "Reproduction is essential."
+    ],
+    "answer": 0,
+    "explanation": "Evolution is a change in allele frequencies over generations.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.4-06",
+    "topic": "17.4",
+    "level": "O Level 5090",
+    "question": "How does MRSA show natural selection?",
+    "options": [
+      "The antibiotic causes every bacterium to become resistant.",
+      "Resistant bacteria survive antibiotic treatment and reproduce, so resistance becomes common.",
+      "Humans breed the bacteria to be resistant.",
+      "MRSA bacteria have no variation."
+    ],
+    "optionFeedback": [
+      "Resistance arises by chance mutation.",
+      "Correct. The antibiotic selects resistant bacteria, which multiply.",
+      "This is not artificial selection.",
+      "Variation is needed for selection."
+    ],
+    "answer": 1,
+    "explanation": "The antibiotic selects resistant bacteria, which multiply.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.4-07",
+    "topic": "17.4",
+    "level": "O Level 5090",
+    "question": "What is artificial selection?",
+    "options": [
+      "natural selection caused by the climate",
+      "genetic modification of bacteria",
+      "humans choosing organisms with desired features to breed",
+      "the death of organisms in a disease"
+    ],
+    "optionFeedback": [
+      "This is natural selection.",
+      "This is genetic engineering.",
+      "Correct. In selective breeding, humans choose which individuals reproduce.",
+      "This is not artificial selection."
+    ],
+    "answer": 2,
+    "explanation": "In selective breeding, humans choose which individuals reproduce.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.4-08",
+    "topic": "17.4",
+    "level": "O Level 5090",
+    "question": "Which is an example of artificial selection?",
+    "options": [
+      "breeding cows that produce more milk",
+      "bacteria becoming resistant to antibiotics",
+      "moths becoming darker in polluted areas",
+      "birds with stronger beaks surviving a drought"
+    ],
+    "optionFeedback": [
+      "Correct. Farmers choose high-milk cows to breed.",
+      "This is natural selection.",
+      "This is natural selection.",
+      "This is natural selection."
+    ],
+    "answer": 0,
+    "explanation": "Farmers choose high-milk cows to breed.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.4-09",
+    "topic": "17.4",
+    "level": "O Level 5090",
+    "question": "Which row compares natural and artificial selection? (who selects; features selected)",
+    "options": [
+      "natural: humans, those useful to humans; artificial: environment, those helping survival",
+      "natural: environment, those helping survival; artificial: humans, those useful to humans",
+      "natural: environment, those useful to humans; artificial: humans, those helping survival",
+      "natural: humans, those helping survival; artificial: environment, those useful to humans"
+    ],
+    "optionFeedback": [
+      "This is the wrong way round.",
+      "Correct. Nature selects for survival; humans select for useful features.",
+      "The features are swapped.",
+      "The selectors are swapped."
+    ],
+    "answer": 1,
+    "explanation": "Nature selects for survival; humans select for useful features.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-17.4-10",
+    "topic": "17.4",
+    "level": "O Level 5090",
+    "question": "Which statements about selective breeding are correct?\n1 Humans choose the parents.\n2 It is repeated over many generations.\n3 It happens faster than natural selection.\n4 It always increases variation.",
+    "options": [
+      "1 and 4 only",
+      "1, 2 and 3",
+      "2 and 4 only",
+      "3 and 4 only"
+    ],
+    "optionFeedback": [
+      "Statement 4 is wrong: it usually reduces variation.",
+      "Correct. Selective breeding usually reduces variation.",
+      "Statement 4 is wrong.",
+      "Statement 4 is wrong."
+    ],
+    "answer": 1,
+    "explanation": "Selective breeding usually reduces variation.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-18.1-01",
+    "topic": "18.1",
+    "level": "O Level 5090",
+    "question": "Why is yeast used in bread making?",
+    "options": [
+      "It produces oxygen that makes the dough rise.",
+      "It produces carbon dioxide that makes the dough rise.",
+      "It makes the bread taste of alcohol.",
+      "It kills bacteria in the flour."
+    ],
+    "optionFeedback": [
+      "Yeast releases carbon dioxide.",
+      "Correct. Yeast respires sugar, releasing carbon dioxide bubbles.",
+      "The alcohol evaporates on baking.",
+      "This is not its role."
+    ],
+    "answer": 1,
+    "explanation": "Yeast respires sugar, releasing carbon dioxide bubbles.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-18.1-02",
+    "topic": "18.1",
+    "level": "O Level 5090",
+    "question": "Which product of anaerobic respiration in yeast is used to make biofuel?",
+    "options": [
+      "lactic acid",
+      "oxygen",
+      "glucose",
+      "ethanol"
+    ],
+    "optionFeedback": [
+      "This is made in muscles.",
+      "This is not made.",
+      "Glucose is the substrate.",
+      "Correct. Yeast makes ethanol, which can be used as a fuel."
+    ],
+    "answer": 3,
+    "explanation": "Yeast makes ethanol, which can be used as a fuel.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-18.1-03",
+    "topic": "18.1",
+    "level": "O Level 5090",
+    "question": "Why are bacteria useful in biotechnology?",
+    "options": [
+      "They reproduce quickly and have no ethical concerns over their use.",
+      "They reproduce slowly.",
+      "They cannot make complex molecules.",
+      "They have a nucleus."
+    ],
+    "optionFeedback": [
+      "Correct. Fast reproduction and simple manipulation make bacteria useful.",
+      "They reproduce quickly.",
+      "They can make many useful molecules.",
+      "Bacteria have no nucleus."
+    ],
+    "answer": 0,
+    "explanation": "Fast reproduction and simple manipulation make bacteria useful.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-18.1-04",
+    "topic": "18.1",
+    "level": "O Level 5090",
+    "question": "In a fermenter, why is the temperature controlled?",
+    "options": [
+      "to kill the microorganisms",
+      "to keep enzymes in the microorganisms working at their optimum",
+      "to make the product evaporate",
+      "to stop oxygen dissolving"
+    ],
+    "optionFeedback": [
+      "They must stay alive.",
+      "Correct. The optimum temperature gives the fastest growth and production.",
+      "This is not the reason.",
+      "Oxygen is often needed."
+    ],
+    "answer": 1,
+    "explanation": "The optimum temperature gives the fastest growth and production.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-18.1-05",
+    "topic": "18.1",
+    "level": "O Level 5090",
+    "question": "Why is the inside of a fermenter sterilised before use?",
+    "options": [
+      "to add nutrients",
+      "to raise the pH",
+      "to increase the temperature permanently",
+      "to prevent contamination by unwanted microorganisms"
+    ],
+    "optionFeedback": [
+      "This is done separately.",
+      "Sterilising does not do this.",
+      "It is cooled afterwards.",
+      "Correct. Unwanted microorganisms would compete or spoil the product."
+    ],
+    "answer": 3,
+    "explanation": "Unwanted microorganisms would compete or spoil the product.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-18.1-06",
+    "topic": "18.1",
+    "level": "O Level 5090",
+    "question": "Which row shows conditions controlled in a fermenter? (pH; oxygen supply)",
+    "options": [
+      "allowed to change freely; removed completely",
+      "kept very acidic; removed",
+      "kept at optimum; removed for all organisms",
+      "kept at optimum; supplied for aerobic organisms"
+    ],
+    "optionFeedback": [
+      "Conditions are controlled.",
+      "pH is kept at the optimum.",
+      "Aerobic organisms need oxygen.",
+      "Correct. Fermenters control pH, temperature, oxygen and nutrients."
+    ],
+    "answer": 3,
+    "explanation": "Fermenters control pH, temperature, oxygen and nutrients.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-18.1-07",
+    "topic": "18.1",
+    "level": "O Level 5090",
+    "question": "What do enzymes in biological washing powders do?",
+    "options": [
+      "make clothes waterproof",
+      "kill bacteria on clothes",
+      "digest stains such as protein and fat into soluble substances",
+      "work best at very high temperatures"
+    ],
+    "optionFeedback": [
+      "This is not their role.",
+      "They digest stains.",
+      "Correct. Proteases and lipases break down stains, so they wash out.",
+      "They work at lower temperatures."
+    ],
+    "answer": 2,
+    "explanation": "Proteases and lipases break down stains, so they wash out.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-18.1-08",
+    "topic": "18.1",
+    "level": "O Level 5090",
+    "question": "Why is pectinase used in making fruit juice?",
+    "options": [
+      "It adds sugar to the juice.",
+      "It kills bacteria in the fruit.",
+      "It makes the juice cloudy.",
+      "It breaks down cell walls, releasing more juice."
+    ],
+    "optionFeedback": [
+      "It does not add sugar.",
+      "It is an enzyme.",
+      "It makes juice clearer.",
+      "Correct. Pectinase breaks down pectin in cell walls, increasing yield and clarity."
+    ],
+    "answer": 3,
+    "explanation": "Pectinase breaks down pectin in cell walls, increasing yield and clarity.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-18.1-09",
+    "topic": "18.1",
+    "level": "O Level 5090",
+    "question": "How is lactose-free milk made?",
+    "options": [
+      "Lactase is used to break down lactose into glucose and galactose.",
+      "Amylase is used to break down lactose.",
+      "Lactose is filtered out.",
+      "Bacteria are added to make lactic acid."
+    ],
+    "optionFeedback": [
+      "Correct. Lactase digests lactose for people who cannot digest it.",
+      "Amylase digests starch.",
+      "Lactase is used.",
+      "This makes yoghurt."
+    ],
+    "answer": 0,
+    "explanation": "Lactase digests lactose for people who cannot digest it.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-18.1-10",
+    "topic": "18.1",
+    "level": "O Level 5090",
+    "question": "Why do biological washing powders work less well at very high temperatures?",
+    "options": [
+      "The enzymes are denatured.",
+      "The enzymes work faster.",
+      "The stains become soluble.",
+      "Bacteria grow faster."
+    ],
+    "optionFeedback": [
+      "Correct. High temperatures change the active site shape.",
+      "At very high temperatures they denature.",
+      "This is not the reason.",
+      "This is not the reason."
+    ],
+    "answer": 0,
+    "explanation": "High temperatures change the active site shape.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-18.2-01",
+    "topic": "18.2",
+    "level": "O Level 5090",
+    "question": "What is genetic modification?",
+    "options": [
+      "selecting animals with useful features for breeding",
+      "making clones by cuttings",
+      "curing infections with antibiotics",
+      "changing the genetic material of an organism by removing, changing or inserting genes"
+    ],
+    "optionFeedback": [
+      "This is selective breeding.",
+      "This is asexual reproduction.",
+      "This is not genetic modification.",
+      "Correct. Genetic modification directly changes an organism's DNA."
+    ],
+    "answer": 3,
+    "explanation": "Genetic modification directly changes an organism's DNA.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-18.2-02",
+    "topic": "18.2",
+    "level": "O Level 5090",
+    "question": "Which human gene has been put into bacteria to make a useful product?",
+    "options": [
+      "the gene for blood group",
+      "the gene for eye colour",
+      "the gene for height",
+      "the insulin gene"
+    ],
+    "optionFeedback": [
+      "This is not made by bacteria.",
+      "This is not a useful product.",
+      "This is not used.",
+      "Correct. Bacteria with the human insulin gene make insulin for diabetics."
+    ],
+    "answer": 3,
+    "explanation": "Bacteria with the human insulin gene make insulin for diabetics.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-18.2-03",
+    "topic": "18.2",
+    "level": "O Level 5090",
+    "question": "Why are bacteria used to make human insulin?",
+    "options": [
+      "They already make human insulin naturally.",
+      "They have a nucleus to hold the gene.",
+      "They reproduce quickly, so large amounts of insulin are made.",
+      "They grow slowly in fermenters."
+    ],
+    "optionFeedback": [
+      "The gene must be added.",
+      "Bacteria have no nucleus.",
+      "Correct. Rapid reproduction gives large amounts of the product.",
+      "They grow quickly."
+    ],
+    "answer": 2,
+    "explanation": "Rapid reproduction gives large amounts of the product.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-18.2-04",
+    "topic": "18.2",
+    "level": "O Level 5090",
+    "question": "Which enzyme is used to cut DNA in genetic modification?",
+    "options": [
+      "amylase",
+      "lipase",
+      "protease",
+      "restriction enzyme"
+    ],
+    "optionFeedback": [
+      "Amylase digests starch.",
+      "Lipase digests fats.",
+      "Protease digests proteins.",
+      "Correct. Restriction enzymes cut DNA at specific places."
+    ],
+    "answer": 3,
+    "explanation": "Restriction enzymes cut DNA at specific places.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-18.2-05",
+    "topic": "18.2",
+    "level": "O Level 5090",
+    "question": "What is a plasmid?",
+    "options": [
+      "a protein made by a virus",
+      "a type of chromosome in human cells",
+      "an enzyme that joins DNA",
+      "a small circle of DNA in bacteria used to carry a gene"
+    ],
+    "optionFeedback": [
+      "A plasmid is DNA.",
+      "Plasmids are in bacteria.",
+      "DNA ligase joins DNA.",
+      "Correct. Plasmids are used as vectors to insert genes into bacteria."
+    ],
+    "answer": 3,
+    "explanation": "Plasmids are used as vectors to insert genes into bacteria.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-18.2-06",
+    "topic": "18.2",
+    "level": "O Level 5090",
+    "question": "Which is an example of genetic modification in crops?",
+    "options": [
+      "crops grown in greenhouses",
+      "crops watered more often",
+      "crops given more fertiliser",
+      "crops made resistant to insect pests"
+    ],
+    "optionFeedback": [
+      "This is not GM.",
+      "This is not GM.",
+      "This is not GM.",
+      "Correct. Inserting genes for pest resistance or herbicide resistance are examples."
+    ],
+    "answer": 3,
+    "explanation": "Inserting genes for pest resistance or herbicide resistance are examples.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-18.2-07",
+    "topic": "18.2",
+    "level": "O Level 5090",
+    "question": "Which row shows an advantage and a risk of GM crops?",
+    "options": [
+      "genes may spread to wild plants; higher yields",
+      "lower yields; more variation in crops",
+      "higher yields; crops use less space in fields",
+      "higher yields; genes may spread to wild plants"
+    ],
+    "optionFeedback": [
+      "This is the wrong way round.",
+      "Neither is a typical advantage.",
+      "This is not a risk.",
+      "Correct. GM crops can give higher yields, but there is concern about genes spreading."
+    ],
+    "answer": 3,
+    "explanation": "GM crops can give higher yields, but there is concern about genes spreading.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-18.2-08",
+    "topic": "18.2",
+    "level": "O Level 5090",
+    "question": "What is a risk of making crops resistant to herbicides?",
+    "options": [
+      "The crops will die when sprayed.",
+      "The crops will not produce seeds.",
+      "The crops will contain insulin.",
+      "Farmers may use more herbicide, harming other plants and wildlife."
+    ],
+    "optionFeedback": [
+      "They are resistant.",
+      "This is not the main risk.",
+      "This is not related.",
+      "Correct. Heavy herbicide use can reduce biodiversity."
+    ],
+    "answer": 3,
+    "explanation": "Heavy herbicide use can reduce biodiversity.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-18.2-09",
+    "topic": "18.2",
+    "level": "O Level 5090",
+    "question": "Why is insulin made by GM bacteria useful?",
+    "options": [
+      "It cures diabetes permanently.",
+      "It is human insulin and can be made in large amounts.",
+      "It is made in cows.",
+      "It raises blood glucose."
+    ],
+    "optionFeedback": [
+      "It treats, but does not cure.",
+      "Correct. Large amounts of human insulin can be produced cheaply.",
+      "It is made in bacteria.",
+      "Insulin lowers blood glucose."
+    ],
+    "answer": 1,
+    "explanation": "Large amounts of human insulin can be produced cheaply.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-18.2-10",
+    "topic": "18.2",
+    "level": "O Level 5090",
+    "question": "Which statements about genetic modification are correct?\n1 It can insert a gene from one species into another.\n2 Restriction enzymes cut DNA.\n3 It is the same as selective breeding.\n4 It can be used to make insulin.",
+    "options": [
+      "1, 2 and 4",
+      "1 and 3 only",
+      "2 and 3 only",
+      "3 and 4 only"
+    ],
+    "optionFeedback": [
+      "Correct. Genetic modification changes DNA directly; selective breeding does not.",
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong."
+    ],
+    "answer": 0,
+    "explanation": "Genetic modification changes DNA directly; selective breeding does not.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.1-01",
+    "topic": "19.1",
+    "level": "O Level 5090",
+    "question": "What is the main source of energy for most food chains?",
+    "options": [
+      "the Sun",
+      "the soil",
+      "water",
+      "decomposers"
+    ],
+    "optionFeedback": [
+      "Correct. Light energy from the Sun is captured by producers in photosynthesis.",
+      "Soil provides minerals, not energy.",
+      "Water is not an energy source.",
+      "Decomposers get energy from dead matter."
+    ],
+    "answer": 0,
+    "explanation": "Light energy from the Sun is captured by producers in photosynthesis.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.1-02",
+    "topic": "19.1",
+    "level": "O Level 5090",
+    "question": "What is a producer?",
+    "options": [
+      "an organism that eats plants",
+      "an organism that eats other animals",
+      "an organism that makes its own organic nutrients, usually by photosynthesis",
+      "an organism that breaks down dead matter"
+    ],
+    "optionFeedback": [
+      "This is a herbivore.",
+      "This is a carnivore.",
+      "Correct. Producers, usually plants, make food by photosynthesis.",
+      "This is a decomposer."
+    ],
+    "answer": 2,
+    "explanation": "Producers, usually plants, make food by photosynthesis.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.1-03",
+    "topic": "19.1",
+    "level": "O Level 5090",
+    "question": "In the food chain grass, rabbit, fox, which organism is the secondary consumer?",
+    "options": [
+      "fox",
+      "grass",
+      "rabbit",
+      "the Sun"
+    ],
+    "optionFeedback": [
+      "Correct. The fox eats the primary consumer, so it is the secondary consumer.",
+      "Grass is the producer.",
+      "The rabbit is the primary consumer.",
+      "The Sun is not an organism."
+    ],
+    "answer": 0,
+    "explanation": "The fox eats the primary consumer, so it is the secondary consumer.",
+    "difficulty": "medium",
+    "type": "diagram"
+  },
+  {
+    "id": "o5090-19.1-04",
+    "topic": "19.1",
+    "level": "O Level 5090",
+    "question": "Why is energy lost between trophic levels?",
+    "options": [
+      "Energy is destroyed at each level.",
+      "Animals store all the energy they eat.",
+      "Plants absorb energy from animals.",
+      "Energy is used in respiration and lost as heat, and some material is not eaten or digested."
+    ],
+    "optionFeedback": [
+      "Energy is transferred, not destroyed.",
+      "Most is not stored.",
+      "Energy flows from plants to animals.",
+      "Correct. Much energy is lost as heat from respiration, and in faeces and uneaten parts."
+    ],
+    "answer": 3,
+    "explanation": "Much energy is lost as heat from respiration, and in faeces and uneaten parts.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.1-05",
+    "topic": "19.1",
+    "level": "O Level 5090",
+    "question": "Why are food chains usually short?",
+    "options": [
+      "So much energy is lost at each level that too little is left for more levels.",
+      "There are not enough species.",
+      "Top carnivores eat plants too.",
+      "Decomposers eat the top carnivores."
+    ],
+    "optionFeedback": [
+      "Correct. Only about 10% of energy passes to the next level.",
+      "Energy loss is the reason.",
+      "This is not the reason.",
+      "This is not the reason."
+    ],
+    "answer": 0,
+    "explanation": "Only about 10% of energy passes to the next level.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.1-06",
+    "topic": "19.1",
+    "level": "O Level 5090",
+    "question": "A plant captures 10 000 kJ of energy. About 10% passes to each next level. How much energy reaches the secondary consumer?",
+    "options": [
+      "100 kJ",
+      "1000 kJ",
+      "10 kJ",
+      "9000 kJ"
+    ],
+    "optionFeedback": [
+      "Correct. 10 000 to 1000 kJ for primary, then 1000 to 100 kJ for secondary.",
+      "This is the energy reaching the primary consumer.",
+      "This is the tertiary consumer.",
+      "This is the energy lost at the first step."
+    ],
+    "answer": 0,
+    "explanation": "10 000 to 1000 kJ for primary, then 1000 to 100 kJ for secondary.",
+    "difficulty": "hard",
+    "type": "calculation"
+  },
+  {
+    "id": "o5090-19.1-07",
+    "topic": "19.1",
+    "level": "O Level 5090",
+    "question": "Why is it more efficient for humans to eat crops than to eat livestock fed on crops?",
+    "options": [
+      "Crops contain more protein than meat.",
+      "There is one less trophic level, so less energy is lost.",
+      "Livestock do not respire.",
+      "Crops do not need sunlight."
+    ],
+    "optionFeedback": [
+      "This is not the reason.",
+      "Correct. Eating producers directly avoids the energy lost by livestock.",
+      "Livestock do respire, losing energy.",
+      "Crops need sunlight."
+    ],
+    "answer": 1,
+    "explanation": "Eating producers directly avoids the energy lost by livestock.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.1-08",
+    "topic": "19.1",
+    "level": "O Level 5090",
+    "question": "In a pyramid of numbers, why can a single tree support many caterpillars?",
+    "options": [
+      "The tree is a consumer.",
+      "Caterpillars are producers.",
+      "Energy increases at each level.",
+      "A pyramid of numbers counts organisms, not their size."
+    ],
+    "optionFeedback": [
+      "The tree is a producer.",
+      "They are consumers.",
+      "Energy decreases.",
+      "Correct. One large tree can feed many small consumers, so the pyramid of numbers can be inverted."
+    ],
+    "answer": 3,
+    "explanation": "One large tree can feed many small consumers, so the pyramid of numbers can be inverted.",
+    "difficulty": "medium",
+    "type": "diagram"
+  },
+  {
+    "id": "o5090-19.1-09",
+    "topic": "19.1",
+    "level": "O Level 5090",
+    "question": "Which type of pyramid is always the correct pyramid shape?",
+    "options": [
+      "pyramid of numbers",
+      "pyramid of biomass for any sample",
+      "pyramid of energy",
+      "a food web"
+    ],
+    "optionFeedback": [
+      "This can be inverted.",
+      "Biomass pyramids can sometimes be inverted.",
+      "Correct. Energy always decreases at each level.",
+      "This is not a pyramid."
+    ],
+    "answer": 2,
+    "explanation": "Energy always decreases at each level.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.1-10",
+    "topic": "19.1",
+    "level": "O Level 5090",
+    "question": "Which statements about food webs are correct?\n1 Arrows show the direction of energy flow.\n2 An organism can be at more than one trophic level.\n3 Decomposers are producers.\n4 They are made of linked food chains.",
+    "options": [
+      "1 and 3 only",
+      "2 and 3 only",
+      "1, 2 and 4",
+      "3 and 4 only"
+    ],
+    "optionFeedback": [
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong.",
+      "Correct. Decomposers are not producers; they break down dead matter.",
+      "Statement 3 is wrong."
+    ],
+    "answer": 2,
+    "explanation": "Decomposers are not producers; they break down dead matter.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.2-01",
+    "topic": "19.2",
+    "level": "O Level 5090",
+    "question": "Which process removes carbon dioxide from the air?",
+    "options": [
+      "respiration",
+      "combustion",
+      "photosynthesis",
+      "decomposition"
+    ],
+    "optionFeedback": [
+      "Respiration releases carbon dioxide.",
+      "Combustion releases carbon dioxide.",
+      "Correct. Plants take in carbon dioxide in photosynthesis.",
+      "Decomposition releases carbon dioxide."
+    ],
+    "answer": 2,
+    "explanation": "Plants take in carbon dioxide in photosynthesis.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.2-02",
+    "topic": "19.2",
+    "level": "O Level 5090",
+    "question": "Which process releases carbon dioxide by burning fossil fuels?",
+    "options": [
+      "combustion",
+      "photosynthesis",
+      "feeding",
+      "fossilisation"
+    ],
+    "optionFeedback": [
+      "Correct. Burning releases carbon dioxide into the air.",
+      "This removes carbon dioxide.",
+      "Feeding passes carbon along a food chain.",
+      "This stores carbon."
+    ],
+    "answer": 0,
+    "explanation": "Burning releases carbon dioxide into the air.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.2-03",
+    "topic": "19.2",
+    "level": "O Level 5090",
+    "question": "How is carbon passed from plants to animals?",
+    "options": [
+      "by respiration in plants",
+      "by photosynthesis in animals",
+      "by combustion",
+      "by feeding, as carbon compounds in plant tissue"
+    ],
+    "optionFeedback": [
+      "Respiration releases CO2 into the air.",
+      "Animals do not photosynthesise.",
+      "This releases CO2.",
+      "Correct. Animals eat plants, taking in carbon compounds."
+    ],
+    "answer": 3,
+    "explanation": "Animals eat plants, taking in carbon compounds.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.2-04",
+    "topic": "19.2",
+    "level": "O Level 5090",
+    "question": "What do decomposers do in the carbon cycle?",
+    "options": [
+      "take carbon dioxide from the air",
+      "form fossil fuels directly",
+      "make carbon by photosynthesis",
+      "respire as they break down dead organisms, releasing carbon dioxide"
+    ],
+    "optionFeedback": [
+      "Plants do this.",
+      "Fossil fuels form over millions of years.",
+      "They do not photosynthesise.",
+      "Correct. Decomposers' respiration returns carbon dioxide to the air."
+    ],
+    "answer": 3,
+    "explanation": "Decomposers' respiration returns carbon dioxide to the air.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.2-05",
+    "topic": "19.2",
+    "level": "O Level 5090",
+    "question": "Under what conditions do fossil fuels form?",
+    "options": [
+      "when plants photosynthesise quickly",
+      "when dead organisms do not decay fully, over millions of years",
+      "when decomposers are very active",
+      "when carbon dioxide is released by burning"
+    ],
+    "optionFeedback": [
+      "This is not how they form.",
+      "Correct. Incomplete decay over long periods forms coal, oil and gas.",
+      "Active decay prevents fossil fuels forming.",
+      "Burning uses fossil fuels."
+    ],
+    "answer": 1,
+    "explanation": "Incomplete decay over long periods forms coal, oil and gas.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.2-06",
+    "topic": "19.2",
+    "level": "O Level 5090",
+    "question": "Which organisms convert ammonium into nitrates in the soil?",
+    "options": [
+      "denitrifying bacteria",
+      "decomposers only",
+      "plants",
+      "nitrifying bacteria"
+    ],
+    "optionFeedback": [
+      "These turn nitrates into nitrogen gas.",
+      "Decomposers make ammonium.",
+      "Plants absorb nitrates.",
+      "Correct. Nitrifying bacteria convert ammonium into nitrates."
+    ],
+    "answer": 3,
+    "explanation": "Nitrifying bacteria convert ammonium into nitrates.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.2-07",
+    "topic": "19.2",
+    "level": "O Level 5090",
+    "question": "What do denitrifying bacteria do?",
+    "options": [
+      "convert nitrogen gas into nitrates",
+      "convert nitrates into nitrogen gas",
+      "convert proteins into ammonium",
+      "convert ammonium into nitrates"
+    ],
+    "optionFeedback": [
+      "This is nitrogen fixation.",
+      "Correct. Denitrifying bacteria return nitrogen to the air.",
+      "Decomposers do this.",
+      "Nitrifying bacteria do this."
+    ],
+    "answer": 1,
+    "explanation": "Denitrifying bacteria return nitrogen to the air.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.2-08",
+    "topic": "19.2",
+    "level": "O Level 5090",
+    "question": "What is the correct order in part of the nitrogen cycle?",
+    "options": [
+      "protein in dead organisms, ammonium, nitrate, protein in plants",
+      "nitrate, ammonium, protein in dead organisms, protein in plants",
+      "ammonium, protein in dead organisms, nitrate, protein in plants",
+      "protein in dead organisms, nitrate, ammonium, protein in plants"
+    ],
+    "optionFeedback": [
+      "Correct. Decomposers make ammonium; nitrifying bacteria make nitrate; plants absorb nitrate to make protein.",
+      "The order is wrong.",
+      "Decomposers make ammonium from protein.",
+      "Ammonium is made before nitrate."
+    ],
+    "answer": 0,
+    "explanation": "Decomposers make ammonium; nitrifying bacteria make nitrate; plants absorb nitrate to make protein.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.2-09",
+    "topic": "19.2",
+    "level": "O Level 5090",
+    "question": "Why do plants need nitrates?",
+    "options": [
+      "to make amino acids and proteins",
+      "to make starch",
+      "to make glucose",
+      "to open stomata"
+    ],
+    "optionFeedback": [
+      "Correct. Nitrogen is needed to make amino acids.",
+      "Starch contains no nitrogen.",
+      "Glucose contains no nitrogen.",
+      "This is not their role."
+    ],
+    "answer": 0,
+    "explanation": "Nitrogen is needed to make amino acids.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.2-10",
+    "topic": "19.2",
+    "level": "O Level 5090",
+    "question": "Which statements about decomposers are correct?\n1 They include bacteria and fungi.\n2 They release carbon dioxide by respiration.\n3 They photosynthesise.\n4 They return minerals to the soil.",
+    "options": [
+      "1 and 3 only",
+      "2 and 3 only",
+      "1, 2 and 4",
+      "3 and 4 only"
+    ],
+    "optionFeedback": [
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong.",
+      "Correct. Decomposers do not photosynthesise.",
+      "Statement 3 is wrong."
+    ],
+    "answer": 2,
+    "explanation": "Decomposers do not photosynthesise.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.3-01",
+    "topic": "19.3",
+    "level": "O Level 5090",
+    "question": "What is a population?",
+    "options": [
+      "all the organisms of different species in an area",
+      "a community and its environment",
+      "all the living things on Earth",
+      "a group of organisms of one species living in the same area at the same time"
+    ],
+    "optionFeedback": [
+      "This is a community.",
+      "This is an ecosystem.",
+      "This is not a population.",
+      "Correct. A population is one species in one area at one time."
+    ],
+    "answer": 3,
+    "explanation": "A population is one species in one area at one time.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.3-02",
+    "topic": "19.3",
+    "level": "O Level 5090",
+    "question": "What is a community?",
+    "options": [
+      "one species in an area",
+      "the non-living parts of an area",
+      "a single organism",
+      "all the populations of different species in an area"
+    ],
+    "optionFeedback": [
+      "This is a population.",
+      "This is part of an ecosystem.",
+      "This is an individual.",
+      "Correct. A community includes all the populations living together."
+    ],
+    "answer": 3,
+    "explanation": "A community includes all the populations living together.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.3-03",
+    "topic": "19.3",
+    "level": "O Level 5090",
+    "question": "What is an ecosystem?",
+    "options": [
+      "a group of one species",
+      "a food chain",
+      "a community of organisms and their environment, interacting together",
+      "the number of species in an area"
+    ],
+    "optionFeedback": [
+      "This is a population.",
+      "A food chain is part of an ecosystem.",
+      "Correct. An ecosystem includes living organisms and the non-living environment.",
+      "This relates to biodiversity."
+    ],
+    "answer": 2,
+    "explanation": "An ecosystem includes living organisms and the non-living environment.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.3-04",
+    "topic": "19.3",
+    "level": "O Level 5090",
+    "question": "What is biodiversity?",
+    "options": [
+      "the number of organisms of one species",
+      "the size of an ecosystem",
+      "the rate of photosynthesis",
+      "the number of different species living in an area"
+    ],
+    "optionFeedback": [
+      "This is population size.",
+      "This is not biodiversity.",
+      "This is not biodiversity.",
+      "Correct. Biodiversity is the variety of species in an area."
+    ],
+    "answer": 3,
+    "explanation": "Biodiversity is the variety of species in an area.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.3-05",
+    "topic": "19.3",
+    "level": "O Level 5090",
+    "question": "Which factor can limit the growth of a population?",
+    "options": [
+      "shortage of food",
+      "a plentiful food supply",
+      "no predators",
+      "no disease"
+    ],
+    "optionFeedback": [
+      "Correct. Food supply, competition, predation and disease limit populations.",
+      "This allows growth.",
+      "This allows growth.",
+      "This allows growth."
+    ],
+    "answer": 0,
+    "explanation": "Food supply, competition, predation and disease limit populations.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.3-06",
+    "topic": "19.3",
+    "level": "O Level 5090",
+    "question": "A population of rabbits increases. What is likely to happen to the population of foxes that eat them?",
+    "options": [
+      "It decreases because there is more competition.",
+      "It stays the same because foxes do not depend on rabbits.",
+      "It increases because more food is available.",
+      "It becomes extinct."
+    ],
+    "optionFeedback": [
+      "More prey means more food for foxes.",
+      "They eat rabbits.",
+      "Correct. More prey supports more predators.",
+      "This is unlikely."
+    ],
+    "answer": 2,
+    "explanation": "More prey supports more predators.",
+    "difficulty": "hard",
+    "type": "diagram"
+  },
+  {
+    "id": "o5090-19.3-07",
+    "topic": "19.3",
+    "level": "O Level 5090",
+    "question": "Why does the human population growing quickly cause problems?",
+    "options": [
+      "It reduces the need for farming.",
+      "It increases the demand for food, water, land and energy.",
+      "It increases biodiversity.",
+      "It lowers the use of fossil fuels."
+    ],
+    "optionFeedback": [
+      "More people need more food.",
+      "Correct. More people need more resources, putting pressure on the environment.",
+      "It usually reduces biodiversity.",
+      "Use usually rises."
+    ],
+    "answer": 1,
+    "explanation": "More people need more resources, putting pressure on the environment.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.3-08",
+    "topic": "19.3",
+    "level": "O Level 5090",
+    "question": "Which row describes a predator and prey population? (when prey increases; when predators increase)",
+    "options": [
+      "predators decrease; prey increases",
+      "predators increase; prey increases",
+      "predators increase; prey decreases",
+      "predators decrease; prey decreases"
+    ],
+    "optionFeedback": [
+      "Both are wrong.",
+      "More predators eat more prey.",
+      "Correct. Predator and prey numbers rise and fall in cycles.",
+      "More prey supports more predators."
+    ],
+    "answer": 2,
+    "explanation": "Predator and prey numbers rise and fall in cycles.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.3-09",
+    "topic": "19.3",
+    "level": "O Level 5090",
+    "question": "What is competition?",
+    "options": [
+      "one organism eating another",
+      "organisms living in different areas",
+      "a disease spreading",
+      "organisms needing the same limited resource"
+    ],
+    "optionFeedback": [
+      "This is predation.",
+      "They cannot compete.",
+      "This is not competition.",
+      "Correct. Organisms compete for food, space, light, water and mates."
+    ],
+    "answer": 3,
+    "explanation": "Organisms compete for food, space, light, water and mates.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.3-10",
+    "topic": "19.3",
+    "level": "O Level 5090",
+    "question": "Which statements about populations are correct?\n1 Disease can reduce population size.\n2 Predation can limit population size.\n3 Populations always grow without limit.\n4 Competition can limit population growth.",
+    "options": [
+      "1 and 3 only",
+      "2 and 3 only",
+      "1, 2 and 4",
+      "3 and 4 only"
+    ],
+    "optionFeedback": [
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong.",
+      "Correct. Populations are limited by resources, predators and disease.",
+      "Statement 3 is wrong."
+    ],
+    "answer": 2,
+    "explanation": "Populations are limited by resources, predators and disease.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.4-01",
+    "topic": "19.4",
+    "level": "O Level 5090",
+    "question": "What is deforestation?",
+    "options": [
+      "planting new forests",
+      "the growth of trees in a desert",
+      "the burning of fossil fuels",
+      "the large-scale removal of trees"
+    ],
+    "optionFeedback": [
+      "This is reforestation.",
+      "This is not deforestation.",
+      "This is combustion.",
+      "Correct. Deforestation is clearing large areas of forest."
+    ],
+    "answer": 3,
+    "explanation": "Deforestation is clearing large areas of forest.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.4-02",
+    "topic": "19.4",
+    "level": "O Level 5090",
+    "question": "Which is a consequence of deforestation?",
+    "options": [
+      "loss of habitats and reduced biodiversity",
+      "more photosynthesis",
+      "less soil erosion",
+      "less carbon dioxide in the air"
+    ],
+    "optionFeedback": [
+      "Correct. Removing forests destroys habitats and causes extinctions.",
+      "Fewer trees means less photosynthesis.",
+      "Erosion increases.",
+      "More carbon dioxide stays in the air."
+    ],
+    "answer": 0,
+    "explanation": "Removing forests destroys habitats and causes extinctions.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.4-03",
+    "topic": "19.4",
+    "level": "O Level 5090",
+    "question": "How does deforestation increase carbon dioxide in the atmosphere?",
+    "options": [
+      "Trees release carbon dioxide only when alive.",
+      "Soil absorbs all the carbon dioxide.",
+      "Deforestation increases photosynthesis.",
+      "Fewer trees take in carbon dioxide, and burning or decaying wood releases it."
+    ],
+    "optionFeedback": [
+      "Living trees take in more than they release.",
+      "This is not true.",
+      "It decreases it.",
+      "Correct. Less photosynthesis and more combustion or decay raise carbon dioxide levels."
+    ],
+    "answer": 3,
+    "explanation": "Less photosynthesis and more combustion or decay raise carbon dioxide levels.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.4-04",
+    "topic": "19.4",
+    "level": "O Level 5090",
+    "question": "What is the correct order of events in eutrophication?",
+    "options": [
+      "algae grow, fertiliser runs into water, fish die, oxygen falls, bacteria decompose",
+      "fish die, oxygen falls, algae grow, fertiliser runs into water, bacteria decompose",
+      "bacteria decompose, fertiliser runs into water, algae grow, fish die, oxygen falls",
+      "fertiliser runs into water, algae grow, plants die, bacteria decompose them, oxygen falls, fish die"
+    ],
+    "optionFeedback": [
+      "The order is wrong.",
+      "The order is wrong.",
+      "The order is wrong.",
+      "Correct. Extra nutrients cause algal growth; decomposers use up oxygen as plants die."
+    ],
+    "answer": 3,
+    "explanation": "Extra nutrients cause algal growth; decomposers use up oxygen as plants die.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.4-05",
+    "topic": "19.4",
+    "level": "O Level 5090",
+    "question": "In eutrophication, why does the oxygen concentration in the water fall?",
+    "options": [
+      "Algae use all the oxygen in photosynthesis.",
+      "Fish produce too much carbon dioxide.",
+      "Fertilisers react with oxygen.",
+      "Bacteria decomposing dead plants use oxygen in respiration."
+    ],
+    "optionFeedback": [
+      "Photosynthesis releases oxygen.",
+      "This is not the main cause.",
+      "This is not the cause.",
+      "Correct. Increased decomposer respiration uses up dissolved oxygen."
+    ],
+    "answer": 3,
+    "explanation": "Increased decomposer respiration uses up dissolved oxygen.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.4-06",
+    "topic": "19.4",
+    "level": "O Level 5090",
+    "question": "Which gas released by cattle and rice fields is a greenhouse gas?",
+    "options": [
+      "methane",
+      "oxygen",
+      "nitrogen",
+      "hydrogen"
+    ],
+    "optionFeedback": [
+      "Correct. Methane and carbon dioxide are greenhouse gases.",
+      "Oxygen is not a greenhouse gas.",
+      "Nitrogen is not a greenhouse gas.",
+      "This is not released by cattle."
+    ],
+    "answer": 0,
+    "explanation": "Methane and carbon dioxide are greenhouse gases.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.4-07",
+    "topic": "19.4",
+    "level": "O Level 5090",
+    "question": "How do greenhouse gases cause global warming?",
+    "options": [
+      "They make a hole in the ozone layer.",
+      "They reflect sunlight away from the Earth.",
+      "They react with water to make acid.",
+      "They absorb and trap heat radiated from the Earth's surface."
+    ],
+    "optionFeedback": [
+      "This is a different problem.",
+      "They trap heat.",
+      "This is acid rain.",
+      "Correct. More greenhouse gases trap more heat, raising Earth's temperature."
+    ],
+    "answer": 3,
+    "explanation": "More greenhouse gases trap more heat, raising Earth's temperature.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.4-08",
+    "topic": "19.4",
+    "level": "O Level 5090",
+    "question": "Why are non-biodegradable plastics harmful?",
+    "options": [
+      "They are quickly decomposed by bacteria.",
+      "They increase plant growth.",
+      "They add nitrates to water.",
+      "They are not broken down by decomposers and can harm animals that eat or get tangled in them."
+    ],
+    "optionFeedback": [
+      "They are not broken down.",
+      "They do not.",
+      "This is not the problem.",
+      "Correct. Plastics persist for many years and harm wildlife."
+    ],
+    "answer": 3,
+    "explanation": "Plastics persist for many years and harm wildlife.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.4-09",
+    "topic": "19.4",
+    "level": "O Level 5090",
+    "question": "What is a harmful effect of insecticides?",
+    "options": [
+      "They only kill pest insects.",
+      "They increase biodiversity.",
+      "They can kill insects that are not pests, such as pollinators.",
+      "They help plants make food."
+    ],
+    "optionFeedback": [
+      "They often kill others too.",
+      "They reduce it.",
+      "Correct. Insecticides can kill useful insects and harm food chains.",
+      "They do not."
+    ],
+    "answer": 2,
+    "explanation": "Insecticides can kill useful insects and harm food chains.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.4-10",
+    "topic": "19.4",
+    "level": "O Level 5090",
+    "question": "Which statements describe effects of introducing a non-native species?\n1 It may compete with native species.\n2 It may have no natural predators.\n3 It always increases biodiversity.\n4 It may cause native species to decline.",
+    "options": [
+      "1 and 3 only",
+      "2 and 3 only",
+      "1, 2 and 4",
+      "3 and 4 only"
+    ],
+    "optionFeedback": [
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong.",
+      "Correct. Non-native species often reduce biodiversity.",
+      "Statement 3 is wrong."
+    ],
+    "answer": 2,
+    "explanation": "Non-native species often reduce biodiversity.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.4-11",
+    "topic": "19.4",
+    "level": "O Level 5090",
+    "question": "What is over-harvesting?",
+    "options": [
+      "planting more crops than needed",
+      "removing organisms from an area faster than they can reproduce",
+      "protecting endangered species",
+      "using fertilisers on fields"
+    ],
+    "optionFeedback": [
+      "This is not over-harvesting.",
+      "Correct. Over-harvesting, such as overfishing, can make species extinct.",
+      "This is conservation.",
+      "This is not over-harvesting."
+    ],
+    "answer": 1,
+    "explanation": "Over-harvesting, such as overfishing, can make species extinct.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.5-01",
+    "topic": "19.5",
+    "level": "O Level 5090",
+    "question": "What is a sustainable resource?",
+    "options": [
+      "a resource that will run out soon",
+      "a resource that is produced as fast as it is used, so it does not run out",
+      "a resource used only once",
+      "a fossil fuel"
+    ],
+    "optionFeedback": [
+      "This is non-sustainable.",
+      "Correct. A sustainable resource is replaced as quickly as it is used.",
+      "This is not sustainable.",
+      "Fossil fuels are non-renewable."
+    ],
+    "answer": 1,
+    "explanation": "A sustainable resource is replaced as quickly as it is used.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.5-02",
+    "topic": "19.5",
+    "level": "O Level 5090",
+    "question": "Why is it important to conserve species?",
+    "options": [
+      "to increase pollution",
+      "to reduce the number of habitats",
+      "to maintain biodiversity and prevent extinction",
+      "to stop all farming"
+    ],
+    "optionFeedback": [
+      "This is not a reason.",
+      "Conservation protects habitats.",
+      "Correct. Conservation protects biodiversity and vulnerable environments.",
+      "This is not the aim."
+    ],
+    "answer": 2,
+    "explanation": "Conservation protects biodiversity and vulnerable environments.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.5-03",
+    "topic": "19.5",
+    "level": "O Level 5090",
+    "question": "Which method helps conserve fish stocks?",
+    "options": [
+      "fishing all year round",
+      "using nets with a larger mesh size so young fish escape",
+      "using nets with a smaller mesh size",
+      "increasing the number of fishing boats"
+    ],
+    "optionFeedback": [
+      "This causes overfishing.",
+      "Correct. Young fish can grow and breed if they escape.",
+      "This catches young fish.",
+      "This increases overfishing."
+    ],
+    "answer": 1,
+    "explanation": "Young fish can grow and breed if they escape.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.5-04",
+    "topic": "19.5",
+    "level": "O Level 5090",
+    "question": "Which is a method of conserving forests?",
+    "options": [
+      "burning forests to clear land",
+      "cutting trees faster than they grow",
+      "building roads through forests",
+      "replanting trees after felling"
+    ],
+    "optionFeedback": [
+      "This destroys forests.",
+      "This is not sustainable.",
+      "This damages forests.",
+      "Correct. Replanting and using wood sustainably conserves forests."
+    ],
+    "answer": 3,
+    "explanation": "Replanting and using wood sustainably conserves forests.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.5-05",
+    "topic": "19.5",
+    "level": "O Level 5090",
+    "question": "How do fishing quotas help conserve fish stocks?",
+    "options": [
+      "They increase the number of fish caught.",
+      "They make fishing illegal everywhere.",
+      "They limit the number of fish that can be caught.",
+      "They add nutrients to the sea."
+    ],
+    "optionFeedback": [
+      "Quotas limit catches.",
+      "They set limits.",
+      "Correct. Quotas keep catches below the rate of reproduction.",
+      "This is not their role."
+    ],
+    "answer": 2,
+    "explanation": "Quotas keep catches below the rate of reproduction.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.5-06",
+    "topic": "19.5",
+    "level": "O Level 5090",
+    "question": "Why are closed seasons used in fishing?",
+    "options": [
+      "to allow more fishing in summer",
+      "to catch fish when they are largest",
+      "to reduce fish populations",
+      "to stop fishing during the breeding season so fish can reproduce"
+    ],
+    "optionFeedback": [
+      "This is not the aim.",
+      "This is not the reason.",
+      "The aim is to protect them.",
+      "Correct. Protecting breeding fish allows stocks to recover."
+    ],
+    "answer": 3,
+    "explanation": "Protecting breeding fish allows stocks to recover.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.5-07",
+    "topic": "19.5",
+    "level": "O Level 5090",
+    "question": "What is a protected area?",
+    "options": [
+      "an area set aside for building",
+      "an area for intensive farming",
+      "an area where hunting is encouraged",
+      "an area where habitats and species are protected by law"
+    ],
+    "optionFeedback": [
+      "This is not protected.",
+      "This is not protected.",
+      "Hunting is restricted.",
+      "Correct. National parks and reserves protect habitats and species."
+    ],
+    "answer": 3,
+    "explanation": "National parks and reserves protect habitats and species.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.5-08",
+    "topic": "19.5",
+    "level": "O Level 5090",
+    "question": "Which statements describe ways to conserve fish stocks?\n1 quotas\n2 closed seasons\n3 using smaller mesh nets\n4 protected areas of sea",
+    "options": [
+      "1 and 3 only",
+      "1, 2 and 4",
+      "2 and 3 only",
+      "3 and 4 only"
+    ],
+    "optionFeedback": [
+      "Statement 3 is wrong.",
+      "Correct. Smaller mesh nets catch young fish, so they reduce stocks.",
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong."
+    ],
+    "answer": 1,
+    "explanation": "Smaller mesh nets catch young fish, so they reduce stocks.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.5-09",
+    "topic": "19.5",
+    "level": "O Level 5090",
+    "question": "Why should vulnerable environments be protected?",
+    "options": [
+      "They have no living organisms.",
+      "They produce fossil fuels.",
+      "They contain species that may become extinct if the habitat is lost.",
+      "They have very few plants."
+    ],
+    "optionFeedback": [
+      "They contain species.",
+      "This is not the reason.",
+      "Correct. Protecting habitats prevents the loss of species that depend on them.",
+      "This is not the reason."
+    ],
+    "answer": 2,
+    "explanation": "Protecting habitats prevents the loss of species that depend on them.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-19.5-10",
+    "topic": "19.5",
+    "level": "O Level 5090",
+    "question": "Why is wood from a managed forest a sustainable resource?",
+    "options": [
+      "Trees grow back instantly.",
+      "Trees are replanted at least as fast as they are cut down.",
+      "Wood never needs replacing.",
+      "No trees are ever cut."
+    ],
+    "optionFeedback": [
+      "Trees take years to grow.",
+      "Correct. Managed forests replace what is harvested.",
+      "Wood is used up.",
+      "Trees are cut and replanted."
+    ],
+    "answer": 1,
+    "explanation": "Managed forests replace what is harvested.",
+    "difficulty": "hard",
+    "type": "concept"
   }
 ];
 
