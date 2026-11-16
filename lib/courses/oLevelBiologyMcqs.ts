@@ -157,7 +157,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Which statement about plasmids is correct?",
     "options": [
-      "They are found in the nucleus of plant cells.",
+      "They are found in the nucleus of plant and animal cells.",
       "They make proteins in the cytoplasm.",
       "They are the site of photosynthesis.",
       "They are small rings of DNA found in bacterial cells."
@@ -179,10 +179,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why is iodine solution added to onion epidermis cells before they are viewed under a microscope?",
     "options": [
-      "to kill any bacteria on the slide",
-      "to make the cells swell up",
+      "to kill any bacteria so the slide stays clean",
+      "to make the cells swell so they look bigger",
       "to stain the cells so their structures can be seen clearly",
-      "to remove the cell wall"
+      "to dissolve the cell wall so the nucleus can be seen clearly"
     ],
     "optionFeedback": [
       "Iodine is used here as a stain, not to kill bacteria.",
@@ -378,15 +378,15 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "What is the function of ciliated cells in the airways?",
     "options": [
       "to move mucus away from the lungs",
-      "to make mucus",
-      "to carry oxygen",
-      "to absorb water"
+      "to make mucus that traps dust and pathogens",
+      "to absorb oxygen from the air into the blood",
+      "to kill pathogens by releasing enzymes"
     ],
     "optionFeedback": [
       "Correct. The cilia beat to sweep mucus, with trapped dust and pathogens, up and away from the lungs.",
       "Mucus is made by goblet cells.",
-      "Red blood cells carry oxygen.",
-      "Ciliated cells in the airways do not absorb water."
+      "Gas exchange happens in the alveoli.",
+      "Cilia sweep mucus; they do not release enzymes."
     ],
     "answer": 0,
     "explanation": "The cilia beat to sweep mucus, with trapped dust and pathogens, up and away from the lungs.",
@@ -487,10 +487,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Which feature of a sperm cell provides energy for swimming?",
     "options": [
-      "a large food store",
+      "a large food store in the cytoplasm",
       "many mitochondria in the middle section",
-      "a jelly coat",
-      "a large vacuole"
+      "a jelly coat around the cell membrane",
+      "a large vacuole full of cell sap"
     ],
     "optionFeedback": [
       "Egg cells, not sperm, have a large food store.",
@@ -597,10 +597,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Which feature of an egg cell provides food for the early embryo?",
     "options": [
-      "a jelly coat",
+      "a jelly coat around the membrane",
       "energy stores in the cytoplasm",
-      "a tail",
-      "many chloroplasts"
+      "many mitochondria in the tail",
+      "chloroplasts in the cytoplasm"
     ],
     "optionFeedback": [
       "The jelly coat controls sperm entry.",
@@ -686,9 +686,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "What is a species?",
     "options": [
       "a group of organisms that can reproduce to produce fertile offspring",
-      "a group of organisms that live in the same habitat",
-      "a group of organisms that eat the same food",
-      "a group of organisms that look identical"
+      "a group of organisms that live together in the same habitat",
+      "a group of organisms that eat the same food in an area",
+      "a group of organisms that look exactly the same as each other in every way"
     ],
     "optionFeedback": [
       "Correct. A species is a group of organisms that can reproduce to produce fertile offspring.",
@@ -727,21 +727,21 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "id": "o5090-2.1-03",
     "topic": "2.1",
     "level": "O Level 5090",
-    "question": "Which is the correct way to write the binomial name of the lion?",
+    "question": "A student writes the binomial name of humans as homo Sapiens. What is wrong?",
     "options": [
-      "panthera Leo",
-      "Panthera leo",
-      "Panthera Leo",
-      "leo Panthera"
+      "The species should come first and the genus should come second.",
+      "The genus should start with a capital letter and the species with a small letter.",
+      "Both words should start with capital letters, in the same way as a person's name.",
+      "The name should also include the kingdom and the family."
     ],
     "optionFeedback": [
-      "The genus has a capital letter and the species does not.",
-      "Correct. The genus starts with a capital letter, the species with a small letter, and the name is written in italics or underlined.",
+      "The genus always comes first, and Homo is the genus.",
+      "Correct. The correct form is Homo sapiens: genus with a capital letter, species with a small letter, in italics or underlined.",
       "The species name starts with a small letter.",
-      "The genus comes first."
+      "A binomial name has only two parts: genus and species."
     ],
     "answer": 1,
-    "explanation": "The genus starts with a capital letter, the species with a small letter, and the name is written in italics or underlined.",
+    "explanation": "The correct form is Homo sapiens: genus with a capital letter, species with a small letter, in italics or underlined.",
     "difficulty": "medium",
     "type": "concept"
   },
@@ -754,7 +754,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
       "They belong to the same genus but different species.",
       "They belong to the same species.",
       "They belong to different genera.",
-      "They can produce fertile offspring together."
+      "They can always produce fertile offspring when they breed together."
     ],
     "optionFeedback": [
       "Correct. The shared first name shows the same genus; the different second names show different species.",
@@ -773,10 +773,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why do scientists classify organisms using shared features?",
     "options": [
-      "It shows how big each organism is.",
+      "Organisms of a similar size are likely to be closely related.",
       "Organisms with similar features are likely to be closely related.",
-      "It shows where each organism lives.",
-      "It shows what each organism eats."
+      "Organisms living in the same habitat are likely to be related.",
+      "Organisms that eat the same food are likely to be related."
     ],
     "optionFeedback": [
       "Classification is not based on size.",
@@ -798,7 +798,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
       "Each step gives two choices about one feature.",
       "Each step gives four choices.",
       "Each step uses the organism's habitat.",
-      "Each step names the organism."
+      "Each step names the organism and the group that it belongs to."
     ],
     "optionFeedback": [
       "Correct. \"Dichotomous\" means dividing into two. Each step asks about one feature with two opposite choices.",
@@ -815,7 +815,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "id": "o5090-2.1-07",
     "topic": "2.1",
     "level": "O Level 5090",
-    "question": "Use the key to identify an animal that has legs, 6 legs and no wings.",
+    "question": "The key is used to identify four animals.\nAn animal has jointed legs, six legs in total and two wings. What is the animal?",
     "table": {
       "headers": [
         "Step",
@@ -825,35 +825,35 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
       "rows": [
         [
           "1",
-          "No legs: snake",
-          "Has legs: go to 2"
+          "Has jointed legs: go to 2",
+          "No jointed legs: earthworm"
         ],
         [
           "2",
-          "8 legs: spider",
-          "6 legs: go to 3"
+          "Has 3 pairs of legs: go to 3",
+          "Has 4 pairs of legs: spider"
         ],
         [
           "3",
-          "Has wings: housefly",
-          "No wings: ant"
+          "Has 2 pairs of wings: butterfly",
+          "Has 1 pair of wings: housefly"
         ]
       ]
     },
     "options": [
+      "butterfly",
       "spider",
-      "housefly",
-      "snake",
-      "ant"
+      "earthworm",
+      "housefly"
     ],
     "optionFeedback": [
-      "A spider has 8 legs, not 6.",
-      "A housefly has wings.",
-      "A snake has no legs.",
-      "Correct. Has legs (step 2), 6 legs (step 3), no wings: ant."
+      "Two wings is 1 pair, not 2 pairs.",
+      "Six legs is 3 pairs, and a spider has 4 pairs.",
+      "The animal has jointed legs.",
+      "Correct. Jointed legs (go to 2), six legs is 3 pairs (go to 3), two wings is 1 pair: housefly."
     ],
     "answer": 3,
-    "explanation": "Has legs (step 2), 6 legs (step 3), no wings: ant.",
+    "explanation": "Jointed legs (go to 2), six legs is 3 pairs (go to 3), two wings is 1 pair: housefly.",
     "difficulty": "hard",
     "type": "diagram"
   },
@@ -907,13 +907,13 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Which features are most useful for classifying organisms into groups?",
     "options": [
-      "the colour of the organism",
-      "the size of the organism",
-      "the place where the organism lives",
-      "features that are similar because the organisms are related, such as body structure"
+      "features that change with the seasons, such as the colour of the fur or feathers",
+      "features that change with age, such as the size of the body",
+      "features of the habitat, such as where the organism lives",
+      "features shared because the organisms are related, such as body structure"
     ],
     "optionFeedback": [
-      "Colour often varies within a species.",
+      "Colour often varies within a species and over time.",
       "Size changes with age.",
       "Unrelated organisms can share a habitat.",
       "Correct. Organisms are classified by shared features that show how closely related they are, such as body structure and, today, DNA."
@@ -1040,7 +1040,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "Which feature do all arthropods have?",
     "options": [
       "jointed legs and an exoskeleton",
-      "three pairs of legs",
+      "three pairs of legs and two pairs of wings",
       "two pairs of wings",
       "a backbone"
     ],
@@ -1237,10 +1237,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is diffusion?",
     "options": [
-      "the movement of particles from lower to higher concentration using energy",
-      "the movement of water through a partially permeable membrane",
-      "the movement of particles against a concentration gradient",
-      "the net movement of particles from a region of higher concentration to a region of lower concentration"
+      "the movement of particles from a lower to a higher concentration using energy",
+      "the movement of water only through a partially permeable membrane",
+      "the net movement of particles against a concentration gradient",
+      "the net movement of particles from a higher to a lower concentration"
     ],
     "optionFeedback": [
       "This describes active transport.",
@@ -1259,9 +1259,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is the source of energy for diffusion?",
     "options": [
-      "energy from respiration",
-      "energy from light",
-      "energy from enzymes",
+      "energy released by respiration in the cell",
+      "light energy absorbed by the cell membrane",
+      "chemical energy supplied by enzymes in the membrane",
       "the kinetic energy of the random movement of particles"
     ],
     "optionFeedback": [
@@ -1303,15 +1303,15 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why is water important as a solvent in living organisms?",
     "options": [
-      "It provides energy for reactions.",
+      "It provides the energy needed for most chemical reactions.",
       "Many substances dissolve in it, so they can be transported and can react.",
-      "It is a source of protein.",
-      "It stops all substances moving."
+      "It is a source of the amino acids needed to make protein.",
+      "It stops dissolved substances moving around the body, so they stay in one place."
     ],
     "optionFeedback": [
       "Water does not provide energy.",
       "Correct. Water dissolves many substances. This lets them be transported (for example in blood plasma or xylem) and take part in reactions.",
-      "Water contains no protein.",
+      "Water contains no amino acids.",
       "Dissolving lets substances move, not stop."
     ],
     "answer": 1,
@@ -1325,15 +1325,15 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is osmosis?",
     "options": [
-      "the movement of any particles from high to low concentration",
-      "the net movement of water molecules from a region of higher water potential to a region of lower water potential through a partially permeable membrane",
-      "the movement of water using energy from respiration",
-      "the movement of sugar through a partially permeable membrane"
+      "the net movement of any particles from higher to lower concentration through a membrane",
+      "the net movement of water from higher to lower water potential through a partially permeable membrane",
+      "the movement of water from lower to higher water potential using energy from respiration",
+      "the net movement of sugar from higher to lower concentration through a partially permeable membrane"
     ],
     "optionFeedback": [
-      "This describes diffusion.",
+      "Osmosis is the movement of water only.",
       "Correct. Osmosis is a type of diffusion of water across a partially permeable membrane, down a water potential gradient.",
-      "Osmosis does not need energy from respiration.",
+      "Osmosis is passive and goes from higher to lower water potential.",
       "Osmosis is the movement of water."
     ],
     "answer": 1,
@@ -1391,10 +1391,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why does an animal cell burst in pure water but a plant cell does not?",
     "options": [
-      "The plant cell has no cell membrane.",
-      "Water cannot enter a plant cell.",
+      "The plant cell has no cell membrane, so water passes straight through.",
+      "Water cannot enter a plant cell because of its large vacuole.",
       "The plant cell has a strong cell wall that resists the pressure.",
-      "The animal cell has a cell wall."
+      "The animal cell has a thin cell wall that breaks easily."
     ],
     "optionFeedback": [
       "Plant cells do have a cell membrane.",
@@ -1413,10 +1413,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is plasmolysis?",
     "options": [
-      "when the cell membrane and cytoplasm pull away from the cell wall because water has left the cell",
-      "when a plant cell bursts",
-      "when a plant cell is firm and full of water",
-      "when water enters an animal cell"
+      "when the membrane and cytoplasm pull away from the cell wall as water leaves",
+      "when a plant cell bursts because too much water has entered it",
+      "when a plant cell becomes firm because its vacuole is full of water and presses outwards",
+      "when water enters an animal cell by osmosis and it swells"
     ],
     "optionFeedback": [
       "Correct. In a very concentrated solution, so much water leaves that the membrane and cytoplasm pull away from the wall.",
@@ -1436,9 +1436,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "Why does turgor pressure matter to plants?",
     "options": [
       "It keeps cells firm, which supports the plant and keeps leaves held out.",
-      "It provides energy for photosynthesis.",
-      "It lets plant cells burst to release seeds.",
-      "It stops water entering the roots."
+      "It provides the energy that plant cells need for photosynthesis.",
+      "It makes plant cells burst open so that seeds are released.",
+      "It stops water entering the roots, so the plant does not take in too much water."
     ],
     "optionFeedback": [
       "Correct. Turgid cells press against each other, supporting the stem and leaves. Without enough water the plant wilts.",
@@ -1596,7 +1596,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "Which row shows what happens to a plant cell and an animal cell placed in pure water? (plant cell; animal cell)",
     "options": [
       "becomes plasmolysed; shrinks",
-      "bursts; becomes turgid",
+      "bursts because water enters; becomes turgid",
       "becomes turgid; swells and may burst",
       "no change; no change"
     ],
@@ -1617,16 +1617,16 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is active transport?",
     "options": [
-      "the movement of particles from higher to lower concentration",
-      "the movement of water through a partially permeable membrane",
-      "the movement of particles through a cell membrane from lower to higher concentration, using energy from respiration",
-      "the movement of particles without using energy"
+      "the movement of particles from higher to lower concentration, using energy from respiration",
+      "the movement of water through a partially permeable membrane, without using energy",
+      "the movement of particles from lower to higher concentration, using energy from respiration",
+      "the movement of particles from lower to higher concentration, without using any energy"
     ],
     "optionFeedback": [
-      "This describes diffusion.",
+      "Movement down a gradient does not need this energy.",
       "This describes osmosis.",
       "Correct. Active transport moves particles against a concentration gradient and needs energy from respiration.",
-      "Active transport needs energy."
+      "Active transport needs energy from respiration."
     ],
     "answer": 2,
     "explanation": "Active transport moves particles against a concentration gradient and needs energy from respiration.",
@@ -1705,9 +1705,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why do root hair cells have many mitochondria?",
     "options": [
-      "to carry out photosynthesis",
-      "to store water",
-      "to make the cell wall stronger",
+      "to carry out photosynthesis to make glucose",
+      "to store water absorbed from the soil",
+      "to make the cell wall thicker and stronger so it does not burst",
       "to release energy for active transport of mineral ions"
     ],
     "optionFeedback": [
@@ -1727,15 +1727,15 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Root hair cells were kept in soil with no oxygen. Their uptake of mineral ions fell. Why?",
     "options": [
-      "Without oxygen, osmosis stops.",
-      "Without oxygen, the cell wall breaks down.",
-      "Without oxygen, diffusion speeds up.",
+      "Without oxygen, osmosis stops, so ions cannot enter the root hair cells.",
+      "Without oxygen, the cell walls break down, so the mineral ions leak out of the cells into the soil.",
+      "Without oxygen, diffusion speeds up, so ions leave the cells faster than they enter.",
       "Without oxygen, less aerobic respiration happens, so less energy is available for active transport."
     ],
     "optionFeedback": [
-      "Osmosis does not depend on oxygen.",
+      "Osmosis does not depend on oxygen, and ions are not moved by osmosis.",
       "Lack of oxygen does not break the cell wall.",
-      "Oxygen does not speed up diffusion.",
+      "Oxygen does not change the speed of diffusion.",
       "Correct. Active transport needs energy from aerobic respiration, which needs oxygen."
     ],
     "answer": 3,
@@ -1773,7 +1773,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "options": [
       "active transport",
       "osmosis",
-      "diffusion",
+      "diffusion down a gradient",
       "egestion"
     ],
     "optionFeedback": [
@@ -1947,15 +1947,15 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What are lipids made from?",
     "options": [
-      "glucose",
-      "amino acids",
-      "nucleotides",
+      "glucose and glycerol",
+      "amino acids and fatty acids",
+      "glucose and amino acids",
       "fatty acids and glycerol"
     ],
     "optionFeedback": [
       "Glucose makes carbohydrates such as starch.",
       "Amino acids make proteins.",
-      "Nucleotides make DNA.",
+      "Lipids are made from fatty acids and glycerol.",
       "Correct. A lipid is made of fatty acids joined to glycerol."
     ],
     "answer": 3,
@@ -2035,10 +2035,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Which result shows that a food contains a lipid?",
     "options": [
-      "The food turns blue-black with iodine.",
+      "The food turns blue-black when iodine solution is added to it.",
       "A cloudy white emulsion forms when the ethanol mixture is poured into water.",
-      "The solution turns purple with biuret.",
-      "The solution turns brick-red with Benedict's."
+      "The solution turns purple when biuret solution is added to it.",
+      "The solution turns brick-red when it is heated with Benedict's solution in a water bath."
     ],
     "optionFeedback": [
       "This shows starch.",
@@ -2179,10 +2179,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is a catalyst?",
     "options": [
-      "a substance that slows down a chemical reaction",
-      "a substance that is used up in a reaction",
-      "the product of a reaction",
-      "a substance that increases the rate of a chemical reaction and is not changed by the reaction"
+      "a substance that slows down a reaction and is not changed by it",
+      "a substance that speeds up a reaction and is used up by it",
+      "a substance that is made as a product at the end of a reaction",
+      "a substance that speeds up a reaction and is not changed by it"
     ],
     "optionFeedback": [
       "A catalyst speeds up a reaction.",
@@ -2245,9 +2245,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why does each enzyme act on only one substrate?",
     "options": [
-      "It is used up after one reaction.",
-      "It only works at 37 °C.",
-      "It is made of only one amino acid.",
+      "Each enzyme is used up after it has catalysed one reaction.",
+      "Each enzyme only works at exactly 37 °C, which is the normal body temperature.",
+      "Each enzyme is made from only one type of amino acid.",
       "The shape of its active site is complementary to only that substrate."
     ],
     "optionFeedback": [
@@ -2290,7 +2290,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "What is formed when a substrate binds to the active site of an enzyme?",
     "options": [
       "a new enzyme",
-      "a denatured enzyme",
+      "a denatured enzyme and product",
       "an antibody",
       "an enzyme-substrate complex"
     ],
@@ -2313,8 +2313,8 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "options": [
       "It is unchanged and can catalyse the reaction again.",
       "It is used up and must be made again.",
-      "It becomes part of the product.",
-      "It is always denatured."
+      "It becomes part of the product molecule and leaves with it.",
+      "It is denatured and cannot be used again."
     ],
     "optionFeedback": [
       "Correct. Like all catalysts, an enzyme is unchanged at the end of the reaction.",
@@ -2355,10 +2355,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why are enzymes important in living organisms?",
     "options": [
-      "They provide energy for reactions.",
+      "They provide the energy that metabolic reactions need to happen.",
       "They speed up metabolic reactions so they happen fast enough to sustain life.",
-      "They make reactions happen at higher temperatures.",
-      "They are used as a food store."
+      "They make reactions happen only at temperatures above 60 °C, so cells stay warm.",
+      "They act as a food store that cells can use when glucose is low."
     ],
     "optionFeedback": [
       "Enzymes do not provide energy.",
@@ -2378,9 +2378,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "An enzyme breaks down substrate X but not substrate Y. What is the best explanation?",
     "options": [
       "Only X has a shape complementary to the active site.",
-      "Y is a larger molecule.",
-      "X is a protein and Y is a carbohydrate.",
-      "The enzyme is denatured by Y."
+      "Only Y is too large to enter the active site.",
+      "Only X is a protein, and the enzyme cannot act on carbohydrates.",
+      "Only Y denatures the enzyme when they meet."
     ],
     "optionFeedback": [
       "Correct. Enzymes are specific: only a substrate with a complementary shape can bind to the active site.",
@@ -2465,16 +2465,16 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why does enzyme activity increase as temperature rises from 10 °C to 30 °C?",
     "options": [
-      "The active site changes shape.",
+      "The active site changes shape, so substrates fit better.",
       "Molecules have more kinetic energy, so there are more effective collisions.",
-      "The enzyme is used up faster.",
-      "More enzyme is made at higher temperature."
+      "The enzyme is used up faster, so more product is made.",
+      "More enzyme molecules are made by the cells as the temperature gets warmer and warmer."
     ],
     "optionFeedback": [
-      "This happens above the optimum and reduces activity.",
+      "Changing shape reduces activity, above the optimum.",
       "Correct. Faster-moving molecules collide more often, so substrates enter active sites more often.",
       "Enzymes are not used up.",
-      "Temperature does not make more enzyme."
+      "Temperature does not make more enzyme in the test tube."
     ],
     "answer": 1,
     "explanation": "Faster-moving molecules collide more often, so substrates enter active sites more often.",
@@ -2487,10 +2487,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What happens to an enzyme at a temperature well above its optimum?",
     "options": [
-      "It is killed.",
+      "It is killed, so it can never work again.",
       "Its active site changes shape and it is denatured.",
-      "It works faster than ever.",
-      "It becomes a substrate."
+      "Its active site gets bigger and it works faster.",
+      "It becomes a substrate for another enzyme."
     ],
     "optionFeedback": [
       "Enzymes are not living, so they cannot be killed.",
@@ -2553,16 +2553,16 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why does enzyme activity fall when the pH moves away from the optimum?",
     "options": [
-      "The substrate is denatured.",
-      "The enzyme gains more kinetic energy.",
+      "The substrate is denatured, so it no longer fits the active site.",
+      "The enzyme molecules gain more kinetic energy, so they collide less.",
       "The shape of the active site changes, so the substrate fits less well.",
-      "The products cannot be released."
+      "The products stay stuck in the active site, so no new substrate binds."
     ],
     "optionFeedback": [
       "It is the enzyme that changes shape.",
       "pH does not change kinetic energy.",
       "Correct. A change in pH alters the shape of the enzyme, so fewer enzyme-substrate complexes form.",
-      "The main effect is on substrate fit."
+      "The main effect is on the shape of the active site."
     ],
     "answer": 2,
     "explanation": "A change in pH alters the shape of the enzyme, so fewer enzyme-substrate complexes form.",
@@ -2625,10 +2625,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "In the amylase and starch experiment, how do you know when all the starch has been broken down?",
     "options": [
-      "The mixture turns purple with biuret.",
+      "A drop of the mixture turns purple when biuret is added.",
       "A drop of the mixture no longer turns iodine blue-black.",
-      "Bubbles of oxygen stop forming.",
-      "The mixture becomes cloudy."
+      "Bubbles of oxygen stop forming in the test tube.",
+      "The mixture forms a cloudy white emulsion with ethanol."
     ],
     "optionFeedback": [
       "Biuret tests for protein.",
@@ -2692,15 +2692,15 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "Which statement explains why activity falls quickly above the optimum temperature?",
     "options": [
       "More and more enzyme molecules are denatured, so fewer active sites can bind substrate.",
-      "The substrate molecules move too slowly.",
-      "The products block the active site permanently.",
-      "The enzyme molecules divide."
+      "The substrate molecules move too slowly, so fewer collide with active sites.",
+      "The product molecules block the active sites, so no more substrate can bind.",
+      "The enzyme molecules divide into smaller molecules, so there are no complete active sites left."
     ],
     "optionFeedback": [
       "Correct. As temperature rises above the optimum, more enzymes lose the shape of their active site.",
       "At high temperatures molecules move faster.",
       "This is not the reason.",
-      "Molecules do not divide."
+      "Enzyme molecules do not divide."
     ],
     "answer": 0,
     "explanation": "As temperature rises above the optimum, more enzymes lose the shape of their active site.",
@@ -2735,7 +2735,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Increasing the temperature above the optimum reduces enzyme activity. How is this explained?",
     "options": [
-      "There are fewer collisions because molecules slow down.",
+      "There are fewer collisions because the molecules slow down at high temperature.",
       "The substrate molecules are denatured.",
       "The enzyme molecules are killed.",
       "The shape of the active site changes and the substrate no longer fits."
@@ -2779,14 +2779,14 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is photosynthesis?",
     "options": [
-      "the process by which plants release energy from glucose",
-      "the process by which plants absorb water from the soil",
-      "the process by which plants make carbohydrates from raw materials using energy from light",
-      "the process by which plants lose water vapour from leaves"
+      "the process by which plants release energy from glucose using oxygen",
+      "the process by which plants absorb water from the soil by osmosis",
+      "the process by which plants make carbohydrates using light energy",
+      "the process by which plants lose water vapour from their leaves"
     ],
     "optionFeedback": [
       "This describes respiration.",
-      "Water uptake is by osmosis.",
+      "This is water uptake.",
       "Correct. Photosynthesis uses light energy to make carbohydrates from carbon dioxide and water.",
       "This describes transpiration."
     ],
@@ -2801,10 +2801,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is the function of chlorophyll?",
     "options": [
-      "to transfer light energy into chemical energy for making carbohydrates",
+      "to transfer light energy into chemical energy",
       "to absorb carbon dioxide from the air",
-      "to make the leaf waterproof",
-      "to release energy by respiration"
+      "to make the leaf surface waterproof",
+      "to release energy from glucose by respiration"
     ],
     "optionFeedback": [
       "Correct. Chlorophyll is a green pigment in chloroplasts that absorbs light and transfers the energy into chemical energy.",
@@ -2933,15 +2933,15 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "A plant is kept in a sealed bag with soda lime, which absorbs carbon dioxide. A control plant has no soda lime. What is the purpose of the control?",
     "options": [
-      "to show that any difference in starch is caused by the lack of carbon dioxide",
-      "to provide extra carbon dioxide",
-      "to remove starch from the leaves",
-      "to measure the rate of respiration"
+      "to show that any difference in starch is caused by lack of carbon dioxide",
+      "to supply the leaves with extra carbon dioxide so more starch is made",
+      "to remove all the starch from the leaves before the experiment starts",
+      "to measure how fast the plant respires when there is no light"
     ],
     "optionFeedback": [
       "Correct. The control is identical except for carbon dioxide, so it shows that carbon dioxide is needed.",
-      "The control has normal air.",
-      "Destarching is done before the experiment.",
+      "The control has normal air, not extra carbon dioxide.",
+      "Destarching is done before the experiment, on both plants.",
       "The investigation is about photosynthesis."
     ],
     "answer": 0,
@@ -2956,9 +2956,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "What is a limiting factor?",
     "options": [
       "a factor in short supply that stops the rate of a process from increasing",
-      "a factor that always increases the rate",
-      "the product of photosynthesis",
-      "a factor that denatures enzymes"
+      "a factor in large supply that always makes the rate increase",
+      "a product of photosynthesis that slows down the reaction",
+      "a factor that denatures the enzymes and stops the process from happening at all"
     ],
     "optionFeedback": [
       "Correct. The rate is limited by whichever factor is in shortest supply.",
@@ -2980,7 +2980,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
       "light intensity",
       "carbon dioxide concentration",
       "the amount of oxygen",
-      "the number of stomata"
+      "the number of stomata on the leaves"
     ],
     "optionFeedback": [
       "Increasing light no longer increases the rate, so light is not limiting.",
@@ -3000,9 +3000,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "Why does the rate of photosynthesis fall at very high temperatures?",
     "options": [
       "The enzymes that control photosynthesis are denatured.",
-      "There is too much carbon dioxide.",
-      "Chlorophyll absorbs too much light.",
-      "The plant stops respiring."
+      "There is too much carbon dioxide in the leaves.",
+      "Chlorophyll absorbs too much light energy.",
+      "The plant cells stop respiring completely, so no energy is available."
     ],
     "optionFeedback": [
       "Correct. Photosynthesis is controlled by enzymes, which are denatured above their optimum.",
@@ -3132,15 +3132,15 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "Why is a leaf thin?",
     "options": [
       "so gases diffuse a short distance to all cells",
-      "so it can store more starch",
-      "so it has fewer stomata",
-      "so it can be eaten easily"
+      "so it can store more starch in its cells",
+      "so it has fewer stomata to lose water",
+      "so light is reflected away from the cells"
     ],
     "optionFeedback": [
       "Correct. A thin leaf gives a short diffusion distance for carbon dioxide and lets light reach all cells.",
       "Thinness is not for storage.",
       "Thinness does not reduce stomata.",
-      "This is not an adaptation for photosynthesis."
+      "Light must be absorbed, not reflected."
     ],
     "answer": 0,
     "explanation": "A thin leaf gives a short diffusion distance for carbon dioxide and lets light reach all cells.",
@@ -3175,9 +3175,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is the function of the air spaces in the spongy mesophyll?",
     "options": [
-      "to store water",
-      "to transport sucrose",
-      "to support the leaf",
+      "to store water for use in dry weather",
+      "to transport sucrose to other parts of the plant",
+      "to support the leaf so it stays flat",
       "to allow gases to diffuse to and from the cells"
     ],
     "optionFeedback": [
@@ -3219,7 +3219,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "How does carbon dioxide reach the palisade cells?",
     "options": [
-      "It is absorbed by the roots and carried in the xylem.",
+      "It is absorbed by the roots from the soil and carried up in the xylem.",
       "It is pumped in by active transport through the cuticle.",
       "It moves in through the phloem.",
       "It diffuses in through the stomata and through the air spaces."
@@ -3263,16 +3263,16 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Most stomata are found in the lower epidermis. What is the advantage of this?",
     "options": [
-      "More light reaches the stomata.",
-      "More sucrose can enter the leaf.",
+      "More light reaches the stomata on the lower surface, so more photosynthesis happens.",
+      "More sucrose can enter the leaf through the lower surface.",
       "Less water vapour is lost, because the lower surface is cooler and shaded.",
-      "It stops carbon dioxide entering."
+      "Less carbon dioxide enters, so the leaf stays cooler."
     ],
     "optionFeedback": [
       "Stomata do not absorb light.",
       "Sucrose is not taken in through stomata.",
       "Correct. The shaded, cooler lower surface reduces evaporation, so less water is lost.",
-      "Stomata let carbon dioxide in."
+      "Stomata let carbon dioxide in, and that is needed."
     ],
     "answer": 2,
     "explanation": "The shaded, cooler lower surface reduces evaporation, so less water is lost.",
@@ -3330,13 +3330,13 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "Why do plants need nitrate ions?",
     "options": [
       "to make amino acids for proteins",
-      "to make chlorophyll",
-      "to make glucose",
-      "to make cellulose"
+      "to make magnesium for chlorophyll",
+      "to make glucose for respiration",
+      "to make cellulose for cell walls"
     ],
     "optionFeedback": [
       "Correct. Nitrate ions supply nitrogen, which is needed to make amino acids and then proteins.",
-      "Magnesium is needed for chlorophyll.",
+      "Magnesium ions are absorbed, not made; nitrate is for amino acids.",
       "Glucose is made by photosynthesis from carbon dioxide and water.",
       "Cellulose is made from glucose."
     ],
@@ -3395,13 +3395,13 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "A plant has yellow leaves, especially between the veins. Why does this reduce its growth?",
     "options": [
-      "It cannot make amino acids.",
+      "It cannot make amino acids, so it cannot make chlorophyll or any other proteins.",
       "It has less chlorophyll, so it absorbs less light for photosynthesis.",
-      "It cannot absorb water.",
-      "It respires faster."
+      "It cannot absorb water, so its stomata stay closed.",
+      "It respires faster, so it uses up all its glucose."
     ],
     "optionFeedback": [
-      "That is the effect of nitrate deficiency.",
+      "Lack of amino acids is the effect of nitrate deficiency.",
       "Correct. Magnesium deficiency means less chlorophyll, so less photosynthesis and less growth.",
       "Yellow leaves do not stop water uptake.",
       "This is not the reason."
@@ -3420,7 +3420,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
       "through root hair cells, from the soil water",
       "through the stomata, from the air",
       "through the phloem, from the leaves",
-      "through the cuticle, from rain"
+      "through the cuticle of the leaves, from rain water"
     ],
     "optionFeedback": [
       "Correct. Mineral ions are dissolved in soil water and absorbed by root hair cells.",
@@ -3463,7 +3463,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "options": [
       "Glucose contains no carbon.",
       "Proteins are only made at night.",
-      "Photosynthesis makes amino acids directly.",
+      "Photosynthesis makes amino acids directly, so no glucose is used.",
       "Glucose contains no nitrogen, but amino acids do."
     ],
     "optionFeedback": [
@@ -3593,16 +3593,16 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "How is a root hair cell adapted for absorption?",
     "options": [
-      "It has many chloroplasts.",
-      "It has a thick waxy cuticle.",
+      "It has many chloroplasts for photosynthesis.",
+      "It has a thick waxy cuticle around it.",
       "Its long extension gives a large surface area.",
-      "It has no cell membrane."
+      "It has a thick wall made of lignin."
     ],
     "optionFeedback": [
       "Root hairs are underground and have no chloroplasts.",
       "A cuticle would slow absorption.",
       "Correct. The long thin hair gives a large surface area in contact with soil water.",
-      "All cells have a cell membrane."
+      "A thick lignified wall would slow absorption."
     ],
     "answer": 2,
     "explanation": "The long thin hair gives a large surface area in contact with soil water.",
@@ -3661,7 +3661,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "options": [
       "by osmosis",
       "by active transport, using energy from respiration",
-      "by diffusion, down a concentration gradient",
+      "by diffusion, down a concentration gradient from soil to cell",
       "by transpiration pull"
     ],
     "optionFeedback": [
@@ -3704,7 +3704,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "Root hair cells are often damaged when a plant is moved to a new pot. Why does the plant then wilt?",
     "options": [
       "It cannot absorb enough water because the surface area for absorption is reduced.",
-      "It cannot photosynthesise because root hairs contain chlorophyll.",
+      "It cannot photosynthesise because the root hairs contain most of the chlorophyll in the plant.",
       "Its xylem is blocked by soil.",
       "It loses more water through its roots."
     ],
@@ -3748,15 +3748,15 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "Why do root hair cells have many mitochondria?",
     "options": [
       "to release energy for the active transport of mineral ions",
-      "to carry out photosynthesis",
-      "to store water",
-      "to make the root grow towards light"
+      "to carry out photosynthesis to make glucose for growth",
+      "to store water so the cell does not become flaccid",
+      "to make the root grow down towards gravity"
     ],
     "optionFeedback": [
       "Correct. Respiration in mitochondria releases energy for active transport.",
       "Mitochondria carry out respiration.",
       "Mitochondria do not store water.",
-      "Roots grow towards gravity."
+      "Mitochondria release energy; they do not control direction."
     ],
     "answer": 0,
     "explanation": "Respiration in mitochondria releases energy for active transport.",
@@ -3791,15 +3791,15 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "How does water leave a leaf in transpiration?",
     "options": [
-      "Water evaporates from mesophyll cells into air spaces and water vapour diffuses out through stomata.",
-      "Liquid water drips out through the cuticle.",
-      "Water is pumped out through the phloem.",
-      "Water vapour moves in through the stomata."
+      "Water evaporates into air spaces, and water vapour diffuses out through stomata.",
+      "Liquid water drips out through the cuticle on the upper surface.",
+      "Water is pumped out of the leaf through the phloem using energy released by respiration.",
+      "Water vapour diffuses into the leaf through the stomata from the air."
     ],
     "optionFeedback": [
       "Correct. Evaporation from mesophyll cell surfaces is followed by diffusion of water vapour out of the stomata.",
       "The waxy cuticle reduces water loss.",
-      "Phloem carries sucrose.",
+      "Phloem carries sucrose, and water loss is not pumped.",
       "In transpiration water vapour moves out."
     ],
     "answer": 0,
@@ -3835,10 +3835,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why does high humidity reduce the rate of transpiration?",
     "options": [
-      "The stomata are forced open.",
-      "The concentration gradient of water vapour between the leaf and the air is smaller.",
-      "The water molecules move faster.",
-      "The xylem stops carrying water."
+      "The stomata are forced wide open by the moist air outside.",
+      "The water vapour gradient between the leaf and the air is smaller.",
+      "The water molecules move faster because the air around the leaf is moist and warm.",
+      "The xylem stops carrying water up the stem to the leaves."
     ],
     "optionFeedback": [
       "Humidity does not force stomata open.",
@@ -3880,9 +3880,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "What causes a plant to wilt?",
     "options": [
       "It loses water faster than it takes it up, so its cells become flaccid.",
-      "Its cells take in too much water and burst.",
-      "It makes too much sucrose.",
-      "Its stomata stay closed all day."
+      "Its cells take in too much water by osmosis and burst open.",
+      "It makes too much sucrose, so water leaves its cells by osmosis.",
+      "Its stomata stay closed all day, so it cannot take in any water through its roots."
     ],
     "optionFeedback": [
       "Correct. When cells lose water they become flaccid, and the plant can no longer stay upright.",
@@ -3901,7 +3901,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What are the functions of xylem?",
     "options": [
-      "transporting sucrose and amino acids",
+      "transporting sucrose and amino acids from the leaves",
       "photosynthesis and gas exchange",
       "transporting water and mineral ions, and support",
       "storing starch"
@@ -3923,15 +3923,15 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Which features of xylem vessels make them suited to their function?",
     "options": [
-      "thick walls with lignin, no cell contents, and no cross walls between cells",
-      "thin walls, living contents and cross walls",
-      "chloroplasts and a large vacuole",
-      "sieve plates and companion cells"
+      "thick lignified walls, no cell contents and no cross walls",
+      "thin cellulose walls, living contents and cross walls",
+      "thick lignified walls, chloroplasts and a large vacuole",
+      "thin walls with sieve plates and companion cells"
     ],
     "optionFeedback": [
       "Correct. Lignin gives strength and support; empty, continuous tubes let water flow easily.",
       "Xylem vessels are dead, empty tubes.",
-      "Xylem has no chloroplasts.",
+      "Xylem has no chloroplasts or living contents.",
       "These are features of phloem."
     ],
     "answer": 0,
@@ -3945,10 +3945,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "How does water move up the xylem?",
     "options": [
-      "Transpiration pulls a continuous column of water upwards, as water molecules are attracted to each other.",
-      "Phloem pumps water upwards.",
-      "Water is pushed up by active transport in the leaves.",
-      "Gravity pulls water upwards."
+      "Transpiration pulls up a column of water held together by attraction between molecules.",
+      "The phloem pumps water up the stem using energy released by respiration.",
+      "Root cells push water up the xylem by active transport of the water molecules themselves.",
+      "Gravity pulls the column of water up the xylem from the roots to the leaves."
     ],
     "optionFeedback": [
       "Correct. Water lost from leaves pulls more water up the xylem; the column holds together because water molecules attract each other.",
@@ -3967,10 +3967,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is translocation?",
     "options": [
-      "the movement of sucrose and amino acids in the phloem from sources to sinks",
-      "the movement of water in the xylem",
-      "the loss of water vapour from leaves",
-      "the uptake of mineral ions by roots"
+      "the movement of sucrose and amino acids in the phloem",
+      "the movement of water and mineral ions in the xylem",
+      "the loss of water vapour from leaves through stomata",
+      "the uptake of mineral ions by root hairs from soil"
     ],
     "optionFeedback": [
       "Correct. Translocation moves sucrose and amino acids in phloem from where they are made or released to where they are used or stored.",
@@ -4034,9 +4034,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "A leafy shoot is set up in a potometer. Why is the shoot cut under water?",
     "options": [
       "to stop air entering the xylem and blocking water flow",
-      "to clean the shoot",
-      "to kill the cells",
-      "to make the stomata close"
+      "to wash any soil and dust off the cut end",
+      "to kill the cells so they stop respiring",
+      "to make the stomata close so that less water is lost from the leaves"
     ],
     "optionFeedback": [
       "Correct. An air bubble in the xylem breaks the water column, so the shoot is cut under water.",
@@ -4079,7 +4079,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "options": [
       "a diet with only fruit and vegetables",
       "a diet with no fat",
-      "a diet with as much protein as possible",
+      "a diet with as much protein as possible in every meal",
       "a diet with all the nutrients in the right amounts"
     ],
     "optionFeedback": [
@@ -4165,16 +4165,16 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why is iron needed in the diet?",
     "options": [
-      "to make strong bones",
-      "to keep gums healthy",
+      "to make strong bones and teeth",
+      "to keep gums and skin healthy",
       "to make haemoglobin in red blood cells",
-      "to prevent constipation"
+      "to help food move through the gut"
     ],
     "optionFeedback": [
       "Calcium is needed for bones.",
       "Vitamin C keeps gums healthy.",
       "Correct. Iron is part of haemoglobin, which carries oxygen.",
-      "Fibre prevents constipation."
+      "Fibre helps food move through the gut."
     ],
     "answer": 2,
     "explanation": "Iron is part of haemoglobin, which carries oxygen.",
@@ -4187,10 +4187,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why is fibre important in the diet?",
     "options": [
-      "It is the main source of energy.",
+      "It is the main source of energy in the diet.",
       "It helps food move through the gut by peristalsis.",
-      "It is needed to make haemoglobin.",
-      "It helps absorb calcium."
+      "It is needed to make haemoglobin in red cells.",
+      "It helps the body absorb calcium from food."
     ],
     "optionFeedback": [
       "Fibre cannot be digested for energy.",
@@ -4275,9 +4275,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why can lack of vitamin D cause rickets even if a person eats enough calcium?",
     "options": [
-      "Vitamin D is a type of calcium.",
-      "Vitamin D makes haemoglobin.",
-      "Vitamin D digests protein.",
+      "Vitamin D is a type of calcium found in food.",
+      "Vitamin D is needed to make haemoglobin.",
+      "Vitamin D is needed to digest protein in bone.",
       "Vitamin D is needed to absorb calcium from food."
     ],
     "optionFeedback": [
@@ -4342,7 +4342,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "What is the function of hydrochloric acid in the stomach?",
     "options": [
       "to kill bacteria in food",
-      "to digest starch",
+      "to digest starch into maltose",
       "to emulsify fats",
       "to absorb water"
     ],
@@ -4385,10 +4385,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why must most food be digested before it can be absorbed?",
     "options": [
-      "Food must be warmed to body temperature.",
-      "Large insoluble molecules must be broken into small soluble molecules.",
-      "Food must be mixed with oxygen.",
-      "Food molecules must be made larger."
+      "Food must be warmed to body temperature before it is absorbed.",
+      "Large insoluble molecules must become small soluble molecules.",
+      "Food must be mixed with oxygen before it enters the blood.",
+      "Small soluble molecules must be built into large molecules."
     ],
     "optionFeedback": [
       "Temperature is not the reason.",
@@ -4451,16 +4451,16 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "How does bile help the digestion of fats?",
     "options": [
-      "It breaks fats into fatty acids and glycerol.",
-      "It emulsifies fats into small droplets, increasing the surface area for lipase.",
-      "It makes the small intestine acidic.",
-      "It absorbs fats into the lacteals."
+      "It breaks fats down into fatty acids and glycerol, like an enzyme.",
+      "It emulsifies fats into droplets, giving a larger surface area for lipase.",
+      "It makes the small intestine acidic, so that lipase can work at its optimum pH.",
+      "It absorbs fat droplets into the lacteals of the villi directly."
     ],
     "optionFeedback": [
       "Lipase does this; bile is not an enzyme.",
       "Correct. Bile breaks large fat drops into small droplets so lipase can act on a much larger surface.",
-      "Bile and pancreatic juice are alkaline.",
-      "Absorption happens in villi."
+      "Bile is alkaline and neutralises stomach acid.",
+      "Absorption happens through the villi, not by bile."
     ],
     "answer": 1,
     "explanation": "Bile breaks large fat drops into small droplets so lipase can act on a much larger surface.",
@@ -4539,15 +4539,15 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is peristalsis?",
     "options": [
-      "the breakdown of food by enzymes",
-      "the absorption of food into the blood",
-      "the emulsification of fat by bile",
-      "waves of contraction of circular and longitudinal muscles that move food through the gut"
+      "the breakdown of large food molecules by enzymes",
+      "the absorption of small food molecules into the blood",
+      "the breaking of fat into small droplets by bile",
+      "waves of muscle contraction that push food along the gut"
     ],
     "optionFeedback": [
       "This is chemical digestion.",
       "This is absorption.",
-      "This is done by bile.",
+      "This is emulsification.",
       "Correct. Muscles in the gut wall contract in waves, pushing food along."
     ],
     "answer": 3,
@@ -4627,16 +4627,16 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is the job of the oesophagus?",
     "options": [
-      "to digest protein",
-      "to absorb glucose",
+      "to digest protein using pepsin",
+      "to absorb glucose into the blood",
       "to carry food from the mouth to the stomach",
-      "to store faeces"
+      "to absorb water from the undigested food passing down"
     ],
     "optionFeedback": [
       "Protein digestion starts in the stomach.",
       "Glucose is absorbed in the small intestine.",
       "Correct. Food moves down the oesophagus to the stomach by peristalsis.",
-      "The rectum stores faeces."
+      "Water is absorbed in the intestines."
     ],
     "answer": 2,
     "explanation": "Food moves down the oesophagus to the stomach by peristalsis.",
@@ -4671,10 +4671,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is absorption?",
     "options": [
-      "uptake and use of nutrients by cells",
-      "movement of nutrients from the intestines into the cells lining the gut and then into the blood",
-      "breakdown of large molecules",
-      "removal of undigested food"
+      "uptake and use of nutrients by the cells of the body",
+      "movement of nutrients from the intestines into the blood",
+      "breakdown of large molecules into small molecules",
+      "removal of undigested food through the anus"
     ],
     "optionFeedback": [
       "This is assimilation.",
@@ -4760,15 +4760,15 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "Why is a good blood supply in the villi important?",
     "options": [
       "Blood carries nutrients away, keeping a steep concentration gradient.",
-      "Blood digests the food.",
-      "Blood makes the villi longer.",
-      "Blood stops water being absorbed."
+      "Blood contains enzymes that digest the food in the villi.",
+      "Blood flow makes the villi grow longer, so their surface area becomes much larger.",
+      "Blood brings more water to dissolve the food in the gut."
     ],
     "optionFeedback": [
       "Correct. Removing absorbed nutrients keeps the concentration in the blood low, so diffusion continues.",
-      "Enzymes digest food.",
+      "Enzymes in the gut digest food.",
       "Blood flow does not change villus length.",
-      "Blood does not stop water absorption."
+      "This is not the reason."
     ],
     "answer": 0,
     "explanation": "Removing absorbed nutrients keeps the concentration in the blood low, so diffusion continues.",
@@ -4781,10 +4781,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why is the wall of a villus only one cell thick?",
     "options": [
-      "to make more enzymes",
-      "to store fat",
+      "so it can make more digestive enzymes to break down the food",
+      "so it can store fat for use when food is short",
       "to give a short distance for nutrients to pass into the blood",
-      "to stop bacteria entering"
+      "so it can stop bacteria from entering the blood"
     ],
     "optionFeedback": [
       "Thickness is not for enzyme production.",
@@ -4847,7 +4847,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Which is an example of assimilation?",
     "options": [
-      "glucose diffusing into a capillary in a villus",
+      "glucose diffusing from a villus into a blood capillary",
       "a liver cell using amino acids to make plasma proteins",
       "amylase breaking down starch",
       "faeces leaving the body"
@@ -4979,16 +4979,16 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What happens when you breathe in?",
     "options": [
-      "The diaphragm relaxes and domes upwards.",
+      "The diaphragm relaxes and domes upwards, and the thorax volume decreases.",
       "The diaphragm contracts and flattens, and the volume of the thorax increases.",
-      "The ribs move down and in.",
-      "The pressure in the thorax increases."
+      "The ribs move down and in, and the thorax volume increases.",
+      "The diaphragm contracts, and the pressure in the thorax increases."
     ],
     "optionFeedback": [
       "This happens when breathing out.",
       "Correct. Contraction of the diaphragm and external intercostal muscles increases volume and decreases pressure, so air moves in.",
-      "The ribs move up and out.",
-      "The pressure decreases."
+      "The ribs move up and out when breathing in.",
+      "The pressure decreases, so air moves in."
     ],
     "answer": 1,
     "explanation": "Contraction of the diaphragm and external intercostal muscles increases volume and decreases pressure, so air moves in.",
@@ -5045,16 +5045,16 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is the function of cilia in the trachea?",
     "options": [
-      "to trap dust",
-      "to absorb oxygen",
+      "to trap dust and pathogens in the air",
+      "to absorb oxygen into the blood",
       "to move mucus up and away from the lungs",
-      "to warm the air"
+      "to make mucus that lines the airways"
     ],
     "optionFeedback": [
       "Mucus traps dust.",
       "Oxygen is absorbed in the alveoli.",
       "Correct. Cilia beat to sweep mucus with trapped particles towards the throat.",
-      "Cilia do not warm the air."
+      "Goblet cells make mucus."
     ],
     "answer": 2,
     "explanation": "Cilia beat to sweep mucus with trapped particles towards the throat.",
@@ -5069,7 +5069,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "options": [
       "Expired air turns limewater milky faster than inspired air.",
       "Expired air turns iodine blue-black.",
-      "Expired air turns Benedict's solution brick-red.",
+      "Expired air turns Benedict's solution brick-red when heated.",
       "Expired air relights a glowing splint."
     ],
     "optionFeedback": [
@@ -5089,16 +5089,16 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why does breathing rate increase during exercise?",
     "options": [
-      "Muscles respire faster, so more oxygen is needed and more carbon dioxide must be removed.",
-      "Muscles need less oxygen during exercise.",
-      "The lungs get smaller.",
-      "Less carbon dioxide is made."
+      "Muscles respire faster, needing more oxygen and making more carbon dioxide.",
+      "Muscles respire more slowly, so less carbon dioxide needs to be removed.",
+      "The lungs get smaller, so more breaths are needed to take in air.",
+      "The blood carries less oxygen, so the heart rate falls during exercise."
     ],
     "optionFeedback": [
       "Correct. Faster respiration in muscles needs more oxygen and produces more carbon dioxide.",
-      "They need more oxygen.",
+      "Muscles respire faster during exercise.",
       "Lung size does not change.",
-      "More carbon dioxide is made."
+      "Heart rate rises during exercise."
     ],
     "answer": 0,
     "explanation": "Faster respiration in muscles needs more oxygen and produces more carbon dioxide.",
@@ -5134,7 +5134,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "Why does the pressure in the thorax fall when breathing in?",
     "options": [
       "The volume of the thorax increases.",
-      "Air rushes into the lungs.",
+      "Air rushes into the lungs and pushes on them.",
       "The diaphragm relaxes.",
       "The ribs move down and in."
     ],
@@ -5177,10 +5177,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why is a good blood supply important for gas exchange in the alveoli?",
     "options": [
-      "It makes the alveolus walls thicker.",
-      "It stops the alveoli filling with air.",
+      "It makes the walls of the alveoli thicker and stronger.",
+      "It stops the alveoli filling up with too much air when breathing in.",
       "It keeps a steep concentration gradient for oxygen and carbon dioxide.",
-      "It supplies energy for diffusion."
+      "It supplies the energy that is needed for diffusion of gases."
     ],
     "optionFeedback": [
       "Thicker walls would slow diffusion.",
@@ -5199,10 +5199,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is respiration?",
     "options": [
-      "breathing in and out",
-      "the exchange of gases in the lungs",
+      "the movement of air into and out of the lungs",
+      "the exchange of gases between alveoli and blood",
       "the chemical reactions in cells that release energy from glucose",
-      "making glucose from carbon dioxide and water"
+      "the reactions in cells that make glucose from carbon dioxide"
     ],
     "optionFeedback": [
       "This is ventilation, not respiration.",
@@ -5287,10 +5287,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Yeast is mixed with glucose solution at 20 °C, 30 °C and 40 °C. What is measured to compare the rate of respiration?",
     "options": [
-      "the colour of the yeast",
+      "the change in colour of the yeast mixture per minute",
       "the number of bubbles of carbon dioxide produced per minute",
-      "the mass of glucose added",
-      "the temperature of the water bath"
+      "the mass of glucose added to each tube at the start of the experiment",
+      "the temperature of the water bath for each tube"
     ],
     "optionFeedback": [
       "Colour does not show the rate.",
@@ -5381,10 +5381,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "How is respiration different from breathing?",
     "options": [
-      "Respiration is a chemical process in cells; breathing moves air in and out of the lungs.",
-      "Respiration happens only in the lungs.",
-      "Breathing releases energy from glucose.",
-      "They are the same process."
+      "Respiration is a chemical process in cells; breathing moves air.",
+      "Respiration happens only in the lungs; breathing happens in all cells.",
+      "Breathing releases energy from glucose; respiration moves air.",
+      "They are two names for the same process of gas exchange."
     ],
     "optionFeedback": [
       "Correct. Breathing (ventilation) supplies oxygen; respiration uses it in cells to release energy.",
@@ -5403,10 +5403,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "In the yeast experiment, which variable should be kept the same?",
     "options": [
-      "the temperature",
+      "the temperature of the water bath",
       "the concentration of glucose solution",
-      "the number of bubbles",
-      "the time of day"
+      "the number of bubbles produced per minute",
+      "the time of day the experiment is done"
     ],
     "optionFeedback": [
       "Temperature is the variable being changed.",
@@ -5425,10 +5425,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why do mammals need energy from respiration even when resting?",
     "options": [
-      "to carry out photosynthesis",
-      "to make light",
-      "to stop diffusion",
-      "to keep a constant body temperature and carry out processes such as protein synthesis"
+      "to carry out photosynthesis and make glucose in the skin",
+      "to make light and heat for movement during sleep",
+      "to stop oxygen diffusing out of the cells while the mammal is resting or asleep",
+      "to keep body temperature constant and to build molecules such as proteins"
     ],
     "optionFeedback": [
       "Mammals do not photosynthesise.",
@@ -5513,15 +5513,15 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is aerobic respiration?",
     "options": [
-      "the release of a small amount of energy without oxygen",
-      "the making of glucose using light",
-      "the breakdown of lactic acid",
-      "the release of a relatively large amount of energy by breaking down glucose using oxygen"
+      "the release of a small amount of energy from glucose without oxygen",
+      "the making of glucose from carbon dioxide and water using light",
+      "the breakdown of lactic acid in the liver after exercise",
+      "the release of a large amount of energy from glucose using oxygen"
     ],
     "optionFeedback": [
       "This is anaerobic respiration.",
       "This is photosynthesis.",
-      "This happens in the liver after exercise.",
+      "This is paying back the oxygen debt.",
       "Correct. Aerobic respiration uses oxygen and releases much more energy than anaerobic respiration."
     ],
     "answer": 3,
@@ -5557,10 +5557,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why do muscle cells contain many mitochondria?",
     "options": [
-      "They carry out photosynthesis.",
-      "They store oxygen.",
-      "They make glucose.",
-      "They need a lot of energy from aerobic respiration for contraction."
+      "They carry out photosynthesis to make glucose.",
+      "They store oxygen for use during exercise.",
+      "They make glucose from lactic acid at rest.",
+      "They need a lot of energy for contraction."
     ],
     "optionFeedback": [
       "Muscle cells cannot photosynthesise.",
@@ -5601,10 +5601,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "How is the carbon dioxide from respiration removed from the human body?",
     "options": [
-      "It is stored in the liver.",
+      "It is stored in the liver until it is needed.",
       "It is carried in the blood plasma to the lungs and breathed out.",
-      "It is removed in urine.",
-      "It is used by muscles for energy."
+      "It is filtered out by the kidneys and then removed from the body in urine.",
+      "It is used by muscle cells to release more energy."
     ],
     "optionFeedback": [
       "Carbon dioxide is not stored.",
@@ -5711,16 +5711,16 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is anaerobic respiration?",
     "options": [
-      "the release of a large amount of energy using oxygen",
-      "the making of glucose using light",
-      "the release of a relatively small amount of energy by breaking down glucose without oxygen",
-      "breathing without air"
+      "the release of a large amount of energy from glucose using oxygen",
+      "the making of glucose from carbon dioxide and water using light",
+      "the release of a small amount of energy from glucose without oxygen",
+      "the release of energy from lactic acid using oxygen after exercise"
     ],
     "optionFeedback": [
       "This is aerobic respiration.",
       "This is photosynthesis.",
       "Correct. Anaerobic respiration uses no oxygen and releases much less energy than aerobic respiration.",
-      "Respiration is a chemical process, not breathing."
+      "This is not anaerobic respiration."
     ],
     "answer": 2,
     "explanation": "Anaerobic respiration uses no oxygen and releases much less energy than aerobic respiration.",
@@ -5734,15 +5734,15 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "Why do muscles respire anaerobically during vigorous exercise?",
     "options": [
       "Oxygen cannot be supplied fast enough for aerobic respiration alone.",
-      "There is too much oxygen in the muscles.",
-      "Anaerobic respiration releases more energy.",
-      "Muscles cannot respire aerobically."
+      "There is too much oxygen in the muscles for aerobic respiration.",
+      "Anaerobic respiration releases more energy per glucose molecule.",
+      "Muscle cells contain no mitochondria for aerobic respiration."
     ],
     "optionFeedback": [
       "Correct. When oxygen supply falls behind demand, muscles also respire anaerobically.",
       "There is too little oxygen.",
       "It releases less energy.",
-      "Muscles respire aerobically at rest."
+      "Muscle cells have many mitochondria."
     ],
     "answer": 0,
     "explanation": "When oxygen supply falls behind demand, muscles also respire anaerobically.",
@@ -5757,7 +5757,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "options": [
       "It produces lactic acid, which expands.",
       "It produces oxygen, which forms bubbles.",
-      "It produces ethanol, which makes the dough heavier.",
+      "It produces ethanol, which evaporates and makes the dough expand.",
       "It produces carbon dioxide gas, which forms bubbles in the dough."
     ],
     "optionFeedback": [
@@ -5777,10 +5777,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is the oxygen debt?",
     "options": [
-      "the oxygen stored in muscles before exercise",
+      "the oxygen stored in muscles before exercise begins",
       "the extra oxygen needed after exercise to break down lactic acid",
-      "the oxygen used by yeast",
-      "the oxygen lost in expired air"
+      "the oxygen used by yeast during fermentation",
+      "the oxygen that is lost in expired air during and after the exercise"
     ],
     "optionFeedback": [
       "Muscles do not store a debt of oxygen.",
@@ -5799,14 +5799,14 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why does heart rate stay high after exercise?",
     "options": [
-      "to cool the body down",
-      "to make more lactic acid",
-      "to carry glucose to the lungs",
+      "to carry heat away so that the body cools down",
+      "to carry oxygen to make more lactic acid",
+      "to carry glucose from the muscles to the lungs",
       "to carry lactic acid from the muscles to the liver"
     ],
     "optionFeedback": [
-      "Cooling is by sweating and vasodilation.",
-      "Lactic acid is being removed.",
+      "Cooling is mainly by sweating and vasodilation.",
+      "Lactic acid is made without oxygen and is being removed.",
       "Glucose is not taken to the lungs.",
       "Correct. A raised heart rate transports lactic acid in the blood to the liver to be broken down."
     ],
@@ -5887,10 +5887,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is a double circulation?",
     "options": [
-      "blood passes through the lungs twice for each circuit",
-      "there are two hearts",
-      "blood passes through the heart twice for each complete circuit of the body",
-      "blood flows in both directions in each vessel"
+      "blood passes through the lungs twice for each complete circuit",
+      "blood is pumped by two separate hearts, one for each circuit",
+      "blood passes through the heart twice for each complete circuit",
+      "blood flows in both directions in each vessel of the body"
     ],
     "optionFeedback": [
       "Blood passes through the heart twice.",
@@ -5909,7 +5909,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is the function of valves in the circulatory system?",
     "options": [
-      "to pump blood around the body",
+      "to pump blood around the body and back",
       "to make sure blood flows in one direction",
       "to carry oxygen",
       "to make blood clot"
@@ -5975,10 +5975,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is an advantage of a double circulation?",
     "options": [
-      "Oxygenated and deoxygenated blood mix completely.",
-      "Blood moves more slowly to the body.",
-      "Blood does not need to visit the lungs.",
-      "Blood returns to the heart after the lungs, so it can be pumped to the body at high pressure."
+      "Oxygenated and deoxygenated blood mix completely, so all tissues get the same blood.",
+      "Blood moves more slowly to the body, so there is more time for exchange in tissues.",
+      "Blood does not need to pass through the lungs, so the circuit is shorter.",
+      "Blood returns to the heart after the lungs, so it is pumped to the body at high pressure."
     ],
     "optionFeedback": [
       "The septum keeps them apart.",
@@ -6042,9 +6042,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "Why is low pressure in the lung circuit useful?",
     "options": [
       "It does not damage the delicate lung capillaries.",
-      "It makes blood flow backwards.",
-      "It stops gas exchange.",
-      "It keeps blood in the heart."
+      "It makes blood flow backwards to the heart.",
+      "It stops gas exchange happening too fast in the alveoli.",
+      "It keeps more blood inside the heart."
     ],
     "optionFeedback": [
       "Correct. Lung capillaries are delicate, so the low-pressure lung circuit protects them.",
@@ -6151,10 +6151,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why is the wall of the left ventricle thicker than the wall of the right ventricle?",
     "options": [
-      "It pumps blood to the lungs.",
+      "It pumps blood at higher pressure to the lungs.",
       "It pumps blood at higher pressure to the whole body.",
-      "It contains more blood.",
-      "It has more valves."
+      "It holds a larger volume of blood each beat.",
+      "It has more valves to support its wall."
     ],
     "optionFeedback": [
       "The right ventricle pumps to the lungs.",
@@ -6173,10 +6173,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why are the walls of the ventricles thicker than the walls of the atria?",
     "options": [
-      "Ventricles pump blood out of the heart; atria only pump blood into the ventricles.",
-      "Atria pump blood to the lungs.",
-      "Ventricles hold less blood.",
-      "Atria have no muscle."
+      "Ventricles pump blood out of the heart; atria pump only into the ventricles.",
+      "Atria pump blood out of the heart; ventricles pump only into the atria.",
+      "Ventricles hold less blood, so they need thicker walls to stay firm.",
+      "Atria have no muscle in their walls, so they cannot contract at all."
     ],
     "optionFeedback": [
       "Correct. Ventricles need more force to push blood out of the heart.",
@@ -6195,16 +6195,16 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What happens when the ventricles contract?",
     "options": [
-      "The semilunar valves close and blood enters the atria.",
-      "The atrioventricular valves close and blood is pushed through the semilunar valves.",
-      "The atria fill with blood from the ventricles.",
-      "Blood flows from the arteries into the ventricles."
+      "The semilunar valves close and the atrioventricular valves open.",
+      "The atrioventricular valves close and the semilunar valves open.",
+      "Both sets of valves close so that no blood leaves the heart.",
+      "Both sets of valves open so that blood moves in both directions."
     ],
     "optionFeedback": [
-      "Semilunar valves open as ventricles contract.",
+      "This happens when the ventricles relax.",
       "Correct. Pressure closes the atrioventricular valves and opens the semilunar valves, so blood leaves through the arteries.",
-      "Atrioventricular valves stop this.",
-      "Semilunar valves stop this."
+      "The semilunar valves open to let blood out.",
+      "Valves stop backflow into the atria."
     ],
     "answer": 1,
     "explanation": "Pressure closes the atrioventricular valves and opens the semilunar valves, so blood leaves through the arteries.",
@@ -6218,9 +6218,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "What is the function of the semilunar valves?",
     "options": [
       "to stop blood flowing back from the arteries into the ventricles",
-      "to stop blood flowing back into the atria",
-      "to pump blood into the arteries",
-      "to separate the two sides of the heart"
+      "to stop blood flowing back from the ventricles into the atria",
+      "to pump blood out of the ventricles into the arteries",
+      "to separate the left side of the heart from the right side"
     ],
     "optionFeedback": [
       "Correct. Semilunar valves close when the ventricles relax, preventing backflow.",
@@ -6261,7 +6261,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is the function of the coronary arteries?",
     "options": [
-      "to carry blood from the heart to the lungs",
+      "to carry deoxygenated blood from the heart to the lungs",
       "to carry blood from the body to the heart",
       "to supply the heart muscle with oxygen and glucose",
       "to separate the two sides of the heart"
@@ -6283,10 +6283,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is the cause of coronary heart disease?",
     "options": [
-      "a hole in the septum",
-      "too many red blood cells",
+      "a hole in the septum, so oxygenated and deoxygenated blood mix",
+      "too many red blood cells, so the blood becomes too thick",
       "blockage of the coronary arteries, so heart muscle gets less oxygen",
-      "valves that are too strong"
+      "valves that close too tightly, so blood cannot leave the heart"
     ],
     "optionFeedback": [
       "This is a different condition.",
@@ -6327,10 +6327,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Which of these can be used to monitor the activity of the heart?",
     "options": [
-      "a thermometer only",
-      "limewater",
-      "a potometer",
-      "an ECG, the pulse rate, or listening to the valves"
+      "a clinical thermometer",
+      "limewater in a test tube",
+      "a potometer and a shoot",
+      "an ECG or the pulse rate"
     ],
     "optionFeedback": [
       "Temperature does not show heart activity.",
@@ -6371,10 +6371,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why does heart rate increase during exercise?",
     "options": [
-      "to make more lactic acid",
-      "to cool the blood",
-      "to supply more oxygen and glucose to muscles and remove more carbon dioxide",
-      "to slow down breathing"
+      "to make more lactic acid in the muscles",
+      "to cool the blood by moving it faster through the skin",
+      "to supply more oxygen and glucose to the muscles",
+      "to slow down the rate of breathing"
     ],
     "optionFeedback": [
       "Heart rate does not increase to make lactic acid.",
@@ -6415,10 +6415,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "How can diet and exercise reduce the risk of coronary heart disease?",
     "options": [
-      "More salt and less exercise strengthen the heart.",
-      "Less saturated fat and regular exercise reduce fatty deposits in the arteries.",
-      "Eating more fat makes the arteries wider.",
-      "Exercise blocks the coronary arteries."
+      "More salt and less exercise make the heart muscle stronger and the arteries wider.",
+      "Less saturated fat and more exercise reduce fatty deposits in arteries.",
+      "More saturated fat in the diet makes the coronary arteries wider.",
+      "Less exercise lets the coronary arteries rest and widen."
     ],
     "optionFeedback": [
       "Both increase the risk.",
@@ -6481,16 +6481,16 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why do veins have valves?",
     "options": [
-      "to increase the blood pressure",
-      "to exchange substances with cells",
+      "to increase the blood pressure in the veins",
+      "to exchange substances with the body cells",
       "to stop blood flowing backwards because pressure is low",
-      "to pump blood"
+      "to pump blood back towards the heart from the legs"
     ],
     "optionFeedback": [
       "Valves do not raise pressure.",
       "Capillaries do this.",
       "Correct. Blood pressure in veins is low, so valves stop it flowing backwards.",
-      "The heart pumps blood."
+      "The heart pumps blood; muscles squeeze veins."
     ],
     "answer": 2,
     "explanation": "Blood pressure in veins is low, so valves stop it flowing backwards.",
@@ -6503,14 +6503,14 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why are capillary walls only one cell thick?",
     "options": [
-      "to withstand high pressure",
-      "to stop blood flowing backwards",
+      "to withstand the high pressure of blood coming from the heart",
+      "to stop blood flowing backwards in the tissues",
       "to give a short diffusion distance for exchange with cells",
-      "to store blood"
+      "to store blood for use during exercise"
     ],
     "optionFeedback": [
       "Arteries withstand high pressure.",
-      "Valves do this.",
+      "Valves in veins do this.",
       "Correct. A thin wall lets substances diffuse quickly between blood and cells.",
       "Capillaries do not store blood."
     ],
@@ -6591,10 +6591,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why do arteries have elastic walls?",
     "options": [
-      "to stretch and recoil with each heartbeat, keeping blood flowing smoothly at high pressure",
-      "to let substances diffuse out",
-      "to stop backflow",
-      "to store oxygen"
+      "to stretch and recoil with each heartbeat, keeping pressure high",
+      "to let oxygen and glucose diffuse out through the wall to the body cells",
+      "to stop blood flowing backwards between heartbeats",
+      "to store oxygen for the muscle in the artery wall"
     ],
     "optionFeedback": [
       "Correct. Elastic tissue stretches as blood surges in and springs back, smoothing the flow.",
@@ -6745,7 +6745,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why do red blood cells have no nucleus?",
     "options": [
-      "to make them move faster",
+      "to make them more flexible so they move faster",
       "to help them make antibodies",
       "to help them divide",
       "to leave more room for haemoglobin"
@@ -6767,10 +6767,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What happens during blood clotting?",
     "options": [
-      "Soluble fibrinogen is converted into insoluble fibrin, forming a mesh that traps red blood cells.",
-      "Insoluble fibrin is converted into soluble fibrinogen.",
-      "Red blood cells make antibodies.",
-      "Plasma turns into lymphocytes."
+      "Soluble fibrinogen becomes insoluble fibrin, making a mesh that traps cells.",
+      "Insoluble fibrin becomes soluble fibrinogen, which dissolves the blood cells.",
+      "Red blood cells make antibodies, which stick together and block the wound.",
+      "Plasma turns into lymphocytes, which form a mesh that blocks the wound."
     ],
     "optionFeedback": [
       "Correct. Platelets help form fibrin threads, which trap cells and seal the wound.",
@@ -6833,10 +6833,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "How does oxygen reach a body cell from the blood?",
     "options": [
-      "It is pumped directly from the artery into the cell.",
-      "It travels in the lymph only.",
-      "It diffuses out of a capillary into the tissue fluid, then into the cell.",
-      "It is carried into the cell by red blood cells."
+      "It is pumped directly from an artery into the cell.",
+      "It travels from the blood to the cell in the lymph only, not tissue fluid.",
+      "It diffuses from a capillary through tissue fluid into the cell.",
+      "It is carried into the cell inside red blood cells."
     ],
     "optionFeedback": [
       "Exchange happens at capillaries.",
@@ -6878,9 +6878,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "Why is blood clotting important?",
     "options": [
       "It prevents blood loss and stops pathogens entering the body.",
-      "It carries oxygen to cuts.",
-      "It makes antibodies at the wound.",
-      "It removes urea from the wound."
+      "It carries extra oxygen to the cells near a cut.",
+      "It makes antibodies at the wound, which kill any bacteria that enter.",
+      "It removes urea and other waste from the wound."
     ],
     "optionFeedback": [
       "Correct. A clot seals the wound, preventing blood loss and entry of pathogens.",
@@ -6921,10 +6921,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is a transmissible disease?",
     "options": [
-      "a disease caused by a poor diet",
-      "a disease in which the pathogen can be passed from one host to another",
-      "a disease that is inherited",
-      "a disease caused by smoking"
+      "a disease in which a poor diet causes the symptoms",
+      "a disease in which the pathogen passes from host to host",
+      "a disease that is inherited from one or both parents",
+      "a disease in which smoking damages the lungs"
     ],
     "optionFeedback": [
       "Deficiency diseases are not transmissible.",
@@ -6965,10 +6965,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is the role of the mosquito in malaria?",
     "options": [
-      "It is the pathogen that causes malaria.",
+      "It is the pathogen that causes the disease.",
       "It is a vector that carries the pathogen between people.",
-      "It kills the malaria parasite.",
-      "It makes antibodies against malaria."
+      "It is a predator that kills the parasite in the blood of people.",
+      "It is a host that makes antibodies to malaria."
     ],
     "optionFeedback": [
       "Malaria is caused by a single-celled parasite.",
@@ -7009,10 +7009,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "How is cholera transmitted?",
     "options": [
-      "in water contaminated with faeces containing the bacterium",
-      "by mosquito bites",
-      "in the air by coughing",
-      "by sharing needles"
+      "in water contaminated with faeces",
+      "by the bite of an infected mosquito",
+      "in droplets in the air when people cough",
+      "by sharing needles with an infected person"
     ],
     "optionFeedback": [
       "Correct. The cholera bacterium is passed on in contaminated water.",
@@ -7031,10 +7031,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "How does the cholera toxin cause diarrhoea?",
     "options": [
-      "It destroys red blood cells.",
-      "It stops peristalsis.",
-      "It causes chloride ions to be released into the gut, and water follows by osmosis.",
-      "It blocks the absorption of protein."
+      "It destroys red blood cells, so less water is carried in the blood.",
+      "It stops peristalsis, so food stays in the gut for too long.",
+      "It makes chloride ions move into the gut, and water follows by osmosis.",
+      "It blocks the absorption of protein, so amino acids stay in the gut."
     ],
     "optionFeedback": [
       "This is not how cholera acts.",
@@ -7185,10 +7185,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is emphysema?",
     "options": [
-      "inflammation of the airways with excess mucus",
-      "breakdown of the alveolus walls, reducing the surface area for gas exchange",
-      "a cancer of the lungs",
-      "blockage of the coronary arteries"
+      "inflammation of the airways, with too much mucus being made",
+      "breakdown of alveolus walls, reducing the area for gas exchange",
+      "uncontrolled division of cells in the lungs, forming a tumour",
+      "blockage of the coronary arteries by fatty deposits"
     ],
     "optionFeedback": [
       "This is bronchitis.",
@@ -7207,10 +7207,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is a drug?",
     "options": [
-      "any substance that kills bacteria",
-      "a substance made only by doctors",
-      "any substance taken into the body that modifies or affects chemical reactions in the body",
-      "a food that provides energy"
+      "any substance taken into the body that kills bacteria only",
+      "any substance made by a doctor and given to patients only in hospital",
+      "any substance taken into the body that affects its chemical reactions",
+      "any food taken into the body that provides it with energy"
     ],
     "optionFeedback": [
       "This describes an antibiotic, a type of drug.",
@@ -7251,7 +7251,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why are antibiotics not used to treat colds?",
     "options": [
-      "Colds are caused by bacteria that are always resistant.",
+      "Colds are caused by bacteria that are always resistant to every antibiotic.",
       "Antibiotics make colds last longer.",
       "Colds are caused by viruses, and antibiotics do not affect viruses.",
       "Colds are deficiency diseases."
@@ -7274,9 +7274,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "What is MRSA?",
     "options": [
       "a bacterium resistant to many antibiotics",
-      "a virus that causes colds",
-      "an antibiotic",
-      "a type of white blood cell"
+      "a virus that causes colds and flu",
+      "an antibiotic used to treat infections",
+      "a white blood cell that makes antibodies"
     ],
     "optionFeedback": [
       "Correct. MRSA is a strain of bacteria resistant to many antibiotics.",
@@ -7295,13 +7295,13 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "How does a population of antibiotic-resistant bacteria develop?",
     "options": [
-      "The antibiotic causes all the bacteria to mutate.",
-      "The person becomes resistant to the antibiotic.",
-      "A mutation makes some bacteria resistant; the antibiotic kills the others; the resistant ones reproduce.",
-      "The bacteria learn to avoid the antibiotic."
+      "The antibiotic makes all the bacteria mutate; they then all reproduce.",
+      "The person becomes resistant to the antibiotic; the bacteria then spread to others.",
+      "A mutation makes some resistant; the antibiotic kills the others; these reproduce.",
+      "The bacteria learn to avoid the antibiotic; they then teach their offspring."
     ],
     "optionFeedback": [
-      "Mutations happen by chance.",
+      "Mutations happen by chance, not because of the antibiotic.",
       "It is the bacteria that become resistant.",
       "Correct. Chance mutation, selection by the antibiotic, and reproduction of the survivors produce a resistant population.",
       "Bacteria do not learn."
@@ -7383,9 +7383,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "A patient stops taking an antibiotic after two days of a seven-day course. Why could this increase resistance?",
     "options": [
-      "The antibiotic becomes stronger in the body.",
-      "The patient becomes resistant to the antibiotic.",
-      "Viruses start to grow instead.",
+      "The antibiotic left in the body becomes stronger over time.",
+      "The patient becomes resistant to the antibiotic instead.",
+      "Viruses start to grow in the places where the bacteria have been killed.",
       "Some bacteria survive, and these are more likely to be the resistant ones."
     ],
     "optionFeedback": [
@@ -7471,10 +7471,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why does an antibody bind to only one type of antigen?",
     "options": [
-      "It is the same size as the antigen.",
-      "It is made by phagocytes.",
+      "Its size is the same as that specific antigen.",
+      "It is made by phagocytes, which make one antibody for each antigen.",
       "Its shape is complementary to that specific antigen.",
-      "It is used up after one binding."
+      "It is used up after it binds to one antigen."
     ],
     "optionFeedback": [
       "Shape, not size, matters.",
@@ -7493,9 +7493,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "How do antibodies help destroy pathogens?",
     "options": [
-      "by carrying oxygen to them",
-      "by making them reproduce faster",
-      "by turning them into antigens",
+      "by carrying oxygen to them so they are poisoned",
+      "by making them reproduce faster so that they use up their food and die sooner",
+      "by turning them into antigens that are excreted",
       "by destroying them directly or marking them for phagocytes"
     ],
     "optionFeedback": [
@@ -7515,10 +7515,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is active immunity?",
     "options": [
-      "antibodies received from another person",
-      "immunity that lasts only a few weeks",
+      "defence against a pathogen by antibodies received from another person",
+      "defence against a pathogen that lasts only a few weeks",
       "defence against a pathogen by antibodies made in your own body",
-      "a type of antibiotic"
+      "defence against a pathogen by taking a course of antibiotics"
     ],
     "optionFeedback": [
       "This is passive immunity.",
@@ -7537,10 +7537,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What does a vaccine contain?",
     "options": [
-      "antibodies",
-      "antibiotics",
+      "antibodies taken from another person",
+      "antibiotics to kill bacteria",
       "weakened pathogens or their antigens",
-      "white blood cells"
+      "white blood cells from a donor"
     ],
     "optionFeedback": [
       "Passive immunity involves antibodies.",
@@ -7559,7 +7559,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why does a vaccinated person not become ill when they meet the real pathogen?",
     "options": [
-      "The vaccine kills all pathogens in the body forever.",
+      "The vaccine kills all the pathogens in the body for the rest of the person's life.",
       "The person has antibiotics in their blood.",
       "Memory cells make antibodies quickly and in large amounts.",
       "The pathogen cannot enter the body."
@@ -7603,10 +7603,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "How does a baby gain passive immunity?",
     "options": [
-      "antibodies passed across the placenta and in breast milk",
-      "vaccination at birth",
-      "making its own antibodies",
-      "antibiotics in breast milk"
+      "antibodies from its mother across the placenta",
+      "a vaccination given soon after birth",
+      "antibodies made by its own lymphocytes",
+      "antibiotics passed to it in its mother's breast milk"
     ],
     "optionFeedback": [
       "Correct. The mother's antibodies reach the baby through the placenta and breast milk.",
@@ -7625,10 +7625,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "How does vaccination help control the spread of a disease in a community?",
     "options": [
-      "It kills the pathogen in the environment.",
-      "It makes the pathogen harmless forever.",
-      "It stops people making antibodies.",
-      "If most people are immune, the pathogen cannot spread easily from person to person."
+      "It kills the pathogen in the air, water and soil.",
+      "It changes the pathogen so that it becomes harmless forever.",
+      "It stops people making antibodies to the pathogen.",
+      "If most people are immune, the pathogen cannot spread easily."
     ],
     "optionFeedback": [
       "Vaccines act inside the body.",
@@ -7647,9 +7647,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "How does HIV weaken the immune system?",
     "options": [
-      "It increases the number of red blood cells.",
-      "It destroys platelets.",
-      "It makes the stomach acid weaker.",
+      "It increases the number of red blood cells, so the blood thickens.",
+      "It destroys platelets, so the blood cannot clot at wounds.",
+      "It makes the stomach acid weaker, so more pathogens survive.",
       "It reduces the number of lymphocytes, so fewer antibodies are made."
     ],
     "optionFeedback": [
@@ -7691,10 +7691,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is excretion?",
     "options": [
-      "the removal of undigested food",
-      "the breakdown of food into small molecules",
-      "the release of energy from glucose",
-      "the removal of toxic materials and waste products of metabolism from organisms"
+      "the removal of undigested food from the body through the anus",
+      "the breakdown of large food molecules into small soluble molecules",
+      "the release of energy from glucose in the cells of the body",
+      "the removal of the waste products of metabolism from the body"
     ],
     "optionFeedback": [
       "This is egestion.",
@@ -7867,7 +7867,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Which is a waste product of metabolism?",
     "options": [
-      "fibre",
+      "undigested fibre",
       "glucose",
       "oxygen",
       "carbon dioxide"
@@ -7889,10 +7889,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "After a meal high in protein, more urea is made. Why?",
     "options": [
-      "More amino acids are absorbed than the body needs, so the excess is broken down.",
-      "Protein is converted directly into urea in the stomach.",
-      "Urea is a protein found in food.",
-      "The kidneys make more urea."
+      "More amino acids are absorbed than are needed, so the excess is deaminated.",
+      "Protein is converted directly into urea by enzymes in the stomach.",
+      "Urea is a protein found in food, so more of it is absorbed from the gut after the meal.",
+      "The kidneys make more urea when more protein reaches them."
     ],
     "optionFeedback": [
       "Correct. Excess amino acids cannot be stored, so the liver deaminates them, forming more urea.",
@@ -7956,7 +7956,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "Where in the nephron does filtration of the blood take place?",
     "options": [
       "loop of Henle",
-      "glomerulus into the Bowman's capsule",
+      "glomerulus",
       "collecting duct",
       "ureter"
     ],
@@ -8067,10 +8067,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What happens in the liver during deamination?",
     "options": [
-      "Glucose is changed into glycogen.",
-      "Urea is filtered out of the blood.",
-      "Proteins are digested into amino acids.",
-      "The nitrogen-containing part of amino acids is removed and made into urea."
+      "Excess glucose is changed into glycogen and stored in the liver.",
+      "Urea is filtered out of the blood and passed into the bile.",
+      "Proteins are digested into amino acids by enzymes in the liver.",
+      "The nitrogen part of amino acids is removed and made into urea."
     ],
     "optionFeedback": [
       "This is glucose storage, not deamination.",
@@ -8090,14 +8090,14 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "Apart from making urea, what does the liver do with amino acids?",
     "options": [
       "uses them to make proteins such as plasma proteins",
-      "stores them as glycogen",
-      "turns them into fats for storage only",
-      "excretes them in bile"
+      "stores them as glycogen for later use",
+      "changes them into glucose and stores it as starch",
+      "excretes them unchanged in the bile"
     ],
     "optionFeedback": [
       "Correct. The liver uses amino acids to make proteins, and deaminates the excess.",
       "Glycogen is made from glucose.",
-      "This is not the main use.",
+      "This is not the main use asked about.",
       "Amino acids are not excreted in bile."
     ],
     "answer": 0,
@@ -8222,9 +8222,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "Which is a reflex action?",
     "options": [
       "pulling your hand away from a hot object",
-      "choosing what to eat",
-      "writing your name",
-      "deciding to run"
+      "choosing what to eat for lunch",
+      "writing your name on a page",
+      "deciding to run when you see a bus coming"
     ],
     "optionFeedback": [
       "Correct. A reflex is fast and automatic, and protects the body.",
@@ -8287,10 +8287,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "How does an impulse cross a synapse?",
     "options": [
-      "A chemical is released, diffuses across the gap and binds to receptors on the next neurone.",
-      "The electrical impulse jumps across the gap.",
-      "Blood carries the impulse across the gap.",
-      "The two neurones touch and share cytoplasm."
+      "A chemical diffuses across the gap and binds to receptors on the next neurone.",
+      "The electrical impulse jumps straight across the gap to the next neurone.",
+      "Blood carries the impulse across the gap from one neurone to the next.",
+      "The two neurones touch, so the impulse passes through shared cytoplasm."
     ],
     "optionFeedback": [
       "Correct. Neurotransmitter molecules diffuse across the gap and bind to receptor proteins.",
@@ -8309,10 +8309,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why can impulses travel in only one direction across a synapse?",
     "options": [
-      "The gap is too wide for impulses to return.",
-      "Impulses always travel towards the brain.",
-      "The chemical is released from only one side and the receptors are only on the other side.",
-      "The second neurone has no cytoplasm."
+      "The gap is too wide for an impulse to travel back the other way.",
+      "Impulses always travel towards the brain along every neurone.",
+      "The chemical is released on one side and the receptors are on the other.",
+      "The second neurone has no cytoplasm, so it cannot send impulses back."
     ],
     "optionFeedback": [
       "This is not the reason.",
@@ -8397,10 +8397,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is the function of the iris?",
     "options": [
-      "focusing light on the retina",
+      "focusing light rays onto the retina at the back",
       "carrying impulses to the brain",
       "controlling the amount of light entering the eye",
-      "detecting light"
+      "detecting the colour of light"
     ],
     "optionFeedback": [
       "The lens does this.",
@@ -8441,10 +8441,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why does the blind spot not detect light?",
     "options": [
-      "It is covered by the iris.",
-      "It contains too many receptors.",
-      "There are no receptor cells where the optic nerve leaves the eye.",
-      "The lens does not focus light there."
+      "It is covered by the iris, which blocks the light.",
+      "It contains too many receptors, which cancel each other out.",
+      "There are no receptor cells where the optic nerve leaves.",
+      "The lens never focuses light onto that part of the retina."
     ],
     "optionFeedback": [
       "The iris is at the front.",
@@ -8508,7 +8508,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "A person looks from a book to a distant mountain. What happens to the lens?",
     "options": [
       "It becomes thinner because the suspensory ligaments are pulled tight.",
-      "It becomes fatter because the ciliary muscles contract.",
+      "It becomes fatter because the ciliary muscles contract and the ligaments slacken.",
       "It moves forward in the eye.",
       "It stays the same shape."
     ],
@@ -8529,10 +8529,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is the fovea?",
     "options": [
-      "the place where the optic nerve leaves",
-      "the coloured part of the eye",
-      "the part of the retina with the most cone cells, giving the sharpest image",
-      "the hole in the iris"
+      "the place where the optic nerve leaves the eye",
+      "the coloured ring of muscle at the front",
+      "the part of the retina with the most cone cells",
+      "the hole in the iris that lets light in"
     ],
     "optionFeedback": [
       "This is the blind spot.",
@@ -8551,10 +8551,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is a sense organ?",
     "options": [
-      "a muscle that responds to impulses",
-      "a nerve that carries impulses",
+      "a group of muscle cells that respond to impulses",
+      "a group of nerve cells that carry impulses",
       "a group of receptor cells that respond to specific stimuli",
-      "a gland that releases hormones"
+      "a group of gland cells that release hormones into the blood"
     ],
     "optionFeedback": [
       "This is an effector.",
@@ -8595,10 +8595,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is a hormone?",
     "options": [
-      "a chemical made by a gland and carried by the blood to target organs",
-      "an electrical impulse carried by neurones",
-      "an enzyme that digests food",
-      "a cell that fights disease"
+      "a chemical made by a gland and carried by the blood",
+      "an electrical impulse carried along neurones",
+      "an enzyme that is made by a gland to digest food",
+      "a cell that is carried by the blood to fight disease"
     ],
     "optionFeedback": [
       "Correct. Hormones are chemicals secreted by glands into the blood.",
@@ -8705,10 +8705,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why does adrenaline increase blood glucose?",
     "options": [
-      "to store more glucose as glycogen",
-      "to make more urea",
+      "to store more glucose as glycogen in the liver",
+      "to make more urea from excess glucose",
       "to supply more glucose for respiration in muscles",
-      "to reduce the heart rate"
+      "to lower the heart rate during danger"
     ],
     "optionFeedback": [
       "Adrenaline causes glycogen breakdown.",
@@ -8860,7 +8860,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "What is negative feedback?",
     "options": [
       "a change from the set point causes a response that makes the change bigger",
-      "the body ignores a change from the set point",
+      "the body ignores a change from the set point until the level returns by itself",
       "a change that only happens in plants",
       "a change from the set point causes a response that returns the level to the set point"
     ],
@@ -8881,7 +8881,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is a set point?",
     "options": [
-      "the highest level a factor can reach",
+      "the highest level that a factor can reach in the body",
       "the normal level around which a factor is kept",
       "the place where hormones are made",
       "the point at which a reflex happens"
@@ -8925,10 +8925,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Blood glucose rises after a meal and then falls back to normal. Why is this an example of negative feedback?",
     "options": [
-      "The rise triggers a further rise.",
-      "The level never changes.",
-      "The kidney removes all the glucose.",
-      "The rise triggers a response that brings the level back down to the set point."
+      "The rise causes a response that makes the level rise further.",
+      "The level never changes because insulin is always present.",
+      "The kidney removes all the extra glucose in the urine.",
+      "The rise causes a response that brings the level back down."
     ],
     "optionFeedback": [
       "This would be positive feedback.",
@@ -8947,7 +8947,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why must conditions inside the body be kept constant?",
     "options": [
-      "so that the body never needs food",
+      "so that the body never needs to take in food",
       "so that enzymes and cells work properly",
       "so that hormones are never made",
       "so that the heart stops beating"
@@ -8991,15 +8991,15 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Which part of the body detects a change in body temperature?",
     "options": [
-      "effectors such as muscles",
-      "the bladder",
-      "the lens of the eye",
+      "effectors, such as muscles and glands",
+      "the bladder and the kidneys",
+      "the lens and the retina, which detect infrared heat",
       "receptors, such as those in the skin and hypothalamus"
     ],
     "optionFeedback": [
       "Effectors respond, they do not detect.",
-      "It is not involved.",
-      "It is not involved.",
+      "They are not involved.",
+      "They do not detect temperature.",
       "Correct. Receptors detect changes; effectors respond."
     ],
     "answer": 3,
@@ -9058,9 +9058,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "How does sweating cool the body?",
     "options": [
       "Water in sweat evaporates, taking heat from the skin.",
-      "Sweat is cold.",
-      "Sweat stops blood flowing to the skin.",
-      "Sweat traps a layer of air."
+      "Sweat is colder than the skin, so it cools it.",
+      "Sweat stops blood flowing near the skin surface.",
+      "Sweat traps a layer of air next to the skin."
     ],
     "optionFeedback": [
       "Correct. Evaporation of sweat transfers heat away from the skin.",
@@ -9079,15 +9079,15 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What happens to arterioles in the skin when the body is too hot?",
     "options": [
-      "They narrow, so less blood flows near the skin surface.",
-      "They widen, so less heat is lost.",
-      "The capillaries move up and down in the skin.",
-      "They widen, so more blood flows near the skin surface and more heat is lost."
+      "They narrow, so less blood flows near the skin and less heat is lost.",
+      "They widen, so less blood flows near the skin and less heat is lost.",
+      "They narrow, so more blood flows near the skin and more heat is lost.",
+      "They widen, so more blood flows near the skin and more heat is lost."
     ],
     "optionFeedback": [
       "This happens when cold.",
-      "Widening increases heat loss.",
-      "Capillaries do not move.",
+      "Widening increases blood flow and heat loss.",
+      "Narrowing reduces blood flow.",
       "Correct. Vasodilation increases blood flow to the skin, so more heat is lost by radiation."
     ],
     "answer": 3,
@@ -9123,9 +9123,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "How does shivering help warm the body?",
     "options": [
-      "It reduces sweating.",
-      "It narrows the blood vessels.",
-      "It makes the hairs lie flat.",
+      "It reduces sweating, so less heat is lost by evaporation.",
+      "It narrows blood vessels in the skin.",
+      "It makes the hairs lie flat on the skin.",
       "Muscle contractions increase respiration, releasing heat."
     ],
     "optionFeedback": [
@@ -9145,10 +9145,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "When a person is cold, the hair erector muscles contract. How does this reduce heat loss?",
     "options": [
-      "The hairs lie flat so heat escapes.",
-      "The muscles produce sweat.",
-      "The hairs widen the blood vessels.",
-      "The hairs stand up and trap a layer of air, which insulates the skin."
+      "The hairs lie flat so that heat cannot escape.",
+      "The muscles produce sweat that covers the skin.",
+      "The hairs press on blood vessels and narrow them.",
+      "The hairs stand up and trap a layer of insulating air."
     ],
     "optionFeedback": [
       "This happens when hot.",
@@ -9190,7 +9190,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "What is the role of fatty tissue under the skin in temperature control?",
     "options": [
       "insulation that reduces heat loss",
-      "producing sweat",
+      "producing sweat when the body is hot",
       "detecting temperature",
       "carrying blood"
     ],
@@ -9365,10 +9365,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why must blood glucose concentration be controlled?",
     "options": [
-      "Glucose is a waste product.",
-      "Too much or too little glucose harms cells, for example by affecting water movement by osmosis.",
-      "Glucose is needed only by the liver.",
-      "Glucose blocks the arteries."
+      "Glucose is a toxic waste product that must be removed.",
+      "Too much or too little glucose harms cells, for example by osmosis.",
+      "Glucose is needed only by the liver, not other cells.",
+      "Glucose forms fatty deposits that block the arteries if it is too high."
     ],
     "optionFeedback": [
       "Glucose is a useful nutrient.",
@@ -9389,7 +9389,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "options": [
       "The pancreas makes too much insulin.",
       "The pancreas does not make enough insulin.",
-      "The kidneys do not filter glucose.",
+      "The kidneys do not filter glucose out of the blood.",
       "The person eats too much protein."
     ],
     "optionFeedback": [
@@ -9431,10 +9431,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "How is Type 1 diabetes treated?",
     "options": [
-      "insulin injections and controlling carbohydrate in the diet",
-      "glucagon injections only",
-      "antibiotics",
-      "eating more sugar"
+      "insulin injections and a controlled diet",
+      "glucagon injections and a high sugar diet",
+      "a course of antibiotics and rest",
+      "eating more sugar at every meal"
     ],
     "optionFeedback": [
       "Correct. Injected insulin replaces the insulin the pancreas cannot make; diet is also controlled.",
@@ -9505,9 +9505,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "What is phototropism?",
     "options": [
       "a growth response of a plant to gravity",
-      "the making of food using light",
+      "the making of food by a plant using energy from light",
       "a growth response of a plant to the direction of light",
-      "the loss of water from leaves"
+      "the loss of water vapour from the leaves"
     ],
     "optionFeedback": [
       "This is gravitropism.",
@@ -9548,19 +9548,19 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Which row describes the responses of shoots and roots? (shoot; root)",
     "options": [
-      "grows towards gravity; grows towards light",
-      "grows away from light; grows away from gravity",
-      "grows towards light and away from gravity; grows towards gravity",
-      "grows towards gravity; grows away from gravity"
+      "towards gravity; towards light",
+      "away from light; away from gravity",
+      "towards light; towards gravity",
+      "towards light; away from gravity"
     ],
     "optionFeedback": [
       "This is the wrong way round.",
       "Both are wrong.",
-      "Correct. Shoots show positive phototropism and negative gravitropism; roots show positive gravitropism.",
-      "Shoots grow away from gravity."
+      "Correct. Shoots grow towards light (and away from gravity); roots grow towards gravity.",
+      "Roots grow towards gravity."
     ],
     "answer": 2,
-    "explanation": "Shoots show positive phototropism and negative gravitropism; roots show positive gravitropism.",
+    "explanation": "Shoots grow towards light (and away from gravity); roots grow towards gravity.",
     "difficulty": "medium",
     "type": "concept"
   },
@@ -9614,7 +9614,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "How does auxin make a shoot bend towards light from one side?",
     "options": [
-      "Auxin moves to the lit side, where it stops cells growing.",
+      "Auxin moves to the lit side, where it stops the cells there from growing.",
       "Auxin is destroyed on the shaded side.",
       "Auxin moves to the shaded side, where it makes cells elongate more.",
       "Auxin makes cells on the lit side divide faster."
@@ -9680,10 +9680,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why is phototropism useful to a plant?",
     "options": [
-      "The roots find more light.",
+      "The roots find more light for growth.",
       "The leaves get more light for photosynthesis.",
-      "It stops the plant losing water.",
-      "It helps pollination by wind."
+      "The stem loses less water by transpiration.",
+      "The flowers get more pollen from the wind."
     ],
     "optionFeedback": [
       "Roots grow towards gravity, not light.",
@@ -9725,9 +9725,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "What is a gene?",
     "options": [
       "a length of DNA that codes for a protein",
-      "a whole chromosome",
-      "a type of cell",
-      "an amino acid"
+      "a whole chromosome made of DNA",
+      "a cell that contains a nucleus and chromosomes",
+      "an amino acid in a protein chain"
     ],
     "optionFeedback": [
       "Correct. A gene is a section of DNA that codes for a protein.",
@@ -9857,9 +9857,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "What are stem cells?",
     "options": [
       "unspecialised cells that can divide to form specialised cells",
-      "cells found only in plant stems",
-      "specialised cells such as neurones",
-      "cells that cannot divide"
+      "cells found only in the stems of plants",
+      "specialised cells, such as neurones and muscle cells, in adults",
+      "cells that cannot divide after birth"
     ],
     "optionFeedback": [
       "Correct. Stem cells divide by mitosis and can become specialised cells.",
@@ -9947,7 +9947,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
       "reproduction involving the fusion of gametes",
       "reproduction from two parents",
       "reproduction from one parent producing genetically identical offspring",
-      "reproduction producing genetically different offspring"
+      "reproduction producing genetically different offspring from one parent"
     ],
     "optionFeedback": [
       "This is sexual reproduction.",
@@ -9966,10 +9966,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Which is an example of asexual reproduction?",
     "options": [
-      "a sperm fertilising an egg",
+      "a sperm fertilising an egg cell",
       "a potato tuber growing into a new plant",
-      "pollen landing on a stigma",
-      "a seed forming in a fruit"
+      "pollen landing on the stigma of another flower",
+      "a seed forming inside a fruit"
     ],
     "optionFeedback": [
       "This is sexual reproduction.",
@@ -9988,10 +9988,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is sexual reproduction?",
     "options": [
-      "the division of one cell into two identical cells",
-      "the fusion of two haploid gamete nuclei to form a diploid zygote",
-      "the fusion of two diploid cells",
-      "the growth of a new plant from a runner"
+      "the division of one diploid cell into two identical cells",
+      "the fusion of two haploid nuclei to form a diploid zygote",
+      "the fusion of two diploid nuclei to form a diploid zygote",
+      "the growth of a new plant from a runner of the parent"
     ],
     "optionFeedback": [
       "This is asexual.",
@@ -10010,10 +10010,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is an advantage of asexual reproduction?",
     "options": [
-      "It produces variation in the offspring.",
+      "It produces variation in all the offspring.",
       "A single organism can reproduce quickly without a mate.",
-      "It helps species adapt to change.",
-      "It always needs two parents."
+      "It helps the species adapt quickly to a change in conditions.",
+      "It needs gametes from two parents."
     ],
     "optionFeedback": [
       "Asexual offspring are identical.",
@@ -10032,10 +10032,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is an advantage of sexual reproduction?",
     "options": [
-      "It is faster than asexual reproduction.",
-      "It produces variation, so some offspring may survive a change in the environment.",
-      "It needs only one parent.",
-      "All offspring are identical to the parent."
+      "It is faster than asexual reproduction, so numbers rise quickly.",
+      "It produces variation, so some offspring may survive a change.",
+      "It needs only one parent, so no mate has to be found.",
+      "All the offspring are identical, so good features are kept."
     ],
     "optionFeedback": [
       "It is usually slower.",
@@ -10054,13 +10054,13 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "A field of genetically identical crop plants is attacked by a new disease. Why might all the plants die?",
     "options": [
-      "Identical plants spread disease more slowly.",
-      "Sexual reproduction caused the disease.",
-      "They have too much variation.",
+      "Identical plants spread disease faster than varied plants.",
+      "Sexual reproduction caused the disease in the crop.",
+      "They have too much variation, so none are resistant.",
       "They have no variation, so if one is not resistant, none are."
     ],
     "optionFeedback": [
-      "They are all equally affected.",
+      "They are all equally affected; that is not the reason.",
       "This is not the cause.",
       "They have none.",
       "Correct. Without variation there are no resistant individuals."
@@ -10142,9 +10142,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why is variation useful in a population?",
     "options": [
-      "All individuals become identical.",
-      "It stops natural selection.",
-      "It prevents disease completely.",
+      "All individuals become identical over time.",
+      "It stops natural selection from happening in the population.",
+      "It prevents any disease in the population.",
       "Some individuals may be better adapted if conditions change."
     ],
     "optionFeedback": [
@@ -10230,9 +10230,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why do wind-pollinated flowers have feathery stigmas outside the flower?",
     "options": [
-      "to attract insects",
-      "to make nectar",
-      "to protect the ovary",
+      "to attract insects to the flower",
+      "to make nectar for visiting insects",
+      "to protect the ovary from rain and wind",
       "to catch pollen grains carried in the air"
     ],
     "optionFeedback": [
@@ -10252,10 +10252,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is cross-pollination?",
     "options": [
-      "transfer of pollen to the stigma of the same flower",
-      "transfer of pollen to a plant of a different species",
-      "fusion of nuclei inside the ovule",
-      "transfer of pollen from one plant to the stigma of another plant of the same species"
+      "transfer of pollen to the stigma of the same flower or plant",
+      "transfer of pollen to a flower on a plant of a different species",
+      "fusion of the pollen nucleus with the ovule nucleus",
+      "transfer of pollen to a flower on another plant of the same species"
     ],
     "optionFeedback": [
       "This is self-pollination.",
@@ -10274,10 +10274,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why does cross-pollination produce more variation than self-pollination?",
     "options": [
-      "It produces identical offspring.",
-      "It uses more pollen.",
-      "It happens only in wind-pollinated plants.",
-      "Gametes come from two different plants, so more combinations of alleles are possible."
+      "It produces identical offspring, so good features are kept.",
+      "It uses more pollen grains, so more seeds are always made in each fruit.",
+      "It happens only in wind-pollinated plants, which vary more.",
+      "Gametes come from two different plants, giving more allele combinations."
     ],
     "optionFeedback": [
       "It produces varied offspring.",
@@ -10486,8 +10486,8 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "options": [
       "It has a large food store.",
       "It has a cell wall for protection.",
-      "It is diploid.",
-      "It has a tail for swimming and many mitochondria to release energy."
+      "It has a diploid nucleus.",
+      "It has a tail and many mitochondria."
     ],
     "optionFeedback": [
       "The egg has the food store.",
@@ -10528,9 +10528,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What does testosterone cause at puberty?",
     "options": [
-      "development of breasts",
+      "development of breasts and a menstrual cycle",
       "the start of the menstrual cycle",
-      "widening of the hips",
+      "widening of the hips and growth of breasts",
       "growth of facial hair and deepening of the voice"
     ],
     "optionFeedback": [
@@ -10594,13 +10594,13 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is the function of the placenta?",
     "options": [
-      "producing sperm",
-      "exchange of substances between the mother's blood and the fetus's blood",
-      "protecting the fetus from bumps",
-      "making eggs"
+      "production of sperm and eggs",
+      "exchange of substances between mother and fetus",
+      "protection of the fetus from bumps and knocks",
+      "release of eggs in each cycle"
     ],
     "optionFeedback": [
-      "The testes do this.",
+      "The testes and ovaries do this.",
       "Correct. Oxygen and nutrients pass to the fetus; carbon dioxide and urea pass to the mother.",
       "The amniotic fluid does this.",
       "The ovaries do this."
@@ -10617,8 +10617,8 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "What is the function of the amniotic fluid?",
     "options": [
       "supplying oxygen to the fetus",
-      "removing urea",
-      "making hormones for ovulation",
+      "removing urea from the fetus",
+      "making hormones that cause ovulation",
       "protecting the fetus from mechanical damage"
     ],
     "optionFeedback": [
@@ -10660,10 +10660,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is variation?",
     "options": [
-      "differences between different species",
-      "changes in the environment",
+      "differences between individuals of different species",
+      "changes in the environment over a period of time",
       "differences between individuals of the same species",
-      "the passing of genes to offspring"
+      "the passing of genes from parents to offspring"
     ],
     "optionFeedback": [
       "Variation is within a species.",
@@ -10685,7 +10685,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
       "ABO blood group",
       "height",
       "body mass",
-      "hand span"
+      "hand span of the right hand"
     ],
     "optionFeedback": [
       "Correct. Blood group falls into distinct categories with no in-between values.",
@@ -10729,7 +10729,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
       "genes only",
       "the environment only",
       "both genes and the environment",
-      "mutation only"
+      "mutation only, caused by radiation"
     ],
     "optionFeedback": [
       "Discontinuous variation is usually caused by genes only.",
@@ -10816,7 +10816,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
       ]
     },
     "options": [
-      "This shows continuous variation because the numbers vary.",
+      "This shows continuous variation because the numbers in each group vary.",
       "Blood group is caused only by the environment.",
       "Group AB is the most common.",
       "This shows discontinuous variation because there are distinct groups."
@@ -10993,7 +10993,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "Why do different proteins have different shapes?",
     "options": [
       "They contain different bases.",
-      "They are made in different organs.",
+      "They are made in different organs of the body.",
       "They contain different sugars.",
       "They have different sequences of amino acids."
     ],
@@ -11016,8 +11016,8 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "options": [
       "It controls which proteins, including enzymes, are made.",
       "It moves around the cell carrying oxygen.",
-      "It releases energy for the cell.",
-      "It forms the cell membrane."
+      "It releases energy from glucose for the cell to use.",
+      "It forms the cell membrane around the cell."
     ],
     "optionFeedback": [
       "Correct. By deciding which enzymes are made, DNA controls the cell's reactions.",
@@ -11256,10 +11256,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why do the results of a real genetic cross often differ from the expected ratio?",
     "options": [
-      "The genetic diagram is always wrong.",
-      "Dominant alleles sometimes become recessive.",
-      "Fertilisation is random, and small numbers of offspring increase chance effects.",
-      "Only some gametes contain DNA."
+      "The genetic diagram is usually wrong, so the ratio cannot be trusted.",
+      "Dominant alleles sometimes become recessive in the offspring.",
+      "Fertilisation is random, and with few offspring chance has a big effect.",
+      "Only some of the gametes contain DNA, so some offspring have no alleles."
     ],
     "optionFeedback": [
       "The diagram gives the probability.",
@@ -11278,10 +11278,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What does pure-breeding mean?",
     "options": [
-      "heterozygous for every gene",
-      "homozygous for a gene, so offspring always show the same feature when bred together",
-      "produced by asexual reproduction",
-      "having a mutation"
+      "heterozygous, so it passes on two different alleles",
+      "homozygous, so it always passes on the same allele",
+      "produced by asexual reproduction from one parent",
+      "carrying a mutation that is passed to all offspring"
     ],
     "optionFeedback": [
       "Pure-breeding is homozygous.",
@@ -11300,10 +11300,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "A person has blood group AB. What does this show?",
     "options": [
-      "that allele A is recessive",
-      "that allele B is recessive",
-      "codominance, because both alleles are expressed",
-      "that the person is homozygous"
+      "dominance, as allele A is recessive",
+      "dominance, as allele B is recessive",
+      "codominance, as both alleles are expressed",
+      "that the person is homozygous for the gene"
     ],
     "optionFeedback": [
       "Both are expressed.",
@@ -11454,10 +11454,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is natural selection?",
     "options": [
-      "the process in which humans choose which animals to breed",
-      "the process in which individuals better adapted to their environment survive and reproduce more",
-      "the change of an organism during its lifetime to suit its environment",
-      "the copying of DNA before cell division"
+      "the process in which humans choose which animals and plants breed",
+      "the process in which better adapted individuals survive and reproduce more",
+      "the process in which an organism changes in its lifetime to suit its habitat",
+      "the process in which DNA is copied exactly before a cell divides"
     ],
     "optionFeedback": [
       "This is artificial selection.",
@@ -11479,7 +11479,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
       "reproduction, variation, competition, alleles passed on, survival",
       "survival, variation, reproduction, competition, alleles passed on",
       "competition, reproduction, variation, survival, alleles passed on",
-      "variation, competition, survival of the best adapted, reproduction, alleles passed on"
+      "variation, competition, survival, reproduction, alleles passed on"
     ],
     "optionFeedback": [
       "The order is wrong.",
@@ -11498,13 +11498,13 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why is there competition between individuals of a population?",
     "options": [
-      "All individuals are identical.",
+      "All individuals are identical, so they need the same things.",
       "More offspring are produced than the environment can support.",
-      "There are unlimited resources.",
-      "Every individual always survives."
+      "There are unlimited resources, so all can grow large.",
+      "Every individual always survives to reproduce."
     ],
     "optionFeedback": [
-      "Individuals vary.",
+      "Individuals vary, and this is not the reason.",
       "Correct. Limited resources mean individuals compete for food, space and mates.",
       "Resources are limited.",
       "Many die."
@@ -11520,10 +11520,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is an adaptation?",
     "options": [
-      "a feature that helps an organism survive and reproduce in its environment",
-      "a disease caused by a pathogen",
-      "a change caused by injury",
-      "a random change in a chromosome number"
+      "an inherited feature that helps an organism survive",
+      "a disease caused by a pathogen in an organism",
+      "a change in the body caused by an injury or by exercise",
+      "a random change in the number of chromosomes"
     ],
     "optionFeedback": [
       "Correct. Adaptations are inherited features that increase the chance of survival.",
@@ -11542,10 +11542,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "How does natural selection lead to evolution?",
     "options": [
-      "Over many generations the frequency of advantageous alleles increases in the population.",
-      "Individuals change their genes to suit the environment.",
-      "All alleles become equally common.",
-      "Organisms stop reproducing."
+      "Over many generations, advantageous alleles become more common.",
+      "Individuals change their genes during their lives to suit the environment.",
+      "Over many generations, all the alleles become equally common.",
+      "Over many generations, the organisms stop reproducing."
     ],
     "optionFeedback": [
       "Correct. Evolution is a change in allele frequencies over generations.",
@@ -11564,10 +11564,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "How does MRSA show natural selection?",
     "options": [
-      "The antibiotic causes every bacterium to become resistant.",
-      "Resistant bacteria survive antibiotic treatment and reproduce, so resistance becomes common.",
-      "Humans breed the bacteria to be resistant.",
-      "MRSA bacteria have no variation."
+      "The antibiotic causes every bacterium in the population to become resistant at once.",
+      "Resistant bacteria survive treatment and reproduce, so resistance spreads.",
+      "Humans choose the resistant bacteria and breed them together.",
+      "MRSA bacteria have no variation, so they all survive together."
     ],
     "optionFeedback": [
       "Resistance arises by chance mutation.",
@@ -11586,10 +11586,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is artificial selection?",
     "options": [
-      "natural selection caused by the climate",
-      "genetic modification of bacteria",
+      "natural selection caused by changes in the climate",
+      "genetic modification of bacteria in a laboratory",
       "humans choosing organisms with desired features to breed",
-      "the death of organisms in a disease"
+      "the death of the weakest organisms during an outbreak of disease"
     ],
     "optionFeedback": [
       "This is natural selection.",
@@ -11674,7 +11674,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why is yeast used in bread making?",
     "options": [
-      "It produces oxygen that makes the dough rise.",
+      "It produces oxygen gas that forms bubbles and makes the dough rise.",
       "It produces carbon dioxide that makes the dough rise.",
       "It makes the bread taste of alcohol.",
       "It kills bacteria in the flour."
@@ -11718,10 +11718,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why are bacteria useful in biotechnology?",
     "options": [
-      "They reproduce quickly and have no ethical concerns over their use.",
-      "They reproduce slowly.",
-      "They cannot make complex molecules.",
-      "They have a nucleus."
+      "They reproduce quickly and raise few ethical concerns.",
+      "They reproduce slowly, so they are easy to control.",
+      "They cannot make complex molecules, so they are safe.",
+      "They have a nucleus that holds the inserted gene."
     ],
     "optionFeedback": [
       "Correct. Fast reproduction and simple manipulation make bacteria useful.",
@@ -11740,10 +11740,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "In a fermenter, why is the temperature controlled?",
     "options": [
-      "to kill the microorganisms",
-      "to keep enzymes in the microorganisms working at their optimum",
-      "to make the product evaporate",
-      "to stop oxygen dissolving"
+      "to kill the microorganisms once they have grown",
+      "to keep the enzymes working at their optimum",
+      "to make the product evaporate out of the tank",
+      "to stop any oxygen dissolving in the liquid"
     ],
     "optionFeedback": [
       "They must stay alive.",
@@ -11764,7 +11764,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "options": [
       "to add nutrients",
       "to raise the pH",
-      "to increase the temperature permanently",
+      "to raise the temperature to the optimum permanently",
       "to prevent contamination by unwanted microorganisms"
     ],
     "optionFeedback": [
@@ -11806,10 +11806,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What do enzymes in biological washing powders do?",
     "options": [
-      "make clothes waterproof",
-      "kill bacteria on clothes",
-      "digest stains such as protein and fat into soluble substances",
-      "work best at very high temperatures"
+      "make clothes waterproof after washing",
+      "kill bacteria living on the clothes",
+      "digest stains into small soluble molecules",
+      "work best at temperatures near 90 °C"
     ],
     "optionFeedback": [
       "This is not their role.",
@@ -11828,9 +11828,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why is pectinase used in making fruit juice?",
     "options": [
-      "It adds sugar to the juice.",
-      "It kills bacteria in the fruit.",
-      "It makes the juice cloudy.",
+      "It adds sugar to make the juice sweeter.",
+      "It kills bacteria living in the fruit.",
+      "It makes the juice cloudy and thicker so it looks fresh.",
       "It breaks down cell walls, releasing more juice."
     ],
     "optionFeedback": [
@@ -11850,10 +11850,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "How is lactose-free milk made?",
     "options": [
-      "Lactase is used to break down lactose into glucose and galactose.",
-      "Amylase is used to break down lactose.",
-      "Lactose is filtered out.",
-      "Bacteria are added to make lactic acid."
+      "Lactase breaks down lactose into glucose and galactose.",
+      "Amylase breaks down lactose into glucose and maltose.",
+      "Lactose is filtered out of the milk through a membrane.",
+      "Bacteria are added to turn the lactose into lactic acid."
     ],
     "optionFeedback": [
       "Correct. Lactase digests lactose for people who cannot digest it.",
@@ -11894,10 +11894,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is genetic modification?",
     "options": [
-      "selecting animals with useful features for breeding",
-      "making clones by cuttings",
-      "curing infections with antibiotics",
-      "changing the genetic material of an organism by removing, changing or inserting genes"
+      "choosing animals with useful features and breeding them together over many generations",
+      "making genetically identical copies of plants by taking cuttings",
+      "curing bacterial infections by giving a course of antibiotics",
+      "changing an organism's genetic material by removing, changing or inserting genes"
     ],
     "optionFeedback": [
       "This is selective breeding.",
@@ -11939,9 +11939,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "Why are bacteria used to make human insulin?",
     "options": [
       "They already make human insulin naturally.",
-      "They have a nucleus to hold the gene.",
+      "They have a nucleus to hold the human gene.",
       "They reproduce quickly, so large amounts of insulin are made.",
-      "They grow slowly in fermenters."
+      "They grow slowly, so the process is easy to control in a fermenter."
     ],
     "optionFeedback": [
       "The gene must be added.",
@@ -11962,7 +11962,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "options": [
       "amylase",
       "lipase",
-      "protease",
+      "protease from bacteria",
       "restriction enzyme"
     ],
     "optionFeedback": [
@@ -11982,10 +11982,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is a plasmid?",
     "options": [
-      "a protein made by a virus",
-      "a type of chromosome in human cells",
+      "a protein coat made by a virus",
+      "a chromosome in human cells",
       "an enzyme that joins DNA",
-      "a small circle of DNA in bacteria used to carry a gene"
+      "a small circle of DNA in bacteria"
     ],
     "optionFeedback": [
       "A plasmid is DNA.",
@@ -12004,7 +12004,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Which is an example of genetic modification in crops?",
     "options": [
-      "crops grown in greenhouses",
+      "crops grown in heated greenhouses",
       "crops watered more often",
       "crops given more fertiliser",
       "crops made resistant to insect pests"
@@ -12048,10 +12048,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is a risk of making crops resistant to herbicides?",
     "options": [
-      "The crops will die when sprayed.",
-      "The crops will not produce seeds.",
-      "The crops will contain insulin.",
-      "Farmers may use more herbicide, harming other plants and wildlife."
+      "The crops will die when they are sprayed with herbicide.",
+      "The crops will not produce any seeds or fruit.",
+      "The crops will start to make human insulin in their cells.",
+      "More herbicide may be used, harming other plants and wildlife."
     ],
     "optionFeedback": [
       "They are resistant.",
@@ -12070,10 +12070,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why is insulin made by GM bacteria useful?",
     "options": [
-      "It cures diabetes permanently.",
+      "It cures diabetes permanently after one dose.",
       "It is human insulin and can be made in large amounts.",
-      "It is made in cows.",
-      "It raises blood glucose."
+      "It is collected from cows and pigs in large amounts.",
+      "It raises blood glucose when it is too low."
     ],
     "optionFeedback": [
       "It treats, but does not cure.",
@@ -12136,10 +12136,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is a producer?",
     "options": [
-      "an organism that eats plants",
-      "an organism that eats other animals",
-      "an organism that makes its own organic nutrients, usually by photosynthesis",
-      "an organism that breaks down dead matter"
+      "an organism that gets its energy by eating plants",
+      "an organism that gets its energy by eating other animals or plants",
+      "an organism that makes its own food, usually by photosynthesis",
+      "an organism that gets its energy from dead matter"
     ],
     "optionFeedback": [
       "This is a herbivore.",
@@ -12180,10 +12180,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why is energy lost between trophic levels?",
     "options": [
-      "Energy is destroyed at each level.",
-      "Animals store all the energy they eat.",
-      "Plants absorb energy from animals.",
-      "Energy is used in respiration and lost as heat, and some material is not eaten or digested."
+      "Energy is destroyed at each level, so less is left for the next level.",
+      "Animals store all the energy they eat, so none passes to the next level.",
+      "Plants absorb energy back from the animals that eat them.",
+      "Energy is lost as heat from respiration, and in uneaten and undigested parts."
     ],
     "optionFeedback": [
       "Energy is transferred, not destroyed.",
@@ -12202,10 +12202,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why are food chains usually short?",
     "options": [
-      "So much energy is lost at each level that too little is left for more levels.",
-      "There are not enough species.",
-      "Top carnivores eat plants too.",
-      "Decomposers eat the top carnivores."
+      "So much energy is lost at each level that little is left.",
+      "There are not enough species to make longer chains.",
+      "Top carnivores also eat plants, so chains end early.",
+      "Decomposers eat the top carnivores while still alive."
     ],
     "optionFeedback": [
       "Correct. Only about 10% of energy passes to the next level.",
@@ -12246,10 +12246,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why is it more efficient for humans to eat crops than to eat livestock fed on crops?",
     "options": [
-      "Crops contain more protein than meat.",
+      "Crops contain more protein than meat does.",
       "There is one less trophic level, so less energy is lost.",
-      "Livestock do not respire.",
-      "Crops do not need sunlight."
+      "Livestock do not respire, so they store all the energy they eat.",
+      "Crops do not need sunlight to grow."
     ],
     "optionFeedback": [
       "This is not the reason.",
@@ -12268,9 +12268,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "In a pyramid of numbers, why can a single tree support many caterpillars?",
     "options": [
-      "The tree is a consumer.",
-      "Caterpillars are producers.",
-      "Energy increases at each level.",
+      "The tree is a consumer, not a producer.",
+      "The caterpillars are producers, so they make their own food.",
+      "Energy increases at each trophic level.",
       "A pyramid of numbers counts organisms, not their size."
     ],
     "optionFeedback": [
@@ -12380,8 +12380,8 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "options": [
       "by respiration in plants",
       "by photosynthesis in animals",
-      "by combustion",
-      "by feeding, as carbon compounds in plant tissue"
+      "by combustion of plants",
+      "by feeding on plants"
     ],
     "optionFeedback": [
       "Respiration releases CO2 into the air.",
@@ -12400,15 +12400,15 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What do decomposers do in the carbon cycle?",
     "options": [
-      "take carbon dioxide from the air",
-      "form fossil fuels directly",
-      "make carbon by photosynthesis",
-      "respire as they break down dead organisms, releasing carbon dioxide"
+      "take in carbon dioxide from the air to make glucose by photosynthesis",
+      "form fossil fuels directly from dead organisms within a few weeks",
+      "release oxygen into the air as they break down dead organisms",
+      "release carbon dioxide by respiring as they break down dead matter"
     ],
     "optionFeedback": [
       "Plants do this.",
       "Fossil fuels form over millions of years.",
-      "They do not photosynthesise.",
+      "Decomposers use oxygen.",
       "Correct. Decomposers' respiration returns carbon dioxide to the air."
     ],
     "answer": 3,
@@ -12423,7 +12423,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "Under what conditions do fossil fuels form?",
     "options": [
       "when plants photosynthesise quickly",
-      "when dead organisms do not decay fully, over millions of years",
+      "when dead organisms do not fully decay",
       "when decomposers are very active",
       "when carbon dioxide is released by burning"
     ],
@@ -12510,7 +12510,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why do plants need nitrates?",
     "options": [
-      "to make amino acids and proteins",
+      "to make amino acids",
       "to make starch",
       "to make glucose",
       "to open stomata"
@@ -12554,15 +12554,15 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is a population?",
     "options": [
-      "all the organisms of different species in an area",
-      "a community and its environment",
-      "all the living things on Earth",
-      "a group of organisms of one species living in the same area at the same time"
+      "organisms of different species living in the same area at the same time",
+      "a community of organisms together with their non-living environment",
+      "all the organisms of one species living anywhere on Earth",
+      "organisms of one species living in the same area at the same time"
     ],
     "optionFeedback": [
       "This is a community.",
       "This is an ecosystem.",
-      "This is not a population.",
+      "A population is in one area.",
       "Correct. A population is one species in one area at one time."
     ],
     "answer": 3,
@@ -12576,15 +12576,15 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is a community?",
     "options": [
-      "one species in an area",
-      "the non-living parts of an area",
-      "a single organism",
+      "all the organisms of one species in an area",
+      "all the non-living parts of an area",
+      "all the individuals of one species living on Earth",
       "all the populations of different species in an area"
     ],
     "optionFeedback": [
       "This is a population.",
       "This is part of an ecosystem.",
-      "This is an individual.",
+      "This is not a community.",
       "Correct. A community includes all the populations living together."
     ],
     "answer": 3,
@@ -12598,16 +12598,16 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is an ecosystem?",
     "options": [
-      "a group of one species",
-      "a food chain",
-      "a community of organisms and their environment, interacting together",
-      "the number of species in an area"
+      "a group of organisms of one species in an area",
+      "a single food chain from producer to top carnivore",
+      "a community and its environment, interacting together",
+      "the number of different species in an area"
     ],
     "optionFeedback": [
       "This is a population.",
       "A food chain is part of an ecosystem.",
       "Correct. An ecosystem includes living organisms and the non-living environment.",
-      "This relates to biodiversity."
+      "This is biodiversity."
     ],
     "answer": 2,
     "explanation": "An ecosystem includes living organisms and the non-living environment.",
@@ -12620,7 +12620,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is biodiversity?",
     "options": [
-      "the number of organisms of one species",
+      "the number of organisms of one species living in an area",
       "the size of an ecosystem",
       "the rate of photosynthesis",
       "the number of different species living in an area"
@@ -12686,10 +12686,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why does the human population growing quickly cause problems?",
     "options": [
-      "It reduces the need for farming.",
+      "It reduces the need for farming and land.",
       "It increases the demand for food, water, land and energy.",
-      "It increases biodiversity.",
-      "It lowers the use of fossil fuels."
+      "It increases biodiversity in most areas where people live.",
+      "It lowers the use of fossil fuels and water."
     ],
     "optionFeedback": [
       "More people need more food.",
@@ -12731,7 +12731,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "What is competition?",
     "options": [
       "one organism eating another",
-      "organisms living in different areas",
+      "organisms of one species living in different areas",
       "a disease spreading",
       "organisms needing the same limited resource"
     ],
@@ -12799,7 +12799,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
       "loss of habitats and reduced biodiversity",
       "more photosynthesis",
       "less soil erosion",
-      "less carbon dioxide in the air"
+      "less carbon dioxide in the atmosphere"
     ],
     "optionFeedback": [
       "Correct. Removing forests destroys habitats and causes extinctions.",
@@ -12818,15 +12818,15 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "How does deforestation increase carbon dioxide in the atmosphere?",
     "options": [
-      "Trees release carbon dioxide only when alive.",
-      "Soil absorbs all the carbon dioxide.",
-      "Deforestation increases photosynthesis.",
-      "Fewer trees take in carbon dioxide, and burning or decaying wood releases it."
+      "Trees release carbon dioxide only while they are alive.",
+      "The bare soil absorbs all the carbon dioxide from the air.",
+      "More photosynthesis happens once the trees are removed.",
+      "Less carbon dioxide is taken in, and burning wood releases it."
     ],
     "optionFeedback": [
       "Living trees take in more than they release.",
       "This is not true.",
-      "It decreases it.",
+      "It decreases.",
       "Correct. Less photosynthesis and more combustion or decay raise carbon dioxide levels."
     ],
     "answer": 3,
@@ -12838,21 +12838,21 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "id": "o5090-19.4-04",
     "topic": "19.4",
     "level": "O Level 5090",
-    "question": "What is the correct order of events in eutrophication?",
+    "question": "Fertiliser runs into a lake. What is the correct order of the events that follow?",
     "options": [
-      "algae grow, fertiliser runs into water, fish die, oxygen falls, bacteria decompose",
-      "fish die, oxygen falls, algae grow, fertiliser runs into water, bacteria decompose",
-      "bacteria decompose, fertiliser runs into water, algae grow, fish die, oxygen falls",
-      "fertiliser runs into water, algae grow, plants die, bacteria decompose them, oxygen falls, fish die"
+      "algae grow, oxygen falls, plants die, bacteria decompose them, fish die",
+      "plants die, algae grow, bacteria decompose them, fish die, oxygen falls",
+      "bacteria decompose them, algae grow, plants die, oxygen falls, fish die",
+      "algae grow, plants die, bacteria decompose them, oxygen falls, fish die"
     ],
     "optionFeedback": [
-      "The order is wrong.",
-      "The order is wrong.",
-      "The order is wrong.",
-      "Correct. Extra nutrients cause algal growth; decomposers use up oxygen as plants die."
+      "Oxygen falls because bacteria decompose the dead plants.",
+      "Algae grow first, and fish die because oxygen falls.",
+      "Decomposition happens after the plants die.",
+      "Correct. Extra nutrients cause algae to grow and block light; plants die; bacteria decompose them and use up oxygen; fish die."
     ],
     "answer": 3,
-    "explanation": "Extra nutrients cause algal growth; decomposers use up oxygen as plants die.",
+    "explanation": "Extra nutrients cause algae to grow and block light; plants die; bacteria decompose them and use up oxygen; fish die.",
     "difficulty": "hard",
     "type": "concept"
   },
@@ -12862,10 +12862,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "In eutrophication, why does the oxygen concentration in the water fall?",
     "options": [
-      "Algae use all the oxygen in photosynthesis.",
-      "Fish produce too much carbon dioxide.",
-      "Fertilisers react with oxygen.",
-      "Bacteria decomposing dead plants use oxygen in respiration."
+      "Algae use up all the oxygen in photosynthesis.",
+      "Fish produce too much carbon dioxide at night.",
+      "Fertilisers react with the oxygen in water.",
+      "Bacteria use oxygen as they decompose dead plants."
     ],
     "optionFeedback": [
       "Photosynthesis releases oxygen.",
@@ -12906,14 +12906,14 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "How do greenhouse gases cause global warming?",
     "options": [
-      "They make a hole in the ozone layer.",
-      "They reflect sunlight away from the Earth.",
-      "They react with water to make acid.",
-      "They absorb and trap heat radiated from the Earth's surface."
+      "They make a hole in the ozone layer above Earth.",
+      "They reflect sunlight back onto the Earth's surface.",
+      "They react with rain water to make acids.",
+      "They absorb heat radiated from the Earth's surface."
     ],
     "optionFeedback": [
       "This is a different problem.",
-      "They trap heat.",
+      "They trap heat radiated from Earth.",
       "This is acid rain.",
       "Correct. More greenhouse gases trap more heat, raising Earth's temperature."
     ],
@@ -12928,10 +12928,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why are non-biodegradable plastics harmful?",
     "options": [
-      "They are quickly decomposed by bacteria.",
-      "They increase plant growth.",
-      "They add nitrates to water.",
-      "They are not broken down by decomposers and can harm animals that eat or get tangled in them."
+      "Bacteria decompose them quickly, releasing toxins into the soil.",
+      "They increase the growth of water plants.",
+      "They add nitrates to rivers and lakes.",
+      "Decomposers cannot break them down, and they harm animals."
     ],
     "optionFeedback": [
       "They are not broken down.",
@@ -12950,10 +12950,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is a harmful effect of insecticides?",
     "options": [
-      "They only kill pest insects.",
-      "They increase biodiversity.",
-      "They can kill insects that are not pests, such as pollinators.",
-      "They help plants make food."
+      "They kill only the pest insects that they are designed for.",
+      "They increase biodiversity in fields.",
+      "They can kill useful insects, such as pollinators.",
+      "They help plants make more food."
     ],
     "optionFeedback": [
       "They often kill others too.",
@@ -12994,10 +12994,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is over-harvesting?",
     "options": [
-      "planting more crops than needed",
-      "removing organisms from an area faster than they can reproduce",
-      "protecting endangered species",
-      "using fertilisers on fields"
+      "planting more crops than are needed for food",
+      "removing organisms faster than they can reproduce",
+      "protecting endangered species from hunting",
+      "using too much fertiliser on fields"
     ],
     "optionFeedback": [
       "This is not over-harvesting.",
@@ -13016,10 +13016,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is a sustainable resource?",
     "options": [
-      "a resource that will run out soon",
-      "a resource that is produced as fast as it is used, so it does not run out",
-      "a resource used only once",
-      "a fossil fuel"
+      "a resource that will run out in the near future",
+      "a resource that is replaced as fast as it is used",
+      "a resource that can be used only once and then lost",
+      "a fossil fuel such as coal, oil or natural gas"
     ],
     "optionFeedback": [
       "This is non-sustainable.",
@@ -13038,10 +13038,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why is it important to conserve species?",
     "options": [
-      "to increase pollution",
-      "to reduce the number of habitats",
+      "to increase the amount of land for farming",
+      "to reduce the number of different habitats",
       "to maintain biodiversity and prevent extinction",
-      "to stop all farming"
+      "to stop all hunting and farming everywhere"
     ],
     "optionFeedback": [
       "This is not a reason.",
@@ -13061,9 +13061,9 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "Which method helps conserve fish stocks?",
     "options": [
       "fishing all year round",
-      "using nets with a larger mesh size so young fish escape",
+      "using nets with a larger mesh size",
       "using nets with a smaller mesh size",
-      "increasing the number of fishing boats"
+      "using more fishing boats"
     ],
     "optionFeedback": [
       "This causes overfishing.",
@@ -13105,7 +13105,7 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "question": "How do fishing quotas help conserve fish stocks?",
     "options": [
       "They increase the number of fish caught.",
-      "They make fishing illegal everywhere.",
+      "They make fishing illegal everywhere in the sea.",
       "They limit the number of fish that can be caught.",
       "They add nutrients to the sea."
     ],
@@ -13126,10 +13126,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why are closed seasons used in fishing?",
     "options": [
-      "to allow more fishing in summer",
+      "to allow more fishing during the summer",
       "to catch fish when they are largest",
-      "to reduce fish populations",
-      "to stop fishing during the breeding season so fish can reproduce"
+      "to reduce the numbers of fish in the sea",
+      "to stop fishing while fish are breeding"
     ],
     "optionFeedback": [
       "This is not the aim.",
@@ -13148,8 +13148,8 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "What is a protected area?",
     "options": [
-      "an area set aside for building",
-      "an area for intensive farming",
+      "an area of land set aside for building",
+      "an area used for intensive farming of crops and livestock",
       "an area where hunting is encouraged",
       "an area where habitats and species are protected by law"
     ],
@@ -13192,10 +13192,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why should vulnerable environments be protected?",
     "options": [
-      "They have no living organisms.",
-      "They produce fossil fuels.",
-      "They contain species that may become extinct if the habitat is lost.",
-      "They have very few plants."
+      "They have no living organisms in them.",
+      "They are a source of fossil fuels.",
+      "Their species may become extinct if the habitat is lost.",
+      "They contain very few plant species that need protecting."
     ],
     "optionFeedback": [
       "They contain species.",
@@ -13214,10 +13214,10 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "level": "O Level 5090",
     "question": "Why is wood from a managed forest a sustainable resource?",
     "options": [
-      "Trees grow back instantly.",
+      "Trees grow back to their full size within a year of cutting.",
       "Trees are replanted at least as fast as they are cut down.",
-      "Wood never needs replacing.",
-      "No trees are ever cut."
+      "Wood never needs to be replaced once cut.",
+      "No trees are ever cut down in the forest."
     ],
     "optionFeedback": [
       "Trees take years to grow.",
