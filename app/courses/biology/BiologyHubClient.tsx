@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useMemo } from "react";
 import Link from "next/link";
+import CoursebookMap from "@/components/courses/biology/CoursebookMap";
 import PageHeader from "@/components/ui/PageHeader";
 import SectionHeader from "@/components/ui/SectionHeader";
 import HowItWorks, { type HowItWorksStep } from "@/components/courses/HowItWorks";
@@ -187,6 +188,8 @@ export default function BiologyHubClient({ sections }: BiologyHubClientProps) {
             title={<span id="syllabus-sections-heading" className="scroll-mt-24">O Level Biology Syllabus Topics</span>}
             description={`${totalTopics} topics across ${sections.length} sections, built for exams in 2026, 2027 and 2028.`}
           />
+
+          <CoursebookMap />
 
           <div className="space-y-8">
             {sections.map((section) => (

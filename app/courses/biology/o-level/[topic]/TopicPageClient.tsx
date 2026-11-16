@@ -609,7 +609,7 @@ export default function TopicPageClient({
                         </span>
                       </div>
 
-                      <p className="text-base font-semibold text-efe-fg leading-relaxed">
+                      <p className="text-base font-semibold text-efe-fg leading-relaxed whitespace-pre-line">
                         {q.question}
                       </p>
 

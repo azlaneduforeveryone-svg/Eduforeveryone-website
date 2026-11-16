@@ -284,6 +284,72 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "type": "concept"
   },
   {
+    "id": "o5090-1.1-13",
+    "topic": "1.1",
+    "level": "O Level 5090",
+    "question": "Which row is correct for a bacterial cell? (cell wall present; nucleus present; plasmids present)",
+    "options": [
+      "yes; yes; yes",
+      "no; no; yes",
+      "yes; no; yes",
+      "yes; no; no"
+    ],
+    "optionFeedback": [
+      "Bacteria have no nucleus.",
+      "Bacteria have a cell wall.",
+      "Correct. Bacteria have a cell wall and plasmids, but their DNA is free in the cytoplasm with no nucleus.",
+      "Many bacteria contain plasmids."
+    ],
+    "answer": 2,
+    "explanation": "Bacteria have a cell wall and plasmids, but their DNA is free in the cytoplasm with no nucleus.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-1.1-14",
+    "topic": "1.1",
+    "level": "O Level 5090",
+    "question": "Which statements about a palisade mesophyll cell are correct?\n1 It has a cellulose cell wall.\n2 It has chloroplasts.\n3 It has no nucleus.\n4 It has a large sap vacuole.",
+    "options": [
+      "1 and 3 only",
+      "1, 2 and 4",
+      "2 and 3 only",
+      "1, 2, 3 and 4"
+    ],
+    "optionFeedback": [
+      "Palisade cells do have a nucleus, so statement 3 is wrong.",
+      "Correct. A palisade cell is a plant cell with a cellulose wall, chloroplasts, a nucleus and a large sap vacuole.",
+      "Statement 3 is wrong; statements 1 and 4 are also correct.",
+      "Statement 3 is wrong: palisade cells have a nucleus."
+    ],
+    "answer": 1,
+    "explanation": "A palisade cell is a plant cell with a cellulose wall, chloroplasts, a nucleus and a large sap vacuole.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-1.1-15",
+    "topic": "1.1",
+    "level": "O Level 5090",
+    "question": "Which row shows where each process happens in a cell? (aerobic respiration; protein synthesis)",
+    "options": [
+      "mitochondria; ribosomes",
+      "ribosomes; mitochondria",
+      "cytoplasm; nucleus",
+      "chloroplasts; cell membrane"
+    ],
+    "optionFeedback": [
+      "Correct. Aerobic respiration happens in mitochondria; ribosomes are the site of protein synthesis.",
+      "This is the wrong way round.",
+      "Aerobic respiration is in mitochondria and proteins are made on ribosomes.",
+      "Chloroplasts carry out photosynthesis."
+    ],
+    "answer": 0,
+    "explanation": "Aerobic respiration happens in mitochondria; ribosomes are the site of protein synthesis.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
     "id": "o5090-1.2-01",
     "topic": "1.2",
     "level": "O Level 5090",
@@ -548,6 +614,72 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "type": "concept"
   },
   {
+    "id": "o5090-1.2-13",
+    "topic": "1.2",
+    "level": "O Level 5090",
+    "question": "Which row matches the cell to its function? (ciliated cell; root hair cell; red blood cell)",
+    "options": [
+      "carry oxygen; move mucus; absorb water and mineral ions",
+      "move mucus; absorb water and mineral ions; carry oxygen",
+      "absorb water and mineral ions; carry oxygen; move mucus",
+      "move mucus; carry oxygen; absorb water and mineral ions"
+    ],
+    "optionFeedback": [
+      "Each function is matched to the wrong cell.",
+      "Correct. Ciliated cells move mucus, root hair cells absorb water and mineral ions, and red blood cells carry oxygen.",
+      "Each function is matched to the wrong cell.",
+      "Root hair cells absorb; red blood cells carry oxygen."
+    ],
+    "answer": 1,
+    "explanation": "Ciliated cells move mucus, root hair cells absorb water and mineral ions, and red blood cells carry oxygen.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-1.2-14",
+    "topic": "1.2",
+    "level": "O Level 5090",
+    "question": "A specimen is viewed at ×400. The image is 20 mm long. What is the actual length of the specimen?",
+    "options": [
+      "5 µm",
+      "500 µm",
+      "8000 µm",
+      "50 µm"
+    ],
+    "optionFeedback": [
+      "20 mm ÷ 400 = 0.05 mm, which is 50 µm.",
+      "Check the conversion: 0.05 mm is 50 µm.",
+      "This multiplies instead of dividing.",
+      "Correct. Actual size = 20 ÷ 400 = 0.05 mm. Multiply by 1000 to get µm: 50 µm."
+    ],
+    "answer": 3,
+    "explanation": "Actual size = 20 ÷ 400 = 0.05 mm. Multiply by 1000 to get µm: 50 µm.",
+    "difficulty": "hard",
+    "type": "calculation"
+  },
+  {
+    "id": "o5090-1.2-15",
+    "topic": "1.2",
+    "level": "O Level 5090",
+    "question": "Which statements describe tissues?\n1 A group of cells with similar structures, working together.\n2 Made of several organs working together.\n3 Muscle and xylem are examples.\n4 Always made of only one cell.",
+    "options": [
+      "1 and 3",
+      "1 and 2",
+      "2 and 4",
+      "3 and 4"
+    ],
+    "optionFeedback": [
+      "Correct. A tissue is a group of cells with similar structures working together, such as muscle in animals or xylem in plants.",
+      "Statement 2 describes an organ system, not a tissue.",
+      "Both are wrong: tissues are many similar cells.",
+      "Statement 4 is wrong: a tissue has many cells."
+    ],
+    "answer": 0,
+    "explanation": "A tissue is a group of cells with similar structures working together, such as muscle in animals or xylem in plants.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
     "id": "o5090-2.1-01",
     "topic": "2.1",
     "level": "O Level 5090",
@@ -748,24 +880,68 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "type": "concept"
   },
   {
+    "id": "o5090-2.1-09",
+    "topic": "2.1",
+    "level": "O Level 5090",
+    "question": "Which statements about the binomial system are correct?\n1 Each organism has a two-part name.\n2 The first part is the species.\n3 The genus starts with a capital letter.\n4 It is used by scientists in all countries.",
+    "options": [
+      "1, 3 and 4",
+      "1 and 2 only",
+      "2 and 3 only",
+      "1, 2, 3 and 4"
+    ],
+    "optionFeedback": [
+      "Correct. The binomial name is genus then species; the genus has a capital letter, and the same name is used worldwide.",
+      "Statement 2 is wrong: the first part is the genus.",
+      "Statement 2 is wrong.",
+      "Statement 2 is wrong."
+    ],
+    "answer": 0,
+    "explanation": "The binomial name is genus then species; the genus has a capital letter, and the same name is used worldwide.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-2.1-10",
+    "topic": "2.1",
+    "level": "O Level 5090",
+    "question": "Which features are most useful for classifying organisms into groups?",
+    "options": [
+      "the colour of the organism",
+      "the size of the organism",
+      "the place where the organism lives",
+      "features that are similar because the organisms are related, such as body structure"
+    ],
+    "optionFeedback": [
+      "Colour often varies within a species.",
+      "Size changes with age.",
+      "Unrelated organisms can share a habitat.",
+      "Correct. Organisms are classified by shared features that show how closely related they are, such as body structure and, today, DNA."
+    ],
+    "answer": 3,
+    "explanation": "Organisms are classified by shared features that show how closely related they are, such as body structure and, today, DNA.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
     "id": "o5090-2.2-01",
     "topic": "2.2",
     "level": "O Level 5090",
-    "question": "Which feature is shared by all living organisms?",
+    "question": "An organism is made of one cell. The cell has a nucleus and chloroplasts. Which kingdom does it belong to?",
     "options": [
-      "They photosynthesise.",
-      "They have a nucleus.",
-      "They respire.",
-      "They have a cell wall."
+      "prokaryotes",
+      "fungi",
+      "protoctists",
+      "animals"
     ],
     "optionFeedback": [
-      "Only plants and some other organisms photosynthesise.",
-      "Bacteria have no nucleus.",
-      "Correct. All living organisms respire to release energy. The other features belong only to some groups.",
-      "Animal cells have no cell wall."
+      "Prokaryotes have no nucleus.",
+      "Fungi have no chloroplasts.",
+      "Correct. Single-celled organisms with a nucleus, such as some algae, are protoctists. Some, like this one, can photosynthesise.",
+      "Animal cells have no chloroplasts, and animals are multicellular."
     ],
     "answer": 2,
-    "explanation": "All living organisms respire to release energy. The other features belong only to some groups.",
+    "explanation": "Single-celled organisms with a nucleus, such as some algae, are protoctists. Some, like this one, can photosynthesise.",
     "difficulty": "easy",
     "type": "concept"
   },
@@ -1009,6 +1185,50 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "answer": 0,
     "explanation": "A virus is made of genetic material (DNA or RNA) inside a protein coat.",
     "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-2.2-13",
+    "topic": "2.2",
+    "level": "O Level 5090",
+    "question": "Which row describes a mammal? (skin covering; how the young develop)",
+    "options": [
+      "fur; most develop inside the mother",
+      "scales; inside eggs laid on land",
+      "feathers; inside eggs with hard shells",
+      "moist skin; inside eggs laid in water"
+    ],
+    "optionFeedback": [
+      "Correct. Mammals have fur, and most give birth to live young that develop inside the mother.",
+      "This describes a reptile.",
+      "This describes a bird.",
+      "This describes an amphibian."
+    ],
+    "answer": 0,
+    "explanation": "Mammals have fur, and most give birth to live young that develop inside the mother.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-2.2-14",
+    "topic": "2.2",
+    "level": "O Level 5090",
+    "question": "Which statements describe all arthropods?\n1 They have jointed legs.\n2 They have an exoskeleton.\n3 They have wings.\n4 They have a segmented body.",
+    "options": [
+      "1 and 3 only",
+      "1, 2 and 4",
+      "2 and 3 only",
+      "1, 2, 3 and 4"
+    ],
+    "optionFeedback": [
+      "Statement 3 is wrong: only some insects have wings.",
+      "Correct. All arthropods have jointed legs, an exoskeleton and a segmented body. Only some have wings.",
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong."
+    ],
+    "answer": 1,
+    "explanation": "All arthropods have jointed legs, an exoskeleton and a segmented body. Only some have wings.",
+    "difficulty": "medium",
     "type": "concept"
   },
   {
@@ -1348,6 +1568,50 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "type": "concept"
   },
   {
+    "id": "o5090-3.1-15",
+    "topic": "3.1",
+    "level": "O Level 5090",
+    "question": "Which statements describe features of osmosis?\n1 It needs a partially permeable membrane.\n2 It is the movement of any liquid.\n3 It uses energy from respiration.\n4 It is the diffusion of water molecules.",
+    "options": [
+      "1 and 4",
+      "1 and 2",
+      "2 and 3",
+      "3 and 4"
+    ],
+    "optionFeedback": [
+      "Correct. Osmosis is the diffusion of water molecules through a partially permeable membrane.",
+      "Statement 2 is wrong: osmosis is the movement of water.",
+      "Both are wrong.",
+      "Statement 3 is wrong: osmosis needs no energy from respiration."
+    ],
+    "answer": 0,
+    "explanation": "Osmosis is the diffusion of water molecules through a partially permeable membrane.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-3.1-16",
+    "topic": "3.1",
+    "level": "O Level 5090",
+    "question": "Which row shows what happens to a plant cell and an animal cell placed in pure water? (plant cell; animal cell)",
+    "options": [
+      "becomes plasmolysed; shrinks",
+      "bursts; becomes turgid",
+      "becomes turgid; swells and may burst",
+      "no change; no change"
+    ],
+    "optionFeedback": [
+      "This happens in a concentrated solution.",
+      "The cell wall stops a plant cell bursting; animal cells cannot become turgid.",
+      "Correct. Water enters both. The plant cell wall resists the pressure so it becomes turgid; the animal cell has no wall and may burst.",
+      "Water enters both cells by osmosis."
+    ],
+    "answer": 2,
+    "explanation": "Water enters both. The plant cell wall resists the pressure so it becomes turgid; the animal cell has no wall and may burst.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
     "id": "o5090-3.2-01",
     "topic": "3.2",
     "level": "O Level 5090",
@@ -1521,6 +1785,50 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "answer": 0,
     "explanation": "Moving glucose against its concentration gradient needs energy, so it is active transport.",
     "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-3.2-09",
+    "topic": "3.2",
+    "level": "O Level 5090",
+    "question": "Which row compares active transport and diffusion? (needs energy from respiration; moves against a concentration gradient)",
+    "options": [
+      "active transport: no, yes; diffusion: yes, no",
+      "active transport: yes, no; diffusion: no, yes",
+      "active transport: yes, yes; diffusion: no, no",
+      "active transport: yes, yes; diffusion: yes, no"
+    ],
+    "optionFeedback": [
+      "Active transport needs energy; diffusion does not.",
+      "Active transport moves against the gradient; diffusion moves down it.",
+      "Correct. Active transport uses energy to move particles against a gradient. Diffusion is passive and moves down a gradient.",
+      "Diffusion needs no energy from respiration."
+    ],
+    "answer": 2,
+    "explanation": "Active transport uses energy to move particles against a gradient. Diffusion is passive and moves down a gradient.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-3.2-10",
+    "topic": "3.2",
+    "level": "O Level 5090",
+    "question": "Which statements about active transport are correct?\n1 It uses carrier proteins in the cell membrane.\n2 It needs energy from respiration.\n3 It can move ions from low to high concentration.\n4 It only happens in plant cells.",
+    "options": [
+      "1 and 4 only",
+      "2 and 4 only",
+      "3 and 4 only",
+      "1, 2 and 3"
+    ],
+    "optionFeedback": [
+      "Statement 4 is wrong: active transport happens in animal cells too.",
+      "Statement 4 is wrong.",
+      "Statement 4 is wrong.",
+      "Correct. Active transport uses carrier proteins and energy to move particles against a gradient, in plant and animal cells."
+    ],
+    "answer": 3,
+    "explanation": "Active transport uses carrier proteins and energy to move particles against a gradient, in plant and animal cells.",
+    "difficulty": "hard",
     "type": "concept"
   },
   {
@@ -1822,6 +2130,50 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "type": "practical"
   },
   {
+    "id": "o5090-4.1-13",
+    "topic": "4.1",
+    "level": "O Level 5090",
+    "question": "Which row shows the reagent and the positive result for each test? (starch; protein)",
+    "options": [
+      "biuret, blue-black; iodine, purple",
+      "iodine, blue-black; biuret, purple",
+      "iodine, purple; biuret, blue-black",
+      "Benedict's, brick-red; biuret, purple"
+    ],
+    "optionFeedback": [
+      "The reagents are the wrong way round.",
+      "Correct. Starch turns iodine blue-black; protein turns biuret purple.",
+      "The colours are the wrong way round.",
+      "Benedict's tests for reducing sugars, not starch."
+    ],
+    "answer": 1,
+    "explanation": "Starch turns iodine blue-black; protein turns biuret purple.",
+    "difficulty": "medium",
+    "type": "practical"
+  },
+  {
+    "id": "o5090-4.1-14",
+    "topic": "4.1",
+    "level": "O Level 5090",
+    "question": "Which statements about large biological molecules are correct?\n1 Glycogen is made from glucose.\n2 Proteins are made from amino acids.\n3 Cellulose is made from fatty acids.\n4 Lipids are made from fatty acids and glycerol.",
+    "options": [
+      "1, 2 and 4",
+      "1 and 3 only",
+      "2 and 3 only",
+      "3 and 4 only"
+    ],
+    "optionFeedback": [
+      "Correct. Glycogen and cellulose are made of glucose, proteins of amino acids, and lipids of fatty acids and glycerol.",
+      "Statement 3 is wrong: cellulose is made from glucose.",
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong."
+    ],
+    "answer": 0,
+    "explanation": "Glycogen and cellulose are made of glucose, proteins of amino acids, and lipids of fatty acids and glycerol.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
     "id": "o5090-5.1-01",
     "topic": "5.1",
     "level": "O Level 5090",
@@ -2038,6 +2390,50 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     ],
     "answer": 0,
     "explanation": "Enzymes are specific: only a substrate with a complementary shape can bind to the active site.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-5.1-11",
+    "topic": "5.1",
+    "level": "O Level 5090",
+    "question": "Which row describes an enzyme? (type of molecule; changed by the reaction)",
+    "options": [
+      "protein; no",
+      "carbohydrate; no",
+      "protein; yes",
+      "lipid; yes"
+    ],
+    "optionFeedback": [
+      "Correct. Enzymes are proteins that act as catalysts, so they are not changed by the reaction.",
+      "Enzymes are proteins.",
+      "Enzymes are not changed by the reaction.",
+      "Enzymes are proteins and are not changed."
+    ],
+    "answer": 0,
+    "explanation": "Enzymes are proteins that act as catalysts, so they are not changed by the reaction.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-5.1-12",
+    "topic": "5.1",
+    "level": "O Level 5090",
+    "question": "Which statements explain why an enzyme only breaks down one substrate?\n1 The active site has a specific shape.\n2 The substrate shape is complementary to the active site.\n3 The enzyme is used up after one reaction.\n4 Other molecules do not fit the active site.",
+    "options": [
+      "1 and 3 only",
+      "2 and 3 only",
+      "3 and 4 only",
+      "1, 2 and 4"
+    ],
+    "optionFeedback": [
+      "Statement 3 is wrong: enzymes are not used up.",
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong.",
+      "Correct. Specificity comes from the shape of the active site: only a complementary substrate fits."
+    ],
+    "answer": 3,
+    "explanation": "Specificity comes from the shape of the active site: only a complementary substrate fits.",
     "difficulty": "hard",
     "type": "concept"
   },
@@ -2330,6 +2726,50 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     ],
     "answer": 1,
     "explanation": "Pepsin works best at about pH 2 in the stomach; salivary amylase works best at about pH 7 in the mouth.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-5.2-13",
+    "topic": "5.2",
+    "level": "O Level 5090",
+    "question": "Increasing the temperature above the optimum reduces enzyme activity. How is this explained?",
+    "options": [
+      "There are fewer collisions because molecules slow down.",
+      "The substrate molecules are denatured.",
+      "The enzyme molecules are killed.",
+      "The shape of the active site changes and the substrate no longer fits."
+    ],
+    "optionFeedback": [
+      "Molecules move faster at higher temperatures.",
+      "It is the enzyme that is denatured.",
+      "Enzymes are not living.",
+      "Correct. Above the optimum the enzyme is denatured: its active site changes shape, so the substrate cannot fit."
+    ],
+    "answer": 3,
+    "explanation": "Above the optimum the enzyme is denatured: its active site changes shape, so the substrate cannot fit.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-5.2-14",
+    "topic": "5.2",
+    "level": "O Level 5090",
+    "question": "Which row describes an enzyme at 5 °C and at 70 °C? (5 °C; 70 °C)",
+    "options": [
+      "denatured; slow, not denatured",
+      "slow, not denatured; denatured",
+      "denatured; denatured",
+      "fast; fast"
+    ],
+    "optionFeedback": [
+      "This is the wrong way round.",
+      "Correct. Cold slows enzymes but does not denature them; high temperatures denature them.",
+      "Cold does not denature enzymes.",
+      "Activity is low at 5 °C and zero once denatured at 70 °C."
+    ],
+    "answer": 1,
+    "explanation": "Cold slows enzymes but does not denature them; high temperatures denature them.",
     "difficulty": "hard",
     "type": "concept"
   }
