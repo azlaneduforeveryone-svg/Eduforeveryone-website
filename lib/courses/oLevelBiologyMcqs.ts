@@ -2772,6 +2772,4126 @@ export const oLevelBiologyMcqs: BiologyMcq[] = [
     "explanation": "Cold slows enzymes but does not denature them; high temperatures denature them.",
     "difficulty": "hard",
     "type": "concept"
+  },
+  {
+    "id": "o5090-6.1-01",
+    "topic": "6.1",
+    "level": "O Level 5090",
+    "question": "What is photosynthesis?",
+    "options": [
+      "the process by which plants release energy from glucose",
+      "the process by which plants absorb water from the soil",
+      "the process by which plants make carbohydrates from raw materials using energy from light",
+      "the process by which plants lose water vapour from leaves"
+    ],
+    "optionFeedback": [
+      "This describes respiration.",
+      "Water uptake is by osmosis.",
+      "Correct. Photosynthesis uses light energy to make carbohydrates from carbon dioxide and water.",
+      "This describes transpiration."
+    ],
+    "answer": 2,
+    "explanation": "Photosynthesis uses light energy to make carbohydrates from carbon dioxide and water.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-6.1-02",
+    "topic": "6.1",
+    "level": "O Level 5090",
+    "question": "What is the function of chlorophyll?",
+    "options": [
+      "to transfer light energy into chemical energy for making carbohydrates",
+      "to absorb carbon dioxide from the air",
+      "to make the leaf waterproof",
+      "to release energy by respiration"
+    ],
+    "optionFeedback": [
+      "Correct. Chlorophyll is a green pigment in chloroplasts that absorbs light and transfers the energy into chemical energy.",
+      "Carbon dioxide enters by diffusion through stomata.",
+      "The waxy cuticle reduces water loss.",
+      "Respiration happens in mitochondria."
+    ],
+    "answer": 0,
+    "explanation": "Chlorophyll is a green pigment in chloroplasts that absorbs light and transfers the energy into chemical energy.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-6.1-03",
+    "topic": "6.1",
+    "level": "O Level 5090",
+    "question": "Which is the balanced chemical equation for photosynthesis?",
+    "options": [
+      "6CO₂ + 6H₂O gives C₆H₁₂O₆ + 6O₂",
+      "C₆H₁₂O₆ + 6O₂ gives 6CO₂ + 6H₂O",
+      "6CO₂ + 6O₂ gives C₆H₁₂O₆ + 6H₂O",
+      "CO₂ + H₂O gives C₆H₁₂O₆ + O₂"
+    ],
+    "optionFeedback": [
+      "Correct. Six carbon dioxide and six water molecules make one glucose and six oxygen molecules, using light and chlorophyll.",
+      "This is aerobic respiration.",
+      "Oxygen is a product, not a reactant.",
+      "This equation is not balanced."
+    ],
+    "answer": 0,
+    "explanation": "Six carbon dioxide and six water molecules make one glucose and six oxygen molecules, using light and chlorophyll.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-6.1-04",
+    "topic": "6.1",
+    "level": "O Level 5090",
+    "question": "Which row shows how a plant uses the products of photosynthesis? (starch; cellulose; sucrose)",
+    "options": [
+      "transport; energy store; cell walls",
+      "cell walls; transport; energy store",
+      "energy store; cell walls; transport",
+      "energy store; transport; cell walls"
+    ],
+    "optionFeedback": [
+      "Each use is matched to the wrong substance.",
+      "Each use is matched to the wrong substance.",
+      "Correct. Starch is stored, cellulose builds cell walls, and sucrose is transported in the phloem.",
+      "Cellulose makes cell walls; sucrose is transported."
+    ],
+    "answer": 2,
+    "explanation": "Starch is stored, cellulose builds cell walls, and sucrose is transported in the phloem.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-6.1-05",
+    "topic": "6.1",
+    "level": "O Level 5090",
+    "question": "Why is a plant kept in the dark for 48 hours before an investigation into photosynthesis?",
+    "options": [
+      "to make the leaves produce more chlorophyll",
+      "to stop respiration",
+      "to kill the plant",
+      "to remove the starch already in its leaves"
+    ],
+    "optionFeedback": [
+      "Darkness does not increase chlorophyll.",
+      "Plants respire all the time.",
+      "The plant must be alive for the investigation.",
+      "Correct. Destarching means any starch found afterwards was made during the investigation."
+    ],
+    "answer": 3,
+    "explanation": "Destarching means any starch found afterwards was made during the investigation.",
+    "difficulty": "medium",
+    "type": "practical"
+  },
+  {
+    "id": "o5090-6.1-06",
+    "topic": "6.1",
+    "level": "O Level 5090",
+    "question": "In the test for starch in a leaf, why is the leaf placed in hot ethanol?",
+    "options": [
+      "to remove the chlorophyll",
+      "to kill the leaf",
+      "to soften the leaf",
+      "to add starch to the leaf"
+    ],
+    "optionFeedback": [
+      "Correct. Ethanol dissolves the chlorophyll, so the colour change with iodine can be seen clearly.",
+      "Boiling water kills the leaf.",
+      "The leaf is softened in hot water afterwards.",
+      "Ethanol does not add starch."
+    ],
+    "answer": 0,
+    "explanation": "Ethanol dissolves the chlorophyll, so the colour change with iodine can be seen clearly.",
+    "difficulty": "medium",
+    "type": "practical"
+  },
+  {
+    "id": "o5090-6.1-07",
+    "topic": "6.1",
+    "level": "O Level 5090",
+    "question": "A variegated leaf has green and white areas. It is kept in light, then tested with iodine. Which result is expected?",
+    "options": [
+      "Only the white areas turn blue-black.",
+      "The whole leaf turns blue-black.",
+      "No part of the leaf turns blue-black.",
+      "Only the green areas turn blue-black."
+    ],
+    "optionFeedback": [
+      "White areas have no chlorophyll, so no starch is made there.",
+      "Starch is only made where there is chlorophyll.",
+      "The green areas photosynthesise and make starch.",
+      "Correct. Only areas with chlorophyll photosynthesise and store starch."
+    ],
+    "answer": 3,
+    "explanation": "Only areas with chlorophyll photosynthesise and store starch.",
+    "difficulty": "hard",
+    "type": "practical"
+  },
+  {
+    "id": "o5090-6.1-08",
+    "topic": "6.1",
+    "level": "O Level 5090",
+    "question": "A plant is kept in a sealed bag with soda lime, which absorbs carbon dioxide. A control plant has no soda lime. What is the purpose of the control?",
+    "options": [
+      "to show that any difference in starch is caused by the lack of carbon dioxide",
+      "to provide extra carbon dioxide",
+      "to remove starch from the leaves",
+      "to measure the rate of respiration"
+    ],
+    "optionFeedback": [
+      "Correct. The control is identical except for carbon dioxide, so it shows that carbon dioxide is needed.",
+      "The control has normal air.",
+      "Destarching is done before the experiment.",
+      "The investigation is about photosynthesis."
+    ],
+    "answer": 0,
+    "explanation": "The control is identical except for carbon dioxide, so it shows that carbon dioxide is needed.",
+    "difficulty": "hard",
+    "type": "practical"
+  },
+  {
+    "id": "o5090-6.1-09",
+    "topic": "6.1",
+    "level": "O Level 5090",
+    "question": "What is a limiting factor?",
+    "options": [
+      "a factor in short supply that stops the rate of a process from increasing",
+      "a factor that always increases the rate",
+      "the product of photosynthesis",
+      "a factor that denatures enzymes"
+    ],
+    "optionFeedback": [
+      "Correct. The rate is limited by whichever factor is in shortest supply.",
+      "A limiting factor holds the rate back.",
+      "Products are glucose and oxygen.",
+      "High temperature can denature enzymes, but that is not the definition."
+    ],
+    "answer": 0,
+    "explanation": "The rate is limited by whichever factor is in shortest supply.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-6.1-10",
+    "topic": "6.1",
+    "level": "O Level 5090",
+    "question": "The rate of photosynthesis increases with light intensity, then levels off. What is the most likely limiting factor on the flat part of the graph?",
+    "options": [
+      "light intensity",
+      "carbon dioxide concentration",
+      "the amount of oxygen",
+      "the number of stomata"
+    ],
+    "optionFeedback": [
+      "Increasing light no longer increases the rate, so light is not limiting.",
+      "Correct. When more light gives no increase, another factor such as carbon dioxide or temperature is limiting.",
+      "Oxygen is a product, not a limiting factor.",
+      "This does not change during the experiment."
+    ],
+    "answer": 1,
+    "explanation": "When more light gives no increase, another factor such as carbon dioxide or temperature is limiting.",
+    "difficulty": "hard",
+    "type": "diagram"
+  },
+  {
+    "id": "o5090-6.1-11",
+    "topic": "6.1",
+    "level": "O Level 5090",
+    "question": "Why does the rate of photosynthesis fall at very high temperatures?",
+    "options": [
+      "The enzymes that control photosynthesis are denatured.",
+      "There is too much carbon dioxide.",
+      "Chlorophyll absorbs too much light.",
+      "The plant stops respiring."
+    ],
+    "optionFeedback": [
+      "Correct. Photosynthesis is controlled by enzymes, which are denatured above their optimum.",
+      "More carbon dioxide would not reduce the rate.",
+      "This is not the reason.",
+      "Respiration does not stop photosynthesis."
+    ],
+    "answer": 0,
+    "explanation": "Photosynthesis is controlled by enzymes, which are denatured above their optimum.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-6.1-12",
+    "topic": "6.1",
+    "level": "O Level 5090",
+    "question": "A lamp is moved closer to some pondweed. What happens to the number of oxygen bubbles, and why?",
+    "options": [
+      "It decreases, because the temperature falls.",
+      "It increases, because more carbon dioxide is produced.",
+      "It stays the same, because light is never limiting.",
+      "It increases, because light intensity increases."
+    ],
+    "optionFeedback": [
+      "Moving a lamp closer does not cool the water.",
+      "Carbon dioxide is used, not produced, in photosynthesis.",
+      "Light is often the limiting factor.",
+      "Correct. A closer lamp gives greater light intensity, so the rate of photosynthesis and oxygen production rises."
+    ],
+    "answer": 3,
+    "explanation": "A closer lamp gives greater light intensity, so the rate of photosynthesis and oxygen production rises.",
+    "difficulty": "hard",
+    "type": "practical"
+  },
+  {
+    "id": "o5090-6.1-13",
+    "topic": "6.1",
+    "level": "O Level 5090",
+    "question": "Hydrogencarbonate indicator is orange-red in normal air. Pondweed is placed in the indicator in bright light for one hour. What colour will the indicator become?",
+    "options": [
+      "yellow",
+      "orange-red",
+      "purple",
+      "blue-black"
+    ],
+    "optionFeedback": [
+      "Yellow shows high carbon dioxide, as in the dark.",
+      "The plant uses carbon dioxide, so the colour changes.",
+      "Correct. In bright light photosynthesis uses carbon dioxide faster than respiration releases it, so the carbon dioxide level falls and the indicator turns purple.",
+      "Blue-black is the positive result for starch with iodine."
+    ],
+    "answer": 2,
+    "explanation": "In bright light photosynthesis uses carbon dioxide faster than respiration releases it, so the carbon dioxide level falls and the indicator turns purple.",
+    "difficulty": "hard",
+    "type": "practical"
+  },
+  {
+    "id": "o5090-6.1-14",
+    "topic": "6.1",
+    "level": "O Level 5090",
+    "question": "Which statements explain why plants need light for photosynthesis?\n1 Light provides the energy.\n2 Light is absorbed by chlorophyll.\n3 Light is a raw material made into glucose.\n4 Light opens the stomata.",
+    "options": [
+      "1 and 3",
+      "2 and 3",
+      "1 and 2",
+      "3 and 4"
+    ],
+    "optionFeedback": [
+      "Statement 3 is wrong: the raw materials are carbon dioxide and water.",
+      "Statement 3 is wrong.",
+      "Correct. Light is the energy source and is absorbed by chlorophyll. Carbon dioxide and water are the raw materials.",
+      "Statement 3 is wrong, and stomatal opening is not why light is needed."
+    ],
+    "answer": 2,
+    "explanation": "Light is the energy source and is absorbed by chlorophyll. Carbon dioxide and water are the raw materials.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-6.2-01",
+    "topic": "6.2",
+    "level": "O Level 5090",
+    "question": "Where does most photosynthesis take place in a leaf?",
+    "options": [
+      "upper epidermis",
+      "spongy mesophyll",
+      "xylem",
+      "palisade mesophyll"
+    ],
+    "optionFeedback": [
+      "Epidermis cells have no chloroplasts, apart from guard cells.",
+      "Spongy cells photosynthesise, but less than palisade cells.",
+      "Xylem carries water and has no chloroplasts.",
+      "Correct. Palisade cells are packed with chloroplasts and lie near the top of the leaf where light is strongest."
+    ],
+    "answer": 3,
+    "explanation": "Palisade cells are packed with chloroplasts and lie near the top of the leaf where light is strongest.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-6.2-02",
+    "topic": "6.2",
+    "level": "O Level 5090",
+    "question": "What is the function of the waxy cuticle?",
+    "options": [
+      "to reduce water loss",
+      "to absorb light",
+      "to exchange gases",
+      "to transport water"
+    ],
+    "optionFeedback": [
+      "Correct. The waxy cuticle covers the leaf and reduces water loss by evaporation.",
+      "The cuticle is transparent and lets light through.",
+      "Gases are exchanged through stomata.",
+      "Xylem transports water."
+    ],
+    "answer": 0,
+    "explanation": "The waxy cuticle covers the leaf and reduces water loss by evaporation.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-6.2-03",
+    "topic": "6.2",
+    "level": "O Level 5090",
+    "question": "Why is a leaf thin?",
+    "options": [
+      "so gases diffuse a short distance to all cells",
+      "so it can store more starch",
+      "so it has fewer stomata",
+      "so it can be eaten easily"
+    ],
+    "optionFeedback": [
+      "Correct. A thin leaf gives a short diffusion distance for carbon dioxide and lets light reach all cells.",
+      "Thinness is not for storage.",
+      "Thinness does not reduce stomata.",
+      "This is not an adaptation for photosynthesis."
+    ],
+    "answer": 0,
+    "explanation": "A thin leaf gives a short diffusion distance for carbon dioxide and lets light reach all cells.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-6.2-04",
+    "topic": "6.2",
+    "level": "O Level 5090",
+    "question": "Which cells in the epidermis contain chloroplasts?",
+    "options": [
+      "all upper epidermis cells",
+      "all lower epidermis cells",
+      "no epidermis cells",
+      "guard cells"
+    ],
+    "optionFeedback": [
+      "Most epidermis cells have no chloroplasts.",
+      "Only guard cells have chloroplasts.",
+      "Guard cells do have chloroplasts.",
+      "Correct. Guard cells, which surround stomata, are the only epidermis cells with chloroplasts."
+    ],
+    "answer": 3,
+    "explanation": "Guard cells, which surround stomata, are the only epidermis cells with chloroplasts.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-6.2-05",
+    "topic": "6.2",
+    "level": "O Level 5090",
+    "question": "What is the function of the air spaces in the spongy mesophyll?",
+    "options": [
+      "to store water",
+      "to transport sucrose",
+      "to support the leaf",
+      "to allow gases to diffuse to and from the cells"
+    ],
+    "optionFeedback": [
+      "Air spaces contain air, not stored water.",
+      "Sucrose is transported in phloem.",
+      "Air spaces do not support the leaf.",
+      "Correct. Air spaces let carbon dioxide reach the cells and oxygen and water vapour leave."
+    ],
+    "answer": 3,
+    "explanation": "Air spaces let carbon dioxide reach the cells and oxygen and water vapour leave.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-6.2-06",
+    "topic": "6.2",
+    "level": "O Level 5090",
+    "question": "Which row shows the function of xylem and phloem in a leaf? (xylem; phloem)",
+    "options": [
+      "brings water and mineral ions; carries sucrose away",
+      "carries sucrose away; brings water and mineral ions",
+      "brings carbon dioxide; carries oxygen away",
+      "carries sucrose away; carries sucrose away"
+    ],
+    "optionFeedback": [
+      "Correct. Xylem brings water and mineral ions to the leaf; phloem carries sucrose away.",
+      "This is the wrong way round.",
+      "Gases move through stomata and air spaces.",
+      "Xylem carries water and ions."
+    ],
+    "answer": 0,
+    "explanation": "Xylem brings water and mineral ions to the leaf; phloem carries sucrose away.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-6.2-07",
+    "topic": "6.2",
+    "level": "O Level 5090",
+    "question": "How does carbon dioxide reach the palisade cells?",
+    "options": [
+      "It is absorbed by the roots and carried in the xylem.",
+      "It is pumped in by active transport through the cuticle.",
+      "It moves in through the phloem.",
+      "It diffuses in through the stomata and through the air spaces."
+    ],
+    "optionFeedback": [
+      "Carbon dioxide enters through the leaves.",
+      "Gases do not pass through the cuticle this way.",
+      "Phloem carries sucrose.",
+      "Correct. Carbon dioxide diffuses from the air through open stomata, then through air spaces to the mesophyll cells."
+    ],
+    "answer": 3,
+    "explanation": "Carbon dioxide diffuses from the air through open stomata, then through air spaces to the mesophyll cells.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-6.2-08",
+    "topic": "6.2",
+    "level": "O Level 5090",
+    "question": "Which statements explain why palisade cells are well adapted for photosynthesis?\n1 They contain many chloroplasts.\n2 They are near the upper surface of the leaf.\n3 They have a waxy cuticle.\n4 They are closely packed in a layer.",
+    "options": [
+      "1 and 3 only",
+      "2 and 3 only",
+      "1, 2 and 4",
+      "3 and 4 only"
+    ],
+    "optionFeedback": [
+      "Statement 3 is wrong: the cuticle is a separate layer, not part of palisade cells.",
+      "Statement 3 is wrong.",
+      "Correct. Palisade cells are tall, closely packed, full of chloroplasts and near the top of the leaf to absorb as much light as possible.",
+      "Statement 3 is wrong."
+    ],
+    "answer": 2,
+    "explanation": "Palisade cells are tall, closely packed, full of chloroplasts and near the top of the leaf to absorb as much light as possible.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-6.2-09",
+    "topic": "6.2",
+    "level": "O Level 5090",
+    "question": "Most stomata are found in the lower epidermis. What is the advantage of this?",
+    "options": [
+      "More light reaches the stomata.",
+      "More sucrose can enter the leaf.",
+      "Less water vapour is lost, because the lower surface is cooler and shaded.",
+      "It stops carbon dioxide entering."
+    ],
+    "optionFeedback": [
+      "Stomata do not absorb light.",
+      "Sucrose is not taken in through stomata.",
+      "Correct. The shaded, cooler lower surface reduces evaporation, so less water is lost.",
+      "Stomata let carbon dioxide in."
+    ],
+    "answer": 2,
+    "explanation": "The shaded, cooler lower surface reduces evaporation, so less water is lost.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-6.2-10",
+    "topic": "6.2",
+    "level": "O Level 5090",
+    "question": "Which features of a leaf give a large surface area for absorbing light?",
+    "options": [
+      "thick, waxy cuticle",
+      "many vascular bundles",
+      "small, round leaves",
+      "broad, flat leaf blades"
+    ],
+    "optionFeedback": [
+      "The cuticle reduces water loss.",
+      "Vascular bundles transport substances.",
+      "These would have a smaller surface area.",
+      "Correct. Broad, flat leaves absorb more light for photosynthesis."
+    ],
+    "answer": 3,
+    "explanation": "Broad, flat leaves absorb more light for photosynthesis.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-6.2-11",
+    "topic": "6.2",
+    "level": "O Level 5090",
+    "question": "Which row identifies these leaf structures from top to bottom? (first layer under the cuticle; layer with most chloroplasts; layer with most air spaces)",
+    "options": [
+      "palisade mesophyll; upper epidermis; spongy mesophyll",
+      "upper epidermis; spongy mesophyll; palisade mesophyll",
+      "spongy mesophyll; palisade mesophyll; upper epidermis",
+      "upper epidermis; palisade mesophyll; spongy mesophyll"
+    ],
+    "optionFeedback": [
+      "The upper epidermis is directly under the cuticle.",
+      "Palisade has the most chloroplasts; spongy has the most air spaces.",
+      "The order is wrong.",
+      "Correct. Under the cuticle is the upper epidermis, then the palisade layer full of chloroplasts, then the spongy layer with air spaces."
+    ],
+    "answer": 3,
+    "explanation": "Under the cuticle is the upper epidermis, then the palisade layer full of chloroplasts, then the spongy layer with air spaces.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-6.3-01",
+    "topic": "6.3",
+    "level": "O Level 5090",
+    "question": "Why do plants need nitrate ions?",
+    "options": [
+      "to make amino acids for proteins",
+      "to make chlorophyll",
+      "to make glucose",
+      "to make cellulose"
+    ],
+    "optionFeedback": [
+      "Correct. Nitrate ions supply nitrogen, which is needed to make amino acids and then proteins.",
+      "Magnesium is needed for chlorophyll.",
+      "Glucose is made by photosynthesis from carbon dioxide and water.",
+      "Cellulose is made from glucose."
+    ],
+    "answer": 0,
+    "explanation": "Nitrate ions supply nitrogen, which is needed to make amino acids and then proteins.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-6.3-02",
+    "topic": "6.3",
+    "level": "O Level 5090",
+    "question": "Why do plants need magnesium ions?",
+    "options": [
+      "to make amino acids",
+      "to make starch",
+      "to make chlorophyll",
+      "to open stomata"
+    ],
+    "optionFeedback": [
+      "Nitrate is needed for amino acids.",
+      "Starch is made from glucose.",
+      "Correct. Chlorophyll molecules contain magnesium.",
+      "This is not the role of magnesium in the syllabus."
+    ],
+    "answer": 2,
+    "explanation": "Chlorophyll molecules contain magnesium.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-6.3-03",
+    "topic": "6.3",
+    "level": "O Level 5090",
+    "question": "A plant is short and its older leaves are yellow. Which ion is most likely to be lacking?",
+    "options": [
+      "magnesium",
+      "sodium",
+      "nitrate",
+      "calcium"
+    ],
+    "optionFeedback": [
+      "Magnesium deficiency causes yellow leaves but not stunted growth as the main sign.",
+      "Sodium is not a key plant mineral ion in the syllabus.",
+      "Correct. Without nitrate, the plant cannot make enough protein for growth, so it is stunted with yellow older leaves.",
+      "Calcium deficiency is not covered in this syllabus."
+    ],
+    "answer": 2,
+    "explanation": "Without nitrate, the plant cannot make enough protein for growth, so it is stunted with yellow older leaves.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-6.3-04",
+    "topic": "6.3",
+    "level": "O Level 5090",
+    "question": "A plant has yellow leaves, especially between the veins. Why does this reduce its growth?",
+    "options": [
+      "It cannot make amino acids.",
+      "It has less chlorophyll, so it absorbs less light for photosynthesis.",
+      "It cannot absorb water.",
+      "It respires faster."
+    ],
+    "optionFeedback": [
+      "That is the effect of nitrate deficiency.",
+      "Correct. Magnesium deficiency means less chlorophyll, so less photosynthesis and less growth.",
+      "Yellow leaves do not stop water uptake.",
+      "This is not the reason."
+    ],
+    "answer": 1,
+    "explanation": "Magnesium deficiency means less chlorophyll, so less photosynthesis and less growth.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-6.3-05",
+    "topic": "6.3",
+    "level": "O Level 5090",
+    "question": "How do mineral ions enter a plant?",
+    "options": [
+      "through root hair cells, from the soil water",
+      "through the stomata, from the air",
+      "through the phloem, from the leaves",
+      "through the cuticle, from rain"
+    ],
+    "optionFeedback": [
+      "Correct. Mineral ions are dissolved in soil water and absorbed by root hair cells.",
+      "Stomata exchange gases.",
+      "Phloem carries sucrose.",
+      "The cuticle is waterproof."
+    ],
+    "answer": 0,
+    "explanation": "Mineral ions are dissolved in soil water and absorbed by root hair cells.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-6.3-06",
+    "topic": "6.3",
+    "level": "O Level 5090",
+    "question": "Which row shows the mineral ion and what it is used to make? (nitrate; magnesium)",
+    "options": [
+      "chlorophyll; amino acids",
+      "glucose; starch",
+      "amino acids; chlorophyll",
+      "amino acids; amino acids"
+    ],
+    "optionFeedback": [
+      "This is the wrong way round.",
+      "Neither ion is used to make glucose or starch.",
+      "Correct. Nitrate is used to make amino acids; magnesium is used to make chlorophyll.",
+      "Magnesium is used for chlorophyll."
+    ],
+    "answer": 2,
+    "explanation": "Nitrate is used to make amino acids; magnesium is used to make chlorophyll.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-6.3-07",
+    "topic": "6.3",
+    "level": "O Level 5090",
+    "question": "Why can a plant not make proteins using only the products of photosynthesis?",
+    "options": [
+      "Glucose contains no carbon.",
+      "Proteins are only made at night.",
+      "Photosynthesis makes amino acids directly.",
+      "Glucose contains no nitrogen, but amino acids do."
+    ],
+    "optionFeedback": [
+      "Glucose contains carbon, hydrogen and oxygen.",
+      "Proteins are made at any time.",
+      "Photosynthesis makes carbohydrates.",
+      "Correct. Amino acids contain nitrogen, which must come from nitrate ions in the soil."
+    ],
+    "answer": 3,
+    "explanation": "Amino acids contain nitrogen, which must come from nitrate ions in the soil.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-6.3-08",
+    "topic": "6.3",
+    "level": "O Level 5090",
+    "question": "Which statements about fertilisers are correct?\n1 They supply mineral ions such as nitrate.\n2 They increase crop growth.\n3 They are absorbed by the stomata.\n4 They can help plants make more proteins.",
+    "options": [
+      "1, 2 and 4",
+      "1 and 3 only",
+      "2 and 3 only",
+      "3 and 4 only"
+    ],
+    "optionFeedback": [
+      "Correct. Fertilisers add mineral ions to the soil, absorbed by roots; nitrate helps make proteins for growth.",
+      "Statement 3 is wrong: ions are absorbed by roots.",
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong."
+    ],
+    "answer": 0,
+    "explanation": "Fertilisers add mineral ions to the soil, absorbed by roots; nitrate helps make proteins for growth.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-6.3-09",
+    "topic": "6.3",
+    "level": "O Level 5090",
+    "question": "Which process is most directly affected when a plant lacks magnesium?",
+    "options": [
+      "excretion",
+      "protein synthesis",
+      "translocation",
+      "photosynthesis"
+    ],
+    "optionFeedback": [
+      "Plants do not excrete through magnesium use.",
+      "Nitrate deficiency affects protein synthesis most directly.",
+      "Translocation is not directly caused by magnesium.",
+      "Correct. Magnesium is needed for chlorophyll, so photosynthesis is reduced."
+    ],
+    "answer": 3,
+    "explanation": "Magnesium is needed for chlorophyll, so photosynthesis is reduced.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-6.3-10",
+    "topic": "6.3",
+    "level": "O Level 5090",
+    "question": "A farmer grows wheat in soil with very little nitrate. Which result is most likely?",
+    "options": [
+      "higher yield, because the plants grow taller",
+      "greener leaves, because more chlorophyll is made",
+      "lower yield, because less protein is made for growth",
+      "no effect, because nitrate is not needed"
+    ],
+    "optionFeedback": [
+      "Lack of nitrate reduces growth.",
+      "Nitrate deficiency causes yellowing.",
+      "Correct. Without enough nitrate, the plants make less protein, grow poorly and give a lower yield.",
+      "Nitrate is needed to make amino acids."
+    ],
+    "answer": 2,
+    "explanation": "Without enough nitrate, the plants make less protein, grow poorly and give a lower yield.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-7.1-01",
+    "topic": "7.1",
+    "level": "O Level 5090",
+    "question": "How does water enter root hair cells?",
+    "options": [
+      "by active transport",
+      "by osmosis",
+      "by translocation",
+      "by transpiration"
+    ],
+    "optionFeedback": [
+      "Mineral ions use active transport, not water.",
+      "Correct. Water moves into root hair cells by osmosis from the more dilute soil water.",
+      "Translocation moves sucrose in phloem.",
+      "Transpiration is water loss from leaves."
+    ],
+    "answer": 1,
+    "explanation": "Water moves into root hair cells by osmosis from the more dilute soil water.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-7.1-02",
+    "topic": "7.1",
+    "level": "O Level 5090",
+    "question": "What is the main function of root hair cells?",
+    "options": [
+      "to make glucose by photosynthesis",
+      "to transport sucrose",
+      "to absorb water and mineral ions",
+      "to anchor the plant"
+    ],
+    "optionFeedback": [
+      "Root hair cells have no chloroplasts.",
+      "Phloem transports sucrose.",
+      "Correct. Root hair cells absorb water and mineral ions from the soil.",
+      "Root hairs mainly absorb; the whole root anchors the plant."
+    ],
+    "answer": 2,
+    "explanation": "Root hair cells absorb water and mineral ions from the soil.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-7.1-03",
+    "topic": "7.1",
+    "level": "O Level 5090",
+    "question": "How is a root hair cell adapted for absorption?",
+    "options": [
+      "It has many chloroplasts.",
+      "It has a thick waxy cuticle.",
+      "Its long extension gives a large surface area.",
+      "It has no cell membrane."
+    ],
+    "optionFeedback": [
+      "Root hairs are underground and have no chloroplasts.",
+      "A cuticle would slow absorption.",
+      "Correct. The long thin hair gives a large surface area in contact with soil water.",
+      "All cells have a cell membrane."
+    ],
+    "answer": 2,
+    "explanation": "The long thin hair gives a large surface area in contact with soil water.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-7.1-04",
+    "topic": "7.1",
+    "level": "O Level 5090",
+    "question": "What is the order of tissues that water passes through from the soil to the leaf?",
+    "options": [
+      "root cortex, root hair cell, xylem, mesophyll cells",
+      "root hair cell, phloem, xylem, mesophyll cells",
+      "root hair cell, root cortex, xylem, mesophyll cells",
+      "mesophyll cells, xylem, root cortex, root hair cell"
+    ],
+    "optionFeedback": [
+      "Water enters through the root hair cell first.",
+      "Water travels in xylem, not phloem.",
+      "Correct. Water enters a root hair cell, crosses the cortex, travels up the xylem and enters the leaf mesophyll cells.",
+      "This is the reverse order."
+    ],
+    "answer": 2,
+    "explanation": "Water enters a root hair cell, crosses the cortex, travels up the xylem and enters the leaf mesophyll cells.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-7.1-05",
+    "topic": "7.1",
+    "level": "O Level 5090",
+    "question": "A leafy celery stalk is placed in water with a red dye. After two hours the stalk is cut across. Which tissue is stained red?",
+    "options": [
+      "phloem",
+      "xylem",
+      "cortex",
+      "epidermis"
+    ],
+    "optionFeedback": [
+      "Phloem carries sucrose, not water.",
+      "Correct. Water and the dissolved dye travel up the stem in the xylem.",
+      "The dye passes through the xylem.",
+      "The epidermis does not carry water up the stem."
+    ],
+    "answer": 1,
+    "explanation": "Water and the dissolved dye travel up the stem in the xylem.",
+    "difficulty": "medium",
+    "type": "practical"
+  },
+  {
+    "id": "o5090-7.1-06",
+    "topic": "7.1",
+    "level": "O Level 5090",
+    "question": "Mineral ions are often at a lower concentration in the soil than in root hair cells. How are they absorbed?",
+    "options": [
+      "by osmosis",
+      "by active transport, using energy from respiration",
+      "by diffusion, down a concentration gradient",
+      "by transpiration pull"
+    ],
+    "optionFeedback": [
+      "Osmosis is the movement of water.",
+      "Correct. Moving ions from low to high concentration needs energy, so it is active transport.",
+      "The ions move against the gradient here.",
+      "Transpiration pulls water, not ions against a gradient."
+    ],
+    "answer": 1,
+    "explanation": "Moving ions from low to high concentration needs energy, so it is active transport.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-7.1-07",
+    "topic": "7.1",
+    "level": "O Level 5090",
+    "question": "Which row shows how water and mineral ions usually enter root hair cells? (water; mineral ions)",
+    "options": [
+      "osmosis; active transport",
+      "active transport; osmosis",
+      "diffusion; osmosis",
+      "osmosis; osmosis"
+    ],
+    "optionFeedback": [
+      "Correct. Water enters by osmosis; mineral ions usually enter by active transport.",
+      "This is the wrong way round.",
+      "Ions do not move by osmosis.",
+      "Ions do not move by osmosis."
+    ],
+    "answer": 0,
+    "explanation": "Water enters by osmosis; mineral ions usually enter by active transport.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-7.1-08",
+    "topic": "7.1",
+    "level": "O Level 5090",
+    "question": "Root hair cells are often damaged when a plant is moved to a new pot. Why does the plant then wilt?",
+    "options": [
+      "It cannot absorb enough water because the surface area for absorption is reduced.",
+      "It cannot photosynthesise because root hairs contain chlorophyll.",
+      "Its xylem is blocked by soil.",
+      "It loses more water through its roots."
+    ],
+    "optionFeedback": [
+      "Correct. Fewer root hairs means less surface area for water uptake, so the plant loses more than it takes in.",
+      "Root hairs have no chlorophyll.",
+      "Damage to root hairs, not blocked xylem, is the cause.",
+      "Water is lost mainly through leaves."
+    ],
+    "answer": 0,
+    "explanation": "Fewer root hairs means less surface area for water uptake, so the plant loses more than it takes in.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-7.1-09",
+    "topic": "7.1",
+    "level": "O Level 5090",
+    "question": "Which statements about water movement into a root are correct?\n1 Water moves into the root hair cell by osmosis.\n2 Water then moves across the cortex.\n3 Water enters the phloem in the centre of the root.\n4 The soil water has a higher water potential than the root hair cell.",
+    "options": [
+      "1 and 3 only",
+      "1, 2 and 4",
+      "2 and 3 only",
+      "3 and 4 only"
+    ],
+    "optionFeedback": [
+      "Statement 3 is wrong: water enters the xylem.",
+      "Correct. Water moves by osmosis into the root hair cell, across the cortex and into the xylem.",
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong."
+    ],
+    "answer": 1,
+    "explanation": "Water moves by osmosis into the root hair cell, across the cortex and into the xylem.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-7.1-10",
+    "topic": "7.1",
+    "level": "O Level 5090",
+    "question": "Why do root hair cells have many mitochondria?",
+    "options": [
+      "to release energy for the active transport of mineral ions",
+      "to carry out photosynthesis",
+      "to store water",
+      "to make the root grow towards light"
+    ],
+    "optionFeedback": [
+      "Correct. Respiration in mitochondria releases energy for active transport.",
+      "Mitochondria carry out respiration.",
+      "Mitochondria do not store water.",
+      "Roots grow towards gravity."
+    ],
+    "answer": 0,
+    "explanation": "Respiration in mitochondria releases energy for active transport.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-7.2-01",
+    "topic": "7.2",
+    "level": "O Level 5090",
+    "question": "What is transpiration?",
+    "options": [
+      "the movement of sucrose in the phloem",
+      "the loss of water vapour from leaves",
+      "the uptake of water by roots",
+      "the movement of water into leaves by osmosis"
+    ],
+    "optionFeedback": [
+      "This is translocation.",
+      "Correct. Transpiration is the loss of water vapour from plant leaves.",
+      "Water is taken up by osmosis.",
+      "Transpiration is water loss."
+    ],
+    "answer": 1,
+    "explanation": "Transpiration is the loss of water vapour from plant leaves.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-7.2-02",
+    "topic": "7.2",
+    "level": "O Level 5090",
+    "question": "How does water leave a leaf in transpiration?",
+    "options": [
+      "Water evaporates from mesophyll cells into air spaces and water vapour diffuses out through stomata.",
+      "Liquid water drips out through the cuticle.",
+      "Water is pumped out through the phloem.",
+      "Water vapour moves in through the stomata."
+    ],
+    "optionFeedback": [
+      "Correct. Evaporation from mesophyll cell surfaces is followed by diffusion of water vapour out of the stomata.",
+      "The waxy cuticle reduces water loss.",
+      "Phloem carries sucrose.",
+      "In transpiration water vapour moves out."
+    ],
+    "answer": 0,
+    "explanation": "Evaporation from mesophyll cell surfaces is followed by diffusion of water vapour out of the stomata.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-7.2-03",
+    "topic": "7.2",
+    "level": "O Level 5090",
+    "question": "Which condition increases the rate of transpiration?",
+    "options": [
+      "higher wind speed",
+      "higher humidity",
+      "lower temperature",
+      "lower light intensity"
+    ],
+    "optionFeedback": [
+      "Correct. Wind removes water vapour near the leaf, keeping the concentration gradient steep.",
+      "Humid air reduces the concentration gradient.",
+      "Cooler conditions slow evaporation.",
+      "Stomata close in low light."
+    ],
+    "answer": 0,
+    "explanation": "Wind removes water vapour near the leaf, keeping the concentration gradient steep.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-7.2-04",
+    "topic": "7.2",
+    "level": "O Level 5090",
+    "question": "Why does high humidity reduce the rate of transpiration?",
+    "options": [
+      "The stomata are forced open.",
+      "The concentration gradient of water vapour between the leaf and the air is smaller.",
+      "The water molecules move faster.",
+      "The xylem stops carrying water."
+    ],
+    "optionFeedback": [
+      "Humidity does not force stomata open.",
+      "Correct. When the air already holds a lot of water vapour, less diffuses out of the leaf.",
+      "Humidity does not increase kinetic energy.",
+      "Xylem keeps carrying water."
+    ],
+    "answer": 1,
+    "explanation": "When the air already holds a lot of water vapour, less diffuses out of the leaf.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-7.2-05",
+    "topic": "7.2",
+    "level": "O Level 5090",
+    "question": "Which row shows the effect of each change on the rate of transpiration? (higher temperature; higher humidity)",
+    "options": [
+      "decreases; increases",
+      "increases; increases",
+      "decreases; decreases",
+      "increases; decreases"
+    ],
+    "optionFeedback": [
+      "This is the wrong way round.",
+      "Higher humidity decreases transpiration.",
+      "Higher temperature increases transpiration.",
+      "Correct. Warmth speeds evaporation and diffusion; humid air reduces the gradient."
+    ],
+    "answer": 3,
+    "explanation": "Warmth speeds evaporation and diffusion; humid air reduces the gradient.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-7.2-06",
+    "topic": "7.2",
+    "level": "O Level 5090",
+    "question": "What causes a plant to wilt?",
+    "options": [
+      "It loses water faster than it takes it up, so its cells become flaccid.",
+      "Its cells take in too much water and burst.",
+      "It makes too much sucrose.",
+      "Its stomata stay closed all day."
+    ],
+    "optionFeedback": [
+      "Correct. When cells lose water they become flaccid, and the plant can no longer stay upright.",
+      "Plant cell walls stop them bursting.",
+      "Sucrose does not cause wilting.",
+      "Closed stomata reduce water loss."
+    ],
+    "answer": 0,
+    "explanation": "When cells lose water they become flaccid, and the plant can no longer stay upright.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-7.2-07",
+    "topic": "7.2",
+    "level": "O Level 5090",
+    "question": "What are the functions of xylem?",
+    "options": [
+      "transporting sucrose and amino acids",
+      "photosynthesis and gas exchange",
+      "transporting water and mineral ions, and support",
+      "storing starch"
+    ],
+    "optionFeedback": [
+      "This is the function of phloem.",
+      "These happen in leaves, not xylem.",
+      "Correct. Xylem carries water and mineral ions and helps support the plant.",
+      "Xylem does not store starch."
+    ],
+    "answer": 2,
+    "explanation": "Xylem carries water and mineral ions and helps support the plant.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-7.2-08",
+    "topic": "7.2",
+    "level": "O Level 5090",
+    "question": "Which features of xylem vessels make them suited to their function?",
+    "options": [
+      "thick walls with lignin, no cell contents, and no cross walls between cells",
+      "thin walls, living contents and cross walls",
+      "chloroplasts and a large vacuole",
+      "sieve plates and companion cells"
+    ],
+    "optionFeedback": [
+      "Correct. Lignin gives strength and support; empty, continuous tubes let water flow easily.",
+      "Xylem vessels are dead, empty tubes.",
+      "Xylem has no chloroplasts.",
+      "These are features of phloem."
+    ],
+    "answer": 0,
+    "explanation": "Lignin gives strength and support; empty, continuous tubes let water flow easily.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-7.2-09",
+    "topic": "7.2",
+    "level": "O Level 5090",
+    "question": "How does water move up the xylem?",
+    "options": [
+      "Transpiration pulls a continuous column of water upwards, as water molecules are attracted to each other.",
+      "Phloem pumps water upwards.",
+      "Water is pushed up by active transport in the leaves.",
+      "Gravity pulls water upwards."
+    ],
+    "optionFeedback": [
+      "Correct. Water lost from leaves pulls more water up the xylem; the column holds together because water molecules attract each other.",
+      "Phloem carries sucrose.",
+      "Water is pulled up by transpiration.",
+      "Gravity acts downwards."
+    ],
+    "answer": 0,
+    "explanation": "Water lost from leaves pulls more water up the xylem; the column holds together because water molecules attract each other.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-7.2-10",
+    "topic": "7.2",
+    "level": "O Level 5090",
+    "question": "What is translocation?",
+    "options": [
+      "the movement of sucrose and amino acids in the phloem from sources to sinks",
+      "the movement of water in the xylem",
+      "the loss of water vapour from leaves",
+      "the uptake of mineral ions by roots"
+    ],
+    "optionFeedback": [
+      "Correct. Translocation moves sucrose and amino acids in phloem from where they are made or released to where they are used or stored.",
+      "This is water transport.",
+      "This is transpiration.",
+      "This is absorption."
+    ],
+    "answer": 0,
+    "explanation": "Translocation moves sucrose and amino acids in phloem from where they are made or released to where they are used or stored.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-7.2-11",
+    "topic": "7.2",
+    "level": "O Level 5090",
+    "question": "Which part of a plant can act as a source in spring and a sink in summer?",
+    "options": [
+      "a xylem vessel",
+      "a stoma",
+      "a potato tuber",
+      "a root hair cell"
+    ],
+    "optionFeedback": [
+      "Xylem carries water, not sucrose.",
+      "Stomata exchange gases.",
+      "Correct. In spring the tuber releases stored sugar (source); in summer it stores sugar (sink).",
+      "Root hair cells absorb water and ions."
+    ],
+    "answer": 2,
+    "explanation": "In spring the tuber releases stored sugar (source); in summer it stores sugar (sink).",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-7.2-12",
+    "topic": "7.2",
+    "level": "O Level 5090",
+    "question": "Which row shows the position of xylem and phloem in a stem vascular bundle? (xylem; phloem)",
+    "options": [
+      "towards the outside; towards the inside",
+      "towards the inside; towards the outside",
+      "in the centre of the stem; in the centre of the stem",
+      "in the epidermis; in the cortex"
+    ],
+    "optionFeedback": [
+      "This is the wrong way round.",
+      "Correct. In each vascular bundle of a stem, xylem is on the inside and phloem on the outside.",
+      "In a stem, bundles are in a ring.",
+      "Xylem and phloem are in vascular bundles."
+    ],
+    "answer": 1,
+    "explanation": "In each vascular bundle of a stem, xylem is on the inside and phloem on the outside.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-7.2-13",
+    "topic": "7.2",
+    "level": "O Level 5090",
+    "question": "A leafy shoot is set up in a potometer. Why is the shoot cut under water?",
+    "options": [
+      "to stop air entering the xylem and blocking water flow",
+      "to clean the shoot",
+      "to kill the cells",
+      "to make the stomata close"
+    ],
+    "optionFeedback": [
+      "Correct. An air bubble in the xylem breaks the water column, so the shoot is cut under water.",
+      "Cleaning is not the reason.",
+      "The shoot must stay alive.",
+      "Cutting under water does not close stomata."
+    ],
+    "answer": 0,
+    "explanation": "An air bubble in the xylem breaks the water column, so the shoot is cut under water.",
+    "difficulty": "hard",
+    "type": "practical"
+  },
+  {
+    "id": "o5090-7.2-14",
+    "topic": "7.2",
+    "level": "O Level 5090",
+    "question": "In a potometer, the air bubble moves 30 mm in 5 minutes. What is the rate of water uptake?",
+    "options": [
+      "150 mm per minute",
+      "0.17 mm per minute",
+      "6 mm per minute",
+      "35 mm per minute"
+    ],
+    "optionFeedback": [
+      "This multiplies instead of dividing.",
+      "This divides time by distance.",
+      "Correct. Rate = distance ÷ time = 30 ÷ 5 = 6 mm per minute.",
+      "Distance and time should be divided, not added."
+    ],
+    "answer": 2,
+    "explanation": "Rate = distance ÷ time = 30 ÷ 5 = 6 mm per minute.",
+    "difficulty": "hard",
+    "type": "practical"
+  },
+  {
+    "id": "o5090-8.1-01",
+    "topic": "8.1",
+    "level": "O Level 5090",
+    "question": "What is a balanced diet?",
+    "options": [
+      "a diet with only fruit and vegetables",
+      "a diet with no fat",
+      "a diet with as much protein as possible",
+      "a diet with all the nutrients in the right amounts"
+    ],
+    "optionFeedback": [
+      "This lacks some nutrients, such as protein.",
+      "Some fat is needed.",
+      "Too much of one nutrient is not balanced.",
+      "Correct. A balanced diet contains all the nutrients the body needs, in the right amounts."
+    ],
+    "answer": 3,
+    "explanation": "A balanced diet contains all the nutrients the body needs, in the right amounts.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.1-02",
+    "topic": "8.1",
+    "level": "O Level 5090",
+    "question": "Which nutrient is the main source of energy?",
+    "options": [
+      "vitamin C",
+      "carbohydrate",
+      "calcium",
+      "fibre"
+    ],
+    "optionFeedback": [
+      "Vitamins are needed in small amounts and give no energy.",
+      "Correct. Carbohydrates such as starch and sugars are the main energy source.",
+      "Calcium is a mineral for bones and teeth.",
+      "Fibre cannot be digested."
+    ],
+    "answer": 1,
+    "explanation": "Carbohydrates such as starch and sugars are the main energy source.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.1-03",
+    "topic": "8.1",
+    "level": "O Level 5090",
+    "question": "Which row shows the deficiency disease for each nutrient? (vitamin C; iron)",
+    "options": [
+      "anaemia; scurvy",
+      "scurvy; anaemia",
+      "rickets; scurvy",
+      "scurvy; rickets"
+    ],
+    "optionFeedback": [
+      "This is the wrong way round.",
+      "Correct. Lack of vitamin C causes scurvy; lack of iron causes anaemia.",
+      "Rickets is caused by lack of vitamin D or calcium.",
+      "Lack of iron causes anaemia."
+    ],
+    "answer": 1,
+    "explanation": "Lack of vitamin C causes scurvy; lack of iron causes anaemia.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.1-04",
+    "topic": "8.1",
+    "level": "O Level 5090",
+    "question": "Which two nutrients, if lacking, can cause rickets?",
+    "options": [
+      "vitamin C and iron",
+      "vitamin D and calcium",
+      "protein and fibre",
+      "carbohydrate and fat"
+    ],
+    "optionFeedback": [
+      "These cause scurvy and anaemia.",
+      "Correct. Vitamin D helps absorb calcium; both are needed for strong bones.",
+      "Neither causes rickets.",
+      "Neither causes rickets."
+    ],
+    "answer": 1,
+    "explanation": "Vitamin D helps absorb calcium; both are needed for strong bones.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.1-05",
+    "topic": "8.1",
+    "level": "O Level 5090",
+    "question": "Why is iron needed in the diet?",
+    "options": [
+      "to make strong bones",
+      "to keep gums healthy",
+      "to make haemoglobin in red blood cells",
+      "to prevent constipation"
+    ],
+    "optionFeedback": [
+      "Calcium is needed for bones.",
+      "Vitamin C keeps gums healthy.",
+      "Correct. Iron is part of haemoglobin, which carries oxygen.",
+      "Fibre prevents constipation."
+    ],
+    "answer": 2,
+    "explanation": "Iron is part of haemoglobin, which carries oxygen.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.1-06",
+    "topic": "8.1",
+    "level": "O Level 5090",
+    "question": "Why is fibre important in the diet?",
+    "options": [
+      "It is the main source of energy.",
+      "It helps food move through the gut by peristalsis.",
+      "It is needed to make haemoglobin.",
+      "It helps absorb calcium."
+    ],
+    "optionFeedback": [
+      "Fibre cannot be digested for energy.",
+      "Correct. Fibre adds bulk so the gut muscles can push food along, preventing constipation.",
+      "Iron is needed for haemoglobin.",
+      "Vitamin D helps absorb calcium."
+    ],
+    "answer": 1,
+    "explanation": "Fibre adds bulk so the gut muscles can push food along, preventing constipation.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.1-07",
+    "topic": "8.1",
+    "level": "O Level 5090",
+    "question": "A person feels tired, is short of breath and has pale skin. Which nutrient is most likely to be lacking?",
+    "options": [
+      "iron",
+      "vitamin C",
+      "vitamin D",
+      "fibre"
+    ],
+    "optionFeedback": [
+      "Correct. These are signs of anaemia: less haemoglobin means less oxygen carried.",
+      "Lack of vitamin C causes bleeding gums.",
+      "Lack of vitamin D causes soft bones.",
+      "Lack of fibre causes constipation."
+    ],
+    "answer": 0,
+    "explanation": "These are signs of anaemia: less haemoglobin means less oxygen carried.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.1-08",
+    "topic": "8.1",
+    "level": "O Level 5090",
+    "question": "Which row shows a good source of each nutrient? (protein; vitamin C)",
+    "options": [
+      "oranges; beans",
+      "beans; oranges",
+      "bread; milk",
+      "butter; rice"
+    ],
+    "optionFeedback": [
+      "This is the wrong way round.",
+      "Correct. Beans are a good protein source; citrus fruits such as oranges are rich in vitamin C.",
+      "Bread is mainly carbohydrate; milk is not a good vitamin C source.",
+      "Butter is mainly fat; rice is mainly carbohydrate."
+    ],
+    "answer": 1,
+    "explanation": "Beans are a good protein source; citrus fruits such as oranges are rich in vitamin C.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.1-09",
+    "topic": "8.1",
+    "level": "O Level 5090",
+    "question": "Which statements about nutrient needs are correct?\n1 A pregnant woman needs more iron and calcium.\n2 A teenager needs more protein for growth than an elderly adult.\n3 An active person needs more energy than an inactive person.\n4 Everyone needs exactly the same amount of food.",
+    "options": [
+      "1 and 4 only",
+      "2 and 4 only",
+      "1, 2 and 3",
+      "4 only"
+    ],
+    "optionFeedback": [
+      "Statement 4 is wrong.",
+      "Statement 4 is wrong.",
+      "Correct. Dietary needs change with age, activity level and pregnancy.",
+      "Needs depend on age, activity and pregnancy."
+    ],
+    "answer": 2,
+    "explanation": "Dietary needs change with age, activity level and pregnancy.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.1-10",
+    "topic": "8.1",
+    "level": "O Level 5090",
+    "question": "Why can lack of vitamin D cause rickets even if a person eats enough calcium?",
+    "options": [
+      "Vitamin D is a type of calcium.",
+      "Vitamin D makes haemoglobin.",
+      "Vitamin D digests protein.",
+      "Vitamin D is needed to absorb calcium from food."
+    ],
+    "optionFeedback": [
+      "Vitamin D is not calcium.",
+      "Iron is needed for haemoglobin.",
+      "Proteases digest protein.",
+      "Correct. Without vitamin D, calcium is not absorbed well, so bones become soft."
+    ],
+    "answer": 3,
+    "explanation": "Without vitamin D, calcium is not absorbed well, so bones become soft.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.1-11",
+    "topic": "8.1",
+    "level": "O Level 5090",
+    "question": "Which nutrient helps keep skin and gums healthy?",
+    "options": [
+      "vitamin D",
+      "iron",
+      "calcium",
+      "vitamin C"
+    ],
+    "optionFeedback": [
+      "Vitamin D is for calcium absorption.",
+      "Iron is for haemoglobin.",
+      "Calcium is for bones and teeth.",
+      "Correct. Vitamin C keeps skin and gums healthy; lack of it causes scurvy."
+    ],
+    "answer": 3,
+    "explanation": "Vitamin C keeps skin and gums healthy; lack of it causes scurvy.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.2-01",
+    "topic": "8.2",
+    "level": "O Level 5090",
+    "question": "Where is bile made?",
+    "options": [
+      "liver",
+      "gall bladder",
+      "pancreas",
+      "stomach"
+    ],
+    "optionFeedback": [
+      "Correct. Bile is made in the liver and stored in the gall bladder.",
+      "The gall bladder stores bile.",
+      "The pancreas makes enzymes.",
+      "The stomach makes acid and protease."
+    ],
+    "answer": 0,
+    "explanation": "Bile is made in the liver and stored in the gall bladder.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.2-02",
+    "topic": "8.2",
+    "level": "O Level 5090",
+    "question": "What is the function of hydrochloric acid in the stomach?",
+    "options": [
+      "to kill bacteria in food",
+      "to digest starch",
+      "to emulsify fats",
+      "to absorb water"
+    ],
+    "optionFeedback": [
+      "Correct. Stomach acid kills bacteria in the food we eat.",
+      "Starch is digested by amylase.",
+      "Bile emulsifies fats.",
+      "Water is absorbed in the intestines."
+    ],
+    "answer": 0,
+    "explanation": "Stomach acid kills bacteria in the food we eat.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.2-03",
+    "topic": "8.2",
+    "level": "O Level 5090",
+    "question": "What is physical digestion?",
+    "options": [
+      "breaking large molecules into small molecules using enzymes",
+      "absorbing food into the blood",
+      "breaking food into smaller pieces without changing the molecules",
+      "removing undigested food"
+    ],
+    "optionFeedback": [
+      "This is chemical digestion.",
+      "This is absorption.",
+      "Correct. Chewing and churning break food into smaller pieces, increasing the surface area for enzymes.",
+      "This is egestion."
+    ],
+    "answer": 2,
+    "explanation": "Chewing and churning break food into smaller pieces, increasing the surface area for enzymes.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.2-04",
+    "topic": "8.2",
+    "level": "O Level 5090",
+    "question": "Why must most food be digested before it can be absorbed?",
+    "options": [
+      "Food must be warmed to body temperature.",
+      "Large insoluble molecules must be broken into small soluble molecules.",
+      "Food must be mixed with oxygen.",
+      "Food molecules must be made larger."
+    ],
+    "optionFeedback": [
+      "Temperature is not the reason.",
+      "Correct. Only small, soluble molecules can pass through the gut wall into the blood.",
+      "Digestion does not need oxygen.",
+      "Digestion makes molecules smaller."
+    ],
+    "answer": 1,
+    "explanation": "Only small, soluble molecules can pass through the gut wall into the blood.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.2-05",
+    "topic": "8.2",
+    "level": "O Level 5090",
+    "question": "Which row shows the enzyme and the product of digestion? (protein; starch)",
+    "options": [
+      "amylase, amino acids; protease, maltose",
+      "protease, maltose; amylase, amino acids",
+      "protease, amino acids; amylase, maltose",
+      "lipase, glycerol; amylase, glucose"
+    ],
+    "optionFeedback": [
+      "The enzymes are the wrong way round.",
+      "The products are the wrong way round.",
+      "Correct. Protease breaks protein into amino acids; amylase breaks starch into maltose.",
+      "Lipase digests lipids; amylase makes maltose."
+    ],
+    "answer": 2,
+    "explanation": "Protease breaks protein into amino acids; amylase breaks starch into maltose.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.2-06",
+    "topic": "8.2",
+    "level": "O Level 5090",
+    "question": "What does maltase do?",
+    "options": [
+      "breaks starch into maltose",
+      "breaks protein into amino acids",
+      "breaks lipids into fatty acids and glycerol",
+      "breaks maltose into glucose"
+    ],
+    "optionFeedback": [
+      "This is amylase.",
+      "This is protease.",
+      "This is lipase.",
+      "Correct. Maltase, on the small intestine wall, breaks maltose into glucose."
+    ],
+    "answer": 3,
+    "explanation": "Maltase, on the small intestine wall, breaks maltose into glucose.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.2-07",
+    "topic": "8.2",
+    "level": "O Level 5090",
+    "question": "How does bile help the digestion of fats?",
+    "options": [
+      "It breaks fats into fatty acids and glycerol.",
+      "It emulsifies fats into small droplets, increasing the surface area for lipase.",
+      "It makes the small intestine acidic.",
+      "It absorbs fats into the lacteals."
+    ],
+    "optionFeedback": [
+      "Lipase does this; bile is not an enzyme.",
+      "Correct. Bile breaks large fat drops into small droplets so lipase can act on a much larger surface.",
+      "Bile and pancreatic juice are alkaline.",
+      "Absorption happens in villi."
+    ],
+    "answer": 1,
+    "explanation": "Bile breaks large fat drops into small droplets so lipase can act on a much larger surface.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.2-08",
+    "topic": "8.2",
+    "level": "O Level 5090",
+    "question": "Which row shows the optimum pH of each protease? (pepsin in the stomach; trypsin in the duodenum)",
+    "options": [
+      "about 8; about 2",
+      "about 2; about 8",
+      "about 7; about 7",
+      "about 2; about 2"
+    ],
+    "optionFeedback": [
+      "This is the wrong way round.",
+      "Correct. Pepsin works best in the acidic stomach; trypsin works best in the slightly alkaline duodenum.",
+      "Each works best in its own region's pH.",
+      "Trypsin works in the alkaline duodenum."
+    ],
+    "answer": 1,
+    "explanation": "Pepsin works best in the acidic stomach; trypsin works best in the slightly alkaline duodenum.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.2-09",
+    "topic": "8.2",
+    "level": "O Level 5090",
+    "question": "What is the function of incisors?",
+    "options": [
+      "biting and cutting",
+      "grinding and crushing",
+      "tearing",
+      "absorbing nutrients"
+    ],
+    "optionFeedback": [
+      "Correct. Incisors are chisel-shaped teeth at the front for biting and cutting.",
+      "This is the job of molars.",
+      "This is the job of canines.",
+      "Teeth do not absorb nutrients."
+    ],
+    "answer": 0,
+    "explanation": "Incisors are chisel-shaped teeth at the front for biting and cutting.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.2-10",
+    "topic": "8.2",
+    "level": "O Level 5090",
+    "question": "Which part of a tooth contains nerves and blood vessels?",
+    "options": [
+      "pulp",
+      "enamel",
+      "dentine",
+      "cement"
+    ],
+    "optionFeedback": [
+      "Correct. The pulp in the centre of the tooth contains nerves and blood vessels.",
+      "Enamel is the hard outer layer.",
+      "Dentine is under the enamel.",
+      "Cement holds the root in the jaw."
+    ],
+    "answer": 0,
+    "explanation": "The pulp in the centre of the tooth contains nerves and blood vessels.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.2-11",
+    "topic": "8.2",
+    "level": "O Level 5090",
+    "question": "What is peristalsis?",
+    "options": [
+      "the breakdown of food by enzymes",
+      "the absorption of food into the blood",
+      "the emulsification of fat by bile",
+      "waves of contraction of circular and longitudinal muscles that move food through the gut"
+    ],
+    "optionFeedback": [
+      "This is chemical digestion.",
+      "This is absorption.",
+      "This is done by bile.",
+      "Correct. Muscles in the gut wall contract in waves, pushing food along."
+    ],
+    "answer": 3,
+    "explanation": "Muscles in the gut wall contract in waves, pushing food along.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.2-12",
+    "topic": "8.2",
+    "level": "O Level 5090",
+    "question": "Which organ makes amylase, protease and lipase?",
+    "options": [
+      "liver",
+      "pancreas",
+      "gall bladder",
+      "large intestine"
+    ],
+    "optionFeedback": [
+      "The liver makes bile.",
+      "Correct. The pancreas releases a juice containing all three enzymes into the duodenum.",
+      "The gall bladder stores bile.",
+      "The large intestine absorbs water."
+    ],
+    "answer": 1,
+    "explanation": "The pancreas releases a juice containing all three enzymes into the duodenum.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.2-13",
+    "topic": "8.2",
+    "level": "O Level 5090",
+    "question": "Which statements about the digestive system are correct?\n1 Amylase is made in the salivary glands.\n2 The gall bladder makes bile.\n3 Protein digestion begins in the stomach.\n4 Most digested food is absorbed in the ileum.",
+    "options": [
+      "1 and 2 only",
+      "1, 3 and 4",
+      "2 and 3 only",
+      "2 and 4 only"
+    ],
+    "optionFeedback": [
+      "Statement 2 is wrong: the gall bladder stores bile.",
+      "Correct. The gall bladder only stores bile; the liver makes it. The other statements are correct.",
+      "Statement 2 is wrong.",
+      "Statement 2 is wrong."
+    ],
+    "answer": 1,
+    "explanation": "The gall bladder only stores bile; the liver makes it. The other statements are correct.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.2-14",
+    "topic": "8.2",
+    "level": "O Level 5090",
+    "question": "Which part of the gut absorbs most of the water?",
+    "options": [
+      "stomach",
+      "small intestine",
+      "oesophagus",
+      "rectum"
+    ],
+    "optionFeedback": [
+      "Little water is absorbed in the stomach.",
+      "Correct. Most water is absorbed in the small intestine; the colon absorbs some more.",
+      "The oesophagus carries food to the stomach.",
+      "The rectum stores faeces."
+    ],
+    "answer": 1,
+    "explanation": "Most water is absorbed in the small intestine; the colon absorbs some more.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.2-15",
+    "topic": "8.2",
+    "level": "O Level 5090",
+    "question": "What is the job of the oesophagus?",
+    "options": [
+      "to digest protein",
+      "to absorb glucose",
+      "to carry food from the mouth to the stomach",
+      "to store faeces"
+    ],
+    "optionFeedback": [
+      "Protein digestion starts in the stomach.",
+      "Glucose is absorbed in the small intestine.",
+      "Correct. Food moves down the oesophagus to the stomach by peristalsis.",
+      "The rectum stores faeces."
+    ],
+    "answer": 2,
+    "explanation": "Food moves down the oesophagus to the stomach by peristalsis.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.3-01",
+    "topic": "8.3",
+    "level": "O Level 5090",
+    "question": "Where are most nutrients absorbed?",
+    "options": [
+      "stomach",
+      "small intestine",
+      "large intestine",
+      "oesophagus"
+    ],
+    "optionFeedback": [
+      "Little absorption happens in the stomach.",
+      "Correct. Most digested nutrients are absorbed in the small intestine, mainly the ileum.",
+      "The colon mainly absorbs water.",
+      "The oesophagus carries food."
+    ],
+    "answer": 1,
+    "explanation": "Most digested nutrients are absorbed in the small intestine, mainly the ileum.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.3-02",
+    "topic": "8.3",
+    "level": "O Level 5090",
+    "question": "What is absorption?",
+    "options": [
+      "uptake and use of nutrients by cells",
+      "movement of nutrients from the intestines into the cells lining the gut and then into the blood",
+      "breakdown of large molecules",
+      "removal of undigested food"
+    ],
+    "optionFeedback": [
+      "This is assimilation.",
+      "Correct. Absorption moves digested nutrients from the gut into the blood.",
+      "This is digestion.",
+      "This is egestion."
+    ],
+    "answer": 1,
+    "explanation": "Absorption moves digested nutrients from the gut into the blood.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.3-03",
+    "topic": "8.3",
+    "level": "O Level 5090",
+    "question": "What is assimilation?",
+    "options": [
+      "the movement of nutrients into the blood",
+      "the breakdown of food by enzymes",
+      "the movement of food along the gut",
+      "the uptake and use of nutrients by cells"
+    ],
+    "optionFeedback": [
+      "This is absorption.",
+      "This is digestion.",
+      "This is peristalsis.",
+      "Correct. Cells take nutrients from the blood and use them, for example to build proteins."
+    ],
+    "answer": 3,
+    "explanation": "Cells take nutrients from the blood and use them, for example to build proteins.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.3-04",
+    "topic": "8.3",
+    "level": "O Level 5090",
+    "question": "Which row shows what is absorbed into each part of a villus? (capillaries; lacteal)",
+    "options": [
+      "fatty acids and glycerol; glucose and amino acids",
+      "glucose and amino acids; glucose and amino acids",
+      "starch and protein; fat",
+      "glucose and amino acids; fatty acids and glycerol"
+    ],
+    "optionFeedback": [
+      "This is the wrong way round.",
+      "Fatty acids and glycerol enter the lacteal.",
+      "These large molecules are not absorbed.",
+      "Correct. Capillaries absorb glucose and amino acids; the lacteal absorbs fatty acids and glycerol."
+    ],
+    "answer": 3,
+    "explanation": "Capillaries absorb glucose and amino acids; the lacteal absorbs fatty acids and glycerol.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.3-05",
+    "topic": "8.3",
+    "level": "O Level 5090",
+    "question": "How do villi increase the rate of absorption?",
+    "options": [
+      "They make the intestine shorter.",
+      "They give a very large surface area.",
+      "They produce digestive enzymes.",
+      "They slow the movement of blood."
+    ],
+    "optionFeedback": [
+      "Villi do not change the length.",
+      "Correct. Millions of villi, each with microvilli, give a huge surface area.",
+      "Villi mainly absorb.",
+      "Good blood flow helps absorption."
+    ],
+    "answer": 1,
+    "explanation": "Millions of villi, each with microvilli, give a huge surface area.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.3-06",
+    "topic": "8.3",
+    "level": "O Level 5090",
+    "question": "Why is a good blood supply in the villi important?",
+    "options": [
+      "Blood carries nutrients away, keeping a steep concentration gradient.",
+      "Blood digests the food.",
+      "Blood makes the villi longer.",
+      "Blood stops water being absorbed."
+    ],
+    "optionFeedback": [
+      "Correct. Removing absorbed nutrients keeps the concentration in the blood low, so diffusion continues.",
+      "Enzymes digest food.",
+      "Blood flow does not change villus length.",
+      "Blood does not stop water absorption."
+    ],
+    "answer": 0,
+    "explanation": "Removing absorbed nutrients keeps the concentration in the blood low, so diffusion continues.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.3-07",
+    "topic": "8.3",
+    "level": "O Level 5090",
+    "question": "Why is the wall of a villus only one cell thick?",
+    "options": [
+      "to make more enzymes",
+      "to store fat",
+      "to give a short distance for nutrients to pass into the blood",
+      "to stop bacteria entering"
+    ],
+    "optionFeedback": [
+      "Thickness is not for enzyme production.",
+      "Villus walls do not store fat.",
+      "Correct. A thin wall means a short diffusion distance.",
+      "A thin wall is for absorption."
+    ],
+    "answer": 2,
+    "explanation": "A thin wall means a short diffusion distance.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.3-08",
+    "topic": "8.3",
+    "level": "O Level 5090",
+    "question": "What does the hepatic portal vein carry?",
+    "options": [
+      "absorbed nutrients from the ileum to the liver",
+      "oxygenated blood from the lungs to the heart",
+      "urea from the liver to the kidneys",
+      "bile from the liver to the duodenum"
+    ],
+    "optionFeedback": [
+      "Correct. The hepatic portal vein takes nutrient-rich blood from the gut to the liver.",
+      "This is the pulmonary vein.",
+      "Urea travels in the general circulation.",
+      "Bile travels in the bile duct."
+    ],
+    "answer": 0,
+    "explanation": "The hepatic portal vein takes nutrient-rich blood from the gut to the liver.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.3-09",
+    "topic": "8.3",
+    "level": "O Level 5090",
+    "question": "Which statements about villi are correct?\n1 They have microvilli on their surface cells.\n2 They contain a lacteal.\n3 They have a wall many cells thick.\n4 They contain a network of capillaries.",
+    "options": [
+      "1 and 3 only",
+      "2 and 3 only",
+      "1, 2 and 4",
+      "3 and 4 only"
+    ],
+    "optionFeedback": [
+      "Statement 3 is wrong: the wall is one cell thick.",
+      "Statement 3 is wrong.",
+      "Correct. Villi have microvilli, a lacteal, capillaries and a wall one cell thick.",
+      "Statement 3 is wrong."
+    ],
+    "answer": 2,
+    "explanation": "Villi have microvilli, a lacteal, capillaries and a wall one cell thick.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.3-10",
+    "topic": "8.3",
+    "level": "O Level 5090",
+    "question": "Which is an example of assimilation?",
+    "options": [
+      "glucose diffusing into a capillary in a villus",
+      "a liver cell using amino acids to make plasma proteins",
+      "amylase breaking down starch",
+      "faeces leaving the body"
+    ],
+    "optionFeedback": [
+      "This is absorption.",
+      "Correct. Assimilation is cells using absorbed nutrients, such as building proteins from amino acids.",
+      "This is digestion.",
+      "This is egestion."
+    ],
+    "answer": 1,
+    "explanation": "Assimilation is cells using absorbed nutrients, such as building proteins from amino acids.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-8.3-11",
+    "topic": "8.3",
+    "level": "O Level 5090",
+    "question": "Where is most water absorbed?",
+    "options": [
+      "colon only",
+      "stomach",
+      "mouth",
+      "small intestine"
+    ],
+    "optionFeedback": [
+      "The colon absorbs some, but most is absorbed in the small intestine.",
+      "Little water is absorbed in the stomach.",
+      "Water is not absorbed in the mouth.",
+      "Correct. Water is absorbed in both the small intestine and colon, but most in the small intestine."
+    ],
+    "answer": 3,
+    "explanation": "Water is absorbed in both the small intestine and colon, but most in the small intestine.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-9.1-01",
+    "topic": "9.1",
+    "level": "O Level 5090",
+    "question": "Where does gas exchange take place in the lungs?",
+    "options": [
+      "trachea",
+      "bronchi",
+      "alveoli",
+      "larynx"
+    ],
+    "optionFeedback": [
+      "The trachea carries air to the bronchi.",
+      "Bronchi carry air into each lung.",
+      "Correct. Oxygen and carbon dioxide are exchanged across the walls of the alveoli.",
+      "The larynx is the voice box."
+    ],
+    "answer": 2,
+    "explanation": "Oxygen and carbon dioxide are exchanged across the walls of the alveoli.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-9.1-02",
+    "topic": "9.1",
+    "level": "O Level 5090",
+    "question": "What is the percentage of oxygen in inspired air?",
+    "options": [
+      "about 16%",
+      "about 21%",
+      "about 4%",
+      "about 78%"
+    ],
+    "optionFeedback": [
+      "About 16% is in expired air.",
+      "Correct. Atmospheric air is about 21% oxygen.",
+      "About 4% is carbon dioxide in expired air.",
+      "About 78% is nitrogen."
+    ],
+    "answer": 1,
+    "explanation": "Atmospheric air is about 21% oxygen.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-9.1-03",
+    "topic": "9.1",
+    "level": "O Level 5090",
+    "question": "Which row shows the approximate percentages in expired air? (oxygen; carbon dioxide)",
+    "options": [
+      "21%; 0.04%",
+      "4%; 16%",
+      "16%; 4%",
+      "0.04%; 21%"
+    ],
+    "optionFeedback": [
+      "These are the values for inspired air.",
+      "This is the wrong way round.",
+      "Correct. Expired air contains about 16% oxygen and 4% carbon dioxide.",
+      "These values are wrong."
+    ],
+    "answer": 2,
+    "explanation": "Expired air contains about 16% oxygen and 4% carbon dioxide.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-9.1-04",
+    "topic": "9.1",
+    "level": "O Level 5090",
+    "question": "Which feature of the alveoli does not help gas exchange?",
+    "options": [
+      "They are surrounded by cartilage rings.",
+      "They have a very large total surface area.",
+      "Their walls are one cell thick.",
+      "They have a good blood supply."
+    ],
+    "optionFeedback": [
+      "Correct. Cartilage rings hold the trachea open; they are not part of the alveoli.",
+      "This helps diffusion.",
+      "This gives a short diffusion distance.",
+      "This keeps a steep concentration gradient."
+    ],
+    "answer": 0,
+    "explanation": "Cartilage rings hold the trachea open; they are not part of the alveoli.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-9.1-05",
+    "topic": "9.1",
+    "level": "O Level 5090",
+    "question": "What happens when you breathe in?",
+    "options": [
+      "The diaphragm relaxes and domes upwards.",
+      "The diaphragm contracts and flattens, and the volume of the thorax increases.",
+      "The ribs move down and in.",
+      "The pressure in the thorax increases."
+    ],
+    "optionFeedback": [
+      "This happens when breathing out.",
+      "Correct. Contraction of the diaphragm and external intercostal muscles increases volume and decreases pressure, so air moves in.",
+      "The ribs move up and out.",
+      "The pressure decreases."
+    ],
+    "answer": 1,
+    "explanation": "Contraction of the diaphragm and external intercostal muscles increases volume and decreases pressure, so air moves in.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-9.1-06",
+    "topic": "9.1",
+    "level": "O Level 5090",
+    "question": "Which row describes breathing in? (external intercostal muscles; diaphragm; pressure in thorax)",
+    "options": [
+      "relax; contracts and flattens; increases",
+      "contract; relaxes and domes up; decreases",
+      "contract; contracts and flattens; decreases",
+      "relax; relaxes and domes up; increases"
+    ],
+    "optionFeedback": [
+      "The external intercostals contract and pressure falls.",
+      "The diaphragm contracts when breathing in.",
+      "Correct. Breathing in: external intercostals contract, ribs rise, diaphragm flattens, volume up, pressure down.",
+      "This describes breathing out."
+    ],
+    "answer": 2,
+    "explanation": "Breathing in: external intercostals contract, ribs rise, diaphragm flattens, volume up, pressure down.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-9.1-07",
+    "topic": "9.1",
+    "level": "O Level 5090",
+    "question": "What is the function of goblet cells in the airways?",
+    "options": [
+      "to move mucus away from the lungs",
+      "to make mucus",
+      "to exchange gases",
+      "to kill bacteria with acid"
+    ],
+    "optionFeedback": [
+      "This is done by ciliated cells.",
+      "Correct. Goblet cells make mucus, which traps dust and pathogens.",
+      "Gas exchange happens in alveoli.",
+      "This is not their function."
+    ],
+    "answer": 1,
+    "explanation": "Goblet cells make mucus, which traps dust and pathogens.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-9.1-08",
+    "topic": "9.1",
+    "level": "O Level 5090",
+    "question": "What is the function of cilia in the trachea?",
+    "options": [
+      "to trap dust",
+      "to absorb oxygen",
+      "to move mucus up and away from the lungs",
+      "to warm the air"
+    ],
+    "optionFeedback": [
+      "Mucus traps dust.",
+      "Oxygen is absorbed in the alveoli.",
+      "Correct. Cilia beat to sweep mucus with trapped particles towards the throat.",
+      "Cilia do not warm the air."
+    ],
+    "answer": 2,
+    "explanation": "Cilia beat to sweep mucus with trapped particles towards the throat.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-9.1-09",
+    "topic": "9.1",
+    "level": "O Level 5090",
+    "question": "How can you show that expired air contains more carbon dioxide than inspired air?",
+    "options": [
+      "Expired air turns limewater milky faster than inspired air.",
+      "Expired air turns iodine blue-black.",
+      "Expired air turns Benedict's solution brick-red.",
+      "Expired air relights a glowing splint."
+    ],
+    "optionFeedback": [
+      "Correct. Limewater turns milky with carbon dioxide; expired air has much more.",
+      "Iodine tests for starch.",
+      "Benedict's tests for reducing sugars.",
+      "That tests for oxygen."
+    ],
+    "answer": 0,
+    "explanation": "Limewater turns milky with carbon dioxide; expired air has much more.",
+    "difficulty": "medium",
+    "type": "practical"
+  },
+  {
+    "id": "o5090-9.1-10",
+    "topic": "9.1",
+    "level": "O Level 5090",
+    "question": "Why does breathing rate increase during exercise?",
+    "options": [
+      "Muscles respire faster, so more oxygen is needed and more carbon dioxide must be removed.",
+      "Muscles need less oxygen during exercise.",
+      "The lungs get smaller.",
+      "Less carbon dioxide is made."
+    ],
+    "optionFeedback": [
+      "Correct. Faster respiration in muscles needs more oxygen and produces more carbon dioxide.",
+      "They need more oxygen.",
+      "Lung size does not change.",
+      "More carbon dioxide is made."
+    ],
+    "answer": 0,
+    "explanation": "Faster respiration in muscles needs more oxygen and produces more carbon dioxide.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-9.1-11",
+    "topic": "9.1",
+    "level": "O Level 5090",
+    "question": "Which statements explain why expired air differs from inspired air?\n1 Oxygen is absorbed into the blood.\n2 Carbon dioxide from respiration is breathed out.\n3 Water evaporates from the moist alveoli.\n4 Nitrogen is used by the body.",
+    "options": [
+      "1 and 4 only",
+      "2 and 4 only",
+      "1, 2 and 3",
+      "4 only"
+    ],
+    "optionFeedback": [
+      "Statement 4 is wrong: nitrogen is not used.",
+      "Statement 4 is wrong.",
+      "Correct. Expired air has less oxygen, more carbon dioxide and more water vapour; nitrogen is unchanged.",
+      "Statement 4 is wrong."
+    ],
+    "answer": 2,
+    "explanation": "Expired air has less oxygen, more carbon dioxide and more water vapour; nitrogen is unchanged.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-9.1-12",
+    "topic": "9.1",
+    "level": "O Level 5090",
+    "question": "Why does the pressure in the thorax fall when breathing in?",
+    "options": [
+      "The volume of the thorax increases.",
+      "Air rushes into the lungs.",
+      "The diaphragm relaxes.",
+      "The ribs move down and in."
+    ],
+    "optionFeedback": [
+      "Correct. A larger volume means lower pressure inside, so air moves in from outside.",
+      "Air moves in because the pressure has already fallen.",
+      "The diaphragm contracts when breathing in.",
+      "The ribs move up and out."
+    ],
+    "answer": 0,
+    "explanation": "A larger volume means lower pressure inside, so air moves in from outside.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-9.1-13",
+    "topic": "9.1",
+    "level": "O Level 5090",
+    "question": "Which is the correct order of structures air passes through?",
+    "options": [
+      "trachea, bronchus, bronchiole, alveolus",
+      "bronchus, trachea, bronchiole, alveolus",
+      "trachea, bronchiole, bronchus, alveolus",
+      "alveolus, bronchiole, bronchus, trachea"
+    ],
+    "optionFeedback": [
+      "Correct. Air passes down the trachea into a bronchus, then bronchioles, then alveoli.",
+      "The trachea comes first.",
+      "Bronchi branch into bronchioles.",
+      "This is the order air leaves."
+    ],
+    "answer": 0,
+    "explanation": "Air passes down the trachea into a bronchus, then bronchioles, then alveoli.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-9.1-14",
+    "topic": "9.1",
+    "level": "O Level 5090",
+    "question": "Why is a good blood supply important for gas exchange in the alveoli?",
+    "options": [
+      "It makes the alveolus walls thicker.",
+      "It stops the alveoli filling with air.",
+      "It keeps a steep concentration gradient for oxygen and carbon dioxide.",
+      "It supplies energy for diffusion."
+    ],
+    "optionFeedback": [
+      "Thicker walls would slow diffusion.",
+      "The alveoli must fill with air.",
+      "Correct. Blood carries oxygen away and brings carbon dioxide, so both gases keep diffusing.",
+      "Diffusion needs no energy."
+    ],
+    "answer": 2,
+    "explanation": "Blood carries oxygen away and brings carbon dioxide, so both gases keep diffusing.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-10.1-01",
+    "topic": "10.1",
+    "level": "O Level 5090",
+    "question": "What is respiration?",
+    "options": [
+      "breathing in and out",
+      "the exchange of gases in the lungs",
+      "the chemical reactions in cells that release energy from glucose",
+      "making glucose from carbon dioxide and water"
+    ],
+    "optionFeedback": [
+      "This is ventilation, not respiration.",
+      "This is gas exchange.",
+      "Correct. Respiration is chemical reactions in all living cells that release energy from glucose.",
+      "This is photosynthesis."
+    ],
+    "answer": 2,
+    "explanation": "Respiration is chemical reactions in all living cells that release energy from glucose.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-10.1-02",
+    "topic": "10.1",
+    "level": "O Level 5090",
+    "question": "Which organisms respire?",
+    "options": [
+      "animals only",
+      "all living organisms",
+      "plants only at night",
+      "only organisms that breathe"
+    ],
+    "optionFeedback": [
+      "Plants, fungi and bacteria also respire.",
+      "Correct. Every living cell respires to release energy.",
+      "Plants respire all the time.",
+      "All cells respire, whether or not the organism breathes."
+    ],
+    "answer": 1,
+    "explanation": "Every living cell respires to release energy.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-10.1-03",
+    "topic": "10.1",
+    "level": "O Level 5090",
+    "question": "Which is a use of energy released by respiration?",
+    "options": [
+      "photosynthesis",
+      "diffusion",
+      "osmosis",
+      "muscle contraction"
+    ],
+    "optionFeedback": [
+      "Photosynthesis uses light energy.",
+      "Diffusion needs no energy from respiration.",
+      "Osmosis needs no energy from respiration.",
+      "Correct. Energy from respiration is used for muscle contraction, protein synthesis, cell division, active transport, growth, nerve impulses and keeping warm."
+    ],
+    "answer": 3,
+    "explanation": "Energy from respiration is used for muscle contraction, protein synthesis, cell division, active transport, growth, nerve impulses and keeping warm.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-10.1-04",
+    "topic": "10.1",
+    "level": "O Level 5090",
+    "question": "Which statements describe uses of energy in living organisms?\n1 protein synthesis\n2 active transport\n3 cell division\n4 diffusion",
+    "options": [
+      "1 and 4 only",
+      "1, 2 and 3",
+      "2 and 4 only",
+      "4 only"
+    ],
+    "optionFeedback": [
+      "Diffusion needs no energy from respiration.",
+      "Correct. Protein synthesis, active transport and cell division all need energy; diffusion does not.",
+      "Diffusion needs no energy from respiration.",
+      "Diffusion needs no energy from respiration."
+    ],
+    "answer": 1,
+    "explanation": "Protein synthesis, active transport and cell division all need energy; diffusion does not.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-10.1-05",
+    "topic": "10.1",
+    "level": "O Level 5090",
+    "question": "Yeast is mixed with glucose solution at 20 °C, 30 °C and 40 °C. What is measured to compare the rate of respiration?",
+    "options": [
+      "the colour of the yeast",
+      "the number of bubbles of carbon dioxide produced per minute",
+      "the mass of glucose added",
+      "the temperature of the water bath"
+    ],
+    "optionFeedback": [
+      "Colour does not show the rate.",
+      "Correct. Yeast releases carbon dioxide when it respires, so counting bubbles shows the rate.",
+      "This is kept the same.",
+      "This is the variable being changed."
+    ],
+    "answer": 1,
+    "explanation": "Yeast releases carbon dioxide when it respires, so counting bubbles shows the rate.",
+    "difficulty": "medium",
+    "type": "practical"
+  },
+  {
+    "id": "o5090-10.1-06",
+    "topic": "10.1",
+    "level": "O Level 5090",
+    "question": "Yeast respiration was measured at different temperatures. At which temperature was respiration fastest?",
+    "table": {
+      "headers": [
+        "Temperature (°C)",
+        "Bubbles per minute"
+      ],
+      "rows": [
+        [
+          "15",
+          "4"
+        ],
+        [
+          "25",
+          "11"
+        ],
+        [
+          "35",
+          "24"
+        ],
+        [
+          "45",
+          "15"
+        ],
+        [
+          "55",
+          "2"
+        ]
+      ]
+    },
+    "options": [
+      "25 °C",
+      "35 °C",
+      "45 °C",
+      "55 °C"
+    ],
+    "optionFeedback": [
+      "More bubbles were produced at 35 °C.",
+      "Correct. The most bubbles per minute means the fastest respiration: 35 °C.",
+      "Respiration had slowed at 45 °C.",
+      "Very few bubbles were produced at 55 °C."
+    ],
+    "answer": 1,
+    "explanation": "The most bubbles per minute means the fastest respiration: 35 °C.",
+    "difficulty": "hard",
+    "type": "practical"
+  },
+  {
+    "id": "o5090-10.1-07",
+    "topic": "10.1",
+    "level": "O Level 5090",
+    "question": "Why does yeast respiration slow down at 55 °C?",
+    "options": [
+      "The yeast has used up all the oxygen.",
+      "Carbon dioxide stops being made because it is too cold.",
+      "Glucose is destroyed by heat.",
+      "The enzymes controlling respiration are denatured."
+    ],
+    "optionFeedback": [
+      "Temperature is the variable here.",
+      "55 °C is hot, not cold.",
+      "The enzymes, not glucose, are affected.",
+      "Correct. Respiration is controlled by enzymes, which are denatured at high temperatures."
+    ],
+    "answer": 3,
+    "explanation": "Respiration is controlled by enzymes, which are denatured at high temperatures.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-10.1-08",
+    "topic": "10.1",
+    "level": "O Level 5090",
+    "question": "How is respiration different from breathing?",
+    "options": [
+      "Respiration is a chemical process in cells; breathing moves air in and out of the lungs.",
+      "Respiration happens only in the lungs.",
+      "Breathing releases energy from glucose.",
+      "They are the same process."
+    ],
+    "optionFeedback": [
+      "Correct. Breathing (ventilation) supplies oxygen; respiration uses it in cells to release energy.",
+      "Respiration happens in every cell.",
+      "Respiration releases energy.",
+      "They are different processes."
+    ],
+    "answer": 0,
+    "explanation": "Breathing (ventilation) supplies oxygen; respiration uses it in cells to release energy.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-10.1-09",
+    "topic": "10.1",
+    "level": "O Level 5090",
+    "question": "In the yeast experiment, which variable should be kept the same?",
+    "options": [
+      "the temperature",
+      "the concentration of glucose solution",
+      "the number of bubbles",
+      "the time of day"
+    ],
+    "optionFeedback": [
+      "Temperature is the variable being changed.",
+      "Correct. The amount of yeast and the volume and concentration of glucose are kept the same for a fair test.",
+      "This is what is measured.",
+      "This has no effect in a water bath."
+    ],
+    "answer": 1,
+    "explanation": "The amount of yeast and the volume and concentration of glucose are kept the same for a fair test.",
+    "difficulty": "hard",
+    "type": "practical"
+  },
+  {
+    "id": "o5090-10.1-10",
+    "topic": "10.1",
+    "level": "O Level 5090",
+    "question": "Why do mammals need energy from respiration even when resting?",
+    "options": [
+      "to carry out photosynthesis",
+      "to make light",
+      "to stop diffusion",
+      "to keep a constant body temperature and carry out processes such as protein synthesis"
+    ],
+    "optionFeedback": [
+      "Mammals do not photosynthesise.",
+      "Mammals do not make light.",
+      "Diffusion cannot be stopped this way.",
+      "Correct. Even at rest, energy is needed to keep warm and for processes such as protein synthesis and active transport."
+    ],
+    "answer": 3,
+    "explanation": "Even at rest, energy is needed to keep warm and for processes such as protein synthesis and active transport.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-10.2-01",
+    "topic": "10.2",
+    "level": "O Level 5090",
+    "question": "Where does aerobic respiration take place?",
+    "options": [
+      "ribosomes",
+      "mitochondria",
+      "chloroplasts",
+      "nucleus"
+    ],
+    "optionFeedback": [
+      "Ribosomes make proteins.",
+      "Correct. Aerobic respiration happens in the mitochondria.",
+      "Chloroplasts carry out photosynthesis.",
+      "The nucleus contains DNA."
+    ],
+    "answer": 1,
+    "explanation": "Aerobic respiration happens in the mitochondria.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-10.2-02",
+    "topic": "10.2",
+    "level": "O Level 5090",
+    "question": "Which is the word equation for aerobic respiration?",
+    "options": [
+      "carbon dioxide + water gives glucose + oxygen",
+      "glucose + oxygen gives carbon dioxide + water",
+      "glucose gives lactic acid",
+      "glucose gives ethanol + carbon dioxide"
+    ],
+    "optionFeedback": [
+      "This is photosynthesis.",
+      "Correct. Aerobic respiration uses glucose and oxygen and produces carbon dioxide and water.",
+      "This is anaerobic respiration in muscles.",
+      "This is anaerobic respiration in yeast."
+    ],
+    "answer": 1,
+    "explanation": "Aerobic respiration uses glucose and oxygen and produces carbon dioxide and water.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-10.2-03",
+    "topic": "10.2",
+    "level": "O Level 5090",
+    "question": "Which is the balanced chemical equation for aerobic respiration?",
+    "options": [
+      "6CO₂ + 6H₂O gives C₆H₁₂O₆ + 6O₂",
+      "C₆H₁₂O₆ + 6O₂ gives 6CO₂ + 6H₂O",
+      "C₆H₁₂O₆ + O₂ gives CO₂ + H₂O",
+      "C₆H₁₂O₆ gives 2C₂H₅OH + 2CO₂"
+    ],
+    "optionFeedback": [
+      "This is photosynthesis.",
+      "Correct. One glucose and six oxygen molecules give six carbon dioxide and six water molecules.",
+      "This is not balanced.",
+      "This is anaerobic respiration in yeast."
+    ],
+    "answer": 1,
+    "explanation": "One glucose and six oxygen molecules give six carbon dioxide and six water molecules.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-10.2-04",
+    "topic": "10.2",
+    "level": "O Level 5090",
+    "question": "What is aerobic respiration?",
+    "options": [
+      "the release of a small amount of energy without oxygen",
+      "the making of glucose using light",
+      "the breakdown of lactic acid",
+      "the release of a relatively large amount of energy by breaking down glucose using oxygen"
+    ],
+    "optionFeedback": [
+      "This is anaerobic respiration.",
+      "This is photosynthesis.",
+      "This happens in the liver after exercise.",
+      "Correct. Aerobic respiration uses oxygen and releases much more energy than anaerobic respiration."
+    ],
+    "answer": 3,
+    "explanation": "Aerobic respiration uses oxygen and releases much more energy than anaerobic respiration.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-10.2-05",
+    "topic": "10.2",
+    "level": "O Level 5090",
+    "question": "Which row compares the products of aerobic respiration and photosynthesis?",
+    "options": [
+      "aerobic respiration: glucose and oxygen; photosynthesis: carbon dioxide and water",
+      "aerobic respiration: lactic acid; photosynthesis: oxygen",
+      "aerobic respiration: carbon dioxide and water; photosynthesis: glucose and oxygen",
+      "aerobic respiration: oxygen; photosynthesis: carbon dioxide"
+    ],
+    "optionFeedback": [
+      "This is the wrong way round.",
+      "Lactic acid is from anaerobic respiration.",
+      "Correct. The equations are the reverse of each other.",
+      "Both are wrong."
+    ],
+    "answer": 2,
+    "explanation": "The equations are the reverse of each other.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-10.2-06",
+    "topic": "10.2",
+    "level": "O Level 5090",
+    "question": "Why do muscle cells contain many mitochondria?",
+    "options": [
+      "They carry out photosynthesis.",
+      "They store oxygen.",
+      "They make glucose.",
+      "They need a lot of energy from aerobic respiration for contraction."
+    ],
+    "optionFeedback": [
+      "Muscle cells cannot photosynthesise.",
+      "Mitochondria do not store oxygen.",
+      "Mitochondria break down glucose.",
+      "Correct. Contraction needs much energy, released by aerobic respiration in mitochondria."
+    ],
+    "answer": 3,
+    "explanation": "Contraction needs much energy, released by aerobic respiration in mitochondria.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-10.2-07",
+    "topic": "10.2",
+    "level": "O Level 5090",
+    "question": "Which statements about aerobic respiration are correct?\n1 It uses oxygen.\n2 It produces carbon dioxide and water.\n3 It releases more energy than anaerobic respiration.\n4 It happens only in animal cells.",
+    "options": [
+      "1 and 4 only",
+      "1, 2 and 3",
+      "2 and 4 only",
+      "4 only"
+    ],
+    "optionFeedback": [
+      "Statement 4 is wrong: plant cells respire too.",
+      "Correct. Aerobic respiration happens in plant and animal cells, uses oxygen and releases a lot of energy.",
+      "Statement 4 is wrong.",
+      "Statement 4 is wrong."
+    ],
+    "answer": 1,
+    "explanation": "Aerobic respiration happens in plant and animal cells, uses oxygen and releases a lot of energy.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-10.2-08",
+    "topic": "10.2",
+    "level": "O Level 5090",
+    "question": "How is the carbon dioxide from respiration removed from the human body?",
+    "options": [
+      "It is stored in the liver.",
+      "It is carried in the blood plasma to the lungs and breathed out.",
+      "It is removed in urine.",
+      "It is used by muscles for energy."
+    ],
+    "optionFeedback": [
+      "Carbon dioxide is not stored.",
+      "Correct. Carbon dioxide diffuses into the blood, travels to the lungs and is breathed out.",
+      "Urea, not carbon dioxide, is the main waste in urine.",
+      "Carbon dioxide is a waste product."
+    ],
+    "answer": 1,
+    "explanation": "Carbon dioxide diffuses into the blood, travels to the lungs and is breathed out.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-10.2-09",
+    "topic": "10.2",
+    "level": "O Level 5090",
+    "question": "Which statements describe the raw materials for aerobic respiration in humans?\n1 Glucose comes from digested food.\n2 Oxygen comes from the lungs.\n3 Carbon dioxide comes from the air.\n4 Water comes from the lungs.",
+    "options": [
+      "1 and 3",
+      "2 and 4",
+      "1 and 2",
+      "3 and 4"
+    ],
+    "optionFeedback": [
+      "Carbon dioxide is a product, not a raw material.",
+      "Water is a product, not a raw material.",
+      "Correct. Glucose and oxygen are the raw materials; carbon dioxide and water are the products.",
+      "Both are products of respiration."
+    ],
+    "answer": 2,
+    "explanation": "Glucose and oxygen are the raw materials; carbon dioxide and water are the products.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-10.2-10",
+    "topic": "10.2",
+    "level": "O Level 5090",
+    "question": "Which row shows where aerobic respiration takes place and whether it needs oxygen? (site; oxygen needed)",
+    "options": [
+      "ribosomes; yes",
+      "mitochondria; no",
+      "mitochondria; yes",
+      "chloroplasts; no"
+    ],
+    "optionFeedback": [
+      "Ribosomes make proteins.",
+      "Aerobic respiration needs oxygen.",
+      "Correct. Aerobic respiration happens in the mitochondria and needs oxygen.",
+      "Chloroplasts carry out photosynthesis."
+    ],
+    "answer": 2,
+    "explanation": "Aerobic respiration happens in the mitochondria and needs oxygen.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-10.3-01",
+    "topic": "10.3",
+    "level": "O Level 5090",
+    "question": "What is the product of anaerobic respiration in human muscles?",
+    "options": [
+      "lactic acid",
+      "ethanol and carbon dioxide",
+      "carbon dioxide and water",
+      "glucose"
+    ],
+    "optionFeedback": [
+      "Correct. In humans, anaerobic respiration turns glucose into lactic acid.",
+      "This is the product in yeast.",
+      "These are products of aerobic respiration.",
+      "Glucose is broken down, not made."
+    ],
+    "answer": 0,
+    "explanation": "In humans, anaerobic respiration turns glucose into lactic acid.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-10.3-02",
+    "topic": "10.3",
+    "level": "O Level 5090",
+    "question": "What are the products of anaerobic respiration in yeast?",
+    "options": [
+      "lactic acid",
+      "carbon dioxide and water",
+      "oxygen and glucose",
+      "ethanol and carbon dioxide"
+    ],
+    "optionFeedback": [
+      "This is the product in human muscles.",
+      "These come from aerobic respiration.",
+      "These are not products of respiration.",
+      "Correct. Yeast breaks down glucose without oxygen into ethanol and carbon dioxide."
+    ],
+    "answer": 3,
+    "explanation": "Yeast breaks down glucose without oxygen into ethanol and carbon dioxide.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-10.3-03",
+    "topic": "10.3",
+    "level": "O Level 5090",
+    "question": "What is anaerobic respiration?",
+    "options": [
+      "the release of a large amount of energy using oxygen",
+      "the making of glucose using light",
+      "the release of a relatively small amount of energy by breaking down glucose without oxygen",
+      "breathing without air"
+    ],
+    "optionFeedback": [
+      "This is aerobic respiration.",
+      "This is photosynthesis.",
+      "Correct. Anaerobic respiration uses no oxygen and releases much less energy than aerobic respiration.",
+      "Respiration is a chemical process, not breathing."
+    ],
+    "answer": 2,
+    "explanation": "Anaerobic respiration uses no oxygen and releases much less energy than aerobic respiration.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-10.3-04",
+    "topic": "10.3",
+    "level": "O Level 5090",
+    "question": "Why do muscles respire anaerobically during vigorous exercise?",
+    "options": [
+      "Oxygen cannot be supplied fast enough for aerobic respiration alone.",
+      "There is too much oxygen in the muscles.",
+      "Anaerobic respiration releases more energy.",
+      "Muscles cannot respire aerobically."
+    ],
+    "optionFeedback": [
+      "Correct. When oxygen supply falls behind demand, muscles also respire anaerobically.",
+      "There is too little oxygen.",
+      "It releases less energy.",
+      "Muscles respire aerobically at rest."
+    ],
+    "answer": 0,
+    "explanation": "When oxygen supply falls behind demand, muscles also respire anaerobically.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-10.3-05",
+    "topic": "10.3",
+    "level": "O Level 5090",
+    "question": "Why does yeast make bread rise?",
+    "options": [
+      "It produces lactic acid, which expands.",
+      "It produces oxygen, which forms bubbles.",
+      "It produces ethanol, which makes the dough heavier.",
+      "It produces carbon dioxide gas, which forms bubbles in the dough."
+    ],
+    "optionFeedback": [
+      "Yeast does not produce lactic acid.",
+      "Yeast does not produce oxygen.",
+      "Ethanol evaporates during baking.",
+      "Correct. Carbon dioxide from yeast respiration forms bubbles that make the dough rise."
+    ],
+    "answer": 3,
+    "explanation": "Carbon dioxide from yeast respiration forms bubbles that make the dough rise.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-10.3-06",
+    "topic": "10.3",
+    "level": "O Level 5090",
+    "question": "What is the oxygen debt?",
+    "options": [
+      "the oxygen stored in muscles before exercise",
+      "the extra oxygen needed after exercise to break down lactic acid",
+      "the oxygen used by yeast",
+      "the oxygen lost in expired air"
+    ],
+    "optionFeedback": [
+      "Muscles do not store a debt of oxygen.",
+      "Correct. After vigorous exercise, extra oxygen is needed to break down the lactic acid that built up.",
+      "This is not the meaning.",
+      "Expired air still contains oxygen, but this is not the debt."
+    ],
+    "answer": 1,
+    "explanation": "After vigorous exercise, extra oxygen is needed to break down the lactic acid that built up.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-10.3-07",
+    "topic": "10.3",
+    "level": "O Level 5090",
+    "question": "Why does heart rate stay high after exercise?",
+    "options": [
+      "to cool the body down",
+      "to make more lactic acid",
+      "to carry glucose to the lungs",
+      "to carry lactic acid from the muscles to the liver"
+    ],
+    "optionFeedback": [
+      "Cooling is by sweating and vasodilation.",
+      "Lactic acid is being removed.",
+      "Glucose is not taken to the lungs.",
+      "Correct. A raised heart rate transports lactic acid in the blood to the liver to be broken down."
+    ],
+    "answer": 3,
+    "explanation": "A raised heart rate transports lactic acid in the blood to the liver to be broken down.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-10.3-08",
+    "topic": "10.3",
+    "level": "O Level 5090",
+    "question": "Where is lactic acid broken down after exercise?",
+    "options": [
+      "lungs",
+      "kidneys",
+      "stomach",
+      "liver"
+    ],
+    "optionFeedback": [
+      "The lungs supply oxygen, but lactic acid is broken down in the liver.",
+      "The kidneys remove urea.",
+      "The stomach digests protein.",
+      "Correct. Lactic acid is carried to the liver, where it is broken down using oxygen."
+    ],
+    "answer": 3,
+    "explanation": "Lactic acid is carried to the liver, where it is broken down using oxygen.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-10.3-09",
+    "topic": "10.3",
+    "level": "O Level 5090",
+    "question": "Which row compares aerobic and anaerobic respiration in humans? (oxygen used; energy released; products)",
+    "options": [
+      "aerobic: no, small amount, lactic acid; anaerobic: yes, large amount, carbon dioxide and water",
+      "aerobic: yes, large amount, lactic acid; anaerobic: no, small amount, carbon dioxide and water",
+      "aerobic: yes, small amount, carbon dioxide and water; anaerobic: no, large amount, lactic acid",
+      "aerobic: yes, large amount, carbon dioxide and water; anaerobic: no, small amount, lactic acid"
+    ],
+    "optionFeedback": [
+      "This is the wrong way round.",
+      "The products are swapped.",
+      "The energy amounts are swapped.",
+      "Correct. Aerobic respiration uses oxygen and releases much more energy than anaerobic respiration, which makes lactic acid in humans."
+    ],
+    "answer": 3,
+    "explanation": "Aerobic respiration uses oxygen and releases much more energy than anaerobic respiration, which makes lactic acid in humans.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-10.3-10",
+    "topic": "10.3",
+    "level": "O Level 5090",
+    "question": "Which statements about the period after vigorous exercise are correct?\n1 Breathing stays deep and fast.\n2 Heart rate stays high.\n3 Lactic acid is broken down in the liver.\n4 Oxygen is no longer needed.",
+    "options": [
+      "1, 2 and 3",
+      "1 and 4 only",
+      "2 and 4 only",
+      "4 only"
+    ],
+    "optionFeedback": [
+      "Correct. Fast breathing supplies oxygen and a high heart rate carries lactic acid to the liver to be broken down.",
+      "Statement 4 is wrong: extra oxygen is needed.",
+      "Statement 4 is wrong.",
+      "Statement 4 is wrong."
+    ],
+    "answer": 0,
+    "explanation": "Fast breathing supplies oxygen and a high heart rate carries lactic acid to the liver to be broken down.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.1-01",
+    "topic": "11.1",
+    "level": "O Level 5090",
+    "question": "What is a double circulation?",
+    "options": [
+      "blood passes through the lungs twice for each circuit",
+      "there are two hearts",
+      "blood passes through the heart twice for each complete circuit of the body",
+      "blood flows in both directions in each vessel"
+    ],
+    "optionFeedback": [
+      "Blood passes through the heart twice.",
+      "Mammals have one heart.",
+      "Correct. In a double circulation blood goes heart, lungs, heart, body, heart.",
+      "Valves keep blood flowing one way."
+    ],
+    "answer": 2,
+    "explanation": "In a double circulation blood goes heart, lungs, heart, body, heart.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.1-02",
+    "topic": "11.1",
+    "level": "O Level 5090",
+    "question": "What is the function of valves in the circulatory system?",
+    "options": [
+      "to pump blood around the body",
+      "to make sure blood flows in one direction",
+      "to carry oxygen",
+      "to make blood clot"
+    ],
+    "optionFeedback": [
+      "The heart pumps blood.",
+      "Correct. Valves stop blood flowing backwards.",
+      "Red blood cells carry oxygen.",
+      "Platelets help blood clot."
+    ],
+    "answer": 1,
+    "explanation": "Valves stop blood flowing backwards.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.1-03",
+    "topic": "11.1",
+    "level": "O Level 5090",
+    "question": "Which side of the heart pumps blood to the lungs?",
+    "options": [
+      "left side",
+      "right side",
+      "both sides equally",
+      "neither side"
+    ],
+    "optionFeedback": [
+      "The left side pumps blood to the body.",
+      "Correct. The right side pumps deoxygenated blood to the lungs.",
+      "Each side pumps to a different circuit.",
+      "The heart pumps blood to the lungs."
+    ],
+    "answer": 1,
+    "explanation": "The right side pumps deoxygenated blood to the lungs.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.1-04",
+    "topic": "11.1",
+    "level": "O Level 5090",
+    "question": "Which row describes the two circuits of the double circulation? (pressure to the lungs; pressure to the body)",
+    "options": [
+      "high; low",
+      "high; high",
+      "low; high",
+      "low; low"
+    ],
+    "optionFeedback": [
+      "This is the wrong way round.",
+      "The lung circuit has low pressure.",
+      "Correct. Low pressure protects delicate lung capillaries; high pressure delivers blood quickly to the whole body.",
+      "The body circuit needs high pressure."
+    ],
+    "answer": 2,
+    "explanation": "Low pressure protects delicate lung capillaries; high pressure delivers blood quickly to the whole body.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.1-05",
+    "topic": "11.1",
+    "level": "O Level 5090",
+    "question": "What is an advantage of a double circulation?",
+    "options": [
+      "Oxygenated and deoxygenated blood mix completely.",
+      "Blood moves more slowly to the body.",
+      "Blood does not need to visit the lungs.",
+      "Blood returns to the heart after the lungs, so it can be pumped to the body at high pressure."
+    ],
+    "optionFeedback": [
+      "The septum keeps them apart.",
+      "Blood reaches the body faster.",
+      "Blood must visit the lungs to pick up oxygen.",
+      "Correct. The heart re-pressurises the blood after the lungs, so it reaches the tissues quickly."
+    ],
+    "answer": 3,
+    "explanation": "The heart re-pressurises the blood after the lungs, so it reaches the tissues quickly.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.1-06",
+    "topic": "11.1",
+    "level": "O Level 5090",
+    "question": "Where does blood pick up oxygen?",
+    "options": [
+      "in the capillaries of the lungs",
+      "in the left ventricle",
+      "in the capillaries of the muscles",
+      "in the vena cava"
+    ],
+    "optionFeedback": [
+      "Correct. Oxygen diffuses into the blood in the lung capillaries next to the alveoli.",
+      "The heart pumps blood but does not add oxygen to it.",
+      "Blood gives up oxygen to muscles.",
+      "The vena cava carries deoxygenated blood."
+    ],
+    "answer": 0,
+    "explanation": "Oxygen diffuses into the blood in the lung capillaries next to the alveoli.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.1-07",
+    "topic": "11.1",
+    "level": "O Level 5090",
+    "question": "Which statements about the circulatory system are correct?\n1 It contains blood vessels.\n2 The heart is the pump.\n3 Valves keep blood flowing one way.\n4 Blood passes through the heart once per circuit in mammals.",
+    "options": [
+      "1 and 4 only",
+      "1, 2 and 3",
+      "2 and 4 only",
+      "4 only"
+    ],
+    "optionFeedback": [
+      "Statement 4 is wrong: mammals have a double circulation.",
+      "Correct. The circulatory system is vessels, a pump and valves; in mammals blood passes through the heart twice per circuit.",
+      "Statement 4 is wrong.",
+      "Statement 4 is wrong."
+    ],
+    "answer": 1,
+    "explanation": "The circulatory system is vessels, a pump and valves; in mammals blood passes through the heart twice per circuit.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.1-08",
+    "topic": "11.1",
+    "level": "O Level 5090",
+    "question": "Why is low pressure in the lung circuit useful?",
+    "options": [
+      "It does not damage the delicate lung capillaries.",
+      "It makes blood flow backwards.",
+      "It stops gas exchange.",
+      "It keeps blood in the heart."
+    ],
+    "optionFeedback": [
+      "Correct. Lung capillaries are delicate, so the low-pressure lung circuit protects them.",
+      "Valves stop backflow.",
+      "Gas exchange still happens.",
+      "Blood still flows to the lungs."
+    ],
+    "answer": 0,
+    "explanation": "Lung capillaries are delicate, so the low-pressure lung circuit protects them.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.1-09",
+    "topic": "11.1",
+    "level": "O Level 5090",
+    "question": "Which row shows the blood carried in each circuit as it leaves the heart? (to the lungs; to the body)",
+    "options": [
+      "oxygenated; deoxygenated",
+      "oxygenated; oxygenated",
+      "deoxygenated; deoxygenated",
+      "deoxygenated; oxygenated"
+    ],
+    "optionFeedback": [
+      "This is the wrong way round.",
+      "Blood going to the lungs is deoxygenated.",
+      "Blood going to the body is oxygenated.",
+      "Correct. The right side sends deoxygenated blood to the lungs; the left side sends oxygenated blood to the body."
+    ],
+    "answer": 3,
+    "explanation": "The right side sends deoxygenated blood to the lungs; the left side sends oxygenated blood to the body.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.1-10",
+    "topic": "11.1",
+    "level": "O Level 5090",
+    "question": "Blood leaves the left ventricle. Which is the correct order of places it passes through before returning to the left ventricle?",
+    "options": [
+      "lungs, right side of heart, body, left atrium",
+      "right side of heart, body, lungs, left atrium",
+      "body, lungs, right side of heart, left atrium",
+      "body, right side of heart, lungs, left atrium"
+    ],
+    "optionFeedback": [
+      "Blood from the left ventricle goes to the body first.",
+      "It reaches the body before the right side of the heart.",
+      "Blood returns to the right side before going to the lungs.",
+      "Correct. Left ventricle, body, right atrium and ventricle, lungs, left atrium, left ventricle: twice through the heart."
+    ],
+    "answer": 3,
+    "explanation": "Left ventricle, body, right atrium and ventricle, lungs, left atrium, left ventricle: twice through the heart.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.2-01",
+    "topic": "11.2",
+    "level": "O Level 5090",
+    "question": "Which chamber of the heart pumps blood to the body?",
+    "options": [
+      "right ventricle",
+      "left ventricle",
+      "left atrium",
+      "right atrium"
+    ],
+    "optionFeedback": [
+      "The right ventricle pumps blood to the lungs.",
+      "Correct. The left ventricle pumps oxygenated blood into the aorta.",
+      "Atria pump blood into the ventricles.",
+      "The right atrium receives blood from the body."
+    ],
+    "answer": 1,
+    "explanation": "The left ventricle pumps oxygenated blood into the aorta.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.2-02",
+    "topic": "11.2",
+    "level": "O Level 5090",
+    "question": "What is the function of the septum?",
+    "options": [
+      "to pump blood to the lungs",
+      "to stop blood flowing back into the atria",
+      "to separate oxygenated and deoxygenated blood",
+      "to supply the heart muscle with oxygen"
+    ],
+    "optionFeedback": [
+      "The right ventricle does this.",
+      "Atrioventricular valves do this.",
+      "Correct. The septum divides the left and right sides of the heart.",
+      "Coronary arteries do this."
+    ],
+    "answer": 2,
+    "explanation": "The septum divides the left and right sides of the heart.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.2-03",
+    "topic": "11.2",
+    "level": "O Level 5090",
+    "question": "Why is the wall of the left ventricle thicker than the wall of the right ventricle?",
+    "options": [
+      "It pumps blood to the lungs.",
+      "It pumps blood at higher pressure to the whole body.",
+      "It contains more blood.",
+      "It has more valves."
+    ],
+    "optionFeedback": [
+      "The right ventricle pumps to the lungs.",
+      "Correct. The left ventricle pumps blood round the whole body, so it needs more muscle.",
+      "Both ventricles pump the same volume.",
+      "Wall thickness is about the pressure needed."
+    ],
+    "answer": 1,
+    "explanation": "The left ventricle pumps blood round the whole body, so it needs more muscle.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.2-04",
+    "topic": "11.2",
+    "level": "O Level 5090",
+    "question": "Why are the walls of the ventricles thicker than the walls of the atria?",
+    "options": [
+      "Ventricles pump blood out of the heart; atria only pump blood into the ventricles.",
+      "Atria pump blood to the lungs.",
+      "Ventricles hold less blood.",
+      "Atria have no muscle."
+    ],
+    "optionFeedback": [
+      "Correct. Ventricles need more force to push blood out of the heart.",
+      "The ventricles pump blood out of the heart.",
+      "Thickness is about pumping force.",
+      "Atria have thin muscular walls."
+    ],
+    "answer": 0,
+    "explanation": "Ventricles need more force to push blood out of the heart.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.2-05",
+    "topic": "11.2",
+    "level": "O Level 5090",
+    "question": "What happens when the ventricles contract?",
+    "options": [
+      "The semilunar valves close and blood enters the atria.",
+      "The atrioventricular valves close and blood is pushed through the semilunar valves.",
+      "The atria fill with blood from the ventricles.",
+      "Blood flows from the arteries into the ventricles."
+    ],
+    "optionFeedback": [
+      "Semilunar valves open as ventricles contract.",
+      "Correct. Pressure closes the atrioventricular valves and opens the semilunar valves, so blood leaves through the arteries.",
+      "Atrioventricular valves stop this.",
+      "Semilunar valves stop this."
+    ],
+    "answer": 1,
+    "explanation": "Pressure closes the atrioventricular valves and opens the semilunar valves, so blood leaves through the arteries.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.2-06",
+    "topic": "11.2",
+    "level": "O Level 5090",
+    "question": "What is the function of the semilunar valves?",
+    "options": [
+      "to stop blood flowing back from the arteries into the ventricles",
+      "to stop blood flowing back into the atria",
+      "to pump blood into the arteries",
+      "to separate the two sides of the heart"
+    ],
+    "optionFeedback": [
+      "Correct. Semilunar valves close when the ventricles relax, preventing backflow.",
+      "Atrioventricular valves do this.",
+      "Ventricles pump blood.",
+      "The septum does this."
+    ],
+    "answer": 0,
+    "explanation": "Semilunar valves close when the ventricles relax, preventing backflow.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.2-07",
+    "topic": "11.2",
+    "level": "O Level 5090",
+    "question": "Which row shows the blood vessel and where it takes blood? (aorta; pulmonary artery)",
+    "options": [
+      "lungs; body",
+      "heart; heart",
+      "body; lungs",
+      "liver; kidneys"
+    ],
+    "optionFeedback": [
+      "This is the wrong way round.",
+      "Both carry blood away from the heart.",
+      "Correct. The aorta carries blood to the body; the pulmonary artery carries blood to the lungs.",
+      "These are wrong."
+    ],
+    "answer": 2,
+    "explanation": "The aorta carries blood to the body; the pulmonary artery carries blood to the lungs.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.2-08",
+    "topic": "11.2",
+    "level": "O Level 5090",
+    "question": "What is the function of the coronary arteries?",
+    "options": [
+      "to carry blood from the heart to the lungs",
+      "to carry blood from the body to the heart",
+      "to supply the heart muscle with oxygen and glucose",
+      "to separate the two sides of the heart"
+    ],
+    "optionFeedback": [
+      "This is the pulmonary artery.",
+      "This is the vena cava.",
+      "Correct. Coronary arteries run over the surface of the heart and supply its muscle.",
+      "The septum does this."
+    ],
+    "answer": 2,
+    "explanation": "Coronary arteries run over the surface of the heart and supply its muscle.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.2-09",
+    "topic": "11.2",
+    "level": "O Level 5090",
+    "question": "What is the cause of coronary heart disease?",
+    "options": [
+      "a hole in the septum",
+      "too many red blood cells",
+      "blockage of the coronary arteries, so heart muscle gets less oxygen",
+      "valves that are too strong"
+    ],
+    "optionFeedback": [
+      "This is a different condition.",
+      "This is not the cause.",
+      "Correct. Fatty deposits narrow or block the coronary arteries, so the heart muscle cannot respire properly.",
+      "This is not the cause."
+    ],
+    "answer": 2,
+    "explanation": "Fatty deposits narrow or block the coronary arteries, so the heart muscle cannot respire properly.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.2-10",
+    "topic": "11.2",
+    "level": "O Level 5090",
+    "question": "Which statements describe risk factors for coronary heart disease?\n1 a diet high in saturated fat\n2 smoking\n3 regular exercise\n4 stress",
+    "options": [
+      "1, 2 and 4",
+      "1 and 3 only",
+      "2 and 3 only",
+      "3 and 4 only"
+    ],
+    "optionFeedback": [
+      "Correct. Poor diet, smoking and stress increase the risk; regular exercise reduces it.",
+      "Statement 3 is wrong: exercise reduces the risk.",
+      "Statement 3 is wrong.",
+      "Statement 3 is wrong."
+    ],
+    "answer": 0,
+    "explanation": "Poor diet, smoking and stress increase the risk; regular exercise reduces it.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.2-11",
+    "topic": "11.2",
+    "level": "O Level 5090",
+    "question": "Which of these can be used to monitor the activity of the heart?",
+    "options": [
+      "a thermometer only",
+      "limewater",
+      "a potometer",
+      "an ECG, the pulse rate, or listening to the valves"
+    ],
+    "optionFeedback": [
+      "Temperature does not show heart activity.",
+      "Limewater tests for carbon dioxide.",
+      "A potometer measures water uptake by plants.",
+      "Correct. Heart activity can be monitored with an ECG, by taking the pulse, or by listening to the sounds of the valves closing."
+    ],
+    "answer": 3,
+    "explanation": "Heart activity can be monitored with an ECG, by taking the pulse, or by listening to the sounds of the valves closing.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.2-12",
+    "topic": "11.2",
+    "level": "O Level 5090",
+    "question": "A student's pulse rate was 70 beats per minute at rest and 126 after exercise. What was the percentage increase?",
+    "options": [
+      "56%",
+      "44%",
+      "80%",
+      "180%"
+    ],
+    "optionFeedback": [
+      "56 is the increase in beats, not the percentage.",
+      "This divides the increase by the final value.",
+      "Correct. Increase = 126 minus 70 = 56. Percentage increase = 56 ÷ 70 × 100 = 80%.",
+      "This is the final value as a percentage of the resting value."
+    ],
+    "answer": 2,
+    "explanation": "Increase = 126 minus 70 = 56. Percentage increase = 56 ÷ 70 × 100 = 80%.",
+    "difficulty": "hard",
+    "type": "practical"
+  },
+  {
+    "id": "o5090-11.2-13",
+    "topic": "11.2",
+    "level": "O Level 5090",
+    "question": "Why does heart rate increase during exercise?",
+    "options": [
+      "to make more lactic acid",
+      "to cool the blood",
+      "to supply more oxygen and glucose to muscles and remove more carbon dioxide",
+      "to slow down breathing"
+    ],
+    "optionFeedback": [
+      "Heart rate does not increase to make lactic acid.",
+      "Cooling is not the reason.",
+      "Correct. Muscles respire faster, so the blood must deliver and remove substances faster.",
+      "Breathing also speeds up."
+    ],
+    "answer": 2,
+    "explanation": "Muscles respire faster, so the blood must deliver and remove substances faster.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.2-14",
+    "topic": "11.2",
+    "level": "O Level 5090",
+    "question": "Which vessel brings deoxygenated blood from the body into the right atrium?",
+    "options": [
+      "aorta",
+      "vena cava",
+      "pulmonary vein",
+      "pulmonary artery"
+    ],
+    "optionFeedback": [
+      "The aorta carries blood away to the body.",
+      "Correct. The vena cava returns deoxygenated blood from the body to the right atrium.",
+      "This brings oxygenated blood from the lungs.",
+      "This takes blood to the lungs."
+    ],
+    "answer": 1,
+    "explanation": "The vena cava returns deoxygenated blood from the body to the right atrium.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.2-15",
+    "topic": "11.2",
+    "level": "O Level 5090",
+    "question": "How can diet and exercise reduce the risk of coronary heart disease?",
+    "options": [
+      "More salt and less exercise strengthen the heart.",
+      "Less saturated fat and regular exercise reduce fatty deposits in the arteries.",
+      "Eating more fat makes the arteries wider.",
+      "Exercise blocks the coronary arteries."
+    ],
+    "optionFeedback": [
+      "Both increase the risk.",
+      "Correct. A healthy diet and exercise lower blood fat and blood pressure, reducing fatty deposits.",
+      "Saturated fat increases the risk.",
+      "Exercise reduces the risk."
+    ],
+    "answer": 1,
+    "explanation": "A healthy diet and exercise lower blood fat and blood pressure, reducing fatty deposits.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.3-01",
+    "topic": "11.3",
+    "level": "O Level 5090",
+    "question": "Which type of blood vessel carries blood away from the heart?",
+    "options": [
+      "vein",
+      "artery",
+      "capillary",
+      "lacteal"
+    ],
+    "optionFeedback": [
+      "Veins carry blood towards the heart.",
+      "Correct. Arteries carry blood away from the heart.",
+      "Capillaries connect arteries and veins.",
+      "Lacteals absorb fats in villi."
+    ],
+    "answer": 1,
+    "explanation": "Arteries carry blood away from the heart.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.3-02",
+    "topic": "11.3",
+    "level": "O Level 5090",
+    "question": "Which row describes an artery? (wall; lumen)",
+    "options": [
+      "thin; wide",
+      "one cell thick; very narrow",
+      "thick and muscular; narrow",
+      "thick and muscular; wide with valves"
+    ],
+    "optionFeedback": [
+      "This describes a vein.",
+      "This describes a capillary.",
+      "Correct. Arteries have thick, muscular, elastic walls and a narrow lumen to withstand high pressure.",
+      "Arteries have no valves and a narrow lumen."
+    ],
+    "answer": 2,
+    "explanation": "Arteries have thick, muscular, elastic walls and a narrow lumen to withstand high pressure.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.3-03",
+    "topic": "11.3",
+    "level": "O Level 5090",
+    "question": "Why do veins have valves?",
+    "options": [
+      "to increase the blood pressure",
+      "to exchange substances with cells",
+      "to stop blood flowing backwards because pressure is low",
+      "to pump blood"
+    ],
+    "optionFeedback": [
+      "Valves do not raise pressure.",
+      "Capillaries do this.",
+      "Correct. Blood pressure in veins is low, so valves stop it flowing backwards.",
+      "The heart pumps blood."
+    ],
+    "answer": 2,
+    "explanation": "Blood pressure in veins is low, so valves stop it flowing backwards.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.3-04",
+    "topic": "11.3",
+    "level": "O Level 5090",
+    "question": "Why are capillary walls only one cell thick?",
+    "options": [
+      "to withstand high pressure",
+      "to stop blood flowing backwards",
+      "to give a short diffusion distance for exchange with cells",
+      "to store blood"
+    ],
+    "optionFeedback": [
+      "Arteries withstand high pressure.",
+      "Valves do this.",
+      "Correct. A thin wall lets substances diffuse quickly between blood and cells.",
+      "Capillaries do not store blood."
+    ],
+    "answer": 2,
+    "explanation": "A thin wall lets substances diffuse quickly between blood and cells.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.3-05",
+    "topic": "11.3",
+    "level": "O Level 5090",
+    "question": "Which vessel carries blood from the gut to the liver?",
+    "options": [
+      "hepatic portal vein",
+      "hepatic artery",
+      "hepatic vein",
+      "renal vein"
+    ],
+    "optionFeedback": [
+      "Correct. The hepatic portal vein takes absorbed nutrients from the gut to the liver.",
+      "This carries blood from the aorta to the liver.",
+      "This carries blood from the liver to the vena cava.",
+      "This carries blood from the kidneys."
+    ],
+    "answer": 0,
+    "explanation": "The hepatic portal vein takes absorbed nutrients from the gut to the liver.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.3-06",
+    "topic": "11.3",
+    "level": "O Level 5090",
+    "question": "Which vessel carries oxygenated blood from the lungs to the heart?",
+    "options": [
+      "pulmonary artery",
+      "vena cava",
+      "aorta",
+      "pulmonary vein"
+    ],
+    "optionFeedback": [
+      "This carries deoxygenated blood to the lungs.",
+      "This carries deoxygenated blood from the body.",
+      "This carries blood from the heart to the body.",
+      "Correct. The pulmonary vein is the vein that carries oxygenated blood."
+    ],
+    "answer": 3,
+    "explanation": "The pulmonary vein is the vein that carries oxygenated blood.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.3-07",
+    "topic": "11.3",
+    "level": "O Level 5090",
+    "question": "Which row shows the vessels supplying and draining the kidneys? (to the kidney; from the kidney)",
+    "options": [
+      "renal vein; renal artery",
+      "hepatic artery; hepatic vein",
+      "pulmonary artery; pulmonary vein",
+      "renal artery; renal vein"
+    ],
+    "optionFeedback": [
+      "This is the wrong way round.",
+      "These supply and drain the liver.",
+      "These supply and drain the lungs.",
+      "Correct. The renal artery brings blood to the kidney and the renal vein takes it away."
+    ],
+    "answer": 3,
+    "explanation": "The renal artery brings blood to the kidney and the renal vein takes it away.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.3-08",
+    "topic": "11.3",
+    "level": "O Level 5090",
+    "question": "Why do arteries have elastic walls?",
+    "options": [
+      "to stretch and recoil with each heartbeat, keeping blood flowing smoothly at high pressure",
+      "to let substances diffuse out",
+      "to stop backflow",
+      "to store oxygen"
+    ],
+    "optionFeedback": [
+      "Correct. Elastic tissue stretches as blood surges in and springs back, smoothing the flow.",
+      "Capillaries allow exchange.",
+      "Arteries have no valves; the heart's valves stop backflow.",
+      "Artery walls do not store oxygen."
+    ],
+    "answer": 0,
+    "explanation": "Elastic tissue stretches as blood surges in and springs back, smoothing the flow.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.3-09",
+    "topic": "11.3",
+    "level": "O Level 5090",
+    "question": "Which statements about veins are correct?\n1 They carry blood towards the heart.\n2 They have thin walls and a wide lumen.\n3 They contain valves.\n4 They carry blood at high pressure.",
+    "options": [
+      "1, 2 and 3",
+      "1 and 4 only",
+      "2 and 4 only",
+      "4 only"
+    ],
+    "optionFeedback": [
+      "Correct. Veins carry low-pressure blood towards the heart; they have thin walls, a wide lumen and valves.",
+      "Statement 4 is wrong: pressure in veins is low.",
+      "Statement 4 is wrong.",
+      "Statement 4 is wrong."
+    ],
+    "answer": 0,
+    "explanation": "Veins carry low-pressure blood towards the heart; they have thin walls, a wide lumen and valves.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.3-10",
+    "topic": "11.3",
+    "level": "O Level 5090",
+    "question": "A blood vessel seen under a microscope has a thick wall and a small, round lumen. What is it?",
+    "options": [
+      "a vein",
+      "a capillary",
+      "a lacteal",
+      "an artery"
+    ],
+    "optionFeedback": [
+      "A vein has a thin wall and a wide lumen.",
+      "A capillary has a wall one cell thick.",
+      "A lacteal is in a villus, not a main blood vessel.",
+      "Correct. A thick muscular wall and narrow lumen identify an artery."
+    ],
+    "answer": 3,
+    "explanation": "A thick muscular wall and narrow lumen identify an artery.",
+    "difficulty": "medium",
+    "type": "diagram"
+  },
+  {
+    "id": "o5090-11.4-01",
+    "topic": "11.4",
+    "level": "O Level 5090",
+    "question": "What is the function of red blood cells?",
+    "options": [
+      "to make antibodies",
+      "to transport oxygen",
+      "to engulf pathogens",
+      "to help blood clot"
+    ],
+    "optionFeedback": [
+      "Lymphocytes make antibodies.",
+      "Correct. Red blood cells contain haemoglobin, which carries oxygen.",
+      "Phagocytes engulf pathogens.",
+      "Platelets help blood clot."
+    ],
+    "answer": 1,
+    "explanation": "Red blood cells contain haemoglobin, which carries oxygen.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.4-02",
+    "topic": "11.4",
+    "level": "O Level 5090",
+    "question": "What is the function of platelets?",
+    "options": [
+      "to carry oxygen",
+      "to help blood clot",
+      "to make antibodies",
+      "to transport urea"
+    ],
+    "optionFeedback": [
+      "Red blood cells carry oxygen.",
+      "Correct. Platelets help convert fibrinogen to fibrin, forming a clot.",
+      "Lymphocytes make antibodies.",
+      "Plasma transports urea."
+    ],
+    "answer": 1,
+    "explanation": "Platelets help convert fibrinogen to fibrin, forming a clot.",
+    "difficulty": "easy",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.4-03",
+    "topic": "11.4",
+    "level": "O Level 5090",
+    "question": "Which row describes the two types of white blood cell? (phagocyte; lymphocyte)",
+    "options": [
+      "makes antibodies; engulfs pathogens",
+      "carries oxygen; makes antibodies",
+      "engulfs pathogens; makes antibodies",
+      "engulfs pathogens; helps clotting"
+    ],
+    "optionFeedback": [
+      "This is the wrong way round.",
+      "Red cells carry oxygen.",
+      "Correct. Phagocytes engulf and digest pathogens; lymphocytes produce antibodies.",
+      "Platelets help clotting."
+    ],
+    "answer": 2,
+    "explanation": "Phagocytes engulf and digest pathogens; lymphocytes produce antibodies.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.4-04",
+    "topic": "11.4",
+    "level": "O Level 5090",
+    "question": "A blood cell has a large round nucleus that fills most of the cell. What type of cell is it?",
+    "options": [
+      "phagocyte",
+      "lymphocyte",
+      "red blood cell",
+      "platelet"
+    ],
+    "optionFeedback": [
+      "A phagocyte has a lobed nucleus.",
+      "Correct. Lymphocytes have a large, round nucleus.",
+      "Red blood cells have no nucleus.",
+      "Platelets are cell fragments with no nucleus."
+    ],
+    "answer": 1,
+    "explanation": "Lymphocytes have a large, round nucleus.",
+    "difficulty": "medium",
+    "type": "diagram"
+  },
+  {
+    "id": "o5090-11.4-05",
+    "topic": "11.4",
+    "level": "O Level 5090",
+    "question": "Why do red blood cells have no nucleus?",
+    "options": [
+      "to make them move faster",
+      "to help them make antibodies",
+      "to help them divide",
+      "to leave more room for haemoglobin"
+    ],
+    "optionFeedback": [
+      "This is not the reason.",
+      "Red cells do not make antibodies.",
+      "Red cells do not divide.",
+      "Correct. Without a nucleus, a red cell can hold more haemoglobin and carry more oxygen."
+    ],
+    "answer": 3,
+    "explanation": "Without a nucleus, a red cell can hold more haemoglobin and carry more oxygen.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.4-06",
+    "topic": "11.4",
+    "level": "O Level 5090",
+    "question": "What happens during blood clotting?",
+    "options": [
+      "Soluble fibrinogen is converted into insoluble fibrin, forming a mesh that traps red blood cells.",
+      "Insoluble fibrin is converted into soluble fibrinogen.",
+      "Red blood cells make antibodies.",
+      "Plasma turns into lymphocytes."
+    ],
+    "optionFeedback": [
+      "Correct. Platelets help form fibrin threads, which trap cells and seal the wound.",
+      "This is the wrong way round.",
+      "Lymphocytes make antibodies.",
+      "This does not happen."
+    ],
+    "answer": 0,
+    "explanation": "Platelets help form fibrin threads, which trap cells and seal the wound.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.4-07",
+    "topic": "11.4",
+    "level": "O Level 5090",
+    "question": "Which substance is transported in the plasma?",
+    "options": [
+      "oxygen bound to haemoglobin",
+      "urea",
+      "starch",
+      "fibre"
+    ],
+    "optionFeedback": [
+      "Oxygen is carried mainly by red blood cells.",
+      "Correct. Plasma carries urea, glucose, amino acids, ions, hormones, carbon dioxide and more.",
+      "Starch is digested before it reaches the blood.",
+      "Fibre is not absorbed."
+    ],
+    "answer": 1,
+    "explanation": "Plasma carries urea, glucose, amino acids, ions, hormones, carbon dioxide and more.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.4-08",
+    "topic": "11.4",
+    "level": "O Level 5090",
+    "question": "Which statements about substances carried in plasma are correct?\n1 carbon dioxide\n2 hormones\n3 glucose\n4 starch",
+    "options": [
+      "1 and 4 only",
+      "2 and 4 only",
+      "4 only",
+      "1, 2 and 3"
+    ],
+    "optionFeedback": [
+      "Starch is not carried in plasma.",
+      "Starch is not carried in plasma.",
+      "Starch is not carried in plasma.",
+      "Correct. Plasma carries dissolved substances such as carbon dioxide, hormones and glucose; starch is digested first."
+    ],
+    "answer": 3,
+    "explanation": "Plasma carries dissolved substances such as carbon dioxide, hormones and glucose; starch is digested first.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.4-09",
+    "topic": "11.4",
+    "level": "O Level 5090",
+    "question": "How does oxygen reach a body cell from the blood?",
+    "options": [
+      "It is pumped directly from the artery into the cell.",
+      "It travels in the lymph only.",
+      "It diffuses out of a capillary into the tissue fluid, then into the cell.",
+      "It is carried into the cell by red blood cells."
+    ],
+    "optionFeedback": [
+      "Exchange happens at capillaries.",
+      "Oxygen diffuses through tissue fluid.",
+      "Correct. Substances pass between blood and cells through the tissue fluid around them.",
+      "Red cells stay in the capillaries."
+    ],
+    "answer": 2,
+    "explanation": "Substances pass between blood and cells through the tissue fluid around them.",
+    "difficulty": "hard",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.4-10",
+    "topic": "11.4",
+    "level": "O Level 5090",
+    "question": "How is tissue fluid formed?",
+    "options": [
+      "Plasma leaks out of capillaries.",
+      "Red blood cells burst.",
+      "Water is absorbed from the gut.",
+      "Cells release cytoplasm."
+    ],
+    "optionFeedback": [
+      "Correct. Pressure in capillaries pushes some plasma out, forming tissue fluid around cells.",
+      "Tissue fluid comes from plasma.",
+      "This is absorption.",
+      "Cells do not release cytoplasm."
+    ],
+    "answer": 0,
+    "explanation": "Pressure in capillaries pushes some plasma out, forming tissue fluid around cells.",
+    "difficulty": "medium",
+    "type": "concept"
+  },
+  {
+    "id": "o5090-11.4-11",
+    "topic": "11.4",
+    "level": "O Level 5090",
+    "question": "Why is blood clotting important?",
+    "options": [
+      "It prevents blood loss and stops pathogens entering the body.",
+      "It carries oxygen to cuts.",
+      "It makes antibodies at the wound.",
+      "It removes urea from the wound."
+    ],
+    "optionFeedback": [
+      "Correct. A clot seals the wound, preventing blood loss and entry of pathogens.",
+      "Red cells carry oxygen.",
+      "Lymphocytes make antibodies.",
+      "Urea is removed by the kidneys."
+    ],
+    "answer": 0,
+    "explanation": "A clot seals the wound, preventing blood loss and entry of pathogens.",
+    "difficulty": "hard",
+    "type": "concept"
   }
 ];
 
