@@ -199,6 +199,9 @@
 
 .home-hero-search {
   position: relative;
+  /* Above the stats line: the rise animation gives each hero line its own
+     layer, so without this the stats painted over the suggestion list. */
+  z-index: 5;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -587,6 +590,11 @@
 
 .home-hero:has(.home-suggest-open) {
   z-index: 40;
+}
+
+/* Hide the stats line while suggestions are open, so nothing shows through. */
+.home-hero-inner:has(.home-suggest-open) .home-hero-stats {
+  visibility: hidden;
 }
 
 .home-suggest {
