@@ -4,6 +4,7 @@ import { useEffect, useState, useMemo } from "react";
 import Link from "next/link";
 import PageHeader from "@/components/ui/PageHeader";
 import SectionHeader from "@/components/ui/SectionHeader";
+import HowItWorks, { type HowItWorksStep } from "@/components/courses/HowItWorks";
 import { useAuth } from "@/contexts/AuthContext";
 import {
   type AccountingSectionMeta,
@@ -16,43 +17,16 @@ import {
   getAllFirestoreProgress,
 } from "@/lib/courses/accountingProgress";
 
-const SIX_STEPS = [
-  {
-    step: 1,
-    title: "Watch",
-    icon: "🎬",
-    description: "Short, focused video lesson explaining the concept clearly.",
-  },
-  {
-    step: 2,
-    title: "Read",
-    icon: "📖",
-    description: "Structured syllabus notes with layouts, rules, and key terms.",
-  },
-  {
-    step: 3,
-    title: "Flashcards",
-    icon: "🗂️",
-    description: "Quick-fire recall cards for definitions, debits/credits, and ratios.",
-  },
-  {
-    step: 4,
-    title: "Multiple choice",
-    icon: "✅",
-    description: "Pass 5 out of 5 topic MCQs with line-by-line option feedback.",
-  },
-  {
-    step: 5,
-    title: "Worked question",
-    icon: "✍️",
-    description: "Step-by-step exam-style structured problem walkthrough.",
-  },
-  {
-    step: 6,
-    title: "Ask",
-    icon: "💬",
-    description: "Get clarity on any tricky transaction or adjustment.",
-  },
+// Same steps and order as the topic page. Same layout as the Biology hub
+// (Biology has one extra step: Explore in 3D).
+const STEPS: HowItWorksStep[] = [
+  { title: "Start here", text: "See what you will learn in the topic and the key words." },
+  { title: "Watch", text: "A short video lesson on the topic.", soon: true },
+  { title: "Read the notes", text: "Clear notes with layouts, rules, worked examples and exam tips." },
+  { title: "Mind map", text: "The whole topic on one page, to see how the ideas link." },
+  { title: "Flashcards", text: "Test your memory of key terms, debits and credits, and ratios." },
+  { title: "Practice MCQs", text: "Exam-style questions. Every answer explains why it is right or wrong." },
+  { title: "Ask the AI tutor", text: "Still stuck? Sign in and ask a question about the topic." },
 ];
 
 interface AccountingHubClientProps {
@@ -147,34 +121,15 @@ export default function AccountingHubClient({ sections }: AccountingHubClientPro
       />
 
       <main className="max-w-6xl mx-auto px-4 sm:px-6 py-12 flex-1 w-full space-y-14">
-        {/* Six Steps Section */}
-        <section aria-labelledby="six-steps-heading">
-          <SectionHeader
-            eyebrow="How It Works"
-            title={<span id="six-steps-heading">Every topic, the same six steps</span>}
-            description="A clear, repeatable learning routine across all 28 syllabus topics."
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {SIX_STEPS.map((s) => (
-              <div key={s.step} className="efe-card p-5 flex items-start gap-4">
-                <div className="w-11 h-11 rounded-xl bg-efe-accent-soft text-efe-accent-ink flex items-center justify-center text-xl flex-shrink-0 font-bold">
-                  {s.icon}
-                </div>
-                <div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-efe-accent-ink mb-0.5">
-                    Step {s.step}
-                  </div>
-                  <h3 className="font-bold font-display text-base text-efe-fg mb-1">
-                    {s.title}
-                  </h3>
-                  <p className="text-xs text-efe-muted leading-relaxed">
-                    {s.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+        {/* How it works (not clickable on purpose; one real start link) */}
+        <HowItWorks
+          id="how-it-works-heading"
+          title="How each topic works"
+          intro={`Every one of the ${totalTopics} topics follows the same steps, in this order.`}
+          steps={STEPS}
+          startHref="/courses/accounting/o-level/1-1"
+          startLabel="Start with topic 1.1"
+        />
 
         {/* Progress Bar */}
         <section id="o-level-7707" className="scroll-mt-20" aria-label="Course progress">

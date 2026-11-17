@@ -18,7 +18,7 @@ export interface BiologyHubSection extends Omit<BiologySectionMeta, "topics"> {
 }
 
 export const metadata: Metadata = {
-  title: "Cambridge O Level Biology (5090) — Free Course | EduForEveryone",
+  title: "Cambridge O Level Biology (5090): Free Course | EduForEveryone",
   description:
     "Master all 52 topics across 19 sections of the Cambridge O Level Biology 5090 syllabus for exams in 2026, 2027 and 2028 with concise notes, interactive models, mind maps, flashcards, and practice questions.",
   alternates: {

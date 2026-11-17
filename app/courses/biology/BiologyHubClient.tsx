@@ -93,7 +93,7 @@ export default function BiologyHubClient({ sections }: BiologyHubClientProps) {
       <PageHeader
         eyebrow="Cambridge O Level Biology (5090)"
         title="Biology"
-        description="Learn O Level Biology (5090) topic by topic for exams in 2026, 2027 and 2028 — from cells and enzymes to genetics, ecology, and biotechnology. Free, structured, and built for exam mastery."
+        description="Learn O Level Biology (5090) topic by topic for exams in 2026, 2027 and 2028, from cells and enzymes to genetics, ecology, and biotechnology. Free, structured, and built for exam mastery."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Courses", href: "/courses" },
@@ -116,7 +116,7 @@ export default function BiologyHubClient({ sections }: BiologyHubClientProps) {
         <HowItWorks
           id="how-it-works-heading"
           title="How each topic works"
-          intro={`Every one of the ${totalTopics} topics follows the same steps, in this order. Topics are being added section by section.`}
+          intro={`Every one of the ${totalTopics} topics follows the same steps, in this order.`}
           steps={STEPS}
           startHref="/courses/biology/o-level/1-1"
           startLabel="Start with topic 1.1"
@@ -131,7 +131,7 @@ export default function BiologyHubClient({ sections }: BiologyHubClientProps) {
                   O Level Biology (5090) Progress
                 </h2>
                 <p className="text-sm text-efe-muted">
-                  Syllabus structure is ready for exams in 2026, 2027 and 2028. Notes, models, and practice questions are being added.
+                  Notes, mind maps, flashcards and practice questions are ready for all topics. Videos and 3D models are coming soon.
                 </p>
               </div>
               <div className="text-right">
