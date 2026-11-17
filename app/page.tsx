@@ -14,20 +14,20 @@ import { VERBAL_BANK } from "@/lib/gmat/verbal";
 import { DATA_INSIGHTS_BANK } from "@/lib/gmat/data-insights";
 
 export const metadata: Metadata = {
-  title: "Free IELTS & GMAT Practice, Quran Online — EduForEveryone",
-  description: "Free IELTS practice for all 4 skills, GMAT Focus Edition practice and full mocks, Quran with 40+ translations, tools and quizzes. No fees, no sign-up, ever.",
+  title: "EduForEveryone: Free Courses, Exam Practice & Study Tools",
+  description: "Free courses and exam practice: Cambridge O Level, IELTS, GMAT, Quran and Islamic studies, plus study tools and quizzes. No fees, no sign-up.",
   alternates: { canonical: "https://eduforeveryone.com" },
   openGraph: {
-    title: "EduForEveryone — Free IELTS, GMAT & Quran Study",
-    description: "IELTS and GMAT Focus practice, the Quran with 40+ translations, plus free tools, quizzes and games. 100% free. No barriers.",
+    title: "EduForEveryone: Free Courses, Exam Practice & Study Tools",
+    description: "Cambridge O Level courses, IELTS and GMAT practice, Quran and Islamic studies, plus free tools, quizzes and games. 100% free. No barriers.",
     url: "https://eduforeveryone.com",
     siteName: "EduForEveryone",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "EduForEveryone — Free IELTS, GMAT & Quran Study",
-    description: "Free IELTS and GMAT Focus practice, Quran with 40+ translations, calculators, quizzes and games.",
+    title: "EduForEveryone: Free Courses, Exam Practice & Study Tools",
+    description: "Free Cambridge O Level courses, IELTS and GMAT practice, Quran and Islamic studies, study tools, quizzes and games.",
   },
 };
 
@@ -48,7 +48,7 @@ export default function HomePage() {
             "@type": "EducationalOrganization",
             name: "EduForEveryone",
             url: "https://eduforeveryone.com",
-            description: "Free education platform offering IELTS and GMAT Focus practice tests, a full Quran reader with translations and Tajweed, plus calculators, quizzes and games for students worldwide.",
+            description: "Free education platform with Cambridge O Level courses, IELTS and GMAT practice, a full Quran reader with translations and Tajweed, plus study tools, quizzes and games for students worldwide.",
             logo: "https://eduforeveryone.com/Main_Logo.jpg",
             sameAs: ["https://github.com/azlaneduforeveryone-svg/Eduforeveryone-website"],
             offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

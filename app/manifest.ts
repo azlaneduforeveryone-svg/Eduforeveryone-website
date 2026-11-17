@@ -8,10 +8,10 @@ import type { MetadataRoute } from 'next';
  */
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'EduForEveryone — Free Education for All',
+    name: 'EduForEveryone: Free Education for All',
     short_name: 'EduForEveryone',
     description:
-      'Free IELTS and GMAT prep, Quran reading, Islamic studies, and study tools. No fees. No barriers.',
+      'Free courses and exam practice: O Level subjects, IELTS, GMAT, Quran, Islamic studies and study tools. No fees. No barriers.',
 
     // start_url carries a source tag so installed-app traffic is separable in
     // Google Analytics from ordinary web traffic.

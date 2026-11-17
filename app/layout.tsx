@@ -80,7 +80,7 @@ const indopakNastaleeq = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://eduforeveryone.com'),
-  title: 'EduForEveryone — Free Education for All',
+  title: 'EduForEveryone: Free Education for All',
   description: 'Free, high-quality courses, notes, and quizzes for every student. No fees. No barriers.',
   alternates: { canonical: './' },
   openGraph: {
