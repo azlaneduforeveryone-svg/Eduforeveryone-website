@@ -3,24 +3,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import UserButton from "./UserButton";
+import { MAIN_NAV, ABOUT_NAV } from "@/lib/siteNav";
 
-const NAV_LINKS = [
-  { href: "/islamic-studies", label: "☪ Islamic Studies" },
-  { href: "/ielts",           label: "IELTS"             },
-  { href: "/gmat",            label: "GMAT"              },
-  { href: "/courses",         label: "Courses"           },
-  // Temporarily hidden — reworking Notes, will re-add at same URL.
-  // { href: "/notes",           label: "Notes"             },
-  { href: "/quiz",            label: "Quiz"              },
-  { href: "/games",           label: "Games"             },
-  { href: "/tools",           label: "Tools"             },
-];
-
-const ABOUT_LINKS = [
-  { href: "/about",          label: "About Us"      },
-  { href: "/contact",        label: "Contact"       },
-  { href: "/privacy-policy", label: "Privacy Policy"},
-];
+// Order comes from lib/siteNav.ts, the same order as the home page sections.
+const NAV_LINKS = MAIN_NAV;
+const ABOUT_LINKS = ABOUT_NAV;
 
 export default function Navbar() {
   const [menuOpen,  setMenuOpen]  = useState(false);
@@ -55,6 +42,7 @@ export default function Navbar() {
             {/* About dropdown */}
             <div className="relative">
               <button onClick={() => setAboutOpen(v => !v)}
+                aria-expanded={aboutOpen}
                 className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-semibold text-gray-600 hover:text-teal-600 hover:bg-teal-50 transition-all">
                 About
                 <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -77,10 +65,12 @@ export default function Navbar() {
             </div>
           </nav>
 
-          {/* Right side — UserButton + mobile menu */}
+          {/* Right side: UserButton + mobile menu */}
           <div className="flex items-center gap-3">
             <UserButton />
             <button onClick={() => setMenuOpen(v => !v)}
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={menuOpen}
               className="lg:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-all">
               {menuOpen
                 ? <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12"/></svg>

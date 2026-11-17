@@ -24,7 +24,7 @@ export default function HomeSearch() {
       <input
         id="home-search"
         type="search"
-        placeholder="Search surahs, IELTS topics, tools…"
+        placeholder="Search surahs, courses, IELTS topics, tools…"
         aria-label="Search the site"
         value={query}
         onChange={(e) => setQuery(e.target.value)}

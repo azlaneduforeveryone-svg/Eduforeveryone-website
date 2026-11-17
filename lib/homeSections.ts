@@ -1,5 +1,5 @@
 import type { HomeIconName } from "@/components/home/HomeIcons";
-import coursesData from "@/data/courses.json";
+import { MAIN_NAV, navItem, type MainNavItem } from "@/lib/siteNav";
 
 export interface HomeTile {
   name: string;
@@ -9,11 +9,14 @@ export interface HomeTile {
 }
 
 export interface HomeSection {
-  id: string;
+  /** Must match an id in lib/siteNav.ts MAIN_NAV. */
+  id: MainNavItem["id"];
   title: string;
+  /** Chip text: always the same as the header label (from MAIN_NAV). */
   chip: string;
   chipIcon: HomeIconName;
   description: string;
+  /** "View all" link: always the same as the header link (from MAIN_NAV). */
   hub: string;
   countLabel?: string;
   arabic?: string;
@@ -21,26 +24,14 @@ export interface HomeSection {
   tiles: HomeTile[];
 }
 
-const COURSE_ICON_MAP: Record<string, HomeIconName> = {
-  "physics-mechanics": "compass",
-  "english-essay-writing": "pen-line",
-  "history-world-war-2": "landmark",
-};
+type HomeSectionInput = Omit<HomeSection, "chip" | "hub">;
 
-const EXTRA_COURSE_TILES: HomeTile[] = coursesData.map((course) => ({
-  name: course.title,
-  href: `/courses/${course.id}`,
-  icon: COURSE_ICON_MAP[course.id] ?? "book-open",
-}));
-
-export const HOME_SECTIONS: HomeSection[] = [
+const SECTIONS: HomeSectionInput[] = [
   {
     id: "islamic",
     title: "Islamic Studies",
-    chip: "Islamic Studies",
     chipIcon: "book-open",
     description: "Read the Quran with 40+ translations, learn Tajweed, and keep your daily duas close.",
-    hub: "/islamic-studies",
     arabic: "اقْرَأْ",
     badge: "Always ad-free",
     tiles: [
@@ -56,25 +47,20 @@ export const HOME_SECTIONS: HomeSection[] = [
   {
     id: "courses",
     title: "Courses",
-    chip: "Courses",
     chipIcon: "graduation-cap",
-    description: "Free structured courses with short videos, notes and practice questions.",
-    hub: "/courses",
+    description: "Cambridge O Level courses with notes, mind maps, flashcards and exam-style practice questions.",
     countLabel: "courses",
     tiles: [
-      { name: "O Level Accounting", href: "/courses/accounting", icon: "calculator", isNew: true },
-      { name: "O Level Biology", href: "/courses/biology", icon: "network", isNew: true },
+      { name: "O Level Accounting (7707)", href: "/courses/accounting", icon: "calculator", isNew: true },
+      { name: "O Level Biology (5090)", href: "/courses/biology", icon: "network", isNew: true },
       { name: "Mathematics", href: "/courses/mathematics", icon: "sigma" },
-      ...EXTRA_COURSE_TILES,
     ],
   },
   {
     id: "ielts",
     title: "IELTS Preparation",
-    chip: "IELTS",
-    chipIcon: "graduation-cap",
+    chipIcon: "languages",
     description: "Practise all four skills, sit a full timed mock, and get instant AI feedback on Writing and Speaking.",
-    hub: "/ielts",
     tiles: [
       { name: "Listening", href: "/ielts/listening", icon: "headphones" },
       { name: "Reading", href: "/ielts/reading", icon: "book-text" },
@@ -90,10 +76,8 @@ export const HOME_SECTIONS: HomeSection[] = [
   {
     id: "gmat",
     title: "GMAT Focus Edition",
-    chip: "GMAT",
     chipIcon: "sigma",
     description: "Section practice from a 500+ question bank and a full 64-question timed simulation.",
-    hub: "/gmat",
     tiles: [
       { name: "Quant", href: "/gmat/quant", icon: "sigma" },
       { name: "Verbal", href: "/gmat/verbal", icon: "quote" },
@@ -104,10 +88,8 @@ export const HOME_SECTIONS: HomeSection[] = [
   {
     id: "games",
     title: "Learning Games",
-    chip: "Games",
     chipIcon: "gamepad-2",
     description: "Short games that sharpen vocabulary, mental maths and general knowledge.",
-    hub: "/games",
     tiles: [
       { name: "Word Puzzle", href: "/games/word-puzzle", icon: "puzzle" },
       { name: "Math Puzzle", href: "/games/math-puzzle", icon: "divide" },
@@ -115,12 +97,10 @@ export const HOME_SECTIONS: HomeSection[] = [
     ],
   },
   {
-    id: "finance",
+    id: "tools",
     title: "Finance & Accounting Tools",
-    chip: "Finance Tools",
     chipIcon: "calculator",
     description: "Reconcile statements in minutes and run the calculators accountants and CFA candidates use.",
-    hub: "/tools",
     tiles: [
       { name: "Bank Reconciliation", href: "/tools/finance-tools/reconciliation/bank", icon: "landmark" },
       { name: "Supplier Reconciliation", href: "/tools/finance-tools/reconciliation/supplier", icon: "handshake" },
@@ -133,3 +113,16 @@ export const HOME_SECTIONS: HomeSection[] = [
     ],
   },
 ];
+
+for (const s of SECTIONS) {
+  if (!MAIN_NAV.some((n) => n.id === s.id)) {
+    throw new Error(`homeSections: section "${s.id}" is not in MAIN_NAV (lib/siteNav.ts)`);
+  }
+}
+
+/** Home sections in header order, with chip and hub taken from MAIN_NAV. */
+export const HOME_SECTIONS: HomeSection[] = MAIN_NAV.map((nav) => {
+  const section = SECTIONS.find((s) => s.id === nav.id);
+  if (!section) throw new Error(`homeSections: no home section for nav item "${nav.id}"`);
+  return { ...section, chip: navItem(nav.id).label, hub: nav.href };
+});

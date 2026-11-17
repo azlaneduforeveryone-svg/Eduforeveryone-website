@@ -8,7 +8,8 @@ import HomeSearch from "@/components/home/HomeSearch";
 import HeroLogo from "@/components/home/HeroLogo";
 import { SURAH_META } from "@/lib/quranSurahMeta";
 import { PASSAGES } from "@/lib/ielts/readingData";
-import { DUAS_DATABASE } from "@/lib/duasData";
+import { ALL_O_LEVEL_TOPICS } from "@/lib/courses/accountingSyllabus";
+import { ALL_O_LEVEL_BIOLOGY_TOPICS } from "@/lib/courses/biologySyllabus";
 import { QUANT_BANK } from "@/lib/gmat/quant";
 import { VERBAL_BANK } from "@/lib/gmat/verbal";
 import { DATA_INSIGHTS_BANK } from "@/lib/gmat/data-insights";
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   const surahCount = SURAH_META.length;
   const passageCount = PASSAGES.length;
-  const duaCount = DUAS_DATABASE.length;
+  const oLevelTopicCount = ALL_O_LEVEL_TOPICS.length + ALL_O_LEVEL_BIOLOGY_TOPICS.length;
   const rawGmatCount = QUANT_BANK.items.length + VERBAL_BANK.items.length + DATA_INSIGHTS_BANK.items.length;
   const gmatDisplay = `${Math.floor(rawGmatCount / 100) * 100}+`;
 
@@ -63,12 +64,13 @@ export default function HomePage() {
           <div className="home-hero-inner">
             <div className="home-hero-eyebrow home-rise home-d1">EduForEveryone</div>
             <h1 className="home-rise home-d2">Learn something useful today.</h1>
-            <p className="home-rise home-d3">IELTS, Islamic Studies, GMAT and finance tools in one place.</p>
+            <p className="home-rise home-d3">Islamic Studies, O Level courses, IELTS, GMAT and study tools in one place.</p>
             <HomeSearch />
             <div className="home-hero-stats home-rise home-d5">
+              {/* Same order as the sections below */}
               <span><b>{surahCount}</b> surahs</span>
-              <span><b>{passageCount}</b> reading passages</span>
-              <span><b>{duaCount}</b> authentic duas</span>
+              <span><b>{oLevelTopicCount}</b> O Level topics</span>
+              <span><b>{passageCount}</b> IELTS reading passages</span>
               <span><b>{gmatDisplay}</b> GMAT questions</span>
             </div>
           </div>

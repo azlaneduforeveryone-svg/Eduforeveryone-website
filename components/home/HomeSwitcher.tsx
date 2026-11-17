@@ -10,7 +10,7 @@ interface HomeSwitcherProps {
 
 export default function HomeSwitcher({ sections }: HomeSwitcherProps) {
   const ids = sections.map((s) => s.id);
-  const [active, setActive] = useState(ids[0] || "");
+  const [active, setActive] = useState<string>(ids[0] || "");
 
   useEffect(() => {
     if (typeof window === "undefined") return;

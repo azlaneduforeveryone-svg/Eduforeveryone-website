@@ -7,12 +7,12 @@ import PageHeader from "@/components/ui/PageHeader";
 import SectionHeader from "@/components/ui/SectionHeader";
 
 export const metadata: Metadata = {
-  title: "Free Online Courses — Math, Science, English & History",
-  description: "Free courses including a complete 20-topic Mathematics curriculum from elementary to university level. Learn at your own pace.",
+  title: "Free Online Courses: O Level Accounting, Biology and Mathematics",
+  description: "Free Cambridge O Level Accounting (7707) and Biology (5090) courses, plus a 20-topic Mathematics course. Notes, flashcards and exam-style practice questions.",
   alternates: { canonical: "https://eduforeveryone.com/courses" },
   openGraph: {
     title: "All Courses | EduForEveryone",
-    description: "Browse free courses in Mathematics, Science, English and History.",
+    description: "Free Cambridge O Level Accounting and Biology courses, plus Mathematics.",
     url: "https://eduforeveryone.com/courses",
     siteName: "EduForEveryone",
     type: "website",
@@ -48,7 +48,7 @@ export default function CoursesPage() {
             </div>
             <h2 className="text-xl font-bold text-white mb-1">Cambridge O Level Accounting (7707)</h2>
             <p className="text-white/85 text-sm leading-relaxed">
-              28 topics across all 7 syllabus sections — video lessons, concise notes, and 336 practice multiple-choice questions with instant option-by-option feedback.
+              28 topics across all 7 syllabus sections, with notes, mind maps, flashcards and 336 practice multiple-choice questions with option-by-option feedback.
             </p>
           </div>
           <div className="flex-shrink-0">
@@ -73,7 +73,7 @@ export default function CoursesPage() {
             </div>
             <h2 className="text-xl font-bold text-white mb-1">Cambridge O Level Biology (5090)</h2>
             <p className="text-white/85 text-sm leading-relaxed">
-              52 topics across all 19 syllabus sections for exams in 2026, 2027 and 2028 — structured notes, interactive models, mind maps, flashcards, and practice questions.
+              52 topics across all 19 syllabus sections for exams in 2026, 2027 and 2028, with notes, labelled diagrams, mind maps, flashcards and 589 exam-style practice questions.
             </p>
           </div>
           <div className="flex-shrink-0">
