@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
-import { MATH_TOPICS } from "@/lib/mathTopics";
+import { ALL_MATHS_TOPICS } from "@/lib/courses/mathsSyllabus";
+import { getMathsNotes } from "@/lib/courses/mathsNotes";
 import { PASSAGES } from "@/lib/ielts/readingData";
 import { SURAH_META } from "@/lib/quranSurahMeta";
 import { TASK1_MODEL_ANSWERS } from "@/lib/ielts/ielts-writing-model-answers";
@@ -84,7 +85,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const courseUrls    = getAllCourses().map(c => make(`/courses/${c.id}`, 0.7, "monthly"));
   const noteUrls      = getAllNotes().map(n => make(`/notes/${n.id}`, 0.7, "monthly"));
   const quizUrls      = getAllQuizzes().map(q => make(`/quiz/${q.id}`, 0.7, "monthly"));
-  const mathUrls      = MATH_TOPICS.map(t => make(`/courses/mathematics/${t.id}`, 0.8, "monthly"));
+  // Only topics that have notes (empty "coming soon" pages stay out of Google).
+  const mathUrls      = ALL_MATHS_TOPICS.filter(t => getMathsNotes(t.topic)).map(t => make(`/courses/mathematics/${t.slug}`, 0.7, "monthly"));
   const accountingUrls = ALL_O_LEVEL_ACCOUNTING_TOPICS.map(t => make(`/courses/accounting/o-level/${t.slug}`, 0.8, "monthly"));
   const biologyUrls   = ALL_O_LEVEL_BIOLOGY_TOPICS.map(t => make(`/courses/biology/o-level/${t.slug}`, 0.8, "monthly"));
   const readingUrls   = PASSAGES.map(p => make(`/ielts/reading/${p.id}`, 0.7, "monthly"));

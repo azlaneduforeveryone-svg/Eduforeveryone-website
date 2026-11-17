@@ -53,7 +53,7 @@ const SECTIONS: HomeSectionInput[] = [
     tiles: [
       { name: "O Level Accounting (7707)", href: "/courses/accounting", icon: "calculator", isNew: true },
       { name: "O Level Biology (5090)", href: "/courses/biology", icon: "network", isNew: true },
-      { name: "Mathematics", href: "/courses/mathematics", icon: "sigma" },
+      { name: "O Level and IGCSE Maths", href: "/courses/mathematics", icon: "sigma", isNew: true },
     ],
   },
   {

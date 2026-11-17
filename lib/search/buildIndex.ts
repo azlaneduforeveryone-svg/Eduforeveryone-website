@@ -8,6 +8,8 @@ import type { SearchEntry } from "./fuzzy";
 import { SEARCH_DATA } from "@/lib/searchData";
 import { ALL_O_LEVEL_TOPICS } from "@/lib/courses/accountingSyllabus";
 import { ALL_O_LEVEL_BIOLOGY_TOPICS } from "@/lib/courses/biologySyllabus";
+import { ALL_MATHS_TOPICS } from "@/lib/courses/mathsSyllabus";
+import { MATHS_REVISION } from "@/lib/courses/mathsRevision";
 import { O_LEVEL_ACCOUNTING_REVISION } from "@/lib/courses/oLevelAccountingRevision";
 import { O_LEVEL_BIOLOGY_REVISION } from "@/lib/courses/oLevelBiologyRevision";
 import type { TopicRevision } from "@/lib/courses/oLevelAccountingRevisionTypes";
@@ -65,6 +67,15 @@ export function getSearchIndex(): SearchEntry[] {
     k: `biology 5090 ${topicKeywords(O_LEVEL_BIOLOGY_REVISION[tp.topic])}`,
   }));
 
+  const maths: SearchEntry[] = ALL_MATHS_TOPICS.map((tp) => ({
+    t: tp.topicTitle,
+    h: `/courses/mathematics/${tp.slug}`,
+    c: "Maths",
+    e: "🧮",
+    d: tp.oLevel ? `O Level ${tp.oLevel}, IGCSE ${tp.topic}` : `IGCSE ${tp.topic} (Extended)`,
+    k: `maths math mathematics 4024 0580 ${topicKeywords(MATHS_REVISION[tp.topic])}`,
+  }));
+
   const surahs: SearchEntry[] = SURAH_META.map((s) => ({
     t: `Surah ${s.name}`,
     h: `/quran/${s.number}`,
@@ -97,7 +108,7 @@ export function getSearchIndex(): SearchEntry[] {
 
   // Keep the first entry for each link.
   const seen = new Set<string>();
-  cached = [...pages, ...tiles, ...accounting, ...biology, ...surahs, ...passages].filter((e) => {
+  cached = [...pages, ...tiles, ...accounting, ...biology, ...maths, ...surahs, ...passages].filter((e) => {
     if (seen.has(e.h)) return false;
     seen.add(e.h);
     return true;

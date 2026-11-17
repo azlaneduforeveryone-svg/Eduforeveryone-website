@@ -22,7 +22,7 @@ const COLUMNS: { title: string; href: string; links: { label: string; href: stri
     links: [
       { label: 'O Level Accounting', href: '/courses/accounting' },
       { label: 'O Level Biology', href: '/courses/biology' },
-      { label: 'Mathematics', href: '/courses/mathematics' },
+      { label: 'O Level and IGCSE Maths', href: '/courses/mathematics' },
       { label: 'All courses', href: '/courses' },
     ],
   },

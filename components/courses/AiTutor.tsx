@@ -25,7 +25,7 @@ export default function AiTutor({
   topicTitle,
   onNeedSignIn,
 }: {
-  course?: "accounting" | "biology";
+  course?: "accounting" | "biology" | "maths";
   topic: string;
   topicTitle: string;
   onNeedSignIn: () => void;

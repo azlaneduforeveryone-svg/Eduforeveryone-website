@@ -7,8 +7,8 @@ import PageHeader from "@/components/ui/PageHeader";
 import SectionHeader from "@/components/ui/SectionHeader";
 
 export const metadata: Metadata = {
-  title: "Free Online Courses: O Level Accounting, Biology and Mathematics",
-  description: "Free Cambridge O Level Accounting (7707) and Biology (5090) courses, plus a 20-topic Mathematics course. Notes, flashcards and exam-style practice questions.",
+  title: "Free Online Courses: O Level and IGCSE Accounting, Biology and Mathematics",
+  description: "Free Cambridge O Level Accounting (7707) and Biology (5090) courses, plus O Level and IGCSE Mathematics (4024, 0580). Notes, flashcards and exam-style practice questions.",
   alternates: { canonical: "https://eduforeveryone.com/courses" },
   openGraph: {
     title: "All Courses | EduForEveryone",
@@ -94,16 +94,16 @@ export default function CoursesPage() {
           <div className="flex-1">
             <div className="flex flex-wrap items-center gap-2 mb-1.5">
               <span className="text-xs font-bold bg-efe-gold-soft text-efe-gold px-2.5 py-0.5 rounded-full">NEW</span>
-              <span className="text-xs text-white/80 font-medium">Mathematics · All Levels</span>
+              <span className="text-xs text-white/80 font-medium">O Level 4024 · IGCSE 0580</span>
             </div>
-            <h2 className="text-xl font-bold text-white mb-1">Complete Mathematics Curriculum</h2>
+            <h2 className="text-xl font-bold text-white mb-1">Cambridge O Level and IGCSE Mathematics</h2>
             <p className="text-white/85 text-sm leading-relaxed">
-              20 topics from Elementary to University level — Counting, Algebra, Geometry, Trigonometry, Calculus and more.
+              One course for O Level 4024 and IGCSE 0580 (Core and Extended). Plain English notes with real-life examples solved step by step. Topics are being added section by section.
             </p>
           </div>
           <div className="flex-shrink-0">
             <span className="efe-btn efe-btn-on-hero efe-btn-sm whitespace-nowrap">
-              Explore 20 Topics →
+              Start Mathematics →
             </span>
           </div>
         </Link>

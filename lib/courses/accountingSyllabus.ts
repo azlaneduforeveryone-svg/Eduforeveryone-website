@@ -138,8 +138,9 @@ const isNumericOption = (s: string) =>
   /^\$?[\d ,.]+(%| days| : 1)?( debit| credit)?$/.test(s.trim());
 
 import type { BiologyMcq } from "./oLevelBiologyMcqs";
+import type { MathsMcq } from "./mathsMcqs";
 
-export type CourseMcq = AccountingMcq | BiologyMcq;
+export type CourseMcq = AccountingMcq | BiologyMcq | MathsMcq;
 
 export const shuffleQuestionOptions = <T extends CourseMcq>(q: T): T => {
   if (q.options.every(isNumericOption)) return q;

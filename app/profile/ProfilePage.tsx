@@ -250,24 +250,6 @@ export default function ProfilePage() {
           )}
         </div>
 
-        {/* Math topics */}
-        {profile && (profile.mathTopicsCompleted?.length || 0) > 0 && (
-          <div className="efe-card p-5 mb-6">
-            <h2 className="font-black text-efe-fg font-display mb-3">📐 Math Topics Completed</h2>
-            <p className="text-sm text-efe-muted mb-3">
-              {profile.mathTopicsCompleted.length} topics completed
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {profile.mathTopicsCompleted.map(t => (
-                <Link key={t} href={`/courses/mathematics/${t}`}
-                  className="text-xs bg-efe-accent-soft text-efe-accent-ink border border-efe-line px-3 py-1 rounded-full font-semibold hover:border-efe-accent capitalize">
-                  ✓ {t.replace(/-/g, " ")}
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
-
         {/* Accounting Course Progress */}
         {(() => {
           const completedTopics = ALL_O_LEVEL_TOPICS.filter(t => {
