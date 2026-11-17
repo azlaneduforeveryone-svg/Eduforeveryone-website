@@ -1,4 +1,5 @@
-// Search index — all content on EduForEveryone
+// Hand-written search entries (pages, tools, quizzes). The full site index,
+// with every course topic, surah and IELTS passage, is built in lib/search/buildIndex.ts.
 export interface SearchItem {
   title: string;
   description: string;
@@ -47,21 +48,3 @@ export const SEARCH_DATA: SearchItem[] = [
   { title:"Study Notes",          description:"Free study notes and cheat sheets for all subjects.",                      href:"/notes",                         category:"Page",     emoji:"📝", tags:["notes","study","cheat sheet","free"] },
   { title:"About EduForEveryone", description:"Our mission — free, high quality education for every student worldwide.",  href:"/about",                         category:"Page",     emoji:"👋", tags:["about","mission","free","education"] },
 ];
-
-export function searchContent(query: string): SearchItem[] {
-  if (!query || query.trim().length < 2) return [];
-  const q = query.toLowerCase().trim();
-  const results = SEARCH_DATA.filter(item => {
-    const inTitle       = item.title.toLowerCase().includes(q);
-    const inDesc        = item.description.toLowerCase().includes(q);
-    const inCategory    = item.category.toLowerCase().includes(q);
-    const inTags        = item.tags.some(t => t.includes(q));
-    return inTitle || inDesc || inCategory || inTags;
-  });
-  // Sort: title matches first, then tags, then description
-  return results.sort((a, b) => {
-    const aTitle = a.title.toLowerCase().includes(q) ? 0 : 1;
-    const bTitle = b.title.toLowerCase().includes(q) ? 0 : 1;
-    return aTitle - bTitle;
-  }).slice(0, 12);
-}

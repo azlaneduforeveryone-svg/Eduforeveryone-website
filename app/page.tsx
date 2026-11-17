@@ -59,7 +59,9 @@ export default function HomePage() {
 
       {/* ── Hero ── */}
       <section className="home-hero home-gutter">
-        <div className="home-hero-pattern" aria-hidden="true" />
+        <div className="home-hero-clip" aria-hidden="true">
+          <div className="home-hero-pattern" />
+        </div>
         <div className="home-wrap home-hero-split">
           <div className="home-hero-inner">
             <div className="home-hero-eyebrow home-rise home-d1">EduForEveryone</div>
