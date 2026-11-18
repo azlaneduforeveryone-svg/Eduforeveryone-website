@@ -2121,6 +2121,2158 @@ Multiply the top and bottom by the surd on the bottom.
 
 - Learn the square numbers up to 100. You need them for every surd question.
 - "Exact value" or "in the form a√b" means leave the answer as a surd. Do not give a decimal.`,
+  "2.1": `## What you need to know
+
+- Letters can stand for numbers. This is called **algebra**.
+- How to write simple expressions from words.
+- How to **substitute**: put numbers in place of letters and work out the answer.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Variable | A letter that stands for a number that can change, like x or n |
+| Term | One part of an expression, like 3x or 5 |
+| Expression | Terms joined by + or -, like 3x + 5. It has no = sign |
+| Equation | Two things that are equal, like 3x + 5 = 20 |
+| Formula | A rule that connects two or more variables, like A = l × w |
+| Coefficient | The number in front of a letter. In 7y the coefficient is 7 |
+| Substitute | Replace a letter with a number |
+
+## Why use letters?
+
+A taxi charges $3 to start, plus $2 for every kilometre. You do not know how far every customer will travel. So you call the distance **d**.
+
+> **Cost = 3 + 2d**
+
+Now one short rule works for every trip.
+
+## How we write algebra
+
+| We write | It means |
+|---|---|
+| 5n | 5 × n |
+| ab | a × b |
+| n² | n × n |
+| x/4 | x ÷ 4 |
+| 3(x + 2) | 3 × (x + 2) |
+
+We do not write the × sign, and we write the number first: **5n**, not n5.
+
+## Writing expressions from words
+
+**Problem:** Ali has n sweets. Write an expression for each person.
+
+1. Sara has 4 more than Ali: **n + 4**
+2. Bilal has 3 fewer than Ali: **n - 3**
+3. Zain has twice as many as Ali: **2n**
+4. Ali shares his sweets equally with a friend. Each gets: **n/2**
+
+## Substitution
+
+Write the expression again with the numbers in brackets, then use the order of operations (BIDMAS: Brackets, Indices, Divide and Multiply, Add and Subtract).
+
+### Real-life example: taxi fare
+
+**Problem:** A taxi costs C = 3 + 2d dollars, where d is the distance in km. Find the cost of a 12 km trip.
+
+1. Write the formula: C = 3 + 2d.
+2. Put 12 in place of d: C = 3 + 2(12).
+3. Multiply first: 2 × 12 = 24.
+4. Then add: 3 + 24 = 27.
+
+**Answer:** $27
+
+### Real-life example: phone plan
+
+**Problem:** A phone plan costs P = 15 + 0.1m dollars a month, where m is the number of minutes over the free limit. Find P when m = 40.
+
+1. P = 15 + 0.1(40).
+2. 0.1 × 40 = 4.
+3. 15 + 4 = 19.
+
+**Answer:** $19
+
+### Example with negative numbers
+
+**Problem:** Find the value of 3a² - 2b when a = -4 and b = 5.
+
+1. Put in the numbers with brackets: 3(-4)² - 2(5).
+2. Indices first: (-4)² = 16. A negative times a negative is positive.
+3. Multiply: 3 × 16 = 48 and 2 × 5 = 10.
+4. Subtract: 48 - 10 = 38.
+
+**Answer:** 38
+
+> Always use brackets when you put in a negative number. 3(-4)² means 3 × 16 = 48. Without brackets your calculator may work out -4² = -16, which is wrong here.
+
+### Real-life example: temperature
+
+**Problem:** To change Celsius to Fahrenheit, use F = 1.8C + 32. It is 25°C in Jeddah in the morning. What is this in Fahrenheit?
+
+1. F = 1.8(25) + 32.
+2. 1.8 × 25 = 45.
+3. 45 + 32 = 77.
+
+**Answer:** 77°F
+
+### Example with a fraction
+
+**Problem:** Find the value of (v² - u²)/(2s) when v = 10, u = 6 and s = 4.
+
+1. Top: 10² - 6² = 100 - 36 = 64.
+2. Bottom: 2 × 4 = 8.
+3. Divide: 64 ÷ 8 = 8.
+
+**Answer:** 8
+
+## Common mistakes
+
+- Thinking 3x means 3 + x. It means 3 × x.
+- Thinking x² means 2x. If x = 5, x² = 25 but 2x = 10.
+- Forgetting brackets when you substitute a negative number.
+- Working left to right instead of using BIDMAS.
+
+## Exam tips
+
+- Always write the line with the numbers put in. You can get a method mark even if your final answer is wrong.
+- Check if the answer makes sense. A taxi fare of $2700 for 12 km is clearly wrong.`,
+  "2.2": `## What you need to know
+
+- How to **simplify** by collecting like terms.
+- How to **expand** (multiply out) brackets, including two brackets like (x + 3)(x - 5).
+- How to **factorise** by taking out common factors. Factorise means factorise **fully**.
+- Extended and O Level: expanding three brackets, harder factorising (grouping, difference of two squares, quadratics) and **completing the square**.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Like terms | Terms with exactly the same letters and powers, like 3x and 7x |
+| Simplify | Collect like terms so the expression is shorter |
+| Expand | Multiply out the brackets |
+| Factorise | Put brackets back in. It is the opposite of expanding |
+| Common factor | A number or letter that divides into every term |
+| Quadratic | An expression where the highest power is 2, like x² + 5x + 6 |
+
+## Collecting like terms
+
+Think of letters as objects. 3 apples + 5 apples = 8 apples. You cannot add apples and bananas together.
+
+**Problem:** Simplify 2a + 3b + 5a - 9b.
+
+1. Find the a terms: 2a + 5a = 7a.
+2. Find the b terms: 3b - 9b = -6b.
+3. Write them together.
+
+**Answer:** 7a - 6b
+
+> x and x² are **not** like terms. 3x + 2x² cannot be simplified.
+
+## Expanding one bracket
+
+Multiply **everything** inside the bracket by the term outside.
+
+### Real-life example: buying lunch
+
+**Problem:** Each lunch has a sandwich costing s dollars and a juice costing $2. Write and expand an expression for the cost of 4 lunches.
+
+1. One lunch costs (s + 2).
+2. Four lunches cost 4(s + 2).
+3. Multiply each term by 4: 4 × s = 4s and 4 × 2 = 8.
+
+**Answer:** 4s + 8
+
+**Problem:** Expand and simplify 3(2x - 5) - 2(x - 4).
+
+1. First bracket: 3 × 2x = 6x and 3 × (-5) = -15. So 6x - 15.
+2. Second bracket: -2 × x = -2x and -2 × (-4) = +8. So -2x + 8.
+3. Put together: 6x - 15 - 2x + 8.
+4. Collect like terms: 6x - 2x = 4x and -15 + 8 = -7.
+
+**Answer:** 4x - 7
+
+> Watch the minus sign in front of a bracket. It changes the sign of **every** term inside.
+
+## Expanding two brackets
+
+Every term in the first bracket multiplies every term in the second bracket. Use a grid so you do not miss any.
+
+**Problem:** Expand and simplify (x + 3)(x - 5).
+
+| × | x | -5 |
+|---|---|---|
+| **x** | x² | -5x |
+| **+3** | 3x | -15 |
+
+1. Fill in the grid by multiplying the row by the column.
+2. Add everything: x² - 5x + 3x - 15.
+3. Collect the x terms: -5x + 3x = -2x.
+
+**Answer:** x² - 2x - 15
+
+### Real-life example: a bigger garden
+
+**Problem:** A square garden has sides of x metres. The owner makes it 2 m longer and 3 m wider. Write the new area as an expression without brackets.
+
+1. New length = x + 2. New width = x + 3.
+2. Area = (x + 2)(x + 3).
+3. Multiply out: x × x = x², x × 3 = 3x, 2 × x = 2x, 2 × 3 = 6.
+4. Add: x² + 3x + 2x + 6 = x² + 5x + 6.
+
+**Answer:** x² + 5x + 6 square metres
+
+**Problem:** Expand (2x + 1)(x - 4).
+
+1. 2x × x = 2x². 2x × (-4) = -8x.
+2. 1 × x = x. 1 × (-4) = -4.
+3. Add: 2x² - 8x + x - 4 = 2x² - 7x - 4.
+
+**Answer:** 2x² - 7x - 4
+
+> (x + 5)² means (x + 5)(x + 5) = x² + 10x + 25. It is **not** x² + 25.
+
+## Factorising: taking out a common factor
+
+Find the **biggest** number and letters that go into every term. Put them outside the bracket.
+
+**Problem:** Factorise fully 9x² + 15xy.
+
+1. Biggest number that divides 9 and 15: **3**.
+2. Letter in both terms: **x** (y is not in the first term).
+3. Common factor = 3x.
+4. Divide each term by 3x: 9x² ÷ 3x = 3x and 15xy ÷ 3x = 5y.
+
+**Answer:** 3x(3x + 5y)
+
+> Check by expanding: 3x × 3x = 9x² and 3x × 5y = 15xy. Correct.
+
+> 3(3x² + 5xy) is factorised, but **not fully**. You would lose a mark.
+
+## Extended and O Level: three brackets
+
+> **Extended and O Level only.** Core students can skip from here to Common mistakes.
+
+Expand two brackets first, then multiply the answer by the third bracket.
+
+**Problem:** Expand (x - 2)(x + 3)(2x + 1).
+
+1. First two brackets: (x - 2)(x + 3) = x² + 3x - 2x - 6 = x² + x - 6.
+2. Now (x² + x - 6)(2x + 1).
+3. x² × 2x = 2x³. x² × 1 = x².
+4. x × 2x = 2x². x × 1 = x.
+5. -6 × 2x = -12x. -6 × 1 = -6.
+6. Add: 2x³ + x² + 2x² + x - 12x - 6 = 2x³ + 3x² - 11x - 6.
+
+**Answer:** 2x³ + 3x² - 11x - 6
+
+## Extended and O Level: factorising by grouping
+
+Use this when there are four terms.
+
+**Problem:** Factorise ax + bx + 3ay + 3by.
+
+1. Group the first two and the last two: (ax + bx) + (3ay + 3by).
+2. Factorise each group: x(a + b) + 3y(a + b).
+3. (a + b) is in both parts, so take it out.
+
+**Answer:** (a + b)(x + 3y)
+
+## Extended and O Level: difference of two squares
+
+> **a² - b² = (a + b)(a - b)**
+
+**Problem:** Factorise 25x² - 9y².
+
+1. 25x² = (5x)². 9y² = (3y)².
+2. Use the rule with a = 5x and b = 3y.
+
+**Answer:** (5x + 3y)(5x - 3y)
+
+### Real-life example: mental maths trick
+
+**Problem:** Work out 53² - 47² without a calculator.
+
+1. This is a difference of two squares: (53 + 47)(53 - 47).
+2. 53 + 47 = 100. 53 - 47 = 6.
+3. 100 × 6 = 600.
+
+**Answer:** 600
+
+## Extended and O Level: factorising quadratics
+
+### When the number in front of x² is 1
+
+For x² + bx + c, find two numbers that **multiply** to make c and **add** to make b.
+
+**Problem:** Factorise x² + 7x + 12.
+
+1. Pairs that multiply to 12: 1 and 12, 2 and 6, 3 and 4.
+2. Which pair adds to 7? 3 + 4 = 7.
+
+**Answer:** (x + 3)(x + 4)
+
+**Problem:** Factorise x² - 2x - 15.
+
+1. Multiply to -15, add to -2.
+2. Try 3 and -5: 3 × (-5) = -15 and 3 + (-5) = -2. Correct.
+
+**Answer:** (x + 3)(x - 5)
+
+### Perfect squares
+
+**Problem:** Factorise x² + 10x + 25.
+
+1. Multiply to 25, add to 10: 5 and 5.
+2. (x + 5)(x + 5) can be written as a square.
+
+**Answer:** (x + 5)²
+
+### When the number in front of x² is not 1
+
+For ax² + bx + c, multiply a × c. Find two numbers that multiply to a × c and add to b. Use them to split the middle term, then group.
+
+**Problem:** Factorise 2x² - 7x - 4.
+
+1. a × c = 2 × (-4) = -8.
+2. Multiply to -8, add to -7: -8 and 1.
+3. Split the middle: 2x² - 8x + x - 4.
+4. Group: 2x(x - 4) + 1(x - 4).
+5. Take out (x - 4).
+
+**Answer:** (2x + 1)(x - 4)
+
+### Taking out x first
+
+**Problem:** Factorise x³ + 5x² + 6x.
+
+1. Every term has x. Take it out: x(x² + 5x + 6).
+2. Factorise the quadratic: multiply to 6, add to 5 gives 2 and 3.
+
+**Answer:** x(x + 2)(x + 3)
+
+## Extended and O Level: completing the square
+
+We write x² + bx + c in the form **(x + p)² + q**. Half of b gives p.
+
+**Problem:** Write x² + 6x + 2 in the form (x + p)² + q.
+
+1. Half of 6 is 3. So start with (x + 3)².
+2. (x + 3)² = x² + 6x + 9. That gives 9, but we only want 2.
+3. So subtract 9 and add 2: (x + 3)² - 9 + 2.
+4. -9 + 2 = -7.
+
+**Answer:** (x + 3)² - 7
+
+**Problem:** Write 2x² - 12x + 5 in the form a(x + p)² + q.
+
+1. Take 2 out of the x terms: 2(x² - 6x) + 5.
+2. Half of -6 is -3: x² - 6x = (x - 3)² - 9.
+3. So 2[(x - 3)² - 9] + 5 = 2(x - 3)² - 18 + 5.
+4. -18 + 5 = -13.
+
+**Answer:** 2(x - 3)² - 13
+
+> Completing the square is used to solve quadratics (topic 2.5) and to find the turning point of a curve (topic 2.11).
+
+## Common mistakes
+
+- Adding unlike terms, like 3x + 2y = 5xy.
+- Only multiplying the first term inside a bracket: 3(x + 4) is 3x + 12, not 3x + 4.
+- Writing (x + 5)² = x² + 25. You must expand it as two brackets.
+- Not factorising fully.
+
+## Exam tips
+
+- After factorising, expand your answer in your head to check it.
+- "Simplify" means collect like terms. "Expand" means remove brackets. "Factorise" means put brackets in.`,
+  "2.3": `## What you need to know
+
+> **Extended and O Level only.** This topic is not in IGCSE Core.
+
+- An **algebraic fraction** is a fraction with letters in it, like 3/x or (x + 1)/(x - 2).
+- How to **simplify** algebraic fractions by factorising and cancelling.
+- How to add, subtract, multiply and divide algebraic fractions.
+
+Everything works in the same way as number fractions. If you can do 2/3 + 1/4, you can do this topic.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Numerator | The top of a fraction |
+| Denominator | The bottom of a fraction |
+| Common denominator | A bottom that both fractions can share |
+| Cancel | Divide the top and the bottom by the same factor |
+
+## Simplifying
+
+You can only cancel a **factor**: something that multiplies the whole top and the whole bottom. So **factorise first**.
+
+**Problem:** Simplify (6x²)/(9x).
+
+1. Numbers: 6/9 = 2/3.
+2. Letters: x²/x = x.
+
+**Answer:** 2x/3
+
+**Problem:** Simplify (x² - 9)/(x² + 5x + 6).
+
+1. Factorise the top (difference of two squares): (x + 3)(x - 3).
+2. Factorise the bottom: (x + 2)(x + 3).
+3. (x + 3) is on the top and the bottom. Cancel it.
+
+**Answer:** (x - 3)/(x + 2)
+
+> You **cannot** cancel the x in (x + 3)/x. The x on top is only part of the bracket, not a factor of the whole top. Test it: if x = 2, (2 + 3)/2 = 2.5, but cancelling would give 3. Wrong.
+
+## Multiplying and dividing
+
+- Multiply: top × top, bottom × bottom. Cancel first to keep it simple.
+- Divide: flip the second fraction and multiply.
+
+**Problem:** Simplify (4x/5) × (10/(x²)).
+
+1. Top: 4x × 10 = 40x. Bottom: 5 × x² = 5x².
+2. Numbers: 40/5 = 8. Letters: x/x² = 1/x.
+
+**Answer:** 8/x
+
+**Problem:** Simplify (x + 2)/3 ÷ (x + 2)/6.
+
+1. Flip the second and multiply: (x + 2)/3 × 6/(x + 2).
+2. (x + 2) cancels. 6/3 = 2.
+
+**Answer:** 2
+
+## Adding and subtracting
+
+Make the denominators the same, then add or subtract the tops.
+
+**Problem:** Write x/3 + x/4 as a single fraction.
+
+1. Common denominator: 12.
+2. x/3 = 4x/12 and x/4 = 3x/12.
+3. Add the tops: 4x + 3x = 7x.
+
+**Answer:** 7x/12
+
+### Real-life example: a trip there and back
+
+**Problem:** Omar cycles 12 km to school at x km/h, and comes home at (x - 2) km/h because he is tired. Write the total time as a single fraction.
+
+1. Time = distance ÷ speed. Going: 12/x hours. Coming home: 12/(x - 2) hours.
+2. Total = 12/x + 12/(x - 2).
+3. Common denominator: x(x - 2).
+4. First fraction: 12(x - 2)/[x(x - 2)]. Second: 12x/[x(x - 2)].
+5. Add the tops: 12(x - 2) + 12x = 12x - 24 + 12x = 24x - 24.
+
+**Answer:** (24x - 24)/[x(x - 2)] hours, which factorises to 24(x - 1)/[x(x - 2)]
+
+> Check with a number. If x = 6: 12/6 + 12/4 = 2 + 3 = 5 hours. The answer gives 24 × 5 ÷ (6 × 4) = 120 ÷ 24 = 5. Correct.
+
+**Problem:** Write 3/(x + 1) - 2/(x - 3) as a single fraction.
+
+1. Common denominator: (x + 1)(x - 3).
+2. Top: 3(x - 3) - 2(x + 1).
+3. Expand: 3x - 9 - 2x - 2. Be careful: -2 × (+1) = -2.
+4. Simplify: x - 11.
+
+**Answer:** (x - 11)/[(x + 1)(x - 3)]
+
+## Common mistakes
+
+- Cancelling terms instead of factors, like (x + 6)/6 = x. Wrong.
+- Forgetting to put brackets round the top when you subtract, so the sign of the second term is wrong.
+- Adding the bottoms: 1/x + 1/y is **not** 2/(x + y).
+
+## Exam tips
+
+- Factorise everything you can before you cancel.
+- Check your answer by putting in a simple number, like x = 2, into the question and your answer. Both should give the same value.`,
+  "2.4": `## What you need to know
+
+- How to use the **rules of indices** with letters, including zero and negative indices.
+- Extended and O Level: **fractional** indices with letters, and solving equations where x is in the power, like 5^(x + 1) = 25^x.
+
+This topic uses the same rules as Indices I (topic 1.7), but now with letters.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Index (power) | The small raised number. In x⁵ the index is 5 |
+| Base | The number or letter being multiplied. In x⁵ the base is x |
+| Coefficient | The number in front. In 6x⁷ the coefficient is 6 |
+
+## The rules
+
+| Rule | In words | Example |
+|---|---|---|
+| xᵃ × xᵇ = xᵃ⁺ᵇ | Multiplying: **add** the powers | x³ × x⁴ = x⁷ |
+| xᵃ ÷ xᵇ = xᵃ⁻ᵇ | Dividing: **subtract** the powers | x⁹ ÷ x² = x⁷ |
+| (xᵃ)ᵇ = xᵃᵇ | Power of a power: **multiply** the powers | (x³)² = x⁶ |
+| x⁰ = 1 | Anything to the power 0 is 1 | y⁰ = 1 |
+| x⁻ⁿ = 1/xⁿ | Negative power means "1 over" | x⁻² = 1/x² |
+
+> The **numbers** in front are multiplied or divided as normal. Only the **powers** follow the rules.
+
+## Multiplying
+
+**Problem:** Simplify 6x⁷y⁴ × 5x⁻⁵y.
+
+1. Numbers: 6 × 5 = 30.
+2. x: x⁷ × x⁻⁵. Add the powers: 7 + (-5) = 2. So x².
+3. y: y⁴ × y¹. Add the powers: 4 + 1 = 5. So y⁵. (y on its own means y¹.)
+
+**Answer:** 30x²y⁵
+
+## Dividing
+
+**Problem:** Simplify 12a⁵ ÷ 3a⁻².
+
+1. Numbers: 12 ÷ 3 = 4.
+2. a: subtract the powers: 5 - (-2) = 5 + 2 = 7.
+
+**Answer:** 4a⁷
+
+## Power of a power
+
+**Problem:** Simplify (5x³)².
+
+1. Everything inside the bracket is squared: 5² × (x³)².
+2. 5² = 25.
+3. (x³)²: multiply the powers: 3 × 2 = 6.
+
+**Answer:** 25x⁶
+
+> A common mistake is (5x³)² = 5x⁶. The 5 must be squared too.
+
+### Real-life example: area of a square tile
+
+**Problem:** A square tile has sides of 3x² cm. Find its area.
+
+1. Area = side × side = (3x²)².
+2. 3² = 9 and (x²)² = x⁴.
+
+**Answer:** 9x⁴ cm²
+
+## Negative and zero powers
+
+**Problem:** Write 4x⁻³ without a negative power.
+
+1. x⁻³ = 1/x³.
+2. So 4x⁻³ = 4 × 1/x³.
+
+**Answer:** 4/x³
+
+> Only the x has the negative power, not the 4. So the 4 stays on top.
+
+**Problem:** Simplify (2a³b)⁰.
+
+1. Anything (except 0) to the power 0 is 1.
+
+**Answer:** 1
+
+## Extended and O Level: fractional indices
+
+> **Extended and O Level only.** Core students can skip from here to Common mistakes.
+
+| Power | Meaning | Example |
+|---|---|---|
+| x^(1/2) | Square root of x | 49^(1/2) = 7 |
+| x^(1/3) | Cube root of x | 8^(1/3) = 2 |
+| x^(m/n) | n-th root, then to the power m | 8^(2/3) = 2² = 4 |
+
+**Problem:** Simplify (16x⁸)^(1/2).
+
+1. Square root of 16 = 4.
+2. (x⁸)^(1/2): multiply the powers: 8 × 1/2 = 4. So x⁴.
+
+**Answer:** 4x⁴
+
+**Problem:** Simplify (27x⁶)^(-2/3).
+
+1. The negative means "1 over": 1/(27x⁶)^(2/3).
+2. Cube root of 27 = 3, then square: 3² = 9.
+3. (x⁶)^(2/3): 6 × 2/3 = 4. So x⁴.
+
+**Answer:** 1/(9x⁴)
+
+## Extended and O Level: x in the power
+
+Make both sides have the **same base**. Then the powers must be equal.
+
+**Problem:** Solve 5^(x + 1) = 25^x.
+
+1. 25 = 5². So 25^x = (5²)^x = 5^(2x).
+2. Now 5^(x + 1) = 5^(2x). The bases are the same, so the powers are equal.
+3. x + 1 = 2x.
+4. Subtract x from both sides: 1 = x.
+
+**Answer:** x = 1
+
+> Check: 5^(1 + 1) = 25 and 25¹ = 25. Correct.
+
+**Problem:** Solve 2^x = 1/8.
+
+1. 8 = 2³, so 1/8 = 2⁻³.
+2. 2^x = 2⁻³.
+
+**Answer:** x = -3
+
+### Real-life example: doubling money
+
+**Problem:** A savings scheme doubles your money every 5 years. After t years you have 100 × 2^(t/5) dollars. When do you have $800?
+
+1. 100 × 2^(t/5) = 800.
+2. Divide both sides by 100: 2^(t/5) = 8.
+3. 8 = 2³, so 2^(t/5) = 2³.
+4. The powers are equal: t/5 = 3.
+5. Multiply both sides by 5: t = 15.
+
+**Answer:** After 15 years
+
+## Common mistakes
+
+- Multiplying the powers when you should add them: x³ × x⁴ is x⁷, not x¹².
+- Forgetting to apply the power to the number: (2x)³ = 8x³, not 2x³.
+- Thinking a negative power gives a negative number: 2⁻¹ = 1/2, not -2.
+
+## Exam tips
+
+- Deal with the numbers first, then each letter one at a time.
+- Write y as y¹ so you do not forget its power.`,
+  "2.5": `## What you need to know
+
+- How to write an equation from words, then **solve** it.
+- How to solve **linear equations**, like 3x + 4 = 10 and 5 - 2x = 3(x + 7).
+- How to solve **simultaneous equations**: two equations with two unknowns.
+- How to **change the subject** of a formula.
+- Extended and O Level: equations with fractions, **quadratic equations**, simultaneous equations where one is not a straight line, and harder changes of subject.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Solve | Find the value of the unknown letter |
+| Linear equation | An equation where x has no power, like 2x + 5 = 11 |
+| Inverse operation | The opposite operation. + and - are inverses. × and ÷ are inverses |
+| Simultaneous equations | Two equations that are both true at the same time |
+| Quadratic equation | An equation with x² in it, like x² - 5x + 6 = 0 |
+| Subject | The letter on its own on one side of a formula. In A = lw, A is the subject |
+
+## The balance idea
+
+An equation is like a balanced scale. Whatever you do to one side, you **must do to the other side** too. Use inverse operations to get x on its own.
+
+## Solving linear equations
+
+**Problem:** Solve 3x + 4 = 10.
+
+1. Subtract 4 from both sides: 3x = 6.
+2. Divide both sides by 3: x = 2.
+
+**Answer:** x = 2
+
+> Check: 3 × 2 + 4 = 10. Correct. Always check by putting your answer back in.
+
+### x on both sides, with a bracket
+
+**Problem:** Solve 5 - 2x = 3(x + 7).
+
+1. Expand the bracket: 5 - 2x = 3x + 21.
+2. Add 2x to both sides (so the x terms are positive): 5 = 5x + 21.
+3. Subtract 21 from both sides: -16 = 5x.
+4. Divide both sides by 5: x = -16/5.
+
+**Answer:** x = -3.2
+
+### Real-life example: gym membership
+
+**Problem:** A gym charges a $20 joining fee plus $15 a month. Layla paid $140 in total. How many months did she pay for?
+
+1. Let m = number of months. Cost = 20 + 15m.
+2. Equation: 20 + 15m = 140.
+3. Subtract 20 from both sides: 15m = 120.
+4. Divide both sides by 15: m = 8.
+
+**Answer:** 8 months
+
+## Writing equations from words
+
+### Real-life example: a rectangle
+
+**Problem:** A rectangle is 5 cm longer than it is wide. Its perimeter is 38 cm. Find its length.
+
+1. Let the width = x. Then the length = x + 5.
+2. Perimeter = all four sides: x + (x + 5) + x + (x + 5) = 4x + 10.
+3. Equation: 4x + 10 = 38.
+4. Subtract 10: 4x = 28. Divide by 4: x = 7.
+5. Length = 7 + 5 = 12.
+
+**Answer:** 12 cm
+
+### Real-life example: ages
+
+**Problem:** A father is 3 times as old as his son. In 12 years, he will be twice as old as his son. How old is the son now?
+
+1. Let the son's age = x. The father's age = 3x.
+2. In 12 years: son = x + 12, father = 3x + 12.
+3. Father will be twice the son: 3x + 12 = 2(x + 12).
+4. Expand: 3x + 12 = 2x + 24.
+5. Subtract 2x from both sides: x + 12 = 24.
+6. Subtract 12: x = 12.
+
+**Answer:** The son is 12 (and the father is 36).
+
+> Check: in 12 years the son is 24 and the father is 48. 48 is twice 24. Correct.
+
+## Simultaneous equations: elimination
+
+Make the number in front of one letter the same in both equations. Then add or subtract to get rid of that letter.
+
+> **Same signs: subtract. Different signs: add.**
+
+### Real-life example: cinema tickets
+
+**Problem:** 2 adult tickets and 3 child tickets cost $34. 1 adult ticket and 2 child tickets cost $19. Find the cost of each ticket.
+
+1. Let a = adult price and c = child price.
+2. Equation (1): 2a + 3c = 34. Equation (2): a + 2c = 19.
+3. Multiply (2) by 2 so both have 2a: 2a + 4c = 38. Call this (3).
+4. Both have +2a (same sign), so subtract (1) from (3): (2a + 4c) - (2a + 3c) = 38 - 34.
+5. This gives c = 4.
+6. Put c = 4 into (2): a + 8 = 19, so a = 11.
+
+**Answer:** Adult $11, child $4
+
+> Check in (1): 2 × 11 + 3 × 4 = 22 + 12 = 34. Correct.
+
+**Problem:** Solve 3x + 2y = 16 and 5x - 3y = 14.
+
+1. Make the y numbers the same. Multiply the first equation by 3: 9x + 6y = 48.
+2. Multiply the second equation by 2: 10x - 6y = 28.
+3. +6y and -6y have different signs, so add: 19x = 76.
+4. Divide by 19: x = 4.
+5. Put x = 4 into the first equation: 12 + 2y = 16, so 2y = 4 and y = 2.
+
+**Answer:** x = 4, y = 2
+
+## Simultaneous equations: substitution
+
+Use this when one equation already says "y = ...".
+
+**Problem:** Solve y = 2x - 1 and 3x + y = 14.
+
+1. Replace y in the second equation with (2x - 1): 3x + (2x - 1) = 14.
+2. Simplify: 5x - 1 = 14.
+3. Add 1: 5x = 15. Divide by 5: x = 3.
+4. Find y: y = 2(3) - 1 = 5.
+
+**Answer:** x = 3, y = 5
+
+## Changing the subject
+
+Use the same steps as solving an equation. You are getting a letter on its own instead of a number.
+
+**Problem:** Make a the subject of v = u + at.
+
+1. Subtract u from both sides: v - u = at.
+2. Divide both sides by t: (v - u)/t = a.
+
+**Answer:** a = (v - u)/t
+
+### Real-life example: temperature
+
+**Problem:** F = 1.8C + 32 changes Celsius to Fahrenheit. Make C the subject. Then change 95°F to Celsius.
+
+1. Subtract 32 from both sides: F - 32 = 1.8C.
+2. Divide both sides by 1.8: C = (F - 32)/1.8.
+3. Put in F = 95: C = (95 - 32)/1.8 = 63/1.8 = 35.
+
+**Answer:** C = (F - 32)/1.8, and 95°F = 35°C
+
+## Extended and O Level: equations with fractions
+
+> **Extended and O Level only.** Core students can skip from here to Common mistakes.
+
+Multiply both sides by the denominator (or by all the denominators) to get rid of the fractions.
+
+**Problem:** Solve x/(2x + 1) = 4.
+
+1. Multiply both sides by (2x + 1): x = 4(2x + 1).
+2. Expand: x = 8x + 4.
+3. Subtract 8x: -7x = 4.
+4. Divide by -7: x = -4/7.
+
+**Answer:** x = -4/7
+
+**Problem:** Solve (x + 2)/3 + (x - 1)/2 = 4.
+
+1. The denominators are 3 and 2. Multiply every term by 6.
+2. 6 × (x + 2)/3 = 2(x + 2). 6 × (x - 1)/2 = 3(x - 1). 6 × 4 = 24.
+3. So 2(x + 2) + 3(x - 1) = 24.
+4. Expand: 2x + 4 + 3x - 3 = 24.
+5. Simplify: 5x + 1 = 24. So 5x = 23.
+
+**Answer:** x = 4.6
+
+## Extended and O Level: quadratic equations
+
+A quadratic usually has **two** answers. First make one side equal to 0.
+
+### Method 1: factorising
+
+If two things multiply to give 0, one of them must be 0.
+
+**Problem:** Solve x² - 5x - 14 = 0.
+
+1. Find two numbers that multiply to -14 and add to -5: -7 and 2.
+2. Factorise: (x - 7)(x + 2) = 0.
+3. Either x - 7 = 0, so x = 7. Or x + 2 = 0, so x = -2.
+
+**Answer:** x = 7 or x = -2
+
+### Real-life example: a garden
+
+**Problem:** A rectangular garden is 3 m longer than it is wide. Its area is 40 m². Find its width and length.
+
+1. Let the width = x. Length = x + 3.
+2. Area: x(x + 3) = 40.
+3. Expand and make one side 0: x² + 3x - 40 = 0.
+4. Multiply to -40 and add to 3: 8 and -5. So (x + 8)(x - 5) = 0.
+5. x = -8 or x = 5. A length cannot be negative, so x = 5.
+6. Length = 5 + 3 = 8.
+
+**Answer:** Width 5 m, length 8 m
+
+> Always check if both answers make sense in real life. Reject a negative length or a negative time.
+
+### Real-life example: throwing a ball
+
+**Problem:** A ball is thrown upwards. Its height after t seconds is h = 20t - 5t² metres. When is the ball 15 m high?
+
+1. 20t - 5t² = 15.
+2. Move everything to one side: 5t² - 20t + 15 = 0.
+3. Divide every term by 5: t² - 4t + 3 = 0.
+4. Multiply to 3 and add to -4: -1 and -3. So (t - 1)(t - 3) = 0.
+5. t = 1 or t = 3.
+
+**Answer:** After 1 second (going up) and after 3 seconds (coming down). Both answers make sense here.
+
+### Method 2: the quadratic formula
+
+Use this when the quadratic does not factorise. The formula is given in the exam.
+
+> For ax² + bx + c = 0: **x = (-b ± √(b² - 4ac)) / 2a**
+
+**Problem:** Solve 2x² + 3x - 7 = 0. Give your answers to 2 decimal places.
+
+1. Write down a = 2, b = 3, c = -7.
+2. b² - 4ac = 3² - 4(2)(-7) = 9 + 56 = 65.
+3. x = (-3 ± √65)/(2 × 2) = (-3 ± √65)/4.
+4. √65 = 8.0623 (to 4 d.p.).
+5. x = (-3 + 8.0623)/4 = 1.2656, or x = (-3 - 8.0623)/4 = -2.7656.
+
+**Answer:** x = 1.27 or x = -2.77
+
+> Put brackets round negative numbers. -4(2)(-7) is +56. This is where most mistakes happen.
+
+### Method 3: completing the square
+
+**Problem:** Solve x² + 6x + 2 = 0. Give your answer in surd form.
+
+1. Complete the square (see topic 2.2): x² + 6x + 2 = (x + 3)² - 7.
+2. So (x + 3)² - 7 = 0, which gives (x + 3)² = 7.
+3. Square root both sides. Remember ±: x + 3 = ±√7.
+4. Subtract 3: x = -3 ± √7.
+
+**Answer:** x = -3 + √7 or x = -3 - √7
+
+## Extended and O Level: one linear and one non-linear equation
+
+Use substitution. You will get a quadratic.
+
+**Problem:** Solve y = x + 1 and x² + y² = 13.
+
+1. Replace y with (x + 1): x² + (x + 1)² = 13.
+2. Expand: x² + x² + 2x + 1 = 13.
+3. Simplify and make one side 0: 2x² + 2x - 12 = 0.
+4. Divide by 2: x² + x - 6 = 0. So (x + 3)(x - 2) = 0.
+5. x = -3 or x = 2.
+6. Find y using y = x + 1. When x = -3, y = -2. When x = 2, y = 3.
+
+**Answer:** x = 2, y = 3 or x = -3, y = -2
+
+> Give your answers in pairs. The line crosses the circle at two points: (2, 3) and (-3, -2).
+
+## Extended and O Level: harder changes of subject
+
+### The subject appears twice
+
+Get all the terms with the subject on one side, then factorise.
+
+**Problem:** Make x the subject of ax + 3 = bx + 7.
+
+1. Get the x terms on the left: ax - bx = 7 - 3.
+2. Simplify: ax - bx = 4.
+3. Factorise: x(a - b) = 4.
+4. Divide by (a - b).
+
+**Answer:** x = 4/(a - b)
+
+### The subject has a power or a root
+
+Undo the power with a root, and undo a root with a power.
+
+**Problem:** Make r the subject of A = πr².
+
+1. Divide by π: A/π = r².
+2. Square root both sides: r = √(A/π).
+
+**Answer:** r = √(A/π)
+
+### Real-life example: a pendulum clock
+
+**Problem:** The time for one swing of a pendulum is T = 2π√(l/g). Make l the subject.
+
+1. Divide both sides by 2π: T/(2π) = √(l/g).
+2. Square both sides: T²/(4π²) = l/g.
+3. Multiply both sides by g.
+
+**Answer:** l = gT²/(4π²)
+
+## Common mistakes
+
+- Doing something to one side only.
+- Getting the sign wrong when you move a term: 5 = 5x + 21 gives 5x = 5 - 21 = -16, not 26.
+- Giving only one answer to a quadratic.
+- Dividing a quadratic by x. You lose the answer x = 0.
+
+## Exam tips
+
+- Check every answer by putting it back into the original equation.
+- In word problems, say what your letter stands for and give the answer with units.
+- If the question asks for 2 decimal places or surd form, the quadratic probably does not factorise. Use the formula or complete the square.`,
+  "2.6": `## What you need to know
+
+- What the inequality signs mean.
+- How to show an inequality on a **number line**, and read one.
+- How to list the whole numbers that fit an inequality.
+- Extended and O Level: how to **solve** inequalities, and how to show inequalities in two letters as a **region** on a graph.
+
+## Key words
+
+| Sign | Meaning | Example |
+|---|---|---|
+| < | Less than | x < 4: x is smaller than 4 |
+| > | Greater than | x > 2: x is bigger than 2 |
+| ⩽ | Less than or equal to | x ⩽ 5: x is 5 or smaller |
+| ⩾ | Greater than or equal to | x ⩾ -1: x is -1 or bigger |
+
+| Word | Meaning |
+|---|---|
+| Inequality | A statement that one thing is bigger or smaller than another |
+| Integer | A whole number: ..., -2, -1, 0, 1, 2, ... |
+| Region | An area on a graph where all the points fit the inequalities |
+
+> **Memory trick:** the sign is a mouth that eats the bigger number. In 3 < 7, the open side faces the 7.
+
+## Inequalities in real life
+
+| Situation | Inequality |
+|---|---|
+| You must be at least 120 cm tall to go on a ride | h ⩾ 120 |
+| A lift can carry less than 8 people | p < 8 |
+| Speed limit 80 km/h | s ⩽ 80 |
+| Children aged 5 to 11 pay half price | 5 ⩽ a ⩽ 11 |
+
+## Number lines
+
+- **Open circle** ○ for < or >. The number is **not** included.
+- **Closed circle** ● for ⩽ or ⩾. The number **is** included.
+
+![Number lines for x > 2 and for -3 ⩽ x < 1](/images/maths/2-6-number-lines.svg)
+
+**Problem:** Write down the inequality shown by the second number line.
+
+1. The closed circle is at -3, so -3 is included: -3 ⩽ x.
+2. The open circle is at 1, so 1 is not included: x < 1.
+3. Join them together.
+
+**Answer:** -3 ⩽ x < 1
+
+## Listing integers
+
+**Problem:** List the integers n such that -3 ⩽ n < 1.
+
+1. -3 is included (⩽). Start at -3.
+2. 1 is not included (<). Stop before 1.
+3. List them: -3, -2, -1, 0.
+
+**Answer:** -3, -2, -1, 0
+
+> Do not forget 0. It is an integer.
+
+## Extended and O Level: solving inequalities
+
+> **Extended and O Level only.** Core students can skip from here to Common mistakes.
+
+Solve them just like equations, with **one extra rule**:
+
+> If you **multiply or divide by a negative number**, you must **turn the sign round**.
+
+Why? 2 < 5 is true. Multiply both sides by -1: -2 and -5. But -2 is bigger than -5, so now -2 > -5.
+
+**Problem:** Solve 3x < 2x + 4.
+
+1. Subtract 2x from both sides: x < 4.
+
+**Answer:** x < 4
+
+### Real-life example: a lift
+
+**Problem:** A lift can carry at most 600 kg. Each person weighs about 75 kg. How many people can go in the lift?
+
+1. Let p = number of people. 75p ⩽ 600.
+2. Divide both sides by 75: p ⩽ 8.
+
+**Answer:** At most 8 people
+
+### Real-life example: phone credit
+
+**Problem:** Noor has $25 of credit. Each minute of calls costs $0.20. She has already used $5. How many more minutes can she talk?
+
+1. Let m = minutes. 5 + 0.2m ⩽ 25.
+2. Subtract 5: 0.2m ⩽ 20.
+3. Divide by 0.2: m ⩽ 100.
+
+**Answer:** Up to 100 minutes
+
+### Dividing by a negative
+
+**Problem:** Solve 7 - 2x > 1.
+
+1. Subtract 7 from both sides: -2x > -6.
+2. Divide both sides by -2. This is negative, so turn the sign round: x < 3.
+
+**Answer:** x < 3
+
+> Check with a number. Try x = 0: 7 - 0 = 7, and 7 > 1 is true. 0 < 3, so it agrees.
+
+### Double inequalities
+
+Do the same thing to **all three parts**.
+
+**Problem:** Solve -3 ⩽ 3x - 2 < 7 and list the integer values of x.
+
+1. Add 2 to all three parts: -1 ⩽ 3x < 9.
+2. Divide all three parts by 3: -1/3 ⩽ x < 3.
+3. Integers from -1/3 up to (but not including) 3: 0, 1, 2.
+
+**Answer:** -1/3 ⩽ x < 3. Integers: 0, 1, 2
+
+## Extended and O Level: regions on a graph
+
+1. Draw each line as if the sign were =.
+2. Use a **solid line** for ⩽ or ⩾ (points on the line are included).
+3. Use a **broken (dashed) line** for < or > (points on the line are not included).
+4. **Shade the side you do not want**, unless the question tells you otherwise. The region left unshaded is the answer.
+
+To decide which side, test a point that is not on the line, like (0, 0).
+
+![Region R defined by y ⩾ 1, x + y ⩽ 6 and y < x](/images/maths/2-6-region.svg)
+
+**Problem:** The unshaded region R in the diagram is defined by three inequalities. Write them down.
+
+1. The horizontal line is y = 1. It is solid and R is above it: **y ⩾ 1**.
+2. The line going down is x + y = 6. It is solid. Test (0, 0): 0 + 0 = 0, which is less than 6. (0, 0) is on the same side as R, so: **x + y ⩽ 6**.
+3. The dashed line is y = x. R is below it, and the line is dashed: **y < x**.
+
+**Answer:** y ⩾ 1, x + y ⩽ 6, y < x
+
+**Problem:** List the points with integer coordinates in region R.
+
+1. Points on the solid lines count. Points on the dashed line y = x do not.
+2. y = 1: x can be 2, 3, 4, 5 (x = 1 is on the dashed line). Points (2, 1), (3, 1), (4, 1), (5, 1).
+3. y = 2: x must be more than 2 and x + 2 ⩽ 6, so x = 3 or 4. Points (3, 2), (4, 2).
+4. y = 3: x must be more than 3 and x ⩽ 3. No points.
+
+**Answer:** (2, 1), (3, 1), (4, 1), (5, 1), (3, 2), (4, 2)
+
+## Common mistakes
+
+- Using a closed circle for < or >.
+- Forgetting to turn the sign round when dividing by a negative.
+- Writing the answer as x = 4 instead of x < 4.
+- Shading the region you want when the question says shade the region you do not want.
+
+## Exam tips
+
+- Read the question: does it want integers, or all values?
+- Test a number in your final answer to check the sign faces the right way.`,
+  "2.7": `## What you need to know
+
+- How to continue a sequence and describe its **term-to-term rule**.
+- Special sequences: square, cube and triangle numbers.
+- How to find and use the **nth term** of linear sequences, and simple quadratic and cubic ones like n² + 1 and n³.
+- Extended and O Level: the nth term of any quadratic sequence, **exponential** sequences like 3, 6, 12, 24, and simple mixtures of these.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Sequence | A list of numbers that follows a rule |
+| Term | One number in the sequence |
+| Term-to-term rule | How to get from one term to the next, like "add 3" |
+| nth term | A rule that gives any term from its position n |
+| Difference | What you add to get from one term to the next |
+| Linear sequence | The difference is always the same |
+
+## Term-to-term rules
+
+**Problem:** Find the next two terms and the rule for each sequence.
+
+1. 7, 11, 15, 19, ... Add 4 each time. Next: **23, 27**.
+2. 40, 34, 28, 22, ... Subtract 6 each time. Next: **16, 10**.
+3. 2, 6, 18, 54, ... Multiply by 3 each time. Next: **162, 486**.
+4. 1, 3, 6, 10, 15, ... Add 2, then 3, then 4, then 5. Next: add 6 and 7, so **21, 28**.
+
+## Special sequences to learn
+
+| Name | Sequence | nth term |
+|---|---|---|
+| Square numbers | 1, 4, 9, 16, 25, ... | n² |
+| Cube numbers | 1, 8, 27, 64, 125, ... | n³ |
+| Triangle numbers | 1, 3, 6, 10, 15, ... | n(n + 1)/2 |
+
+## The nth term of a linear sequence
+
+> nth term = **(difference) × n + (zero term)**
+
+The zero term is the number that would come **before** the first term.
+
+**Problem:** Find the nth term of 5, 8, 11, 14, ...
+
+1. The difference is 3. So the rule starts **3n**.
+2. Go back one step from the first term: 5 - 3 = **2**. This is the zero term.
+3. Put them together: 3n + 2.
+
+**Answer:** 3n + 2
+
+> Check: when n = 1, 3(1) + 2 = 5. When n = 2, 3(2) + 2 = 8. Correct.
+
+### Using the nth term
+
+**Problem:** For the sequence 3n + 2, find the 50th term. Is 100 in the sequence?
+
+1. 50th term: put n = 50. 3(50) + 2 = 152.
+2. For 100: solve 3n + 2 = 100. Subtract 2: 3n = 98. Divide by 3: n = 32.67.
+3. n must be a whole number, so 100 is not a term.
+
+**Answer:** 152. No, 100 is not in the sequence.
+
+### Real-life example: matchstick squares
+
+A row of 1 square needs 4 matchsticks. A row of 2 squares needs 7. A row of 3 squares needs 10.
+
+**Problem:** How many matchsticks are needed for a row of 20 squares?
+
+1. Sequence: 4, 7, 10, ... The difference is 3, so the rule starts 3n.
+2. Zero term: 4 - 3 = 1. nth term = 3n + 1.
+3. Put n = 20: 3(20) + 1 = 61.
+
+**Answer:** 61 matchsticks
+
+### Real-life example: seats in a hall
+
+**Problem:** Row 1 of a hall has 20 seats. Each row has 2 more seats than the row in front. How many seats are in row 15?
+
+1. Sequence: 20, 22, 24, ... Difference 2, so the rule starts 2n.
+2. Zero term: 20 - 2 = 18. nth term = 2n + 18.
+3. Put n = 15: 2(15) + 18 = 48.
+
+**Answer:** 48 seats
+
+### A decreasing sequence
+
+**Problem:** Find the nth term of 30, 26, 22, 18, ...
+
+1. The difference is -4. So the rule starts **-4n**.
+2. Zero term: 30 + 4 = 34.
+3. nth term: -4n + 34, which is the same as 34 - 4n.
+
+**Answer:** 34 - 4n
+
+## Simple quadratic and cubic sequences
+
+Compare the sequence with the square numbers or cube numbers.
+
+**Problem:** Find the nth term of 2, 5, 10, 17, ...
+
+| n | 1 | 2 | 3 | 4 |
+|---|---|---|---|---|
+| Sequence | 2 | 5 | 10 | 17 |
+| n² | 1 | 4 | 9 | 16 |
+
+1. Write the square numbers under the sequence, as in the table.
+2. Each term is 1 more than n².
+
+**Answer:** n² + 1
+
+**Problem:** Find the nth term of 2, 9, 28, 65, ...
+
+1. The cube numbers are 1, 8, 27, 64.
+2. Each term is 1 more than n³.
+
+**Answer:** n³ + 1
+
+## Extended and O Level: any quadratic sequence
+
+> **Extended and O Level only.** Core students can skip from here to Common mistakes.
+
+If the **second differences** are the same, the sequence is quadratic: an² + bn + c.
+
+> **a = second difference ÷ 2**
+
+**Problem:** Find the nth term of 5, 12, 23, 38, 57, ...
+
+| n | 1 | 2 | 3 | 4 | 5 |
+|---|---|---|---|---|---|
+| Sequence | 5 | 12 | 23 | 38 | 57 |
+| 2n² | 2 | 8 | 18 | 32 | 50 |
+| What is left | 3 | 4 | 5 | 6 | 7 |
+
+1. First differences: 7, 11, 15, 19.
+2. Second differences: 4, 4, 4. So a = 4 ÷ 2 = 2. The rule starts **2n²**.
+3. Take 2n² away from each term, as in the table.
+4. What is left (3, 4, 5, 6, 7) is linear: difference 1, zero term 2. So n + 2.
+5. Add the parts together.
+
+**Answer:** 2n² + n + 2
+
+### Real-life example: handshakes
+
+When 2 people meet, there is 1 handshake. With 3 people there are 3. With 4 people there are 6. With 5 people there are 10.
+
+**Problem:** Everyone in a group of n people shakes hands once with everyone else. Find a formula. How many handshakes for 30 people?
+
+1. Start the sequence at n = 1 (one person, no handshakes): 0, 1, 3, 6, 10.
+2. First differences: 1, 2, 3, 4. Second differences: 1, 1, 1. So a = 1/2. The rule starts n²/2.
+3. Take n²/2 away from each term: 0 - 0.5 = -0.5, 1 - 2 = -1, 3 - 4.5 = -1.5, 6 - 8 = -2.
+4. What is left (-0.5, -1, -1.5, -2) is linear: -n/2.
+5. Formula: n²/2 - n/2 = n(n - 1)/2.
+6. For 30 people: 30 × 29 ÷ 2 = 435.
+
+**Answer:** n(n - 1)/2. For 30 people: 435 handshakes.
+
+## Extended and O Level: exponential sequences
+
+Here you **multiply** by the same number each time.
+
+> nth term = **first term × (multiplier)ⁿ⁻¹**
+
+**Problem:** Find the nth term of 3, 6, 12, 24, ...
+
+1. Multiply by 2 each time.
+2. First term 3.
+
+**Answer:** 3 × 2ⁿ⁻¹
+
+### Real-life example: a message spreads
+
+**Problem:** On day 1, one person sends a message. Each day, every person who got it the day before sends it to 3 new people. How many new people get it on day 8?
+
+1. Day 1: 1. Day 2: 3. Day 3: 9. Day 4: 27. Multiply by 3 each time.
+2. nth term = 1 × 3ⁿ⁻¹ = 3ⁿ⁻¹.
+3. Day 8: 3⁷ = 2187.
+
+**Answer:** 2187 people
+
+## Extended and O Level: mixtures
+
+**Problem:** Find the nth term of 3, 6, 11, 20, 37, ...
+
+1. The differences (3, 5, 9, 17) are not the same, and the second differences (2, 4, 8) are not the same either. They are doubling, which suggests powers of 2.
+2. Compare with 2ⁿ: 2, 4, 8, 16, 32.
+3. Sequence minus 2ⁿ: 1, 2, 3, 4, 5. This is n.
+
+**Answer:** 2ⁿ + n
+
+> You may see the nth term written as Tₙ. For example, Tₙ = 3n + 2 means the same as "nth term = 3n + 2", and T₅ is the 5th term.
+
+## Common mistakes
+
+- Writing n + 3 instead of 3n + 2 for 5, 8, 11. The difference goes **in front of n**.
+- For a decreasing sequence, forgetting the minus sign in front of n.
+- Saying 100 is a term when n is not a whole number.
+
+## Exam tips
+
+- Always check your nth term with the first two terms.
+- If the first differences are not the same, find the second differences.`,
+  "2.8": `## What you need to know
+
+> **Extended and O Level only.** This topic is not in IGCSE Core.
+
+- What **direct** and **inverse proportion** mean.
+- How to write a proportion as a formula with a constant **k**.
+- How to use the formula to find unknown values.
+- Proportion to x, x², x³, √x and ∛x.
+- The symbol **∝** means "is proportional to".
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Direct proportion | When one goes up, the other goes up at the same rate. Double one and the other doubles |
+| Inverse proportion | When one goes up, the other goes down. Double one and the other halves |
+| Constant of proportionality (k) | The fixed number that links the two quantities |
+| ∝ | "Is proportional to" |
+
+## The four steps
+
+Every proportion question uses the same steps.
+
+1. Write the proportion with ∝.
+2. Change ∝ to "= k ×".
+3. Use the values you are given to find k.
+4. Write the formula with the value of k, then use it.
+
+## Direct proportion
+
+| In words | With ∝ | Formula |
+|---|---|---|
+| y is proportional to x | y ∝ x | y = kx |
+| y is proportional to the square of x | y ∝ x² | y = kx² |
+| y is proportional to the cube of x | y ∝ x³ | y = kx³ |
+| y is proportional to the square root of x | y ∝ √x | y = k√x |
+| y is proportional to the cube root of x | y ∝ ∛x | y = k∛x |
+
+### Real-life example: buying petrol
+
+**Problem:** The cost, C dollars, of petrol is proportional to the number of litres, L. 40 litres cost $92. How much do 55 litres cost?
+
+1. C ∝ L.
+2. C = kL.
+3. Put in C = 92 and L = 40: 92 = 40k. Divide by 40: k = 2.3.
+4. Formula: C = 2.3L. Put in L = 55: C = 2.3 × 55 = 126.5.
+
+**Answer:** $126.50
+
+### Real-life example: stopping distance
+
+**Problem:** The stopping distance, d metres, of a car is proportional to the square of its speed, v km/h. At 40 km/h the stopping distance is 16 m. Find the stopping distance at 100 km/h.
+
+1. d ∝ v².
+2. d = kv².
+3. Put in d = 16 and v = 40: 16 = k × 40² = 1600k. So k = 16 ÷ 1600 = 0.01.
+4. Formula: d = 0.01v². Put in v = 100: d = 0.01 × 100² = 0.01 × 10 000 = 100.
+
+**Answer:** 100 m
+
+> Notice: the speed is 2.5 times bigger, but the stopping distance is 2.5² = 6.25 times bigger. That is why driving fast is so dangerous.
+
+### Real-life example: falling objects
+
+**Problem:** The time, t seconds, for a stone to fall is proportional to the square root of the height, h metres. It takes 1.8 seconds to fall 16 m. How long does it take to fall 64 m?
+
+1. t ∝ √h.
+2. t = k√h.
+3. Put in t = 1.8 and h = 16: 1.8 = k × √16 = 4k. So k = 0.45.
+4. Formula: t = 0.45√h. Put in h = 64: t = 0.45 × √64 = 0.45 × 8 = 3.6.
+
+**Answer:** 3.6 seconds
+
+### Real-life example: metal balls
+
+**Problem:** The mass, m grams, of a metal ball is proportional to the cube of its radius, r cm. A ball with radius 2 cm has a mass of 40 g. Find the mass of a ball with radius 3 cm.
+
+1. m ∝ r³.
+2. m = kr³.
+3. Put in m = 40 and r = 2: 40 = k × 2³ = 8k. So k = 5.
+4. Formula: m = 5r³. Put in r = 3: m = 5 × 27 = 135.
+
+**Answer:** 135 g
+
+## Inverse proportion
+
+| In words | With ∝ | Formula |
+|---|---|---|
+| y is inversely proportional to x | y ∝ 1/x | y = k/x |
+| y is inversely proportional to x² | y ∝ 1/x² | y = k/x² |
+| y is inversely proportional to √x | y ∝ 1/√x | y = k/√x |
+
+### Real-life example: building a wall
+
+**Problem:** The time, t days, to build a wall is inversely proportional to the number of workers, w. 6 workers take 10 days. How long will 15 workers take?
+
+1. t ∝ 1/w.
+2. t = k/w.
+3. Put in t = 10 and w = 6: 10 = k/6. Multiply by 6: k = 60.
+4. Formula: t = 60/w. Put in w = 15: t = 60 ÷ 15 = 4.
+
+**Answer:** 4 days
+
+### Real-life example: brightness of a light
+
+**Problem:** The brightness, B, of a lamp is inversely proportional to the square of the distance, d metres, from the lamp. At 2 m the brightness is 50. Find the brightness at 5 m.
+
+1. B ∝ 1/d².
+2. B = k/d².
+3. Put in B = 50 and d = 2: 50 = k/4. So k = 200.
+4. Formula: B = 200/d². Put in d = 5: B = 200 ÷ 25 = 8.
+
+**Answer:** 8
+
+### Finding the other quantity
+
+**Problem:** Using B = 200/d², how far from the lamp is the brightness 2?
+
+1. 2 = 200/d².
+2. Multiply both sides by d²: 2d² = 200.
+3. Divide by 2: d² = 100.
+4. Square root: d = 10 (a distance cannot be negative).
+
+**Answer:** 10 m
+
+## What happens when one quantity changes
+
+**Problem:** y is proportional to x². What happens to y when x is doubled?
+
+1. y = kx².
+2. Replace x with 2x: y = k(2x)² = 4kx².
+3. So the new y is 4 times the old y.
+
+**Answer:** y is multiplied by 4.
+
+**Problem:** y is inversely proportional to x. What happens to y when x is multiplied by 3?
+
+1. y = k/x. Replace x with 3x: y = k/(3x).
+2. This is 1/3 of the old y.
+
+**Answer:** y is divided by 3.
+
+## Common mistakes
+
+- Using y = kx when the question says "the square of x". Read every word.
+- Forgetting to square or cube x when you find k.
+- Using direct proportion when the question says "inversely".
+
+## Exam tips
+
+- Always write the formula with the value of k. The question often has two parts, and you need the formula for both.
+- Check your answer makes sense: inverse proportion means more of one gives less of the other.`,
+  "2.9": `## What you need to know
+
+- How to read and draw **distance-time graphs** (travel graphs).
+- How to read and draw **conversion graphs**.
+- The **gradient** (steepness) of a straight line shows a **rate of change**, like speed.
+- Extended and O Level: **speed-time graphs**, acceleration, the **area under** a speed-time graph, and estimating the gradient of a curve with a **tangent**.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Gradient | How steep a line is: up ÷ across |
+| Rate of change | How fast one thing changes compared with another |
+| Distance-time graph | Shows how far something has gone at each time |
+| Speed-time graph | Shows how fast something is going at each time |
+| Acceleration | How quickly speed increases |
+| Deceleration | How quickly speed decreases |
+| Tangent | A straight line that just touches a curve at one point |
+
+## Gradient
+
+> **Gradient = change up ÷ change across**
+
+On a distance-time graph, **gradient = distance ÷ time = speed**.
+
+- Steeper line: faster.
+- Flat (horizontal) line: stopped.
+- Line going down: coming back towards the start.
+
+## Distance-time graphs
+
+![Distance-time graph of Hamza's bike ride](/images/maths/2-9-travel-graph.svg)
+
+### Real-life example: a bike ride
+
+Hamza cycles from home to his friend's house, stays there, then cycles home. The graph shows his journey.
+
+**Problem:** (a) How long did he stay at his friend's house? (b) Find his speed on the way there. (c) Find his speed on the way home.
+
+1. (a) The flat part goes from 09:45 to 10:15. That is **30 minutes**.
+2. (b) Going: 12 km in 45 minutes. 45 minutes = 0.75 hours. Speed = 12 ÷ 0.75 = **16 km/h**.
+3. (c) Coming home: 12 km from 10:15 to 11:15, which is 1 hour. Speed = 12 ÷ 1 = **12 km/h**.
+
+**Answer:** (a) 30 minutes (b) 16 km/h (c) 12 km/h
+
+> Always change minutes to hours before you work out km/h. Divide the minutes by 60.
+
+### Average speed for the whole journey
+
+**Problem:** Find Hamza's average speed for the whole trip, from 09:00 to 11:15.
+
+1. Total distance = 12 + 12 = 24 km.
+2. Total time = 2 hours 15 minutes = 2.25 hours. Include the time he stopped.
+3. Average speed = 24 ÷ 2.25 = 10.67 (to 2 d.p.).
+
+**Answer:** 10.7 km/h (to 3 significant figures)
+
+## Conversion graphs
+
+A conversion graph changes one unit into another. It is a straight line, usually through (0, 0).
+
+### Real-life example: Saudi riyals and US dollars
+
+$1 = 3.75 riyals.
+
+**Problem:** Make a table of values to draw a conversion graph from $0 to $100. Use it to change $60 to riyals, and 300 riyals to dollars.
+
+| Dollars | 0 | 20 | 40 | 100 |
+|---|---|---|---|---|
+| Riyals | 0 | 75 | 150 | 375 |
+
+1. Work out the table: multiply each dollar amount by 3.75.
+2. Plot the points and join them with a straight line.
+3. Go up from $60 to the line, then across: **225 riyals**. (Check: 60 × 3.75 = 225.)
+4. Go across from 300 riyals to the line, then down: **$80**. (Check: 300 ÷ 3.75 = 80.)
+
+**Answer:** $60 = 225 riyals, 300 riyals = $80
+
+> The gradient of this line is 375 ÷ 100 = 3.75. That is the exchange rate: riyals per dollar.
+
+## Extended and O Level: speed-time graphs
+
+> **Extended and O Level only.** Core students can skip from here to Common mistakes.
+
+On a speed-time graph:
+
+> **Gradient = acceleration**
+
+> **Area under the graph = distance travelled**
+
+- Line going up: speeding up (accelerating).
+- Flat line: steady speed.
+- Line going down: slowing down (decelerating).
+
+![Speed-time graph of a car between two traffic lights](/images/maths/2-9-speed-time.svg)
+
+### Real-life example: a car between traffic lights
+
+A car starts at a traffic light, speeds up to 20 m/s in 10 seconds, travels at 20 m/s for 30 seconds, then slows down and stops in 15 seconds.
+
+**Problem:** (a) Find the acceleration for the first 10 seconds. (b) Find the deceleration at the end. (c) Find the total distance travelled.
+
+1. (a) Gradient = 20 ÷ 10 = **2 m/s²**.
+2. (b) The speed falls by 20 m/s in 15 s. Deceleration = 20 ÷ 15 = **1.33 m/s²** (to 3 s.f.).
+3. (c) Split the area under the graph into three shapes. Triangle A: ½ × 10 × 20 = 100 m.
+4. Rectangle B: 30 × 20 = 600 m.
+5. Triangle C: ½ × 15 × 20 = 150 m.
+6. Total = 100 + 600 + 150 = 850 m.
+
+**Answer:** (a) 2 m/s² (b) 1.33 m/s² (c) 850 m
+
+> You can also find the area as one trapezium: ½ × (30 + 55) × 20 = 850. The parallel sides are the top (30 s) and the bottom (55 s).
+
+> Units of acceleration: m/s² means "metres per second, every second". An acceleration of 2 m/s² means the speed goes up by 2 m/s every second.
+
+## Extended and O Level: gradient of a curve
+
+When a graph is curved, the gradient changes. To estimate the gradient at one point:
+
+1. Draw a **tangent**: a straight line that just touches the curve at that point.
+2. Pick two points on the tangent that are far apart.
+3. Gradient = change up ÷ change across.
+
+### Real-life example: a ball rolling down a slope
+
+**Problem:** A distance-time graph for a rolling ball is a curve. A tangent is drawn at t = 3 seconds. It passes through (1, 2) and (5, 18). Estimate the speed of the ball at 3 seconds.
+
+1. Change up: 18 - 2 = 16 m.
+2. Change across: 5 - 1 = 4 s.
+3. Gradient = 16 ÷ 4 = 4.
+
+**Answer:** About 4 m/s
+
+> Your answer is an **estimate**, because a hand-drawn tangent is never perfect. The exam accepts a range of answers.
+
+## Common mistakes
+
+- Forgetting to change minutes into hours.
+- On a distance-time graph, thinking a flat line means moving at a steady speed. It means **stopped**.
+- Mixing up the two graphs. On a speed-time graph a flat line means steady speed, not stopped.
+- Using the wrong units: area of a speed-time graph in m/s × s gives metres.
+
+## Exam tips
+
+- Read the scales on both axes carefully. One small square is not always 1.
+- For gradients, pick points where the line crosses grid corners. It makes reading easier.`,
+  "2.10": `## What you need to know
+
+- How to complete a **table of values** and draw a graph.
+- The graphs of straight lines (y = ax + b), **quadratics** (y = ±x² + ax + b) and **reciprocals** (y = a/x).
+- How to **solve equations using a graph**: read where the curve crosses the x-axis, or where it crosses a line.
+- Extended and O Level: graphs of other powers of x (like x³ and 1/x²), sums of these, and **exponential** graphs like y = 800 × 0.8ˣ.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Table of values | A table of x values and the y values you work out from the equation |
+| Quadratic graph | A U-shaped (or upside-down U) curve. It has x² in it |
+| Reciprocal graph | A curve in two parts from y = a/x. It never touches the axes |
+| Root | Where a graph crosses the x-axis. At a root, y = 0 |
+| Line of symmetry | A line that cuts the curve into two mirror halves |
+| Exponential graph | A curve that grows or shrinks by the same multiplier each step |
+
+## Drawing a graph step by step
+
+1. Complete the table of values. Use a calculator and brackets for negative numbers.
+2. Plot each point with a small cross.
+3. For a straight line, use a ruler. For a curve, join the points with **one smooth curve**. Do not join them with straight lines.
+4. Do not draw the curve flat at the bottom. A quadratic has a rounded bottom.
+
+## Quadratic graphs
+
+**Problem:** Complete the table of values for y = x² - 2x - 3, for x from -2 to 4.
+
+| x | -2 | -1 | 0 | 1 | 2 | 3 | 4 |
+|---|---|---|---|---|---|---|---|
+| y | 5 | 0 | -3 | -4 | -3 | 0 | 5 |
+
+1. Example for x = -2: (-2)² - 2(-2) - 3 = 4 + 4 - 3 = 5.
+2. Example for x = 1: 1² - 2(1) - 3 = 1 - 2 - 3 = -4.
+3. Work out the others in the same way, then plot and join with a smooth curve.
+
+![Graph of y = x² - 2x - 3 with the line y = 2](/images/maths/2-10-quadratic.svg)
+
+### Reading the graph
+
+**Problem:** Use the graph to solve x² - 2x - 3 = 0.
+
+1. "= 0" means y = 0. That is the x-axis.
+2. Read where the curve crosses the x-axis: x = -1 and x = 3.
+
+**Answer:** x = -1 or x = 3
+
+**Problem:** Use the graph to solve x² - 2x - 3 = 2.
+
+1. Draw the line y = 2 across the graph.
+2. Read the x values where the line crosses the curve: about x = -1.4 and x = 3.4.
+
+**Answer:** x ≈ -1.4 or x ≈ 3.4
+
+> These are estimates. The exact answers are 1 - √6 = -1.449... and 1 + √6 = 3.449...
+
+### Using the graph to solve a different equation
+
+**Problem:** Use the graph of y = x² - 2x - 3 to solve x² - 3x - 4 = 0. Find the line you need to draw.
+
+1. Make the left side match the graph. x² - 3x - 4 = 0 can be written as x² - 2x - 3 - x - 1 = 0.
+2. So x² - 2x - 3 = x + 1.
+3. The left side is the graph. The right side is the line to draw: **y = x + 1**.
+4. Draw y = x + 1 and read where it crosses the curve: x = -1 and x = 4.
+
+**Answer:** Draw y = x + 1. Solutions x = -1 and x = 4.
+
+### Line of symmetry and lowest point
+
+The curve is symmetrical. The roots are -1 and 3, so the line of symmetry is halfway: x = (-1 + 3) ÷ 2 = **1**. The lowest point is at x = 1, where y = -4. So the lowest point is **(1, -4)**.
+
+> If the x² term is **negative** (like y = -x² + 4), the curve is upside down: a hill with a highest point.
+
+## Reciprocal graphs
+
+### Real-life example: a road trip
+
+**Problem:** A family drives 120 km. The time, t hours, depends on the average speed, v km/h: t = 120/v. Draw the graph for v from 20 to 120, and use it to find the speed needed to do the trip in 2.5 hours.
+
+| v | 20 | 30 | 40 | 60 | 80 | 120 |
+|---|---|---|---|---|---|---|
+| t | 6 | 4 | 3 | 2 | 1.5 | 1 |
+
+1. Work out each t: for example 120 ÷ 40 = 3.
+2. Plot the points and join with a smooth curve.
+3. Go across from t = 2.5 to the curve, then down to the v axis: about 48.
+
+**Answer:** About 48 km/h (check: 120 ÷ 48 = 2.5)
+
+![Graph of t = 120/v](/images/maths/2-10-reciprocal.svg)
+
+> The faster you go, the less time it takes, but the curve never reaches 0. This is inverse proportion (topic 2.8).
+
+The full graph of y = a/x has **two parts**, one on each side of the y-axis. You cannot put x = 0 into it, because you cannot divide by 0.
+
+## Extended and O Level: other powers of x
+
+> **Extended and O Level only.** Core students can skip from here to Common mistakes.
+
+You may be asked to draw graphs with terms like x³, 1/x, 1/x², √x and 1/√x, added together (up to three terms). The method is the same: table, plot, smooth curve.
+
+**Problem:** Complete the table for y = x³ - 3x and use the graph to solve x³ - 3x = 1.
+
+| x | -2 | -1.5 | -1 | -0.5 | 0 | 0.5 | 1 | 1.5 | 2 |
+|---|---|---|---|---|---|---|---|---|---|
+| y | -2 | 1.125 | 2 | 1.375 | 0 | -1.375 | -2 | -1.125 | 2 |
+
+1. Example for x = -1.5: (-1.5)³ - 3(-1.5) = -3.375 + 4.5 = 1.125.
+2. Plot and join with a smooth S-shaped curve.
+3. Draw the line y = 1 and read where it crosses the curve.
+
+**Answer:** x ≈ -1.5, x ≈ -0.3 and x ≈ 1.9
+
+> A cubic can cross a line up to **three** times, so look for three answers.
+
+## Extended and O Level: exponential graphs
+
+These have x in the power, like y = 2ˣ or y = 800 × 0.8ˣ.
+
+- If the number being powered is **more than 1**, the graph grows faster and faster (growth).
+- If it is **between 0 and 1**, the graph falls and levels off (decay).
+
+### Real-life example: value of a phone
+
+**Problem:** A new phone costs $800. Its value falls by 20% each year, so after x years its value is y = 800 × 0.8ˣ dollars. Draw the graph for 0 to 5 years and find when the phone is worth half its price.
+
+| x (years) | 0 | 1 | 2 | 3 | 4 | 5 |
+|---|---|---|---|---|---|---|
+| y ($) | 800 | 640 | 512 | 410 | 328 | 262 |
+
+1. Work out each value: for example 800 × 0.8² = 800 × 0.64 = 512. Round to the nearest dollar.
+2. Plot and join with a smooth curve.
+3. Half the price is $400. Go across from 400 to the curve, then down: about 3.1.
+
+**Answer:** After about 3.1 years
+
+![Graph of y = 800 × 0.8ˣ](/images/maths/2-10-exponential.svg)
+
+## Common mistakes
+
+- Getting the wrong sign when you square a negative number. (-3)² = 9, not -9.
+- Joining the points with straight lines instead of a smooth curve.
+- Joining the two parts of a reciprocal graph across x = 0.
+- Reading the y value when the question asks for x.
+
+## Exam tips
+
+- Check your table: a quadratic table is symmetrical. If one value breaks the pattern, work it out again.
+- When you solve with a graph, give answers to 1 decimal place, as accurately as you can read.`,
+  "2.11": `## What you need to know
+
+- How to recognise and **sketch** straight-line and quadratic graphs.
+- A sketch shows the **shape** and the important points: where it crosses the axes (the **roots** and the y-intercept) and the line of symmetry.
+- Extended and O Level: sketches of **cubic**, **reciprocal** and **exponential** graphs, **turning points** and **asymptotes**, and finding the turning point of a quadratic by completing the square.
+
+A sketch is not an accurate drawing. You do not need graph paper or a table of values. You need the right shape and the right points labelled.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Sketch | A quick drawing that shows the shape and the key points |
+| Root | Where the graph crosses the x-axis (y = 0) |
+| y-intercept | Where the graph crosses the y-axis (x = 0) |
+| Turning point | The lowest point (minimum) or highest point (maximum) of a curve |
+| Asymptote | A line the graph gets closer and closer to but never touches |
+
+## Shapes to recognise
+
+![The shapes of the main graphs](/images/maths/2-11-curve-shapes.svg)
+
+| Equation | Shape |
+|---|---|
+| y = ax + b | Straight line |
+| y = x² + ... | U shape (a valley) |
+| y = -x² + ... | Upside-down U (a hill) |
+| y = x³ + ... | S shape: starts low on the left, ends high on the right |
+| y = a/x | Two separate curves, never touching the axes |
+| y = 2ˣ | Starts flat, then shoots up |
+
+## Sketching a quadratic
+
+1. Find the **y-intercept**: put x = 0.
+2. Find the **roots**: put y = 0 and solve (usually by factorising).
+3. Find the **line of symmetry**: halfway between the roots.
+4. Draw the U shape (or upside-down U) through these points and label them.
+
+**Problem:** Sketch y = x² - 6x + 5.
+
+1. y-intercept: x = 0 gives y = 5. So the curve crosses the y-axis at (0, 5).
+2. Roots: x² - 6x + 5 = 0. Factorise: (x - 1)(x - 5) = 0. So x = 1 or x = 5.
+3. Line of symmetry: halfway between 1 and 5 is x = 3.
+4. The x² is positive, so it is a U shape. Draw it through (0, 5), (1, 0) and (5, 0), symmetrical about x = 3.
+
+**Answer:** A U-shaped curve crossing the y-axis at 5, crossing the x-axis at 1 and 5, with line of symmetry x = 3.
+
+### Real-life example: an arch
+
+**Problem:** The shape of an arch is y = 8x - x², where x and y are in metres and the ground is the x-axis. How wide is the arch at the bottom, and how high is it?
+
+1. The x² is negative, so it is a hill shape.
+2. Roots: 8x - x² = 0. Factorise: x(8 - x) = 0. So x = 0 or x = 8.
+3. The arch is 8 - 0 = 8 m wide.
+4. Line of symmetry: halfway, at x = 4. The top of the arch is here.
+5. Height: put x = 4: y = 8(4) - 4² = 32 - 16 = 16.
+
+**Answer:** 8 m wide and 16 m high
+
+## Extended and O Level: turning points by completing the square
+
+> **Extended and O Level only.** Core students can skip from here to Common mistakes.
+
+If y = (x + p)² + q, the turning point is **(-p, q)**.
+
+Why? (x + p)² can never be negative. Its smallest value is 0, when x = -p. Then y = q.
+
+**Problem:** Find the turning point of y = x² + 4x + 7. Does the curve cross the x-axis?
+
+1. Half of 4 is 2. (x + 2)² = x² + 4x + 4.
+2. We need +7, not +4, so add 3: y = (x + 2)² + 3.
+3. Turning point: x = -2, y = 3. So (-2, 3). It is a minimum, because the x² is positive.
+4. The lowest point is at y = 3, which is above the x-axis.
+
+**Answer:** Minimum point (-2, 3). The curve does not cross the x-axis, so x² + 4x + 7 = 0 has no solutions.
+
+## Extended and O Level: cubic graphs
+
+**Problem:** Sketch y = x(x - 2)(x + 3).
+
+1. Roots: each bracket = 0. x = 0, x = 2 or x = -3.
+2. y-intercept: x = 0 gives y = 0. It passes through the origin.
+3. Multiplying the x terms gives x³, which is positive. So it starts low on the left and ends high on the right.
+4. Draw the S shape through (-3, 0), (0, 0) and (2, 0). It goes up through -3, turns, comes down through 0, turns again, and goes up through 2.
+
+**Answer:** An S-shaped curve through (-3, 0), (0, 0) and (2, 0), with one maximum and one minimum.
+
+> If the x³ term is negative, the shape is flipped: it starts high on the left and ends low on the right.
+
+## Extended and O Level: asymptotes
+
+### Reciprocal graphs
+
+y = 1/x has two asymptotes: the x-axis (y = 0) and the y-axis (x = 0).
+
+**Problem:** Write down the asymptotes of y = 1/x + 2.
+
+1. You still cannot divide by 0, so x = 0 is an asymptote.
+2. When x is very big, 1/x is almost 0, so y is almost 2. So y = 2 is an asymptote.
+
+**Answer:** x = 0 and y = 2
+
+### Exponential graphs
+
+y = 2ˣ passes through (0, 1), because 2⁰ = 1. On the left it gets closer and closer to the x-axis but never touches it. So y = 0 is an asymptote.
+
+**Problem:** Sketch y = 2ˣ + 1. Give the y-intercept and the asymptote.
+
+1. y-intercept: x = 0 gives 2⁰ + 1 = 1 + 1 = 2.
+2. The +1 moves the whole graph up by 1, so the asymptote moves from y = 0 to y = 1.
+3. Draw the growth shape through (0, 2), getting closer to the line y = 1 on the left.
+
+**Answer:** y-intercept (0, 2). Asymptote y = 1.
+
+### Real-life example: a cup of tea
+
+**Problem:** The temperature of a cup of tea after t minutes is T = 70 × 0.9ᵗ + 20 (in °C). What was its starting temperature, and what temperature does it cool towards?
+
+1. Start: t = 0 gives 70 × 0.9⁰ + 20 = 70 × 1 + 20 = 90.
+2. As t gets bigger, 0.9ᵗ gets closer to 0. So T gets closer to 0 + 20 = 20.
+3. The asymptote is T = 20. This is the room temperature.
+
+**Answer:** It starts at 90°C and cools towards 20°C, but never goes below it.
+
+## Common mistakes
+
+- Drawing a quadratic with a pointed V at the bottom instead of a smooth curve.
+- Not labelling the points where the graph crosses the axes.
+- Getting the sign of the turning point wrong: (x + 2)² + 3 has its turning point at x = **-2**, not 2.
+- Letting a curve touch or cross its asymptote.
+
+## Exam tips
+
+- A sketch should be neat, but it does not need to be to scale. The labels earn the marks.
+- Always check the sign of the highest power. It tells you which way the curve faces.`,
+  "2.12": `## What you need to know
+
+> **IGCSE Extended only.** This topic is not in O Level 4024 or IGCSE Core.
+
+- The gradient of a curve changes from point to point. You can estimate it by drawing a **tangent** (see topic 2.9).
+- **Differentiation** gives a formula for the gradient at any point. It is written **dy/dx**.
+- How to differentiate axⁿ, and sums of up to three terms like x³ - 6x² + 5x.
+- How to find the gradient at a point, and the **turning points** (stationary points) of a curve.
+- How to tell if a turning point is a **maximum** or a **minimum**.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Differentiate | Find the formula for the gradient |
+| dy/dx | The gradient function. Say "d y by d x" |
+| Gradient function | A formula that gives the gradient for any value of x |
+| Stationary point | A point where the gradient is 0. The curve is flat there for a moment |
+| Maximum | A stationary point at the top of a hill |
+| Minimum | A stationary point at the bottom of a valley |
+
+## The rule
+
+> If **y = axⁿ**, then **dy/dx = naxⁿ⁻¹**
+
+In words: **multiply by the power, then take 1 off the power.**
+
+| y | dy/dx | How |
+|---|---|---|
+| x³ | 3x² | Power 3 comes down, new power 2 |
+| 5x² | 10x | 2 × 5 = 10, new power 1 |
+| 3x⁴ | 12x³ | 4 × 3 = 12, new power 3 |
+| 7x | 7 | 7x = 7x¹. 1 × 7 = 7, new power 0, and x⁰ = 1 |
+| 9 | 0 | A number on its own has gradient 0 (a flat line) |
+
+> Why is the answer 0 for a number? y = 9 is a horizontal line. A horizontal line has gradient 0.
+
+## Differentiating sums
+
+Differentiate each term on its own.
+
+**Problem:** Find dy/dx when y = x³ - 6x² + 5x - 2.
+
+1. x³ gives 3x².
+2. -6x² gives 2 × (-6)x = -12x.
+3. 5x gives 5.
+4. -2 gives 0.
+
+**Answer:** dy/dx = 3x² - 12x + 5
+
+## Gradient at a point
+
+Find dy/dx, then put in the value of x.
+
+**Problem:** Find the gradient of y = x³ - 6x² + 5x - 2 at the point where x = 2.
+
+1. dy/dx = 3x² - 12x + 5.
+2. Put in x = 2: 3(2)² - 12(2) + 5 = 12 - 24 + 5 = -7.
+
+**Answer:** The gradient is -7 (the curve is going down at that point).
+
+## Stationary points
+
+At the top of a hill or the bottom of a valley, the curve is flat for a moment. So **dy/dx = 0**.
+
+1. Find dy/dx.
+2. Make dy/dx = 0 and solve to find x.
+3. Put each x into the **original** equation to find y.
+
+**Problem:** Find the stationary points of y = x³ - 3x + 1.
+
+1. dy/dx = 3x² - 3.
+2. 3x² - 3 = 0. Add 3: 3x² = 3. Divide by 3: x² = 1. So x = 1 or x = -1.
+3. When x = 1: y = 1 - 3 + 1 = -1. When x = -1: y = -1 + 3 + 1 = 3.
+
+**Answer:** (1, -1) and (-1, 3)
+
+## Maximum or minimum?
+
+### Method 1: differentiate again
+
+Differentiate dy/dx to get **d²y/dx²**.
+
+- If d²y/dx² is **positive**, it is a **minimum**.
+- If d²y/dx² is **negative**, it is a **maximum**.
+
+**Problem:** For y = x³ - 3x + 1, decide which stationary point is a maximum and which is a minimum.
+
+1. dy/dx = 3x² - 3. Differentiate again: d²y/dx² = 6x.
+2. At x = 1: 6(1) = 6, which is positive. So (1, -1) is a **minimum**.
+3. At x = -1: 6(-1) = -6, which is negative. So (-1, 3) is a **maximum**.
+
+**Answer:** (-1, 3) is a maximum and (1, -1) is a minimum.
+
+### Method 2: check the gradient on each side
+
+Work out dy/dx a little to the left and a little to the right.
+
+| Left | At the point | Right | Type |
+|---|---|---|---|
+| + (going up) | 0 | - (going down) | Maximum |
+| - (going down) | 0 | + (going up) | Minimum |
+
+For x = 1 above: at x = 0, dy/dx = -3 (down). At x = 2, dy/dx = 9 (up). Down then up: a minimum.
+
+## Real-life examples
+
+### Real-life example: the biggest field
+
+**Problem:** A farmer has 40 m of fence. She makes a rectangular pen against a long wall, so she only needs fence on three sides. The two short sides are x m. Find the largest area she can make.
+
+1. Two short sides use 2x m of fence. The long side is 40 - 2x.
+2. Area: A = x(40 - 2x) = 40x - 2x².
+3. Differentiate: dA/dx = 40 - 4x.
+4. For the maximum, dA/dx = 0: 40 - 4x = 0, so x = 10.
+5. Check it is a maximum: d²A/dx² = -4, which is negative. Yes.
+6. Area: A = 40(10) - 2(10)² = 400 - 200 = 200.
+
+**Answer:** 200 m² (short sides 10 m, long side 20 m)
+
+### Real-life example: a ball thrown up
+
+**Problem:** A ball's height after t seconds is h = 20t - 5t² metres. Find the greatest height.
+
+1. dh/dt = 20 - 10t. (This is the ball's speed upwards.)
+2. At the top, the ball stops for a moment: 20 - 10t = 0, so t = 2.
+3. Height: h = 20(2) - 5(2)² = 40 - 20 = 20.
+
+**Answer:** 20 m, after 2 seconds
+
+> You can also find the top of a quadratic by completing the square (topic 2.11). Differentiation works for cubics too.
+
+## Common mistakes
+
+- Forgetting to take 1 off the power.
+- Thinking a number on its own differentiates to itself. It differentiates to 0.
+- Putting x into dy/dx instead of the original equation when finding the y-coordinate of a stationary point.
+
+## Exam tips
+
+- Write "dy/dx = 0" before you solve. It shows the examiner your method.
+- Always say whether each stationary point is a maximum or a minimum, and show how you know.`,
+  "2.13": `## What you need to know
+
+> **Extended and O Level only.** This topic is not in IGCSE Core. (In O Level 4024 this topic is numbered 2.12.)
+
+- A **function** is a rule that turns one number (the input) into another (the output).
+- How to use **function notation**, like f(x) = 3x - 5 and f(4).
+- What the **domain** and **range** of a function are.
+- How to find an **inverse function**, f⁻¹(x).
+- How to find a **composite function**, like gf(x).
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Function | A rule that gives exactly one output for each input |
+| f(x) | "f of x": the output of function f when the input is x |
+| Domain | All the inputs (x values) you are allowed to use |
+| Range | All the outputs the function can give |
+| Inverse function, f⁻¹(x) | The function that undoes f. It takes the output back to the input |
+| Composite function, gf(x) | Do f first, then do g to the answer |
+
+## A function is a machine
+
+Think of a function as a machine. A number goes in, the machine does something to it, and a number comes out.
+
+f(x) = 3x - 5 means: **multiply by 3, then subtract 5.**
+
+### Real-life example: a currency converter
+
+At an exchange shop, $1 = 3.75 riyals. The rule for changing dollars into riyals is a function: **f(x) = 3.75x**, where x is the number of dollars.
+
+f(20) means "how many riyals for $20?". f(20) = 3.75 × 20 = 75.
+
+## Using function notation
+
+**Problem:** f(x) = 3x - 5. Find (a) f(4) (b) f(-2) (c) the value of x when f(x) = 10.
+
+1. (a) Replace x with 4: f(4) = 3(4) - 5 = 12 - 5 = **7**.
+2. (b) Replace x with -2: f(-2) = 3(-2) - 5 = -6 - 5 = **-11**.
+3. (c) Write an equation: 3x - 5 = 10. Add 5: 3x = 15. Divide by 3: x = **5**.
+
+**Answer:** (a) 7 (b) -11 (c) x = 5
+
+> f(4) means "put 4 in". It does **not** mean f × 4.
+
+## Domain and range
+
+**Problem:** Write down the domain or range of each function.
+
+1. f(x) = x². Any number can go in, so the domain is all numbers. A square is never negative, so the range is **f(x) ⩾ 0**.
+2. g(x) = 1/(x - 2). You cannot divide by 0, so x - 2 cannot be 0. The domain is **x ≠ 2**.
+3. h(x) = √x. You cannot take the square root of a negative number (in this course). The domain is **x ⩾ 0**.
+
+## Inverse functions
+
+The inverse **undoes** the function. If f turns 4 into 7, then f⁻¹ turns 7 back into 4.
+
+### Method
+
+1. Write y = f(x).
+2. Rearrange to make x the subject.
+3. Swap: replace y with x, and write f⁻¹(x) = ...
+
+**Problem:** f(x) = (2x + 1)/3. Find f⁻¹(x).
+
+1. y = (2x + 1)/3.
+2. Multiply both sides by 3: 3y = 2x + 1.
+3. Subtract 1: 3y - 1 = 2x.
+4. Divide by 2: x = (3y - 1)/2.
+5. Write it with x: f⁻¹(x) = (3x - 1)/2.
+
+**Answer:** f⁻¹(x) = (3x - 1)/2
+
+> Check: f(4) = (8 + 1)/3 = 3. Then f⁻¹(3) = (9 - 1)/2 = 4. You get back to 4. Correct.
+
+### Real-life example: changing riyals back to dollars
+
+**Problem:** f(x) = 3.75x changes dollars into riyals. Find f⁻¹(x) and use it to change 300 riyals into dollars.
+
+1. y = 3.75x.
+2. Divide by 3.75: x = y/3.75.
+3. f⁻¹(x) = x/3.75.
+4. f⁻¹(300) = 300 ÷ 3.75 = 80.
+
+**Answer:** f⁻¹(x) = x/3.75, and 300 riyals = $80
+
+## Composite functions
+
+**gf(x)** means: do **f first**, then put the answer into g. Work from the inside out, like g(f(x)).
+
+> gf(x) = g(f(x)). The function **nearest to x** is done first.
+
+**Problem:** f(x) = 2x + 3 and g(x) = x². Find (a) fg(3) (b) gf(3) (c) fg(x) (d) gf(x).
+
+1. (a) fg(3): g first. g(3) = 3² = 9. Then f(9) = 2(9) + 3 = **21**.
+2. (b) gf(3): f first. f(3) = 2(3) + 3 = 9. Then g(9) = 9² = **81**.
+3. (c) fg(x): put g(x) = x² into f. f(x²) = 2x² + 3. So fg(x) = **2x² + 3**.
+4. (d) gf(x): put f(x) = 2x + 3 into g. g(2x + 3) = **(2x + 3)²**.
+
+**Answer:** (a) 21 (b) 81 (c) 2x² + 3 (d) (2x + 3)²
+
+> fg and gf are usually **different**. The order matters.
+
+### Real-life example: a discount and a delivery charge
+
+An online shop takes 20% off, and charges $5 for delivery.
+
+- f(x) = 0.8x takes 20% off the price x.
+- g(x) = x + 5 adds the delivery charge.
+
+**Problem:** A pair of shoes costs $50. Does the order matter?
+
+1. gf(50): discount first. f(50) = 0.8 × 50 = 40. Then g(40) = 40 + 5 = **$45**.
+2. fg(50): delivery first. g(50) = 50 + 5 = 55. Then f(55) = 0.8 × 55 = **$44**.
+
+**Answer:** Yes. Adding delivery first and then taking 20% off everything is $1 cheaper. The shop will do the discount first.
+
+### ff(x)
+
+**Problem:** f(x) = 2x + 3. Find ff(x).
+
+1. Put f(x) into f: f(2x + 3) = 2(2x + 3) + 3.
+2. Expand: 4x + 6 + 3 = 4x + 9.
+
+**Answer:** ff(x) = 4x + 9
+
+## Common mistakes
+
+- Doing the functions in the wrong order. In gf(x), f is done first.
+- Thinking f⁻¹(x) means 1/f(x). It means the inverse, not "1 over".
+- Forgetting to swap y back to x at the end of finding an inverse.
+
+## Exam tips
+
+- Check an inverse by putting a number through f and then through f⁻¹. You should get back where you started.
+- For composite functions with algebra, use brackets: write f(2x + 3), then replace every x in f with (2x + 3).`,
 };
 
 export function getMathsNotes(topic: string): string | undefined {

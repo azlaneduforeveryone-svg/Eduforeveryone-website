@@ -1263,6 +1263,974 @@ export const MATHS_REVISION: Record<string, TopicRevision> = {
         "back": "No. 3 + 4 = 7, but √25 = 5."
       }
     ]
+  },
+  "2.1": {
+    "mindMap": {
+      "centre": "Introduction to algebra",
+      "branches": [
+        {
+          "label": "Words",
+          "items": [
+            "Variable: a letter for a number",
+            "Term: 3x or 5",
+            "Expression: no = sign",
+            "Equation: has an = sign",
+            "Formula: links variables"
+          ]
+        },
+        {
+          "label": "How we write it",
+          "items": [
+            "5n means 5 × n",
+            "n² means n × n",
+            "x/4 means x ÷ 4",
+            "Number first: 5n, not n5"
+          ]
+        },
+        {
+          "label": "Substitution",
+          "items": [
+            "Put numbers in brackets",
+            "Use BIDMAS",
+            "(-4)² = 16"
+          ]
+        },
+        {
+          "label": "Real life",
+          "items": [
+            "Taxi: C = 3 + 2d",
+            "Temperature: F = 1.8C + 32"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What does 3x mean?",
+        "back": "3 × x"
+      },
+      {
+        "front": "Ali has n sweets. Sara has 4 more. Write an expression for Sara.",
+        "back": "n + 4"
+      },
+      {
+        "front": "Find 2a + 5 when a = 6.",
+        "back": "17"
+      },
+      {
+        "front": "Find x² when x = -3.",
+        "back": "9"
+      },
+      {
+        "front": "Find 3a² - 2b when a = -4 and b = 5.",
+        "back": "38"
+      },
+      {
+        "front": "A taxi costs C = 3 + 2d. Find C when d = 12.",
+        "back": "$27"
+      },
+      {
+        "front": "Is 3x + 5 an expression or an equation?",
+        "back": "An expression. It has no = sign."
+      },
+      {
+        "front": "Change 25°C to °F using F = 1.8C + 32.",
+        "back": "77°F"
+      }
+    ]
+  },
+  "2.2": {
+    "mindMap": {
+      "centre": "Algebraic manipulation",
+      "branches": [
+        {
+          "label": "Simplify",
+          "items": [
+            "Collect like terms",
+            "x and x² are not like terms"
+          ]
+        },
+        {
+          "label": "Expand",
+          "items": [
+            "Multiply every term in the bracket",
+            "Two brackets: use a grid",
+            "(x + 5)² = x² + 10x + 25"
+          ]
+        },
+        {
+          "label": "Factorise",
+          "items": [
+            "Take out the biggest common factor",
+            "Factorise fully",
+            "Check by expanding"
+          ]
+        },
+        {
+          "label": "Extended and O Level",
+          "items": [
+            "Three brackets",
+            "Grouping",
+            "a² - b² = (a + b)(a - b)",
+            "Quadratics: multiply to c, add to b",
+            "Completing the square"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Simplify 2a + 3b + 5a - 9b.",
+        "back": "7a - 6b"
+      },
+      {
+        "front": "Expand 4(s + 2).",
+        "back": "4s + 8"
+      },
+      {
+        "front": "Expand and simplify 3(2x - 5) - 2(x - 4).",
+        "back": "4x - 7"
+      },
+      {
+        "front": "Expand (x + 3)(x - 5).",
+        "back": "x² - 2x - 15"
+      },
+      {
+        "front": "Expand (x + 5)².",
+        "back": "x² + 10x + 25"
+      },
+      {
+        "front": "Factorise fully 9x² + 15xy.",
+        "back": "3x(3x + 5y)"
+      },
+      {
+        "front": "(Extended and O Level) Factorise x² + 7x + 12.",
+        "back": "(x + 3)(x + 4)"
+      },
+      {
+        "front": "(Extended and O Level) Factorise 25x² - 9y².",
+        "back": "(5x + 3y)(5x - 3y)"
+      },
+      {
+        "front": "(Extended and O Level) Factorise 2x² - 7x - 4.",
+        "back": "(2x + 1)(x - 4)"
+      },
+      {
+        "front": "(Extended and O Level) Write x² + 6x + 2 in the form (x + p)² + q.",
+        "back": "(x + 3)² - 7"
+      }
+    ]
+  },
+  "2.3": {
+    "mindMap": {
+      "centre": "Algebraic fractions",
+      "branches": [
+        {
+          "label": "Simplify",
+          "items": [
+            "Factorise first",
+            "Cancel factors, not terms"
+          ]
+        },
+        {
+          "label": "Multiply and divide",
+          "items": [
+            "Top × top, bottom × bottom",
+            "Divide: flip the second, then multiply"
+          ]
+        },
+        {
+          "label": "Add and subtract",
+          "items": [
+            "Find a common denominator",
+            "Brackets round the tops",
+            "Then simplify the top"
+          ]
+        },
+        {
+          "label": "Check",
+          "items": [
+            "Put in a number like x = 2",
+            "Both versions give the same value"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Simplify 6x²/(9x).",
+        "back": "2x/3"
+      },
+      {
+        "front": "Simplify (x² - 9)/(x² + 5x + 6).",
+        "back": "(x - 3)/(x + 2)"
+      },
+      {
+        "front": "Can you cancel the x in (x + 3)/x?",
+        "back": "No. x is not a factor of the whole top."
+      },
+      {
+        "front": "Write x/3 + x/4 as a single fraction.",
+        "back": "7x/12"
+      },
+      {
+        "front": "Simplify (4x/5) × (10/x²).",
+        "back": "8/x"
+      },
+      {
+        "front": "Write 3/(x + 1) - 2/(x - 3) as a single fraction.",
+        "back": "(x - 11)/[(x + 1)(x - 3)]"
+      },
+      {
+        "front": "How do you divide by a fraction?",
+        "back": "Flip the second fraction and multiply."
+      }
+    ]
+  },
+  "2.4": {
+    "mindMap": {
+      "centre": "Indices II",
+      "branches": [
+        {
+          "label": "Rules",
+          "items": [
+            "Multiply: add the powers",
+            "Divide: subtract the powers",
+            "Power of a power: multiply the powers"
+          ]
+        },
+        {
+          "label": "Special powers",
+          "items": [
+            "x⁰ = 1",
+            "x⁻ⁿ = 1/xⁿ",
+            "Numbers in front are multiplied as normal"
+          ]
+        },
+        {
+          "label": "Extended and O Level",
+          "items": [
+            "x^(1/2) = √x",
+            "x^(1/3) = ∛x",
+            "x^(m/n): root, then power"
+          ]
+        },
+        {
+          "label": "x in the power",
+          "items": [
+            "Make the bases the same",
+            "Then the powers are equal"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Simplify 6x⁷y⁴ × 5x⁻⁵y.",
+        "back": "30x²y⁵"
+      },
+      {
+        "front": "Simplify 12a⁵ ÷ 3a⁻².",
+        "back": "4a⁷"
+      },
+      {
+        "front": "Simplify (5x³)².",
+        "back": "25x⁶"
+      },
+      {
+        "front": "Write 4x⁻³ without a negative power.",
+        "back": "4/x³"
+      },
+      {
+        "front": "What is (2a³b)⁰?",
+        "back": "1"
+      },
+      {
+        "front": "(Extended and O Level) Simplify (16x⁸)^(1/2).",
+        "back": "4x⁴"
+      },
+      {
+        "front": "(Extended and O Level) Simplify (27x⁶)^(-2/3).",
+        "back": "1/(9x⁴)"
+      },
+      {
+        "front": "(Extended and O Level) Solve 5^(x + 1) = 25^x.",
+        "back": "x = 1"
+      },
+      {
+        "front": "(Extended and O Level) Solve 2^x = 1/8.",
+        "back": "x = -3"
+      }
+    ]
+  },
+  "2.5": {
+    "mindMap": {
+      "centre": "Equations",
+      "branches": [
+        {
+          "label": "Linear",
+          "items": [
+            "Do the same to both sides",
+            "Expand brackets first",
+            "Check by putting the answer back"
+          ]
+        },
+        {
+          "label": "Simultaneous",
+          "items": [
+            "Elimination: same signs subtract, different signs add",
+            "Substitution: when y = ... is given",
+            "Two answers: x and y"
+          ]
+        },
+        {
+          "label": "Change the subject",
+          "items": [
+            "Same steps as solving",
+            "Extended and O Level: subject twice, factorise",
+            "Undo powers with roots"
+          ]
+        },
+        {
+          "label": "Extended and O Level: quadratics",
+          "items": [
+            "Make one side 0",
+            "Factorise, formula or complete the square",
+            "Usually two answers",
+            "Reject answers that make no sense"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Solve 3x + 4 = 10.",
+        "back": "x = 2"
+      },
+      {
+        "front": "Solve 5 - 2x = 3(x + 7).",
+        "back": "x = -3.2"
+      },
+      {
+        "front": "A gym costs $20 plus $15 a month. Layla paid $140. How many months?",
+        "back": "8 months"
+      },
+      {
+        "front": "Solve 2a + 3c = 34 and a + 2c = 19.",
+        "back": "a = 11, c = 4"
+      },
+      {
+        "front": "Solve y = 2x - 1 and 3x + y = 14.",
+        "back": "x = 3, y = 5"
+      },
+      {
+        "front": "Make a the subject of v = u + at.",
+        "back": "a = (v - u)/t"
+      },
+      {
+        "front": "(Extended and O Level) Solve x² - 5x - 14 = 0.",
+        "back": "x = 7 or x = -2"
+      },
+      {
+        "front": "(Extended and O Level) Solve 2x² + 3x - 7 = 0 to 2 d.p.",
+        "back": "x = 1.27 or x = -2.77"
+      },
+      {
+        "front": "(Extended and O Level) Solve x² + 6x + 2 = 0 in surd form.",
+        "back": "x = -3 ± √7"
+      },
+      {
+        "front": "(Extended and O Level) Make r the subject of A = πr².",
+        "back": "r = √(A/π)"
+      }
+    ]
+  },
+  "2.6": {
+    "mindMap": {
+      "centre": "Inequalities",
+      "branches": [
+        {
+          "label": "Signs",
+          "items": [
+            "< less than",
+            "> greater than",
+            "⩽ less than or equal to",
+            "⩾ greater than or equal to"
+          ]
+        },
+        {
+          "label": "Number lines",
+          "items": [
+            "Open circle: < or >",
+            "Closed circle: ⩽ or ⩾"
+          ]
+        },
+        {
+          "label": "Extended and O Level: solving",
+          "items": [
+            "Like an equation",
+            "Multiply or divide by a negative: turn the sign round",
+            "Double inequalities: do all three parts"
+          ]
+        },
+        {
+          "label": "Extended and O Level: regions",
+          "items": [
+            "Solid line: ⩽ or ⩾",
+            "Broken line: < or >",
+            "Shade what you do not want",
+            "Test the point (0, 0)"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Does a closed circle mean the number is included?",
+        "back": "Yes. It is used for ⩽ and ⩾."
+      },
+      {
+        "front": "List the integers n with -3 ⩽ n < 1.",
+        "back": "-3, -2, -1, 0"
+      },
+      {
+        "front": "You must be at least 120 cm tall. Write this as an inequality.",
+        "back": "h ⩾ 120"
+      },
+      {
+        "front": "(Extended and O Level) Solve 3x < 2x + 4.",
+        "back": "x < 4"
+      },
+      {
+        "front": "(Extended and O Level) Solve 7 - 2x > 1.",
+        "back": "x < 3"
+      },
+      {
+        "front": "(Extended and O Level) When do you turn the sign round?",
+        "back": "When you multiply or divide by a negative number."
+      },
+      {
+        "front": "(Extended and O Level) Solve -3 ⩽ 3x - 2 < 7.",
+        "back": "-1/3 ⩽ x < 3"
+      },
+      {
+        "front": "(Extended and O Level) Which line do you use for y < x?",
+        "back": "A broken (dashed) line."
+      }
+    ]
+  },
+  "2.7": {
+    "mindMap": {
+      "centre": "Sequences",
+      "branches": [
+        {
+          "label": "Rules",
+          "items": [
+            "Term-to-term: add 3, times 2",
+            "nth term: from the position n"
+          ]
+        },
+        {
+          "label": "Special sequences",
+          "items": [
+            "Square: n²",
+            "Cube: n³",
+            "Triangle: n(n + 1)/2"
+          ]
+        },
+        {
+          "label": "Linear nth term",
+          "items": [
+            "Difference × n",
+            "Plus the zero term",
+            "Check with n = 1 and n = 2"
+          ]
+        },
+        {
+          "label": "Extended and O Level",
+          "items": [
+            "Quadratic: same second differences, a = half of it",
+            "Exponential: first term × rⁿ⁻¹",
+            "Mixtures like 2ⁿ + n"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Find the nth term of 5, 8, 11, 14, ...",
+        "back": "3n + 2"
+      },
+      {
+        "front": "Find the 50th term of 3n + 2.",
+        "back": "152"
+      },
+      {
+        "front": "Is 100 in the sequence 3n + 2?",
+        "back": "No. n would be 32.67, not a whole number."
+      },
+      {
+        "front": "Find the nth term of 30, 26, 22, 18, ...",
+        "back": "34 - 4n"
+      },
+      {
+        "front": "Find the nth term of 2, 5, 10, 17, ...",
+        "back": "n² + 1"
+      },
+      {
+        "front": "What are the triangle numbers?",
+        "back": "1, 3, 6, 10, 15, ..."
+      },
+      {
+        "front": "(Extended and O Level) Find the nth term of 5, 12, 23, 38, 57, ...",
+        "back": "2n² + n + 2"
+      },
+      {
+        "front": "(Extended and O Level) Find the nth term of 3, 6, 12, 24, ...",
+        "back": "3 × 2ⁿ⁻¹"
+      },
+      {
+        "front": "(Extended and O Level) How many handshakes for 30 people?",
+        "back": "435"
+      }
+    ]
+  },
+  "2.8": {
+    "mindMap": {
+      "centre": "Proportion",
+      "branches": [
+        {
+          "label": "Direct",
+          "items": [
+            "y = kx",
+            "y = kx², y = kx³",
+            "y = k√x, y = k∛x"
+          ]
+        },
+        {
+          "label": "Inverse",
+          "items": [
+            "y = k/x",
+            "y = k/x²",
+            "More of one, less of the other"
+          ]
+        },
+        {
+          "label": "Four steps",
+          "items": [
+            "Write with ∝",
+            "Change to = k",
+            "Find k",
+            "Use the formula"
+          ]
+        },
+        {
+          "label": "Changes",
+          "items": [
+            "y ∝ x²: double x, y × 4",
+            "y ∝ 1/x: triple x, y ÷ 3"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "40 litres of petrol cost $92. C ∝ L. Find the cost of 55 litres.",
+        "back": "$126.50"
+      },
+      {
+        "front": "d ∝ v². d = 16 when v = 40. Find d when v = 100.",
+        "back": "100"
+      },
+      {
+        "front": "t ∝ 1/w. t = 10 when w = 6. Find t when w = 15.",
+        "back": "4"
+      },
+      {
+        "front": "B ∝ 1/d². B = 50 when d = 2. Find k.",
+        "back": "k = 200"
+      },
+      {
+        "front": "m ∝ r³. m = 40 when r = 2. Find m when r = 3.",
+        "back": "135"
+      },
+      {
+        "front": "y ∝ x². What happens to y when x is doubled?",
+        "back": "y is multiplied by 4."
+      },
+      {
+        "front": "What does ∝ mean?",
+        "back": "Is proportional to."
+      }
+    ]
+  },
+  "2.9": {
+    "mindMap": {
+      "centre": "Graphs in practical situations",
+      "branches": [
+        {
+          "label": "Distance-time",
+          "items": [
+            "Gradient = speed",
+            "Flat line: stopped",
+            "Going down: coming back"
+          ]
+        },
+        {
+          "label": "Conversion graphs",
+          "items": [
+            "Straight line through (0, 0)",
+            "Read up, then across"
+          ]
+        },
+        {
+          "label": "Extended and O Level: speed-time",
+          "items": [
+            "Gradient = acceleration",
+            "Area = distance",
+            "Flat line: steady speed"
+          ]
+        },
+        {
+          "label": "Extended and O Level: curves",
+          "items": [
+            "Draw a tangent",
+            "Gradient = up ÷ across",
+            "It is an estimate"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What does a flat line on a distance-time graph mean?",
+        "back": "Stopped (not moving)."
+      },
+      {
+        "front": "12 km in 45 minutes. What is the speed?",
+        "back": "16 km/h"
+      },
+      {
+        "front": "What does the gradient of a distance-time graph give?",
+        "back": "The speed."
+      },
+      {
+        "front": "$1 = 3.75 riyals. Change $60 to riyals.",
+        "back": "225 riyals"
+      },
+      {
+        "front": "(Extended and O Level) What does the area under a speed-time graph give?",
+        "back": "The distance travelled."
+      },
+      {
+        "front": "(Extended and O Level) 0 to 20 m/s in 10 s. Find the acceleration.",
+        "back": "2 m/s²"
+      },
+      {
+        "front": "(Extended and O Level) What does a flat line on a speed-time graph mean?",
+        "back": "Moving at a steady speed."
+      },
+      {
+        "front": "(Extended and O Level) A tangent passes through (1, 2) and (5, 18). Find its gradient.",
+        "back": "4"
+      }
+    ]
+  },
+  "2.10": {
+    "mindMap": {
+      "centre": "Graphs of functions",
+      "branches": [
+        {
+          "label": "Drawing",
+          "items": [
+            "Table of values",
+            "Brackets for negatives",
+            "One smooth curve"
+          ]
+        },
+        {
+          "label": "Shapes",
+          "items": [
+            "Linear: straight line",
+            "Quadratic: U or hill",
+            "Reciprocal: two parts, no x = 0"
+          ]
+        },
+        {
+          "label": "Solving with a graph",
+          "items": [
+            "= 0: read the x-axis crossings",
+            "= k: draw the line y = k",
+            "Answers to 1 d.p."
+          ]
+        },
+        {
+          "label": "Extended and O Level",
+          "items": [
+            "Cubics and other powers",
+            "Exponential growth and decay",
+            "A cubic can have three answers"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "For y = x² - 2x - 3, find y when x = -2.",
+        "back": "5"
+      },
+      {
+        "front": "How do you solve x² - 2x - 3 = 0 from its graph?",
+        "back": "Read where the curve crosses the x-axis: x = -1 and x = 3."
+      },
+      {
+        "front": "How do you solve x² - 2x - 3 = 2 from the graph?",
+        "back": "Draw y = 2 and read the x values where it crosses the curve."
+      },
+      {
+        "front": "Using y = x² - 2x - 3, which line solves x² - 3x - 4 = 0?",
+        "back": "y = x + 1"
+      },
+      {
+        "front": "Can x be 0 in y = 12/x?",
+        "back": "No. You cannot divide by 0."
+      },
+      {
+        "front": "Should you join plotted points of a curve with a ruler?",
+        "back": "No. Use one smooth curve."
+      },
+      {
+        "front": "(Extended and O Level) Find y = 800 × 0.8ˣ when x = 2.",
+        "back": "512"
+      },
+      {
+        "front": "(Extended and O Level) Is y = 3 × 2ˣ growth or decay?",
+        "back": "Growth (2 is more than 1)."
+      }
+    ]
+  },
+  "2.11": {
+    "mindMap": {
+      "centre": "Sketching curves",
+      "branches": [
+        {
+          "label": "Quadratic sketch",
+          "items": [
+            "y-intercept: x = 0",
+            "Roots: y = 0",
+            "Symmetry: halfway between roots"
+          ]
+        },
+        {
+          "label": "Shapes",
+          "items": [
+            "+x²: U",
+            "-x²: hill",
+            "x³: S shape",
+            "1/x: two parts",
+            "2ˣ: growth"
+          ]
+        },
+        {
+          "label": "Extended and O Level: turning points",
+          "items": [
+            "(x + p)² + q gives (-p, q)",
+            "Minimum if x² is positive"
+          ]
+        },
+        {
+          "label": "Extended and O Level: asymptotes",
+          "items": [
+            "Never touched",
+            "1/x: x = 0 and y = 0",
+            "2ˣ + 1: y = 1"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Where does y = x² - 6x + 5 cross the axes?",
+        "back": "y-axis at 5, x-axis at 1 and 5."
+      },
+      {
+        "front": "What is the line of symmetry of y = x² - 6x + 5?",
+        "back": "x = 3"
+      },
+      {
+        "front": "Which way does y = -x² + 4 face?",
+        "back": "Upside down (a hill)."
+      },
+      {
+        "front": "An arch is y = 8x - x². How wide is it?",
+        "back": "8 m"
+      },
+      {
+        "front": "(Extended and O Level) Find the turning point of y = x² + 4x + 7.",
+        "back": "(-2, 3), a minimum"
+      },
+      {
+        "front": "(Extended and O Level) What is an asymptote?",
+        "back": "A line the graph gets closer to but never touches."
+      },
+      {
+        "front": "(Extended and O Level) Give the asymptotes of y = 1/x + 2.",
+        "back": "x = 0 and y = 2"
+      },
+      {
+        "front": "(Extended and O Level) Where does y = 2ˣ cross the y-axis?",
+        "back": "(0, 1)"
+      }
+    ]
+  },
+  "2.12": {
+    "mindMap": {
+      "centre": "Differentiation",
+      "branches": [
+        {
+          "label": "The rule",
+          "items": [
+            "y = axⁿ gives dy/dx = naxⁿ⁻¹",
+            "Multiply by the power, take 1 off",
+            "A number on its own gives 0"
+          ]
+        },
+        {
+          "label": "Gradient at a point",
+          "items": [
+            "Find dy/dx",
+            "Put in x"
+          ]
+        },
+        {
+          "label": "Stationary points",
+          "items": [
+            "dy/dx = 0",
+            "Solve for x",
+            "Put x into the original equation"
+          ]
+        },
+        {
+          "label": "Max or min",
+          "items": [
+            "d²y/dx² positive: minimum",
+            "d²y/dx² negative: maximum"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Differentiate y = 3x⁴.",
+        "back": "dy/dx = 12x³"
+      },
+      {
+        "front": "Differentiate y = 7x.",
+        "back": "dy/dx = 7"
+      },
+      {
+        "front": "Differentiate y = 9.",
+        "back": "dy/dx = 0"
+      },
+      {
+        "front": "Differentiate y = x³ - 6x² + 5x - 2.",
+        "back": "dy/dx = 3x² - 12x + 5"
+      },
+      {
+        "front": "Find the gradient of y = x³ - 6x² + 5x - 2 at x = 2.",
+        "back": "-7"
+      },
+      {
+        "front": "What is dy/dx at a stationary point?",
+        "back": "0"
+      },
+      {
+        "front": "Find the stationary points of y = x³ - 3x + 1.",
+        "back": "(1, -1) minimum and (-1, 3) maximum"
+      },
+      {
+        "front": "If d²y/dx² is negative, what type of point is it?",
+        "back": "A maximum."
+      }
+    ]
+  },
+  "2.13": {
+    "mindMap": {
+      "centre": "Functions",
+      "branches": [
+        {
+          "label": "Notation",
+          "items": [
+            "f(x) = 3x - 5",
+            "f(4): put 4 in",
+            "Domain: inputs",
+            "Range: outputs"
+          ]
+        },
+        {
+          "label": "Inverse f⁻¹(x)",
+          "items": [
+            "y = f(x)",
+            "Make x the subject",
+            "Swap back to x",
+            "It undoes f"
+          ]
+        },
+        {
+          "label": "Composite gf(x)",
+          "items": [
+            "f first, then g",
+            "fg and gf are usually different",
+            "ff(x): f twice"
+          ]
+        },
+        {
+          "label": "Real life",
+          "items": [
+            "Currency converter",
+            "Discount then delivery"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "f(x) = 3x - 5. Find f(4).",
+        "back": "7"
+      },
+      {
+        "front": "f(x) = 3x - 5. Find x when f(x) = 10.",
+        "back": "x = 5"
+      },
+      {
+        "front": "What is the range of f(x) = x²?",
+        "back": "f(x) ⩾ 0"
+      },
+      {
+        "front": "What is the domain of g(x) = 1/(x - 2)?",
+        "back": "x ≠ 2"
+      },
+      {
+        "front": "f(x) = (2x + 1)/3. Find f⁻¹(x).",
+        "back": "f⁻¹(x) = (3x - 1)/2"
+      },
+      {
+        "front": "f(x) = 2x + 3, g(x) = x². Find fg(3).",
+        "back": "21"
+      },
+      {
+        "front": "f(x) = 2x + 3, g(x) = x². Find gf(x).",
+        "back": "(2x + 3)²"
+      },
+      {
+        "front": "f(x) = 2x + 3. Find ff(x).",
+        "back": "4x + 9"
+      },
+      {
+        "front": "In gf(x), which function is done first?",
+        "back": "f"
+      }
+    ]
   }
 };
 
