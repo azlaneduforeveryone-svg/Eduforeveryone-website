@@ -313,7 +313,9 @@ export default function TopicPageClient({
                   ? progress.attempts > 0
                     ? `Best quiz score: ${progress.bestScore}/${quizLength} · Attempts: ${progress.attempts}`
                     : `Score ${quizLength} out of ${quizLength} on the practice quiz below to master this topic.`
-                  : "Notes and practice questions for this topic are being added."}
+                  : hasNotes
+                    ? "Practice questions for this topic are coming soon."
+                    : "Notes and practice questions for this topic are being added."}
               </p>
             </div>
             <div className="flex items-center gap-2 self-start sm:self-center">

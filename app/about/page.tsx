@@ -4,27 +4,36 @@ import PageHeader from "@/components/ui/PageHeader";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
+import { SURAH_META } from "@/lib/quranSurahMeta";
+import { PASSAGES } from "@/lib/ielts/readingData";
+import { QUANT_BANK } from "@/lib/gmat/quant";
+import { VERBAL_BANK } from "@/lib/gmat/verbal";
+import { DATA_INSIGHTS_BANK } from "@/lib/gmat/data-insights";
 
 export const metadata: Metadata = {
-  title: "About EduForEveryone — Free Education, No Barriers",
-  description: "Why EduForEveryone exists: free IELTS practice, the Quran with 40+ translations, and free courses, tools and quizzes — built so no student is held back by cost.",
+  title: "About EduForEveryone: Free Education, No Barriers",
+  description: "Why EduForEveryone exists: the Quran with 40+ translations, free Cambridge O Level and IGCSE courses, IELTS and GMAT practice, games and tools. Built so no student is held back by cost.",
   alternates: { canonical: "https://eduforeveryone.com/about" },
 };
 
 const faqs = [
-  { q: "Is the IELTS practice really free?", a: "Yes. All Reading, Writing, Listening and Speaking practice is free with no sign-up. AI writing feedback is also free." },
-  { q: "Can I read the Quran with Urdu translation?", a: "Yes — the Quran reader includes 40+ translations including English, Urdu and Hindi, with audio recitation and a color-coded Tajweed mode." },
-  { q: "Is the GMAT practice really free?", a: "Yes. Every GMAT Focus Edition section — Quantitative Reasoning, Verbal Reasoning and Data Insights — plus the full timed mock test is free with no sign-up. Scores shown are estimates, not official GMAT scores." },
-  { q: "Is EduForEveryone really free?", a: "Yes — 100% free forever. No subscriptions, no hidden fees, no sign-up required. Every practice test, quiz, calculator and game on this website is completely free." },
-  { q: "Who is EduForEveryone for?", a: "Everyone — from students preparing for IELTS or the GMAT to anyone reading the Quran or brushing up with our quizzes and tools. Our content is designed to be accessible at every level of learning." },
-  { q: "What can I study here?", a: "Our main areas are IELTS preparation, GMAT Focus Edition practice, and a full Quran reader with translations and Tajweed. We also offer free calculators, quizzes and learning games." },
-  { q: "What games are available?", a: "We have three free games — Math Puzzle (arithmetic and algebra challenges), WordWise (guess hidden education words), and Quiz Battle (answer questions across all subjects with lives and powerups). All completely free!" },
-  { q: "Can I use the calculators for free?", a: "Yes! Our scientific calculator, financial calculator (TVM, NPV, IRR, Bond Pricing), simple calculator and number to words converter are all completely free to use." },
-  { q: "Do I need to create an account?", a: "No account needed. Just visit the website and start learning immediately." },
-  { q: "Will more content be added?", a: "Yes! We are constantly adding new practice tests, quizzes, tools and games. More languages and subjects are coming soon." },
+  { q: "Is EduForEveryone really free?", a: "Yes. There are no subscriptions, hidden fees or paywalls. Every course, practice test, quiz, calculator and game is free to use. The site is supported by non-intrusive ads, and the Quran and Islamic Studies pages have no ads." },
+  { q: "Do I need to create an account?", a: "No. You can use everything without an account. Without one, your progress is saved on your own device. If you sign in, your course progress is saved to your account so you can carry on from another phone or computer." },
+  { q: "Are the Cambridge O Level and IGCSE courses free?", a: "Yes. O Level Accounting (7707), O Level Biology (5090) and one Mathematics course for O Level 4024 and IGCSE 0580 (Core and Extended) are all free, with plain-English notes, diagrams, mind maps, flashcards and practice questions. The Maths course is being added section by section. EduForEveryone is not affiliated with Cambridge University Press & Assessment." },
+  { q: "Can I read the Quran with Urdu translation?", a: "Yes. The Quran reader has 40+ translations including English, Urdu and Hindi, with audio recitation and a colour-coded Tajweed mode. You can also read the 13-line and 15-line Mushaf as PDFs." },
+  { q: "Is the IELTS practice really free?", a: "Yes. All Reading, Writing, Listening and Speaking practice and the full mock test are free with no sign-up. AI writing feedback is also free." },
+  { q: "Is the GMAT practice really free?", a: "Yes. Every GMAT Focus Edition section (Quantitative Reasoning, Verbal Reasoning and Data Insights) and the full timed mock test is free with no sign-up. Scores shown are estimates, not official GMAT scores." },
+  { q: "Who is EduForEveryone for?", a: "Anyone who wants to learn: O Level and IGCSE students, IELTS and GMAT candidates, people reading the Quran, and anyone who enjoys quizzes, games and useful tools." },
+  { q: "What games are available?", a: "Three free games: Math Puzzle (arithmetic, algebra and sequences against the clock), Word Puzzle (guess hidden education words) and Quiz Battle (questions across all subjects with lives and power-ups). There is also a trilingual Islamic Quiz." },
+  { q: "What tools can I use?", a: "A scientific calculator, a simple calculator, a financial calculator (TVM, NPV, IRR and bond pricing), a number to words converter, and bank, supplier, customer and intercompany reconciliation tools. All free." },
+  { q: "Will more content be added?", a: "Yes. The rest of the Mathematics course and its practice questions are being added now, and more practice tests, quizzes and tools will follow." },
 ];
 
 export default function AboutPage() {
+  const surahCount = SURAH_META.length;
+  const passageCount = PASSAGES.length;
+  const rawGmatCount = QUANT_BANK.items.length + VERBAL_BANK.items.length + DATA_INSIGHTS_BANK.items.length;
+  const gmatDisplay = `${Math.floor(rawGmatCount / 100) * 100}+`;
   return (
     <div className="efe-page">
       <PageHeader
@@ -43,9 +52,9 @@ export default function AboutPage() {
           <p className="text-efe-muted text-base leading-relaxed">
             Everything on EduForEveryone is <strong>completely free</strong>, with no sign-up
             required to practise. There are no subscriptions and no paywalls. The site is
-            supported by non-intrusive advertising so that students — especially those in
-            developing countries learning on a mobile phone — can access high-quality
-            preparation without ever paying a fee.
+            supported by non-intrusive advertising so that students, especially those in
+            developing countries learning on a mobile phone, can access high-quality
+            learning without ever paying a fee.
           </p>
         </div>
 
@@ -65,17 +74,19 @@ export default function AboutPage() {
               The platform exists to address a single problem: access. Quality courses, study
               materials, and practice platforms are often priced beyond the reach of the students
               who would benefit from them most. EduForEveryone aims to remove that barrier by
-              providing free, openly accessible learning resources — including standardised-test
-              practice, the Holy Quran with translations, study notes, quizzes, and academic tools
-              — with no sign-up required.
+              providing free, openly accessible learning resources: Cambridge O Level and IGCSE
+              courses, IELTS and GMAT practice, the Holy Quran with translations, quizzes, games
+              and academic tools, with no sign-up required.
             </p>
             <p>
               This is not a test-preparation company or an accredited educational institution, and
               it does not claim to be. It is a practical resource designed to give students a place
-              to study, assess their current level, and improve — regardless of their ability to pay.
+              to study, assess their current level, and improve, regardless of their ability to pay.
+              EduForEveryone is not affiliated with Cambridge University Press &amp; Assessment, the
+              IELTS partners or GMAC. Practice scores are estimates, not official results.
             </p>
             <p>
-              The project is run by a Kashmiri–Pakistani national working in Saudi Arabia, built in
+              The project is run by a Kashmiri Pakistani national working in Saudi Arabia, built in
               personal time out of a belief that access to education should not depend on what a
               student can afford. Its purpose is straightforward: to make meaningful educational
               practice available to anyone who needs it.
@@ -90,10 +101,12 @@ export default function AboutPage() {
           />
           <div className="grid sm:grid-cols-2 gap-4">
             {[
-              { emoji: "📚", title: "IELTS Preparation", description: "Free practice for all four skills — Reading, Writing, Listening and Speaking — with instant scoring and AI writing feedback.", href: "/ielts" },
-              { emoji: "📖", title: "The Holy Quran", description: "Read the Quran with 40+ translations, audio recitation, colour-coded Tajweed and downloadable PDFs — ad-free.", href: "/quran" },
-              { emoji: "🧮", title: "Courses & Tools", description: "A 20-topic Mathematics curriculum plus Science, English and History, with free calculators and study notes.", href: "/courses" },
-              { emoji: "🎮", title: "Quizzes & Games", description: "Trilingual Islamic Quiz, subject quizzes, and learning games like Math Puzzle, WordWise and Quiz Battle.", href: "/games" },
+              { emoji: "📖", title: "Islamic Studies", description: "Read the Quran with 40+ translations, audio recitation, colour-coded Tajweed and 13-line and 15-line Mushaf PDFs. Also Quran word meanings, duas and tasbeeh, and an Islamic quiz. All ad-free.", href: "/islamic-studies" },
+              { emoji: "🧮", title: "Cambridge Courses", description: "O Level Accounting (7707), O Level Biology (5090), and one Mathematics course for O Level 4024 and IGCSE 0580. Plain-English notes, diagrams, mind maps, flashcards and exam-style questions.", href: "/courses" },
+              { emoji: "📚", title: "IELTS Preparation", description: "Practice for Reading, Writing, Listening and Speaking, a full mock test, instant scoring, AI writing feedback, and Word and Phrase Upgrade to improve your vocabulary.", href: "/ielts" },
+              { emoji: "📈", title: "GMAT Focus Edition", description: "Practice for Quantitative Reasoning, Verbal Reasoning and Data Insights, plus a full timed mock test with estimated scores.", href: "/gmat" },
+              { emoji: "🎮", title: "Games", description: "Learning games: Math Puzzle, Word Puzzle and Quiz Battle.", href: "/games" },
+              { emoji: "🛠️", title: "Tools", description: "Scientific, simple and financial calculators, a number to words converter, and free reconciliation tools for accountants.", href: "/tools" },
             ].map((item) => (
               <Card key={item.title} href={item.href} className="p-6">
                 <span className="w-12 h-12 rounded-[14px] bg-efe-accent-soft text-efe-accent-ink inline-flex items-center justify-center text-2xl group-hover:bg-efe-accent group-hover:text-white transition-colors">
@@ -109,10 +122,10 @@ export default function AboutPage() {
         {/* Verifiable stats */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-16">
           {[
-            { emoji: "🎧", value: "4", label: "IELTS Skills Covered" },
-            { emoji: "📖", value: "114", label: "Quran Surahs" },
-            { emoji: "🧮", value: "20", label: "Maths Topics" },
-            { emoji: "🆓", value: "100%", label: "Free — No Sign-up" },
+            { emoji: "📖", value: String(surahCount), label: "Quran Surahs" },
+            { emoji: "🧮", value: "3", label: "Cambridge Courses" },
+            { emoji: "📚", value: String(passageCount), label: "IELTS Reading Passages" },
+            { emoji: "📈", value: gmatDisplay, label: "GMAT Questions" },
           ].map((stat) => (
             <Card key={stat.label} className="p-5 text-center">
               <span className="text-3xl">{stat.emoji}</span>
@@ -132,8 +145,9 @@ export default function AboutPage() {
             We are just getting started. The goal is to keep expanding free, high-quality
             preparation for every learner, in more languages, at every stage of life.
           </p>
-          <div className="grid sm:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 gap-4">
             {[
+              { emoji: "🧮", text: "The rest of the Mathematics course, from coordinate geometry to statistics, with practice questions" },
               { emoji: "🌐", text: "More languages to reach every corner of the world" },
               { emoji: "✍️", text: "More IELTS practice tests and writing prompt pages" },
               { emoji: "📱", text: "A mobile app so learning happens anywhere, anytime" },
