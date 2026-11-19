@@ -1,6 +1,6 @@
 // O Level Biology 5090 revision notes, original material written for EduForEveryone.
-// Mapped to the Cambridge O Level Biology 5090 syllabus for exams in 2026, 2027 and 2028.
-// Reviewed by a biology teacher before publishing.
+// Mapped to Cambridge O Level Biology 5090 and IGCSE Biology 0610 (Core and Extended) for exams in 2026, 2027 and 2028.
+// O Level content reviewed by a biology teacher; IGCSE additions (Nov 2026) are waiting for teacher review.
 // Independent material: not produced or endorsed by Cambridge University Press & Assessment.
 //
 // SERVER-ONLY: import this file only from server components (page.tsx files).
@@ -151,7 +151,7 @@ Next: test yourself with the practice questions below.`,
 - Cells can become **specialised**: their shape and parts match their job.
 - Know the examples: ciliated cells, root hair cells, palisade mesophyll cells, neurones, red blood cells, sperm cells and egg cells.
 - Understand the words **cell, tissue, organ, organ system** and **organism**.
-- Use the formula: **magnification = image size ÷ actual size**.
+- Use the formula: **magnification = image size ÷ actual size**. Converting between millimetres and micrometres is Extended and O Level.
 
 ## Key words
 
@@ -249,6 +249,8 @@ In micrometres: 0.02 × 1000 = **20 µm**
 
 ### Worked example 3: different units
 
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
+
 An image is 4 cm long. The real object is 80 µm.
 
 Step 1: make the units the same. 4 cm = 40 mm = 40 000 µm.
@@ -277,6 +279,8 @@ Next: test yourself with the practice questions below.`,
 - What a **species** is.
 - How the **binomial system** gives every species a two-part scientific name.
 - How to **use** and **make** a dichotomous key.
+- List the seven characteristics of living things. (IGCSE only)
+- Explain how classification shows evolutionary relationships, using DNA base sequences. (IGCSE Extended only)
 
 ## Key words
 
@@ -288,6 +292,24 @@ Next: test yourself with the practice questions below.`,
 | Genus | A group of closely related species. It is the first part of a scientific name. |
 | Binomial system | The international way of naming species with two words: genus, then species. |
 | Dichotomous key | A set of questions, each with two choices, used to identify an organism. |
+
+## The characteristics of living things
+
+> **IGCSE only.** O Level students can skip to the next heading.
+
+All living things do **seven** things. A car moves and uses fuel, but it does not grow or reproduce, so it is not alive.
+
+| Characteristic | Meaning |
+|---|---|
+| **Movement** | An action that changes position or place |
+| **Respiration** | Chemical reactions in cells that break down nutrients to release energy |
+| **Sensitivity** | Detecting and responding to changes in the surroundings |
+| **Growth** | A permanent increase in size and dry mass |
+| **Reproduction** | Making more of the same kind of organism |
+| **Excretion** | Removing waste products of metabolism, toxic materials and substances in excess |
+| **Nutrition** | Taking in materials for energy, growth and development |
+
+> Memory trick: **MRS GREN** (Movement, Respiration, Sensitivity, Growth, Reproduction, Excretion, Nutrition).
 
 ## Why we classify
 
@@ -360,6 +382,16 @@ To identify an animal with 6 legs and wings: step 1 (has legs), go to step 2. St
 
 Each step should ask about **one feature only**, and the two choices must be **opposites**.
 
+## Classification and evolution
+
+> **IGCSE Extended only.** O Level and IGCSE Core students can skip to the next heading.
+
+- Classification shows **evolutionary relationships**: organisms in the same group usually share a **common ancestor**.
+- Scientists now compare the **base sequences of DNA** to classify organisms.
+- The more recently two groups shared an ancestor, the **more similar** their DNA base sequences are.
+
+> Example: the DNA of humans and chimpanzees is more alike than the DNA of humans and mice, so humans and chimpanzees share a more recent ancestor.
+
 ## Common mistakes
 
 - Defining a species as "organisms that look the same". The key words are **breed** and **fertile offspring**.
@@ -377,12 +409,12 @@ Next: test yourself with the practice questions below.`,
 
   "2.2": `## What you need to know
 
-- The main features of the **five kingdoms**: animal, plant, fungus, prokaryote and protoctist.
+- The main features of the **five kingdoms**: animal, plant, fungus, prokaryote and protoctist. (Extended and O Level)
 - The main features of the **vertebrate** groups: mammals, birds, reptiles, amphibians and fish.
 - The main features of the **arthropod** groups: myriapods, insects, arachnids and crustaceans.
-- The main features of **ferns** and **flowering plants** (monocotyledons and dicotyledons).
+- The main features of **ferns** and **flowering plants** (monocotyledons and dicotyledons). (Extended and O Level)
 - Use these features to **classify** organisms.
-- The features of **viruses**, and that they can only reproduce inside living cells.
+- The features of **viruses**, and that they can only reproduce inside living cells. (Extended and O Level)
 
 ## Key words
 
@@ -397,6 +429,8 @@ Next: test yourself with the practice questions below.`,
 | Virus | A tiny particle made of genetic material inside a protein coat. It is not a cell. |
 
 ## The five kingdoms
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 All living things are placed in one of five big groups called **kingdoms**.
 
@@ -441,6 +475,8 @@ All arthropods have **jointed legs**, a hard **exoskeleton** and a body in **seg
 
 ## Plants: ferns and flowering plants
 
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
+
 | Group | Main features | Examples |
 |---|---|---|
 | Ferns | Have roots, stems and leaves (leaves called **fronds**). **No flowers**. Reproduce by **spores**, made under the leaves. | Bracken |
@@ -458,6 +494,8 @@ Flowering plants are split into two groups:
 ![Monocots and dicots compared](/images/biology/2-2-monocot-dicot.svg)
 
 ## Viruses
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 Viruses are **not** in any of the five kingdoms. They are **not cells**.
 
@@ -495,9 +533,9 @@ Next: test yourself with the practice questions below.`,
 - Why **water** is important as a **solvent** in digestion, excretion and transport.
 - Where the energy for diffusion and osmosis comes from.
 - What **diffusion** is, and the four things that change how fast it happens.
-- What **osmosis** is, using the idea of **water potential**.
+- What **osmosis** is. (Explaining it with **water potential** is Extended and O Level.)
 - How water pressure inside plant cells **supports** the plant.
-- What osmosis does to plant and animal cells, using the words **turgid, turgor pressure, flaccid** and **plasmolysis**.
+- What osmosis does to plant and animal cells, using the words **turgid, turgor pressure, flaccid** and **plasmolysis**. (Extended and O Level)
 - Practical work: osmosis in plant tissue (such as potato) and in **dialysis tubing**.
 
 ## Key words
@@ -566,6 +604,8 @@ You can also drop food colouring into cold water and warm water. It spreads fast
 
 ## Water potential
 
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
+
 To understand osmosis, you need the idea of **water potential**.
 
 - **Pure water** has the **highest** water potential.
@@ -575,6 +615,8 @@ To understand osmosis, you need the idea of **water potential**.
 > Simple way to think: **more water, less sugar = higher water potential.**
 
 ## Osmosis
+
+> **IGCSE Core:** you can describe osmosis as water moving through a **partially permeable membrane** from a **dilute** solution to a **more concentrated** solution. Using **water potential** is Extended and O Level.
 
 > **Osmosis** is the **net movement of water molecules** from a region of **higher water potential** to a region of **lower water potential**, through a **partially permeable membrane**.
 
@@ -599,6 +641,8 @@ Animal cells have **no cell wall**, only a membrane.
 This is why the water potential of blood must be kept steady. Otherwise red blood cells could burst or shrink.
 
 ## Osmosis in plant cells
+
+> **IGCSE Core:** know that water moves in or out of plant cells and that turgor pressure supports the plant. The words turgid, flaccid and plasmolysis are Extended and O Level.
 
 Plant cells have a strong **cell wall**, so they behave differently.
 
@@ -678,7 +722,7 @@ Next: test yourself with the practice questions below.`,
 
 - What **active transport** is.
 - That it moves substances **against** a concentration gradient, using **energy from respiration**.
-- Why active transport is important for **root hair cells** taking in **mineral ions**.
+- Why active transport is important for **root hair cells** taking in **mineral ions**. (Extended and O Level)
 
 ## Key words
 
@@ -707,6 +751,8 @@ Active transport is like pushing a ball **up** a hill: it needs **energy**.
 Because the energy comes from respiration, cells that do a lot of active transport have **many mitochondria**.
 
 ## Root hair cells: why active transport matters
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 Plants need **mineral ions** from the soil, such as **nitrate** ions to make proteins, and **magnesium** ions to make chlorophyll.
 
@@ -758,9 +804,10 @@ Next: test yourself with the practice questions below.`,
 
   "4.1": `## What you need to know
 
-- Name the chemical elements in carbohydrates, lipids (fats and oils), proteins and DNA.
-- Say which small molecules join up to make each big molecule: starch, cellulose, glycogen, proteins, lipids and DNA.
+- Name the chemical elements in carbohydrates, lipids (fats and oils) and proteins. (DNA is Extended and O Level.)
+- Say which small molecules join up to make starch, cellulose, glycogen, proteins and lipids. (DNA is Extended and O Level.)
 - Describe and carry out the four food tests: iodine (starch), Benedict's (glucose and maltose), biuret (protein) and ethanol emulsion (lipids).
+- Carry out the DCPIP test for vitamin C. (IGCSE only)
 
 ## Key words
 
@@ -782,6 +829,8 @@ Living things are built from a few kinds of big molecules. The four you must kno
 > Think of big molecules like a train. Each carriage is a small molecule. Join many carriages together and you get a long train.
 
 ## The elements in each molecule
+
+> **IGCSE Core:** carbohydrates, fats and proteins only. DNA is Extended and O Level.
 
 | Molecule | Elements it contains |
 |---|---|
@@ -856,6 +905,16 @@ The fat cannot stay dissolved in water, so it forms tiny droplets that make the 
 
 ![The four food tests and their colours](/images/biology/4-1-food-tests.svg)
 
+### Vitamin C: DCPIP test
+
+> **IGCSE only.** O Level students can skip to the next heading.
+
+1. Put 1 cm³ of **DCPIP** solution (blue) in a test tube.
+2. Add the food solution drop by drop, shaking after each drop.
+3. If vitamin C is present, the blue colour **disappears** (the solution goes colourless).
+
+> The fewer drops needed to remove the blue colour, the more vitamin C the food contains.
+
 ### Summary of food tests
 
 | Testing for | Reagent | Heat? | Starting colour | Positive result |
@@ -892,8 +951,8 @@ Next: test yourself with the practice questions below.`,
 
 - Describe a **catalyst**.
 - Describe **enzymes** as proteins that act as **biological catalysts**, used in all metabolic reactions.
-- Explain how an enzyme works using the words **substrate**, **active site**, **enzyme-substrate complex** and **product**.
-- Explain why each enzyme works on only **one substrate** (the "lock and key" idea).
+- Explain how an enzyme works using the words **substrate**, **active site**, **enzyme-substrate complex** and **product**. (Extended and O Level)
+- Explain why each enzyme works on only **one substrate** (the "lock and key" idea). (Extended and O Level)
 
 ## Key words
 
@@ -928,6 +987,8 @@ Enzymes can do two kinds of job:
 
 ## How an enzyme works
 
+> **IGCSE Core:** know that the active site is complementary in shape to the substrate. The steps with the **enzyme-substrate complex** are Extended and O Level.
+
 Each enzyme has an **active site**. This is a small dip in the enzyme with a special shape.
 
 1. The **substrate** has a shape that fits the active site exactly. The two shapes are **complementary**.
@@ -939,6 +1000,8 @@ Each enzyme has an **active site**. This is a small dip in the enzyme with a spe
 ![How an enzyme works: the lock and key idea](/images/biology/5-1-lock-and-key.svg)
 
 ## Why enzymes are specific: lock and key
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 > Think of a **lock and key**. Only the right key fits the lock. The **enzyme is the lock** and the **substrate is the key**.
 
@@ -977,7 +1040,7 @@ Next: test yourself with the practice questions below.`,
 
 - Understand that you can follow an enzyme reaction by measuring how the amount of **substrate** goes down, or how the amount of **product** goes up.
 - Investigate and describe how **temperature** and **pH** change enzyme activity.
-- Explain these effects using the words **kinetic energy**, **shape and fit**, **denaturation** and **frequency of effective collisions**.
+- Explain these effects using the words **kinetic energy**, **shape and fit**, **denaturation** and **frequency of effective collisions**. (Extended and O Level)
 
 ## Key words
 
@@ -1006,6 +1069,8 @@ The **faster** the substrate disappears, or the **faster** the product appears, 
 ![How temperature affects enzyme activity](/images/biology/5-2-temperature-graph.svg)
 
 ### Cold to warm: activity goes up
+
+> **IGCSE Core:** describe the effect (activity goes up, optimum, denatured). Explaining it with kinetic energy and collisions is Extended and O Level.
 
 As the temperature rises:
 
@@ -1088,11 +1153,11 @@ Next: test yourself with the practice questions below.`,
 
 - Describe photosynthesis and the job of chlorophyll.
 - State what plants do with the carbohydrates they make.
-- Write the word equation and the balanced chemical equation.
+- Write the word equation. (The balanced chemical equation is Extended and O Level.)
 - Investigate the need for chlorophyll, light and carbon dioxide, using controls.
 - Describe and explain how light intensity, carbon dioxide concentration and temperature change the rate of photosynthesis.
 - Investigate these factors with pondweed and hydrogencarbonate indicator.
-- Identify and explain limiting factors.
+- Identify and explain limiting factors. (Extended and O Level)
 
 ## Key words
 
@@ -1127,6 +1192,8 @@ Chlorophyll **transfers light energy into chemical energy** for making glucose a
 > Think of chlorophyll as a solar panel. It catches light energy and turns it into energy stored in food.
 
 ## The equations
+
+> **IGCSE Core:** you need the word equation. The balanced chemical equation is Extended and O Level.
 
 ![The photosynthesis equations](/images/biology/6-1-equations.svg)
 
@@ -1190,6 +1257,8 @@ More carbon dioxide means more raw material, so the rate goes **up**, until it l
 Photosynthesis is controlled by **enzymes**. As it gets warmer the rate goes up, up to an **optimum** temperature. Above that, the enzymes start to be **denatured**, so the rate falls quickly.
 
 ## Limiting factors
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 > A **limiting factor** is the factor in shortest supply. It holds the rate back.
 
@@ -1466,12 +1535,12 @@ Next: test yourself with the practice questions below.`,
 
 - Describe **transpiration** as the loss of water vapour from leaves.
 - Explain how water evaporates from mesophyll cells into air spaces, then diffuses out through stomata.
-- Explain how wind speed, temperature, humidity and light intensity change the rate of transpiration, and how wilting happens.
+- Explain how wind speed and temperature change the rate of transpiration. (Humidity and wilting are Extended and O Level; light intensity is O Level only.)
 - Investigate transpiration rate.
-- Explain how water moves up the xylem by **transpiration pull**.
+- Explain how water moves up the xylem by **transpiration pull**. (Extended and O Level)
 - Describe **translocation** of sucrose and amino acids in the phloem, from sources to sinks.
 - Identify the positions of xylem, phloem and cortex in sections of roots and stems.
-- State the functions of xylem and relate its structure to its function.
+- State the functions of xylem and relate its structure to its function. (Extended and O Level)
 
 ## Key words
 
@@ -1499,6 +1568,8 @@ Next: test yourself with the practice questions below.`,
 
 ## What changes the rate of transpiration?
 
+> **IGCSE Core:** temperature and wind speed. Humidity is Extended and O Level; light intensity is O Level only.
+
 | Factor | Effect | Why |
 |---|---|---|
 | **Higher temperature** | Faster | Water molecules have more kinetic energy, so they **evaporate** and **diffuse** faster. |
@@ -1509,6 +1580,8 @@ Next: test yourself with the practice questions below.`,
 > Think about washing drying on a line. It dries fastest on a **hot, dry, windy, sunny** day. Leaves lose water fastest on the same kind of day.
 
 ## Wilting
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 If a plant **loses water faster than its roots take it in**:
 
@@ -1532,6 +1605,8 @@ A **potometer** measures how fast a plant takes up water. This is close to the r
 
 ## How water moves up the xylem: transpiration pull
 
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
+
 1. Water evaporates from the leaves.
 2. This **pulls** more water out of the xylem in the leaf.
 3. Water molecules **stick together** (they have forces of attraction between them).
@@ -1540,6 +1615,8 @@ A **potometer** measures how fast a plant takes up water. This is close to the r
 > Think of drinking through a straw. When you suck at the top, the whole column of drink moves up. The leaf is the top of the straw.
 
 ## Xylem: structure and function
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 The **functions** of xylem are:
 
@@ -1596,7 +1673,7 @@ Next: test yourself with the practice questions below.`,
   "8.1": `## What you need to know
 
 - List the main food sources of carbohydrates, lipids, proteins, vitamins C and D, calcium, iron, fibre and water, and say why each is important.
-- Name the diseases caused by a lack of vitamin C (scurvy), vitamin D (rickets), calcium (rickets) and iron (anaemia), and describe their symptoms.
+- Name the diseases caused by a lack of vitamin C (scurvy) and vitamin D (rickets), and describe their symptoms. (Anaemia from a lack of iron is O Level only.)
 - Understand what a **balanced diet** is.
 
 ## Key words
@@ -1626,6 +1703,8 @@ Next: test yourself with the practice questions below.`,
 | **Water** | Drinks, and most foods | Needed for all reactions; dissolves substances; transport in blood |
 
 ## Deficiency diseases
+
+> **IGCSE Core:** scurvy is caused by a lack of vitamin C, and rickets by a lack of vitamin D or calcium. Anaemia (lack of iron) is O Level only.
 
 | Missing nutrient | Disease | Symptoms |
 |---|---|---|
@@ -1674,10 +1753,10 @@ Next: test yourself with the practice questions below.`,
 - Describe physical and chemical digestion.
 - Identify the four types of teeth, describe the structure of a tooth and the job of each type.
 - Describe the job of each part of the digestive system.
-- Describe what amylase, maltase, protease and lipase do.
-- Describe the role of hydrochloric acid and bile.
-- Understand that proteases in the stomach and duodenum work best at different pH.
-- Describe peristalsis.
+- Describe what amylase, protease and lipase do. (Maltase is Extended and O Level.)
+- Describe the role of hydrochloric acid. (The roles of bile are Extended and O Level.)
+- Understand that proteases in the stomach and duodenum work best at different pH. (Extended and O Level)
+- Describe peristalsis. (O Level only)
 
 ## Key words
 
@@ -1752,6 +1831,8 @@ Teeth are **embedded in the gum** and jaw bone.
 
 ## Chemical digestion
 
+> **IGCSE Core:** amylase, protease and lipase, and where they are made and work. Maltase, and pepsin and trypsin by name, are Extended and O Level.
+
 > **Chemical digestion** breaks **large molecules** into **small molecules**. It uses **enzymes**.
 
 | Enzyme | Breaks down | Into | Made in | Works in |
@@ -1769,6 +1850,8 @@ It also makes the stomach **very acidic** (about pH 2).
 
 ## Different proteases, different pH
 
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
+
 | Protease | Where | Best pH |
 |---|---|---|
 | **Pepsin** | Stomach | About **2** (acidic) |
@@ -1778,6 +1861,8 @@ The juice from the pancreas is **alkaline**. It neutralises the stomach acid, so
 
 ## Bile
 
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
+
 Bile is made in the **liver**, stored in the **gall bladder**, and released into the **duodenum**.
 
 > Bile **emulsifies** fats: it breaks big fat drops into **tiny droplets**. This gives a much **bigger surface area** for **lipase** to digest the fat into fatty acids and glycerol.
@@ -1785,6 +1870,8 @@ Bile is made in the **liver**, stored in the **gall bladder**, and released into
 Bile is **not an enzyme**. It does physical digestion, not chemical.
 
 ## Peristalsis
+
+> **O Level only.** IGCSE students can skip to the next heading.
 
 > **Peristalsis** is waves of contractions of **circular and longitudinal muscles** that move food through the digestive system.
 
@@ -1815,10 +1902,10 @@ Next: test yourself with the practice questions below.`,
 
 - State that most nutrients are absorbed in the small intestine.
 - Understand **absorption** and **assimilation**.
-- Describe a **villus** and the jobs of its capillaries and lacteal.
-- Explain how villi and microvilli give the ileum a large surface area.
+- Describe a **villus** and the jobs of its capillaries and lacteal. (Extended and O Level)
+- Explain how villi and microvilli give the ileum a large surface area. (Extended and O Level)
 - Understand that water is absorbed in the small intestine and colon, but mostly in the small intestine.
-- State the job of the **hepatic portal vein**.
+- State the job of the **hepatic portal vein**. (Extended and O Level)
 
 ## Key words
 
@@ -1847,6 +1934,8 @@ Nutrients are absorbed by:
 
 ## Villi
 
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
+
 ![A villus, labelled](/images/biology/8-3-villus.svg)
 
 The inside wall of the small intestine is covered in millions of tiny folds called **villi**.
@@ -1869,6 +1958,8 @@ Water is absorbed from the **small intestine** and the **colon**.
 **Most** water is absorbed in the **small intestine**. The colon absorbs the rest, so faeces become solid.
 
 ## The hepatic portal vein
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 > The **hepatic portal vein** carries most absorbed nutrients from the **ileum** to the **liver**.
 
@@ -1903,13 +1994,13 @@ Next: test yourself with the practice questions below.`,
   "9.1": `## What you need to know
 
 - Describe the features of gas exchange surfaces: large surface area, thin surface, good blood supply and good air supply.
-- State the percentages of gases in air.
+- State the percentages of gases in air. (O Level only)
 - Investigate and explain the differences between breathed-in and breathed-out air.
 - Identify the larynx, trachea, lungs, bronchi, bronchioles, alveoli and capillaries.
 - Describe how gas exchange happens in the alveoli.
-- Identify the ribs, intercostal muscles and diaphragm, and explain how they make us breathe.
+- Identify the ribs, intercostal muscles and diaphragm. (Explaining how they make us breathe, and naming internal and external intercostals, is Extended and O Level.)
 - Investigate and explain how exercise changes breathing.
-- Explain how goblet cells, ciliated cells and mucus protect the lungs.
+- Explain how goblet cells, ciliated cells and mucus protect the lungs. (Extended and O Level)
 
 ## Key words
 
@@ -1967,6 +2058,8 @@ The alveoli are well suited to gas exchange:
 
 ## Air in and air out
 
+> **IGCSE Core:** describe the differences between breathed-in and breathed-out air. The exact percentages are O Level only.
+
 | Gas | Air in (inspired) | Air out (expired) | Why |
 |---|---|---|---|
 | **Oxygen** | 21% | about **16%** | Some is taken into the blood for respiration. |
@@ -1983,6 +2076,8 @@ Breathe gently through **limewater**. Limewater turns **milky (cloudy)** when ca
 Expired air turns limewater milky **much faster** than inspired air, because it has more carbon dioxide.
 
 ## How we breathe
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 ![How breathing in and out works](/images/biology/9-1-breathing.svg)
 
@@ -2008,6 +2103,8 @@ Expired air turns limewater milky **much faster** than inspired air, because it 
 
 ## Exercise and breathing
 
+> **IGCSE Core:** describe how exercise changes the rate and depth of breathing. Explaining it (carbon dioxide detected by the brain) is Extended and O Level.
+
 During exercise, breathing gets **faster** (higher rate) and **deeper**.
 
 Why? Muscles are working harder, so they need **more energy** from respiration:
@@ -2024,6 +2121,8 @@ The brain detects the **rise in carbon dioxide** in the blood and makes you brea
 3. Count breaths per minute straight away, then every minute until it returns to normal.
 
 ## Protecting the lungs
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 Air contains dust and **pathogens** (germs). The airways are protected by:
 
@@ -2127,7 +2226,7 @@ Next: test yourself with the practice questions below.`,
   "10.2": `## What you need to know
 
 - Describe aerobic respiration as releasing a relatively large amount of energy by breaking down glucose using oxygen.
-- State the word equation and balanced chemical equation for aerobic respiration.
+- State the word equation for aerobic respiration. (The balanced chemical equation is Extended and O Level.)
 
 ## Key words
 
@@ -2145,6 +2244,8 @@ Next: test yourself with the practice questions below.`,
 It happens in the **mitochondria**. Cells that need lots of energy, such as muscle cells and sperm cells, have many mitochondria.
 
 ## The equations
+
+> **IGCSE Core:** you need the word equation. The balanced chemical equation is Extended and O Level.
 
 ![The aerobic respiration equations](/images/biology/10-2-equations.svg)
 
@@ -2187,8 +2288,8 @@ Next: test yourself with the practice questions below.`,
 
 - Describe anaerobic respiration as releasing a relatively small amount of energy by breaking down glucose without oxygen.
 - State the word equations for anaerobic respiration in humans and in yeast.
-- Explain why lactic acid builds up in muscles during hard exercise, causing an oxygen debt.
-- Outline how the oxygen debt is removed after exercise.
+- Explain why lactic acid builds up in muscles during hard exercise, causing an oxygen debt. (Extended and O Level)
+- Outline how the oxygen debt is removed after exercise. (Extended and O Level)
 
 ## Key words
 
@@ -2207,6 +2308,8 @@ Next: test yourself with the practice questions below.`,
 "Anaerobic" means "without air" (without oxygen).
 
 ## The equations
+
+> **IGCSE Core:** you need the word equations for yeast and for muscles.
 
 ![Anaerobic respiration in humans and yeast](/images/biology/10-3-equations.svg)
 
@@ -2233,6 +2336,8 @@ Bakers and brewers use anaerobic respiration in yeast:
 
 ## Exercise and the oxygen debt
 
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
+
 During **vigorous exercise**, muscles need lots of energy very quickly.
 
 1. The heart and lungs **cannot deliver oxygen fast enough** for aerobic respiration alone.
@@ -2243,6 +2348,8 @@ During **vigorous exercise**, muscles need lots of energy very quickly.
 > Think of borrowing money. During a sprint, the muscles "borrow" energy without paying with oxygen. Afterwards, they must "pay back" the debt with extra oxygen.
 
 ## Paying back the oxygen debt
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 After exercise:
 
@@ -2268,8 +2375,9 @@ Next: test yourself with the practice questions below.`,
   "11.1": `## What you need to know
 
 - Describe the circulatory system as blood vessels, a pump (the heart) and valves that keep blood flowing one way.
-- Describe a **double circulation**: blood passes through the heart twice for each complete circuit.
-- Understand that a double circulation gives low pressure to the lungs and high pressure to the body.
+- Describe a **double circulation**: blood passes through the heart twice for each complete circuit. (Extended and O Level)
+- Understand that a double circulation gives low pressure to the lungs and high pressure to the body. (Extended and O Level)
+- Describe the single circulation of a fish. (IGCSE Extended only)
 
 ## Key words
 
@@ -2293,7 +2401,19 @@ Next: test yourself with the practice questions below.`,
 | **Blood vessels** | Tubes that carry blood: arteries, veins and capillaries. |
 | **Valves** | In the heart and veins. They stop blood flowing **backwards**. |
 
+## Single circulation in fish
+
+> **IGCSE Extended only.** O Level and IGCSE Core students can skip to the next heading.
+
+In a **fish**, blood passes through the heart **once** for each complete circuit of the body.
+
+Heart, then gills (to pick up oxygen), then the rest of the body, then back to the heart.
+
+> In one circuit the blood passes through **two sets of capillaries**: first in the gills, then in the body. Pushing through the gill capillaries makes the pressure drop, so blood flows slowly to the body. This is one reason mammals have a double circulation instead.
+
 ## Double circulation
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 ![The double circulation](/images/biology/11-1-double-circulation.svg)
 
@@ -2307,6 +2427,8 @@ Next: test yourself with the practice questions below.`,
 > Think of a figure of eight, with the heart in the middle. One loop goes to the lungs, the other loop goes to the body.
 
 ## Why have a double circulation?
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 | Circuit | Pressure | Why |
 |---|---|---|
@@ -2330,9 +2452,9 @@ Next: test yourself with the practice questions below.`,
 
   "11.2": `## What you need to know
 
-- Identify the parts of the heart: muscular wall, septum, left and right atria and ventricles, atrioventricular and semilunar valves, coronary arteries.
-- Explain why the left ventricle wall is thicker than the right, and why ventricle walls are thicker than atrium walls.
-- Describe how the heart beats: atria and ventricles contracting, and valves opening and closing.
+- Identify the parts of the heart: muscular wall, septum, left and right atria and ventricles, valves and coronary arteries. (Naming the atrioventricular and semilunar valves is Extended and O Level.)
+- Explain why the left ventricle wall is thicker than the right, and why ventricle walls are thicker than atrium walls. (Extended and O Level)
+- Describe how the heart beats: atria and ventricles contracting, and valves opening and closing. (Extended and O Level)
 - State that arteries carry blood away from the heart and veins carry it back.
 - State how heart activity can be monitored.
 - Investigate and explain how exercise changes heart rate.
@@ -2353,6 +2475,8 @@ Next: test yourself with the practice questions below.`,
 
 ## Parts of the heart
 
+> **IGCSE Core:** you need all the parts except the names atrioventricular and semilunar valves, which are Extended and O Level.
+
 ![The heart, labelled](/images/biology/11-2-heart.svg)
 
 > The heart is drawn as if you are **looking at someone facing you**. So the **left side of the heart is on the right of the diagram**.
@@ -2371,12 +2495,16 @@ Next: test yourself with the practice questions below.`,
 
 ## Why are the walls different thicknesses?
 
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
+
 | Comparison | Why |
 |---|---|
 | **Left ventricle is thicker than right ventricle** | The left ventricle pumps blood all round the **body**, at **high pressure**. The right ventricle only pumps to the **lungs**, which are close, at **low pressure**. |
 | **Ventricles are thicker than atria** | Ventricles pump blood **out of the heart** to the lungs or body. Atria only pump blood a short way, **down into the ventricles**. |
 
 ## How the heart beats
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 1. Blood flows into the **atria** from the veins.
 2. The **atria contract**. Blood is pushed through the **atrioventricular valves** into the ventricles.
@@ -2395,6 +2523,8 @@ The activity of the heart can be checked by:
 - **Listening** to the sounds of the **valves closing** with a stethoscope ("lub-dub").
 
 ## Exercise and heart rate
+
+> **IGCSE Core:** describe how exercise changes heart rate. Explaining why is Extended and O Level.
 
 During exercise, the **heart rate increases**.
 
@@ -2454,9 +2584,9 @@ Next: test yourself with the practice questions below.`,
 
   "11.3": `## What you need to know
 
-- Name the main blood vessels to and from the heart, lungs, liver and kidneys.
+- Name the main blood vessels to and from the heart, lungs and kidneys. (The liver's vessels are Extended and O Level.)
 - Describe and identify the structure of arteries, veins and capillaries.
-- Explain how their structure is related to the pressure of the blood inside them.
+- Explain how their structure is related to the pressure of the blood inside them. (Extended and O Level)
 
 ## Key words
 
@@ -2472,6 +2602,8 @@ Next: test yourself with the practice questions below.`,
 | Renal | To do with the kidneys. |
 
 ## The main blood vessels
+
+> **IGCSE Core:** vessels of the heart, lungs and kidneys. The hepatic artery, hepatic vein and hepatic portal vein are Extended and O Level.
 
 ![The main blood vessels](/images/biology/11-3-main-vessels.svg)
 
@@ -2502,6 +2634,8 @@ Next: test yourself with the practice questions below.`,
 | **Blood pressure** | **High** | **Low** | Falling |
 
 ## How structure matches pressure
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 ### Arteries: high pressure
 
@@ -2538,10 +2672,10 @@ Next: test yourself with the practice questions below.`,
 
   "11.4": `## What you need to know
 
-- Identify red blood cells and white blood cells (lymphocytes and phagocytes) under the microscope and in diagrams.
+- Identify red and white blood cells under the microscope and in diagrams. (Telling lymphocytes from phagocytes is Extended and O Level.)
 - List the parts of blood: red blood cells, white blood cells, platelets and plasma.
 - State what each part does.
-- Describe how substances move between the blood in capillaries, tissue fluid and body cells.
+- Describe how substances move between the blood in capillaries, tissue fluid and body cells. (O Level only)
 
 ## Key words
 
@@ -2581,12 +2715,16 @@ Next: test yourself with the practice questions below.`,
 
 ## White blood cells
 
+> **IGCSE Core:** white blood cells carry out phagocytosis and make antibodies. Naming lymphocytes and phagocytes is Extended and O Level.
+
 | Phagocytes | Lymphocytes |
 |---|---|
 | **Engulf** (surround and swallow) pathogens, then digest them | Make **antibodies**, which help destroy pathogens |
 | Lobed nucleus | Large round nucleus |
 
 ## Platelets and clotting
+
+> **IGCSE Core:** platelets help blood to clot. Fibrinogen and fibrin are Extended and O Level.
 
 When you cut yourself:
 
@@ -2610,6 +2748,8 @@ Plasma is mostly water. It **transports**:
 - **Plasma proteins** (such as fibrinogen)
 
 ## From blood to cells: tissue fluid
+
+> **O Level only.** IGCSE students can skip to the next heading.
 
 ![Exchange between a capillary, tissue fluid and cells](/images/biology/11-4-tissue-fluid.svg)
 
@@ -2640,10 +2780,10 @@ Next: test yourself with the practice questions below.`,
 - Describe a pathogen and a transmissible disease.
 - Describe how pathogens are passed on: directly and indirectly.
 - Describe the body's barriers: skin, nose hairs, mucus and stomach acid.
-- Describe the mosquito as a vector, how malaria is passed on, and how mosquitoes are controlled using their life cycle.
+- Describe the mosquito as a vector, how malaria is passed on, and how mosquitoes are controlled using their life cycle. (O Level only)
 - Describe HIV: how it is passed on, how it can lead to AIDS, and how it is controlled.
 - Describe cholera, how it spreads, how it is prevented, and how it causes diarrhoea.
-- Describe the effects of too much alcohol and of tobacco smoke.
+- Describe the effects of too much alcohol and of tobacco smoke. (O Level only)
 
 ## Key words
 
@@ -2679,6 +2819,8 @@ Next: test yourself with the practice questions below.`,
 
 ## Malaria and the mosquito
 
+> **O Level only.** IGCSE students can skip to the next heading.
+
 ![The mosquito life cycle and how to control it](/images/biology/12-1-mosquito.svg)
 
 - Malaria is caused by a **parasite** (a single-celled organism called *Plasmodium*).
@@ -2696,6 +2838,8 @@ Mosquitoes lay eggs in **still water**. The eggs hatch into **larvae**, which be
 | **Adults** | Spray **insecticides**; sleep under **mosquito nets** (treated with insecticide); use insect repellent |
 
 ## HIV and AIDS
+
+> HIV causes a **sexually transmitted infection (STI)**: an infection passed on by sexual contact.
 
 - **HIV** (human immunodeficiency virus) is a **virus**: a viral pathogen.
 - HIV infection can lead to **AIDS** (Acquired Immune Deficiency Syndrome), where the immune system becomes very weak.
@@ -2732,6 +2876,8 @@ Drugs can slow HIV down, but there is no cure. Testing and education also help c
 
 ## Alcohol
 
+> **O Level only.** IGCSE students can skip to the next heading.
+
 Drinking too much alcohol:
 
 - **Reduces self-control**, so people take risks.
@@ -2741,6 +2887,8 @@ Drinking too much alcohol:
 - Has **social effects**: violence, crime, family problems, losing jobs.
 
 ## Tobacco smoke
+
+> **O Level only.** IGCSE students can skip to the next heading.
 
 | Substance | Effect |
 |---|---|
@@ -2776,7 +2924,7 @@ Next: test yourself with the practice questions below.`,
 - Describe a drug.
 - Describe how antibiotics are used to treat bacterial infections.
 - State that antibiotics kill bacteria but do not affect viruses.
-- Explain how to reduce antibiotic resistance (including MRSA) by using antibiotics only when essential.
+- Explain how to reduce antibiotic resistance (including MRSA) by using antibiotics only when essential. (Extended and O Level)
 
 ## Key words
 
@@ -2817,6 +2965,8 @@ Sometimes, by chance, a bacterium has a **mutation** that makes it **resistant**
 
 ### How to slow down resistance
 
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
+
 - Use antibiotics **only when essential**, for serious bacterial infections.
 - **Do not** use antibiotics for **viral** infections like colds.
 - **Finish the whole course**, so all bacteria are killed and none are left to develop resistance.
@@ -2839,12 +2989,12 @@ Next: test yourself with the practice questions below.`,
 
   "12.3": `## What you need to know
 
-- Describe active immunity, antigens and antibodies.
-- Explain that active immunity comes from infection or vaccination.
-- Outline how vaccination works and why it controls disease.
-- Explain passive immunity, including through the placenta and breast milk.
-- State that passive immunity makes no memory cells.
-- Outline how HIV weakens the immune system.
+- Describe active immunity, antigens and antibodies. (Extended and O Level)
+- Explain that active immunity comes from infection or vaccination. (Extended and O Level)
+- Outline how vaccination works and why it controls disease. (Extended and O Level)
+- Explain passive immunity, including through the placenta and breast milk. (Extended and O Level)
+- State that passive immunity makes no memory cells. (Extended and O Level)
+- Outline how HIV weakens the immune system. (O Level only)
 
 ## Key words
 
@@ -2858,6 +3008,8 @@ Next: test yourself with the practice questions below.`,
 | Memory cells | Lymphocytes that stay in the blood and remember an antigen, so the body responds faster next time. |
 
 ## Antigens and antibodies
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 ![Antibodies fit specific antigens](/images/biology/12-3-antibodies.svg)
 
@@ -2874,6 +3026,8 @@ When antibodies bind to antigens, they either:
 
 ## Active immunity
 
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
+
 > **Active immunity** is defence against a pathogen by **antibody production in your own body**.
 
 You get active immunity in two ways:
@@ -2882,6 +3036,8 @@ You get active immunity in two ways:
 2. **By vaccination**.
 
 ## How vaccination works
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 1. **Weakened** (or dead) pathogens, or just their **antigens**, are put into the body, often by injection.
 2. The antigens make **lymphocytes** respond and **produce antibodies**.
@@ -2893,6 +3049,8 @@ You get active immunity in two ways:
 When most people in a community are vaccinated, the pathogen **cannot spread** easily from person to person. This also protects people who cannot be vaccinated, such as newborn babies.
 
 ## Passive immunity
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 > **Passive immunity** is **short-term** defence by **antibodies received from another person**.
 
@@ -2913,6 +3071,8 @@ When most people in a community are vaccinated, the pathogen **cannot spread** e
 | Examples | Infection, vaccination | Placenta, breast milk |
 
 ## How HIV affects the immune system
+
+> **O Level only.** IGCSE students can skip to the next heading.
 
 HIV infects and destroys **lymphocytes**.
 
@@ -2939,7 +3099,7 @@ Next: test yourself with the practice questions below.`,
 
 - Describe excretion as removing toxic materials and waste products of metabolism.
 - State that carbon dioxide is a waste product of respiration, excreted by the lungs.
-- State that urea is a toxic waste made in the liver from excess amino acids.
+- State that urea is a toxic waste made in the liver from excess amino acids. (Extended and O Level)
 
 ## Key words
 
@@ -2960,6 +3120,8 @@ Our cells carry out many chemical reactions. Some make waste products that would
 > Think of a busy kitchen. Cooking (metabolism) makes rubbish. If no one takes the rubbish out (excretion), the kitchen becomes unsafe.
 
 ## Two main excretory products
+
+> **IGCSE Core:** carbon dioxide (lungs) and urea, water and ions (kidneys). How the liver makes urea is Extended and O Level.
 
 | Waste product | Made by | Excreted by |
 |---|---|---|
@@ -2989,10 +3151,11 @@ Next: test yourself with the practice questions below.`,
   "13.2": `## What you need to know
 
 - Identify the kidneys, ureters, bladder and urethra, and state what each does.
-- Explain why we must excrete urea.
-- Outline the structure of a nephron: Bowman's capsule, glomerulus, tubules, loop of Henle and collecting duct.
-- Outline what a nephron does: filtration, reabsorption and making urine.
-- Describe how the liver turns amino acids into proteins, and how deamination makes urea.
+- Explain why we must excrete urea. (Extended and O Level)
+- Outline the structure of a nephron: Bowman's capsule, glomerulus, tubules, loop of Henle and collecting duct. (O Level only)
+- Outline what a nephron does: filtration, reabsorption and making urine. (Extended and O Level)
+- Describe how the liver turns amino acids into proteins, and how deamination makes urea. (Extended and O Level)
+- Identify the cortex and medulla of the kidney. (IGCSE Extended only)
 
 ## Key words
 
@@ -3019,11 +3182,26 @@ Next: test yourself with the practice questions below.`,
 | **Bladder** | **Stores** urine |
 | **Urethra** | Carries urine **out of the body** |
 
+### Inside a kidney
+
+> **IGCSE Extended only.** O Level and IGCSE Core students can skip to the next heading.
+
+If you cut a kidney in half you can see two main regions:
+
+- the **cortex**: the dark outer layer
+- the **medulla**: the inner layer
+
+Each kidney also has a **ureter** leaving it, which carries urine to the bladder.
+
 ## Why excrete urea?
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 **Urea is toxic.** If it builds up in the blood, it poisons cells. So it must be removed.
 
 ## The nephron
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 ![A nephron and its blood vessels](/images/biology/13-2-nephron.svg)
 
@@ -3052,6 +3230,8 @@ Next: test yourself with the practice questions below.`,
 | Proteins and blood cells | **No** (too big) | | No |
 
 ## The liver and amino acids
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 After digestion, amino acids are carried to the **liver** in the hepatic portal vein.
 
@@ -3082,8 +3262,8 @@ Next: test yourself with the practice questions below.`,
 - Identify sensory, relay and motor neurones.
 - State that electrical impulses travel along neurones.
 - Describe a reflex arc and a reflex action.
-- Describe the structure of a synapse and what happens there.
-- State that synapses make impulses travel in one direction only.
+- Describe what a synapse is. (Its structure and what happens there are Extended and O Level.)
+- State that synapses make impulses travel in one direction only. (Extended and O Level)
 
 ## Key words
 
@@ -3138,6 +3318,8 @@ You do not have to think about it. Reflexes protect you from harm, for example p
 
 ## Synapses
 
+> **IGCSE Core:** a synapse is a junction between two neurones. Its structure is Extended and O Level.
+
 ![A synapse](/images/biology/14-1-synapse.svg)
 
 > A **synapse** is a **junction between two neurones**. There is a tiny gap between them.
@@ -3149,6 +3331,8 @@ Parts of a synapse:
 - **Receptor proteins** on the second neurone.
 
 ### What happens at a synapse
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 1. An **impulse** arrives at the end of the first neurone. It makes vesicles **release neurotransmitter** into the gap.
 2. The neurotransmitter **diffuses** across the gap and **binds to receptor proteins** on the next neurone.
@@ -3173,10 +3357,11 @@ Next: test yourself with the practice questions below.`,
   "14.2": `## What you need to know
 
 - Describe sense organs as groups of receptor cells that respond to specific stimuli.
-- Identify the parts of the eye: cornea, iris, pupil, lens, ciliary muscles, suspensory ligaments, retina, fovea, optic nerve and blind spot.
+- Identify the parts of the eye: cornea, iris, pupil, lens, retina, optic nerve and blind spot. (Ciliary muscles, suspensory ligaments and fovea are Extended and O Level.)
 - Describe what each part does.
 - Explain the pupil reflex.
-- Explain accommodation: focusing on near and distant objects.
+- Explain accommodation: focusing on near and distant objects. (Extended and O Level)
+- Describe where rods and cones are and what they do. (IGCSE Extended only)
 
 ## Key words
 
@@ -3204,6 +3389,8 @@ Next: test yourself with the practice questions below.`,
 
 ## Parts of the eye
 
+> **IGCSE Core:** you do not need the ciliary muscles, suspensory ligaments or fovea. They are Extended and O Level.
+
 ![The human eye, labelled](/images/biology/14-2-eye.svg)
 
 | Part | Job |
@@ -3217,6 +3404,21 @@ Next: test yourself with the practice questions below.`,
 | **Fovea** | Part of the retina with the **most light receptors**. Gives the clearest vision. |
 | **Optic nerve** | Carries **impulses to the brain**. |
 | **Blind spot** | Where the optic nerve leaves. **No receptors**, so no image is seen here. |
+
+## Rods and cones
+
+> **IGCSE Extended only.** O Level and IGCSE Core students can skip to the next heading.
+
+The retina has two kinds of light receptor cell.
+
+| Receptor | Job | Where |
+|---|---|---|
+| **Rods** | Work in **dim light** (night vision), black and white only | Spread over most of the retina, but **none in the fovea** |
+| **Cones** | Give **colour vision**, need bright light | Packed most closely in the **fovea** |
+
+> There are three types of cone, sensitive to different colours of light.
+
+The **fovea** is the part of the retina where light is focused when you look straight at something. It has the most cones, so it gives the sharpest, colour image.
 
 ## The pupil reflex
 
@@ -3233,6 +3435,8 @@ The iris has two sets of muscles that work against each other (**antagonistic**)
 | Why | Protects the retina from damage | Lets more light in to see |
 
 ## Accommodation
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 ![Focusing on near and distant objects](/images/biology/14-2-accommodation.svg)
 
@@ -3261,8 +3465,8 @@ Next: test yourself with the practice questions below.`,
   "14.3": `## What you need to know
 
 - Describe a hormone.
-- Identify the endocrine glands and the hormones they make.
-- Explain how adrenaline increases blood glucose and heart rate, with examples.
+- Identify the endocrine glands and the hormones they make. (Glucagon is Extended and O Level.)
+- Describe how adrenaline increases heart rate and breathing rate. (Raising blood glucose is Extended and O Level.)
 - Compare nervous and hormonal control: speed and how long the effect lasts.
 
 ## Key words
@@ -3280,6 +3484,8 @@ Next: test yourself with the practice questions below.`,
 
 ## The endocrine glands
 
+> **IGCSE Core:** adrenaline, insulin, testosterone and oestrogen. Glucagon is Extended and O Level.
+
 ![The endocrine glands](/images/biology/14-3-glands.svg)
 
 | Gland | Hormone(s) |
@@ -3291,6 +3497,8 @@ Next: test yourself with the practice questions below.`,
 | **Ovaries** (in females) | **Oestrogen** and **progesterone** |
 
 ## Adrenaline
+
+> **IGCSE Core:** adrenaline increases breathing rate, heart rate and pupil size. Raising blood glucose is Extended and O Level.
 
 Adrenaline is released when you are **frightened, excited or stressed**: the "**fight or flight**" response.
 
@@ -3329,7 +3537,7 @@ Next: test yourself with the practice questions below.`,
   "14.4": `## What you need to know
 
 - Describe homeostasis as keeping a constant internal environment.
-- Explain control by negative feedback, with reference to a set point.
+- Explain control by negative feedback, with reference to a set point. (Extended and O Level)
 
 ## Key words
 
@@ -3353,6 +3561,8 @@ Examples of things the body keeps constant:
 - **Water content** of the blood.
 
 ## Negative feedback
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 ![How negative feedback works](/images/biology/14-4-negative-feedback.svg)
 
@@ -3382,10 +3592,10 @@ Next: test yourself with the practice questions below.`,
 
   "14.5": `## What you need to know
 
-- Identify on a diagram of the skin: hairs, hair erector muscles, sweat glands, receptors, sensory neurones, blood vessels and fatty tissue.
-- Describe how insulation helps keep body temperature constant.
-- Describe the roles of the hypothalamus and skin temperature receptors.
-- Explain how sweating, shivering, hair erector muscles, vasodilation and vasoconstriction keep body temperature constant.
+- Identify on a diagram of the skin: hairs, hair erector muscles, sweat glands, receptors, sensory neurones, blood vessels and fatty tissue. (Extended and O Level)
+- Describe how insulation helps keep body temperature constant. (Extended and O Level)
+- Describe the roles of the hypothalamus and skin temperature receptors. (Extended and O Level)
+- Explain how sweating, shivering, hair erector muscles, vasodilation and vasoconstriction keep body temperature constant. (Extended and O Level)
 
 ## Key words
 
@@ -3401,6 +3611,8 @@ Next: test yourself with the practice questions below.`,
 
 ## The skin
 
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
+
 ![A section through human skin](/images/biology/14-5-skin.svg)
 
 | Part | Role in temperature control |
@@ -3415,15 +3627,21 @@ Next: test yourself with the practice questions below.`,
 
 ## Insulation
 
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
+
 **Fatty tissue** under the skin and **air trapped by hairs** are poor conductors of heat. They **reduce heat loss** from the body.
 
 ## Control by the hypothalamus
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 - **Temperature receptors** in the **skin** detect the outside temperature and send impulses to the brain.
 - The **hypothalamus** in the brain **monitors the temperature of the blood**. It is the **control centre**.
 - If the temperature moves away from **37 °C** (the set point), the hypothalamus sends impulses to **effectors** to bring it back. This is **negative feedback**.
 
 ## When we are too hot
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 | Response | How it cools us |
 |---|---|
@@ -3432,6 +3650,8 @@ Next: test yourself with the practice questions below.`,
 | **Hair erector muscles relax** | Hairs **lie flat**, trapping less air, so more heat is lost. |
 
 ## When we are too cold
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 | Response | How it warms us |
 |---|---|
@@ -3459,9 +3679,9 @@ Next: test yourself with the practice questions below.`,
 
   "14.6": `## What you need to know
 
-- Explain why blood glucose concentration must be controlled.
-- Describe how the liver and pancreas control blood glucose using insulin and glucagon.
-- Describe the signs of Type 1 diabetes and its treatment.
+- Explain why blood glucose concentration must be controlled. (Extended and O Level)
+- State that insulin lowers blood glucose. (How the liver and pancreas control it with insulin and glucagon is Extended and O Level.)
+- Describe the signs of Type 1 diabetes and its treatment. (Extended and O Level)
 
 ## Key words
 
@@ -3475,12 +3695,16 @@ Next: test yourself with the practice questions below.`,
 
 ## Why control blood glucose?
 
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
+
 - Cells need a steady supply of glucose for **respiration**. If glucose falls **too low**, cells (especially brain cells) cannot get enough energy.
 - If glucose rises **too high**, water leaves cells by **osmosis** into the blood, and this damages cells.
 
 So blood glucose is kept close to a **set point** by **negative feedback**.
 
 ## Control by the pancreas and liver
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 ![How insulin and glucagon control blood glucose](/images/biology/14-6-glucose-control.svg)
 
@@ -3508,6 +3732,8 @@ So blood glucose is kept close to a **set point** by **negative feedback**.
 > Memory trick: insulin puts glucose **in** to storage. Glucagon makes glucose **go**. Do not mix up **glucagon** (hormone) and **glycogen** (store).
 
 ## Type 1 diabetes
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 In **Type 1 diabetes**, the pancreas does **not make enough insulin**.
 
@@ -3537,7 +3763,7 @@ Next: test yourself with the practice questions below.`,
   "15.1": `## What you need to know
 
 - Describe **gravitropism** and **phototropism**.
-- Explain how **auxin** controls shoot growth.
+- Explain how **auxin** controls shoot growth. (Extended and O Level)
 - Investigate gravitropism and phototropism in shoots and roots.
 
 ## Key words
@@ -3571,6 +3797,8 @@ Why this helps:
 - Roots grow down into the soil, to take in **water and mineral ions** and **anchor** the plant.
 
 ## How auxin controls shoot growth
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 ![How auxin makes a shoot bend towards light](/images/biology/15-1-auxin.svg)
 
@@ -3617,11 +3845,11 @@ Next: test yourself with the practice questions below.`,
   "16.1": `## What you need to know
 
 - Understand that chromosomes contain DNA, which carries genes.
-- Describe haploid and diploid nuclei. A human diploid cell has 23 pairs of chromosomes.
-- Describe mitosis and what it is used for.
-- Describe stem cells.
-- State that meiosis makes gametes, and describe it as a reduction division.
-- Understand that cancer is caused by uncontrolled cell division.
+- Describe haploid and diploid nuclei. A human diploid cell has 23 pairs of chromosomes. (Extended and O Level)
+- Describe mitosis and what it is used for. (Extended and O Level)
+- Describe stem cells. (Extended and O Level)
+- State that meiosis makes gametes, and describe it as a reduction division. (Extended and O Level)
+- Understand that cancer is caused by uncontrolled cell division. (O Level only)
 
 ## Key words
 
@@ -3646,6 +3874,8 @@ Next: test yourself with the practice questions below.`,
 
 ## Haploid and diploid
 
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
+
 | | Diploid | Haploid |
 |---|---|---|
 | Sets of chromosomes | **Two** | **One** |
@@ -3655,6 +3885,8 @@ Next: test yourself with the practice questions below.`,
 In a diploid cell, chromosomes come in **pairs**: one of each pair came from the mother and one from the father.
 
 ## Mitosis
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 ![Mitosis and meiosis compared](/images/biology/16-1-mitosis-meiosis.svg)
 
@@ -3671,11 +3903,15 @@ Mitosis is used for:
 
 ## Stem cells
 
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
+
 > **Stem cells** are **unspecialised** cells that divide by **mitosis** to make daughter cells that can **become specialised**.
 
 For example, stem cells in the bone marrow make new red and white blood cells.
 
 ## Meiosis
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 > **Meiosis** is involved in making **gametes**. It is a **reduction division**: diploid cells divide to make **haploid** cells that are **genetically different**.
 
@@ -3688,6 +3924,8 @@ Why halve the number? When a haploid sperm (23) joins a haploid egg (23) at fert
 | New cells are | **Genetically identical** | **Genetically different** |
 
 ## Cancer
+
+> **O Level only.** IGCSE students can skip to the next heading.
 
 > **Cancers** form as a result of **uncontrolled cell division**.
 
@@ -3709,8 +3947,8 @@ Next: test yourself with the practice questions below.`,
   "16.2": `## What you need to know
 
 - Describe asexual reproduction and give examples.
-- Describe sexual reproduction as the fusion of haploid nuclei to make a diploid zygote.
-- Discuss the advantages and disadvantages of each.
+- Describe sexual reproduction as the fusion of gamete nuclei to make a zygote. (Haploid and diploid are Extended and O Level.)
+- Discuss the advantages and disadvantages of each. (Extended and O Level)
 
 ## Key words
 
@@ -3739,11 +3977,15 @@ There are no gametes and no fertilisation. Offspring are **clones** of the paren
 
 ## Sexual reproduction
 
+> **IGCSE Core:** the words haploid and diploid are Extended and O Level.
+
 > **Sexual reproduction** is the **fusion of the nuclei of two haploid gametes** (fertilisation) to form a **diploid zygote**. It produces **genetically different** offspring.
 
 Each parent gives half the chromosomes, so offspring are a **mix** of both parents.
 
 ## Advantages and disadvantages
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 | | Asexual | Sexual |
 |---|---|---|
@@ -3773,11 +4015,11 @@ Next: test yourself with the practice questions below.`,
 - Identify and draw the parts of an insect-pollinated flower, and the anthers and stigmas of a wind-pollinated flower.
 - State what each flower part does.
 - Compare insect-pollinated and wind-pollinated flowers and their pollen.
-- Describe pollination, self-pollination and cross-pollination, and discuss their effects.
-- Describe pollen tube growth and fertilisation.
-- Understand that ovules become seeds and the ovary becomes a fruit.
-- Describe seed structure.
-- Explain seed and fruit dispersal by wind and animals.
+- Describe pollination. (Self-pollination and cross-pollination and their effects are Extended and O Level.)
+- Describe fertilisation. (Pollen tube growth is Extended and O Level.)
+- Understand that ovules become seeds and the ovary becomes a fruit. (O Level only)
+- Describe seed structure. (O Level only)
+- Explain seed and fruit dispersal by wind and animals. (O Level only)
 - Investigate the conditions needed for germination, and describe germination.
 
 ## Key words
@@ -3824,6 +4066,8 @@ Next: test yourself with the practice questions below.`,
 
 ## Pollination
 
+> **IGCSE Core:** pollination is the transfer of pollen from an anther to a stigma. Self-pollination and cross-pollination are Extended and O Level.
+
 > **Pollination** is the transfer of **pollen** from an **anther** to a **stigma**.
 
 | | Self-pollination | Cross-pollination |
@@ -3834,6 +4078,8 @@ Next: test yourself with the practice questions below.`,
 | Reliance on pollinators | **Does not** need insects or wind to reach another plant | **Relies** on pollinators (insects) or wind; if pollinators decline, reproduction suffers |
 
 ## Fertilisation
+
+> **IGCSE Core:** fertilisation is when the pollen nucleus fuses with the ovule nucleus. The pollen tube is Extended and O Level, and seeds and fruits forming is O Level only.
 
 1. A pollen grain lands on the **stigma**.
 2. It grows a **pollen tube** down through the **style** to the **ovary**.
@@ -3847,6 +4093,8 @@ After fertilisation:
 
 ## Seed structure
 
+> **O Level only.** IGCSE students can skip to the next heading.
+
 ![The inside of a seed](/images/biology/16-3-seed.svg)
 
 | Part | What it is |
@@ -3858,6 +4106,8 @@ After fertilisation:
 | **Cotyledons** | Seed leaves that store food for the embryo |
 
 ## Seed and fruit dispersal
+
+> **O Level only.** IGCSE students can skip to the next heading.
 
 Seeds are spread away from the parent plant. This:
 
@@ -3914,9 +4164,9 @@ Next: test yourself with the practice questions below.`,
 - Explain how sperm and egg cells are adapted.
 - Describe fertilisation, and compare male and female gametes.
 - Describe what testosterone and oestrogen do at puberty.
-- Describe the menstrual cycle and the roles of FSH, LH, oestrogen and progesterone.
+- Describe the menstrual cycle. (The roles of FSH, LH, oestrogen and progesterone are Extended and O Level.)
 - Describe early development of the zygote, the amniotic sac and fluid, the placenta and umbilical cord.
-- State that some viruses can cross the placenta.
+- State that some viruses can cross the placenta. (Extended and O Level)
 
 ## Key words
 
@@ -4001,6 +4251,8 @@ The cycle lasts about **28 days**.
 
 ### Hormones in the cycle
 
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
+
 | Hormone | Made in | Job |
 |---|---|---|
 | **FSH** | Pituitary gland | Makes an **egg mature** in the ovary; makes the ovary produce oestrogen |
@@ -4011,6 +4263,8 @@ The cycle lasts about **28 days**.
 When progesterone falls at the end of the cycle, the lining breaks down (menstruation).
 
 ## Pregnancy
+
+> **IGCSE Core:** how substances pass across the placenta, and that some viruses cross it, are Extended and O Level.
 
 1. After fertilisation, the zygote divides by mitosis to form a **ball of cells**: the **embryo**.
 2. The embryo moves to the uterus and **implants** in the thick **uterus lining**.
@@ -4107,11 +4361,13 @@ Next: test yourself with the practice questions below.`,
 
   "17.2": `## What you need to know
 
-- Describe the structure of DNA: double helix, nucleotides, bases A, T, C and G, and base pairing.
+- Describe the structure of DNA: double helix, nucleotides, bases A, T, C and G, and base pairing. (Extended and O Level)
 - Define a gene.
-- Explain that DNA controls cells by controlling which proteins (including enzymes) are made.
-- State that the base sequence of a gene sets the amino acid sequence of a protein.
-- Understand that different amino acid sequences give proteins different shapes.
+- Explain that DNA controls cells by controlling which proteins (including enzymes) are made. (Extended and O Level)
+- State that the base sequence of a gene sets the amino acid sequence of a protein. (Extended and O Level)
+- Understand that different amino acid sequences give proteins different shapes. (Extended and O Level)
+- Describe how a protein is made using mRNA and ribosomes. (IGCSE Extended only)
+- Explain that most cells have the same genes but only some are expressed. (IGCSE Extended only)
 
 ## Key words
 
@@ -4125,6 +4381,8 @@ Next: test yourself with the practice questions below.`,
 | Base sequence | The order of bases along a strand of DNA. |
 
 ## The structure of DNA
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 ![The structure of DNA](/images/biology/17-2-dna.svg)
 
@@ -4142,11 +4400,15 @@ Next: test yourself with the practice questions below.`,
 
 ## What is a gene?
 
+> **IGCSE Core:** you need this definition. The rest of this topic is Extended and O Level.
+
 > A **gene** is a **length of DNA that codes for a protein**.
 
 Each chromosome carries hundreds or thousands of genes.
 
 ## How DNA controls a cell
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 1. The **order of bases** in a gene (the **base sequence**) sets the **order of amino acids** in a protein.
 2. A different order of amino acids gives a protein a **different shape**.
@@ -4155,6 +4417,29 @@ Each chromosome carries hundreds or thousands of genes.
 So DNA controls what a cell does by controlling **which proteins**, including **enzymes**, the cell makes.
 
 > Think of the base sequence as a recipe written in a four-letter alphabet. The recipe tells the cell which amino acids to join, in which order, to build a protein.
+
+## How a protein is made
+
+> **IGCSE Extended only.** O Level and IGCSE Core students can skip to the next heading.
+
+1. The gene (a length of DNA) **stays in the nucleus**.
+2. A copy of the gene is made as a molecule called **mRNA** (messenger RNA).
+3. The mRNA moves out of the nucleus into the **cytoplasm**.
+4. The mRNA passes through a **ribosome**.
+5. The ribosome joins **amino acids** together in the order set by the base sequence of the mRNA.
+6. The chain of amino acids folds into a protein with its own shape.
+
+> Think of the DNA as a recipe book that never leaves the library (the nucleus). You photocopy one recipe (mRNA) and take it to the kitchen (the ribosome) to cook.
+
+## Same genes, different cells
+
+> **IGCSE Extended only.** O Level and IGCSE Core students can skip to the next heading.
+
+- Almost every body cell contains **the same genes**.
+- But in each cell **many genes are not expressed** (not used to make proteins).
+- A cell only makes the proteins it needs. A red blood cell makes haemoglobin; a muscle cell makes the proteins that let it contract.
+
+DNA controls cells by making proteins such as **enzymes**, **carrier proteins** in membranes and **receptors** for neurotransmitters.
 
 ## Common mistakes
 
@@ -4175,12 +4460,15 @@ Next: test yourself with the practice questions below.`,
 - Describe inheritance and define an allele.
 - Use the words dominant, recessive, phenotype, genotype, homozygous and heterozygous.
 - Use genetic diagrams and Punnett squares to predict 1:1 and 3:1 ratios.
-- Explain why real results often differ from expected ratios.
+- Explain why real results often differ from expected ratios. (O Level only)
 - State what pure-breeding means.
-- Explain codominance using ABO blood groups.
+- Explain codominance using ABO blood groups. (Extended and O Level)
 - Describe how sex is determined (XX and XY).
-- Describe gene mutations (sickle cell anaemia) and chromosome mutations (Down's syndrome).
-- State the sources of genetic variation, and what increases the rate of mutation.
+- Describe a mutation as a genetic change that can form new alleles. (Sickle cell anaemia and Down's syndrome are O Level only.)
+- State that ionising radiation and some chemicals increase the rate of mutation. (Other sources of genetic variation are Extended and O Level.)
+- Interpret pedigree diagrams. (IGCSE only)
+- Use a test cross to find an unknown genotype. (IGCSE Extended only)
+- Explain sex linkage using red-green colour blindness. (IGCSE Extended only)
 
 ## Key words
 
@@ -4244,13 +4532,54 @@ For example, the gene for height in pea plants has two alleles: **T** (tall, dom
 
 ### Why real results differ
 
+> **O Level only.** IGCSE students can skip to the next heading.
+
 Fertilisation is **random**. With **small numbers** of offspring, the results can be quite far from the expected ratio, just as tossing a coin 4 times does not always give 2 heads and 2 tails. With **large numbers**, results get closer to the expected ratio.
 
 ### Pure-breeding
 
 Two **identical homozygous** individuals (for example **tt** and **tt**) bred together are **pure-breeding**: all their offspring are the same.
 
+## Pedigree diagrams (family trees)
+
+> **IGCSE only.** O Level students can skip to the next heading.
+
+A **pedigree diagram** shows how a characteristic is passed down a family.
+
+![A pedigree diagram for an inherited condition](/images/biology/17-3-pedigree.svg)
+
+| Symbol | Meaning |
+|---|---|
+| Square | Male |
+| Circle | Female |
+| Shaded shape | Has the condition |
+| Horizontal line between a male and female | They are parents |
+| Vertical line down | Their children |
+
+### Reading a pedigree: worked example
+
+In the diagram, parents 1 and 2 do **not** have the condition, but their daughter 4 **does**.
+
+1. If the condition were caused by a **dominant** allele, at least one parent would have it. Neither does.
+2. So the condition is caused by a **recessive** allele (call it **a**).
+3. Child 4 has the condition, so she is **aa**.
+4. She got one **a** from each parent, so both parents must be **Aa** (carriers).
+
+> When two unaffected parents have an affected child, the condition is recessive and both parents are heterozygous.
+
+## The test cross
+
+> **IGCSE Extended only.** O Level and IGCSE Core students can skip to the next heading.
+
+A plant with the dominant feature could be **TT** or **Tt**: they look the same. A **test cross** finds out which.
+
+1. Cross the unknown plant with a **homozygous recessive** plant (**tt**).
+2. If **all** the offspring show the dominant feature, the unknown plant was **TT**.
+3. If about **half** show the recessive feature (a 1:1 ratio), the unknown plant was **Tt**.
+
 ## Codominance: ABO blood groups
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 In **codominance**, **both** alleles show in the phenotype.
 
@@ -4278,7 +4607,38 @@ The blood group gene has three alleles: **Iᴬ**, **Iᴮ** and **Iᴼ**.
 
 There is a **1:1** chance of a boy or a girl. The **father's sperm** decides the sex.
 
+## Sex linkage: red-green colour blindness
+
+> **IGCSE Extended only.** O Level and IGCSE Core students can skip to the next heading.
+
+> A **sex-linked characteristic** is one where the gene is on a **sex chromosome** (usually the X), so it is inherited differently in males and females.
+
+Red-green colour blindness is caused by a **recessive** allele on the **X chromosome**.
+
+| Genotype | Phenotype |
+|---|---|
+| Xᴺ Xᴺ | Female, normal vision |
+| Xᴺ Xⁿ | Female, normal vision (carrier) |
+| Xⁿ Xⁿ | Female, colour blind |
+| Xᴺ Y | Male, normal vision |
+| Xⁿ Y | Male, colour blind |
+
+Males have only **one X**, so a single recessive allele makes them colour blind. That is why it is much more common in males.
+
+### Worked example
+
+A carrier mother (Xᴺ Xⁿ) and a father with normal vision (Xᴺ Y) have children.
+
+| | Xᴺ (mother) | Xⁿ (mother) |
+|---|---|---|
+| **Xᴺ** (father) | Xᴺ Xᴺ normal girl | Xᴺ Xⁿ carrier girl |
+| **Y** (father) | Xᴺ Y normal boy | Xⁿ Y colour-blind boy |
+
+Each son has a **1 in 2** chance of being colour blind. No daughter is colour blind, but each has a 1 in 2 chance of being a carrier.
+
 ## Mutation
+
+> **IGCSE Core:** a mutation is a genetic change and can form new alleles; radiation and some chemicals make it more likely. The examples and the two kinds of mutation are O Level only.
 
 > A **gene mutation** is a **random change in the base sequence** of DNA.
 
@@ -4291,6 +4651,8 @@ There is a **1:1** chance of a boy or a girl. The **father's sperm** decides the
 **Ionising radiation** (such as X-rays and gamma rays) and **some chemicals** (such as chemicals in tobacco smoke) **increase the rate of mutation**.
 
 ## Sources of genetic variation
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 - **Mutation**
 - **Meiosis** (makes genetically different gametes)
@@ -4315,9 +4677,11 @@ Next: test yourself with the practice questions below.`,
   "17.4": `## What you need to know
 
 - Describe natural selection.
-- Describe how a population evolves over time by natural selection.
-- Describe antibiotic resistance (including MRSA) as an example of natural selection.
+- Describe how a population evolves over time by natural selection. (Extended and O Level)
+- Describe antibiotic resistance (including MRSA) as an example of natural selection. (Extended and O Level)
 - Describe artificial selection (selective breeding) and its role in producing useful plants and animals.
+- Describe adaptive features. (IGCSE only)
+- Explain the adaptations of hydrophytes and xerophytes. (IGCSE Extended only)
 
 ## Key words
 
@@ -4328,6 +4692,25 @@ Next: test yourself with the practice questions below.`,
 | Competition | Struggle between organisms for the same resources, such as food or mates. |
 | Evolution | Change in the inherited features of a population over many generations. |
 | Artificial selection | Humans choosing which plants or animals breed, to get desirable features. Also called selective breeding. |
+
+## Adaptive features
+
+> **IGCSE only.** O Level students can skip to the next heading.
+
+> An **adaptive feature** is an **inherited** feature that helps an organism to **survive and reproduce** in its environment.
+
+Examples: the thick fur of a polar bear keeps it warm; the long roots of a desert plant reach deep water.
+
+### Hydrophytes and xerophytes
+
+> **IGCSE Extended only.** O Level and IGCSE Core students can skip to the next heading.
+
+| | Hydrophytes (water plants, such as water lilies) | Xerophytes (desert plants, such as cacti) |
+|---|---|---|
+| Problem | Too much water, little support | Too little water |
+| Leaves | Large, flat, floating; **stomata on the upper surface** | Small leaves or **spines**; **thick waxy cuticle** |
+| Stems and roots | Air spaces in stems help them float; small roots | **Deep or wide roots**; swollen stems **store water** |
+| Stomata | Many, on top | Few, often **sunken** or in hairy pits, closed in the day |
 
 ## Natural selection
 
@@ -4345,9 +4728,13 @@ Natural selection happens in five steps:
 
 ## Evolution
 
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
+
 Over **many generations**, the useful alleles become **more common** in the population. The inherited features of the population **change over time**. This is **evolution**.
 
 ## Example: antibiotic-resistant bacteria
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 This is natural selection happening fast, because bacteria reproduce very quickly.
 
@@ -4378,6 +4765,8 @@ Humans can change plants and animals by choosing which ones breed.
 
 ## Natural and artificial selection compared
 
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
+
 | | Natural selection | Artificial selection |
 |---|---|---|
 | Who selects | The **environment** | **Humans** |
@@ -4401,8 +4790,8 @@ Next: test yourself with the practice questions below.`,
 
 - Explain how yeast is used to make bread and ethanol.
 - Explain why bacteria are useful in biotechnology and genetic modification.
-- Describe how fermenters are used for large-scale production.
-- Describe the use of enzymes in biological washing powders, pectinase for fruit juice and lactase for lactose-free milk.
+- Describe how fermenters are used for large-scale production. (Extended and O Level)
+- Describe the use of enzymes in biological washing powders and pectinase for fruit juice. (Lactase for lactose-free milk is Extended and O Level.)
 
 ## Key words
 
@@ -4434,6 +4823,8 @@ Yeast is a single-celled fungus. In **anaerobic respiration** it makes **ethanol
 
 ## Fermenters
 
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
+
 ![A fermenter](/images/biology/18-1-fermenter.svg)
 
 A **fermenter** grows bacteria or fungi on a **large scale** to make products such as insulin, penicillin or enzymes.
@@ -4451,6 +4842,8 @@ Conditions are carefully **controlled** so the microorganisms grow as fast as po
 A **stirrer** (paddle) keeps everything **mixed** evenly. Everything is kept **sterile** so no other microorganisms get in.
 
 ## Enzymes in everyday products
+
+> **IGCSE Core:** washing powders and pectinase. Lactase is Extended and O Level.
 
 | Product | Enzyme | What it does |
 |---|---|---|
@@ -4476,7 +4869,8 @@ Next: test yourself with the practice questions below.`,
 - Describe genetic modification.
 - Understand that the human insulin gene has been put into bacteria to make insulin.
 - Outline how genetic modification is used in crop plants.
-- Discuss the advantages and risks of genetically modifying crops and bacteria.
+- Discuss the advantages and risks of genetically modifying crops and bacteria. (Extended and O Level)
+- Outline the steps of genetic modification: restriction enzymes, sticky ends and DNA ligase. (IGCSE Extended only)
 
 ## Key words
 
@@ -4503,6 +4897,16 @@ Next: test yourself with the practice questions below.`,
 5. The bacteria are grown in a **fermenter**. They multiply quickly, and every bacterium makes **human insulin**.
 6. The insulin is collected and purified for people with **diabetes**.
 
+### The steps in detail
+
+> **IGCSE Extended only.** O Level and IGCSE Core students can skip to the next heading.
+
+1. The human insulin gene is cut out of human DNA using **restriction enzymes**. They leave short single-stranded ends called **sticky ends**.
+2. A **plasmid** is cut open with the **same restriction enzyme**, so it has matching sticky ends.
+3. The gene and the plasmid are joined by the enzyme **DNA ligase**. This makes a **recombinant plasmid**.
+4. The recombinant plasmid is put into a bacterium.
+5. The bacteria multiply in a fermenter, and **express the gene**: they make human insulin.
+
 ## GM crop plants
 
 | Gene inserted | Advantage |
@@ -4512,6 +4916,8 @@ Next: test yourself with the practice questions below.`,
 | **Extra vitamins** | For example, **Golden Rice** has a gene to make a substance the body turns into **vitamin A**, to help prevent vitamin A deficiency. |
 
 ## Advantages and risks
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 | Advantages | Risks |
 |---|---|
@@ -4540,9 +4946,9 @@ Next: test yourself with the practice questions below.`,
 - Describe energy flow through food chains and webs.
 - Construct and interpret food chains and food webs.
 - Use the terms producer, consumer, herbivore, carnivore and decomposer.
-- Explain why energy transfer between trophic levels is inefficient, and why food chains are short.
-- Explain why eating crops is more efficient than eating livestock.
-- Construct and interpret pyramids of numbers, biomass and energy.
+- Explain why energy transfer between trophic levels is inefficient, and why food chains are short. (Extended and O Level)
+- Explain why eating crops is more efficient than eating livestock. (Extended and O Level)
+- Construct and interpret pyramids of numbers and biomass. (Pyramids of energy are Extended and O Level.)
 
 ## Key words
 
@@ -4590,6 +4996,8 @@ Most animals eat more than one type of food, so food chains join up. In a food w
 
 ## Why energy transfer is inefficient
 
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
+
 Only about **10%** of the energy at one trophic level passes to the next. The rest is lost because:
 
 - Energy is used in **respiration** and lost as **heat**.
@@ -4599,9 +5007,13 @@ Only about **10%** of the energy at one trophic level passes to the next. The re
 
 ## Why food chains are short
 
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
+
 Because so much energy is lost at each step, there is **not enough energy** left to support more than about **four or five trophic levels**.
 
 ## Eating plants or animals?
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 It is **more energy efficient** for humans to eat **crop plants** than to eat **livestock** fed on crop plants.
 
@@ -4610,6 +5022,8 @@ It is **more energy efficient** for humans to eat **crop plants** than to eat **
 - So the same field of crops can feed **many more people** if they eat the crops directly.
 
 ## Ecological pyramids
+
+> **IGCSE Core:** pyramids of numbers and biomass. Pyramids of energy are Extended and O Level.
 
 ![Pyramids of numbers, biomass and energy](/images/biology/19-1-pyramids.svg)
 
@@ -4635,7 +5049,7 @@ Next: test yourself with the practice questions below.`,
   "19.2": `## What you need to know
 
 - Describe the carbon cycle: photosynthesis, respiration, feeding, decomposition, fossil fuels and combustion.
-- Outline the nitrogen cycle, from decomposition to denitrification.
+- Outline the nitrogen cycle, from decomposition to denitrification. (Extended and O Level)
 - Outline the role of fungi and bacteria in decomposition.
 
 ## Key words
@@ -4669,6 +5083,8 @@ Carbon moves between the **air** (as carbon dioxide) and **living things**.
 
 ## The nitrogen cycle
 
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
+
 ![The nitrogen cycle](/images/biology/19-2-nitrogen-cycle.svg)
 
 Living things need nitrogen to make **proteins**. Air is about 78% nitrogen gas, but plants and animals **cannot use nitrogen gas** directly.
@@ -4682,6 +5098,8 @@ Living things need nitrogen to make **proteins**. Air is about 78% nitrogen gas,
 7. **Denitrification**: **denitrifying bacteria** turn nitrate ions back into **nitrogen gas**, which goes into the air.
 
 ## Decomposers
+
+> **IGCSE Core:** decomposers in the carbon cycle. Their roles in the nitrogen cycle are Extended and O Level.
 
 **Fungi** and **bacteria** are decomposers. They:
 
@@ -4709,7 +5127,9 @@ Next: test yourself with the practice questions below.`,
 - Describe a population, a community and an ecosystem.
 - Describe biodiversity.
 - State the factors that affect population growth: food supply, competition, predation and disease.
-- Understand that the growing human population increases demand for resources.
+- Understand that the growing human population increases demand for resources. (O Level only)
+- Describe the phases of the sigmoid population growth curve. (IGCSE only)
+- Explain each phase of the growth curve using limiting factors. (IGCSE Extended only)
 
 ## Key words
 
@@ -4749,7 +5169,33 @@ A rainforest has very high biodiversity. A wheat field has low biodiversity.
 
 > Predator and prey numbers often rise and fall in turn. When rabbits increase, foxes have more food and increase. Then foxes eat more rabbits, so rabbits fall, and then foxes fall too.
 
+## The population growth curve
+
+> **IGCSE only.** O Level students can skip to the next heading.
+
+When a few organisms (such as yeast or bacteria) are put into a new place with plenty of food, the population grows in an **S-shaped** (sigmoid) curve.
+
+![The sigmoid population growth curve](/images/biology/19-3-sigmoid.svg)
+
+| Phase | What happens |
+|---|---|
+| **Lag phase** | Slow growth at first |
+| **Exponential (log) phase** | Very fast growth: numbers double again and again |
+| **Stationary phase** | Numbers stay steady: births equal deaths |
+| **Death phase** | Numbers fall: deaths are more than births |
+
+### Why each phase happens
+
+> **IGCSE Extended only.** O Level and IGCSE Core students can skip to the next heading.
+
+- **Lag:** the organisms are getting used to the new place and there are few of them to reproduce.
+- **Exponential:** plenty of food and space, and few limiting factors, so the birth rate is much higher than the death rate.
+- **Stationary:** food, space or oxygen now **limit** growth, and waste builds up. The birth rate equals the death rate.
+- **Death:** food runs out and toxic waste builds up, so the death rate is higher than the birth rate.
+
 ## The human population
+
+> **O Level only.** IGCSE students can skip to the next heading.
 
 The human population has grown very quickly, especially in the last 200 years, because of better food supply, medicine and hygiene.
 
@@ -4772,9 +5218,10 @@ Next: test yourself with the practice questions below.`,
 
 - Outline the causes and consequences of deforestation.
 - Describe the impacts of over-harvesting and of introducing non-native species.
-- Describe eutrophication caused by sewage and fertilisers.
+- Describe the effects of untreated sewage and excess fertiliser on rivers and lakes. (The steps of eutrophication are Extended and O Level.)
 - Describe air pollution by greenhouse gases and global warming.
-- Describe the harmful effects of insecticides, herbicides and non-biodegradable plastics.
+- Describe the harmful effects of non-biodegradable plastics. (The harmful effects of insecticides and herbicides are O Level only.)
+- Describe how farmers increase food production, and the pros and cons of monocultures and intensive livestock. (IGCSE only)
 
 ## Key words
 
@@ -4787,6 +5234,38 @@ Next: test yourself with the practice questions below.`,
 | Eutrophication | When extra nutrients in water cause algae to grow, then decompose, using up oxygen so other organisms die. |
 | Greenhouse gases | Gases such as carbon dioxide and methane that trap heat in the atmosphere. |
 | Non-biodegradable | Cannot be broken down by decomposers. |
+
+## Producing more food
+
+> **IGCSE only.** O Level students can skip to the next heading.
+
+Farmers grow more food by using:
+
+- **agricultural machinery** to work larger areas quickly
+- **chemical fertilisers** to give crops more mineral ions
+- **insecticides** to kill insect pests
+- **herbicides** to kill weeds that compete with crops
+- **selective breeding** to get crops and animals that give higher yields
+
+### Monocultures
+
+A **monoculture** is a large area growing just **one crop**, such as wheat or oil palm.
+
+| Advantages | Disadvantages |
+|---|---|
+| Easy to plant, spray and harvest with machines | Very low **biodiversity** |
+| Large yield of one crop, cheap to produce | Pests and diseases spread quickly through the crop |
+| | Needs lots of fertiliser and pesticide, which can pollute |
+
+### Intensive livestock production
+
+Animals such as chickens or pigs are kept **indoors in large numbers** in a small space.
+
+| Advantages | Disadvantages |
+|---|---|
+| Cheap meat and eggs; less energy lost keeping animals warm and moving | Poor animal welfare |
+| Uses less land | Disease spreads quickly, so many antibiotics are used |
+| | Large amounts of waste can pollute water |
 
 ## Deforestation
 
@@ -4808,6 +5287,8 @@ Next: test yourself with the practice questions below.`,
 | **Introducing a non-native species** | It may have **no natural predators**, so it spreads quickly, **outcompetes** native species for food and space, or eats them. |
 
 ## Water pollution and eutrophication
+
+> **IGCSE Core:** sewage and fertilisers in water harm wildlife. The step-by-step eutrophication sequence is Extended and O Level.
 
 ![The stages of eutrophication](/images/biology/19-4-eutrophication.svg)
 
@@ -4841,6 +5322,8 @@ Likely effects:
 
 ## Insecticides and herbicides
 
+> **O Level only.** IGCSE students can skip to the next heading.
+
 | Chemical | Harmful effects |
 |---|---|
 | **Insecticides** (kill insects) | Can kill **useful insects** such as bees that pollinate crops. Can build up in food chains and harm animals at the top, such as birds of prey. |
@@ -4868,10 +5351,12 @@ Next: test yourself with the practice questions below.`,
 
   "19.5": `## What you need to know
 
-- Discuss reasons for conserving species: biodiversity, reducing extinction and protecting vulnerable environments.
-- Explain how forests can be conserved.
-- Explain how fish stocks can be conserved.
+- Discuss reasons for conserving species: biodiversity, reducing extinction and protecting vulnerable environments. (Extended and O Level)
+- Explain how forests can be conserved. (Extended and O Level)
+- Explain how fish stocks can be conserved. (Extended and O Level)
 - Describe a sustainable resource.
+- Describe why species become endangered and how they are conserved, including seed banks and captive breeding. (IGCSE only)
+- Explain the use of artificial insemination and IVF in captive breeding, and the risk to small populations. (IGCSE Extended only)
 
 ## Key words
 
@@ -4884,7 +5369,45 @@ Next: test yourself with the practice questions below.`,
 | Closed season | A time of year when fishing is not allowed, usually the breeding season. |
 | Mesh size | The size of the holes in a fishing net. |
 
+## Why species become endangered
+
+> **IGCSE only.** O Level students can skip to the next heading.
+
+A species becomes **endangered** (at risk of extinction) because of:
+
+- **climate change**
+- **habitat destruction**
+- **hunting** and **over-harvesting**
+- **pollution**
+- **introduced species** that compete with or eat native species
+
+## Ways to conserve species
+
+> **IGCSE only.** O Level students can skip to the next heading.
+
+| Method | How it helps |
+|---|---|
+| **Monitoring and protecting** species and habitats | Counting numbers shows when a species is in danger; laws and reserves protect it |
+| **Education** | People learn why species matter and how to protect them |
+| **Captive breeding** | Animals are bred in zoos and released into the wild |
+| **Seed banks** | Seeds of many plant species are stored cold and dry, so they can be grown again if wild plants die out |
+
+### Captive breeding: artificial insemination and IVF
+
+> **IGCSE Extended only.** O Level and IGCSE Core students can skip to the next heading.
+
+- **Artificial insemination (AI):** sperm from a male, often in another zoo, is placed into a female. Animals do not have to be moved.
+- **IVF:** eggs are fertilised by sperm outside the body, and the embryos are put into a female.
+
+### Why small populations are at risk
+
+> **IGCSE Extended only.** O Level and IGCSE Core students can skip to the next heading.
+
+A very small population has **little genetic variation**. If the environment changes or a new disease arrives, there may be no individuals with alleles that help them survive, so the whole species could die out.
+
 ## Why conserve species?
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 | Reason | Why it matters |
 |---|---|
@@ -4900,6 +5423,8 @@ Forests and fish can be sustainable if we do not take them faster than they grow
 
 ## Conserving forests
 
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
+
 | Method | How it helps |
 |---|---|
 | **Education** | People learn why forests matter and use wood and land more carefully. |
@@ -4908,6 +5433,8 @@ Forests and fish can be sustainable if we do not take them faster than they grow
 | **Replanting** | New trees are planted to replace those cut down. |
 
 ## Conserving fish stocks
+
+> **Extended and O Level only.** IGCSE Core students can skip to the next heading.
 
 ![Ways to conserve fish stocks](/images/biology/19-5-fish.svg)
 

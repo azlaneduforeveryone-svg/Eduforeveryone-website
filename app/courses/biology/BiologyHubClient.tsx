@@ -7,7 +7,14 @@ import PageHeader from "@/components/ui/PageHeader";
 import SectionHeader from "@/components/ui/SectionHeader";
 import HowItWorks, { type HowItWorksStep } from "@/components/courses/HowItWorks";
 import { useAuth } from "@/contexts/AuthContext";
-import { ALL_O_LEVEL_BIOLOGY_TOPICS } from "@/lib/courses/biologySyllabus";
+import {
+  ALL_O_LEVEL_BIOLOGY_TOPICS,
+  BIOLOGY_LEVELS,
+  inBiologyLevel,
+  type BiologyLevel,
+} from "@/lib/courses/biologySyllabus";
+import { useBiologyLevel } from "@/lib/courses/useBiologyLevel";
+import LevelSwitch from "@/components/courses/biology/LevelSwitch";
 import {
   type TopicProgress,
   computeTopicStatus,
@@ -35,10 +42,13 @@ export default function BiologyHubClient({ sections }: BiologyHubClientProps) {
   const { user, loading: authLoading } = useAuth();
   const [progressMap, setProgressMap] = useState<Record<string, TopicProgress>>({});
   const [loadingProgress, setLoadingProgress] = useState(true);
+  const [level, setLevel] = useBiologyLevel();
+  const levelInfo = BIOLOGY_LEVELS.find((l) => l.id === level)!;
 
+  // Topics in the chosen syllabus. IGCSE Core leaves out the topics that are Extended only.
   const allTopics = useMemo(
-    () => sections.flatMap((s) => s.topics),
-    [sections]
+    () => sections.flatMap((s) => s.topics).filter((t) => inBiologyLevel(t, level)),
+    [sections, level]
   );
 
   useEffect(() => {
@@ -91,9 +101,9 @@ export default function BiologyHubClient({ sections }: BiologyHubClientProps) {
     <div className="efe-page min-h-screen flex flex-col">
       {/* Hero */}
       <PageHeader
-        eyebrow="Cambridge O Level Biology (5090)"
+        eyebrow="Cambridge O Level 5090 and IGCSE 0610"
         title="Biology"
-        description="Learn O Level Biology (5090) topic by topic for exams in 2026, 2027 and 2028, from cells and enzymes to genetics, ecology, and biotechnology. Free, structured, and built for exam mastery."
+        description="One course for O Level Biology 5090 and IGCSE Biology 0610 (Core and Extended), for exams in 2026, 2027 and 2028. Learn topic by topic, from cells and enzymes to genetics, ecology and biotechnology."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Courses", href: "/courses" },
@@ -105,7 +115,7 @@ export default function BiologyHubClient({ sections }: BiologyHubClientProps) {
               href="#o-level-5090"
               className="efe-btn efe-btn-on-hero"
             >
-              Start O Level Biology
+              Start Biology
             </a>
           </div>
         }
@@ -125,13 +135,16 @@ export default function BiologyHubClient({ sections }: BiologyHubClientProps) {
         {/* Progress Bar */}
         <section id="o-level-5090" className="scroll-mt-20" aria-label="Course progress">
           <div className="efe-card p-6">
+            <LevelSwitch level={level} onChange={setLevel} className="mb-5 pb-5 border-b border-efe-line" />
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
               <div>
                 <h2 className="text-lg font-bold font-display text-efe-fg">
-                  O Level Biology (5090) Progress
+                  {levelInfo.label} progress
                 </h2>
                 <p className="text-sm text-efe-muted">
-                  Notes, mind maps, flashcards and practice questions are ready for all topics. Videos and 3D models are coming soon.
+                  {level === "olevel"
+                    ? "Notes, mind maps, flashcards and practice questions are ready for all topics. Videos and 3D models are coming soon."
+                    : "Notes mark the parts that are not in your syllabus, and quizzes only ask about your syllabus. Videos and 3D models are coming soon."}
                 </p>
               </div>
               <div className="text-right">
@@ -184,9 +197,13 @@ export default function BiologyHubClient({ sections }: BiologyHubClientProps) {
         {/* 19 Syllabus Sections */}
         <section aria-labelledby="syllabus-sections-heading" className="space-y-10">
           <SectionHeader
-            eyebrow="2026–2028 Syllabus"
-            title={<span id="syllabus-sections-heading" className="scroll-mt-24">O Level Biology Syllabus Topics</span>}
-            description={`${totalTopics} topics across ${sections.length} sections, built for exams in 2026, 2027 and 2028.`}
+            eyebrow={`${levelInfo.label}, exams 2026 to 2028`}
+            title={<span id="syllabus-sections-heading" className="scroll-mt-24">Biology Syllabus Topics</span>}
+            description={
+              level === "olevel"
+                ? `${totalTopics} topics across ${sections.length} sections, numbered as in the O Level 5090 syllabus.`
+                : `${totalTopics} topics in your syllabus. Topics are numbered as in O Level 5090; the matching IGCSE 0610 number is shown on each topic.`
+            }
           />
 
           <CoursebookMap />
@@ -229,6 +246,7 @@ export default function BiologyHubClient({ sections }: BiologyHubClientProps) {
                         key={topic.topicId}
                         topic={topic}
                         circleStatus={circleStatus}
+                        level={level}
                       />
                     );
                   })}
@@ -254,9 +272,11 @@ export default function BiologyHubClient({ sections }: BiologyHubClientProps) {
 function TopicRowCard({
   topic,
   circleStatus,
+  level,
 }: {
   topic: BiologyHubTopic;
   circleStatus: "not-started" | "studied" | "mastered";
+  level: BiologyLevel;
 }) {
   const statusLabel =
     circleStatus === "mastered"
@@ -277,7 +297,22 @@ function TopicRowCard({
             <span className="text-xs font-bold px-2 py-0.5 rounded-md bg-efe-accent-soft text-efe-accent-ink">
               {topic.topic}
             </span>
+            {level !== "olevel" && (
+              <span className="text-[11px] font-medium px-2 py-0.5 rounded-md bg-efe-bg border border-efe-line text-efe-muted">
+                IGCSE {topic.igcseRef}
+              </span>
+            )}
             <span className="text-xs text-efe-muted">{statusLabel}</span>
+            {level === "core" && topic.igcse === "extended" && (
+              <span className="text-[11px] font-medium px-2 py-0.5 rounded-full bg-efe-gold-soft text-efe-gold">
+                Extended only
+              </span>
+            )}
+            {level === "core" && topic.igcse === "part" && (
+              <span className="text-[11px] font-medium px-2 py-0.5 rounded-full bg-efe-bg border border-efe-line text-efe-muted">
+                Core: part
+              </span>
+            )}
             {!topic.hasNotes && (
               <span className="text-[11px] font-medium px-2 py-0.5 rounded-full bg-efe-bg border border-efe-line text-efe-muted">
                 Coming soon

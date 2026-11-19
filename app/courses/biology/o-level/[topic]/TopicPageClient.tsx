@@ -1,13 +1,16 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useMemo, useRef } from "react";
 import Link from "next/link";
 import PageHeader from "@/components/ui/PageHeader";
 import { useAuth } from "@/contexts/AuthContext";
 import {
   ALL_O_LEVEL_BIOLOGY_TOPICS,
+  BIOLOGY_LEVELS,
   type BiologyTopicMeta,
 } from "@/lib/courses/biologySyllabus";
+import { useBiologyLevel } from "@/lib/courses/useBiologyLevel";
+import LevelSwitch from "@/components/courses/biology/LevelSwitch";
 import { drawQuizFromPool } from "@/lib/courses/accountingSyllabus";
 import type { BiologyMcq } from "@/lib/courses/oLevelBiologyMcqs";
 import type { TopicRevision } from "@/lib/courses/oLevelAccountingRevisionTypes";
@@ -50,6 +53,15 @@ export default function TopicPageClient({
   notesIntro,
 }: TopicPageClientProps) {
   const { user, loading: authLoading } = useAuth();
+  const [level, setLevel] = useBiologyLevel();
+  const levelInfo = BIOLOGY_LEVELS.find((l) => l.id === level)!;
+  // Questions for the chosen syllabus. A topic that is Extended only has no Core questions,
+  // so IGCSE Core students who open it get the Extended questions instead.
+  const levelPool = useMemo(() => {
+    const own = topicQuestions.filter((q) => q.levels.includes(level));
+    if (own.length >= 5 || level !== "core") return own.length > 0 ? own : topicQuestions;
+    return topicQuestions.filter((q) => q.levels.includes("extended"));
+  }, [topicQuestions, level]);
   const [progress, setProgress] = useState<TopicProgress>({ ...DEFAULT_TOPIC_PROGRESS });
   const [progressLoaded, setProgressLoaded] = useState(false);
 
@@ -99,7 +111,7 @@ export default function TopicPageClient({
       setProgressLoaded(true);
 
       if (topicQuestions.length > 0) {
-        const drawn = drawQuizFromPool(topicQuestions, quizLength, loaded.lastQuizIds);
+        const drawn = drawQuizFromPool(levelPool, quizLength, loaded.lastQuizIds);
         setQuizSet(drawn);
       } else {
         setQuizSet([]);
@@ -217,10 +229,21 @@ export default function TopicPageClient({
     }
   };
 
+  // Draw a fresh set when the student changes syllabus
+  const lastPool = useRef(levelPool);
+  useEffect(() => {
+    if (!progressLoaded || lastPool.current === levelPool) return;
+    lastPool.current = levelPool;
+    setQuizSet(levelPool.length > 0 ? drawQuizFromPool(levelPool, quizLength, []) : []);
+    setSelectedOptions({});
+    setChecked(false);
+    setScore(null);
+  }, [levelPool, progressLoaded, quizLength]);
+
   // Try a new set of questions
   const handleTryNewSet = () => {
     const previousIds = quizSet.map((q) => q.id);
-    const nextQuestions = drawQuizFromPool(topicQuestions, quizLength, previousIds);
+    const nextQuestions = drawQuizFromPool(levelPool, quizLength, previousIds);
     setQuizSet(nextQuestions);
     setSelectedOptions({});
     setChecked(false);
@@ -258,9 +281,9 @@ export default function TopicPageClient({
   return (
     <div className="efe-page min-h-screen flex flex-col">
       <PageHeader
-        eyebrow={`O Level Biology 5090 · Section ${topicMeta.section} · Topic ${topicMeta.topic}`}
+        eyebrow={`Biology 5090 / 0610 · Section ${topicMeta.section} · Topic ${topicMeta.topic}${level !== "olevel" ? ` · IGCSE ${topicMeta.igcseRef}` : ""}`}
         title={`${topicMeta.topic} ${topicMeta.topicTitle}`}
-        description="Cambridge O Level Biology (5090) for exams in 2026, 2027 and 2028."
+        description="Cambridge O Level Biology 5090 and IGCSE Biology 0610 (Core and Extended), for exams in 2026, 2027 and 2028."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Courses", href: "/courses" },
@@ -271,6 +294,26 @@ export default function TopicPageClient({
 
       <main className="max-w-4xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full space-y-8">
         {topicNav("top")}
+
+        {/* Syllabus choice and what to skip */}
+        <section aria-label="Your syllabus" className="efe-card p-5 sm:p-6">
+          <LevelSwitch level={level} onChange={setLevel} />
+          <p className="text-sm text-efe-muted mt-4" data-testid="level-notice">
+            {level === "olevel" &&
+              "Skip the boxes marked IGCSE only or IGCSE Extended only. Everything else is in your syllabus."}
+            {level === "extended" &&
+              `This is IGCSE topic ${topicMeta.igcseRef}. Skip the boxes marked O Level only.`}
+            {level === "core" && topicMeta.igcse === "core" &&
+              `This is IGCSE topic ${topicMeta.igcseRef}. Skip the boxes marked O Level only, Extended and O Level only, or IGCSE Extended only.`}
+            {level === "core" && topicMeta.igcse === "part" &&
+              `This is IGCSE topic ${topicMeta.igcseRef}. Only part of it is in IGCSE Core: skip the boxes marked Extended and O Level only, O Level only, or IGCSE Extended only.`}
+          </p>
+          {level === "core" && topicMeta.igcse === "extended" && (
+            <p className="mt-3 text-sm font-semibold text-efe-gold bg-efe-gold-soft rounded-lg px-4 py-3">
+              This topic is not in {levelInfo.label}. It is for IGCSE Extended and O Level students. You can still read it, and the quiz uses Extended questions.
+            </p>
+          )}
+        </section>
 
         {/* Progress Panel */}
         <section

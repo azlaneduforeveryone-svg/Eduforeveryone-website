@@ -1,4 +1,4 @@
-// "How it works" block for course hubs (O Level Accounting, O Level Biology).
+// "How it works" block for course hubs (Accounting, Biology).
 //
 // Deliberately NOT styled as cards or buttons: no borders, no icons, no hover.
 // Students tapped the old step cards expecting them to open something.

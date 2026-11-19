@@ -61,10 +61,10 @@ export function getSearchIndex(): SearchEntry[] {
   const biology: SearchEntry[] = ALL_O_LEVEL_BIOLOGY_TOPICS.map((tp) => ({
     t: tp.topicTitle,
     h: `/courses/biology/o-level/${tp.slug}`,
-    c: "O Level Biology",
+    c: "Biology",
     e: "🧬",
     d: `Topic ${tp.topic}`,
-    k: `biology 5090 ${topicKeywords(O_LEVEL_BIOLOGY_REVISION[tp.topic])}`,
+    k: `biology 5090 0610 igcse o level ${topicKeywords(O_LEVEL_BIOLOGY_REVISION[tp.topic])}`,
   }));
 
   const maths: SearchEntry[] = ALL_MATHS_TOPICS.map((tp) => ({

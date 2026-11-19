@@ -18,16 +18,16 @@ export interface BiologyHubSection extends Omit<BiologySectionMeta, "topics"> {
 }
 
 export const metadata: Metadata = {
-  title: "Cambridge O Level Biology (5090): Free Course | EduForEveryone",
+  title: "Cambridge O Level and IGCSE Biology (5090, 0610): Free Course | EduForEveryone",
   description:
-    "Master all 52 topics across 19 sections of the Cambridge O Level Biology 5090 syllabus for exams in 2026, 2027 and 2028 with concise notes, interactive models, mind maps, flashcards, and practice questions.",
+    "One free course for Cambridge O Level Biology 5090 and IGCSE Biology 0610 (Core and Extended), exams 2026 to 2028: 52 topics with notes, mind maps, flashcards and practice questions for your syllabus.",
   alternates: {
     canonical: "https://eduforeveryone.com/courses/biology",
   },
   openGraph: {
-    title: "Cambridge O Level Biology (5090) | EduForEveryone",
+    title: "Cambridge O Level and IGCSE Biology (5090, 0610) | EduForEveryone",
     description:
-      "Free O Level Biology 5090 course covering all 19 syllabus sections and 52 topics for exams in 2026, 2027 and 2028.",
+      "Free O Level Biology 5090 and IGCSE Biology 0610 course for exams in 2026, 2027 and 2028.",
     url: "https://eduforeveryone.com/courses/biology",
     siteName: "EduForEveryone",
     type: "website",

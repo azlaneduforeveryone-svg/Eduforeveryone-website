@@ -1,6 +1,6 @@
 // O Level Biology 5090 flashcards and topic maps, original material written for EduForEveryone.
-// Mapped to the Cambridge O Level Biology 5090 syllabus for exams in 2026, 2027 and 2028.
-// Reviewed by a biology teacher before publishing.
+// Mapped to Cambridge O Level Biology 5090 and IGCSE Biology 0610 (Core and Extended) for exams in 2026, 2027 and 2028.
+// O Level content reviewed by a biology teacher; IGCSE additions (Nov 2026) are waiting for teacher review.
 // Independent material: not produced or endorsed by Cambridge University Press & Assessment.
 //
 // SERVER-ONLY: import this file only from server components (page.tsx files).
@@ -342,6 +342,16 @@ export const O_LEVEL_BIOLOGY_REVISION: Record<string, TopicRevision> = {
       {
         "front": "How many features should each step of a key ask about?",
         "back": "One feature, with two opposite choices."
+      },
+      {
+        "front": "What are the seven characteristics of living things?",
+        "back": "Movement, respiration, sensitivity, growth, reproduction, excretion and nutrition (MRS GREN).",
+        "tag": "IGCSE"
+      },
+      {
+        "front": "What does it mean if two species have very similar DNA base sequences?",
+        "back": "They share a recent common ancestor, so they are closely related.",
+        "tag": "IGCSE Extended"
       }
     ]
   },
@@ -812,6 +822,11 @@ export const O_LEVEL_BIOLOGY_REVISION: Record<string, TopicRevision> = {
         "front": "Why must you keep ethanol away from flames?",
         "back": "Ethanol is flammable: it catches fire easily.",
         "tag": "Safety"
+      },
+      {
+        "front": "How do you test for vitamin C?",
+        "back": "Add the food solution drop by drop to blue DCPIP. Vitamin C makes the blue colour disappear.",
+        "tag": "IGCSE"
       }
     ]
   },
@@ -2490,6 +2505,11 @@ export const O_LEVEL_BIOLOGY_REVISION: Record<string, TopicRevision> = {
         "front": "What colour is oxygenated blood?",
         "back": "Bright red.",
         "tag": "Blood"
+      },
+      {
+        "front": "Describe the circulation of a fish.",
+        "back": "A single circulation: blood goes heart, gills, body, then back to the heart, passing through the heart once per circuit.",
+        "tag": "IGCSE Extended"
       }
     ]
   },
@@ -3385,6 +3405,11 @@ export const O_LEVEL_BIOLOGY_REVISION: Record<string, TopicRevision> = {
         "front": "How does the liver assimilate amino acids?",
         "back": "It converts them into proteins.",
         "tag": "Liver"
+      },
+      {
+        "front": "Name the outer and inner regions of a kidney.",
+        "back": "The cortex (outer) and the medulla (inner).",
+        "tag": "IGCSE Extended"
       }
     ]
   },
@@ -3611,6 +3636,16 @@ export const O_LEVEL_BIOLOGY_REVISION: Record<string, TopicRevision> = {
         "front": "How does the eye focus on a distant object?",
         "back": "Ciliary muscles relax, suspensory ligaments tighten, the lens becomes thinner and refracts light less.",
         "tag": "Accommodation"
+      },
+      {
+        "front": "What do rods and cones do?",
+        "back": "Rods work in dim light (night vision). Cones give colour vision in bright light.",
+        "tag": "IGCSE Extended"
+      },
+      {
+        "front": "Why is the fovea best for clear colour vision?",
+        "back": "It has the most cones and no rods.",
+        "tag": "IGCSE Extended"
       }
     ]
   },
@@ -4749,6 +4784,21 @@ export const O_LEVEL_BIOLOGY_REVISION: Record<string, TopicRevision> = {
         "front": "Why do proteins have different shapes?",
         "back": "They have different amino acid sequences.",
         "tag": "Control"
+      },
+      {
+        "front": "What does mRNA do?",
+        "back": "It carries a copy of a gene from the nucleus to a ribosome in the cytoplasm.",
+        "tag": "IGCSE Extended"
+      },
+      {
+        "front": "What does a ribosome do in protein synthesis?",
+        "back": "It joins amino acids in the order set by the base sequence of the mRNA.",
+        "tag": "IGCSE Extended"
+      },
+      {
+        "front": "Why do a nerve cell and a muscle cell make different proteins?",
+        "back": "They have the same genes, but each cell only expresses some of them.",
+        "tag": "IGCSE Extended"
       }
     ]
   },
@@ -4879,6 +4929,21 @@ export const O_LEVEL_BIOLOGY_REVISION: Record<string, TopicRevision> = {
         "front": "What increases the rate of mutation?",
         "back": "Ionising radiation and some chemicals.",
         "tag": "Mutation"
+      },
+      {
+        "front": "Two unaffected parents have an affected child. What does this show?",
+        "back": "The condition is recessive and both parents are heterozygous carriers.",
+        "tag": "IGCSE"
+      },
+      {
+        "front": "What is a test cross?",
+        "back": "Crossing an organism with the dominant feature with a homozygous recessive one to find out if it is homozygous or heterozygous.",
+        "tag": "IGCSE Extended"
+      },
+      {
+        "front": "Why is red-green colour blindness more common in males?",
+        "back": "The allele is recessive on the X chromosome. Males have only one X, so one recessive allele makes them colour blind.",
+        "tag": "IGCSE Extended"
       }
     ]
   },
@@ -4984,6 +5049,16 @@ export const O_LEVEL_BIOLOGY_REVISION: Record<string, TopicRevision> = {
         "front": "Who does the selecting in artificial selection?",
         "back": "Humans.",
         "tag": "Compare"
+      },
+      {
+        "front": "What is an adaptive feature?",
+        "back": "An inherited feature that helps an organism survive and reproduce in its environment.",
+        "tag": "IGCSE"
+      },
+      {
+        "front": "Give two adaptations of a xerophyte.",
+        "back": "Any two: thick waxy cuticle, spines instead of leaves, few or sunken stomata, deep roots, swollen water-storing stem.",
+        "tag": "IGCSE Extended"
       }
     ]
   },
@@ -5180,6 +5255,11 @@ export const O_LEVEL_BIOLOGY_REVISION: Record<string, TopicRevision> = {
         "front": "What is a superweed?",
         "back": "A wild plant that has gained a herbicide-resistance gene from a GM crop.",
         "tag": "Discuss"
+      },
+      {
+        "front": "What do restriction enzymes and DNA ligase do in genetic modification?",
+        "back": "Restriction enzymes cut DNA, leaving sticky ends. DNA ligase joins the gene into the plasmid.",
+        "tag": "IGCSE Extended"
       }
     ]
   },
@@ -5502,6 +5582,16 @@ export const O_LEVEL_BIOLOGY_REVISION: Record<string, TopicRevision> = {
         "front": "Give an example of a population in a pond.",
         "back": "All the frogs in the pond.",
         "tag": "Definitions"
+      },
+      {
+        "front": "Name the four phases of a sigmoid population growth curve.",
+        "back": "Lag, exponential (log), stationary and death.",
+        "tag": "IGCSE"
+      },
+      {
+        "front": "Why does a population stop growing in the stationary phase?",
+        "back": "Limiting factors such as food and space run short, so the birth rate equals the death rate.",
+        "tag": "IGCSE Extended"
       }
     ]
   },
@@ -5611,6 +5701,11 @@ export const O_LEVEL_BIOLOGY_REVISION: Record<string, TopicRevision> = {
         "front": "Why are non-biodegradable plastics harmful?",
         "back": "They are not broken down; animals get tangled in them or eat them.",
         "tag": "Pollution"
+      },
+      {
+        "front": "Give two disadvantages of a monoculture.",
+        "back": "Any two: low biodiversity, pests and diseases spread easily, heavy use of fertilisers and pesticides.",
+        "tag": "IGCSE"
       }
     ]
   },
@@ -5703,6 +5798,16 @@ export const O_LEVEL_BIOLOGY_REVISION: Record<string, TopicRevision> = {
         "front": "Name six ways fish stocks can be conserved.",
         "back": "Education, closed seasons, protected areas, controlled net types and mesh size, quotas, monitoring.",
         "tag": "Fish"
+      },
+      {
+        "front": "What is a seed bank?",
+        "back": "A store of seeds kept cold and dry, so plant species can be grown again if they die out in the wild.",
+        "tag": "IGCSE"
+      },
+      {
+        "front": "Why are small populations at risk of extinction?",
+        "back": "They have little genetic variation, so they may not survive a change in the environment or a new disease.",
+        "tag": "IGCSE Extended"
       }
     ]
   }

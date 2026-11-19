@@ -30,14 +30,14 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${meta.topic} ${meta.topicTitle} — O Level Biology 5090 | EduForEveryone`,
-    description: `Study Cambridge O Level Biology (5090) Topic ${meta.topic}: ${meta.topicTitle} for exams in 2026, 2027 and 2028. Read syllabus notes, explore interactive models, and test yourself with practice questions.`,
+    title: `${meta.topic} ${meta.topicTitle} | O Level and IGCSE Biology | EduForEveryone`,
+    description: `Study Cambridge O Level Biology 5090 and IGCSE Biology 0610 Topic ${meta.topic}: ${meta.topicTitle} for exams in 2026, 2027 and 2028. Read syllabus notes, explore interactive models, and test yourself with practice questions.`,
     alternates: {
       canonical: `https://eduforeveryone.com/courses/biology/o-level/${meta.slug}`,
     },
     openGraph: {
-      title: `${meta.topic} ${meta.topicTitle} — O Level Biology 5090 | EduForEveryone`,
-      description: `Free O Level Biology 5090 lesson, notes and practice quiz for Topic ${meta.topic}: ${meta.topicTitle}.`,
+      title: `${meta.topic} ${meta.topicTitle} | O Level and IGCSE Biology | EduForEveryone`,
+      description: `Free O Level 5090 and IGCSE 0610 Biology lesson, notes and practice quiz for Topic ${meta.topic}: ${meta.topicTitle}.`,
       url: `https://eduforeveryone.com/courses/biology/o-level/${meta.slug}`,
       siteName: "EduForEveryone",
       type: "article",
