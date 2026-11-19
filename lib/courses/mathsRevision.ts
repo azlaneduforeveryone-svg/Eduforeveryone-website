@@ -2725,6 +2725,590 @@ export const MATHS_REVISION: Record<string, TopicRevision> = {
         "back": "-1"
       }
     ]
+  },
+  "4.1": {
+    "mindMap": {
+      "centre": "Geometrical terms",
+      "branches": [
+        {
+          "label": "Angles",
+          "items": [
+            "Acute: less than 90°",
+            "Right: 90°",
+            "Obtuse: 90° to 180°",
+            "Reflex: more than 180°"
+          ]
+        },
+        {
+          "label": "Shapes",
+          "items": [
+            "Triangles: equilateral, isosceles, scalene",
+            "Square, rectangle, rhombus, parallelogram, kite, trapezium",
+            "Pentagon, hexagon, octagon, decagon"
+          ]
+        },
+        {
+          "label": "Solids",
+          "items": [
+            "Faces, edges, vertices",
+            "Prism: same cross-section",
+            "Extended: hemisphere, frustum"
+          ]
+        },
+        {
+          "label": "Circles",
+          "items": [
+            "Radius, diameter, circumference",
+            "Chord, tangent, arc",
+            "Sector, segment"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is a reflex angle?",
+        "back": "An angle between 180° and 360°."
+      },
+      {
+        "front": "What angle do clock hands make at 4 o'clock?",
+        "back": "120°"
+      },
+      {
+        "front": "A quadrilateral with exactly one pair of parallel sides?",
+        "back": "A trapezium."
+      },
+      {
+        "front": "A quadrilateral with 4 equal sides and no right angles?",
+        "back": "A rhombus."
+      },
+      {
+        "front": "How many faces, edges and vertices does a cuboid have?",
+        "back": "6 faces, 12 edges, 8 vertices"
+      },
+      {
+        "front": "What is the difference between a chord and a tangent?",
+        "back": "A chord joins two points on the circle. A tangent only touches it at one point."
+      },
+      {
+        "front": "What is the difference between a sector and a segment?",
+        "back": "A sector is a slice between two radii. A segment is cut off by a chord."
+      },
+      {
+        "front": "What is the difference between similar and congruent?",
+        "back": "Congruent: same shape and size. Similar: same shape, different size."
+      },
+      {
+        "front": "(Extended and O Level) What is a frustum?",
+        "back": "A cone or pyramid with the top cut off."
+      }
+    ]
+  },
+  "4.2": {
+    "mindMap": {
+      "centre": "Geometrical constructions",
+      "branches": [
+        {
+          "label": "Measuring",
+          "items": [
+            "Ruler from 0",
+            "Protractor centre on the vertex",
+            "Check acute or obtuse"
+          ]
+        },
+        {
+          "label": "Triangle from 3 sides",
+          "items": [
+            "Draw the longest side",
+            "Arcs from each end",
+            "Join to the crossing point",
+            "Leave the arcs"
+          ]
+        },
+        {
+          "label": "Will it work?",
+          "items": [
+            "Two shorter sides must add to more than the longest"
+          ]
+        },
+        {
+          "label": "Nets",
+          "items": [
+            "Cube: 6 squares, 11 nets",
+            "Use the net for surface area",
+            "Then find the volume"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Which side do you draw first when constructing a triangle?",
+        "back": "The longest side."
+      },
+      {
+        "front": "Should you rub out the construction arcs?",
+        "back": "No. Leave them showing."
+      },
+      {
+        "front": "Can you make a triangle with sides 3 cm, 4 cm and 9 cm?",
+        "back": "No. 3 + 4 is less than 9."
+      },
+      {
+        "front": "How many squares are in the net of a cube?",
+        "back": "6"
+      },
+      {
+        "front": "A cuboid is 5 cm by 3 cm by 2 cm. Find its surface area.",
+        "back": "62 cm²"
+      },
+      {
+        "front": "A cuboid is 5 cm by 3 cm by 2 cm. Find its volume.",
+        "back": "30 cm³"
+      },
+      {
+        "front": "How do you draw a reflex angle of 230°?",
+        "back": "Draw 360 - 230 = 130° and mark the outside angle."
+      }
+    ]
+  },
+  "4.3": {
+    "mindMap": {
+      "centre": "Scale drawings and bearings",
+      "branches": [
+        {
+          "label": "Scales",
+          "items": [
+            "1 cm to 2 m",
+            "1 : 50 000",
+            "Drawing to real: multiply",
+            "Real to drawing: divide"
+          ]
+        },
+        {
+          "label": "Bearings",
+          "items": [
+            "Start at north",
+            "Measure clockwise",
+            "Three figures: 045°"
+          ]
+        },
+        {
+          "label": "Back bearings",
+          "items": [
+            "Add 180° if less than 180°",
+            "Subtract 180° if more"
+          ]
+        },
+        {
+          "label": "Directions",
+          "items": [
+            "North 000°",
+            "East 090°",
+            "South 180°",
+            "West 270°"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "A room is 8 m long. Scale 1 cm to 2 m. How long on the drawing?",
+        "back": "4 cm"
+      },
+      {
+        "front": "Scale 1 : 50 000. 4 cm on the map is how far in real life?",
+        "back": "2 km"
+      },
+      {
+        "front": "Scale 1 : 50 000. How long on the map is 7.5 km?",
+        "back": "15 cm"
+      },
+      {
+        "front": "What is the bearing of due west?",
+        "back": "270°"
+      },
+      {
+        "front": "How do you write a bearing of 45°?",
+        "back": "045°"
+      },
+      {
+        "front": "The bearing of B from A is 025°. Find the bearing of A from B.",
+        "back": "205°"
+      },
+      {
+        "front": "The bearing of Q from P is 300°. Find the bearing of P from Q.",
+        "back": "120°"
+      },
+      {
+        "front": "Which way do you measure a bearing?",
+        "back": "Clockwise from north."
+      }
+    ]
+  },
+  "4.4": {
+    "mindMap": {
+      "centre": "Similarity",
+      "branches": [
+        {
+          "label": "Similar shapes",
+          "items": [
+            "Same angles",
+            "Lengths × scale factor",
+            "Match corresponding sides"
+          ]
+        },
+        {
+          "label": "Scale factor",
+          "items": [
+            "New ÷ old",
+            "Multiply to enlarge",
+            "Divide to shrink"
+          ]
+        },
+        {
+          "label": "Extended and O Level",
+          "items": [
+            "Areas × k²",
+            "Volumes × k³",
+            "Area back to k: square root",
+            "Volume back to k: cube root"
+          ]
+        },
+        {
+          "label": "Real life",
+          "items": [
+            "Tree shadows",
+            "Photo enlargements",
+            "Pizza value"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "AB = 4, PQ = 10 in similar triangles. Find the scale factor.",
+        "back": "2.5"
+      },
+      {
+        "front": "Scale factor 2.5. BC = 6 cm. Find the matching side QR.",
+        "back": "15 cm"
+      },
+      {
+        "front": "A 1.5 m stick has a 2 m shadow. A tree has a 12 m shadow. How tall is the tree?",
+        "back": "9 m"
+      },
+      {
+        "front": "A 10 cm by 15 cm photo is enlarged to 25 cm wide. How tall is it?",
+        "back": "37.5 cm"
+      },
+      {
+        "front": "Do angles change in similar shapes?",
+        "back": "No. Only lengths change."
+      },
+      {
+        "front": "(Extended and O Level) Lengths × 1.5. Area 60 cm². New area?",
+        "back": "135 cm²"
+      },
+      {
+        "front": "(Extended and O Level) Lengths × 1.5. Volume 400 ml. New volume?",
+        "back": "1350 ml"
+      },
+      {
+        "front": "(Extended and O Level) Similar cones, volumes 16 and 54. Small height 6 cm. Large height?",
+        "back": "9 cm"
+      }
+    ]
+  },
+  "4.5": {
+    "mindMap": {
+      "centre": "Symmetry",
+      "branches": [
+        {
+          "label": "Line symmetry",
+          "items": [
+            "A mirror line",
+            "Fold to check"
+          ]
+        },
+        {
+          "label": "Rotational symmetry",
+          "items": [
+            "Order: times it fits in a full turn",
+            "Smallest order is 1",
+            "Use tracing paper"
+          ]
+        },
+        {
+          "label": "Shapes",
+          "items": [
+            "Regular n-gon: n lines, order n",
+            "Rectangle: 2, order 2",
+            "Parallelogram: 0, order 2"
+          ]
+        },
+        {
+          "label": "Extended and O Level: solids",
+          "items": [
+            "Planes of symmetry",
+            "Axes of symmetry",
+            "Cuboid: 3 planes"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Lines of symmetry and order of a square?",
+        "back": "4 lines, order 4"
+      },
+      {
+        "front": "Lines of symmetry and order of a rectangle?",
+        "back": "2 lines, order 2"
+      },
+      {
+        "front": "Lines of symmetry and order of a parallelogram?",
+        "back": "0 lines, order 2"
+      },
+      {
+        "front": "Lines of symmetry and order of a regular hexagon?",
+        "back": "6 lines, order 6"
+      },
+      {
+        "front": "Lines of symmetry and order of a kite?",
+        "back": "1 line, order 1"
+      },
+      {
+        "front": "Lines of symmetry and order of the letter S?",
+        "back": "0 lines, order 2"
+      },
+      {
+        "front": "(Extended and O Level) Planes of symmetry of a cuboid with all sides different?",
+        "back": "3"
+      },
+      {
+        "front": "(Extended and O Level) Order of the axis of a regular square-based pyramid?",
+        "back": "4"
+      }
+    ]
+  },
+  "4.6": {
+    "mindMap": {
+      "centre": "Angles",
+      "branches": [
+        {
+          "label": "Basic facts",
+          "items": [
+            "At a point: 360°",
+            "Straight line: 180°",
+            "Vertically opposite: equal",
+            "Triangle 180°, quadrilateral 360°"
+          ]
+        },
+        {
+          "label": "Parallel lines",
+          "items": [
+            "Corresponding: equal (F)",
+            "Alternate: equal (Z)",
+            "Co-interior: add to 180° (C)"
+          ]
+        },
+        {
+          "label": "Polygons",
+          "items": [
+            "Exterior = 360 ÷ n",
+            "Interior = 180 - exterior",
+            "Sum = (n - 2) × 180"
+          ]
+        },
+        {
+          "label": "Reasons",
+          "items": [
+            "Write the rule in words",
+            "Angle ABC is the angle at B"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Angles on a straight line are 125° and x. Find x.",
+        "back": "55°"
+      },
+      {
+        "front": "An isosceles triangle has a top angle of 40°. Find each base angle.",
+        "back": "70°"
+      },
+      {
+        "front": "A ladder makes 70° with the ground. What angle does it make with the wall?",
+        "back": "20°"
+      },
+      {
+        "front": "Alternate angles are...",
+        "back": "Equal."
+      },
+      {
+        "front": "Co-interior angles add up to...",
+        "back": "180°"
+      },
+      {
+        "front": "Find the interior angle of a regular hexagon.",
+        "back": "120°"
+      },
+      {
+        "front": "Each interior angle of a regular polygon is 156°. How many sides?",
+        "back": "15"
+      },
+      {
+        "front": "Sum of the interior angles of a pentagon?",
+        "back": "540°"
+      },
+      {
+        "front": "(Extended and O Level) A pentagon has angles 100°, 120°, 95°, 110° and x. Find x.",
+        "back": "115°"
+      }
+    ]
+  },
+  "4.7": {
+    "mindMap": {
+      "centre": "Circle theorems I",
+      "branches": [
+        {
+          "label": "Core",
+          "items": [
+            "Angle in a semicircle = 90°",
+            "Tangent and radius = 90°"
+          ]
+        },
+        {
+          "label": "Extended and O Level",
+          "items": [
+            "Angle at centre = 2 × circumference",
+            "Same segment: equal",
+            "Cyclic quadrilateral: opposite add to 180°",
+            "Alternate segment theorem"
+          ]
+        },
+        {
+          "label": "Reasons",
+          "items": [
+            "Name the theorem every time"
+          ]
+        },
+        {
+          "label": "Real life",
+          "items": [
+            "Find a table's centre with a set square",
+            "Wheel on a road"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is the angle in a semicircle?",
+        "back": "90°"
+      },
+      {
+        "front": "What angle does a tangent make with a radius?",
+        "back": "90°"
+      },
+      {
+        "front": "AB is a diameter, angle CAB = 35°. Find angle ABC.",
+        "back": "55°"
+      },
+      {
+        "front": "Radius 5 cm, P is 13 cm from the centre. Find the tangent length.",
+        "back": "12 cm"
+      },
+      {
+        "front": "(Extended and O Level) Angle at circumference 40°. Angle at centre on the same arc?",
+        "back": "80°"
+      },
+      {
+        "front": "(Extended and O Level) Angle at centre 130°. Angle at circumference on the same arc?",
+        "back": "65°"
+      },
+      {
+        "front": "(Extended and O Level) Cyclic quadrilateral: angle A = 85°. Find angle C.",
+        "back": "95°"
+      },
+      {
+        "front": "(Extended and O Level) Tangent-chord angle 70°. Angle in the alternate segment?",
+        "back": "70°"
+      }
+    ]
+  },
+  "4.8": {
+    "mindMap": {
+      "centre": "Circle theorems II",
+      "branches": [
+        {
+          "label": "Chords",
+          "items": [
+            "Perpendicular from centre bisects a chord",
+            "Perpendicular bisector passes through centre",
+            "Equal chords: same distance from centre"
+          ]
+        },
+        {
+          "label": "Tangents",
+          "items": [
+            "From one point: equal lengths",
+            "OAPB is a kite",
+            "Right angles at A and B"
+          ]
+        },
+        {
+          "label": "Use with",
+          "items": [
+            "Pythagoras with half the chord",
+            "Isosceles triangles"
+          ]
+        },
+        {
+          "label": "Real life",
+          "items": [
+            "Water in a pipe",
+            "Centre of a broken plate"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "A line from the centre at 90° to a chord does what to the chord?",
+        "back": "Cuts it in half."
+      },
+      {
+        "front": "Radius 10 cm, chord 16 cm. Distance from the centre?",
+        "back": "6 cm"
+      },
+      {
+        "front": "Pipe radius 13 cm, water surface 24 cm wide. Distance from the centre?",
+        "back": "5 cm"
+      },
+      {
+        "front": "Two chords are equal. What do you know about their distances from the centre?",
+        "back": "They are equal."
+      },
+      {
+        "front": "Tangents from P touch at A and B. PA = 7 cm. Find PB.",
+        "back": "7 cm"
+      },
+      {
+        "front": "Tangents from P, angle APB = 50°. Find angle AOB.",
+        "back": "130°"
+      },
+      {
+        "front": "Tangents from P, angle APB = 50°. Find angle PAB.",
+        "back": "65°"
+      },
+      {
+        "front": "When using Pythagoras with a chord, which length do you use?",
+        "back": "Half the chord."
+      }
+    ]
   }
 };
 

@@ -5048,6 +5048,1084 @@ The perpendicular bisector of AB passes through the **midpoint** of AB and is **
 
 - Check your gradients multiply to -1.
 - Fractions are fine in the answer, but the question may ask for a form like ax + by = c. Read it carefully.`,
+  "4.1": `## What you need to know
+
+- The names of angles, triangles, quadrilaterals, polygons and solids.
+- The parts of a circle.
+- What **similar** and **congruent** mean.
+- Extended and O Level: also **plane**, **perpendicular bisector**, **hemisphere**, **frustum**, and **major** and **minor** arcs.
+
+This topic is mostly words. Learn them well, because every other geometry topic uses them.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Point | An exact position. It has no size |
+| Vertex (vertices) | A corner where lines or edges meet |
+| Parallel | Lines that are always the same distance apart and never meet |
+| Perpendicular | Lines that meet at a right angle (90°) |
+| Bearing | A direction given as an angle measured clockwise from north |
+| Congruent | Exactly the same shape and size |
+| Similar | The same shape, but one is an enlargement of the other |
+| Scale factor | How many times bigger one shape is than the other |
+
+## Types of angle
+
+![Acute, right, obtuse and reflex angles](/images/maths/4-1-angle-types.svg)
+
+| Angle | Size |
+|---|---|
+| Acute | Less than 90° |
+| Right angle | Exactly 90° |
+| Obtuse | Between 90° and 180° |
+| Straight line | Exactly 180° |
+| Reflex | Between 180° and 360° |
+
+### Real-life example: a clock
+
+**Problem:** At 4 o'clock, what angle do the hands of a clock make? What type of angle is it?
+
+1. A full turn is 360°. There are 12 hours on the clock, so each hour is 360 ÷ 12 = 30°.
+2. At 4 o'clock the hands are 4 hours apart: 4 × 30 = 120°.
+3. 120° is between 90° and 180°.
+
+**Answer:** 120°, an obtuse angle. (The angle the other way round is 360 - 120 = 240°, a reflex angle.)
+
+## Triangles
+
+| Triangle | Sides | Angles |
+|---|---|---|
+| Equilateral | All 3 sides equal | All angles 60° |
+| Isosceles | 2 sides equal | 2 angles equal |
+| Scalene | No sides equal | No angles equal |
+| Right-angled | Any | One angle is 90° |
+
+## Special quadrilaterals
+
+A quadrilateral has 4 sides.
+
+![The six special quadrilaterals](/images/maths/4-1-quadrilaterals.svg)
+
+| Shape | What makes it special |
+|---|---|
+| Square | 4 equal sides, 4 right angles |
+| Rectangle | Opposite sides equal, 4 right angles |
+| Rhombus | 4 equal sides, opposite sides parallel. Like a pushed-over square |
+| Parallelogram | Opposite sides equal and parallel. Like a pushed-over rectangle |
+| Kite | Two pairs of equal sides next to each other |
+| Trapezium | One pair of parallel sides |
+
+**Problem:** Name each shape.
+
+1. A quadrilateral with exactly one pair of parallel sides: **trapezium**.
+2. A quadrilateral with 4 equal sides and no right angles: **rhombus**.
+3. A quadrilateral with two pairs of equal sides next to each other: **kite**.
+
+## Polygons
+
+A polygon is a flat shape with straight sides. A **regular** polygon has all sides equal and all angles equal. An **irregular** polygon does not.
+
+| Sides | Name | Real-life example |
+|---|---|---|
+| 5 | Pentagon | The shape of a home plate in baseball, or a simple house drawing |
+| 6 | Hexagon | A honeycomb cell, a nut for a bolt |
+| 8 | Octagon | A STOP road sign |
+| 10 | Decagon | Some coins |
+
+## Solids
+
+![Common solids](/images/maths/4-1-solids.svg)
+
+| Solid | Faces | Edges | Vertices | Real-life example |
+|---|---|---|---|---|
+| Cube | 6 | 12 | 8 | A dice |
+| Cuboid | 6 | 12 | 8 | A shoe box |
+| Triangular prism | 5 | 9 | 6 | A tent |
+| Square-based pyramid | 5 | 8 | 5 | The pyramids in Egypt |
+| Cylinder | 3 surfaces (2 flat, 1 curved) | 2 | 0 | A tin of food |
+| Cone | 2 surfaces (1 flat, 1 curved) | 1 | 1 | An ice cream cone |
+| Sphere | 1 curved surface | 0 | 0 | A football |
+
+A **prism** has the same shape all the way through. That shape is its **cross-section**.
+
+A **net** is a flat shape that folds up to make a solid (see topic 4.2).
+
+**Problem:** A solid has 5 faces, 8 edges and 5 vertices. One face is a square and the others are triangles. Name it.
+
+1. The square is the base. The triangles meet at a point on top.
+
+**Answer:** A square-based pyramid
+
+## Parts of a circle
+
+![The parts of a circle](/images/maths/4-1-circle-parts.svg)
+
+| Part | Meaning |
+|---|---|
+| Centre | The point in the middle |
+| Radius (radii) | A line from the centre to the edge |
+| Diameter | A line across the circle through the centre. It is 2 × the radius |
+| Circumference | The distance all the way round the edge |
+| Chord | A straight line joining two points on the circle |
+| Tangent | A straight line that touches the circle at one point only |
+| Arc | Part of the circumference |
+| Sector | A "pizza slice" between two radii and an arc |
+| Segment | The part between a chord and an arc |
+| Semicircle | Half a circle |
+
+> **Memory trick:** a seg**ment** is cut off by a chord, like a piece of orange. A sec**tor** is a slice of pizza with a point at the centre.
+
+## Similar and congruent
+
+- **Congruent** shapes are identical: same shape, same size. They may be turned or flipped.
+- **Similar** shapes are the same shape, but different sizes. All the angles are the same, and all the sides are multiplied by the same **scale factor**.
+
+**Problem:** A photo is 10 cm by 15 cm. An enlargement is 20 cm by 30 cm. Are they similar? What is the scale factor?
+
+1. 20 ÷ 10 = 2 and 30 ÷ 15 = 2.
+2. Both sides are multiplied by the same number.
+
+**Answer:** Yes, they are similar. The scale factor is 2.
+
+## Extended and O Level: more words
+
+> **Extended and O Level only.** Core students can skip from here to Common mistakes.
+
+| Word | Meaning |
+|---|---|
+| Plane | A flat surface that goes on forever, like a very large sheet of paper |
+| Perpendicular bisector | A line that cuts another line exactly in half at 90° |
+| Hemisphere | Half a sphere, like a bowl |
+| Frustum | A cone (or pyramid) with the top cut off, like a lampshade or a bucket |
+| Minor arc | The shorter arc between two points on a circle |
+| Major arc | The longer arc between two points on a circle |
+
+## Common mistakes
+
+- Mixing up radius and diameter. The diameter is twice the radius.
+- Mixing up chord and tangent. A tangent only touches the circle. A chord cuts across it.
+- Calling a rhombus a "diamond". In the exam, use the correct word.
+- Thinking similar means the same size. That is congruent.
+
+## Exam tips
+
+- Learn the quadrilateral table. Many questions start "ABCD is a parallelogram..." and expect you to know its properties.
+- Use the correct words when you give reasons. "Angles in a triangle add up to 180°" earns the mark. "Because of the triangle" does not.`,
+  "4.2": `## What you need to know
+
+- How to measure and draw lines and angles accurately.
+- How to **construct** a triangle when you know all three sides, using a ruler and compasses only.
+- How to draw and use **nets** of solids, including using a net to find surface area and volume.
+
+You need a sharp pencil, a ruler, a protractor and a pair of compasses.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Construct | Draw accurately using a ruler and compasses |
+| Compasses | A tool for drawing circles and arcs |
+| Arc | Part of a circle |
+| Protractor | A tool for measuring and drawing angles |
+| Net | A flat shape that folds up to make a solid |
+
+## Measuring and drawing lines
+
+- Measure from the **0** mark on the ruler, not from the end of the ruler.
+- Give lengths in centimetres to 1 decimal place, or in millimetres.
+- Use a sharp pencil. A thick line can be 1 mm out.
+
+## Measuring and drawing angles
+
+1. Put the centre of the protractor exactly on the vertex (the corner of the angle).
+2. Line up the zero line of the protractor with one arm of the angle.
+3. Count from **0** along the scale to the other arm. There are two scales: use the one that starts at 0 on your arm.
+4. Check: is the angle acute (less than 90°) or obtuse (more than 90°)? Your answer should match.
+
+> A common mistake is reading the wrong scale and getting 130° instead of 50°. The check in step 4 catches this.
+
+To draw a reflex angle, such as 230°, draw 360 - 230 = 130° and mark the outside angle.
+
+## Constructing a triangle from three sides
+
+![Constructing a triangle with sides 7 cm, 5 cm and 6 cm](/images/maths/4-2-triangle-construction.svg)
+
+**Problem:** Construct triangle ABC with AB = 7 cm, AC = 5 cm and BC = 6 cm.
+
+1. Draw the longest side first. Use a ruler to draw AB = 7 cm, and label A and B.
+2. Open the compasses to 5 cm (the length of AC). Put the point on A and draw an arc above the line.
+3. Open the compasses to 6 cm (the length of BC). Put the point on B and draw an arc that crosses the first arc.
+4. The point where the arcs cross is C.
+5. Join A to C and B to C with a ruler.
+
+**Answer:** Triangle ABC, with the construction arcs left showing.
+
+> **Do not rub out the arcs.** They show the examiner you used compasses, and they are worth marks.
+
+### Real-life example: planning a flower bed
+
+A gardener wants a triangular flower bed with sides 7 m, 5 m and 6 m.
+
+**Problem:** Draw it to a scale of 1 cm to 1 m. Then measure the largest angle.
+
+1. With a scale of 1 cm to 1 m, the sides are 7 cm, 5 cm and 6 cm. This is the same triangle as above.
+2. Construct it using the steps above.
+3. The largest angle is opposite the longest side (AB = 7 cm), so it is at C.
+4. Measure angle C with a protractor: about 78°.
+
+**Answer:** About 78°
+
+> Accurate drawing gives the gardener the angles to mark out on the ground, without any trigonometry.
+
+### Can every three lengths make a triangle?
+
+No. The two shorter sides must add up to **more** than the longest side.
+
+**Problem:** Can you construct a triangle with sides 3 cm, 4 cm and 9 cm?
+
+1. The two shorter sides: 3 + 4 = 7.
+2. 7 is less than 9.
+3. The arcs from each end would never meet.
+
+**Answer:** No
+
+## Constructing a rhombus
+
+A rhombus has 4 equal sides. You can draw it as two triangles.
+
+**Problem:** Construct a rhombus ABCD with sides of 5 cm and diagonal AC = 8 cm.
+
+1. Draw AC = 8 cm.
+2. Set the compasses to 5 cm. Draw arcs from A and from C, above the line. Where they cross is B.
+3. Keep the compasses at 5 cm. Draw arcs from A and from C below the line. Where they cross is D.
+4. Join A to B, B to C, C to D and D to A.
+
+**Answer:** Rhombus ABCD with all sides 5 cm
+
+## Nets
+
+A net is the flat pattern you would cut out and fold to make a solid.
+
+![Net of a cuboid 5 cm by 3 cm by 2 cm](/images/maths/4-2-cuboid-net.svg)
+
+- A cube has 11 different nets. Each has 6 squares.
+- A cuboid net has 6 rectangles, in 3 matching pairs.
+- A triangular prism net has 2 triangles and 3 rectangles.
+- A square-based pyramid net has 1 square and 4 triangles.
+
+### Real-life example: a gift box
+
+**Problem:** The net in the diagram folds into a cuboid gift box 5 cm long, 3 cm wide and 2 cm high. Find (a) how much card is needed (the surface area) and (b) the volume of the box.
+
+1. (a) The net has three pairs of rectangles: top and bottom, front and back, and the two ends.
+2. Top and bottom: 5 × 3 = 15 cm² each. Two of them: 30 cm².
+3. Front and back: 5 × 2 = 10 cm² each. Two of them: 20 cm².
+4. Ends: 3 × 2 = 6 cm² each. Two of them: 12 cm².
+5. Total: 30 + 20 + 12 = 62 cm².
+6. (b) Volume = length × width × height = 5 × 3 × 2 = 30 cm³.
+
+**Answer:** (a) 62 cm² of card (b) 30 cm³
+
+> A real box needs extra flaps to glue it together, so the box maker would use a bit more card.
+
+**Problem:** Is a row of 4 squares with 1 square above and 1 square below the second square a net of a cube?
+
+1. Fold the row of 4 into a loop: these make the 4 sides.
+2. The square above folds down to make the top, and the square below folds up to make the bottom.
+
+**Answer:** Yes, it is a net of a cube (the "cross" shape).
+
+## Common mistakes
+
+- Rubbing out the construction arcs.
+- Reading the wrong scale on the protractor.
+- Measuring from the end of the ruler instead of from 0.
+- Drawing a net with two faces that would end up on top of each other.
+
+## Exam tips
+
+- Your lengths must be within 1 mm and your angles within 1° of the correct answer. Take care.
+- Label every point (A, B, C) as you draw it.`,
+  "4.3": `## What you need to know
+
+- How to draw and read **scale drawings** and maps.
+- How to use **three-figure bearings**, measured clockwise from north.
+- How to find the bearing back the other way.
+- The compass directions north, east, south and west.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Scale drawing | An accurate drawing where every length is made bigger or smaller by the same amount |
+| Scale | How lengths on the drawing compare to real lengths, like 1 cm to 2 m |
+| Bearing | A direction, as an angle measured clockwise from north |
+| Three-figure bearing | A bearing always written with 3 digits, like 045° or 270° |
+| Due east | Exactly east, on a bearing of 090° |
+
+## Scales
+
+A scale can be written in two ways:
+
+- **In words:** 1 cm represents 2 m.
+- **As a ratio:** 1 : 50 000. This means 1 cm on the map is 50 000 cm in real life.
+
+> To go from the drawing to real life, **multiply** by the scale. To go from real life to the drawing, **divide**.
+
+### Real-life example: a classroom plan
+
+**Problem:** A classroom is 8 m long and 6 m wide. Make a scale drawing with a scale of 1 cm to 2 m. What size is the rectangle you draw?
+
+1. Real life to drawing, so divide by 2.
+2. Length: 8 ÷ 2 = 4 cm.
+3. Width: 6 ÷ 2 = 3 cm.
+
+**Answer:** A rectangle 4 cm by 3 cm
+
+### Real-life example: reading a map
+
+**Problem:** A map has a scale of 1 : 50 000. Two villages are 4 cm apart on the map. How far apart are they in real life? Give your answer in km.
+
+1. Drawing to real life, so multiply: 4 × 50 000 = 200 000 cm.
+2. Change to metres: 200 000 ÷ 100 = 2000 m.
+3. Change to kilometres: 2000 ÷ 1000 = 2 km.
+
+**Answer:** 2 km
+
+> Remember: 100 cm = 1 m and 1000 m = 1 km. So 100 000 cm = 1 km.
+
+**Problem:** On the same map, how long is a road that is 7.5 km long in real life?
+
+1. Change 7.5 km to cm: 7.5 × 100 000 = 750 000 cm.
+2. Real life to drawing, so divide: 750 000 ÷ 50 000 = 15 cm.
+
+**Answer:** 15 cm
+
+## Bearings
+
+Bearings tell ships, planes and hikers which way to go.
+
+**Three rules:**
+
+1. Start at **north**.
+2. Measure **clockwise**.
+3. Always write **three figures**: 45° is written 045°.
+
+| Direction | Bearing |
+|---|---|
+| North | 000° |
+| East | 090° |
+| South | 180° |
+| West | 270° |
+
+![Bearing of B from A, and of A from B](/images/maths/4-3-bearings.svg)
+
+> "The bearing of B **from** A" means: stand at A, face north, and turn clockwise until you face B. Draw the north line at the point after the word "from".
+
+## The bearing back
+
+If you know the bearing of B from A, you can find the bearing of A from B.
+
+> **Back bearing = bearing + 180°** (or **- 180°** if the bearing is more than 180°)
+
+**Problem:** The bearing of B from A is 025°. Find the bearing of A from B.
+
+1. 025° is less than 180°, so add 180°.
+2. 25 + 180 = 205.
+
+**Answer:** 205°
+
+**Problem:** The bearing of Q from P is 300°. Find the bearing of P from Q.
+
+1. 300° is more than 180°, so subtract 180°.
+2. 300 - 180 = 120.
+
+**Answer:** 120°
+
+> The two north lines are parallel, so the angles at A and B are co-interior angles (topic 4.6). That is why the bearings always differ by 180°.
+
+## Real-life example: a ship's journey
+
+A ship leaves port P and sails 8 km on a bearing of 060° to a buoy B. Then it sails 6 km due south to a lighthouse L.
+
+**Problem:** Make a scale drawing with 1 cm to 1 km. Use it to find how far the lighthouse is from the port, and its bearing from the port.
+
+1. Mark P. Draw a north line up from P.
+2. Measure 60° clockwise from north and draw a line 8 cm long. Mark the end B.
+3. At B draw a new north line. Due south means straight down. Draw 6 cm down from B and mark L.
+4. Measure PL with a ruler: about 7.2 cm, so about 7.2 km.
+5. Measure the angle clockwise from the north line at P to the line PL: about 106°.
+
+**Answer:** About 7.2 km, on a bearing of about 106°
+
+> In topics 6.2 and 6.5 you will learn to work out these answers exactly with trigonometry. A scale drawing gives a quick check.
+
+## Common mistakes
+
+- Measuring anticlockwise, or from east instead of north.
+- Writing 45° instead of 045°.
+- Drawing the north line at the wrong point. Draw it at the point after "from".
+- Forgetting to change units, for example leaving a map distance in cm when the question wants km.
+
+## Exam tips
+
+- Draw a north line at every point you need to measure from.
+- Write the scale next to your drawing, and check your measurements make sense in real life.`,
+  "4.4": `## What you need to know
+
+- **Similar** shapes have equal angles, and their sides are all multiplied by the same **scale factor**.
+- How to find a missing length in similar shapes.
+- Extended and O Level: how **areas** and **volumes** of similar shapes are linked, and how to show that two triangles are similar.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Similar | Same shape, different size. One is an enlargement of the other |
+| Scale factor (k) | The number every length is multiplied by |
+| Corresponding sides | Sides in the same position in the two shapes |
+| Enlargement | Making a shape bigger (or smaller) by a scale factor |
+
+## Finding the scale factor
+
+> **Scale factor = new length ÷ old length** (using a pair of corresponding sides)
+
+1. Find a pair of corresponding sides where you know both lengths.
+2. Divide to find the scale factor.
+3. Multiply (to go to the bigger shape) or divide (to go to the smaller shape).
+
+![Two similar triangles](/images/maths/4-4-similar-triangles.svg)
+
+**Problem:** Triangles ABC and PQR are similar. AB = 4 cm, BC = 6 cm, AC = 5 cm and PQ = 10 cm. Find QR and PR.
+
+1. AB and PQ are corresponding sides. Scale factor = 10 ÷ 4 = 2.5.
+2. QR corresponds to BC: QR = 6 × 2.5 = 15 cm.
+3. PR corresponds to AC: PR = 5 × 2.5 = 12.5 cm.
+
+**Answer:** QR = 15 cm, PR = 12.5 cm
+
+> Angles do **not** change in similar shapes. Only the lengths change.
+
+### Real-life example: how tall is the tree?
+
+At the same time of day, a 1.5 m stick casts a shadow 2 m long, and a tree casts a shadow 12 m long. The sun's rays make similar triangles.
+
+![A stick and a tree with their shadows](/images/maths/4-4-shadow.svg)
+
+**Problem:** How tall is the tree?
+
+1. The shadows are corresponding sides. Scale factor = 12 ÷ 2 = 6.
+2. The heights are also corresponding sides. Tree height = 1.5 × 6 = 9.
+
+**Answer:** 9 m
+
+### Real-life example: printing a photo
+
+**Problem:** A photo is 10 cm wide and 15 cm tall. It is enlarged to 25 cm wide. How tall is the enlargement?
+
+1. Scale factor = 25 ÷ 10 = 2.5.
+2. Height = 15 × 2.5 = 37.5.
+
+**Answer:** 37.5 cm
+
+> If you only stretch the width, the photo is no longer similar and the faces look wide and flat.
+
+### Going the other way
+
+**Problem:** A model car is similar to the real car. The real car is 4.2 m long and the model is 14 cm long. The real car is 1.5 m tall. How tall is the model?
+
+1. Use the same units: 4.2 m = 420 cm and 1.5 m = 150 cm.
+2. Scale factor from real to model = 14 ÷ 420 = 1/30.
+3. Model height = 150 × 1/30 = 5.
+
+**Answer:** 5 cm
+
+## Extended and O Level: areas and volumes
+
+> **Extended and O Level only.** Core students can skip from here to Common mistakes.
+
+If the lengths are multiplied by k:
+
+| | Multiplied by |
+|---|---|
+| Lengths | k |
+| Areas (including surface areas) | k² |
+| Volumes | k³ |
+
+Why? A 1 cm square doubled becomes a 2 cm square: its area goes from 1 to 4, which is 2². A 1 cm cube doubled becomes a 2 cm cube: its volume goes from 1 to 8, which is 2³.
+
+### Real-life example: which pizza is better value?
+
+A small pizza is 25 cm across and costs $6. A large pizza is 35 cm across and costs $10. Both are circles, so they are similar.
+
+**Problem:** Which is better value?
+
+1. Length scale factor = 35 ÷ 25 = 1.4.
+2. Area scale factor = 1.4² = 1.96. So the large pizza has 1.96 times as much pizza.
+3. Price scale factor = 10 ÷ 6 = 1.67 (to 3 s.f.).
+4. You get 1.96 times the pizza for only 1.67 times the price.
+
+**Answer:** The large pizza is better value.
+
+> Most people think the large pizza is only "a bit bigger". The area grows much faster than the width.
+
+### Real-life example: two bottles
+
+Two bottles are similar. The small one is 10 cm tall and the large one is 15 cm tall. The small bottle holds 400 ml and has a label of area 60 cm².
+
+**Problem:** Find (a) the label area on the large bottle (b) how much the large bottle holds.
+
+1. Length scale factor k = 15 ÷ 10 = 1.5.
+2. (a) Area factor = 1.5² = 2.25. Label = 60 × 2.25 = **135 cm²**.
+3. (b) Volume factor = 1.5³ = 3.375. Volume = 400 × 3.375 = **1350 ml**.
+
+**Answer:** (a) 135 cm² (b) 1350 ml
+
+### Working backwards from volumes
+
+**Problem:** Two similar cones have volumes 16 cm³ and 54 cm³. The small cone is 6 cm tall. How tall is the large cone?
+
+1. Volume factor = 54 ÷ 16 = 27/8.
+2. Length factor = cube root of 27/8 = 3/2 = 1.5.
+3. Height = 6 × 1.5 = 9.
+
+**Answer:** 9 cm
+
+> From areas, take the **square root** to get k. From volumes, take the **cube root**.
+
+## Extended and O Level: showing triangles are similar
+
+Two triangles are similar if their angles are equal. Give a reason for each angle.
+
+![Lines AE and BD cross at C, with AB parallel to DE](/images/maths/4-4-bowtie.svg)
+
+**Problem:** Lines AE and BD cross at C. AB is parallel to DE. Show that triangles ABC and EDC are similar. Then find DE if AB = 6 cm, AC = 4 cm and CE = 10 cm.
+
+1. Angle ACB = angle ECD (vertically opposite angles are equal).
+2. Angle BAC = angle DEC (alternate angles are equal, because AB is parallel to DE).
+3. Two angles are equal, so the third angles must be equal too (angles in a triangle add to 180°). The triangles are similar.
+4. AC and EC are corresponding sides. Scale factor = 10 ÷ 4 = 2.5.
+5. DE corresponds to AB: DE = 6 × 2.5 = 15.
+
+**Answer:** The triangles are similar (equal angles, reasons above), and DE = 15 cm.
+
+## Common mistakes
+
+- Adding instead of multiplying: if one side goes from 4 to 10 (add 6), the others do **not** add 6.
+- Matching the wrong sides. Match sides that are opposite equal angles.
+- Using k instead of k² for areas, or k instead of k³ for volumes.
+
+## Exam tips
+
+- Redraw the two shapes separately, the same way round, and label the matching sides.
+- Write the scale factor clearly before you use it.`,
+  "4.5": `## What you need to know
+
+- How to find the **lines of symmetry** of a flat shape.
+- How to find the **order of rotational symmetry** of a flat shape.
+- The symmetry of triangles, quadrilaterals and regular polygons.
+- Extended and O Level: **planes of symmetry** and **axes of symmetry** of solids.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Line of symmetry | A mirror line. One half is the reflection of the other |
+| Rotational symmetry | The shape looks the same when you turn it less than a full turn |
+| Order of rotational symmetry | How many times the shape looks the same in one full turn |
+| Plane of symmetry | A flat cut that splits a solid into two mirror halves |
+| Axis of symmetry | A line a solid can turn around and still look the same |
+
+## Line symmetry
+
+If you fold a shape along a line of symmetry, the two halves fit exactly on top of each other.
+
+## Rotational symmetry
+
+Turn the shape around its centre. Count how many times it looks exactly the same in one full turn (including the starting position).
+
+- A shape that only looks the same after a full turn has order **1**. We say it has **no** rotational symmetry.
+
+> **Tracing paper trick:** trace the shape, put your pencil on the centre, and turn the paper. Count how many times the tracing fits the shape.
+
+![Lines of symmetry of some shapes](/images/maths/4-5-symmetry.svg)
+
+## Symmetry of common shapes
+
+| Shape | Lines of symmetry | Order of rotational symmetry |
+|---|---|---|
+| Equilateral triangle | 3 | 3 |
+| Isosceles triangle | 1 | 1 |
+| Scalene triangle | 0 | 1 |
+| Square | 4 | 4 |
+| Rectangle | 2 | 2 |
+| Rhombus | 2 | 2 |
+| Parallelogram | 0 | 2 |
+| Kite | 1 | 1 |
+| Isosceles trapezium | 1 | 1 |
+| Regular polygon with n sides | n | n |
+| Circle | Infinite | Infinite |
+
+> A parallelogram has **no** lines of symmetry. Folding along a diagonal does not work. Try it with paper.
+
+**Problem:** A regular hexagon. How many lines of symmetry? What order of rotational symmetry?
+
+1. A regular polygon with n sides has n lines of symmetry and order n.
+2. A hexagon has 6 sides.
+
+**Answer:** 6 lines of symmetry, order 6
+
+## Using symmetry to find missing facts
+
+**Problem:** A kite ABCD has its line of symmetry along AC. Angle ABC = 110°. Find angle ADC.
+
+1. The line of symmetry AC reflects B onto D.
+2. So angle ADC is the mirror image of angle ABC.
+
+**Answer:** 110°
+
+## Real-life example: road signs and letters
+
+**Problem:** Give the lines of symmetry and the order of rotational symmetry for (a) a STOP sign (a regular octagon) (b) the letter H (c) the letter S.
+
+1. (a) Regular octagon, 8 sides: **8 lines, order 8**.
+2. (b) H can be folded down the middle and across the middle: **2 lines**. It looks the same upside down: **order 2**.
+3. (c) S cannot be folded to match: **0 lines**. It looks the same upside down: **order 2**.
+
+**Answer:** (a) 8 lines, order 8 (b) 2 lines, order 2 (c) 0 lines, order 2
+
+> Designers use symmetry in logos because the eye finds balanced shapes pleasing. A snowflake has 6 lines of symmetry and order 6.
+
+## Extended and O Level: symmetry of solids
+
+> **Extended and O Level only.** Core students can skip from here to Common mistakes.
+
+A **plane of symmetry** cuts a solid into two halves that are mirror images.
+
+An **axis of symmetry** is a line through the solid. Turning the solid around it, it looks the same a number of times (the order).
+
+| Solid | Planes of symmetry | Axes of symmetry |
+|---|---|---|
+| Cuboid (all sides different) | 3 | 3 axes, each of order 2 |
+| Cube | 9 | 13 axes |
+| Square-based pyramid (regular) | 4 | 1 axis of order 4 |
+| Triangular prism (equilateral ends) | 4 | 1 axis of order 3 and 3 of order 2 |
+| Cylinder | Infinite | 1 axis of infinite order, and infinitely many of order 2 |
+| Cone | Infinite | 1 axis of infinite order |
+
+**Problem:** How many planes of symmetry does a cuboid have if its length, width and height are all different? Describe them.
+
+1. Cut it in half across its length, so the two ends match: **1**.
+2. Cut it in half across its width: **2**.
+3. Cut it in half across its height, through the middle: **3**.
+4. A diagonal cut does not give mirror halves, because the faces are rectangles, not squares.
+
+**Answer:** 3 planes of symmetry
+
+**Problem:** A square-based pyramid has its point directly above the centre of the base. Describe its axis of symmetry and its order.
+
+1. The axis goes from the point straight down to the centre of the square base.
+2. Turning around this axis, the pyramid looks the same 4 times (like the square base).
+
+**Answer:** One vertical axis through the top and the centre of the base, of order 4.
+
+## Common mistakes
+
+- Saying a parallelogram has 2 lines of symmetry. It has 0.
+- Saying a rectangle has 4 lines of symmetry. The diagonals are **not** lines of symmetry.
+- Giving order 0 for no rotational symmetry. The smallest order is 1.
+
+## Exam tips
+
+- Use tracing paper in the exam if you are allowed. It is the fastest way to check.
+- Draw lines of symmetry with a ruler, as dashed lines, right across the shape.`,
+  "4.6": `## What you need to know
+
+- The basic angle facts: angles at a point, on a straight line, vertically opposite, in a triangle and in a quadrilateral.
+- The angles made when a line crosses **parallel lines**: corresponding, alternate and co-interior.
+- The interior and exterior angles of **regular polygons**.
+- How to give a **reason** for each step, using the correct words.
+- Extended and O Level: angles in **irregular** polygons too.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Angle ABC | The angle at B, between the lines BA and BC. The middle letter is the corner |
+| Vertically opposite | The angles opposite each other where two lines cross |
+| Transversal | A line that crosses two (or more) parallel lines |
+| Interior angle | An angle inside a polygon, at a corner |
+| Exterior angle | The angle between one side and the next side extended outwards |
+
+## The basic angle facts
+
+| Fact | Reason to write |
+|---|---|
+| Angles at a point add up to 360° | Angles at a point add up to 360° |
+| Angles on a straight line add up to 180° | Angles on a straight line add up to 180° |
+| Vertically opposite angles are equal | Vertically opposite angles are equal |
+| Angles in a triangle add up to 180° | Angles in a triangle add up to 180° |
+| Angles in a quadrilateral add up to 360° | Angles in a quadrilateral add up to 360° |
+| Base angles of an isosceles triangle are equal | Base angles of an isosceles triangle are equal |
+
+**Problem:** Two angles on a straight line are 125° and x. Find x.
+
+1. Angles on a straight line add up to 180°.
+2. x = 180 - 125 = 55.
+
+**Answer:** x = 55°
+
+**Problem:** An isosceles triangle has a top angle of 40°. Find each of the other two angles.
+
+1. Angles in a triangle add up to 180°. The other two angles add up to 180 - 40 = 140°.
+2. The base angles of an isosceles triangle are equal. Each one is 140 ÷ 2 = 70°.
+
+**Answer:** 70° and 70°
+
+### Real-life example: a ladder
+
+A ladder leans against a vertical wall. It makes an angle of 70° with the flat ground.
+
+**Problem:** What angle does the ladder make with the wall?
+
+1. The wall and the ground meet at 90°.
+2. The ladder, the wall and the ground make a triangle. Angles in a triangle add up to 180°.
+3. Angle with the wall = 180 - 90 - 70 = 20.
+
+**Answer:** 20°
+
+## Angles in parallel lines
+
+![Corresponding, alternate and co-interior angles](/images/maths/4-6-parallel-angles.svg)
+
+| Pair | Shape to look for | Rule |
+|---|---|---|
+| Corresponding angles | F shape | Equal |
+| Alternate angles | Z shape | Equal |
+| Co-interior angles | C (or U) shape | Add up to 180° |
+
+> The arrows on the lines in a diagram show that the lines are parallel.
+
+**Problem:** A transversal crosses two parallel lines. One angle is 65°. Angle a is alternate to it, angle b is corresponding to it, and angle c is co-interior to it. Find a, b and c.
+
+1. a = 65° (alternate angles are equal).
+2. b = 65° (corresponding angles are equal).
+3. c = 180 - 65 = 115° (co-interior angles add up to 180°).
+
+**Answer:** a = 65°, b = 65°, c = 115°
+
+> In the exam, write the reason in words after each step. "Alternate angles" on its own is not enough. Write "alternate angles are equal".
+
+## Angles in regular polygons
+
+> **Exterior angle = 360° ÷ n** (n = number of sides)
+
+> **Interior angle = 180° - exterior angle**
+
+> **Sum of interior angles = (n - 2) × 180°**
+
+Why (n - 2) × 180? You can split any polygon into (n - 2) triangles from one corner, and each triangle has 180°.
+
+**Problem:** Find the exterior angle, interior angle and sum of the interior angles of a regular hexagon.
+
+1. n = 6. Exterior angle = 360 ÷ 6 = 60°.
+2. Interior angle = 180 - 60 = 120°.
+3. Sum = (6 - 2) × 180 = 4 × 180 = 720°. Check: 6 × 120 = 720.
+
+**Answer:** Exterior 60°, interior 120°, sum 720°
+
+**Problem:** Each interior angle of a regular polygon is 156°. How many sides does it have?
+
+1. Exterior angle = 180 - 156 = 24°.
+2. n = 360 ÷ 24 = 15.
+
+**Answer:** 15 sides
+
+### Real-life example: why bees use hexagons
+
+Tiles fit together with no gaps only if the angles at each meeting point add up to exactly 360°.
+
+**Problem:** Can regular hexagons cover a floor with no gaps? Can regular pentagons?
+
+1. Hexagon interior angle = 120°. Three meet at a point: 3 × 120 = 360°. **No gaps.**
+2. Pentagon: exterior = 360 ÷ 5 = 72°, so interior = 180 - 72 = 108°. Three meet: 3 × 108 = 324°, leaving a gap of 36°. Four would be 432°, which is too much. **They do not fit.**
+
+**Answer:** Hexagons tile perfectly. Pentagons do not. This is why honeycomb cells are hexagons.
+
+## Extended and O Level: irregular polygons
+
+> **Extended and O Level only.** Core students can skip from here to Common mistakes.
+
+The angle sum (n - 2) × 180° works for **every** polygon, regular or not. The exterior angles of any polygon also add up to 360°.
+
+**Problem:** A pentagon has angles 100°, 120°, 95°, 110° and x. Find x.
+
+1. Sum of the angles in a pentagon = (5 - 2) × 180 = 540°.
+2. Add the known angles: 100 + 120 + 95 + 110 = 425.
+3. x = 540 - 425 = 115.
+
+**Answer:** x = 115°
+
+**Problem:** The exterior angles of a hexagon are x, 2x, 50°, 60°, 70° and 2x. Find x.
+
+1. Exterior angles of any polygon add up to 360°.
+2. x + 2x + 2x + 50 + 60 + 70 = 360, so 5x + 180 = 360.
+3. 5x = 180, so x = 36.
+
+**Answer:** x = 36°
+
+## Common mistakes
+
+- Reading angle ABC as the angle at A. It is the angle at **B**, the middle letter.
+- Mixing up alternate (equal) and co-interior (add to 180°).
+- Using 360 ÷ n for the **interior** angle. That gives the exterior angle.
+- Forgetting to write reasons.
+
+## Exam tips
+
+- Write each angle you find on the diagram as you go.
+- Give a reason for every step, in full words.`,
+  "4.7": `## What you need to know
+
+- **The angle in a semicircle is 90°.**
+- **The angle between a tangent and a radius is 90°.**
+- Extended and O Level: four more theorems: the angle at the centre, angles in the same segment, cyclic quadrilaterals and the alternate segment theorem.
+- How to give reasons using these facts.
+
+A **theorem** is a fact that has been proved to be always true. In the exam you must name the theorem you use.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Circumference | The edge of the circle |
+| Diameter | A line across the circle through the centre |
+| Tangent | A line that touches the circle at exactly one point |
+| Subtended | An angle is subtended by a chord or arc when its arms go to the ends of that chord or arc |
+| Cyclic quadrilateral | A quadrilateral with all 4 corners on a circle |
+
+## Core theorems
+
+![The angle in a semicircle and the tangent and radius](/images/maths/4-7-core-theorems.svg)
+
+### 1. The angle in a semicircle is 90°
+
+If AB is a diameter and C is any point on the circle, then angle ACB = 90°.
+
+**Problem:** AB is a diameter of a circle. C is a point on the circle. Angle CAB = 35°. Find angle ABC.
+
+1. Angle ACB = 90° (the angle in a semicircle is 90°).
+2. Angles in a triangle add up to 180°. Angle ABC = 180 - 90 - 35 = 55°.
+
+**Answer:** 55°
+
+### Real-life example: finding the centre of a round table
+
+A carpenter has a round table top and needs to find its exact centre.
+
+1. Put the corner of a set square (a right angle) on the edge of the table.
+2. Mark where the two arms cross the edge. Because the angle in a semicircle is 90°, these two marks are the ends of a **diameter**. Draw a line between them.
+3. Do it again from a different place on the edge to get a second diameter.
+4. The two diameters cross at the centre.
+
+### 2. The angle between a tangent and a radius is 90°
+
+A tangent at point T is perpendicular to the radius OT.
+
+**Problem:** PT is a tangent to a circle with centre O. The tangent touches the circle at T. Angle TOP = 62°. Find angle OPT.
+
+1. Angle OTP = 90° (the angle between a tangent and a radius is 90°).
+2. Angle OPT = 180 - 90 - 62 = 28° (angles in a triangle add up to 180°).
+
+**Answer:** 28°
+
+**Problem:** A circle has centre O and radius 5 cm. P is a point 13 cm from O. A tangent from P touches the circle at T. Find the length PT.
+
+1. Angle OTP = 90° (tangent and radius). So OTP is a right-angled triangle with longest side OP = 13.
+2. Pythagoras: PT² = 13² - 5² = 169 - 25 = 144.
+3. PT = √144 = 12.
+
+**Answer:** 12 cm
+
+> A bicycle wheel touches the flat road at one point. The road is a tangent, so the spoke going straight down to that point makes 90° with the road.
+
+## Extended and O Level theorems
+
+> **Extended and O Level only.** Core students can skip from here to Common mistakes.
+
+![The angle at the centre, angles in the same segment, a cyclic quadrilateral and the alternate segment theorem](/images/maths/4-7-extended-theorems.svg)
+
+### 3. The angle at the centre is twice the angle at the circumference
+
+Both angles must stand on the **same arc**.
+
+**Problem:** A, B and C are on a circle with centre O. Angle ACB = 40°. Find angle AOB.
+
+1. Angle AOB is at the centre and angle ACB is at the circumference. Both stand on arc AB.
+2. Angle AOB = 2 × 40 = 80° (the angle at the centre is twice the angle at the circumference).
+
+**Answer:** 80°
+
+**Problem:** Angle AOB at the centre is 130°. Find the angle ACB at the circumference standing on the same arc.
+
+1. Angle at the circumference = half of the angle at the centre: 130 ÷ 2 = 65°.
+
+**Answer:** 65°
+
+### 4. Angles in the same segment are equal
+
+Angles at the circumference standing on the **same chord**, on the same side of it, are equal.
+
+**Problem:** A, B, C and D are on a circle. Angle ADB = 35°. C is on the same side of AB as D. Find angle ACB.
+
+1. Angles ADB and ACB both stand on chord AB, in the same segment.
+2. They are equal (angles in the same segment are equal).
+
+**Answer:** 35°
+
+### 5. Opposite angles of a cyclic quadrilateral add up to 180°
+
+**Problem:** ABCD is a cyclic quadrilateral. Angle A = 85° and angle B = 110°. Find angles C and D.
+
+1. C is opposite A: C = 180 - 85 = 95° (opposite angles of a cyclic quadrilateral add up to 180°).
+2. D is opposite B: D = 180 - 110 = 70° (same reason).
+
+**Answer:** C = 95°, D = 70°
+
+> Check: 85 + 110 + 95 + 70 = 360°. Angles in a quadrilateral add up to 360°. Correct.
+
+### 6. The alternate segment theorem
+
+The angle between a tangent and a chord equals the angle in the **alternate** (opposite) segment.
+
+**Problem:** A tangent touches a circle at A. AB is a chord. The angle between the tangent and AB is 70°. C is a point on the circle on the other side of AB. Find angle ACB.
+
+1. The angle between the tangent and chord AB is 70°.
+2. Angle ACB is in the alternate segment.
+3. They are equal (alternate segment theorem).
+
+**Answer:** 70°
+
+## Extended and O Level: using several theorems
+
+**Problem:** A, B, C and D lie on a circle, in that order. Angle BAD = 70° and angle ADB = 40°. Find (a) angle BCD (b) angle ACB (c) angle ABD.
+
+1. (a) ABCD is a cyclic quadrilateral, and BCD is opposite BAD. Angle BCD = 180 - 70 = **110°** (opposite angles of a cyclic quadrilateral add up to 180°).
+2. (b) Angles ACB and ADB both stand on chord AB, on the same side. Angle ACB = **40°** (angles in the same segment are equal).
+3. (c) In triangle ABD: angle ABD = 180 - 70 - 40 = **70°** (angles in a triangle add up to 180°).
+
+**Answer:** (a) 110° (b) 40° (c) 70°
+
+## Common mistakes
+
+- Using "angle in a semicircle" when the chord is not a diameter. The chord must go through the centre.
+- Halving when you should double (or the other way round) for the angle at the centre. The angle at the centre is the **bigger** one.
+- Using the cyclic quadrilateral rule on a quadrilateral that does not have all 4 corners on the circle.
+- Writing the answer without the name of the theorem.
+
+## Exam tips
+
+- Mark every right angle on the diagram as soon as you see a diameter or a tangent.
+- Write the theorem's name in full as the reason for each step.`,
+  "4.8": `## What you need to know
+
+> **Extended and O Level only.** This topic is not in IGCSE Core.
+
+- **Equal chords are the same distance from the centre.**
+- **The perpendicular bisector of a chord passes through the centre.** So a line from the centre at 90° to a chord cuts the chord in half.
+- **Tangents from a point outside the circle are equal in length.**
+- How to give reasons using these facts, often together with Pythagoras.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Chord | A straight line joining two points on a circle |
+| Perpendicular bisector | A line that cuts another line in half at 90° |
+| Equidistant | The same distance away |
+| External point | A point outside the circle |
+
+![Chord theorems and equal tangents](/images/maths/4-8-theorems.svg)
+
+## 1. The perpendicular from the centre to a chord bisects the chord
+
+A line from the centre at 90° to a chord cuts the chord exactly in half. This makes two right-angled triangles, so you can use Pythagoras.
+
+**Problem:** A circle has centre O and radius 10 cm. Chord AB is 16 cm long. How far is the chord from the centre?
+
+1. Draw OM from the centre at 90° to AB. M is the midpoint of AB (the perpendicular from the centre bisects the chord). So AM = 16 ÷ 2 = 8 cm.
+2. OA is a radius, so OA = 10 cm.
+3. Triangle OMA has a right angle at M. Pythagoras: OM² = 10² - 8² = 100 - 64 = 36.
+4. OM = √36 = 6.
+
+**Answer:** 6 cm
+
+### Real-life example: a water pipe
+
+A round pipe has an inside radius of 13 cm. The water surface across the pipe is 24 cm wide.
+
+**Problem:** How far is the water surface from the centre of the pipe? If the water is below the centre, how deep is it?
+
+1. The water surface is a chord of length 24 cm. Half of it is 12 cm (the perpendicular from the centre bisects the chord).
+2. Distance from the centre: √(13² - 12²) = √(169 - 144) = √25 = 5 cm.
+3. The water is below the centre. The bottom of the pipe is 13 cm below the centre, so the depth = 13 - 5 = 8 cm.
+
+**Answer:** 5 cm from the centre, so the water is 8 cm deep.
+
+## 2. The perpendicular bisector of a chord passes through the centre
+
+### Real-life example: a broken plate
+
+An archaeologist finds a piece of a round plate. She wants to know the size of the whole plate.
+
+1. Draw two chords on the curved edge of the piece.
+2. Construct the perpendicular bisector of each chord.
+3. Both bisectors pass through the centre, so the point where they cross is the centre of the plate.
+4. Measure from the centre to the edge to get the radius.
+
+## 3. Equal chords are equidistant from the centre
+
+If two chords are the same length, they are the same distance from the centre. It also works the other way: chords the same distance from the centre are the same length.
+
+**Problem:** In a circle with centre O, chords AB and CD are both 16 cm long. The distance from O to AB is 6 cm. How far is CD from O?
+
+1. AB and CD are equal chords.
+2. Equal chords are equidistant from the centre.
+
+**Answer:** 6 cm
+
+## 4. Tangents from an external point are equal
+
+From a point P outside a circle, you can draw two tangents, touching at A and B. Then **PA = PB**.
+
+The shape OAPB is a **kite**: OA = OB (radii) and PA = PB (tangents). The angles at A and B are 90° (tangent and radius).
+
+**Problem:** PA and PB are tangents from P to a circle with centre O. Angle APB = 50°. Find (a) angle AOB (b) angle PAB.
+
+1. (a) Angles OAP and OBP are both 90° (tangent and radius). The angles in quadrilateral OAPB add up to 360°. Angle AOB = 360 - 90 - 90 - 50 = **130°**.
+2. (b) PA = PB (tangents from an external point are equal). So triangle PAB is isosceles, and its base angles are equal. Angle PAB = (180 - 50) ÷ 2 = **65°**.
+
+**Answer:** (a) 130° (b) 65°
+
+**Problem:** Tangents from P touch the circle at A and B. PA = 7 cm. Find PB.
+
+1. Tangents from an external point are equal in length.
+
+**Answer:** 7 cm
+
+> A belt around a wheel, or a rope pulled tight from a point to a round post, follows a tangent. That is why both sides of a belt from a point have the same length.
+
+## Common mistakes
+
+- Using the full chord length in Pythagoras. Use **half** the chord.
+- Forgetting that OA and OB are radii, so they are equal.
+- Thinking angle AOB equals angle APB. They add up to 180° in this kite.
+
+## Exam tips
+
+- Whenever a question has a chord and the centre, draw the perpendicular from the centre and look for a right-angled triangle.
+- Whenever a question has two tangents from one point, mark the two equal lengths and the two right angles.`,
 };
 
 export function getMathsNotes(topic: string): string | undefined {
