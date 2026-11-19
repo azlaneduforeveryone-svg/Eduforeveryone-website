@@ -5,16 +5,16 @@ import { getOLevelNotes } from "@/lib/courses/oLevelAccountingNotes";
 import AccountingHubClient from "./AccountingHubClient";
 
 export const metadata: Metadata = {
-  title: "Cambridge O Level Accounting (7707) — Free Course | EduForEveryone",
+  title: "Cambridge O Level and IGCSE Accounting (7707, 0452): Free Course | EduForEveryone",
   description:
-    "Master all 28 topics of the Cambridge O Level Accounting 7707 syllabus with step-by-step video lessons, concise notes, and 336 practice multiple-choice questions.",
+    "Master all 28 topics of the Cambridge O Level Accounting 7707 and IGCSE Accounting 0452 syllabus with step-by-step video lessons, concise notes, and 336 practice multiple-choice questions.",
   alternates: {
     canonical: "https://eduforeveryone.com/courses/accounting",
   },
   openGraph: {
-    title: "Cambridge O Level Accounting (7707) | EduForEveryone",
+    title: "Cambridge O Level and IGCSE Accounting (7707, 0452) | EduForEveryone",
     description:
-      "Free O Level Accounting 7707 course covering all 7 syllabus sections and 28 topics with interactive quizzes and progress tracking.",
+      "Free O Level 7707 and IGCSE 0452 Accounting course covering all 7 syllabus sections and 28 topics with interactive quizzes and progress tracking.",
     url: "https://eduforeveryone.com/courses/accounting",
     siteName: "EduForEveryone",
     type: "website",

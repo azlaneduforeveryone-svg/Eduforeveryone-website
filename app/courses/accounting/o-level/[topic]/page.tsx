@@ -32,14 +32,14 @@ export async function generateMetadata({
   const topicTitle = questions[0]?.topicTitle || meta.topicTitle;
 
   return {
-    title: `${meta.topic} ${topicTitle} — O Level Accounting 7707 | EduForEveryone`,
-    description: `Study Cambridge O Level Accounting (7707) Topic ${meta.topic}: ${topicTitle}. Watch the lesson, read concise syllabus notes, and test yourself with practice MCQs.`,
+    title: `${meta.topic} ${topicTitle} | O Level and IGCSE Accounting | EduForEveryone`,
+    description: `Study Cambridge O Level Accounting 7707 and IGCSE Accounting 0452 Topic ${meta.topic}: ${topicTitle}. Watch the lesson, read concise syllabus notes, and test yourself with practice MCQs.`,
     alternates: {
       canonical: `https://eduforeveryone.com/courses/accounting/o-level/${meta.slug}`,
     },
     openGraph: {
-      title: `${meta.topic} ${topicTitle} — O Level Accounting 7707 | EduForEveryone`,
-      description: `Free O Level Accounting 7707 lesson, notes and practice quiz for Topic ${meta.topic}: ${topicTitle}.`,
+      title: `${meta.topic} ${topicTitle} | O Level and IGCSE Accounting | EduForEveryone`,
+      description: `Free O Level 7707 and IGCSE 0452 Accounting lesson, notes and practice quiz for Topic ${meta.topic}: ${topicTitle}.`,
       url: `https://eduforeveryone.com/courses/accounting/o-level/${meta.slug}`,
       siteName: "EduForEveryone",
       type: "article",

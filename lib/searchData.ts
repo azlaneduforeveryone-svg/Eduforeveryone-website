@@ -11,7 +11,7 @@ export interface SearchItem {
 
 export const SEARCH_DATA: SearchItem[] = [
   // ── Courses ───────────────────────────────────────────────────────────────
-  { title:"O Level Accounting",   description:"Cambridge O Level Accounting (7707): all 28 syllabus topics with notes, flashcards and practice questions.", href:"/courses/accounting", category:"Course", emoji:"📊", tags:["accounting","o level","7707","cambridge","double entry","ledger","financial statements"] },
+  { title:"O Level and IGCSE Accounting", description:"Cambridge O Level Accounting 7707 and IGCSE Accounting 0452: all 28 syllabus topics with notes, flashcards and practice questions.", href:"/courses/accounting", category:"Course", emoji:"📊", tags:["accounting","o level","igcse","7707","0452","cambridge","double entry","ledger","financial statements"] },
   { title:"O Level Biology",      description:"Cambridge O Level Biology (5090): all 19 sections and 52 topics for 2026 to 2028 exams.", href:"/courses/biology", category:"Course",   emoji:"🧬", tags:["science","biology","o level","5090","cambridge","cells","genetics"] },
   { title:"O Level and IGCSE Mathematics", description:"Cambridge O Level Mathematics 4024 and IGCSE Mathematics 0580, Core and Extended.", href:"/courses/mathematics", category:"Course", emoji:"🧮", tags:["maths","math","mathematics","o level","igcse","4024","0580","cambridge","algebra","geometry"] },
   { title:"World War II",         description:"Causes, key events and lasting impact of World War 2.",                        href:"/courses/history-world-war-2",   category:"Course",   emoji:"🌍", tags:["history","ww2","world war","war","europe"] },

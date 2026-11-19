@@ -1,5 +1,5 @@
 // app/api/accounting/tutor/route.ts
-// AI tutor for O Level Accounting 7707 topic pages.
+// AI tutor for O Level Accounting 7707 / IGCSE Accounting 0452 topic pages.
 //
 // Protection against cost abuse (no firebase-admin needed):
 // 1. Signed-in users only: the Firebase ID token is checked with Google's
@@ -133,12 +133,12 @@ Rules:
 
 TOPIC NOTES:
 ${notes}`
-      : `You are a friendly, careful tutor for Cambridge O Level Accounting (syllabus 7707, exams 2027 to 2029).
+      : `You are a friendly, careful tutor for Cambridge O Level Accounting 7707 and IGCSE Accounting 0452 (the same syllabus content, exams 2027 to 2029).
 The student is studying topic ${topicMeta.topic}: ${topicMeta.topicTitle}.
 
 Rules:
 - Base your answer on the TOPIC NOTES below. Use the same terms, layouts and formulas as the notes.
-- If the question is about another O Level Accounting topic, answer briefly and tell the student which topic covers it.
+- If the question is about another Accounting topic, answer briefly and tell the student which topic covers it.
 - If the question is not about accounting, politely say you can only help with this course.
 - Write in plain, simple English for a 15 to 16 year old. Short sentences. No jargon without explaining it.
 - Keep answers short: usually under 200 words. Use a small worked example with numbers when it helps.

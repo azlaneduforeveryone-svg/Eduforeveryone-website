@@ -92,9 +92,9 @@ export default function AccountingHubClient({ sections }: AccountingHubClientPro
     <div className="efe-page min-h-screen flex flex-col">
       {/* Hero */}
       <PageHeader
-        eyebrow="Cambridge O Level Accounting (7707)"
+        eyebrow="Cambridge O Level 7707 and IGCSE 0452"
         title="Accounting"
-        description="Learn O Level Accounting (7707) topic by topic — from the accounting equation and double-entry book-keeping to financial statements and ratio analysis. Free, structured, and built for exam mastery."
+        description="One course for O Level Accounting 7707 and IGCSE Accounting 0452, which share the same syllabus content for exams from 2027. Learn topic by topic, from the accounting equation and double-entry book-keeping to financial statements and ratio analysis."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Courses", href: "/courses" },
@@ -106,7 +106,7 @@ export default function AccountingHubClient({ sections }: AccountingHubClientPro
               href="#o-level-7707"
               className="efe-btn efe-btn-on-hero"
             >
-              Start O Level Accounting
+              Start Accounting
             </a>
             <button
               type="button"
@@ -137,7 +137,7 @@ export default function AccountingHubClient({ sections }: AccountingHubClientPro
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
               <div>
                 <h2 className="text-lg font-bold font-display text-efe-fg">
-                  O Level Accounting (7707) Progress
+                  Accounting Progress
                 </h2>
                 <p className="text-sm text-efe-muted">
                   Practice questions are available for every topic now. Notes and videos are being added.
@@ -194,7 +194,7 @@ export default function AccountingHubClient({ sections }: AccountingHubClientPro
         <section aria-labelledby="syllabus-sections-heading" className="space-y-10">
           <SectionHeader
             eyebrow="2027–2029 Syllabus"
-            title={<span id="syllabus-sections-heading" className="scroll-mt-24">O Level Accounting Syllabus Topics</span>}
+            title={<span id="syllabus-sections-heading" className="scroll-mt-24">Accounting Syllabus Topics</span>}
             description="28 topics across 7 sections, with 336 original multiple-choice practice questions."
           />
 

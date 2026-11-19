@@ -52,10 +52,10 @@ export function getSearchIndex(): SearchEntry[] {
   const accounting: SearchEntry[] = ALL_O_LEVEL_TOPICS.map((tp) => ({
     t: tp.topicTitle,
     h: `/courses/accounting/o-level/${tp.slug}`,
-    c: "O Level Accounting",
+    c: "Accounting",
     e: "📊",
     d: `Topic ${tp.topic}`,
-    k: `accounting 7707 ${topicKeywords(O_LEVEL_ACCOUNTING_REVISION[tp.topic])}`,
+    k: `accounting 7707 0452 igcse o level ${topicKeywords(O_LEVEL_ACCOUNTING_REVISION[tp.topic])}`,
   }));
 
   const biology: SearchEntry[] = ALL_O_LEVEL_BIOLOGY_TOPICS.map((tp) => ({

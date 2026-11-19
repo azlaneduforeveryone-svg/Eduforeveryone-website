@@ -97,7 +97,7 @@ export default function SaveProgressPrompt({
                 : mode === "signup"
                 ? "Create a free account so your studied topics and quiz scores stay synced everywhere."
                 : mode === "signin"
-                ? "Sign in to sync your O Level Accounting progress."
+                ? "Sign in to sync your Accounting progress."
                 : "Enter your email and we will send a password reset link."}
             </p>
           </div>

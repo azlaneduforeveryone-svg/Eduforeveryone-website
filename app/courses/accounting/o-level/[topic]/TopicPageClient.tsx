@@ -237,7 +237,7 @@ export default function TopicPageClient({
   return (
     <div className="efe-page min-h-screen flex flex-col">
       <PageHeader
-        eyebrow={`O Level Accounting 7707 · Section ${topicMeta.section} · Topic ${topicMeta.topic}`}
+        eyebrow={`Accounting 7707 / 0452 · Section ${topicMeta.section} · Topic ${topicMeta.topic}`}
         title={`${topicMeta.topic} ${topicMeta.topicTitle}`}
         description="Practice questions are available for every topic now. Notes and videos are being added."
         breadcrumbs={[
