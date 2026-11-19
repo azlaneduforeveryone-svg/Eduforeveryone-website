@@ -2231,6 +2231,500 @@ export const MATHS_REVISION: Record<string, TopicRevision> = {
         "back": "f"
       }
     ]
+  },
+  "3.1": {
+    "mindMap": {
+      "centre": "Coordinates",
+      "branches": [
+        {
+          "label": "Writing them",
+          "items": [
+            "(x, y): across, then up",
+            "Along the corridor, up the stairs",
+            "(3, 2) is not (2, 3)"
+          ]
+        },
+        {
+          "label": "Four quadrants",
+          "items": [
+            "Left of origin: x negative",
+            "Below origin: y negative",
+            "Origin is (0, 0)"
+          ]
+        },
+        {
+          "label": "On the axes",
+          "items": [
+            "On the x-axis: y = 0",
+            "On the y-axis: x = 0"
+          ]
+        },
+        {
+          "label": "Using them",
+          "items": [
+            "Same x: straight up or down",
+            "Same y: straight across",
+            "Find missing corners of shapes"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Which number comes first in (x, y)?",
+        "back": "x, the number across."
+      },
+      {
+        "front": "What are the coordinates of the origin?",
+        "back": "(0, 0)"
+      },
+      {
+        "front": "A point is 4 left and 1 up from the origin. Write its coordinates.",
+        "back": "(-4, 1)"
+      },
+      {
+        "front": "Which quadrant is (-2, -3) in?",
+        "back": "The 3rd quadrant (bottom left)."
+      },
+      {
+        "front": "What is the y value of any point on the x-axis?",
+        "back": "0"
+      },
+      {
+        "front": "How far is (2, 1) from (2, 6)?",
+        "back": "5 units"
+      },
+      {
+        "front": "How far is (2, 1) from (-3, 1)?",
+        "back": "5 units"
+      },
+      {
+        "front": "Three corners of a rectangle are (1, 1), (5, 1), (5, 4). Find the fourth.",
+        "back": "(1, 4)"
+      }
+    ]
+  },
+  "3.2": {
+    "mindMap": {
+      "centre": "Drawing linear graphs",
+      "branches": [
+        {
+          "label": "Table of values",
+          "items": [
+            "Choose x values",
+            "Work out each y",
+            "Use brackets for negatives"
+          ]
+        },
+        {
+          "label": "Drawing",
+          "items": [
+            "Plot at least 3 points",
+            "Join with a ruler",
+            "Draw across the whole grid"
+          ]
+        },
+        {
+          "label": "Special lines",
+          "items": [
+            "x = a: vertical",
+            "y = b: horizontal",
+            "y = x and y = -x: diagonal"
+          ]
+        },
+        {
+          "label": "Extended and O Level",
+          "items": [
+            "y = 7 - 4x",
+            "ax + by = c: cover-up method",
+            "Find where it crosses each axis"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "For y = 2x - 1, find y when x = -1.",
+        "back": "-3"
+      },
+      {
+        "front": "For y = 2x - 1, find y when x = 3.",
+        "back": "5"
+      },
+      {
+        "front": "Is y = 3 a horizontal or a vertical line?",
+        "back": "Horizontal."
+      },
+      {
+        "front": "Is x = -2 a horizontal or a vertical line?",
+        "back": "Vertical."
+      },
+      {
+        "front": "Which points are on x = 4: (4, 1), (1, 4), (4, -7)?",
+        "back": "(4, 1) and (4, -7)"
+      },
+      {
+        "front": "Taxi: C = 2d + 3. Find C when d = 7.",
+        "back": "$17"
+      },
+      {
+        "front": "Why plot three points for a straight line?",
+        "back": "The third point checks the other two."
+      },
+      {
+        "front": "(Extended and O Level) Where does 3x + 2y = 12 cross the axes?",
+        "back": "(0, 6) and (4, 0)"
+      }
+    ]
+  },
+  "3.3": {
+    "mindMap": {
+      "centre": "Gradient of linear graphs",
+      "branches": [
+        {
+          "label": "Formula",
+          "items": [
+            "Gradient = rise ÷ run",
+            "Change in y ÷ change in x"
+          ]
+        },
+        {
+          "label": "Sign",
+          "items": [
+            "Up to the right: positive",
+            "Down to the right: negative",
+            "Horizontal: 0"
+          ]
+        },
+        {
+          "label": "From a grid",
+          "items": [
+            "Pick points on grid corners",
+            "Draw a big triangle",
+            "Check the scales"
+          ]
+        },
+        {
+          "label": "Extended and O Level",
+          "items": [
+            "(y₂ - y₁) ÷ (x₂ - x₁)",
+            "Same order top and bottom"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is the formula for gradient?",
+        "back": "Rise ÷ run (change in y ÷ change in x)."
+      },
+      {
+        "front": "A line goes from (0, 1) to (2, 5). Find its gradient.",
+        "back": "2"
+      },
+      {
+        "front": "A line goes down 2 while going across 4. Find its gradient.",
+        "back": "-1/2"
+      },
+      {
+        "front": "What is the gradient of a horizontal line?",
+        "back": "0"
+      },
+      {
+        "front": "A ramp rises 0.5 m over 6 m across. Find its gradient.",
+        "back": "1/12"
+      },
+      {
+        "front": "A road has a 10% gradient. How much does it rise over 500 m across?",
+        "back": "50 m"
+      },
+      {
+        "front": "(Extended and O Level) Find the gradient through (2, 3) and (6, 11).",
+        "back": "2"
+      },
+      {
+        "front": "(Extended and O Level) Find the gradient through (-1, 4) and (3, -2).",
+        "back": "-3/2"
+      }
+    ]
+  },
+  "3.4": {
+    "mindMap": {
+      "centre": "Length and midpoint",
+      "branches": [
+        {
+          "label": "Length",
+          "items": [
+            "Change in x and change in y",
+            "Square, add, square root",
+            "It is Pythagoras"
+          ]
+        },
+        {
+          "label": "Midpoint",
+          "items": [
+            "Add the x values, halve",
+            "Add the y values, halve",
+            "It is the average"
+          ]
+        },
+        {
+          "label": "End point",
+          "items": [
+            "Same step from A to M",
+            "Repeat it from M to B"
+          ]
+        },
+        {
+          "label": "Real life",
+          "items": [
+            "Drone flight distance",
+            "Meeting halfway"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Find the length from (1, 2) to (7, 10).",
+        "back": "10"
+      },
+      {
+        "front": "Find the length from (-2, 1) to (3, 4) to 3 s.f.",
+        "back": "5.83"
+      },
+      {
+        "front": "Find the midpoint of (1, 2) and (7, 10).",
+        "back": "(4, 6)"
+      },
+      {
+        "front": "Find the midpoint of (-3, 5) and (5, -1).",
+        "back": "(1, 2)"
+      },
+      {
+        "front": "A drone flies from (0, 0) to (12, 5). How far, in units?",
+        "back": "13"
+      },
+      {
+        "front": "M(4, 6) is the midpoint of AB and A is (1, 2). Find B.",
+        "back": "(7, 10)"
+      },
+      {
+        "front": "Do you add or subtract coordinates to find a midpoint?",
+        "back": "Add them, then halve."
+      }
+    ]
+  },
+  "3.5": {
+    "mindMap": {
+      "centre": "Equations of linear graphs",
+      "branches": [
+        {
+          "label": "y = mx + c",
+          "items": [
+            "m: gradient",
+            "c: y-intercept",
+            "Point (0, c)"
+          ]
+        },
+        {
+          "label": "From a graph",
+          "items": [
+            "Read c on the y-axis",
+            "Find m with a triangle",
+            "Write y = mx + c"
+          ]
+        },
+        {
+          "label": "From a point",
+          "items": [
+            "Put the point in",
+            "Solve for c",
+            "x = k for vertical lines"
+          ]
+        },
+        {
+          "label": "Extended and O Level",
+          "items": [
+            "ax + by = c: rearrange",
+            "Two points: gradient, then c"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Gradient and y-intercept of y = 6x + 3?",
+        "back": "Gradient 6, y-intercept 3"
+      },
+      {
+        "front": "Gradient of y = 5 - 2x?",
+        "back": "-2"
+      },
+      {
+        "front": "A line has gradient 3 and passes through (2, 5). Find its equation.",
+        "back": "y = 3x - 1"
+      },
+      {
+        "front": "Equation of the vertical line through (-3, 8)?",
+        "back": "x = -3"
+      },
+      {
+        "front": "C = 0.1m + 15. What does 15 mean?",
+        "back": "The fixed monthly charge of $15."
+      },
+      {
+        "front": "(Extended and O Level) Gradient and y-intercept of 5x + 4y = 8?",
+        "back": "Gradient -5/4, y-intercept 2"
+      },
+      {
+        "front": "(Extended and O Level) Equation of the line through (2, 3) and (6, 11)?",
+        "back": "y = 2x - 1"
+      },
+      {
+        "front": "(Extended and O Level) 2 hours costs $110, 5 hours costs $200. Find the formula.",
+        "back": "C = 30h + 50"
+      }
+    ]
+  },
+  "3.6": {
+    "mindMap": {
+      "centre": "Parallel lines",
+      "branches": [
+        {
+          "label": "Rule",
+          "items": [
+            "Same gradient",
+            "Different y-intercept",
+            "Never meet"
+          ]
+        },
+        {
+          "label": "Spotting them",
+          "items": [
+            "Compare the m values",
+            "y = 5 + 3x has m = 3"
+          ]
+        },
+        {
+          "label": "Equation through a point",
+          "items": [
+            "Keep the gradient",
+            "Put in the point",
+            "Find c"
+          ]
+        },
+        {
+          "label": "Extended and O Level",
+          "items": [
+            "Rearrange to y = mx + c first",
+            "2y = 6x + 1 has m = 3"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What do parallel lines have in common?",
+        "back": "The same gradient."
+      },
+      {
+        "front": "Is y = 5 + 3x parallel to y = 3x + 2?",
+        "back": "Yes, both have gradient 3."
+      },
+      {
+        "front": "Is y = -3x + 2 parallel to y = 3x + 2?",
+        "back": "No. The gradients are -3 and 3."
+      },
+      {
+        "front": "Find the line parallel to y = 4x - 1 through (1, -3).",
+        "back": "y = 4x - 7"
+      },
+      {
+        "front": "Find the line parallel to y = 2x + 1 through (3, 4).",
+        "back": "y = 2x - 2"
+      },
+      {
+        "front": "(Extended and O Level) Gradient of 2y = 6x + 1?",
+        "back": "3"
+      },
+      {
+        "front": "(Extended and O Level) Find the line parallel to 3x + y = 7 through (2, 5).",
+        "back": "y = -3x + 11"
+      }
+    ]
+  },
+  "3.7": {
+    "mindMap": {
+      "centre": "Perpendicular lines",
+      "branches": [
+        {
+          "label": "Rule",
+          "items": [
+            "Meet at 90°",
+            "m₁ × m₂ = -1",
+            "Flip it and change the sign"
+          ]
+        },
+        {
+          "label": "Equation",
+          "items": [
+            "Find the perpendicular gradient",
+            "Put in the point",
+            "Find c"
+          ]
+        },
+        {
+          "label": "Perpendicular bisector",
+          "items": [
+            "Through the midpoint",
+            "Perpendicular gradient",
+            "Same distance from both ends"
+          ]
+        },
+        {
+          "label": "Real life",
+          "items": [
+            "Shortest path to a road",
+            "Fair place for a hospital"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Perpendicular gradient to 2?",
+        "back": "-1/2"
+      },
+      {
+        "front": "Perpendicular gradient to -3?",
+        "back": "1/3"
+      },
+      {
+        "front": "Perpendicular gradient to 3/4?",
+        "back": "-4/3"
+      },
+      {
+        "front": "Gradient perpendicular to 2y = 3x + 1?",
+        "back": "-2/3"
+      },
+      {
+        "front": "Are y = 3x - 2 and x + 3y = 9 perpendicular?",
+        "back": "Yes. 3 × (-1/3) = -1."
+      },
+      {
+        "front": "Find the line perpendicular to y = 2x + 1 through (4, 3).",
+        "back": "y = -1/2 x + 5"
+      },
+      {
+        "front": "Perpendicular bisector of (-3, 8) and (9, -2)?",
+        "back": "y = 6/5 x - 3/5 (or 5y = 6x - 3)"
+      },
+      {
+        "front": "What do the gradients of perpendicular lines multiply to?",
+        "back": "-1"
+      }
+    ]
   }
 };
 

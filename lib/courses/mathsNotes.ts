@@ -4273,6 +4273,781 @@ An online shop takes 20% off, and charges $5 for delivery.
 
 - Check an inverse by putting a number through f and then through f⁻¹. You should get back where you started.
 - For composite functions with algebra, use brackets: write f(2x + 3), then replace every x in f with (2x + 3).`,
+  "3.1": `## What you need to know
+
+- How to plot and read **coordinates** like (3, 2) on a grid.
+- The grid has **four quadrants**, so coordinates can be negative.
+- How to use coordinates to find missing corners of shapes.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Coordinates | A pair of numbers (x, y) that gives the position of a point |
+| x-axis | The horizontal line across the grid |
+| y-axis | The vertical line up the grid |
+| Origin | The point (0, 0), where the two axes cross |
+| Quadrant | One of the four parts the axes split the grid into |
+
+## Reading coordinates
+
+Coordinates are always written **(x, y)**: across first, then up or down.
+
+> **Memory trick:** "Along the corridor, then up the stairs."
+
+- x is positive to the right of the origin and negative to the left.
+- y is positive above the origin and negative below.
+
+![Points in all four quadrants](/images/maths/3-1-quadrants.svg)
+
+**Problem:** Write down the coordinates of points A, B, C and D in the diagram.
+
+1. A: go 3 right, then 2 up. **(3, 2)**
+2. B: go 4 left, then 1 up. **(-4, 1)**
+3. C: go 2 left, then 3 down. **(-2, -3)**
+4. D: go 4 right, then 2 down. **(4, -2)**
+
+**Answer:** A(3, 2), B(-4, 1), C(-2, -3), D(4, -2)
+
+> (3, 2) and (2, 3) are different points. The order matters.
+
+## Points on the axes
+
+- A point on the x-axis has y = 0, like (5, 0).
+- A point on the y-axis has x = 0, like (0, -4).
+
+## Real-life example: a city map
+
+Maps use a grid so people can find places. A delivery app shows the shop at (2, 1) and a customer at (2, 6). Each square is 1 km.
+
+**Problem:** How far does the driver travel if he goes straight up the road from the shop to the customer?
+
+1. The x values are the same (2 and 2), so the road goes straight up.
+2. The distance is the difference in y: 6 - 1 = 5.
+
+**Answer:** 5 km
+
+**Problem:** A second customer is at (-3, 1). How far is she from the shop along the road?
+
+1. The y values are the same (1 and 1), so the road goes straight across.
+2. The distance is the difference in x: 2 - (-3) = 2 + 3 = 5.
+
+**Answer:** 5 km
+
+> Subtracting a negative is the same as adding: 2 - (-3) = 5.
+
+## Finding a missing corner
+
+**Problem:** Three corners of a rectangle are P(1, 1), Q(5, 1) and R(5, 4). Find the fourth corner, S.
+
+1. P and Q are on the same horizontal line (y = 1). So S must be on the same horizontal line as R (y = 4).
+2. R and Q are on the same vertical line (x = 5). So S must be on the same vertical line as P (x = 1).
+3. S has x = 1 and y = 4.
+
+**Answer:** S(1, 4)
+
+> Sketch the points on a quick grid. You will usually see the answer straight away.
+
+## Common mistakes
+
+- Writing (y, x) instead of (x, y).
+- Counting the lines wrong when the scale is not 1. Check what each square is worth.
+- Forgetting the minus sign for points to the left of or below the origin.
+
+## Exam tips
+
+- Plot points with a small, neat cross (×), and label them.
+- When you read a coordinate, put your pencil on the point and trace down or up to the x-axis first.`,
+  "3.2": `## What you need to know
+
+- How to draw a straight-line graph from its equation, like y = 2x - 1.
+- How to use a **table of values** to get the points.
+- The special lines x = a, y = b, y = x and y = -x.
+- Extended and O Level: drawing lines written in other forms, like y = 7 - 4x and 3x + 2y = 12.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Linear | Makes a straight line |
+| Table of values | A table of x values and the y values you work out |
+| Plot | Mark a point on the grid |
+| Equation of a line | A rule that every point on the line follows |
+
+## Drawing a line with a table of values
+
+1. Choose some x values (the question usually gives them).
+2. Put each x into the equation to find y.
+3. Plot the points.
+4. Join them with a ruler. Draw the line right across the grid you are given.
+
+**Problem:** Draw the graph of y = 2x - 1 for x from -1 to 3.
+
+| x | -1 | 0 | 1 | 2 | 3 |
+|---|---|---|---|---|---|
+| y | -3 | -1 | 1 | 3 | 5 |
+
+1. For x = -1: y = 2(-1) - 1 = -2 - 1 = -3.
+2. For x = 0: y = 2(0) - 1 = -1.
+3. For x = 3: y = 2(3) - 1 = 6 - 1 = 5.
+4. Work out the rest in the same way, then plot the points and join them with a ruler.
+
+![Graph of y = 2x - 1](/images/maths/3-2-line.svg)
+
+> If one point is not in line with the others, you have made a mistake in the table. Work that y value out again.
+
+> You only need two points to draw a straight line, but plot three. The third point checks the other two.
+
+## Real-life example: a taxi fare
+
+A taxi charges $3 to start, plus $2 for every kilometre. The cost is C = 2d + 3, where d is the distance in km.
+
+**Problem:** Draw the graph for 0 to 10 km. Use it to find the cost of a 7 km trip.
+
+| d (km) | 0 | 5 | 10 |
+|---|---|---|---|
+| C ($) | 3 | 13 | 23 |
+
+1. For d = 0: C = 2(0) + 3 = 3. For d = 5: C = 2(5) + 3 = 13. For d = 10: C = 2(10) + 3 = 23.
+2. Plot the three points with d across and C up, and join them with a ruler.
+3. Go up from 7 km to the line, then across to the C axis: 17.
+
+**Answer:** $17 (check: 2 × 7 + 3 = 17)
+
+> The line starts at $3, not $0, because you pay $3 before the taxi moves.
+
+## Special lines
+
+![The lines x = -2, y = 3, y = x and y = -x](/images/maths/3-2-special-lines.svg)
+
+| Equation | What the line looks like |
+|---|---|
+| x = a | Vertical line through a on the x-axis. Every point has x = a |
+| y = b | Horizontal line through b on the y-axis. Every point has y = b |
+| y = x | Diagonal line through the origin, going up to the right |
+| y = -x | Diagonal line through the origin, going down to the right |
+
+> **Memory trick:** y = 3 is a horizontal line, even though "y" makes you think of up. Every point on it is 3 **high**: (0, 3), (5, 3), (-2, 3).
+
+**Problem:** Which of these points are on the line x = 4? (4, 1), (1, 4), (4, -7), (0, 4)
+
+1. A point is on x = 4 only if its x value is 4.
+2. (4, 1): x = 4. Yes. (1, 4): x = 1. No. (4, -7): x = 4. Yes. (0, 4): x = 0. No.
+
+**Answer:** (4, 1) and (4, -7)
+
+## Extended and O Level: other forms of equation
+
+> **Extended and O Level only.** Core students can skip from here to Common mistakes.
+
+### y = 7 - 4x
+
+This is the same kind of line. Work out the table in the same way.
+
+**Problem:** Complete a table for y = 7 - 4x for x = -1, 0, 1, 2.
+
+| x | -1 | 0 | 1 | 2 |
+|---|---|---|---|---|
+| y | 11 | 7 | 3 | -1 |
+
+1. For x = -1: y = 7 - 4(-1) = 7 + 4 = 11.
+2. For x = 2: y = 7 - 4(2) = 7 - 8 = -1.
+
+### ax + by = c: the cover-up method
+
+For an equation like 3x + 2y = 12, find where the line crosses each axis.
+
+**Problem:** Draw the line 3x + 2y = 12.
+
+1. Where it crosses the y-axis, x = 0. Cover up the 3x: 2y = 12, so y = 6. Point (0, 6).
+2. Where it crosses the x-axis, y = 0. Cover up the 2y: 3x = 12, so x = 4. Point (4, 0).
+3. Check with a third point. Try x = 2: 3(2) + 2y = 12, so 2y = 6 and y = 3. Point (2, 3).
+4. Plot the three points and join them with a ruler.
+
+**Answer:** A straight line through (0, 6), (2, 3) and (4, 0)
+
+### Real-life example: buying snacks
+
+Bilal has $12 to spend on drinks at $3 each and sandwiches at $2 each. If he spends it all, 3x + 2y = 12, where x is the number of drinks and y is the number of sandwiches.
+
+**Problem:** Use the line to list all the ways he can spend exactly $12.
+
+1. The line goes through (0, 6), (2, 3) and (4, 0).
+2. He can only buy whole numbers of each, so look for points on the line where both x and y are whole numbers.
+3. (0, 6): 0 drinks and 6 sandwiches. (2, 3): 2 drinks and 3 sandwiches. (4, 0): 4 drinks and 0 sandwiches.
+
+**Answer:** 6 sandwiches, or 2 drinks and 3 sandwiches, or 4 drinks
+
+## Common mistakes
+
+- Working out 2 × (-1) as +2 instead of -2.
+- Drawing the line only between the first and last points. Draw it across the whole grid.
+- Thinking y = 3 is a vertical line.
+- Joining points freehand instead of with a ruler.
+
+## Exam tips
+
+- Always use x = 0 in your table. It gives the point where the line crosses the y-axis.
+- Label your line with its equation, especially if there is more than one line on the grid.`,
+  "3.3": `## What you need to know
+
+- The **gradient** of a line tells you how steep it is.
+- How to find the gradient of a line drawn on a grid.
+- Lines going up to the right have a **positive** gradient. Lines going down to the right have a **negative** gradient.
+- Extended and O Level: how to work out the gradient from the coordinates of two points, without a grid.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Gradient | How steep a line is: how far it goes up for every 1 across |
+| Rise | How far the line goes up (or down) |
+| Run | How far the line goes across |
+
+## The formula
+
+> **Gradient = rise ÷ run = change in y ÷ change in x**
+
+| Line | Gradient |
+|---|---|
+| Goes up to the right | Positive |
+| Goes down to the right | Negative |
+| Horizontal | 0 |
+| Steeper line | Bigger number (ignoring the sign) |
+
+## Finding the gradient from a grid
+
+1. Pick two points on the line where it crosses grid corners exactly.
+2. Draw a right-angled triangle under (or over) the line between them.
+3. Count the squares up (rise) and across (run). Check the scale on each axis.
+4. Gradient = rise ÷ run. If the line goes **down** to the right, the gradient is negative.
+
+![Two lines with gradient triangles](/images/maths/3-3-gradient.svg)
+
+**Problem:** Find the gradient of line A and line B in the diagram.
+
+1. Line A goes from (0, 1) to (2, 5). Rise = 5 - 1 = 4. Run = 2 - 0 = 2.
+2. Gradient of A = 4 ÷ 2 = 2. It goes up to the right, so it is positive: **2**.
+3. Line B goes from (0, 4) to (4, 2). It goes down by 2 while going across 4.
+4. Gradient of B = 2 ÷ 4 = 0.5. It goes down to the right, so it is negative: **-0.5** (or -1/2).
+
+**Answer:** A: 2, B: -1/2
+
+> A gradient of 2 means: for every 1 square across, the line goes 2 squares up.
+
+## Real-life example: a wheelchair ramp
+
+Building rules often say a wheelchair ramp should be no steeper than 1 in 12. That means a gradient of 1/12: 1 m up for every 12 m across.
+
+**Problem:** A ramp rises 0.5 m over a horizontal distance of 6 m. Is it within the rule?
+
+1. Gradient = rise ÷ run = 0.5 ÷ 6.
+2. 0.5 ÷ 6 = 1/12 (because 6 ÷ 0.5 = 12).
+3. 1/12 is exactly the limit, not steeper.
+
+**Answer:** Yes. The gradient is 1/12, which is just within the rule.
+
+## Real-life example: a road sign
+
+A road sign shows a hill with a gradient of 10%.
+
+**Problem:** How high does the road climb over 500 m measured across?
+
+1. 10% = 10/100 = 0.1. So the road rises 0.1 m for every 1 m across.
+2. Rise = 0.1 × 500 = 50.
+
+**Answer:** 50 m
+
+> Gradient is also a **rate**. On a distance-time graph, the gradient is the speed (topic 2.9).
+
+## Extended and O Level: gradient from two points
+
+> **Extended and O Level only.** Core students can skip from here to Common mistakes.
+
+For points (x₁, y₁) and (x₂, y₂):
+
+> **Gradient = (y₂ - y₁) ÷ (x₂ - x₁)**
+
+**Problem:** Find the gradient of the line through A(2, 3) and B(6, 11).
+
+1. Change in y: 11 - 3 = 8.
+2. Change in x: 6 - 2 = 4.
+3. Gradient = 8 ÷ 4 = 2.
+
+**Answer:** 2
+
+**Problem:** Find the gradient of the line through C(-1, 4) and D(3, -2).
+
+1. Change in y: -2 - 4 = -6.
+2. Change in x: 3 - (-1) = 3 + 1 = 4.
+3. Gradient = -6 ÷ 4 = -3/2.
+
+**Answer:** -3/2 (or -1.5)
+
+> Take the points in the **same order** on the top and bottom. If you start with D on top, start with D on the bottom too.
+
+## Common mistakes
+
+- Doing run ÷ rise instead of rise ÷ run.
+- Forgetting the minus sign when the line goes down to the right.
+- Counting squares when the scales on the two axes are different. Use the numbers on the axes.
+- Mixing up the order of the points: (y₂ - y₁) ÷ (x₁ - x₂) gives the wrong sign.
+
+## Exam tips
+
+- Make your triangle as big as you can. It makes the gradient more accurate.
+- Check the sign: look at the line. Up to the right means positive.`,
+  "3.4": `## What you need to know
+
+> **Extended and O Level only.** This topic is not in IGCSE Core.
+
+- How to find the **length** of a line between two points, using Pythagoras' theorem.
+- How to find the **midpoint** of a line: the point exactly halfway.
+- How to find an end point when you know the midpoint and the other end.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Line segment | A straight line with two end points |
+| Length | The distance from one end to the other |
+| Midpoint | The point exactly halfway along the line |
+| Pythagoras' theorem | In a right-angled triangle, a² + b² = c², where c is the longest side |
+
+## Length of a line segment
+
+Draw a right-angled triangle with the line as the longest side. The other two sides are the change in x and the change in y.
+
+![Length and midpoint of AB](/images/maths/3-4-length-midpoint.svg)
+
+> **Length = √[(change in x)² + (change in y)²]**
+
+**Problem:** Find the length of the line from A(1, 2) to B(7, 10).
+
+1. Change in x: 7 - 1 = 6.
+2. Change in y: 10 - 2 = 8.
+3. Square and add: 6² + 8² = 36 + 64 = 100.
+4. Square root: √100 = 10.
+
+**Answer:** 10 units
+
+**Problem:** Find the length of the line from E(-2, 1) to F(3, 4). Give your answer to 3 significant figures.
+
+1. Change in x: 3 - (-2) = 5.
+2. Change in y: 4 - 1 = 3.
+3. Square and add: 5² + 3² = 25 + 9 = 34.
+4. Square root: √34 = 5.830...
+
+**Answer:** 5.83 units
+
+> A negative change does not matter, because squaring makes it positive: (-6)² = 36.
+
+### Real-life example: a delivery drone
+
+A drone flies in a straight line from its base at (0, 0) to a house at (12, 5) on a map grid. Each unit is 1 km.
+
+**Problem:** How far does the drone fly?
+
+1. Change in x: 12 - 0 = 12. Change in y: 5 - 0 = 5.
+2. 12² + 5² = 144 + 25 = 169.
+3. √169 = 13.
+
+**Answer:** 13 km
+
+> A car on the roads would travel 12 + 5 = 17 km if the roads only go across and up. The drone saves 4 km by flying straight.
+
+## Midpoint
+
+The midpoint is the **average** of the x values and the average of the y values.
+
+> **Midpoint = ((x₁ + x₂) ÷ 2, (y₁ + y₂) ÷ 2)**
+
+**Problem:** Find the midpoint of A(1, 2) and B(7, 10).
+
+1. x: (1 + 7) ÷ 2 = 8 ÷ 2 = 4.
+2. y: (2 + 10) ÷ 2 = 12 ÷ 2 = 6.
+
+**Answer:** (4, 6)
+
+**Problem:** Find the midpoint of P(-3, 5) and Q(5, -1).
+
+1. x: (-3 + 5) ÷ 2 = 2 ÷ 2 = 1.
+2. y: (5 + (-1)) ÷ 2 = 4 ÷ 2 = 2.
+
+**Answer:** (1, 2)
+
+### Real-life example: meeting halfway
+
+Ali's house is at (1, 7) and Sara's house is at (9, 3) on a map grid. They want to meet at the point halfway between their houses.
+
+**Problem:** Where should they meet?
+
+1. x: (1 + 9) ÷ 2 = 5.
+2. y: (7 + 3) ÷ 2 = 5.
+
+**Answer:** At (5, 5)
+
+## Finding an end point
+
+**Problem:** M(4, 6) is the midpoint of AB. A is (1, 2). Find B.
+
+1. From A to M, x goes up by 4 - 1 = 3. From M to B it must go up by 3 again: 4 + 3 = 7.
+2. From A to M, y goes up by 6 - 2 = 4. From M to B it must go up by 4 again: 6 + 4 = 10.
+
+**Answer:** B(7, 10)
+
+> Check: the midpoint of (1, 2) and (7, 10) is (4, 6). Correct.
+
+## Common mistakes
+
+- Forgetting to square root at the end of a length question.
+- Subtracting the coordinates for a midpoint. You **add** them and halve.
+- Adding the x change and y change for length (6 + 8 = 14). You must use Pythagoras.
+
+## Exam tips
+
+- Sketch the two points and draw the triangle. It stops sign mistakes.
+- Leave the answer as an exact square root (like √34) if the question asks for an exact answer.`,
+  "3.5": `## What you need to know
+
+- Every straight line (except vertical ones) can be written as **y = mx + c**.
+- **m** is the gradient. **c** is where the line crosses the y-axis (the **y-intercept**).
+- How to read m and c from an equation, and how to find the equation of a line from its graph.
+- Vertical lines have the equation **x = k**.
+- Extended and O Level: equations like 5x + 4y = 8, and finding the equation of a line through two points.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Gradient (m) | How steep the line is |
+| y-intercept (c) | Where the line crosses the y-axis. The point is (0, c) |
+| Equation of a line | A rule linking x and y for every point on the line |
+| Fully simplified | No brackets, no fractions that can be cancelled, terms collected |
+
+## Reading m and c
+
+> **y = mx + c**: the number in front of x is the gradient. The number on its own is the y-intercept.
+
+**Problem:** Write down the gradient and y-intercept of each line.
+
+1. y = 6x + 3: gradient **6**, y-intercept **3**.
+2. y = x - 4: gradient **1** (x means 1x), y-intercept **-4**.
+3. y = 5 - 2x: rewrite as y = -2x + 5. Gradient **-2**, y-intercept **5**.
+4. y = 7: rewrite as y = 0x + 7. Gradient **0** (horizontal), y-intercept **7**.
+
+> In y = 5 - 2x, the gradient is -2, not 5. Look for the number **with the x**.
+
+## Finding the equation from a graph
+
+1. Find c: read where the line crosses the y-axis.
+2. Find m: draw a triangle and work out rise ÷ run (topic 3.3).
+3. Write y = mx + c.
+
+![Two lines with gradient triangles](/images/maths/3-3-gradient.svg)
+
+**Problem:** Find the equations of lines A and B in the diagram.
+
+1. Line A crosses the y-axis at 1, so c = 1. Its gradient is 2 (up 4, across 2). So y = 2x + 1.
+2. Line B crosses the y-axis at 4, so c = 4. Its gradient is -1/2 (down 2, across 4). So y = -1/2 x + 4.
+
+**Answer:** A: y = 2x + 1. B: y = -1/2 x + 4 (you can also write y = 4 - x/2)
+
+## Finding the equation from a gradient and a point
+
+**Problem:** A line has gradient 3 and passes through (2, 5). Find its equation.
+
+1. Start with y = 3x + c.
+2. The point (2, 5) is on the line, so put x = 2 and y = 5 in: 5 = 3(2) + c.
+3. 5 = 6 + c. Subtract 6: c = -1.
+
+**Answer:** y = 3x - 1
+
+> Check: when x = 2, y = 3(2) - 1 = 5. Correct.
+
+## Real-life example: a phone plan
+
+A phone plan costs C = 0.1m + 15 dollars a month, where m is the number of minutes used.
+
+**Problem:** What do 0.1 and 15 mean in real life?
+
+1. 15 is the y-intercept. It is the cost when m = 0. So **$15 is the fixed monthly charge**, even if you make no calls.
+2. 0.1 is the gradient. Every extra minute adds 0.1 to the cost. So **each minute costs $0.10**.
+
+**Answer:** $15 a month fixed charge, plus 10 cents per minute
+
+## Vertical lines
+
+A vertical line has no y-intercept and its gradient cannot be worked out (the run is 0). Its equation is **x = k**, where k is the number where it crosses the x-axis.
+
+**Problem:** A vertical line passes through (-3, 8). Write down its equation.
+
+1. Every point on a vertical line has the same x value.
+2. Here x = -3.
+
+**Answer:** x = -3
+
+## Extended and O Level: equations in the form ax + by = c
+
+> **Extended and O Level only.** Core students can skip from here to Common mistakes.
+
+Rearrange into y = mx + c to find the gradient and y-intercept.
+
+**Problem:** Find the gradient and y-intercept of 5x + 4y = 8.
+
+1. Subtract 5x from both sides: 4y = -5x + 8.
+2. Divide every term by 4: y = -5/4 x + 2.
+
+**Answer:** Gradient -5/4, y-intercept 2
+
+## Extended and O Level: line through two points
+
+1. Find the gradient from the two points.
+2. Put the gradient and one of the points into y = mx + c to find c.
+
+**Problem:** Find the equation of the line through (2, 3) and (6, 11).
+
+1. Gradient = (11 - 3) ÷ (6 - 2) = 8 ÷ 4 = 2.
+2. y = 2x + c. Use (2, 3): 3 = 2(2) + c, so 3 = 4 + c and c = -1.
+
+**Answer:** y = 2x - 1
+
+> Check with the other point: 2(6) - 1 = 11. Correct.
+
+### Real-life example: a plumber's charges
+
+A plumber charges a fixed call-out fee plus an hourly rate. A 2-hour job costs $110. A 5-hour job costs $200.
+
+**Problem:** Find the formula for the cost C of a job lasting h hours. What is the call-out fee?
+
+1. The two points are (2, 110) and (5, 200).
+2. Gradient = (200 - 110) ÷ (5 - 2) = 90 ÷ 3 = 30. This is $30 per hour.
+3. C = 30h + c. Use (2, 110): 110 = 30(2) + c = 60 + c, so c = 50.
+
+**Answer:** C = 30h + 50. The call-out fee is $50.
+
+## Common mistakes
+
+- Reading the gradient of y = 5 - 2x as 5.
+- Forgetting the sign of c: y = 2x - 1 crosses the y-axis at -1, not 1.
+- Writing a vertical line as y = k. A vertical line is x = k.
+- Not simplifying: y = 6x/2 + 1 should be written y = 3x + 1.
+
+## Exam tips
+
+- Always check your equation with a point you know is on the line.
+- Give the equation as "y = ...". Writing only "m = 2, c = 1" may not get full marks.`,
+  "3.6": `## What you need to know
+
+- **Parallel** lines go in the same direction and never meet.
+- Parallel lines have the **same gradient**.
+- How to tell if two lines are parallel from their equations.
+- How to find the equation of a line parallel to another line, through a given point.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Parallel | Always the same distance apart, never meeting |
+| Gradient (m) | The steepness of a line: m in y = mx + c |
+| y-intercept (c) | Where the line crosses the y-axis |
+
+## Same gradient, different intercept
+
+![Three parallel lines with gradient 2](/images/maths/3-6-parallel.svg)
+
+y = 2x + 3, y = 2x and y = 2x - 2 all have gradient 2. They are parallel. Only the y-intercept changes, so the lines are moved up or down.
+
+> **Parallel lines: same m, different c.**
+
+Railway tracks, the lines on lined paper and the lanes of a road are all parallel.
+
+## Spotting parallel lines
+
+**Problem:** Which of these lines are parallel to y = 3x + 2?
+
+y = 2x + 3, y = 3x - 5, y = 5 + 3x, y = -3x + 2
+
+1. The gradient of y = 3x + 2 is 3.
+2. y = 2x + 3: gradient 2. Not parallel.
+3. y = 3x - 5: gradient 3. Parallel.
+4. y = 5 + 3x: this is y = 3x + 5. Gradient 3. Parallel.
+5. y = -3x + 2: gradient -3. Not parallel (it slopes the other way).
+
+**Answer:** y = 3x - 5 and y = 5 + 3x
+
+## Finding the equation of a parallel line
+
+1. Write down the gradient of the given line. The new line has the same gradient.
+2. Put the point into y = mx + c and find c.
+3. Write the equation.
+
+**Problem:** Find the equation of the line parallel to y = 4x - 1 that passes through (1, -3).
+
+1. The gradient of y = 4x - 1 is 4. So the new line is y = 4x + c.
+2. Put in x = 1 and y = -3: -3 = 4(1) + c.
+3. -3 = 4 + c. Subtract 4: c = -7.
+
+**Answer:** y = 4x - 7
+
+> Check: when x = 1, y = 4 - 7 = -3. Correct. And the gradient is 4, the same as y = 4x - 1.
+
+### Real-life example: a new road
+
+On a town plan, the main road follows the line y = 2x + 1. The council wants a new road parallel to it, passing through the new school at (3, 4).
+
+**Problem:** Find the equation of the new road.
+
+1. The main road has gradient 2. The new road must also have gradient 2: y = 2x + c.
+2. Put in the school's point (3, 4): 4 = 2(3) + c = 6 + c.
+3. c = 4 - 6 = -2.
+
+**Answer:** y = 2x - 2
+
+## Extended and O Level: equations in other forms
+
+> **Extended and O Level only.** Core students can skip from here to Common mistakes.
+
+Rearrange each equation into y = mx + c first.
+
+**Problem:** Show that 2y = 6x + 1 and 6x - 2y = 4 are parallel.
+
+1. 2y = 6x + 1. Divide by 2: y = 3x + 0.5. Gradient 3.
+2. 6x - 2y = 4. Subtract 6x: -2y = -6x + 4. Divide by -2: y = 3x - 2. Gradient 3.
+3. Both gradients are 3, and the y-intercepts are different.
+
+**Answer:** Both have gradient 3, so they are parallel.
+
+**Problem:** Find the line parallel to 3x + y = 7 that passes through (2, 5).
+
+1. Rearrange: y = -3x + 7. Gradient -3.
+2. New line: y = -3x + c. Put in (2, 5): 5 = -3(2) + c = -6 + c.
+3. Add 6: c = 11.
+
+**Answer:** y = -3x + 11
+
+> Check: -3(2) + 11 = 5. Correct.
+
+## Common mistakes
+
+- Changing the gradient. Parallel lines keep the **same** gradient.
+- Reading the gradient of y = 5 + 3x as 5.
+- Forgetting to rearrange 2y = 6x + 1 before reading the gradient. The gradient is 3, not 6.
+
+## Exam tips
+
+- After you find c, put the point back into your equation to check it.
+- Give your final answer in the form the question asks for, usually y = mx + c.`,
+  "3.7": `## What you need to know
+
+> **Extended and O Level only.** This topic is not in IGCSE Core.
+
+- **Perpendicular** lines meet at a right angle (90°).
+- If two lines are perpendicular, their gradients **multiply to make -1**.
+- How to find the gradient and equation of a line perpendicular to another line.
+- How to find the **perpendicular bisector** of a line segment.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Perpendicular | At right angles (90°) |
+| Negative reciprocal | Flip the fraction and change the sign. The negative reciprocal of 2 is -1/2 |
+| Perpendicular bisector | A line that cuts another line in half at a right angle |
+
+## The rule
+
+> **m₁ × m₂ = -1**, so the perpendicular gradient is **-1 ÷ m**
+
+In words: **flip it and change the sign**.
+
+| Gradient | Perpendicular gradient | Check |
+|---|---|---|
+| 2 | -1/2 | 2 × (-1/2) = -1 |
+| -3 | 1/3 | -3 × 1/3 = -1 |
+| 3/4 | -4/3 | 3/4 × (-4/3) = -1 |
+| -1/5 | 5 | -1/5 × 5 = -1 |
+
+![The lines y = 2x + 1 and y = -½x + 5 meet at a right angle](/images/maths/3-7-perpendicular.svg)
+
+> Horizontal and vertical lines are also perpendicular, but the rule does not work for them because a vertical line has no gradient.
+
+## Finding a perpendicular gradient
+
+**Problem:** Find the gradient of a line perpendicular to 2y = 3x + 1.
+
+1. Rearrange first: divide by 2. y = 3/2 x + 1/2. The gradient is 3/2.
+2. Flip it: 2/3. Change the sign: -2/3.
+
+**Answer:** -2/3
+
+## Are two lines perpendicular?
+
+**Problem:** Are the lines y = 3x - 2 and x + 3y = 9 perpendicular?
+
+1. First line: gradient 3.
+2. Second line: 3y = -x + 9, so y = -1/3 x + 3. Gradient -1/3.
+3. Multiply: 3 × (-1/3) = -1.
+
+**Answer:** Yes, they are perpendicular.
+
+## Equation of a perpendicular line
+
+**Problem:** Find the equation of the line perpendicular to y = 2x + 1 that passes through (4, 3).
+
+1. The gradient of y = 2x + 1 is 2. The perpendicular gradient is -1/2.
+2. y = -1/2 x + c. Put in (4, 3): 3 = -1/2 × 4 + c = -2 + c.
+3. c = 5.
+
+**Answer:** y = -1/2 x + 5
+
+## Real-life example: the shortest path to a road
+
+The shortest way from a point to a straight road is the path that meets the road at a right angle.
+
+On a map grid (1 unit = 1 km), a road follows the line y = x. A farmhouse is at (6, 0).
+
+**Problem:** Find the equation of the shortest path, where it meets the road, and its length.
+
+1. The road has gradient 1. The path is perpendicular, so its gradient is -1.
+2. Path: y = -x + c. Put in (6, 0): 0 = -6 + c, so c = 6. The path is y = -x + 6.
+3. Where it meets the road, both equations are true: x = -x + 6. So 2x = 6 and x = 3. Then y = 3. They meet at (3, 3).
+4. Length from (6, 0) to (3, 3): change in x is 3, change in y is 3. √(3² + 3²) = √18 = 4.24.
+
+**Answer:** Path y = -x + 6, meeting the road at (3, 3). It is 4.24 km long.
+
+## Perpendicular bisector
+
+The perpendicular bisector of AB passes through the **midpoint** of AB and is **perpendicular** to AB.
+
+1. Find the midpoint of AB (topic 3.4).
+2. Find the gradient of AB, then the perpendicular gradient.
+3. Use the perpendicular gradient and the midpoint to find c.
+
+**Problem:** Find the equation of the perpendicular bisector of the line joining (-3, 8) and (9, -2).
+
+1. Midpoint: x = (-3 + 9) ÷ 2 = 3. y = (8 + (-2)) ÷ 2 = 3. Midpoint (3, 3).
+2. Gradient of the line: (-2 - 8) ÷ (9 - (-3)) = -10 ÷ 12 = -5/6.
+3. Perpendicular gradient: flip and change sign. 6/5.
+4. y = 6/5 x + c. Put in (3, 3): 3 = 6/5 × 3 + c = 18/5 + c.
+5. c = 3 - 18/5 = 15/5 - 18/5 = -3/5.
+6. So y = 6/5 x - 3/5. Multiply every term by 5 to clear the fractions: 5y = 6x - 3.
+
+**Answer:** y = 6/5 x - 3/5 (or 5y = 6x - 3)
+
+> Every point on the perpendicular bisector is the same distance from both ends. Real use: if two towns want a new hospital the same distance from each, it should be built on the perpendicular bisector of the line between them.
+
+## Common mistakes
+
+- Only flipping, or only changing the sign. You must do **both**: the perpendicular gradient to 2 is -1/2, not 1/2 and not -2.
+- Not rearranging first: 2y = 3x + 1 has gradient 3/2, not 3.
+- Using the original gradient instead of the perpendicular one when finding c.
+- Forgetting to use the midpoint for a perpendicular bisector.
+
+## Exam tips
+
+- Check your gradients multiply to -1.
+- Fractions are fine in the answer, but the question may ask for a form like ax + by = c. Read it carefully.`,
 };
 
 export function getMathsNotes(topic: string): string | undefined {
