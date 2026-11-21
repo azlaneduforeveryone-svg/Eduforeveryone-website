@@ -6126,6 +6126,3024 @@ The shape OAPB is a **kite**: OA = OB (radii) and PA = PB (tangents). The angles
 
 - Whenever a question has a chord and the centre, draw the perpendicular from the centre and look for a right-angled triangle.
 - Whenever a question has two tangents from one point, mark the two equal lengths and the two right angles.`,
+  "5.1": `## What you need to know
+
+- The metric units for **length**, **mass**, **capacity**, **area** and **volume**.
+- How to change from one unit to another, for example km to m or ml to litres.
+- How to change **area** units (cm² to m²) and **volume** units (cm³ to m³), and how volume links to capacity (1 cm³ = 1 ml).
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Length | How long something is: mm, cm, m, km |
+| Mass | How heavy something is: g, kg, tonnes |
+| Capacity | How much liquid a container holds: ml, litres |
+| Area | The space inside a flat shape: mm², cm², m², km² |
+| Volume | The space inside a solid: mm³, cm³, m³ |
+
+## The basic units
+
+The prefixes tell you the size. **Kilo** means 1000, **centi** means one hundredth and **milli** means one thousandth.
+
+| Type | Units |
+|---|---|
+| Length | 10 mm = 1 cm, 100 cm = 1 m, 1000 m = 1 km |
+| Mass | 1000 g = 1 kg, 1000 kg = 1 tonne |
+| Capacity | 1000 ml = 1 litre |
+
+> **Big unit to small unit: multiply.** Small unit to big unit: divide. You need more of the small units, so the number gets bigger.
+
+**Problem:** Change (a) 3.5 km to metres (b) 450 cm to metres (c) 2300 g to kg.
+
+1. (a) km to m is big to small, so multiply by 1000: 3.5 × 1000 = 3500.
+2. (b) cm to m is small to big, so divide by 100: 450 ÷ 100 = 4.5.
+3. (c) g to kg is small to big, so divide by 1000: 2300 ÷ 1000 = 2.3.
+
+**Answer:** (a) 3500 m (b) 4.5 m (c) 2.3 kg
+
+### Real-life example: baking a cake
+
+A cake needs 750 g of flour and 1.2 kg of sugar and fruit.
+
+**Problem:** What is the total mass in kg?
+
+1. Change to the same unit: 750 g = 750 ÷ 1000 = 0.75 kg.
+2. Add: 0.75 + 1.2 = 1.95.
+
+**Answer:** 1.95 kg
+
+> Always change to the **same unit** before you add or subtract.
+
+### Real-life example: medicine doses
+
+A bottle holds 0.2 litres of cough medicine. One dose is a 5 ml spoon.
+
+**Problem:** How many doses are in the bottle?
+
+1. Change litres to ml: 0.2 × 1000 = 200 ml.
+2. Divide by one dose: 200 ÷ 5 = 40.
+
+**Answer:** 40 doses
+
+## Area units
+
+A square 1 m by 1 m is also 100 cm by 100 cm. So its area is 100 × 100 = 10 000 cm².
+
+![A 1 m square is 100 cm by 100 cm](/images/maths/5-1-square-metre.svg)
+
+| Area | Change |
+|---|---|
+| 1 cm² | 10 × 10 = 100 mm² |
+| 1 m² | 100 × 100 = 10 000 cm² |
+| 1 km² | 1000 × 1000 = 1 000 000 m² |
+
+> For area units, **square** the length change. 1 m = 100 cm, so 1 m² = 100² = 10 000 cm², not 100 cm².
+
+**Problem:** A floor is 4 m by 3 m. Find its area in cm².
+
+1. Area in m² = 4 × 3 = 12 m².
+2. Change to cm²: 12 × 10 000 = 120 000.
+
+**Answer:** 120 000 cm²
+
+You can check this a second way: 400 cm × 300 cm = 120 000 cm².
+
+## Volume and capacity
+
+A cube 1 m on each side is 100 cm on each side. Its volume is 100 × 100 × 100 = 1 000 000 cm³.
+
+| Volume and capacity | Change |
+|---|---|
+| 1 cm³ | 10 × 10 × 10 = 1000 mm³ |
+| 1 m³ | 100 × 100 × 100 = 1 000 000 cm³ |
+| 1 cm³ | 1 ml |
+| 1000 cm³ | 1 litre |
+| 1 m³ | 1000 litres |
+
+> For volume units, **cube** the length change. Remember **1 cm³ = 1 ml**. This is the bridge between volume and capacity.
+
+### Real-life example: filling a fish tank
+
+A fish tank is 60 cm long, 30 cm wide and 40 cm high.
+
+**Problem:** How many litres of water does it hold when full?
+
+1. Volume = 60 × 30 × 40 = 72 000 cm³.
+2. 1000 cm³ = 1 litre, so divide by 1000: 72 000 ÷ 1000 = 72.
+
+**Answer:** 72 litres
+
+### Real-life example: a water tank on a roof
+
+A tank is 2 m long, 1.5 m wide and 1 m high.
+
+**Problem:** How many litres does it hold?
+
+1. Volume = 2 × 1.5 × 1 = 3 m³.
+2. 1 m³ = 1000 litres, so 3 × 1000 = 3000.
+
+**Answer:** 3000 litres
+
+## Common mistakes
+
+- Using 100 for area changes. 1 m² is **10 000** cm², because you square 100.
+- Using 100 for volume changes. 1 m³ is **1 000 000** cm³, because you cube 100.
+- Adding numbers in different units, such as 750 g + 1.2 kg = 751.2.
+- Multiplying when you should divide. Check: small units give a **bigger** number.
+
+## Exam tips
+
+- Write the conversion fact first, for example "1000 cm³ = 1 litre".
+- Change all lengths to the same unit **before** you work out an area or volume. It is the safest way.
+- Check your answer makes sense. A fish tank holding 72 000 litres would be the size of a swimming pool.`,
+  "5.2": `## What you need to know
+
+- **Perimeter** is the distance all the way round a shape. **Area** is the space inside it.
+- The area formulas for a **rectangle**, **triangle**, **parallelogram** and **trapezium**.
+- In the exam only the triangle formula is given. You must learn the others.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Perimeter | The total length of all the edges. Units: cm, m |
+| Area | The space inside a flat shape. Units: cm², m² |
+| Base | The side you measure from |
+| Perpendicular height | The height measured at right angles (90°) to the base |
+| Parallel sides | Sides that go in the same direction and never meet |
+
+## The four area formulas
+
+![Rectangle, triangle, parallelogram and trapezium with their heights](/images/maths/5-2-shapes.svg)
+
+| Shape | Area |
+|---|---|
+| Rectangle | length × width |
+| Triangle | ½ × base × perpendicular height |
+| Parallelogram | base × perpendicular height |
+| Trapezium | ½ × (a + b) × h, where a and b are the parallel sides |
+
+> Always use the **perpendicular** height, the one at 90° to the base. Never use a sloping side for the height.
+
+Why do these work?
+
+- A triangle is **half** of a rectangle with the same base and height.
+- A parallelogram can be cut and moved to make a rectangle with the same base and height.
+- Two copies of a trapezium fit together to make a parallelogram with base (a + b). The trapezium is half of it.
+
+## Perimeter
+
+Add up the lengths of all the edges.
+
+**Problem:** A rectangle is 9 cm long and 6 cm wide. Find its perimeter and area.
+
+1. Perimeter = 9 + 6 + 9 + 6 = 30 cm.
+2. Area = 9 × 6 = 54 cm².
+
+**Answer:** Perimeter 30 cm, area 54 cm²
+
+> Perimeter is a length, so it is in **cm**. Area is in **cm²**.
+
+### Real-life example: fencing a garden
+
+A rectangular garden is 15 m long and 8 m wide. Fencing costs $12 per metre.
+
+**Problem:** How much does it cost to fence all the way round?
+
+1. Perimeter = 2 × (15 + 8) = 2 × 23 = 46 m.
+2. Cost = 46 × 12 = 552.
+
+**Answer:** $552
+
+## Using the formulas
+
+**Problem:** Find the area of (a) a triangle with base 10 cm and height 7 cm (b) a parallelogram with base 8 cm and height 5 cm (c) a trapezium with parallel sides 6 cm and 10 cm, 4 cm apart.
+
+1. (a) Triangle: ½ × 10 × 7 = 35 cm².
+2. (b) Parallelogram: 8 × 5 = 40 cm².
+3. (c) Trapezium: ½ × (6 + 10) × 4 = ½ × 16 × 4 = 32 cm².
+
+**Answer:** (a) 35 cm² (b) 40 cm² (c) 32 cm²
+
+### Real-life example: a boat sail
+
+A triangular sail has a base of 3 m and a height of 4 m. Sail cloth costs $25 per m².
+
+**Problem:** How much does the cloth cost?
+
+1. Area = ½ × 3 × 4 = 6 m².
+2. Cost = 6 × 25 = 150.
+
+**Answer:** $150
+
+### Real-life example: painting a wall
+
+A wall is 5 m long and 2.4 m high. It has a door 2 m high and 0.8 m wide. One tin of paint covers 5 m².
+
+**Problem:** How many tins are needed?
+
+1. Wall area = 5 × 2.4 = 12 m².
+2. Door area = 2 × 0.8 = 1.6 m².
+3. Area to paint = 12 - 1.6 = 10.4 m².
+4. Tins = 10.4 ÷ 5 = 2.08. You cannot buy part of a tin, so round **up**.
+
+**Answer:** 3 tins
+
+### Real-life example: a sloping garden
+
+A garden is a trapezium. The two parallel fences are 12 m and 8 m long and they are 5 m apart.
+
+**Problem:** Grass seed covers 25 m² per box. How many boxes are needed?
+
+1. Area = ½ × (12 + 8) × 5 = ½ × 20 × 5 = 50 m².
+2. Boxes = 50 ÷ 25 = 2.
+
+**Answer:** 2 boxes
+
+## Working backwards
+
+If you know the area, put it into the formula and solve.
+
+**Problem:** A triangle has area 24 cm² and base 8 cm. Find its height.
+
+1. Write the formula: ½ × 8 × h = 24.
+2. Simplify: 4h = 24.
+3. Divide by 4: h = 6.
+
+**Answer:** 6 cm
+
+**Problem:** A rectangle has area 54 cm² and length 9 cm. Find its perimeter.
+
+1. Width = 54 ÷ 9 = 6 cm.
+2. Perimeter = 2 × (9 + 6) = 30 cm.
+
+**Answer:** 30 cm
+
+## Common mistakes
+
+- Using the sloping side as the height of a triangle or parallelogram.
+- Forgetting the ½ in the triangle and trapezium formulas.
+- Mixing up perimeter and area, or writing area in cm instead of cm².
+- Rounding down when buying things like paint or seed. Round **up** so you have enough.
+
+## Exam tips
+
+- Learn the rectangle, parallelogram and trapezium formulas. Only the triangle one is on the formula list.
+- Write the formula, then put the numbers in. You get marks for the method.
+- Check the units are the same before you multiply.`,
+  "5.3": `## What you need to know
+
+- The **circumference** and **area** of a circle.
+- The **arc length** and **area** of a **sector**, found as a fraction of the whole circle.
+- How to give answers **in terms of π**, such as 36π.
+- Core: the sector angle is a factor of 360°, such as 90°, 60° or 120°. Extended and O Level: any angle, and major sectors.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Radius (r) | From the centre to the edge |
+| Diameter (d) | Right across through the centre. d = 2r |
+| Circumference | The perimeter of a circle |
+| Arc | Part of the circumference |
+| Sector | A slice of a circle between two radii, like a slice of pizza |
+| Minor and major sector | The smaller slice and the larger slice |
+| π (pi) | About 3.142. Use the π button on your calculator |
+
+![A circle with a minor sector, a major sector and an arc](/images/maths/5-3-sector.svg)
+
+## Circumference and area
+
+| | Formula |
+|---|---|
+| Circumference | C = πd, or C = 2πr |
+| Area | A = πr² |
+
+> These are given in the exam, but learn them anyway. Check whether the question gives you the **radius** or the **diameter**.
+
+### Real-life example: a bicycle wheel
+
+A bicycle wheel has a diameter of 70 cm.
+
+**Problem:** (a) How far does the bicycle move when the wheel turns once? (b) About how many turns does the wheel make in 1 km?
+
+1. (a) One turn moves the bicycle one circumference: C = π × 70 = 219.9 cm (to 1 d.p.).
+2. (b) Change 1 km to cm: 1 km = 100 000 cm.
+3. Turns = 100 000 ÷ 219.9 = 454.7, which is about 455.
+
+**Answer:** (a) 219.9 cm (b) about 455 turns
+
+### Real-life example: how big is a pizza?
+
+A pizza is 30 cm across.
+
+**Problem:** Find its area.
+
+1. The diameter is 30 cm, so the radius is 30 ÷ 2 = 15 cm.
+2. A = π × 15² = π × 225 = 706.9 (to 1 d.p.).
+
+**Answer:** 706.9 cm²
+
+## Answers in terms of π
+
+If the question says "in terms of π", leave π in the answer.
+
+**Problem:** A circle has radius 6 cm. Find its circumference and area in terms of π.
+
+1. C = 2 × π × 6 = 12π.
+2. A = π × 6² = 36π.
+
+**Answer:** C = 12π cm, A = 36π cm²
+
+## Working backwards
+
+**Problem:** A circular pond has a circumference of 50 m. Find its radius.
+
+1. C = 2πr, so 2πr = 50.
+2. r = 50 ÷ (2π) = 7.96 (to 3 s.f.).
+
+**Answer:** 7.96 m
+
+## Arcs and sectors
+
+A sector with angle θ is the fraction **θ/360** of the whole circle.
+
+| | Formula |
+|---|---|
+| Arc length | (θ/360) × 2πr |
+| Sector area | (θ/360) × πr² |
+| Sector perimeter | arc length + 2r |
+
+**Problem:** A quarter circle has radius 10 cm. Find its arc length, area and perimeter.
+
+1. A quarter is 90°, and 90/360 = 1/4.
+2. Arc = 1/4 × 2 × π × 10 = 5π = 15.7 cm (to 1 d.p.).
+3. Area = 1/4 × π × 10² = 25π = 78.5 cm² (to 1 d.p.).
+4. Perimeter = arc + two radii = 15.7 + 10 + 10 = 35.7 cm.
+
+**Answer:** Arc 15.7 cm, area 78.5 cm², perimeter 35.7 cm
+
+> The perimeter of a sector is **not** just the arc. Add the two straight edges.
+
+### Real-life example: a slice of pizza
+
+A pizza 32 cm across is cut into 8 equal slices.
+
+**Problem:** Find the area of one slice and the length of its crust.
+
+1. Each slice has angle 360 ÷ 8 = 45°, and 45/360 = 1/8. The radius is 16 cm.
+2. Area = 1/8 × π × 16² = 32π = 100.5 cm² (to 1 d.p.).
+3. Crust (arc) = 1/8 × 2 × π × 16 = 4π = 12.6 cm (to 1 d.p.).
+
+**Answer:** Area 100.5 cm², crust 12.6 cm
+
+### Real-life example: a clock
+
+The minute hand of a clock is 12 cm long.
+
+**Problem:** How far does its tip move in 20 minutes?
+
+1. 20 minutes is 20/60 = 1/3 of an hour, so the hand turns 1/3 × 360 = 120°.
+2. Arc = 1/3 × 2 × π × 12 = 8π = 25.1 cm (to 1 d.p.).
+
+**Answer:** 25.1 cm
+
+## Extended and O Level: any angle and major sectors
+
+> **Extended and O Level only.** Core students can skip from here to Common mistakes.
+
+The same formulas work for **any** angle.
+
+**Problem:** A sector has radius 8 cm and angle 75°. Find (a) the arc length (b) the area of the minor sector (c) the area of the major sector.
+
+1. (a) Arc = 75/360 × 2 × π × 8 = 10.47 cm (to 2 d.p.).
+2. (b) Minor sector = 75/360 × π × 8² = 41.89 cm² (to 2 d.p.).
+3. (c) The major sector has angle 360 - 75 = 285°. Area = 285/360 × π × 8² = 159.17 cm² (to 2 d.p.).
+
+**Answer:** (a) 10.47 cm (b) 41.89 cm² (c) 159.17 cm²
+
+> Check: minor + major = whole circle. 41.89 + 159.17 = 201.06, and π × 8² = 201.06.
+
+### Finding the angle
+
+**Problem:** A sector has radius 10 cm and area 50 cm². Find the angle.
+
+1. θ/360 × π × 10² = 50.
+2. θ/360 × 314.16 = 50, so θ/360 = 50 ÷ 314.16 = 0.15915.
+3. θ = 0.15915 × 360 = 57.3° (to 1 d.p.).
+
+**Answer:** 57.3°
+
+## Common mistakes
+
+- Using the diameter in A = πr². Halve it first.
+- Squaring before multiplying by π the wrong way: π × 15² means π × 225, not (π × 15)².
+- Forgetting the two radii when finding the perimeter of a sector.
+- Rounding too early. Keep the full number on your calculator until the end.
+
+## Exam tips
+
+- Write the fraction θ/360 first. Then multiply by the circumference or the area.
+- "In terms of π" means do not use the π button. Leave π in the answer.
+- Give answers to 3 significant figures unless the question says something else.`,
+  "5.4": `## What you need to know
+
+- The **volume** and **surface area** of cuboids, prisms, cylinders, pyramids, cones and spheres.
+- A **prism** is any solid with the same cross-section all the way through.
+- The formulas are given in the exam, except for the cuboid. Answers may be left in terms of π.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Volume | The space inside a solid. Units: cm³, m³ |
+| Surface area | The total area of all the outside faces. Units: cm², m² |
+| Cross-section | The shape you see when you slice straight through a solid |
+| Prism | A solid with the same cross-section all along its length |
+| Slant height (l) | The sloping length of a cone, from the tip to the edge of the base |
+| Curved surface area | The area of the curved part only, without flat ends |
+
+![A cylinder, cone, sphere and square-based pyramid with their measurements](/images/maths/5-4-solids.svg)
+
+## The formulas
+
+| Solid | Volume | Surface area |
+|---|---|---|
+| Cuboid | length × width × height | 2(lw + lh + wh) |
+| Prism | area of cross-section × length | add the areas of all the faces |
+| Cylinder | πr²h | curved 2πrh, plus two circles 2πr² |
+| Cone | ⅓πr²h | curved πrl, plus the base πr² |
+| Pyramid | ⅓ × base area × height | add the areas of all the faces |
+| Sphere | (4/3)πr³ | 4πr² |
+
+> A cone is ⅓ of the cylinder that fits around it. A pyramid is ⅓ of the prism that fits around it.
+
+## Cuboids and prisms
+
+**Problem:** A cuboid is 5 cm by 4 cm by 3 cm. Find its volume and surface area.
+
+1. Volume = 5 × 4 × 3 = 60 cm³.
+2. There are three pairs of faces: 5 × 4 = 20, 5 × 3 = 15 and 4 × 3 = 12.
+3. Surface area = 2 × (20 + 15 + 12) = 2 × 47 = 94 cm².
+
+**Answer:** 60 cm³ and 94 cm²
+
+### Real-life example: a tent
+
+A tent is a triangular prism. The triangle at the front has a base of 2 m and a height of 1.5 m. The tent is 3 m long.
+
+**Problem:** Find the volume of air inside the tent.
+
+1. Area of the cross-section (the triangle) = ½ × 2 × 1.5 = 1.5 m².
+2. Volume = cross-section × length = 1.5 × 3 = 4.5.
+
+**Answer:** 4.5 m³
+
+## Cylinders
+
+### Real-life example: a can of beans
+
+A can has radius 4 cm and height 11 cm.
+
+**Problem:** Find (a) its volume (b) the area of the paper label round the side (c) its total surface area.
+
+1. (a) V = π × 4² × 11 = 176π = 552.9 cm³ (to 1 d.p.).
+2. (b) The label is the curved surface: 2 × π × 4 × 11 = 88π = 276.5 cm² (to 1 d.p.).
+3. (c) Add the top and bottom circles: 2 × π × 4² = 32π. Total = 88π + 32π = 120π = 377.0 cm² (to 1 d.p.).
+
+**Answer:** (a) 552.9 cm³ (b) 276.5 cm² (c) 377.0 cm²
+
+> If you unroll the label, it is a rectangle. Its width is the circumference 2πr and its height is h. That is why the curved area is 2πrh.
+
+## Cones and pyramids
+
+### Real-life example: an ice cream cone
+
+A cone has radius 3 cm and height 10 cm.
+
+**Problem:** Find (a) its volume (b) its curved surface area.
+
+1. (a) V = ⅓ × π × 3² × 10 = 30π = 94.2 cm³ (to 1 d.p.).
+2. (b) First find the slant height with Pythagoras: l² = 3² + 10² = 109, so l = 10.44 cm.
+3. Curved area = π × 3 × 10.44 = 98.4 cm² (to 1 d.p.).
+
+**Answer:** (a) 94.2 cm³ (b) 98.4 cm²
+
+> The curved area uses the **slant height** l, not the height h.
+
+**Problem:** A pyramid has a square base of side 6 cm and a height of 4 cm. Find its volume.
+
+1. Base area = 6 × 6 = 36 cm².
+2. V = ⅓ × 36 × 4 = 48.
+
+**Answer:** 48 cm³
+
+## Spheres
+
+### Real-life example: a football
+
+A football has a diameter of 22 cm.
+
+**Problem:** Find its volume and surface area.
+
+1. Radius = 22 ÷ 2 = 11 cm.
+2. V = (4/3) × π × 11³ = (4/3) × π × 1331 = 5575.3 cm³ (to 1 d.p.).
+3. Surface area = 4 × π × 11² = 484π = 1520.5 cm² (to 1 d.p.).
+
+**Answer:** 5575.3 cm³ and 1520.5 cm²
+
+## Working backwards
+
+### Real-life example: designing a juice carton
+
+A company wants a cylinder that holds 1 litre. The radius must be 5 cm.
+
+**Problem:** How tall must it be?
+
+1. 1 litre = 1000 cm³.
+2. πr²h = 1000, so π × 25 × h = 1000.
+3. h = 1000 ÷ (25π) = 12.7 (to 3 s.f.).
+
+**Answer:** 12.7 cm
+
+**Problem:** A sphere has volume 1000 cm³. Find its radius.
+
+1. (4/3)πr³ = 1000.
+2. r³ = 1000 × 3 ÷ (4π) = 238.7.
+3. r = cube root of 238.7 = 6.20 (to 3 s.f.).
+
+**Answer:** 6.20 cm
+
+## Common mistakes
+
+- Forgetting the ⅓ for cones and pyramids.
+- Using the height h instead of the slant height l for the curved area of a cone.
+- Using the diameter instead of the radius.
+- Mixing up units: volume is cm³, surface area is cm².
+- Forgetting the flat ends when the question asks for the **total** surface area.
+
+## Exam tips
+
+- Find the formula on the formula page and copy it before you put numbers in.
+- Read carefully: "curved surface area" means without the flat ends. "Total" or "surface area" means with them.
+- For a prism, always find the area of the cross-section first.`,
+  "5.5": `## What you need to know
+
+- How to find the perimeter and area of **compound shapes**: shapes made of rectangles, triangles, circles and parts of circles.
+- How to find the area of a **shaded region** by subtracting.
+- How to find the volume and surface area of **compound solids** and **parts of solids**, such as a hemisphere.
+- Extended and O Level: the volume and surface area of a **frustum**.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Compound shape | A shape made by joining simple shapes together |
+| Semicircle | Half a circle |
+| Hemisphere | Half a sphere |
+| Frustum | A cone or pyramid with the top cut off, like a bucket or a lampshade |
+
+## Compound shapes: split or subtract
+
+There are two ways:
+
+1. **Split** the shape into simple shapes and **add** their areas.
+2. Draw a big simple shape around it and **subtract** the part that is missing.
+
+![An L-shape and a window made of a rectangle and a semicircle](/images/maths/5-5-compound.svg)
+
+**Problem:** An L-shaped room fits in a 10 m by 8 m rectangle, with a 4 m by 3 m corner missing. Find its area and perimeter.
+
+1. Subtract: big rectangle 10 × 8 = 80 m², missing corner 4 × 3 = 12 m². Area = 80 - 12 = 68 m².
+2. Check by splitting: a 10 × 5 strip (50 m²) and a 6 × 3 piece (18 m²). 50 + 18 = 68 m².
+3. Perimeter: go round all six edges: 10 + 5 + 4 + 3 + 6 + 8 = 36 m.
+
+**Answer:** Area 68 m², perimeter 36 m
+
+> For the perimeter, work out any missing edges first. Here the missing edges are 8 - 3 = 5 m and 10 - 4 = 6 m.
+
+### Real-life example: an arched window
+
+A window is a rectangle 1.2 m wide and 1 m tall, with a semicircle on top. The semicircle has diameter 1.2 m.
+
+**Problem:** Find (a) the area of glass (b) the length of wooden frame round the outside.
+
+1. (a) Rectangle = 1.2 × 1 = 1.2 m².
+2. Semicircle: radius = 0.6 m, area = ½ × π × 0.6² = 0.565 m².
+3. Total area = 1.2 + 0.565 = 1.77 m² (to 3 s.f.).
+4. (b) Frame: two sides 1 + 1, the bottom 1.2, and the curved arc ½ × π × 1.2 = 1.885.
+5. Total = 1 + 1 + 1.2 + 1.885 = 5.08 m (to 3 s.f.).
+
+**Answer:** (a) 1.77 m² (b) 5.08 m
+
+> Do **not** include the line between the rectangle and the semicircle in the perimeter. It is inside the shape.
+
+### Real-life example: a running track
+
+A running track has two straight sides of 100 m and two semicircular ends. Each end has a diameter of 60 m.
+
+**Problem:** How far is one lap?
+
+1. Straights: 2 × 100 = 200 m.
+2. The two semicircles make one whole circle: π × 60 = 188.5 m.
+3. Lap = 200 + 188.5 = 388.5 m.
+
+**Answer:** 388.5 m
+
+## Shaded regions
+
+**Problem:** A circle of radius 5 cm fits exactly inside a square of side 10 cm. Find the area outside the circle but inside the square.
+
+1. Square = 10 × 10 = 100 cm².
+2. Circle = π × 5² = 25π = 78.54 cm².
+3. Shaded area = 100 - 78.54 = 21.46 cm².
+
+**Answer:** 21.46 cm² (or 100 - 25π cm²)
+
+## Parts of solids and compound solids
+
+A hemisphere is half a sphere.
+
+| Hemisphere | Formula |
+|---|---|
+| Volume | ½ × (4/3)πr³ = (2/3)πr³ |
+| Curved surface | ½ × 4πr² = 2πr² |
+| Total surface (solid) | 2πr² + πr² = 3πr² |
+
+### Real-life example: a mixing bowl
+
+A bowl is a hemisphere with radius 6 cm.
+
+**Problem:** How much can it hold?
+
+1. V = (2/3) × π × 6³ = (2/3) × π × 216 = 144π.
+2. 144π = 452.4 cm³ (to 1 d.p.).
+
+**Answer:** 452.4 cm³
+
+### Real-life example: a grain silo
+
+A silo is a cylinder with a hemisphere on top. The radius is 3 m and the cylinder is 12 m tall.
+
+**Problem:** Find the volume of the silo.
+
+1. Cylinder: π × 3² × 12 = 108π.
+2. Hemisphere: (2/3) × π × 3³ = 18π.
+3. Total = 108π + 18π = 126π = 395.8 m³ (to 1 d.p.).
+
+**Answer:** 395.8 m³
+
+> For a compound solid, work out each part separately and add. Write each part's answer in terms of π to keep it exact.
+
+## Extended and O Level: the frustum
+
+> **Extended and O Level only.** Core students can skip from here to Common mistakes.
+
+A frustum is a big cone with a small cone cut off the top.
+
+> **Frustum = big cone - small cone.** There is no separate formula. You use the cone formulas twice.
+
+![A bucket shaped like a frustum, made by cutting a small cone off a big cone](/images/maths/5-5-frustum.svg)
+
+### Real-life example: a bucket
+
+A bucket is a frustum. It was made from a cone with radius 10 cm and height 24 cm. A small cone with radius 5 cm and height 12 cm was cut off the top.
+
+**Problem:** Find (a) the volume of the bucket (b) its curved surface area.
+
+1. (a) Big cone: ⅓ × π × 10² × 24 = 800π.
+2. Small cone: ⅓ × π × 5² × 12 = 100π.
+3. Frustum = 800π - 100π = 700π = 2199.1 cm³ (to 1 d.p.). That is about 2.2 litres.
+4. (b) Slant heights by Pythagoras: big l = √(10² + 24²) = 26 cm, small l = √(5² + 12²) = 13 cm.
+5. Curved area = π × 10 × 26 - π × 5 × 13 = 260π - 65π = 195π = 612.6 cm² (to 1 d.p.).
+
+**Answer:** (a) 2199.1 cm³ (b) 612.6 cm²
+
+> The small cone is similar to the big one. Here every length is halved, so its volume is (½)³ = ⅛ of the big cone: 800π ÷ 8 = 100π.
+
+## Common mistakes
+
+- Counting an inside edge as part of the perimeter.
+- Using the full circle formula for a semicircle or a hemisphere. Halve it.
+- Forgetting the flat circle when finding the surface area of a solid hemisphere.
+- For a frustum, subtracting the heights or radii instead of the two volumes.
+
+## Exam tips
+
+- Draw lines on the diagram to show how you split the shape.
+- Label each part's area or volume, then add or subtract at the end.
+- Keep answers in terms of π until the last step, then use your calculator.`,
+  "6.1": `## What you need to know
+
+- **Pythagoras' theorem** for a right-angled triangle: a² + b² = c², where c is the longest side.
+- How to find the **longest side** (the hypotenuse) and how to find a **shorter side**.
+- How to use Pythagoras to check if a triangle is right-angled.
+- Pythagoras is **not** on the formula page. You must learn it.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Right-angled triangle | A triangle with one angle of 90° |
+| Hypotenuse | The longest side. It is always opposite the right angle |
+| Square | A number times itself, such as 5² = 25 |
+| Square root (√) | The number that was squared, such as √25 = 5 |
+
+## The rule
+
+![A right-angled triangle with squares drawn on each side](/images/maths/6-1-pythagoras.svg)
+
+> **a² + b² = c²**. The square on the hypotenuse equals the two smaller squares added together.
+
+In the picture, the squares have areas 9, 16 and 25. And 9 + 16 = 25.
+
+## Finding the longest side
+
+**Add** the squares of the two shorter sides, then square root.
+
+**Problem:** A right-angled triangle has shorter sides 6 cm and 8 cm. Find the hypotenuse.
+
+1. c² = 6² + 8² = 36 + 64 = 100.
+2. c = √100 = 10.
+
+**Answer:** 10 cm
+
+### Real-life example: a TV screen
+
+TV sizes are measured across the diagonal. A screen is 80 cm wide and 45 cm tall.
+
+**Problem:** How long is the diagonal?
+
+1. The width, height and diagonal make a right-angled triangle. The diagonal is the hypotenuse.
+2. d² = 80² + 45² = 6400 + 2025 = 8425.
+3. d = √8425 = 91.8 (to 1 d.p.).
+
+**Answer:** 91.8 cm
+
+### Real-life example: a shortcut across the park
+
+A park is a rectangle 120 m long and 50 m wide. You can walk round two edges or straight across the diagonal.
+
+**Problem:** How much shorter is the diagonal path?
+
+1. Round the edges: 120 + 50 = 170 m.
+2. Diagonal: d² = 120² + 50² = 14 400 + 2500 = 16 900, so d = √16 900 = 130 m.
+3. Saving = 170 - 130 = 40 m.
+
+**Answer:** 40 m shorter
+
+## Finding a shorter side
+
+**Subtract**: square the hypotenuse, take away the square of the other side, then square root.
+
+**Problem:** A right-angled triangle has hypotenuse 13 cm and one side 5 cm. Find the other side.
+
+1. a² = 13² - 5² = 169 - 25 = 144.
+2. a = √144 = 12.
+
+**Answer:** 12 cm
+
+> **Longest side: add. Shorter side: subtract.** Your answer for a shorter side must be less than the hypotenuse.
+
+### Real-life example: a ladder against a wall
+
+A ladder 5 m long leans against a wall. Its foot is 1.5 m from the wall.
+
+**Problem:** How high up the wall does it reach?
+
+1. The ladder is the hypotenuse (it is opposite the right angle at the bottom of the wall).
+2. h² = 5² - 1.5² = 25 - 2.25 = 22.75.
+3. h = √22.75 = 4.77 (to 3 s.f.).
+
+**Answer:** 4.77 m
+
+## Is it a right-angled triangle?
+
+Square the two shorter sides and add. If you get the square of the longest side, the triangle is right-angled.
+
+**Problem:** Are these triangles right-angled? (a) 7 cm, 24 cm, 25 cm (b) 6 cm, 8 cm, 11 cm
+
+1. (a) 7² + 24² = 49 + 576 = 625, and 25² = 625. They are equal, so **yes**.
+2. (b) 6² + 8² = 36 + 64 = 100, but 11² = 121. They are not equal, so **no**.
+
+**Answer:** (a) yes (b) no
+
+> Builders use this to check a corner is square: they measure 3 m one way, 4 m the other way, and check the diagonal is exactly 5 m.
+
+## Common mistakes
+
+- Adding when you should subtract. Find the hypotenuse first: it is opposite the right angle.
+- Forgetting to square root at the end. 6² + 8² = 100, but the side is 10, not 100.
+- Writing 6 + 8 = 14 instead of 6² + 8². You must square first.
+
+## Exam tips
+
+- Label the hypotenuse c before you start.
+- Write down the full method: c² = 6² + 8². It earns marks even if you slip later.
+- Check your answer: the hypotenuse is always the longest side.`,
+  "6.2": `## What you need to know
+
+- **Sine**, **cosine** and **tangent** in a right-angled triangle: SOH CAH TOA.
+- How to find a **missing side** and a **missing angle**.
+- How to use Pythagoras and trigonometry together, including with bearings.
+- Angles are in degrees. Give angles to 1 decimal place.
+- Extended and O Level: **angles of elevation and depression**, and the **shortest distance** from a point to a line.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Hypotenuse (H) | The longest side, opposite the right angle |
+| Opposite (O) | The side opposite the angle you are using |
+| Adjacent (A) | The side next to the angle you are using (not the hypotenuse) |
+| sin, cos, tan | The three ratios of sides in a right-angled triangle |
+| sin⁻¹, cos⁻¹, tan⁻¹ | The inverse buttons. They turn a ratio back into an angle |
+
+## Labelling the sides
+
+![A right-angled triangle with the hypotenuse, opposite and adjacent sides labelled for angle x](/images/maths/6-2-soh-cah-toa.svg)
+
+> The opposite and adjacent sides **change** depending on which angle you use. The hypotenuse never changes.
+
+## SOH CAH TOA
+
+| Ratio | Formula | Memory |
+|---|---|---|
+| sin x | Opposite ÷ Hypotenuse | **SOH** |
+| cos x | Adjacent ÷ Hypotenuse | **CAH** |
+| tan x | Opposite ÷ Adjacent | **TOA** |
+
+To choose the ratio:
+
+1. Label the sides O, A and H from the angle.
+2. Tick the two sides in the question: the one you know and the one you want.
+3. Pick the ratio that uses those two sides.
+
+## Finding a missing side
+
+**Problem:** In a right-angled triangle, the angle is 35° and the hypotenuse is 10 cm. Find the side opposite the angle.
+
+1. We know H and want O. That is **SOH**: sin 35° = O ÷ 10.
+2. Multiply both sides by 10: O = 10 × sin 35°.
+3. O = 5.74 (to 3 s.f.).
+
+**Answer:** 5.74 cm
+
+**Problem:** The angle is 40° and the adjacent side is 8 cm. Find the hypotenuse.
+
+1. We know A and want H. That is **CAH**: cos 40° = 8 ÷ H.
+2. Rearrange: H = 8 ÷ cos 40°.
+3. H = 10.4 (to 3 s.f.).
+
+**Answer:** 10.4 cm
+
+> If the missing side is on the **bottom** of the fraction, you **divide**. If it is on the top, you multiply.
+
+### Real-life example: a ladder
+
+A 6 m ladder leans against a wall. It makes an angle of 70° with the ground.
+
+**Problem:** How high up the wall does it reach, and how far is its foot from the wall?
+
+1. The ladder is H = 6. The height is opposite the 70° angle.
+2. Height = 6 × sin 70° = 5.64 m (to 3 s.f.).
+3. The distance from the wall is adjacent: 6 × cos 70° = 2.05 m (to 3 s.f.).
+
+**Answer:** 5.64 m high, foot 2.05 m from the wall
+
+### Real-life example: a wheelchair ramp
+
+A ramp is 12 m long and slopes at 4° to the ground.
+
+**Problem:** How high does it rise?
+
+1. The ramp is the hypotenuse. The rise is opposite the 4° angle.
+2. Rise = 12 × sin 4° = 0.837 m (to 3 s.f.).
+
+**Answer:** 0.837 m (about 84 cm)
+
+## Finding a missing angle
+
+Find the ratio, then use the inverse button (shift, then sin, cos or tan).
+
+**Problem:** A right-angled triangle has opposite side 3 cm and adjacent side 4 cm. Find the angle.
+
+1. We know O and A. That is **TOA**: tan x = 3 ÷ 4 = 0.75.
+2. x = tan⁻¹(0.75).
+3. x = 36.9° (to 1 d.p.).
+
+**Answer:** 36.9°
+
+## Bearings
+
+### Real-life example: a ship's journey
+
+A ship sails 20 km on a bearing of 060°.
+
+**Problem:** How far east and how far north has it travelled?
+
+1. Draw north, then the path 60° clockwise from north. Make a right-angled triangle with the north line.
+2. East is opposite the 60° angle: 20 × sin 60° = 17.3 km (to 3 s.f.).
+3. North is adjacent: 20 × cos 60° = 10 km.
+
+**Answer:** 17.3 km east and 10 km north
+
+## Extended and O Level: elevation, depression and shortest distance
+
+> **Extended and O Level only.** Core students can skip from here to Common mistakes.
+
+The **angle of elevation** is how far you look **up** from the horizontal. The **angle of depression** is how far you look **down** from the horizontal.
+
+![Angle of elevation looking up from the ground and angle of depression looking down from a lighthouse](/images/maths/6-2-elevation.svg)
+
+> Both angles are measured from the **horizontal**, never from the vertical.
+
+### Real-life example: how tall is the tree?
+
+You stand 50 m from a tree. The angle of elevation of the top is 32°.
+
+**Problem:** Find the height of the tree.
+
+1. We know A = 50 and want O. That is **TOA**: tan 32° = h ÷ 50.
+2. h = 50 × tan 32° = 31.2 (to 3 s.f.).
+
+**Answer:** 31.2 m
+
+### Real-life example: a lighthouse
+
+A lighthouse is 60 m tall. From the top, the angle of depression of a boat is 15°.
+
+**Problem:** How far is the boat from the bottom of the lighthouse?
+
+1. The angle of depression equals the angle of elevation from the boat (alternate angles). So the angle at the boat is 15°.
+2. From the boat: O = 60 (the lighthouse) and we want A. tan 15° = 60 ÷ d.
+3. d = 60 ÷ tan 15° = 224 (to 3 s.f.).
+
+**Answer:** 224 m
+
+### Shortest distance to a line
+
+The shortest distance from a point to a line is the **perpendicular** distance: the one that meets the line at 90°.
+
+**Problem:** A house H is 200 m from point A on a straight road. The angle between the road and AH is 30°. How far is the house from the road?
+
+1. Draw a line from H to the road at 90°. This makes a right-angled triangle with hypotenuse AH = 200.
+2. The distance is opposite the 30° angle: 200 × sin 30° = 100.
+
+**Answer:** 100 m
+
+## Common mistakes
+
+- Labelling opposite and adjacent from the wrong angle.
+- Calculator in radians or gradians. Check it shows **D** or **DEG**.
+- Using sin when you need sin⁻¹. To find an **angle**, use the inverse button.
+- Measuring an angle of elevation or depression from the vertical.
+
+## Exam tips
+
+- Always write the ratio first, such as sin 35° = O ÷ 10, then rearrange.
+- Keep full calculator values until the end. Round only the final answer.
+- Give angles to 1 d.p. and lengths to 3 s.f. unless told otherwise.`,
+  "6.3": `## What you need to know
+
+> **IGCSE Extended only.** This topic is not in O Level 4024 or IGCSE Core.
+
+- The exact values of sin and cos for 0°, 30°, 45°, 60° and 90°.
+- The exact values of tan for 0°, 30°, 45° and 60°.
+- How to use them to find sides and angles **without a calculator** (Paper 2).
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Exact value | A value written with fractions and square roots, not a rounded decimal |
+| Surd | A square root that does not simplify to a whole number, such as √2 or √3 |
+| Equilateral triangle | All sides equal, all angles 60° |
+| Isosceles right-angled triangle | Two equal sides and angles 45°, 45° and 90° |
+
+## The table
+
+| | 0° | 30° | 45° | 60° | 90° |
+|---|---|---|---|---|---|
+| sin | 0 | 1/2 | √2/2 | √3/2 | 1 |
+| cos | 1 | √3/2 | √2/2 | 1/2 | 0 |
+| tan | 0 | √3/3 | 1 | √3 | not defined |
+
+> Look at the sin row: 0, 1/2, √2/2, √3/2, 1. The cos row is the **same numbers backwards**.
+
+You may also see √2/2 written as 1/√2, and √3/3 written as 1/√3. They are equal.
+
+## Where the values come from
+
+You do not need to memorise the table if you can draw two triangles.
+
+![A half equilateral triangle with sides 1, root 3 and 2, and an isosceles right-angled triangle with sides 1, 1 and root 2](/images/maths/6-3-special-triangles.svg)
+
+**Triangle 1: half of an equilateral triangle.** Start with an equilateral triangle of side 2 and cut it in half.
+
+1. The angles are 30°, 60° and 90°. The hypotenuse is 2 and the bottom is 1.
+2. The height by Pythagoras: √(2² - 1²) = √3.
+3. So sin 30° = 1/2, cos 30° = √3/2, tan 30° = 1/√3 = √3/3.
+4. And sin 60° = √3/2, cos 60° = 1/2, tan 60° = √3/1 = √3.
+
+**Triangle 2: half of a square.** Use a right-angled triangle with two sides of 1.
+
+1. The angles are 45°, 45° and 90°.
+2. The hypotenuse by Pythagoras: √(1² + 1²) = √2.
+3. So sin 45° = cos 45° = 1/√2 = √2/2, and tan 45° = 1/1 = 1.
+
+## Using exact values
+
+**Problem:** A right-angled triangle has hypotenuse 10 cm and an angle of 30°. Find the exact lengths of the other two sides.
+
+1. Opposite = 10 × sin 30° = 10 × 1/2 = 5 cm.
+2. Adjacent = 10 × cos 30° = 10 × √3/2 = 5√3 cm.
+
+**Answer:** 5 cm and 5√3 cm
+
+**Problem:** The side adjacent to a 60° angle is 4 cm. Find the exact length of the opposite side.
+
+1. tan 60° = O ÷ 4, so O = 4 × tan 60°.
+2. O = 4 × √3 = 4√3.
+
+**Answer:** 4√3 cm
+
+**Problem:** A right-angled triangle has opposite side 6 cm and hypotenuse 12 cm. Find the angle without a calculator.
+
+1. sin x = 6 ÷ 12 = 1/2.
+2. From the table, sin 30° = 1/2.
+
+**Answer:** x = 30°
+
+### Real-life example: a roof
+
+A roof slopes at 45°. The rafter (the sloping beam) is 4 m long.
+
+**Problem:** Find the exact height of the roof above the top of the wall.
+
+1. The rafter is the hypotenuse. The height is opposite the 45° angle.
+2. Height = 4 × sin 45° = 4 × √2/2 = 2√2.
+
+**Answer:** 2√2 m (about 2.83 m)
+
+## Common mistakes
+
+- Mixing up sin 30° and sin 60°. Draw the triangle: the side opposite 30° is the shortest, 1.
+- Writing tan 90°. It is not defined, because you would divide by 0.
+- Writing a decimal like 0.866 when the question asks for an **exact** answer.
+
+## Exam tips
+
+- In the non-calculator paper, sketch the two triangles in the margin before you start.
+- Simplify answers: 10 × √3/2 = 5√3.
+- If an answer comes out as 1/2, √2/2 or √3/2, think "special angle".`,
+  "6.4": `## What you need to know
+
+> **IGCSE Extended only.** This topic is not in O Level 4024 or IGCSE Core.
+
+- The shapes of the graphs of y = sin x, y = cos x and y = tan x for 0° ≤ x ≤ 360°.
+- How to sketch them and read information from them.
+- How to solve equations like sin x = 0.5 for 0° ≤ x ≤ 360°. There are usually **two** answers.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Period | How often the graph repeats. sin and cos repeat every 360°, tan every 180° |
+| Maximum, minimum | The highest and lowest values on the graph |
+| Symmetry | The graph is the same on both sides of a line |
+| Asymptote | A line the graph gets closer and closer to but never touches |
+
+## The three graphs
+
+![Graphs of sine, cosine and tangent from 0 to 360 degrees](/images/maths/6-4-trig-graphs.svg)
+
+| Graph | Starts at | Max and min | Key points |
+|---|---|---|---|
+| y = sin x | 0 | 1 at 90°, -1 at 270° | 0 at 0°, 180°, 360° |
+| y = cos x | 1 | 1 at 0° and 360°, -1 at 180° | 0 at 90°, 270° |
+| y = tan x | 0 | none, it goes on for ever | asymptotes at 90° and 270° |
+
+> sin and cos are **waves** between -1 and 1. The cos graph is the sin graph moved 90° to the left.
+
+## Solving equations
+
+Your calculator gives **one** answer. Use the symmetry of the graph to find the others.
+
+| Equation | First answer from calculator | Second answer |
+|---|---|---|
+| sin x = k | x₁ = sin⁻¹(k) | 180° - x₁ |
+| cos x = k | x₁ = cos⁻¹(k) | 360° - x₁ |
+| tan x = k | x₁ = tan⁻¹(k) | x₁ + 180° |
+
+**Problem:** Solve sin x = 0.5 for 0° ≤ x ≤ 360°.
+
+1. Calculator: sin⁻¹(0.5) = 30°.
+2. The sin graph is symmetrical about 90°, so the other answer is 180° - 30° = 150°.
+
+**Answer:** x = 30° or 150°
+
+**Problem:** Solve cos x = 0.3 for 0° ≤ x ≤ 360°.
+
+1. Calculator: cos⁻¹(0.3) = 72.5° (to 1 d.p.).
+2. The cos graph is symmetrical about 180°, so the other answer is 360° - 72.5° = 287.5°.
+
+**Answer:** x = 72.5° or 287.5°
+
+**Problem:** Solve tan x = 2 for 0° ≤ x ≤ 360°.
+
+1. Calculator: tan⁻¹(2) = 63.4° (to 1 d.p.).
+2. The tan graph repeats every 180°, so the other answer is 63.4° + 180° = 243.4°.
+
+**Answer:** x = 63.4° or 243.4°
+
+### When the calculator answer is negative
+
+**Problem:** Solve sin x = -0.6 for 0° ≤ x ≤ 360°.
+
+1. Calculator: sin⁻¹(-0.6) = -36.9°. This is outside the range.
+2. sin is negative between 180° and 360°. Look at the graph: the answers are 36.9° past 180° and 36.9° before 360°.
+3. x = 180° + 36.9° = 216.9° and x = 360° - 36.9° = 323.1°.
+
+**Answer:** x = 216.9° or 323.1°
+
+> Always check your answers on the graph, or put them back into your calculator: sin 216.9° = -0.6.
+
+### Real-life example: a Ferris wheel
+
+A Ferris wheel has radius 18 m and its centre is 20 m above the ground. The height of a seat is h = 20 + 18 sin x metres, where x is the angle the wheel has turned.
+
+**Problem:** (a) Find the greatest and least heights. (b) For which angles is the seat 29 m high?
+
+1. (a) sin x is at most 1 and at least -1.
+2. Greatest h = 20 + 18 × 1 = 38 m. Least h = 20 + 18 × (-1) = 2 m.
+3. (b) 20 + 18 sin x = 29, so 18 sin x = 9, and sin x = 0.5.
+4. x = 30° or 180° - 30° = 150°.
+
+**Answer:** (a) 38 m and 2 m (b) x = 30° or 150°
+
+## Common mistakes
+
+- Giving only one answer. Most equations have **two** answers between 0° and 360°.
+- Using 180° - x₁ for cos. For cos it is 360° - x₁.
+- Drawing the tan graph like a wave. It has breaks at 90° and 270°.
+
+## Exam tips
+
+- Sketch the graph quickly and draw the line y = k across it. Count where they cross.
+- Write both answers, and check each one with your calculator.
+- Learn the key points: sin 90° = 1, cos 180° = -1, tan 45° = 1.`,
+  "6.5": `## What you need to know
+
+> **Extended and O Level only.** This topic is not in IGCSE Core.
+
+- The **sine rule** and the **cosine rule** for triangles that are **not** right-angled.
+- The area formula: area = ½ab sin C.
+- How to choose the right rule, and how to work with **obtuse** angles.
+- The **ambiguous case**: sometimes the sine rule gives two possible angles.
+- These formulas are given in the exam.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Obtuse angle | An angle between 90° and 180° |
+| Opposite | Side a is opposite angle A, side b is opposite angle B, and so on |
+| Included angle | The angle between two sides |
+| Ambiguous | Has two possible answers |
+
+## Labelling the triangle
+
+![A triangle with angles A, B and C and the opposite sides a, b and c](/images/maths/6-5-labels.svg)
+
+> Small letter = side. Capital letter = the angle **opposite** that side.
+
+## The three formulas
+
+| Rule | Formula |
+|---|---|
+| Sine rule | a/sin A = b/sin B = c/sin C |
+| Cosine rule | a² = b² + c² - 2bc cos A |
+| Cosine rule for an angle | cos A = (b² + c² - a²) ÷ 2bc |
+| Area | ½ab sin C |
+
+## Which rule?
+
+| You know | You want | Use |
+|---|---|---|
+| Two angles and a side | Another side | Sine rule |
+| Two sides and an angle opposite one of them | An angle | Sine rule |
+| Two sides and the angle between them | The third side | Cosine rule |
+| All three sides | An angle | Cosine rule |
+
+> If you have a side and its **opposite angle**, use the sine rule. Otherwise, use the cosine rule.
+
+## The sine rule
+
+**Problem:** In triangle ABC, A = 40°, B = 75° and a = 8 cm. Find b.
+
+1. We have a and A, a matching pair. Use the sine rule: b/sin 75° = 8/sin 40°.
+2. Multiply both sides by sin 75°: b = 8 × sin 75° ÷ sin 40°.
+3. b = 12.0 (to 3 s.f.).
+
+**Answer:** 12.0 cm
+
+## The cosine rule
+
+**Problem:** In triangle ABC, b = 5 cm, c = 7 cm and A = 60°. Find a.
+
+1. We have two sides and the angle between them. Use the cosine rule.
+2. a² = 5² + 7² - 2 × 5 × 7 × cos 60° = 25 + 49 - 35 = 39.
+3. a = √39 = 6.24 (to 3 s.f.).
+
+**Answer:** 6.24 cm
+
+**Problem:** A triangle has sides 7 cm, 8 cm and 9 cm. Find the largest angle.
+
+1. The largest angle is opposite the longest side, 9 cm. Call it C.
+2. cos C = (7² + 8² - 9²) ÷ (2 × 7 × 8) = (49 + 64 - 81) ÷ 112 = 32 ÷ 112 = 0.2857.
+3. C = cos⁻¹(0.2857) = 73.4° (to 1 d.p.).
+
+**Answer:** 73.4°
+
+### Obtuse angles
+
+If cos C comes out **negative**, the angle is obtuse. Your calculator handles this for you.
+
+**Problem:** A triangle has sides 4 cm, 5 cm and 8 cm. Find the largest angle.
+
+1. cos C = (4² + 5² - 8²) ÷ (2 × 4 × 5) = (16 + 25 - 64) ÷ 40 = -23 ÷ 40 = -0.575.
+2. C = cos⁻¹(-0.575) = 125.1° (to 1 d.p.).
+
+**Answer:** 125.1°
+
+### Real-life example: two ships
+
+Two ships leave a port. One sails 12 km on a bearing of 040°. The other sails 15 km on a bearing of 110°.
+
+**Problem:** How far apart are they?
+
+1. The angle between their paths at the port is 110° - 40° = 70°.
+2. Two sides and the angle between them, so use the cosine rule.
+3. d² = 12² + 15² - 2 × 12 × 15 × cos 70° = 144 + 225 - 123.1 = 245.9.
+4. d = √245.9 = 15.7 (to 3 s.f.).
+
+**Answer:** 15.7 km
+
+## Area of a triangle
+
+Use area = ½ab sin C when you know **two sides and the angle between them**.
+
+**Problem:** Find the area of a triangle with sides 6 cm and 9 cm and an angle of 50° between them.
+
+1. Area = ½ × 6 × 9 × sin 50°.
+2. Area = 27 × 0.766 = 20.7 (to 3 s.f.).
+
+**Answer:** 20.7 cm²
+
+### Real-life example: a field
+
+A triangular field has two fences of 40 m and 55 m that meet at an angle of 72°.
+
+**Problem:** Find the area of the field.
+
+1. Area = ½ × 40 × 55 × sin 72°.
+2. Area = 1100 × 0.951 = 1046 m² (to the nearest m²).
+
+**Answer:** 1046 m²
+
+## The ambiguous case
+
+When you use the sine rule to find an **angle**, there may be two answers. This is because sin x = sin (180° - x).
+
+![Two different triangles with the same two sides and the same angle A](/images/maths/6-5-ambiguous.svg)
+
+**Problem:** In triangle ABC, a = 7 cm, b = 9 cm and A = 40°. Find the possible values of B.
+
+1. Sine rule: sin B / 9 = sin 40° / 7.
+2. sin B = 9 × sin 40° ÷ 7 = 0.8264.
+3. B = sin⁻¹(0.8264) = 55.7° (to 1 d.p.).
+4. The other possible angle is 180° - 55.7° = 124.3°.
+5. Check it fits: 40° + 124.3° = 164.3°, which is less than 180°. So both triangles are possible.
+
+**Answer:** B = 55.7° or 124.3°
+
+> The second answer only works if the angles still add up to less than 180°.
+
+## Common mistakes
+
+- Using the sine rule without a matching side and angle pair.
+- Forgetting to square root at the end of the cosine rule.
+- Typing the cosine rule wrongly. Work out 2bc cos A first, then subtract it.
+- Missing the second angle in the ambiguous case.
+
+## Exam tips
+
+- Label the triangle with a, b, c and A, B, C before you start.
+- Write the formula, then put in the numbers.
+- The largest angle is always opposite the longest side.`,
+  "6.6": `## What you need to know
+
+> **Extended and O Level only.** This topic is not in IGCSE Core.
+
+- How to use Pythagoras and trigonometry in **3D** shapes such as cuboids and pyramids.
+- How to find the **angle between a line and a plane**.
+- The trick: find a **right-angled triangle** inside the 3D shape and draw it flat.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Plane | A flat surface, such as the floor or the base of a box |
+| Space diagonal | A line from one corner of a cuboid to the opposite corner, through the middle |
+| Projection | The shadow of a line on a plane, if light shines straight down |
+| Angle between a line and a plane | The angle between the line and its projection on the plane |
+
+## The space diagonal of a cuboid
+
+![A cuboid with the base diagonal and the space diagonal, and the angle between them](/images/maths/6-6-cuboid.svg)
+
+Use Pythagoras **twice**: first across the base, then up.
+
+**Problem:** A cuboid is 4 cm long, 3 cm wide and 12 cm tall. Find the length of the space diagonal AG.
+
+1. Across the base: AC² = 4² + 3² = 16 + 9 = 25, so AC = 5 cm.
+2. Triangle ACG has a right angle at C (the edge CG goes straight up).
+3. AG² = AC² + CG² = 5² + 12² = 25 + 144 = 169.
+4. AG = √169 = 13.
+
+**Answer:** 13 cm
+
+> Shortcut: the space diagonal of an l × w × h cuboid is √(l² + w² + h²). Here √(16 + 9 + 144) = √169 = 13.
+
+## The angle between a line and a plane
+
+1. Find where the line meets the plane.
+2. From the other end of the line, drop straight down to the plane. This gives the projection.
+3. The angle you want is in the right-angled triangle made by the line, the projection and the vertical drop.
+
+**Problem:** For the same cuboid, find the angle between AG and the base ABCD.
+
+1. The line AG meets the base at A. G is directly above C, so the projection of AG on the base is AC.
+2. The angle is GAC, in the right-angled triangle ACG.
+3. tan GAC = opposite ÷ adjacent = CG ÷ AC = 12 ÷ 5 = 2.4.
+4. Angle GAC = tan⁻¹(2.4) = 67.4° (to 1 d.p.).
+
+**Answer:** 67.4°
+
+### Real-life example: will the pole fit?
+
+A storage box is 60 cm long, 40 cm wide and 50 cm tall. Ali wants to put a 1 m pole inside.
+
+**Problem:** Will the pole fit?
+
+1. The longest straight line in a box is the space diagonal.
+2. d = √(60² + 40² + 50²) = √(3600 + 1600 + 2500) = √7700.
+3. d = 87.7 cm (to 1 d.p.). This is less than 1 m = 100 cm.
+
+**Answer:** No, the pole will not fit. The longest it could be is 87.7 cm.
+
+## Pyramids
+
+**Problem:** A pyramid has a square base of side 6 cm. The top is 4 cm directly above the centre of the base. Find (a) the length of a sloping edge (b) the angle between a sloping edge and the base.
+
+1. (a) First find half the diagonal of the base. Diagonal = √(6² + 6²) = √72, so half of it is √72 ÷ 2 = 4.243 cm.
+2. The sloping edge, the height and the half-diagonal make a right-angled triangle.
+3. Edge² = 4² + 4.243² = 16 + 18 = 34, so edge = √34 = 5.83 cm (to 3 s.f.).
+4. (b) tan θ = height ÷ half-diagonal = 4 ÷ 4.243 = 0.9428.
+5. θ = tan⁻¹(0.9428) = 43.3° (to 1 d.p.).
+
+**Answer:** (a) 5.83 cm (b) 43.3°
+
+## Common mistakes
+
+- Using the wrong angle. The angle with the base must be at the point where the line **meets** the base.
+- Using a side of the base instead of the diagonal.
+- Forgetting the right angle is often hidden. It is where a vertical edge meets the base.
+
+## Exam tips
+
+- Draw the right-angled triangle on its own, flat, and label the lengths you know.
+- Keep the full calculator value of each length for the next step.
+- Look for the vertical line. It always makes a right angle with the base.`,
+  "7.1": `## What you need to know
+
+- The four transformations: **reflection**, **rotation**, **enlargement** and **translation**.
+- How to draw each one on a grid, and how to **describe** one fully.
+- The shape after a transformation is called the **image**. The starting shape is the **object**.
+- Core: reflections in vertical or horizontal lines, rotations through multiples of 90°, and enlargements with positive or fractional scale factors. There are no combined transformations.
+- Extended and O Level: reflection in any line, such as y = x, enlargement with a **negative** scale factor, and **combined** transformations.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Object | The shape before it is moved |
+| Image | The shape after it is moved |
+| Congruent | Exactly the same shape and size |
+| Mirror line | The line you reflect in |
+| Centre | The fixed point for a rotation or an enlargement |
+| Scale factor | How many times bigger the image is |
+| Column vector | Tells you how far to move across and up. Written as a column, with the across number on top |
+
+## Describing a transformation
+
+Each transformation needs certain facts. You lose marks if you miss one.
+
+| Transformation | You must give |
+|---|---|
+| Reflection | the mirror line, such as x = 2 or y = x |
+| Rotation | the angle, the direction (clockwise or anticlockwise) and the centre |
+| Enlargement | the scale factor and the centre |
+| Translation | the column vector |
+
+> Use **one** transformation word only. "Rotated and moved" gets no marks.
+
+In these notes a column vector is written on one line as **(4, -3)**: 4 across and -3 up (so 3 down). In the exam it is printed as a column, with 4 on top.
+
+## Translation
+
+Every point moves the same distance in the same direction. The image is congruent and faces the same way.
+
+**Problem:** Triangle A has corners (1, 1), (3, 1) and (1, 2). Translate it by the vector (4, -3).
+
+1. Add 4 to every x-coordinate (4 to the right).
+2. Subtract 3 from every y-coordinate (3 down).
+3. The new corners are (5, -2), (7, -2) and (5, -1).
+
+**Answer:** (5, -2), (7, -2) and (5, -1)
+
+## Reflection
+
+Each point is the same distance from the mirror line on the other side. The image is congruent but flipped.
+
+![A triangle reflected in the line x = 4 and rotated 90 degrees clockwise about the origin](/images/maths/7-1-reflect-rotate.svg)
+
+| Mirror line | What happens to (x, y) |
+|---|---|
+| x-axis (y = 0) | (x, -y) |
+| y-axis (x = 0) | (-x, y) |
+| x = 4 | x moves to the same distance on the other side of 4 |
+
+**Problem:** Reflect the point (1, 2) in the line x = 4.
+
+1. The line x = 4 is vertical. The point is 4 - 1 = 3 units to the left of it.
+2. Go 3 units to the right of the line: x = 4 + 3 = 7. The y-coordinate stays the same.
+
+**Answer:** (7, 2)
+
+> To find a mirror line, draw lines between matching points. The mirror line is halfway along each one.
+
+## Rotation
+
+The shape turns about a fixed point, the centre. The image is congruent.
+
+| Rotation about the origin | What happens to (x, y) |
+|---|---|
+| 90° clockwise | (y, -x) |
+| 90° anticlockwise | (-y, x) |
+| 180° (either way) | (-x, -y) |
+
+**Problem:** Rotate the point (2, 1) through 90° clockwise about the origin.
+
+1. Use the rule (x, y) becomes (y, -x).
+2. (2, 1) becomes (1, -2).
+
+**Answer:** (1, -2)
+
+> Use **tracing paper** in the exam. Trace the shape, put your pencil on the centre, and turn the paper.
+
+## Enlargement
+
+The shape gets bigger or smaller. The angles stay the same, so the image is **similar** to the object.
+
+![A triangle enlarged by scale factor 2 from a centre, with lines drawn from the centre through each corner](/images/maths/7-1-enlargement.svg)
+
+To enlarge from a centre:
+
+1. Count how far each corner is from the centre, across and up.
+2. Multiply both numbers by the scale factor.
+3. Count that far from the centre and mark the new corner.
+
+**Problem:** Enlarge the point (2, 3) by scale factor 3 with centre (1, 1).
+
+1. From the centre to the point: 1 across and 2 up.
+2. Multiply by 3: 3 across and 6 up.
+3. From the centre (1, 1): (1 + 3, 1 + 6) = (4, 7).
+
+**Answer:** (4, 7)
+
+A **fractional** scale factor makes the shape smaller. Scale factor ½ halves every distance from the centre.
+
+**Problem:** Enlarge the point (4, 6) by scale factor ½ with centre (0, 0).
+
+1. From the centre: 4 across and 6 up.
+2. Multiply by ½: 2 across and 3 up.
+
+**Answer:** (2, 3)
+
+> To find the centre of an enlargement, draw straight lines through matching corners. The centre is where they cross.
+
+### Real-life example: a projector
+
+A projector enlarges a picture onto a screen. The lamp is the centre of enlargement. If the screen is 3 times as far from the lamp as the slide, the picture is 3 times as tall and 3 times as wide.
+
+## Extended and O Level: more transformations
+
+> **Extended and O Level only.** Core students can skip from here to Common mistakes.
+
+### Reflection in y = x and y = -x
+
+| Mirror line | What happens to (x, y) |
+|---|---|
+| y = x | (y, x): swap the coordinates |
+| y = -x | (-y, -x): swap and change both signs |
+
+**Problem:** Reflect (5, 2) in y = x and in y = -x.
+
+1. In y = x, swap: (2, 5).
+2. In y = -x, swap and change signs: (-2, -5).
+
+**Answer:** (2, 5) and (-2, -5)
+
+### Negative scale factors
+
+A negative scale factor puts the image on the **other side** of the centre, upside down.
+
+![A triangle enlarged by scale factor -2 about the origin, appearing upside down on the other side](/images/maths/7-1-negative-enlargement.svg)
+
+**Problem:** Enlarge the triangle with corners (1, 1), (3, 1) and (1, 2) by scale factor -2 with centre (0, 0).
+
+1. Multiply each coordinate by -2.
+2. (1, 1) becomes (-2, -2). (3, 1) becomes (-6, -2). (1, 2) becomes (-2, -4).
+
+**Answer:** (-2, -2), (-6, -2) and (-2, -4)
+
+> Scale factor -1 is the same as a rotation of 180° about the centre.
+
+### Combined transformations
+
+Do the first transformation, then do the second one to the image.
+
+**Problem:** Reflect the point (3, 1) in the y-axis, then reflect the image in the x-axis. What single transformation does the same thing?
+
+1. Reflect in the y-axis: (3, 1) becomes (-3, 1).
+2. Reflect in the x-axis: (-3, 1) becomes (-3, -1).
+3. (3, 1) to (-3, -1) is the rule (x, y) to (-x, -y).
+
+**Answer:** A rotation of 180° about the origin
+
+## Common mistakes
+
+- Missing part of the description, such as the direction of a rotation or the centre of an enlargement.
+- Reflecting in the line y = 2 when the question says x = 2. x = 2 is a **vertical** line.
+- Mixing up the top and bottom numbers of a column vector. The top number is **across**.
+- Measuring an enlargement from the origin when the centre is somewhere else.
+
+## Exam tips
+
+- Ask for tracing paper. It makes rotations and reflections much easier.
+- Check one corner at a time and label the image corners.
+- After an enlargement, check the image is the right size: each side should be multiplied by the scale factor.`,
+  "7.2": `## What you need to know
+
+> **Extended and O Level only.** This topic is not in IGCSE Core.
+
+- A **vector** has a size and a direction. It can be written as a **column vector**.
+- How to describe a translation with a vector.
+- How to **add** and **subtract** vectors, and multiply a vector by a number (a **scalar**).
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Vector | A movement with a size and a direction |
+| Column vector | Two numbers in a column: the top one is across, the bottom one is up |
+| Scalar | An ordinary number, such as 3 or -2 |
+| Resultant | The single vector that does the same as two or more vectors one after the other |
+
+## Writing vectors
+
+A vector can be written in three ways:
+
+1. As a column vector, with the across number on top and the up number underneath. In these notes we write this on one line as **(3, 2)**.
+2. With the start and end letters and an arrow on top, such as AB with an arrow, meaning "from A to B".
+3. With a single bold letter, **a**. By hand you write it with a line underneath: a̲.
+
+| Vector | Means |
+|---|---|
+| (3, 2) | 3 right, 2 up |
+| (-4, 1) | 4 left, 1 up |
+| (0, -5) | 5 down |
+
+> Positive across = right. Negative across = left. Positive up = up. Negative up = down.
+
+## Adding and subtracting
+
+Add or subtract the top numbers, then the bottom numbers.
+
+![Vectors a and b drawn one after the other, with the resultant a + b from the start to the end](/images/maths/7-2-adding.svg)
+
+**Problem:** a = (2, 3) and b = (4, -1). Find a + b and a - b.
+
+1. a + b = (2 + 4, 3 + (-1)) = (6, 2).
+2. a - b = (2 - 4, 3 - (-1)) = (-2, 4).
+
+**Answer:** a + b = (6, 2), a - b = (-2, 4)
+
+> On a diagram, a + b means "go along a, then along b". The resultant goes straight from the start to the finish.
+
+## Multiplying by a scalar
+
+Multiply both numbers by the scalar. The new vector is **parallel** to the old one.
+
+**Problem:** a = (2, 3). Find 3a and -a.
+
+1. 3a = (3 × 2, 3 × 3) = (6, 9). It points the same way and is 3 times as long.
+2. -a = (-2, -3). It is the same length but points the **opposite** way.
+
+**Answer:** 3a = (6, 9), -a = (-2, -3)
+
+**Problem:** a = (2, 3) and b = (4, -1). Find 2a - 3b.
+
+1. 2a = (4, 6) and 3b = (12, -3).
+2. 2a - 3b = (4 - 12, 6 - (-3)) = (-8, 9).
+
+**Answer:** (-8, 9)
+
+### Real-life example: a drone
+
+A drone flies (5, 2) and then (-1, 4), in metres east and north.
+
+**Problem:** What single vector takes it from the start to the end?
+
+1. Add the two vectors: (5 + (-1), 2 + 4) = (4, 6).
+
+**Answer:** (4, 6): 4 m east and 6 m north
+
+### Finding a missing vector
+
+**Problem:** (3, k) + (m, -2) = (7, 5). Find k and m.
+
+1. Top numbers: 3 + m = 7, so m = 4.
+2. Bottom numbers: k + (-2) = 5, so k = 7.
+
+**Answer:** k = 7, m = 4
+
+## Common mistakes
+
+- Writing a column vector upside down. Across always goes on top.
+- Subtracting a negative wrongly: 3 - (-1) = 4, not 2.
+- Thinking -a is a different length. It is the same length, opposite direction.
+
+## Exam tips
+
+- Work out the top numbers and the bottom numbers separately.
+- Draw a quick sketch to check the direction makes sense.
+- Underline vector letters in your working so the examiner can see they are vectors.`,
+  "7.3": `## What you need to know
+
+> **Extended and O Level only.** This topic is not in IGCSE Core.
+
+- The **magnitude** of a vector is its length.
+- For the column vector (x, y), the magnitude is √(x² + y²). This is Pythagoras.
+- The magnitude of **a** is written |**a**|. The magnitude of AB is written |AB|.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Magnitude | The length (size) of a vector. It is never negative |
+| Modulus | Another name for magnitude. The symbol is two straight lines, as in |a| |
+
+## Why Pythagoras works
+
+![The vector 3 across and 4 up makes a right-angled triangle with hypotenuse 5](/images/maths/7-3-magnitude.svg)
+
+The across part and the up part make the two short sides of a right-angled triangle. The vector itself is the hypotenuse.
+
+> **|(x, y)| = √(x² + y²)**
+
+**Problem:** Find the magnitude of (3, 4).
+
+1. |(3, 4)| = √(3² + 4²) = √(9 + 16) = √25.
+2. √25 = 5.
+
+**Answer:** 5
+
+**Problem:** Find the magnitude of (-5, 12).
+
+1. |(-5, 12)| = √((-5)² + 12²) = √(25 + 144) = √169.
+2. √169 = 13.
+
+**Answer:** 13
+
+> A negative number squared is positive, so the sign does not matter. (-5)² = 25.
+
+**Problem:** Find the magnitude of (2, -6). Give your answer to 3 significant figures.
+
+1. |(2, -6)| = √(4 + 36) = √40.
+2. √40 = 6.32 (to 3 s.f.).
+
+**Answer:** 6.32
+
+### Real-life example: a boat in a current
+
+A boat's engine pushes it at 12 km/h north. A current pushes it 5 km/h east. Its velocity is the vector (5, 12) in km/h.
+
+**Problem:** How fast is the boat really moving?
+
+1. Speed = |(5, 12)| = √(5² + 12²) = √(25 + 144) = √169.
+2. √169 = 13.
+
+**Answer:** 13 km/h
+
+## Magnitude of a sum
+
+Add the vectors **first**, then find the magnitude.
+
+**Problem:** a = (1, 3) and b = (5, 5). Find |a + b|.
+
+1. a + b = (6, 8).
+2. |a + b| = √(36 + 64) = √100 = 10.
+
+**Answer:** 10
+
+> |a + b| is usually **not** |a| + |b|. Here |a| = 3.16 and |b| = 7.07, which add to 10.23, not 10.
+
+## Working backwards
+
+**Problem:** The vector (k, 8) has magnitude 10, and k is positive. Find k.
+
+1. k² + 8² = 10², so k² + 64 = 100.
+2. k² = 36, so k = 6.
+
+**Answer:** k = 6
+
+## Common mistakes
+
+- Adding the numbers: |(3, 4)| is not 7.
+- Forgetting to square root at the end.
+- Squaring a negative wrongly: (-5)² = 25, not -25.
+
+## Exam tips
+
+- Write √(x² + y²) before you put the numbers in.
+- If the answer is not a whole number, leave it as a square root or give it to 3 s.f., as the question asks.`,
+  "7.4": `## What you need to know
+
+> **Extended and O Level only.** This topic is not in IGCSE Core.
+
+- How to find a route between two points using vectors you know.
+- **Position vectors**: the vector from the origin O to a point.
+- How to find the vector to a **midpoint**, or to a point that divides a line in a ratio.
+- How to show that lines are **parallel** and that points are **collinear** (on one straight line).
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Position vector | The vector from the origin O to a point. The position vector of A is OA |
+| Midpoint | The point exactly halfway along a line |
+| Parallel | Going in the same direction. Parallel vectors are multiples of each other |
+| Collinear | Lying on the same straight line |
+
+## Finding a route
+
+To get from A to B, you can go **any** way that uses vectors you know. Going backwards along a vector makes it negative.
+
+![Triangle OAB with OA = a, OB = b, and M the midpoint of AB](/images/maths/7-4-triangle.svg)
+
+**Problem:** OA = **a** and OB = **b**. Find AB.
+
+1. Go from A back to O, then from O to B.
+2. AB = AO + OB = -**a** + **b**.
+
+**Answer:** AB = **b** - **a**
+
+> **AB = b - a**: "end minus start". This works for any two position vectors.
+
+## Midpoints and ratios
+
+**Problem:** M is the midpoint of AB. Find OM in terms of **a** and **b**.
+
+1. Go from O to A, then halfway along AB.
+2. OM = OA + ½AB = **a** + ½(**b** - **a**).
+3. Multiply out: **a** + ½**b** - ½**a** = ½**a** + ½**b**.
+
+**Answer:** OM = ½(**a** + **b**)
+
+**Problem:** P lies on AB with AP : PB = 1 : 2. Find OP.
+
+1. AP is 1 part out of 1 + 2 = 3 parts, so AP = ⅓AB.
+2. OP = OA + ⅓AB = **a** + ⅓(**b** - **a**).
+3. Multiply out: **a** + ⅓**b** - ⅓**a** = ⅔**a** + ⅓**b**.
+
+**Answer:** OP = ⅔**a** + ⅓**b**
+
+> For a ratio m : n, the point is m/(m + n) of the way along the line.
+
+## Parallel vectors
+
+Two vectors are parallel if one is a **number times** the other.
+
+**Problem:** Show that the vectors 2**a** - 4**b** and **a** - 2**b** are parallel.
+
+1. Take out a factor of 2: 2**a** - 4**b** = 2(**a** - 2**b**).
+2. So 2**a** - 4**b** is 2 times **a** - 2**b**.
+
+**Answer:** They are parallel. The first is twice as long as the second.
+
+## Collinear points
+
+To show A, B and C are on one straight line:
+
+1. Show AB and BC (or AB and AC) are parallel: one is a multiple of the other.
+2. Say that they share a point, B (or A).
+
+**Problem:** OA = **a**, OB = **b** and OC = 3**b** - 2**a**. Show that A, B and C are collinear.
+
+1. AB = **b** - **a**.
+2. AC = OC - OA = 3**b** - 2**a** - **a** = 3**b** - 3**a** = 3(**b** - **a**).
+3. So AC = 3AB. They are parallel.
+4. AB and AC both start at A, so A, B and C lie on one straight line.
+
+**Answer:** A, B and C are collinear, because AC = 3AB and they share the point A.
+
+> Parallel alone is not enough. You must also say the two vectors share a point.
+
+### Real-life example: a parallelogram garden path
+
+A garden is a parallelogram OABC with OA = **a** and OC = **c**. A path goes from O to the middle of the opposite side AB.
+
+**Problem:** Find the vector for the path.
+
+1. In a parallelogram, opposite sides are equal and parallel, so AB = OC = **c**.
+2. The midpoint of AB is half of **c** along from A.
+3. Path = OA + ½AB = **a** + ½**c**.
+
+**Answer:** **a** + ½**c**
+
+## Common mistakes
+
+- Getting the sign wrong when you go backwards along a vector. AO = -**a**.
+- Writing AB = **a** - **b**. It is **b** - **a**: end minus start.
+- Showing two vectors are parallel but forgetting to say they share a point.
+
+## Exam tips
+
+- Write the route in letters first, such as OP = OA + AP, then swap in the vectors.
+- Simplify fully. Collect the **a** terms and the **b** terms.
+- Look for a common factor. It shows parallel vectors quickly.`,
+  "8.1": `## What you need to know
+
+- Probability measures how likely something is, on a scale from **0** (impossible) to **1** (certain).
+- How to work out the probability of a single event.
+- The probability that something does **not** happen is 1 minus the probability that it does.
+- How to read probabilities from tables and **Venn diagrams**. Core uses Venn diagrams with up to two sets.
+- Extended and O Level: the notation P(A) and P(A′).
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Event | Something that can happen, such as "rolling a 6" |
+| Outcome | One possible result |
+| Equally likely | Each outcome has the same chance |
+| Probability | A number from 0 to 1 that says how likely an event is |
+| Venn diagram | Overlapping circles that sort things into groups |
+
+## The probability scale
+
+![A probability scale from 0 (impossible) through 0.5 (even chance) to 1 (certain)](/images/maths/8-1-scale.svg)
+
+Probabilities can be written as fractions, decimals or percentages. A probability can never be less than 0 or more than 1.
+
+## Working out a probability
+
+When all outcomes are equally likely:
+
+> **Probability = number of ways it can happen ÷ total number of outcomes**
+
+**Problem:** A fair dice is rolled. Find the probability of (a) a 6 (b) an even number (c) a 7.
+
+1. There are 6 equally likely outcomes: 1, 2, 3, 4, 5, 6.
+2. (a) One of them is a 6: probability = 1/6.
+3. (b) Three are even (2, 4, 6): probability = 3/6 = 1/2.
+4. (c) None is a 7: probability = 0/6 = 0. It is impossible.
+
+**Answer:** (a) 1/6 (b) 1/2 (c) 0
+
+### Real-life example: a bag of sweets
+
+A bag has 3 red, 5 blue and 2 green sweets. One is taken without looking.
+
+**Problem:** Find the probability it is (a) blue (b) not green.
+
+1. Total = 3 + 5 + 2 = 10 sweets.
+2. (a) Probability of blue = 5/10 = 1/2.
+3. (b) 8 sweets are not green: probability = 8/10 = 4/5.
+
+**Answer:** (a) 1/2 (b) 4/5
+
+## Events that do not happen
+
+> **Probability of not happening = 1 - probability of happening.** The two always add up to 1.
+
+### Real-life example: the weather
+
+The forecast says the probability of rain tomorrow is 0.35.
+
+**Problem:** What is the probability it will not rain?
+
+1. 1 - 0.35 = 0.65.
+
+**Answer:** 0.65
+
+## Probability tables
+
+The probabilities of all the possible outcomes add up to **1**.
+
+| Colour | Red | Blue | Green | Yellow |
+|---|---|---|---|---|
+| Probability | 0.3 | 0.25 | 0.15 | x |
+
+**Problem:** A spinner lands on one of four colours. Find x.
+
+1. All the probabilities add up to 1: 0.3 + 0.25 + 0.15 + x = 1.
+2. 0.7 + x = 1, so x = 0.3.
+
+**Answer:** x = 0.3
+
+## Venn diagrams
+
+![A Venn diagram of 30 students: 13 play football only, 5 play both, 7 play tennis only and 5 play neither](/images/maths/8-1-venn.svg)
+
+**Problem:** In a class of 30 students, 18 play football, 12 play tennis and 5 play both. A student is picked at random. Find the probability that the student plays (a) both sports (b) neither sport.
+
+1. Put the 5 who play both in the overlap.
+2. Football only = 18 - 5 = 13. Tennis only = 12 - 5 = 7.
+3. Neither = 30 - (13 + 5 + 7) = 30 - 25 = 5. This goes outside the circles.
+4. (a) P(both) = 5/30 = 1/6.
+5. (b) P(neither) = 5/30 = 1/6.
+
+**Answer:** (a) 1/6 (b) 1/6
+
+> Always fill in the **overlap first**, then work outwards.
+
+## Extended and O Level: notation
+
+> **Extended and O Level only.** Core students can skip from here to Common mistakes.
+
+| Notation | Means |
+|---|---|
+| P(A) | The probability that event A happens |
+| P(A′) | The probability that A does **not** happen. A′ is called "A dash" or "not A" |
+
+> **P(A′) = 1 - P(A)**
+
+**Problem:** P(B) = 0.8. Find P(B′).
+
+1. P(B′) = 1 - P(B) = 1 - 0.8 = 0.2.
+
+**Answer:** 0.2
+
+## Common mistakes
+
+- Giving a probability bigger than 1, such as 5/3. Check your answer is between 0 and 1.
+- Forgetting the people outside the circles in a Venn diagram.
+- Putting 18 in the football-only part when 5 of the 18 are in the overlap.
+- Writing probability as a ratio, such as 1 : 6. Use a fraction, decimal or percentage.
+
+## Exam tips
+
+- Simplify fractions, but an unsimplified correct fraction usually still gets the marks.
+- Check that a table or a Venn diagram adds up to the total.
+- Read carefully: "not red" means every other colour.`,
+  "8.2": `## What you need to know
+
+- **Relative frequency** is a probability estimated from an experiment or a survey.
+- More trials give a better estimate.
+- **Expected frequency**: how many times you expect something to happen.
+- The meaning of **fair**, **biased** and **random**.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Trial | One go of an experiment, such as one spin of a spinner |
+| Frequency | How many times something happened |
+| Relative frequency | Frequency ÷ total number of trials |
+| Expected frequency | Probability × number of trials |
+| Fair | Every outcome is equally likely |
+| Biased | Some outcomes are more likely than they should be |
+| Random | Every item has the same chance of being chosen |
+
+## Relative frequency
+
+> **Relative frequency = number of times it happened ÷ total number of trials**
+
+**Problem:** A spinner is spun 200 times. It lands on red 42 times. Estimate the probability of landing on red.
+
+1. Relative frequency = 42 ÷ 200 = 0.21.
+
+**Answer:** 0.21
+
+> A relative frequency is only an **estimate**. If you spin another 200 times, you will probably get a slightly different answer. The more trials, the closer it gets to the true probability.
+
+![Relative frequency of heads settling down towards 0.5 as the number of coin throws increases](/images/maths/8-2-relative-frequency.svg)
+
+## Is it fair?
+
+Compare the relative frequency with the probability you would expect if it were fair.
+
+**Problem:** A coin is thrown 100 times and lands on heads 70 times. Is the coin fair?
+
+1. A fair coin should give heads with probability 0.5, so about 50 heads in 100 throws.
+2. Relative frequency = 70 ÷ 100 = 0.7. This is a long way from 0.5.
+
+**Answer:** The coin is probably **biased** towards heads. Throwing it more times would make you more sure.
+
+> A small difference does not prove bias. 53 heads in 100 throws is normal for a fair coin.
+
+## Expected frequency
+
+> **Expected frequency = probability × number of trials**
+
+**Problem:** A fair dice is rolled 120 times. How many sixes do you expect?
+
+1. P(6) = 1/6.
+2. Expected frequency = 1/6 × 120 = 20.
+
+**Answer:** 20 sixes
+
+This does not mean you will get exactly 20. It is the number you would get on average.
+
+### Real-life example: walking to school
+
+In a survey of 200 students picked at random, 60 walk to school. The school has 1200 students.
+
+**Problem:** Estimate how many students in the school walk.
+
+1. Relative frequency = 60 ÷ 200 = 0.3.
+2. Expected number = 0.3 × 1200 = 360.
+
+**Answer:** about 360 students
+
+> The survey must be **random**. If you only asked students at the front gate, the estimate could be biased.
+
+### Real-life example: faulty phones
+
+A factory finds that 3 in every 500 phones it makes are faulty.
+
+**Problem:** How many faulty phones should it expect in a batch of 20 000?
+
+1. Probability of faulty = 3/500 = 0.006.
+2. Expected number = 0.006 × 20 000 = 120.
+
+**Answer:** about 120 faulty phones
+
+## Common mistakes
+
+- Thinking expected frequency is exactly what will happen. It is an average.
+- Saying a coin is biased after only a few throws. You need many trials.
+- Dividing by the number of outcomes instead of the number of trials.
+
+## Exam tips
+
+- "Estimate the probability" from an experiment means use the **relative frequency**.
+- If you are asked which estimate is best, choose the one with the **most** trials.
+- Write expected frequency as a whole number when it makes sense, such as people or phones.`,
+  "8.3": `## What you need to know
+
+- How to find probabilities of **two events** using sample space diagrams, Venn diagrams and **tree diagrams**.
+- **AND** usually means **multiply**. **OR** usually means **add**.
+- Core: events are **with replacement** only.
+- Extended and O Level: events **without replacement**, and the Venn notation P(A ∩ B) and P(A ∪ B).
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Sample space diagram | A grid that shows every possible outcome of two events |
+| Independent | One event does not change the probability of the other |
+| Mutually exclusive | The events cannot both happen at the same time |
+| With replacement | You put the first item back before picking again |
+| Without replacement | You keep the first item, so there is one fewer to pick from |
+
+## Sample space diagrams
+
+**Problem:** Two fair dice are rolled and the scores are added. Find the probability that the total is 7.
+
+![A grid showing all 36 totals for two dice, with the six totals of 7 highlighted](/images/maths/8-3-sample-space.svg)
+
+1. Draw a grid with one dice across the top and one down the side. Fill in the totals.
+2. There are 6 × 6 = 36 equally likely outcomes.
+3. Count the 7s: there are 6 of them.
+4. P(total 7) = 6/36 = 1/6.
+
+**Answer:** 1/6
+
+> 7 is the most likely total. There are more ways to make it than any other total.
+
+## AND and OR
+
+| Rule | When | Example |
+|---|---|---|
+| Multiply (AND) | Independent events both happen | P(head and 6) = 1/2 × 1/6 = 1/12 |
+| Add (OR) | Mutually exclusive events | P(1 or 2 on a dice) = 1/6 + 1/6 = 1/3 |
+
+### Real-life example: two sets of traffic lights
+
+On the way to school, the probability that the first lights are red is 0.4, and the probability that the second lights are red is 0.3. They work independently.
+
+**Problem:** Find the probability that (a) both are red (b) neither is red (c) at least one is red.
+
+1. (a) Both red: 0.4 × 0.3 = 0.12.
+2. (b) Neither red: (1 - 0.4) × (1 - 0.3) = 0.6 × 0.7 = 0.42.
+3. (c) At least one red is everything except "neither": 1 - 0.42 = 0.58.
+
+**Answer:** (a) 0.12 (b) 0.42 (c) 0.58
+
+> "At least one" is usually quickest as **1 - P(none)**.
+
+## Tree diagrams
+
+On a tree diagram, the **outcomes** go at the ends of the branches and the **probabilities** go on the branches.
+
+1. Multiply **along** the branches to get the probability of each route.
+2. Add the routes you want.
+
+**Problem:** A bag has 3 red and 2 blue counters. A counter is taken, its colour noted, and it is **put back**. Then a second counter is taken. Find the probability of (a) two reds (b) one of each colour.
+
+![A tree diagram for picking two counters with replacement from 3 red and 2 blue](/images/maths/8-3-tree.svg)
+
+1. Each pick has P(red) = 3/5 and P(blue) = 2/5, because the counter goes back.
+2. (a) Red then red: 3/5 × 3/5 = 9/25.
+3. (b) There are two routes: red then blue (3/5 × 2/5 = 6/25), or blue then red (2/5 × 3/5 = 6/25).
+4. Add the routes: 6/25 + 6/25 = 12/25.
+
+**Answer:** (a) 9/25 (b) 12/25
+
+> Check: the four route probabilities add up to 1. 9/25 + 6/25 + 6/25 + 4/25 = 25/25.
+
+## Extended and O Level: without replacement and Venn notation
+
+> **Extended and O Level only.** Core students can skip from here to Common mistakes.
+
+### Without replacement
+
+If the first item is **not** put back, the second pick has one fewer item, and the probabilities change.
+
+**Problem:** The same bag has 3 red and 2 blue counters. Two counters are taken **without** replacement. Find the probability of (a) two reds (b) one of each colour.
+
+![A tree diagram for picking two counters without replacement from 3 red and 2 blue](/images/maths/8-3-tree-without.svg)
+
+1. First pick: P(red) = 3/5, P(blue) = 2/5.
+2. If the first was red, 2 red and 2 blue are left: P(red) = 2/4, P(blue) = 2/4.
+3. If the first was blue, 3 red and 1 blue are left: P(red) = 3/4, P(blue) = 1/4.
+4. (a) Red then red: 3/5 × 2/4 = 6/20 = 3/10.
+5. (b) Red then blue: 3/5 × 2/4 = 6/20. Blue then red: 2/5 × 3/4 = 6/20. Add: 12/20 = 3/5.
+
+**Answer:** (a) 3/10 (b) 3/5
+
+### Venn diagram notation
+
+| Notation | Means | Region |
+|---|---|---|
+| A ∩ B | A **and** B | the overlap |
+| A ∪ B | A **or** B (or both) | everything inside the circles |
+
+**Problem:** Use the Venn diagram in topic 8.1: 30 students, F = football (18), T = tennis (12), both = 5. Find P(F ∩ T) and P(F ∪ T).
+
+1. F ∩ T is the overlap: 5 students. P = 5/30 = 1/6.
+2. F ∪ T is everyone in a circle: 13 + 5 + 7 = 25. P = 25/30 = 5/6.
+
+**Answer:** P(F ∩ T) = 1/6, P(F ∪ T) = 5/6
+
+## Common mistakes
+
+- Adding along the branches. **Multiply** along, add between routes.
+- Forgetting one of the routes, such as blue then red.
+- Without replacement: forgetting to take 1 off the total for the second pick.
+- Adding probabilities of events that can both happen.
+
+## Exam tips
+
+- Write the probabilities on every branch before you start.
+- Each pair of branches from one point must add up to 1.
+- Leave fractions unsimplified on the tree. Simplify only the final answer.`,
+  "8.4": `## What you need to know
+
+> **IGCSE Extended only.** This topic is not in O Level 4024 or IGCSE Core.
+
+- **Conditional probability** is the probability of something **given** that something else has happened.
+- How to find it from Venn diagrams, two-way tables and tree diagrams.
+- You do not need the notation P(A | B) or a formula. Use the counts.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Conditional probability | A probability where you already know some extra information |
+| Given that | Tells you which group to look at. Only count inside that group |
+| Two-way table | A table that sorts things in two ways at once, such as gender and transport |
+
+## The big idea
+
+> **"Given that" shrinks the total.** The bottom of the fraction is only the group you are told about.
+
+## From a Venn diagram
+
+Look back at the Venn diagram in topic 8.1: 30 students, 13 play football only, 5 play both, 7 play tennis only and 5 play neither.
+
+**Problem:** A student is picked who plays football. Find the probability that the student also plays tennis.
+
+1. "Given they play football": only look inside the football circle. That is 13 + 5 = 18 students.
+2. Of these, 5 also play tennis.
+3. Probability = 5/18.
+
+**Answer:** 5/18
+
+> Compare this with P(plays both) = 5/30. The top is the same, but the bottom is smaller because we know more.
+
+## From a two-way table
+
+100 students were asked how they get to school.
+
+| | Walk | Bus | Car | Total |
+|---|---|---|---|---|
+| Boys | 20 | 15 | 5 | 40 |
+| Girls | 25 | 10 | 25 | 60 |
+| Total | 45 | 25 | 30 | 100 |
+
+**Problem:** (a) A girl is picked. Find the probability that she walks. (b) A student who walks is picked. Find the probability that it is a girl.
+
+1. (a) Only look at the **girls' row**: 60 girls, and 25 of them walk. Probability = 25/60 = 5/12.
+2. (b) Only look at the **walk column**: 45 walkers, and 25 of them are girls. Probability = 25/45 = 5/9.
+
+**Answer:** (a) 5/12 (b) 5/9
+
+> These two answers are different. Read carefully which group you are given.
+
+## From a tree diagram
+
+Use the tree in topic 8.3 for picking two counters **without replacement** from a bag of 3 red and 2 blue.
+
+**Problem:** The second counter is red. Find the probability that the first counter was also red.
+
+1. Find every route where the second counter is red:
+2. Red then red: 3/5 × 2/4 = 6/20. Blue then red: 2/5 × 3/4 = 6/20.
+3. P(second is red) = 6/20 + 6/20 = 12/20.
+4. Of this, the part where the first was also red is 6/20.
+5. Probability = 6/20 ÷ 12/20 = 6/12 = 1/2.
+
+**Answer:** 1/2
+
+### Real-life example: a medical test
+
+1000 people take a test for an illness. 50 of them have the illness. The test is positive for 45 of the 50 people who are ill, and also for 95 of the 950 people who are not ill.
+
+**Problem:** A person tests positive. What is the probability that they really have the illness?
+
+1. Total positive tests = 45 + 95 = 140.
+2. Of these, 45 are really ill.
+3. Probability = 45/140 = 9/28, which is about 0.32.
+
+**Answer:** 9/28 (about 0.32)
+
+> Surprising! Even with a positive test, this person is more likely **not** to be ill. That is why doctors often do a second test.
+
+## Common mistakes
+
+- Dividing by the grand total instead of the "given" group.
+- Using the row when you need the column, or the other way round.
+- In a tree, using only one route for "second is red".
+
+## Exam tips
+
+- Underline the words after "given that". That is your new total.
+- Draw a two-way table if the question gives you lots of numbers. It makes them easy to read.`,
+  "9.1": `## What you need to know
+
+- How to sort data into **tally charts** and **frequency tables**.
+- How to read and complete **two-way tables**.
+- The different types of data: **categorical** and **numerical**, **discrete** and **continuous**.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Data | Facts or numbers that have been collected |
+| Categorical data | Data in words or groups, such as favourite colour |
+| Numerical data | Data in numbers |
+| Discrete data | Numbers you count, which can only take certain values, such as the number of brothers |
+| Continuous data | Numbers you measure, which can take any value in a range, such as height or time |
+| Frequency | How many times something happens |
+
+## Types of data
+
+| Data | Type |
+|---|---|
+| Favourite sport | Categorical |
+| Number of goals in a match | Numerical, discrete |
+| Shoe size | Numerical, discrete (sizes like 6, 6½, 7 only) |
+| Height of a plant | Numerical, continuous |
+| Time to run 100 m | Numerical, continuous |
+
+> **Count it: discrete. Measure it: continuous.**
+
+## Tally charts and frequency tables
+
+Make a mark for each item. Draw every fifth mark across the other four, so you can count in fives.
+
+**Problem:** 20 students said how many pets they have: 0, 2, 1, 0, 3, 1, 1, 2, 0, 1, 4, 2, 1, 0, 1, 3, 2, 1, 0, 1. Make a frequency table.
+
+| Pets | Tally | Frequency |
+|---|---|---|
+| 0 | 5 marks (one group of five) | 5 |
+| 1 | 8 marks (five and three) | 8 |
+| 2 | 4 marks | 4 |
+| 3 | 2 marks | 2 |
+| 4 | 1 mark | 1 |
+| Total | | 20 |
+
+1. Go through the list once, making a tally mark in the right row for each number.
+2. Count each row to get the frequency.
+3. Check that the frequencies add up to 20.
+
+**Answer:** The table above. The most common number of pets is 1.
+
+> Always check the **total**. If it does not match the number of items, you missed one.
+
+## Grouped frequency tables
+
+For lots of different values, or for continuous data, put the data into **groups** (classes).
+
+| Height h (cm) | Frequency |
+|---|---|
+| 0 < h ≤ 10 | 4 |
+| 10 < h ≤ 20 | 9 |
+| 20 < h ≤ 30 | 12 |
+| 30 < h ≤ 40 | 5 |
+
+The class 10 < h ≤ 20 means "more than 10 cm, up to and including 20 cm". So a plant of exactly 20 cm goes in this class, not the next one.
+
+## Two-way tables
+
+A two-way table sorts data in two ways at once. The totals go at the end of each row and column.
+
+**Problem:** 100 students were asked how they get to school. 40 are boys. 20 boys walk and 15 boys take the bus. 45 students walk in total. 25 students take the bus. Complete the table.
+
+| | Walk | Bus | Car | Total |
+|---|---|---|---|---|
+| Boys | 20 | 15 | ? | 40 |
+| Girls | ? | ? | ? | ? |
+| Total | 45 | 25 | ? | 100 |
+
+1. Boys by car: 40 - 20 - 15 = 5.
+2. Girls total: 100 - 40 = 60.
+3. Girls walk: 45 - 20 = 25. Girls bus: 25 - 15 = 10.
+4. Girls by car: 60 - 25 - 10 = 25. Car total: 5 + 25 = 30.
+5. Check: 45 + 25 + 30 = 100.
+
+**Answer:** Boys car 5. Girls: walk 25, bus 10, car 25, total 60. Car total 30.
+
+### Real-life example: a school canteen
+
+The canteen counts lunches sold. On Monday it sold 48 pizzas and 32 salads, and on Tuesday 40 pizzas and 45 salads. A two-way table with days down the side and food across the top shows quickly that pizza sold more on Monday, but salad sold more on Tuesday.
+
+## Common mistakes
+
+- Missing an item when tallying. Cross off each number as you tally it.
+- Putting a boundary value in the wrong class. Read the ≤ sign carefully.
+- Forgetting to check that the rows and columns add up.
+
+## Exam tips
+
+- In a two-way table, fill in any row or column that has only one gap first.
+- Use the grand total to check your answer at the end.`,
+  "9.2": `## What you need to know
+
+- How to read information from tables, charts and graphs and draw conclusions.
+- How to **compare** two sets of data using an **average** and a measure of **spread** (such as the range).
+- How to spot when a conclusion goes too far, or a graph is misleading.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Average | One number that represents the whole set, such as the mean or the median |
+| Spread | How far apart the data values are. The range is one measure of spread |
+| Consistent | Values close together, with a small spread |
+| Sample | The part of a group that you collect data from |
+| Misleading | Gives a wrong impression, even if the numbers are true |
+
+## Comparing two sets of data
+
+> Always compare **one average** and **one measure of spread**, and say what each one means **in the context** of the question.
+
+### Real-life example: two classes take a test
+
+| | Class A | Class B |
+|---|---|---|
+| Mean mark | 62 | 58 |
+| Range | 30 | 15 |
+
+**Problem:** Compare the marks of the two classes.
+
+1. Average: Class A has a higher mean (62 compared with 58). On average, Class A did better.
+2. Spread: Class B has a smaller range (15 compared with 30). Class B's marks were more consistent: the students scored more closely together.
+
+**Answer:** Class A did better on average, but Class B's marks were more consistent.
+
+> "Class A's mean is higher" is only half an answer. Say what it **means**: Class A did better on average.
+
+### Real-life example: choosing a bus
+
+| | Bus 1 | Bus 2 |
+|---|---|---|
+| Median journey time | 25 minutes | 28 minutes |
+| Range | 20 minutes | 6 minutes |
+
+**Problem:** Which bus should a student take to arrive on time every day?
+
+1. Bus 1 is quicker on average (median 25 minutes).
+2. Bus 2 is much more reliable (range only 6 minutes), so its times hardly change.
+
+**Answer:** Bus 2. It is a little slower on average, but much more reliable, so the student knows when they will arrive.
+
+## How far can a conclusion go?
+
+A conclusion can be wrong even when the numbers are right.
+
+| Problem | Example |
+|---|---|
+| The sample is too small | "3 out of 4 people prefer our toothpaste": only 4 people were asked |
+| The sample is not random | Asking only people in a gym how often they exercise |
+| The data is out of date | Using prices from 10 years ago |
+| Correlation is not cause | Ice cream sales and sunburn both rise in summer, but ice cream does not cause sunburn |
+
+## Misleading graphs
+
+![The same sales data drawn twice: once with the vertical axis starting at 90, which makes small differences look huge, and once starting at 0](/images/maths/9-2-misleading.svg)
+
+**Problem:** A company shows the graph on the left to say that sales have **more than doubled** since 2023. Is this true?
+
+1. Read the actual values: sales went from about 94 to about 99 thousand.
+2. The vertical axis starts at 90, not 0, so the bars look much more different than they are.
+3. 99 is only about 5% more than 94. It is nowhere near double.
+
+**Answer:** No. Sales rose by only about 5%. The broken axis makes the rise look much bigger.
+
+> Check the **scale** on both axes before you believe a graph.
+
+## Common mistakes
+
+- Comparing only the averages and forgetting the spread.
+- Saying "Class B is better" without saying better in what way.
+- Trusting a conclusion from a tiny or biased sample.
+
+## Exam tips
+
+- Use the words from the question: "the boys' times", "the plants in Field A".
+- A smaller range means **more consistent**, not "lower".
+- When asked to criticise a graph, look at the axes, the scale and whether the bars start at 0.`,
+  "9.3": `## What you need to know
+
+- How to find the **mean**, **median**, **mode** and **range** of a list and of a frequency table.
+- Which average is best to use, and why.
+- Extended and O Level: how to **estimate the mean** of grouped data, and find the **modal class**.
+- IGCSE Extended: **quartiles** and the **interquartile range** of a list of data.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Mean | Add up all the values and divide by how many there are |
+| Median | The middle value when the data is in order |
+| Mode | The value that appears most often |
+| Range | Largest value minus smallest value. It measures spread |
+| Outlier | A value that is much bigger or smaller than the rest |
+
+## Averages from a list
+
+**Problem:** Find the mean, median, mode and range of: 3, 7, 4, 7, 9, 5, 7, 2.
+
+1. Put the data in order: 2, 3, 4, 5, 7, 7, 7, 9. There are 8 values.
+2. Mean = (2 + 3 + 4 + 5 + 7 + 7 + 7 + 9) ÷ 8 = 44 ÷ 8 = 5.5.
+3. Median: with 8 values, the middle is between the 4th and 5th values, 5 and 7. Median = (5 + 7) ÷ 2 = 6.
+4. Mode: 7 appears most often (3 times).
+5. Range = 9 - 2 = 7.
+
+**Answer:** Mean 5.5, median 6, mode 7, range 7
+
+> The median is the **((n + 1) ÷ 2)th** value. For 8 values, that is the 4.5th value: halfway between the 4th and 5th.
+
+## Which average?
+
+| Average | Best when | Problem |
+|---|---|---|
+| Mean | You want to use every value | Outliers pull it up or down |
+| Median | There are outliers | Ignores most of the values |
+| Mode | The data is categorical, such as colours | There may be no mode, or several |
+
+### Real-life example: salaries in a small company
+
+Five people earn $2000, $2200, $2300, $2500 and $15 000 a month (the last one is the owner).
+
+**Problem:** Which average best shows what a typical worker earns?
+
+1. Mean = (2000 + 2200 + 2300 + 2500 + 15 000) ÷ 5 = 24 000 ÷ 5 = $4800.
+2. Median = the middle value = $2300.
+3. Four of the five people earn much less than $4800. The owner's salary is an outlier.
+
+**Answer:** The median ($2300). The mean is pulled up by one very large salary.
+
+## Averages from a frequency table
+
+| Goals in a match | 0 | 1 | 2 | 3 | 4 |
+|---|---|---|---|---|---|
+| Number of matches | 4 | 6 | 5 | 3 | 2 |
+
+**Problem:** Find the mean, median, mode and range of the number of goals.
+
+1. Number of matches = 4 + 6 + 5 + 3 + 2 = 20.
+2. Total goals: multiply each number of goals by its frequency and add: 0 × 4 + 1 × 6 + 2 × 5 + 3 × 3 + 4 × 2 = 0 + 6 + 10 + 9 + 8 = 33.
+3. Mean = 33 ÷ 20 = 1.65 goals.
+4. Median: the middle of 20 values is between the 10th and 11th. Count along: the first 4 are 0, the next 6 (5th to 10th) are 1, so the 10th is 1 and the 11th is 2. Median = 1.5.
+5. Mode = 1 (it has the highest frequency, 6).
+6. Range = 4 - 0 = 4.
+
+**Answer:** Mean 1.65, median 1.5, mode 1, range 4
+
+> The mode is the **value** with the highest frequency (1 goal), not the frequency itself (6).
+
+## Working backwards
+
+**Problem:** The mean of five numbers is 8. Four of them are 6, 7, 9 and 10. Find the fifth number.
+
+1. Total of all five = 5 × 8 = 40.
+2. Total of the four = 6 + 7 + 9 + 10 = 32.
+3. Fifth number = 40 - 32 = 8.
+
+**Answer:** 8
+
+## Extended and O Level: grouped data
+
+> **Extended and O Level only.** Core students can skip from here to Common mistakes.
+
+When data is grouped, you do not know the exact values. Use the **midpoint** of each class to **estimate** the mean.
+
+| Height h (cm) | Frequency | Midpoint | Midpoint × frequency |
+|---|---|---|---|
+| 0 < h ≤ 10 | 4 | 5 | 20 |
+| 10 < h ≤ 20 | 9 | 15 | 135 |
+| 20 < h ≤ 30 | 12 | 25 | 300 |
+| 30 < h ≤ 40 | 5 | 35 | 175 |
+| Total | 30 | | 630 |
+
+**Problem:** Estimate the mean height of the 30 plants, and give the modal class.
+
+1. Find each midpoint: halfway between the class limits, such as (0 + 10) ÷ 2 = 5.
+2. Multiply each midpoint by its frequency, and add: 20 + 135 + 300 + 175 = 630.
+3. Estimated mean = 630 ÷ 30 = 21 cm.
+4. Modal class: the class with the highest frequency is 20 < h ≤ 30.
+
+**Answer:** Estimated mean 21 cm, modal class 20 < h ≤ 30
+
+> It is only an **estimate** because we pretend every plant in a class has the midpoint height.
+
+## IGCSE Extended: quartiles and interquartile range
+
+> **IGCSE Extended only.** O Level students find quartiles from cumulative frequency graphs (topic 9.6) instead.
+
+The quartiles split ordered data into four equal parts.
+
+| Measure | Position for n values |
+|---|---|
+| Lower quartile (LQ) | ((n + 1) ÷ 4)th value |
+| Median | ((n + 1) ÷ 2)th value |
+| Upper quartile (UQ) | (3(n + 1) ÷ 4)th value |
+| Interquartile range (IQR) | UQ - LQ |
+
+**Problem:** Find the median, quartiles and IQR of: 3, 5, 6, 8, 9, 11, 12, 14, 15, 18, 20.
+
+1. The data is in order and n = 11.
+2. Median is the (12 ÷ 2) = 6th value: 11.
+3. LQ is the (12 ÷ 4) = 3rd value: 6.
+4. UQ is the (3 × 12 ÷ 4) = 9th value: 15.
+5. IQR = 15 - 6 = 9.
+
+**Answer:** Median 11, LQ 6, UQ 15, IQR 9
+
+> The IQR measures the spread of the **middle half** of the data, so an outlier does not affect it. That makes it better than the range when there are outliers.
+
+## Common mistakes
+
+- Finding the median without putting the data in order first.
+- In a frequency table, dividing by the number of rows instead of the total frequency.
+- Giving the frequency as the mode.
+- For grouped data, saying the mean is exact. It is an estimate.
+
+## Exam tips
+
+- Write the data in order and cross off from each end to find the median.
+- Add a column to a frequency table for value × frequency.
+- Check the mean makes sense: it must be between the smallest and largest values.`,
+  "9.4": `## What you need to know
+
+- How to draw and read **bar charts**, including **dual** (side-by-side) and **composite** (stacked) bar charts.
+- How to draw and read **pie charts** and **pictograms**.
+- How to draw and read **stem-and-leaf diagrams** (IGCSE only).
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Bar chart | Bars of equal width. The height shows the frequency |
+| Dual bar chart | Two bars side by side for each category, to compare two groups |
+| Composite bar chart | One bar split into parts, stacked on top of each other |
+| Pie chart | A circle split into sectors. The angle shows the share |
+| Pictogram | Uses pictures, with a key to show what one picture stands for |
+| Key | Explains what a symbol or code means |
+
+## Bar charts
+
+![A dual bar chart comparing ice cream sales at two shops, and a composite bar chart showing boys and girls in two year groups](/images/maths/9-4-bar-charts.svg)
+
+Rules for a good bar chart:
+
+1. Label both axes and give the chart a title.
+2. Make all the bars the **same width**, with equal gaps between them.
+3. Start the frequency axis at **0** and use an even scale.
+
+In a dual bar chart, a key shows which bar is which group. In a composite bar chart, the **total height** of each bar is the total, and each part shows one group.
+
+**Problem:** Read the composite bar chart. How many girls are in Year 11?
+
+1. The Year 11 bar goes up to 50 in total.
+2. The boys' part goes up to 22.
+3. Girls = 50 - 22 = 28.
+
+**Answer:** 28 girls
+
+## Pie charts
+
+> **Angle = frequency ÷ total × 360°**
+
+**Problem:** 60 students chose their favourite fruit: apple 20, banana 15, orange 10, mango 15. Draw a pie chart.
+
+| Fruit | Frequency | Angle |
+|---|---|---|
+| Apple | 20 | 20 ÷ 60 × 360 = 120° |
+| Banana | 15 | 15 ÷ 60 × 360 = 90° |
+| Orange | 10 | 10 ÷ 60 × 360 = 60° |
+| Mango | 15 | 15 ÷ 60 × 360 = 90° |
+| Total | 60 | 360° |
+
+![A pie chart of favourite fruit: apple 120 degrees, banana 90, orange 60 and mango 90](/images/maths/9-4-pie.svg)
+
+1. Each student is worth 360 ÷ 60 = 6°.
+2. Work out each angle as in the table, and check they add up to 360°.
+3. Draw a radius, then measure each angle with a protractor from the last line.
+
+**Answer:** Apple 120°, banana 90°, orange 60°, mango 90°
+
+### Reading a pie chart
+
+**Problem:** In a survey of 250 people, the sector for "cycle to work" has an angle of 72°. How many people cycle?
+
+1. 72° out of 360° is 72/360 = 1/5 of the circle.
+2. 1/5 × 250 = 50.
+
+**Answer:** 50 people
+
+> A pie chart shows **proportions**, not totals. A bigger sector in a smaller survey can mean fewer people.
+
+## Pictograms
+
+**Problem:** In a pictogram, one smiley face stands for 4 students. The row for "football" has 3 full faces and half a face. How many students chose football?
+
+1. 3 full faces = 3 × 4 = 12.
+2. Half a face = 2.
+3. Total = 12 + 2 = 14.
+
+**Answer:** 14 students
+
+## IGCSE only: stem-and-leaf diagrams
+
+> **IGCSE only.** O Level students can skip from here to Common mistakes.
+
+A stem-and-leaf diagram keeps every value **and** shows the shape of the data. The **stem** is the first digit and the **leaf** is the last digit. The leaves are written in order.
+
+These are the test marks of 10 students: 42, 45, 51, 53, 53, 58, 60, 64, 67, 71.
+
+| Stem | Leaves |
+|---|---|
+| 4 | 2 5 |
+| 5 | 1 3 3 8 |
+| 6 | 0 4 7 |
+| 7 | 1 |
+
+Key: 4 | 2 means 42 marks
+
+**Problem:** Find the median and the range of the marks.
+
+1. There are 10 values. The median is halfway between the 5th and 6th values.
+2. Count along the leaves: 42, 45, 51, 53, **53**, **58**. The 5th is 53 and the 6th is 58.
+3. Median = (53 + 58) ÷ 2 = 55.5.
+4. Range = 71 - 42 = 29.
+
+**Answer:** Median 55.5, range 29
+
+> Always give a **key**. Without it, 4 | 2 could mean 42, 4.2 or 420.
+
+## Common mistakes
+
+- Bars of different widths, or a frequency axis that does not start at 0.
+- Pie chart angles that do not add up to 360°.
+- Forgetting the key in a pictogram or stem-and-leaf diagram.
+- Leaves not in order in a stem-and-leaf diagram.
+
+## Exam tips
+
+- For a pie chart, find the angle for one item first (360 ÷ total).
+- Use a sharp pencil and a protractor. Angles must be within 2° to get the mark.
+- Check your table totals before you draw.`,
+  "9.5": `## What you need to know
+
+- How to plot a **scatter diagram** for two sets of data.
+- How to describe the **correlation**: positive, negative or zero (no correlation).
+- How to draw a **line of best fit** by eye and use it to estimate values.
+- Why you should be careful about estimates outside the data, and why correlation does not prove one thing causes another.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Scatter diagram | A graph of points that shows if two things are linked |
+| Correlation | A link between two sets of data |
+| Positive correlation | As one goes up, the other goes up |
+| Negative correlation | As one goes up, the other goes down |
+| Zero correlation | No link |
+| Line of best fit | A straight line that goes through the middle of the points |
+| Outlier | A point that does not fit the pattern |
+
+## Types of correlation
+
+![Three scatter diagrams showing positive, negative and zero correlation](/images/maths/9-5-correlation.svg)
+
+| Correlation | Example |
+|---|---|
+| Positive | Height and shoe size: taller people usually have bigger feet |
+| Negative | Age of a car and its value: older cars are usually worth less |
+| Zero | Height and test marks: no link |
+
+You can also say if the correlation is **strong** (points close to a line) or **weak** (points spread out).
+
+## Plotting and the line of best fit
+
+### Real-life example: study time and test marks
+
+| Hours of study | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+|---|---|---|---|---|---|---|---|---|
+| Test mark | 35 | 42 | 50 | 52 | 61 | 66 | 70 | 78 |
+
+![A scatter diagram of test mark against hours of study, with a line of best fit](/images/maths/9-5-scatter.svg)
+
+**Problem:** (a) Describe the correlation. (b) Draw a line of best fit. (c) Estimate the mark of a student who studied for 4.5 hours.
+
+1. (a) As study time goes up, the marks go up. The points lie close to a line. This is **strong positive correlation**.
+2. (b) Draw a single ruled line through the middle of the points, with about the same number of points on each side. It should go across the whole data set.
+3. (c) Go up from 4.5 on the hours axis to the line, then across to the marks axis. It reads about 57.
+
+**Answer:** (a) Strong positive correlation (b) See the diagram (c) About 57 marks
+
+> A good tip: the line of best fit passes through the **mean point**. Here the mean hours is 4.5 and the mean mark is 56.75, so the line goes through (4.5, 56.75).
+
+Rules for the line of best fit:
+
+1. Use a ruler. It is one straight line, not a line joining the dots.
+2. It does **not** have to go through (0, 0).
+3. Ignore any outliers when you draw it.
+
+## Careful with estimates
+
+| Estimate | Called | How reliable? |
+|---|---|---|
+| Inside the range of the data (1 to 8 hours) | Interpolation | Fairly reliable |
+| Outside the range (such as 15 hours) | Extrapolation | Not reliable |
+
+**Problem:** Use the line to estimate the mark of a student who studied for 15 hours. Is this sensible?
+
+1. If the line kept going, 15 hours would give a mark of about 30 + 6 × 15 = 120.
+2. But the test is marked out of 100, so 120 is impossible.
+
+**Answer:** Not sensible. 15 hours is far outside the data, so the pattern may not continue.
+
+## Correlation is not cause
+
+Ice cream sales and the number of people with sunburn have strong positive correlation. But ice cream does not cause sunburn. Both go up because of a third thing: **hot, sunny weather**.
+
+> A scatter diagram shows a **link**. It does not prove that one thing **causes** the other.
+
+## Common mistakes
+
+- Joining the points with a zig-zag line instead of drawing one straight line.
+- Forcing the line through (0, 0).
+- Describing correlation as "positive" without saying what it means in the context.
+- Trusting an estimate far outside the data.
+
+## Exam tips
+
+- Plot points clearly with small crosses.
+- Describe correlation in words too: "the more hours studied, the higher the mark".
+- Show your reading with lines on the graph, going up to the line and across.`,
+  "9.6": `## What you need to know
+
+> **Extended and O Level only.** This topic is not in IGCSE Core.
+
+- How to make a **cumulative frequency** table and draw a cumulative frequency graph.
+- How to use the graph to estimate the **median**, **quartiles**, **interquartile range** and **percentiles**.
+- How to find how many values are above or below a certain value.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Cumulative frequency | A running total of the frequencies |
+| Upper class boundary | The top value of a class, such as 20 in 10 < t ≤ 20 |
+| Lower quartile (LQ) | The value one quarter of the way through the data |
+| Upper quartile (UQ) | The value three quarters of the way through the data |
+| Interquartile range (IQR) | UQ - LQ. The spread of the middle half of the data |
+| Percentile | The value a certain percentage of the way through the data. The 90th percentile has 90% of the data below it |
+
+## Making the table
+
+80 students recorded how long it takes them to travel to school.
+
+| Time t (minutes) | Frequency | Cumulative frequency |
+|---|---|---|
+| 0 < t ≤ 10 | 8 | 8 |
+| 10 < t ≤ 20 | 20 | 8 + 20 = 28 |
+| 20 < t ≤ 30 | 28 | 28 + 28 = 56 |
+| 30 < t ≤ 40 | 16 | 56 + 16 = 72 |
+| 40 < t ≤ 50 | 8 | 72 + 8 = 80 |
+
+> The last cumulative frequency must equal the **total** (80). If it does not, check your adding.
+
+## Drawing the graph
+
+![A cumulative frequency curve for 80 journey times, with the lower quartile, median and upper quartile read from the curve](/images/maths/9-6-cumulative.svg)
+
+1. Plot each cumulative frequency at the **upper class boundary**: (10, 8), (20, 28), (30, 56), (40, 72), (50, 80).
+2. Also plot (0, 0), because no one takes less than 0 minutes.
+3. Join the points with a **smooth curve**. The curve is usually S-shaped.
+
+> Plot at the **end** of each class, not the middle. By 20 minutes, 28 students have arrived.
+
+## Reading the graph
+
+| Measure | Read across from |
+|---|---|
+| Lower quartile | ¼ of the total: 80 ÷ 4 = 20 |
+| Median | ½ of the total: 80 ÷ 2 = 40 |
+| Upper quartile | ¾ of the total: 3 × 80 ÷ 4 = 60 |
+
+**Problem:** Use the graph to estimate (a) the median (b) the interquartile range.
+
+1. (a) Go across from 40 on the cumulative frequency axis to the curve, then down. Median ≈ 24 minutes.
+2. (b) Across from 20: LQ ≈ 16.5 minutes. Across from 60: UQ ≈ 32 minutes.
+3. IQR = 32 - 16.5 = 15.5 minutes.
+
+**Answer:** (a) about 24 minutes (b) about 15.5 minutes
+
+> These are **estimates**. Answers within about half a square of the correct reading get the marks.
+
+## More questions from the same graph
+
+**Problem:** (a) How many students took more than 35 minutes? (b) Find the 90th percentile.
+
+1. (a) Go up from 35 minutes to the curve, then across. It reads about 65 students who took 35 minutes or less.
+2. Students who took more than 35 minutes = 80 - 65 = 15.
+3. (b) 90% of 80 = 72. Go across from 72 to the curve, then down. It reads 40 minutes.
+
+**Answer:** (a) about 15 students (b) 40 minutes
+
+> "More than" means **subtract** your reading from the total.
+
+### Real-life example: comparing two schools
+
+Another school has a median journey time of 18 minutes and an IQR of 9 minutes.
+
+**Problem:** Compare the two schools.
+
+1. Median: 24 minutes compared with 18. Students at the first school take longer on average.
+2. IQR: 15.5 minutes compared with 9. Journey times at the second school are more consistent.
+
+**Answer:** The first school's students take longer on average, and their times vary more.
+
+## Common mistakes
+
+- Plotting at the midpoint of each class instead of the upper boundary.
+- Joining the points with straight lines when the question asks for a smooth curve.
+- Reading the median at the middle of the time axis instead of at half the total frequency.
+- Forgetting to subtract from the total for "more than" questions.
+
+## Exam tips
+
+- Draw your reading lines on the graph in pencil. They show your method.
+- Check the curve starts at (0, 0) if the data starts at 0.
+- Give quartiles and the median with units.`,
+  "9.7": `## What you need to know
+
+> **Extended and O Level only.** This topic is not in IGCSE Core.
+
+- A **histogram** is used for grouped continuous data. The classes can have **different widths**.
+- The vertical axis shows **frequency density**, not frequency.
+- In a histogram, the **area** of each bar shows the frequency.
+
+## Key words
+
+| Word | Meaning |
+|---|---|
+| Histogram | A chart for grouped continuous data, with no gaps between the bars |
+| Class width | The size of a class, such as 10 for 20 < a ≤ 30 |
+| Frequency density | Frequency ÷ class width |
+
+## The two formulas
+
+> **Frequency density = frequency ÷ class width**
+
+> **Frequency = frequency density × class width**
+
+Why? A wide class collects more values just because it is wide. Dividing by the width makes the bars fair to compare.
+
+## Drawing a histogram
+
+100 people watched a film at a cinema. Their ages are in the table.
+
+| Age a (years) | Frequency | Class width | Frequency density |
+|---|---|---|---|
+| 0 < a ≤ 10 | 10 | 10 | 10 ÷ 10 = 1 |
+| 10 < a ≤ 15 | 15 | 5 | 15 ÷ 5 = 3 |
+| 15 < a ≤ 20 | 25 | 5 | 25 ÷ 5 = 5 |
+| 20 < a ≤ 30 | 30 | 10 | 30 ÷ 10 = 3 |
+| 30 < a ≤ 50 | 20 | 20 | 20 ÷ 20 = 1 |
+
+![A histogram of the ages of 100 cinema visitors with unequal class widths](/images/maths/9-7-histogram.svg)
+
+1. Find each class width.
+2. Work out each frequency density: frequency ÷ width.
+3. Draw each bar from the start to the end of its class, as tall as its frequency density. There are no gaps.
+4. Label the vertical axis "Frequency density".
+
+> Look at the 20 < a ≤ 30 class. It has the **most** people (30), but its bar is **not** the tallest, because the class is wide. The 15 < a ≤ 20 bar is tallest: those ages are the most crowded.
+
+## Reading a histogram
+
+**Problem:** A histogram has a bar from 40 to 60 with a frequency density of 2.5. How many values are in this class?
+
+1. Class width = 60 - 40 = 20.
+2. Frequency = frequency density × width = 2.5 × 20 = 50.
+
+**Answer:** 50
+
+### Estimating part of a class
+
+**Problem:** Use the cinema table to estimate how many people were aged between 25 and 40.
+
+1. From 25 to 30 is half of the 20 < a ≤ 30 class: ½ × 30 = 15 people.
+2. From 30 to 40 is half of the 30 < a ≤ 50 class (10 out of 20 years): ½ × 20 = 10 people.
+3. Total = 15 + 10 = 25.
+
+**Answer:** about 25 people
+
+> This is an estimate, because we assume the people are spread evenly across each class.
+
+### Finding a missing frequency
+
+**Problem:** In a histogram, a bar from 0 to 10 has frequency density 1.2 and represents 12 people. Another bar from 10 to 15 is 4 cm tall when the first bar is 2.4 cm tall. Find the frequency of the second class.
+
+1. The scale: 2.4 cm stands for a frequency density of 1.2, so 1 cm stands for 0.5.
+2. The second bar has frequency density 4 × 0.5 = 2.
+3. Frequency = 2 × 5 = 10.
+
+**Answer:** 10 people
+
+## Common mistakes
+
+- Plotting the frequency instead of the frequency density.
+- Leaving gaps between the bars.
+- Thinking the tallest bar has the highest frequency. With unequal widths, look at the **area**.
+
+## Exam tips
+
+- Add two columns to the table: class width and frequency density.
+- Check the scale on the vertical axis carefully before you read a bar.
+- Read class boundaries carefully: 10 < a ≤ 15 has width 5.`,
 };
 
 export function getMathsNotes(topic: string): string | undefined {

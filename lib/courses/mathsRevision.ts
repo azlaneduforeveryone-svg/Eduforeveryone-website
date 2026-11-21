@@ -3309,6 +3309,1888 @@ export const MATHS_REVISION: Record<string, TopicRevision> = {
         "back": "Half the chord."
       }
     ]
+  },
+  "5.1": {
+    "mindMap": {
+      "centre": "Units of measure",
+      "branches": [
+        {
+          "label": "Length",
+          "items": [
+            "10 mm = 1 cm",
+            "100 cm = 1 m",
+            "1000 m = 1 km"
+          ]
+        },
+        {
+          "label": "Mass and capacity",
+          "items": [
+            "1000 g = 1 kg",
+            "1000 kg = 1 tonne",
+            "1000 ml = 1 litre"
+          ]
+        },
+        {
+          "label": "Area",
+          "items": [
+            "1 cm² = 100 mm²",
+            "1 m² = 10 000 cm²",
+            "Square the length change"
+          ]
+        },
+        {
+          "label": "Volume",
+          "items": [
+            "1 m³ = 1 000 000 cm³",
+            "1 cm³ = 1 ml",
+            "1000 cm³ = 1 litre",
+            "1 m³ = 1000 litres"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Change 3.5 km to metres.",
+        "back": "3500 m"
+      },
+      {
+        "front": "Change 2300 g to kg.",
+        "back": "2.3 kg"
+      },
+      {
+        "front": "Big unit to small unit: multiply or divide?",
+        "back": "Multiply. You need more of the small units."
+      },
+      {
+        "front": "How many cm² are in 1 m²?",
+        "back": "10 000 cm²"
+      },
+      {
+        "front": "How many cm³ are in 1 m³?",
+        "back": "1 000 000 cm³"
+      },
+      {
+        "front": "How many ml is 1 cm³?",
+        "back": "1 ml"
+      },
+      {
+        "front": "How many litres does a 1 m³ tank hold?",
+        "back": "1000 litres"
+      },
+      {
+        "front": "A tank is 60 cm by 30 cm by 40 cm. How many litres does it hold?",
+        "back": "72 litres"
+      },
+      {
+        "front": "Add 750 g and 1.2 kg.",
+        "back": "1.95 kg"
+      }
+    ]
+  },
+  "5.2": {
+    "mindMap": {
+      "centre": "Area and perimeter",
+      "branches": [
+        {
+          "label": "Perimeter",
+          "items": [
+            "Distance round the edge",
+            "Units: cm, m"
+          ]
+        },
+        {
+          "label": "Formulas",
+          "items": [
+            "Rectangle: l × w",
+            "Triangle: ½ × b × h",
+            "Parallelogram: b × h",
+            "Trapezium: ½(a + b)h"
+          ]
+        },
+        {
+          "label": "Height",
+          "items": [
+            "Perpendicular height",
+            "At 90° to the base",
+            "Never the sloping side"
+          ]
+        },
+        {
+          "label": "Real life",
+          "items": [
+            "Paint, carpet, seed: area",
+            "Fence, frame: perimeter",
+            "Round up to buy enough"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is perimeter?",
+        "back": "The total distance round the edge of a shape."
+      },
+      {
+        "front": "Area of a triangle?",
+        "back": "½ × base × perpendicular height"
+      },
+      {
+        "front": "Area of a parallelogram?",
+        "back": "base × perpendicular height"
+      },
+      {
+        "front": "Area of a trapezium?",
+        "back": "½ × (a + b) × h, where a and b are the parallel sides"
+      },
+      {
+        "front": "Which area formula is given in the exam?",
+        "back": "Only the triangle formula."
+      },
+      {
+        "front": "A triangle has base 10 cm and height 7 cm. Find its area.",
+        "back": "35 cm²"
+      },
+      {
+        "front": "A trapezium has parallel sides 6 cm and 10 cm, 4 cm apart. Find its area.",
+        "back": "32 cm²"
+      },
+      {
+        "front": "A triangle has area 24 cm² and base 8 cm. Find its height.",
+        "back": "6 cm"
+      },
+      {
+        "front": "You need 2.08 tins of paint. How many do you buy?",
+        "back": "3 tins. Round up."
+      }
+    ]
+  },
+  "5.3": {
+    "mindMap": {
+      "centre": "Circles, arcs and sectors",
+      "branches": [
+        {
+          "label": "Circle",
+          "items": [
+            "C = πd = 2πr",
+            "A = πr²",
+            "d = 2r"
+          ]
+        },
+        {
+          "label": "Sector",
+          "items": [
+            "Fraction θ/360",
+            "Arc = θ/360 × 2πr",
+            "Area = θ/360 × πr²"
+          ]
+        },
+        {
+          "label": "Perimeter of sector",
+          "items": [
+            "Arc + 2r"
+          ]
+        },
+        {
+          "label": "Extended and O Level",
+          "items": [
+            "Any angle",
+            "Major sector: 360 - θ",
+            "Find θ from area or arc"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Circumference of a circle?",
+        "back": "C = πd or C = 2πr"
+      },
+      {
+        "front": "Area of a circle?",
+        "back": "A = πr²"
+      },
+      {
+        "front": "Radius 6 cm. Area in terms of π?",
+        "back": "36π cm²"
+      },
+      {
+        "front": "A wheel has diameter 70 cm. How far does it go in one turn?",
+        "back": "219.9 cm"
+      },
+      {
+        "front": "What fraction of a circle is a 45° sector?",
+        "back": "1/8"
+      },
+      {
+        "front": "Arc length of a sector?",
+        "back": "θ/360 × 2πr"
+      },
+      {
+        "front": "Area of a sector?",
+        "back": "θ/360 × πr²"
+      },
+      {
+        "front": "Perimeter of a sector?",
+        "back": "Arc length + 2 × radius"
+      },
+      {
+        "front": "A quarter circle has radius 10 cm. Find its area.",
+        "back": "25π = 78.5 cm²"
+      },
+      {
+        "front": "(Extended and O Level) The minor sector is 75°. What is the angle of the major sector?",
+        "back": "285°"
+      }
+    ]
+  },
+  "5.4": {
+    "mindMap": {
+      "centre": "Surface area and volume",
+      "branches": [
+        {
+          "label": "Prisms",
+          "items": [
+            "V = cross-section × length",
+            "Cuboid V = lwh",
+            "Cylinder V = πr²h"
+          ]
+        },
+        {
+          "label": "Pointed solids",
+          "items": [
+            "Cone V = ⅓πr²h",
+            "Pyramid V = ⅓ × base × h",
+            "Cone curved = πrl"
+          ]
+        },
+        {
+          "label": "Sphere",
+          "items": [
+            "V = (4/3)πr³",
+            "SA = 4πr²"
+          ]
+        },
+        {
+          "label": "Surface area",
+          "items": [
+            "Add all faces",
+            "Cylinder curved = 2πrh",
+            "Total: add the ends"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is a prism?",
+        "back": "A solid with the same cross-section all the way through."
+      },
+      {
+        "front": "Volume of a prism?",
+        "back": "Area of cross-section × length"
+      },
+      {
+        "front": "Volume of a cylinder?",
+        "back": "πr²h"
+      },
+      {
+        "front": "Volume of a cone?",
+        "back": "⅓πr²h"
+      },
+      {
+        "front": "Curved surface area of a cone?",
+        "back": "πrl, where l is the slant height"
+      },
+      {
+        "front": "Volume of a sphere?",
+        "back": "(4/3)πr³"
+      },
+      {
+        "front": "Surface area of a sphere?",
+        "back": "4πr²"
+      },
+      {
+        "front": "A cuboid is 5 cm by 4 cm by 3 cm. Find its surface area.",
+        "back": "94 cm²"
+      },
+      {
+        "front": "A pyramid has a 6 cm square base and height 4 cm. Find its volume.",
+        "back": "48 cm³"
+      },
+      {
+        "front": "Which formula is not given in the exam?",
+        "back": "The cuboid. Volume = l × w × h, surface area = 2(lw + lh + wh)."
+      }
+    ]
+  },
+  "5.5": {
+    "mindMap": {
+      "centre": "Compound shapes and parts of shapes",
+      "branches": [
+        {
+          "label": "Compound shapes",
+          "items": [
+            "Split and add",
+            "Or subtract from a big shape",
+            "Find missing edges first"
+          ]
+        },
+        {
+          "label": "Perimeter",
+          "items": [
+            "Outside edges only",
+            "No inside lines"
+          ]
+        },
+        {
+          "label": "Hemisphere",
+          "items": [
+            "V = (2/3)πr³",
+            "Curved = 2πr²",
+            "Solid total = 3πr²"
+          ]
+        },
+        {
+          "label": "Extended and O Level: frustum",
+          "items": [
+            "Big cone - small cone",
+            "Use Pythagoras for slant heights"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Two ways to find the area of a compound shape?",
+        "back": "Split it and add, or subtract the missing part from a bigger shape."
+      },
+      {
+        "front": "A square of side 10 cm has a circle of radius 5 cm inside. Find the area outside the circle.",
+        "back": "100 - 25π = 21.46 cm²"
+      },
+      {
+        "front": "Volume of a hemisphere?",
+        "back": "(2/3)πr³"
+      },
+      {
+        "front": "Total surface area of a solid hemisphere?",
+        "back": "3πr² (curved 2πr² plus the flat circle πr²)"
+      },
+      {
+        "front": "A track has two 100 m straights and semicircular ends of diameter 60 m. Find one lap.",
+        "back": "388.5 m"
+      },
+      {
+        "front": "Do you include inside lines in a perimeter?",
+        "back": "No. Only the outside edges."
+      },
+      {
+        "front": "(Extended and O Level) What is a frustum?",
+        "back": "A cone or pyramid with the top cut off."
+      },
+      {
+        "front": "(Extended and O Level) How do you find the volume of a frustum?",
+        "back": "Volume of the big cone minus volume of the small cone."
+      }
+    ]
+  },
+  "6.1": {
+    "mindMap": {
+      "centre": "Pythagoras' theorem",
+      "branches": [
+        {
+          "label": "The rule",
+          "items": [
+            "a² + b² = c²",
+            "c is the hypotenuse",
+            "Only in right-angled triangles"
+          ]
+        },
+        {
+          "label": "Longest side",
+          "items": [
+            "Square, add, square root"
+          ]
+        },
+        {
+          "label": "Shorter side",
+          "items": [
+            "Square, subtract, square root"
+          ]
+        },
+        {
+          "label": "Uses",
+          "items": [
+            "Diagonals: TV, park, ladder",
+            "Check a right angle: 3, 4, 5"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is the hypotenuse?",
+        "back": "The longest side, opposite the right angle."
+      },
+      {
+        "front": "Write Pythagoras' theorem.",
+        "back": "a² + b² = c², where c is the hypotenuse."
+      },
+      {
+        "front": "Shorter sides 6 cm and 8 cm. Find the hypotenuse.",
+        "back": "10 cm"
+      },
+      {
+        "front": "Hypotenuse 13 cm, one side 5 cm. Find the other side.",
+        "back": "12 cm"
+      },
+      {
+        "front": "Finding a shorter side: add or subtract?",
+        "back": "Subtract."
+      },
+      {
+        "front": "Is a triangle with sides 7, 24, 25 right-angled?",
+        "back": "Yes. 49 + 576 = 625 = 25²"
+      },
+      {
+        "front": "Is a triangle with sides 6, 8, 11 right-angled?",
+        "back": "No. 36 + 64 = 100, but 11² = 121"
+      },
+      {
+        "front": "A 5 m ladder has its foot 1.5 m from a wall. How high does it reach?",
+        "back": "4.77 m"
+      },
+      {
+        "front": "Is Pythagoras on the formula page?",
+        "back": "No. You must learn it."
+      }
+    ]
+  },
+  "6.2": {
+    "mindMap": {
+      "centre": "Right-angled triangles",
+      "branches": [
+        {
+          "label": "Label",
+          "items": [
+            "H: opposite the right angle",
+            "O: opposite the angle",
+            "A: next to the angle"
+          ]
+        },
+        {
+          "label": "SOH CAH TOA",
+          "items": [
+            "sin = O/H",
+            "cos = A/H",
+            "tan = O/A"
+          ]
+        },
+        {
+          "label": "Angles",
+          "items": [
+            "Use sin⁻¹, cos⁻¹, tan⁻¹",
+            "Give to 1 d.p.",
+            "Calculator in degrees"
+          ]
+        },
+        {
+          "label": "Extended and O Level",
+          "items": [
+            "Elevation: look up",
+            "Depression: look down",
+            "Both from the horizontal",
+            "Shortest distance: perpendicular"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What does SOH CAH TOA stand for?",
+        "back": "sin = O/H, cos = A/H, tan = O/A"
+      },
+      {
+        "front": "Angle 35°, hypotenuse 10 cm. Find the opposite side.",
+        "back": "10 × sin 35° = 5.74 cm"
+      },
+      {
+        "front": "Angle 40°, adjacent 8 cm. Find the hypotenuse.",
+        "back": "8 ÷ cos 40° = 10.4 cm"
+      },
+      {
+        "front": "Opposite 3 cm, adjacent 4 cm. Find the angle.",
+        "back": "tan⁻¹(0.75) = 36.9°"
+      },
+      {
+        "front": "When do you divide instead of multiply?",
+        "back": "When the missing side is on the bottom of the fraction."
+      },
+      {
+        "front": "Which button finds an angle from a ratio?",
+        "back": "The inverse: sin⁻¹, cos⁻¹ or tan⁻¹."
+      },
+      {
+        "front": "A ship sails 20 km on a bearing of 060°. How far east?",
+        "back": "20 × sin 60° = 17.3 km"
+      },
+      {
+        "front": "(Extended and O Level) What is an angle of elevation?",
+        "back": "The angle you look up from the horizontal."
+      },
+      {
+        "front": "(Extended and O Level) What is the shortest distance from a point to a line?",
+        "back": "The perpendicular distance, at 90° to the line."
+      }
+    ]
+  },
+  "6.3": {
+    "mindMap": {
+      "centre": "Exact trigonometric values",
+      "branches": [
+        {
+          "label": "sin",
+          "items": [
+            "0, 1/2, √2/2, √3/2, 1",
+            "for 0°, 30°, 45°, 60°, 90°"
+          ]
+        },
+        {
+          "label": "cos",
+          "items": [
+            "Same as sin, backwards",
+            "1, √3/2, √2/2, 1/2, 0"
+          ]
+        },
+        {
+          "label": "tan",
+          "items": [
+            "0, √3/3, 1, √3",
+            "tan 90° not defined"
+          ]
+        },
+        {
+          "label": "Triangles",
+          "items": [
+            "Half equilateral: 1, √3, 2",
+            "Half square: 1, 1, √2"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "sin 30°?",
+        "back": "1/2"
+      },
+      {
+        "front": "cos 30°?",
+        "back": "√3/2"
+      },
+      {
+        "front": "sin 45°?",
+        "back": "√2/2 (or 1/√2)"
+      },
+      {
+        "front": "tan 45°?",
+        "back": "1"
+      },
+      {
+        "front": "tan 60°?",
+        "back": "√3"
+      },
+      {
+        "front": "cos 60°?",
+        "back": "1/2"
+      },
+      {
+        "front": "tan 30°?",
+        "back": "√3/3 (or 1/√3)"
+      },
+      {
+        "front": "Hypotenuse 10, angle 30°. Exact adjacent side?",
+        "back": "5√3"
+      },
+      {
+        "front": "Which triangle gives the 30° and 60° values?",
+        "back": "Half an equilateral triangle: sides 1, √3, 2."
+      }
+    ]
+  },
+  "6.4": {
+    "mindMap": {
+      "centre": "Trigonometric functions",
+      "branches": [
+        {
+          "label": "y = sin x",
+          "items": [
+            "Starts at 0",
+            "Max 1 at 90°, min -1 at 270°",
+            "Period 360°"
+          ]
+        },
+        {
+          "label": "y = cos x",
+          "items": [
+            "Starts at 1",
+            "Min -1 at 180°",
+            "Period 360°"
+          ]
+        },
+        {
+          "label": "y = tan x",
+          "items": [
+            "Period 180°",
+            "Asymptotes at 90° and 270°"
+          ]
+        },
+        {
+          "label": "Second answer",
+          "items": [
+            "sin: 180° - x",
+            "cos: 360° - x",
+            "tan: x + 180°"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is the greatest value of sin x?",
+        "back": "1, at x = 90°"
+      },
+      {
+        "front": "What is cos 180°?",
+        "back": "-1"
+      },
+      {
+        "front": "How often does the tan graph repeat?",
+        "back": "Every 180°"
+      },
+      {
+        "front": "Where does y = tan x have asymptotes (0° to 360°)?",
+        "back": "At x = 90° and x = 270°"
+      },
+      {
+        "front": "Solve sin x = 0.5 for 0° ≤ x ≤ 360°.",
+        "back": "30° or 150°"
+      },
+      {
+        "front": "Solve cos x = 0.3 for 0° ≤ x ≤ 360°.",
+        "back": "72.5° or 287.5°"
+      },
+      {
+        "front": "Solve tan x = 2 for 0° ≤ x ≤ 360°.",
+        "back": "63.4° or 243.4°"
+      },
+      {
+        "front": "Solve sin x = -0.6 for 0° ≤ x ≤ 360°.",
+        "back": "216.9° or 323.1°"
+      },
+      {
+        "front": "If sin x = k, what is the second answer?",
+        "back": "180° - x"
+      }
+    ]
+  },
+  "6.5": {
+    "mindMap": {
+      "centre": "Non-right-angled triangles",
+      "branches": [
+        {
+          "label": "Sine rule",
+          "items": [
+            "a/sin A = b/sin B",
+            "Need a side and its opposite angle"
+          ]
+        },
+        {
+          "label": "Cosine rule",
+          "items": [
+            "a² = b² + c² - 2bc cos A",
+            "Two sides and the angle between",
+            "Or all three sides"
+          ]
+        },
+        {
+          "label": "Area",
+          "items": [
+            "½ab sin C",
+            "C is between a and b"
+          ]
+        },
+        {
+          "label": "Watch out",
+          "items": [
+            "Negative cos: obtuse angle",
+            "Ambiguous case: 180° - x"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Write the sine rule.",
+        "back": "a/sin A = b/sin B = c/sin C"
+      },
+      {
+        "front": "Write the cosine rule for a side.",
+        "back": "a² = b² + c² - 2bc cos A"
+      },
+      {
+        "front": "Write the area formula for any triangle.",
+        "back": "Area = ½ab sin C"
+      },
+      {
+        "front": "When do you use the cosine rule?",
+        "back": "Two sides and the angle between them, or all three sides."
+      },
+      {
+        "front": "When do you use the sine rule?",
+        "back": "When you know a side and its opposite angle."
+      },
+      {
+        "front": "b = 5, c = 7, A = 60°. Find a.",
+        "back": "√39 = 6.24"
+      },
+      {
+        "front": "cos C is negative. What does that tell you?",
+        "back": "C is obtuse (between 90° and 180°)."
+      },
+      {
+        "front": "Sides 6 cm and 9 cm, angle 50° between. Find the area.",
+        "back": "20.7 cm²"
+      },
+      {
+        "front": "What is the ambiguous case?",
+        "back": "The sine rule gives two possible angles, x and 180° - x."
+      }
+    ]
+  },
+  "6.6": {
+    "mindMap": {
+      "centre": "Pythagoras and trigonometry in 3D",
+      "branches": [
+        {
+          "label": "Method",
+          "items": [
+            "Find a right-angled triangle",
+            "Draw it flat",
+            "Label lengths"
+          ]
+        },
+        {
+          "label": "Cuboid",
+          "items": [
+            "Base diagonal first",
+            "Space diagonal = √(l² + w² + h²)"
+          ]
+        },
+        {
+          "label": "Line and plane",
+          "items": [
+            "Drop straight down",
+            "Angle with the projection"
+          ]
+        },
+        {
+          "label": "Pyramid",
+          "items": [
+            "Half the base diagonal",
+            "Height is vertical"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Space diagonal of an l × w × h cuboid?",
+        "back": "√(l² + w² + h²)"
+      },
+      {
+        "front": "Cuboid 4 cm by 3 cm by 12 cm. Find the space diagonal.",
+        "back": "13 cm"
+      },
+      {
+        "front": "What is the projection of a line on a plane?",
+        "back": "Its shadow on the plane if light shines straight down."
+      },
+      {
+        "front": "How do you find the angle between a line and a plane?",
+        "back": "Use the right-angled triangle made by the line, its projection and the vertical drop."
+      },
+      {
+        "front": "Cuboid 4 by 3 by 12. Angle between the space diagonal and the base?",
+        "back": "tan⁻¹(12/5) = 67.4°"
+      },
+      {
+        "front": "Will a 1 m pole fit in a box 60 cm by 40 cm by 50 cm?",
+        "back": "No. The space diagonal is only 87.7 cm."
+      },
+      {
+        "front": "In a square-based pyramid, what length do you need from the base?",
+        "back": "Half the diagonal of the base."
+      }
+    ]
+  },
+  "7.1": {
+    "mindMap": {
+      "centre": "Transformations",
+      "branches": [
+        {
+          "label": "Reflection",
+          "items": [
+            "Give the mirror line",
+            "x = 2 is vertical",
+            "Extended: y = x, y = -x"
+          ]
+        },
+        {
+          "label": "Rotation",
+          "items": [
+            "Angle",
+            "Direction",
+            "Centre"
+          ]
+        },
+        {
+          "label": "Enlargement",
+          "items": [
+            "Scale factor",
+            "Centre",
+            "Fraction: smaller",
+            "Extended: negative"
+          ]
+        },
+        {
+          "label": "Translation",
+          "items": [
+            "Column vector",
+            "Top: across",
+            "Bottom: up"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What must you give to describe a rotation?",
+        "back": "The angle, the direction and the centre."
+      },
+      {
+        "front": "What must you give to describe an enlargement?",
+        "back": "The scale factor and the centre."
+      },
+      {
+        "front": "How do you describe a translation?",
+        "back": "With a column vector."
+      },
+      {
+        "front": "Translate (1, 1) by the vector (4, -3).",
+        "back": "(5, -2)"
+      },
+      {
+        "front": "Reflect (1, 2) in the line x = 4.",
+        "back": "(7, 2)"
+      },
+      {
+        "front": "Rotate (2, 1) through 90° clockwise about the origin.",
+        "back": "(1, -2)"
+      },
+      {
+        "front": "Enlarge (2, 3) by scale factor 3, centre (1, 1).",
+        "back": "(4, 7)"
+      },
+      {
+        "front": "What does a scale factor of ½ do?",
+        "back": "Makes the shape half the size."
+      },
+      {
+        "front": "How do you find the centre of an enlargement?",
+        "back": "Draw lines through matching corners. The centre is where they cross."
+      },
+      {
+        "front": "(Extended and O Level) Reflect (5, 2) in the line y = x.",
+        "back": "(2, 5)"
+      },
+      {
+        "front": "(Extended and O Level) What does a negative scale factor do?",
+        "back": "Puts the image on the other side of the centre, upside down."
+      }
+    ]
+  },
+  "7.2": {
+    "mindMap": {
+      "centre": "Vectors in two dimensions",
+      "branches": [
+        {
+          "label": "Writing",
+          "items": [
+            "Column: across on top",
+            "AB with an arrow",
+            "Bold a, or underlined"
+          ]
+        },
+        {
+          "label": "Signs",
+          "items": [
+            "Negative across: left",
+            "Negative up: down"
+          ]
+        },
+        {
+          "label": "Add and subtract",
+          "items": [
+            "Top with top",
+            "Bottom with bottom",
+            "Resultant: start to finish"
+          ]
+        },
+        {
+          "label": "Scalar",
+          "items": [
+            "Multiply both numbers",
+            "Gives a parallel vector",
+            "-a: opposite direction"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What does the vector (-4, 1) mean?",
+        "back": "4 left and 1 up."
+      },
+      {
+        "front": "a = (2, 3), b = (4, -1). Find a + b.",
+        "back": "(6, 2)"
+      },
+      {
+        "front": "a = (2, 3), b = (4, -1). Find a - b.",
+        "back": "(-2, 4)"
+      },
+      {
+        "front": "a = (2, 3). Find 3a.",
+        "back": "(6, 9)"
+      },
+      {
+        "front": "How is -a different from a?",
+        "back": "Same length, opposite direction."
+      },
+      {
+        "front": "What is a scalar?",
+        "back": "An ordinary number, such as 3 or -2."
+      },
+      {
+        "front": "What is a resultant vector?",
+        "back": "One vector that does the same as two or more vectors one after the other."
+      },
+      {
+        "front": "(3, k) + (m, -2) = (7, 5). Find k and m.",
+        "back": "k = 7, m = 4"
+      }
+    ]
+  },
+  "7.3": {
+    "mindMap": {
+      "centre": "Magnitude of a vector",
+      "branches": [
+        {
+          "label": "Meaning",
+          "items": [
+            "Length of the vector",
+            "Never negative",
+            "Written |a|"
+          ]
+        },
+        {
+          "label": "Formula",
+          "items": [
+            "√(x² + y²)",
+            "Pythagoras"
+          ]
+        },
+        {
+          "label": "Watch out",
+          "items": [
+            "Square negatives: positive",
+            "Add vectors first, then find the length"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is the magnitude of a vector?",
+        "back": "Its length."
+      },
+      {
+        "front": "Formula for the magnitude of (x, y)?",
+        "back": "√(x² + y²)"
+      },
+      {
+        "front": "Find |(3, 4)|.",
+        "back": "5"
+      },
+      {
+        "front": "Find |(-5, 12)|.",
+        "back": "13"
+      },
+      {
+        "front": "Find |(2, -6)| to 3 s.f.",
+        "back": "6.32"
+      },
+      {
+        "front": "A boat moves with velocity (5, 12) km/h. What is its speed?",
+        "back": "13 km/h"
+      },
+      {
+        "front": "(k, 8) has magnitude 10 and k > 0. Find k.",
+        "back": "6"
+      },
+      {
+        "front": "Is |a + b| the same as |a| + |b|?",
+        "back": "Usually not. Add the vectors first, then find the magnitude."
+      }
+    ]
+  },
+  "7.4": {
+    "mindMap": {
+      "centre": "Vector geometry",
+      "branches": [
+        {
+          "label": "Routes",
+          "items": [
+            "Any route with known vectors",
+            "Backwards: negative",
+            "AB = b - a"
+          ]
+        },
+        {
+          "label": "Midpoint",
+          "items": [
+            "OM = ½(a + b)",
+            "Ratio m : n: m/(m + n) of the way"
+          ]
+        },
+        {
+          "label": "Parallel",
+          "items": [
+            "One is a multiple of the other",
+            "Look for a common factor"
+          ]
+        },
+        {
+          "label": "Collinear",
+          "items": [
+            "Parallel",
+            "And a shared point"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "OA = a and OB = b. Find AB.",
+        "back": "b - a"
+      },
+      {
+        "front": "What is a position vector?",
+        "back": "The vector from the origin O to a point."
+      },
+      {
+        "front": "M is the midpoint of AB. Find OM in terms of a and b.",
+        "back": "½(a + b)"
+      },
+      {
+        "front": "P is on AB with AP : PB = 1 : 2. Find OP.",
+        "back": "⅔a + ⅓b"
+      },
+      {
+        "front": "How do you show two vectors are parallel?",
+        "back": "Show one is a number times the other."
+      },
+      {
+        "front": "Are 2a - 4b and a - 2b parallel?",
+        "back": "Yes. 2a - 4b = 2(a - 2b)."
+      },
+      {
+        "front": "How do you show A, B and C are collinear?",
+        "back": "Show AB and AC (or BC) are parallel and say they share a point."
+      },
+      {
+        "front": "If OA = a, what is AO?",
+        "back": "-a"
+      }
+    ]
+  },
+  "8.1": {
+    "mindMap": {
+      "centre": "Introduction to probability",
+      "branches": [
+        {
+          "label": "Scale",
+          "items": [
+            "0: impossible",
+            "0.5: even chance",
+            "1: certain"
+          ]
+        },
+        {
+          "label": "Single event",
+          "items": [
+            "Ways ÷ total",
+            "Equally likely outcomes"
+          ]
+        },
+        {
+          "label": "Not happening",
+          "items": [
+            "1 - probability",
+            "All outcomes add to 1"
+          ]
+        },
+        {
+          "label": "Venn diagrams",
+          "items": [
+            "Overlap first",
+            "Then each circle",
+            "Then outside"
+          ]
+        },
+        {
+          "label": "Extended and O Level",
+          "items": [
+            "P(A)",
+            "P(A′) = 1 - P(A)"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What does a probability of 0 mean?",
+        "back": "The event is impossible."
+      },
+      {
+        "front": "What does a probability of 1 mean?",
+        "back": "The event is certain."
+      },
+      {
+        "front": "A fair dice is rolled. P(even number)?",
+        "back": "3/6 = 1/2"
+      },
+      {
+        "front": "3 red, 5 blue, 2 green sweets. P(not green)?",
+        "back": "8/10 = 4/5"
+      },
+      {
+        "front": "P(rain) = 0.35. P(no rain)?",
+        "back": "0.65"
+      },
+      {
+        "front": "Probabilities 0.3, 0.25, 0.15 and x cover every outcome. Find x.",
+        "back": "0.3"
+      },
+      {
+        "front": "In a Venn diagram, which part do you fill first?",
+        "back": "The overlap."
+      },
+      {
+        "front": "30 students: 18 football, 12 tennis, 5 both. How many play neither?",
+        "back": "5"
+      },
+      {
+        "front": "(Extended and O Level) P(B) = 0.8. Find P(B′).",
+        "back": "0.2"
+      }
+    ]
+  },
+  "8.2": {
+    "mindMap": {
+      "centre": "Relative and expected frequencies",
+      "branches": [
+        {
+          "label": "Relative frequency",
+          "items": [
+            "Frequency ÷ trials",
+            "An estimate",
+            "More trials: better"
+          ]
+        },
+        {
+          "label": "Expected frequency",
+          "items": [
+            "Probability × trials",
+            "An average, not exact"
+          ]
+        },
+        {
+          "label": "Words",
+          "items": [
+            "Fair: all equally likely",
+            "Biased: not fair",
+            "Random: same chance"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Formula for relative frequency?",
+        "back": "Number of times it happened ÷ total number of trials"
+      },
+      {
+        "front": "A spinner lands on red 42 times in 200 spins. Estimate P(red).",
+        "back": "0.21"
+      },
+      {
+        "front": "How can you make a relative frequency more reliable?",
+        "back": "Do more trials."
+      },
+      {
+        "front": "Formula for expected frequency?",
+        "back": "Probability × number of trials"
+      },
+      {
+        "front": "A fair dice is rolled 120 times. Expected number of sixes?",
+        "back": "20"
+      },
+      {
+        "front": "A coin gives 70 heads in 100 throws. Is it fair?",
+        "back": "Probably biased. A fair coin would give about 50."
+      },
+      {
+        "front": "60 of 200 students walk. Estimate the number in a school of 1200.",
+        "back": "360"
+      },
+      {
+        "front": "What does biased mean?",
+        "back": "Some outcomes are more likely than they should be."
+      }
+    ]
+  },
+  "8.3": {
+    "mindMap": {
+      "centre": "Probability of combined events",
+      "branches": [
+        {
+          "label": "Diagrams",
+          "items": [
+            "Sample space grid",
+            "Venn diagram",
+            "Tree diagram"
+          ]
+        },
+        {
+          "label": "Rules",
+          "items": [
+            "AND: multiply",
+            "OR: add",
+            "At least one: 1 - P(none)"
+          ]
+        },
+        {
+          "label": "Tree diagrams",
+          "items": [
+            "Multiply along",
+            "Add the routes",
+            "Branches add to 1"
+          ]
+        },
+        {
+          "label": "Extended and O Level",
+          "items": [
+            "Without replacement: totals drop by 1",
+            "∩: and, ∪: or"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Two dice are rolled. How many outcomes are there?",
+        "back": "36"
+      },
+      {
+        "front": "Two dice: P(total of 7)?",
+        "back": "6/36 = 1/6"
+      },
+      {
+        "front": "On a tree diagram, what do you do along the branches?",
+        "back": "Multiply."
+      },
+      {
+        "front": "How do you find P(at least one)?",
+        "back": "1 - P(none)"
+      },
+      {
+        "front": "P(red light) is 0.4 and 0.3 at two independent lights. P(both red)?",
+        "back": "0.12"
+      },
+      {
+        "front": "3 red, 2 blue, with replacement. P(two reds)?",
+        "back": "9/25"
+      },
+      {
+        "front": "3 red, 2 blue, with replacement. P(one of each)?",
+        "back": "12/25"
+      },
+      {
+        "front": "(Extended and O Level) 3 red, 2 blue, without replacement. P(two reds)?",
+        "back": "3/5 × 2/4 = 3/10"
+      },
+      {
+        "front": "(Extended and O Level) What does A ∩ B mean?",
+        "back": "A and B: the overlap of the circles."
+      }
+    ]
+  },
+  "8.4": {
+    "mindMap": {
+      "centre": "Conditional probability",
+      "branches": [
+        {
+          "label": "Idea",
+          "items": [
+            "Given that: shrink the total",
+            "Only count inside the group"
+          ]
+        },
+        {
+          "label": "Venn",
+          "items": [
+            "Given circle A: total is all of A"
+          ]
+        },
+        {
+          "label": "Two-way table",
+          "items": [
+            "Given a row: use the row total",
+            "Given a column: use the column total"
+          ]
+        },
+        {
+          "label": "Tree",
+          "items": [
+            "Add all routes for the given event",
+            "Divide"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What does 'given that' do to the total?",
+        "back": "It shrinks it to the group you are told about."
+      },
+      {
+        "front": "Venn: 18 play football, 5 of them also play tennis. P(tennis given football)?",
+        "back": "5/18"
+      },
+      {
+        "front": "60 girls, 25 walk. P(walks given girl)?",
+        "back": "25/60 = 5/12"
+      },
+      {
+        "front": "45 walkers, 25 are girls. P(girl given walks)?",
+        "back": "25/45 = 5/9"
+      },
+      {
+        "front": "3 red, 2 blue without replacement. Second is red. P(first was red)?",
+        "back": "1/2"
+      },
+      {
+        "front": "Is P(A given B) the same as P(B given A)?",
+        "back": "Usually not. The totals are different groups."
+      }
+    ]
+  },
+  "9.1": {
+    "mindMap": {
+      "centre": "Classifying statistical data",
+      "branches": [
+        {
+          "label": "Types",
+          "items": [
+            "Categorical: words",
+            "Discrete: counted",
+            "Continuous: measured"
+          ]
+        },
+        {
+          "label": "Tally charts",
+          "items": [
+            "Groups of five",
+            "Check the total"
+          ]
+        },
+        {
+          "label": "Grouped tables",
+          "items": [
+            "10 < h ≤ 20",
+            "Includes 20, not 10"
+          ]
+        },
+        {
+          "label": "Two-way tables",
+          "items": [
+            "Rows and columns",
+            "Fill single gaps first",
+            "Check the grand total"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Is the number of brothers discrete or continuous?",
+        "back": "Discrete. You count it."
+      },
+      {
+        "front": "Is the time to run 100 m discrete or continuous?",
+        "back": "Continuous. You measure it."
+      },
+      {
+        "front": "Is favourite colour numerical or categorical?",
+        "back": "Categorical."
+      },
+      {
+        "front": "Which class does 20 cm go in: 10 < h ≤ 20 or 20 < h ≤ 30?",
+        "back": "10 < h ≤ 20"
+      },
+      {
+        "front": "Why do you draw tally marks in fives?",
+        "back": "So they are quick to count."
+      },
+      {
+        "front": "40 boys: 20 walk, 15 bus. How many boys go by car?",
+        "back": "5"
+      },
+      {
+        "front": "How do you check a two-way table?",
+        "back": "The rows and the columns must both add up to the grand total."
+      }
+    ]
+  },
+  "9.2": {
+    "mindMap": {
+      "centre": "Interpreting statistical data",
+      "branches": [
+        {
+          "label": "Compare",
+          "items": [
+            "One average",
+            "One measure of spread",
+            "Say what it means"
+          ]
+        },
+        {
+          "label": "Spread",
+          "items": [
+            "Smaller range: more consistent"
+          ]
+        },
+        {
+          "label": "Limits",
+          "items": [
+            "Small sample",
+            "Biased sample",
+            "Correlation is not cause"
+          ]
+        },
+        {
+          "label": "Misleading graphs",
+          "items": [
+            "Axis not starting at 0",
+            "Uneven scale"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What two things should you compare for two data sets?",
+        "back": "An average and a measure of spread."
+      },
+      {
+        "front": "Class A range 30, Class B range 15. Which is more consistent?",
+        "back": "Class B."
+      },
+      {
+        "front": "Mean 62 for A, 58 for B. What does that tell you?",
+        "back": "Class A did better on average."
+      },
+      {
+        "front": "Why might '3 out of 4 people prefer it' be unreliable?",
+        "back": "The sample could be very small, such as only 4 people."
+      },
+      {
+        "front": "Why can a bar chart with the axis starting at 90 be misleading?",
+        "back": "Small differences look much bigger than they are."
+      },
+      {
+        "front": "Does strong correlation prove one thing causes the other?",
+        "back": "No. Something else may cause both."
+      }
+    ]
+  },
+  "9.3": {
+    "mindMap": {
+      "centre": "Averages and measures of spread",
+      "branches": [
+        {
+          "label": "Averages",
+          "items": [
+            "Mean: total ÷ number",
+            "Median: middle in order",
+            "Mode: most common"
+          ]
+        },
+        {
+          "label": "Spread",
+          "items": [
+            "Range: largest - smallest"
+          ]
+        },
+        {
+          "label": "Which average",
+          "items": [
+            "Outliers: median",
+            "Categories: mode",
+            "Use all values: mean"
+          ]
+        },
+        {
+          "label": "Extended and O Level",
+          "items": [
+            "Grouped: use midpoints",
+            "Estimated mean",
+            "Modal class"
+          ]
+        },
+        {
+          "label": "IGCSE Extended",
+          "items": [
+            "LQ: (n + 1)/4th",
+            "UQ: 3(n + 1)/4th",
+            "IQR = UQ - LQ"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Find the mean of 2, 3, 4, 5, 7, 7, 7, 9.",
+        "back": "5.5"
+      },
+      {
+        "front": "Find the median of 2, 3, 4, 5, 7, 7, 7, 9.",
+        "back": "6"
+      },
+      {
+        "front": "What is the range?",
+        "back": "Largest value minus smallest value."
+      },
+      {
+        "front": "Which average is best when there is an outlier?",
+        "back": "The median."
+      },
+      {
+        "front": "Which average can you use for categorical data?",
+        "back": "The mode."
+      },
+      {
+        "front": "Mean of 5 numbers is 8. Four are 6, 7, 9, 10. Find the fifth.",
+        "back": "8"
+      },
+      {
+        "front": "Goals table: 33 goals in 20 matches. Find the mean.",
+        "back": "1.65"
+      },
+      {
+        "front": "(Extended and O Level) Why is the mean of grouped data only an estimate?",
+        "back": "We use midpoints, not the real values."
+      },
+      {
+        "front": "(IGCSE Extended) LQ 6 and UQ 15. Find the IQR.",
+        "back": "9"
+      }
+    ]
+  },
+  "9.4": {
+    "mindMap": {
+      "centre": "Statistical charts and diagrams",
+      "branches": [
+        {
+          "label": "Bar charts",
+          "items": [
+            "Equal widths",
+            "Start at 0",
+            "Dual: side by side",
+            "Composite: stacked"
+          ]
+        },
+        {
+          "label": "Pie charts",
+          "items": [
+            "Angle = f ÷ total × 360",
+            "Angles add to 360°",
+            "Shows proportions"
+          ]
+        },
+        {
+          "label": "Pictograms",
+          "items": [
+            "Key for one picture",
+            "Parts of a picture"
+          ]
+        },
+        {
+          "label": "IGCSE: stem and leaf",
+          "items": [
+            "Leaves in order",
+            "Always a key"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "Formula for a pie chart angle?",
+        "back": "Frequency ÷ total × 360°"
+      },
+      {
+        "front": "60 students, 20 chose apple. What angle?",
+        "back": "120°"
+      },
+      {
+        "front": "Survey of 250 people. A sector is 72°. How many people?",
+        "back": "50"
+      },
+      {
+        "front": "What must the angles in a pie chart add up to?",
+        "back": "360°"
+      },
+      {
+        "front": "In a composite bar chart, what does the total height show?",
+        "back": "The total frequency for that bar."
+      },
+      {
+        "front": "One face = 4 students. How many is 3½ faces?",
+        "back": "14"
+      },
+      {
+        "front": "(IGCSE) What does a stem-and-leaf diagram need?",
+        "back": "A key, and leaves in order."
+      },
+      {
+        "front": "(IGCSE) Stem 5, leaves 1 3 3 8, key 4 | 2 = 42. List the values.",
+        "back": "51, 53, 53, 58"
+      }
+    ]
+  },
+  "9.5": {
+    "mindMap": {
+      "centre": "Scatter diagrams",
+      "branches": [
+        {
+          "label": "Correlation",
+          "items": [
+            "Positive: both go up",
+            "Negative: one up, one down",
+            "Zero: no link"
+          ]
+        },
+        {
+          "label": "Line of best fit",
+          "items": [
+            "Ruled, by eye",
+            "Through the middle",
+            "Through the mean point"
+          ]
+        },
+        {
+          "label": "Estimates",
+          "items": [
+            "Inside the data: reliable",
+            "Outside: not reliable"
+          ]
+        },
+        {
+          "label": "Remember",
+          "items": [
+            "Correlation is not cause",
+            "Ignore outliers"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is positive correlation?",
+        "back": "As one value goes up, the other goes up."
+      },
+      {
+        "front": "Give an example of negative correlation.",
+        "back": "The age of a car and its value."
+      },
+      {
+        "front": "What does zero correlation mean?",
+        "back": "There is no link."
+      },
+      {
+        "front": "Does the line of best fit have to go through (0, 0)?",
+        "back": "No."
+      },
+      {
+        "front": "Which point does the line of best fit go through?",
+        "back": "The mean point."
+      },
+      {
+        "front": "Why is an estimate far outside the data unreliable?",
+        "back": "The pattern may not continue."
+      },
+      {
+        "front": "Ice cream sales and sunburn are correlated. Does ice cream cause sunburn?",
+        "back": "No. Hot sunny weather causes both."
+      }
+    ]
+  },
+  "9.6": {
+    "mindMap": {
+      "centre": "Cumulative frequency diagrams",
+      "branches": [
+        {
+          "label": "Table",
+          "items": [
+            "Running total",
+            "Last value = total"
+          ]
+        },
+        {
+          "label": "Graph",
+          "items": [
+            "Plot at upper boundary",
+            "Start at (0, 0)",
+            "Smooth S-curve"
+          ]
+        },
+        {
+          "label": "Readings",
+          "items": [
+            "Median: n/2",
+            "LQ: n/4",
+            "UQ: 3n/4",
+            "IQR = UQ - LQ"
+          ]
+        },
+        {
+          "label": "More than",
+          "items": [
+            "Read the curve",
+            "Subtract from total"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What is cumulative frequency?",
+        "back": "A running total of the frequencies."
+      },
+      {
+        "front": "Where do you plot cumulative frequency?",
+        "back": "At the upper class boundary."
+      },
+      {
+        "front": "Total 80. Where do you read the median?",
+        "back": "At a cumulative frequency of 40."
+      },
+      {
+        "front": "Total 80. Where do you read the upper quartile?",
+        "back": "At 60."
+      },
+      {
+        "front": "LQ 16.5 and UQ 32. Find the IQR.",
+        "back": "15.5"
+      },
+      {
+        "front": "The curve reads 65 at 35 minutes. Total 80. How many took more than 35 minutes?",
+        "back": "15"
+      },
+      {
+        "front": "What is the 90th percentile?",
+        "back": "The value with 90% of the data below it."
+      }
+    ]
+  },
+  "9.7": {
+    "mindMap": {
+      "centre": "Histograms",
+      "branches": [
+        {
+          "label": "Axis",
+          "items": [
+            "Frequency density",
+            "Not frequency"
+          ]
+        },
+        {
+          "label": "Formulas",
+          "items": [
+            "FD = f ÷ width",
+            "f = FD × width"
+          ]
+        },
+        {
+          "label": "Bars",
+          "items": [
+            "No gaps",
+            "Area shows frequency",
+            "Widths can differ"
+          ]
+        },
+        {
+          "label": "Part of a class",
+          "items": [
+            "Assume spread evenly",
+            "Take a fraction of the bar"
+          ]
+        }
+      ]
+    },
+    "flashcards": [
+      {
+        "front": "What goes on the vertical axis of a histogram?",
+        "back": "Frequency density."
+      },
+      {
+        "front": "Formula for frequency density?",
+        "back": "Frequency ÷ class width"
+      },
+      {
+        "front": "A class has width 5 and frequency 25. Find the frequency density.",
+        "back": "5"
+      },
+      {
+        "front": "A bar from 40 to 60 has frequency density 2.5. Find the frequency.",
+        "back": "50"
+      },
+      {
+        "front": "In a histogram, what shows the frequency?",
+        "back": "The area of the bar."
+      },
+      {
+        "front": "Are there gaps between the bars of a histogram?",
+        "back": "No."
+      },
+      {
+        "front": "A class 30 < a ≤ 50 has 20 people. Estimate how many are aged 30 to 40.",
+        "back": "10"
+      }
+    ]
   }
 };
 
