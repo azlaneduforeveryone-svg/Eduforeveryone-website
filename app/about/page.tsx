@@ -19,14 +19,14 @@ export const metadata: Metadata = {
 const faqs = [
   { q: "Is EduForEveryone really free?", a: "Yes. There are no subscriptions, hidden fees or paywalls. Every course, practice test, quiz, calculator and game is free to use. The site is supported by non-intrusive ads, and the Quran and Islamic Studies pages have no ads." },
   { q: "Do I need to create an account?", a: "No. You can use everything without an account. Without one, your progress is saved on your own device. If you sign in, your course progress is saved to your account so you can carry on from another phone or computer." },
-  { q: "Are the Cambridge O Level and IGCSE courses free?", a: "Yes. O Level and IGCSE Accounting (7707 and 0452), O Level and IGCSE Biology (5090 and 0610) and one Mathematics course for O Level 4024 and IGCSE 0580 (Core and Extended) are all free, with plain-English notes, diagrams, mind maps, flashcards and practice questions. The Maths course is being added section by section. EduForEveryone is not affiliated with Cambridge University Press & Assessment." },
+  { q: "Are the Cambridge O Level and IGCSE courses free?", a: "Yes. O Level and IGCSE Accounting (7707 and 0452), O Level and IGCSE Biology (5090 and 0610) and one Mathematics course for O Level 4024 and IGCSE 0580 (Core and Extended) are all free, with plain-English notes, diagrams, mind maps, flashcards and practice questions. EduForEveryone is not affiliated with Cambridge University Press & Assessment." },
   { q: "Can I read the Quran with Urdu translation?", a: "Yes. The Quran reader has 40+ translations including English, Urdu and Hindi, with audio recitation and a colour-coded Tajweed mode. You can also read the 13-line and 15-line Mushaf as PDFs." },
   { q: "Is the IELTS practice really free?", a: "Yes. All Reading, Writing, Listening and Speaking practice and the full mock test are free with no sign-up. AI writing feedback is also free." },
   { q: "Is the GMAT practice really free?", a: "Yes. Every GMAT Focus Edition section (Quantitative Reasoning, Verbal Reasoning and Data Insights) and the full timed mock test is free with no sign-up. Scores shown are estimates, not official GMAT scores." },
   { q: "Who is EduForEveryone for?", a: "Anyone who wants to learn: O Level and IGCSE students, IELTS and GMAT candidates, people reading the Quran, and anyone who enjoys quizzes, games and useful tools." },
   { q: "What games are available?", a: "Three free games: Math Puzzle (arithmetic, algebra and sequences against the clock), Word Puzzle (guess hidden education words) and Quiz Battle (questions across all subjects with lives and power-ups). There is also a trilingual Islamic Quiz." },
   { q: "What tools can I use?", a: "A scientific calculator, a simple calculator, a financial calculator (TVM, NPV, IRR and bond pricing), a number to words converter, and bank, supplier, customer and intercompany reconciliation tools. All free." },
-  { q: "Will more content be added?", a: "Yes. The rest of the Mathematics course and its practice questions are being added now, and more practice tests, quizzes and tools will follow." },
+  { q: "Will more content be added?", a: "Yes. All 72 Mathematics topics now have notes and practice questions. More practice tests, quizzes and tools will follow." },
 ];
 
 export default function AboutPage() {
@@ -147,7 +147,7 @@ export default function AboutPage() {
           </p>
           <div className="grid sm:grid-cols-2 gap-4">
             {[
-              { emoji: "🧮", text: "The rest of the Mathematics course, from coordinate geometry to statistics, with practice questions" },
+              { emoji: "🧮", text: "More practice tests for Mathematics, Biology and Accounting" },
               { emoji: "🌐", text: "More languages to reach every corner of the world" },
               { emoji: "✍️", text: "More IELTS practice tests and writing prompt pages" },
               { emoji: "📱", text: "A mobile app so learning happens anywhere, anytime" },

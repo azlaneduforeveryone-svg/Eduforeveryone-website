@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useMemo, useRef } from "react";
 import Link from "next/link";
 import PageHeader from "@/components/ui/PageHeader";
 import { useAuth } from "@/contexts/AuthContext";
@@ -57,6 +57,13 @@ export default function TopicPageClient({
   const myNumber = numberFor(topicMeta, level);
   // Previous and next topic within the student's own syllabus.
   const levelList = inMyLevel ? topicsForLevel(level) : ALL_MATHS_TOPICS;
+  // Practice questions for the chosen syllabus. A Core student on an Extended-only
+  // topic (or a topic with fewer than 5 Core questions) gets the Extended set.
+  const levelPool = useMemo(() => {
+    const own = topicQuestions.filter((q) => q.levels.includes(level));
+    if (own.length >= 5 || level !== "core") return own.length > 0 ? own : topicQuestions;
+    return topicQuestions.filter((q) => q.levels.includes("extended"));
+  }, [topicQuestions, level]);
   const idx = levelList.findIndex((x) => x.slug === topicMeta.slug);
   const prevTopic = idx > 0 ? levelList[idx - 1] : null;
   const nextTopic = idx >= 0 && idx < levelList.length - 1 ? levelList[idx + 1] : null;
@@ -83,8 +90,8 @@ export default function TopicPageClient({
 
   const hasVideo = Boolean(topicMeta.videoId);
   const hasNotes = Boolean(topicMeta.notes);
-  const hasQuiz = topicQuestions.length > 0;
-  const quizLength = Math.min(5, topicQuestions.length);
+  const hasQuiz = levelPool.length > 0;
+  const quizLength = Math.min(5, levelPool.length);
   const hasAnyContent = Boolean(
     notesIntro ||
       hasVideo ||
@@ -114,8 +121,8 @@ export default function TopicPageClient({
       setProgress(loaded);
       setProgressLoaded(true);
 
-      if (topicQuestions.length > 0) {
-        const drawn = drawQuizFromPool(topicQuestions, quizLength, loaded.lastQuizIds);
+      if (levelPool.length > 0) {
+        const drawn = drawQuizFromPool(levelPool, quizLength, loaded.lastQuizIds);
         setQuizSet(drawn);
       } else {
         setQuizSet([]);
@@ -129,7 +136,18 @@ export default function TopicPageClient({
     return () => {
       active = false;
     };
-  }, [user?.uid, authLoading, topicMeta.topicId, topicQuestions, quizLength]);
+  }, [user?.uid, authLoading, topicMeta.topicId, levelPool, quizLength]);
+
+  // Switching level draws a fresh set from the new level's questions.
+  const lastPool = useRef(levelPool);
+  useEffect(() => {
+    if (!progressLoaded || lastPool.current === levelPool) return;
+    lastPool.current = levelPool;
+    setQuizSet(levelPool.length > 0 ? drawQuizFromPool(levelPool, quizLength, []) : []);
+    setSelectedOptions({});
+    setChecked(false);
+    setScore(null);
+  }, [levelPool, progressLoaded, quizLength]);
 
   const persistProgress = useCallback(
     async (nextProgress: TopicProgress) => {
@@ -236,7 +254,7 @@ export default function TopicPageClient({
   // Try a new set of questions
   const handleTryNewSet = () => {
     const previousIds = quizSet.map((q) => q.id);
-    const nextQuestions = drawQuizFromPool(topicQuestions, quizLength, previousIds);
+    const nextQuestions = drawQuizFromPool(levelPool, quizLength, previousIds);
     setQuizSet(nextQuestions);
     setSelectedOptions({});
     setChecked(false);

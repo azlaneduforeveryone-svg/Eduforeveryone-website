@@ -98,7 +98,7 @@ export default function CoursesPage() {
             </div>
             <h2 className="text-xl font-bold text-white mb-1">Cambridge O Level and IGCSE Mathematics</h2>
             <p className="text-white/85 text-sm leading-relaxed">
-              One course for O Level 4024 and IGCSE 0580 (Core and Extended). Plain English notes with real-life examples solved step by step. Topics are being added section by section.
+              One course for O Level 4024 and IGCSE 0580 (Core and Extended). 72 topics with plain English notes, real-life examples solved step by step, diagrams, mind maps, flashcards and 654 exam-style practice questions, each tagged to your syllabus.
             </p>
           </div>
           <div className="flex-shrink-0">
